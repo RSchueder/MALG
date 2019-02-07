@@ -1,0 +1,181 @@
+1000 132 ';'    ; width of input and output, comment
+;
+; Type of DELWAQ input file:
+; DELWAQ_VERSION_4.91
+; Option for printing the report: verbose
+; PRINT_OUTPUT_OPTION_4
+
+; first block: identification
+''
+''
+''
+'T0: 2019.01.02 00:00:00  (scu=       1s)'
+;
+; substances file: 
+; hydrodynamic file: ../col-hyd/com-col-hyd.dat
+;
+; areachar.dat: ../col-hyd/com-col-hyd.srfold
+;
+  1  0    ; number of active and inactive substances
+
+; Index  Name
+      1 'Continuity'
+;
+#1 ; delimiter for the first block
+; 
+; second block of model input (timers)
+; 
+; integration timers 
+; 
+ 86400  'ddhhmmss' 'ddhhmmss' ; system clock in sec, aux in days
+ 15.70    ; integration option
+ 2019/01/02-00:00:00      ; start time 
+ 2019/01/04-00:00:00      ; stop time 
+ 0                  ; constant timestep 
+ 0010000      ; time step
+;
+ 1     ; monitoring points/areas used
+ 0   ; number of monitoring points/areas
+ 2     ; monitoring transects not used
+;
+; start time      stop time     time step 
+ 2019/01/02-00:00:00       2019/01/04-00:00:00       0010000      ; monitoring
+ 2019/01/02-00:00:00       2019/01/04-00:00:00       0010000      ; map, dump
+ 2019/01/02-00:00:00       2019/01/04-00:00:00       0010000      ; history
+;
+#2 ; delimiter for the second block
+; 
+; third block of model input (grid layout)
+ 10      ; number of segments
+ 2        ; grid layout not used
+INCLUDE '../col-hyd/com-col-hyd.atr'  ; attributes file
+;
+; volumes
+;
+-2  ; first volume option
+'../col-hyd/com-col-hyd.vol'  ; volumes file
+;
+#3 ; delimiter for the third block
+; 
+; fourth block of model input (transport)
+ 0  ; exchanges in direction 1
+ 0  ; exchanges in direction 2
+ 9  ; exchanges in direction 3
+; 
+ 0  ; dispersion arrays
+ 0  ; velocity arrays
+; 
+ 1  ; first form is used for input 
+ 0  ; exchange pointer option
+'../col-hyd/com-col-hyd.poi'  ; pointers file
+; 
+ 1  ; first dispersion option nr
+ 1.0 1.0 1.0   ; scale factors in 3 directions
+ 1.00000e+000 1.00000e+000 ; dispersion in 1st and 2nd direction
+ 1.00000e-007 ; dispersion in 3rd direction
+; 
+ -2  ; first area option
+'../col-hyd/com-col-hyd.are'  ; area file
+; 
+ -2  ; first flow option
+'../col-hyd/com-col-hyd.flo'  ; flow file
+; 
+; No explicit velocity arrays
+; 
+  1  ; length vary
+ 0   ; length option
+'../col-hyd/com-col-hyd.len'  ; length file
+;
+#4 ; delimiter for the fourth block
+; 
+; fifth block of model input (boundary condition)
+;
+ #5 ; delimiter for the fifth block
+; 
+; sixth block of model input (waste loads)
+   0   ; no waste loads/continuous releases
+
+;
+ #6 ; delimiter for the sixth block
+; 
+; seventh block of model input (process parameters)
+;
+CONSTANTS
+; 9 - number of constants
+ 'ACTIVE_VERTDISP'
+ 'ACTIVE_TOTDEPTH'
+ 'ACTIVE_DYNDEPTH'
+ 'CLOSE_ERR'
+ 'ScaleVDisp'
+ 'MaxIter'
+ 'Tolerance'
+ 'Iteration Report'
+; 'ACTIVE_EMERSION' - has missing value or model not suited
+; 'Zthreshold' - has missing value or model not suited
+; 'MaxIterations' - has missing value or model not suited
+ 'ONLY_ACTIVE'
+DATA
+ 0.00000e+000 ; ACTIVE_VERTDISP
+ 0.00000e+000 ; ACTIVE_TOTDEPTH
+ 0.00000e+000 ; ACTIVE_DYNDEPTH
+ 1.00000e+000 ; CLOSE_ERR
+ 1.00000e+000 ; ScaleVDisp
+ 1.00000e+002 ; MaxIter
+ 1.00000e-007 ; Tolerance
+ 0.00000e+000 ; Iteration Report
+ 1.00000e+000 ; ONLY_ACTIVE
+;
+PARAMETERS
+; 2 - number of parameters
+ 'SURF'
+ 'bottomdept'
+ALL
+ ; parameters in binary file
+BINARY_FILE  'SACC_col_gui_tmp.par'  ; binary file
+; 0 - number of functions
+SEG_FUNCTIONS
+'VertDisper' ; name of segment function
+ALL
+BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
+;
+#7 ; delimiter for the seventh block
+; 
+; eighth block of model input (initial conditions)
+ MASS/M2 ; unit for inactive substances
+ 1 ; initial conditions follow
+ 2 ; all values with default
+ 1*1.0 ; scale factors
+ 1.00000e+000 ; Continuity
+ 0  ; overridings
+;
+;
+ #8 ; delimiter for the eighth block
+; 
+; ninth block of model input (specification of output)
+  1 ; output information in this file
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF' ' '
+  'LocalDepth' ' '
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF'    
+  'LocalDepth'    
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF' ' '
+  'LocalDepth' ' '
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF'    
+  'LocalDepth'    
+  1 ; binary history file on
+  1 ; binary map     file on
+  1 ; nefis  history file on
+  1 ; nefis  map     file on
+;
+ #9 ; delimiter for the ninth block
+;
+; Statistical output - if any
+;
+ #10 ; delimiter for the tenth block

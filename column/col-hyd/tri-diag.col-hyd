@@ -1,0 +1,395 @@
+
+********************************************************************************
+***
+*** Deltares, FLOW2D3D Version 6.03.00.62904, Dec 25 2018, 18:18:03
+***           built from : https://svn.oss.deltares.nl/repos/delft3d/trunk
+***
+***           runid      : col-hyd
+***           date,time  : 2019-01-02, 17:37:42
+***
+********************************************************************************
+
+*** MESSAGE Executable for 64-bits platform. 
+*** MESSAGE Double precision computation using reals of kind    8 
+*** MESSAGE Using UNESCO density formulation by default 
+*** MESSAGE Momentum solver cyclic method is specified 
+*** MESSAGE DRYFLP and DPSOPT both specified in MD-file. Using DPSOPT: MAX 
+*** MESSAGE His, map, drogue, and fourier files written in single precision (except for time and horizontal coordinates).
+*** Start  of waq parameters input
+Write waq output              :         Yes
+Start at time step            :           0
+Output every N time steps     :          60
+Stop at time step             :        2880
+Aggregation (horizontal)      : active only
+Aggregation (vertical)        : 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+*** End    of waq parameters input
+*** MESSAGE The communication file is written during the first time step only. Needed by WAQ. 
+ 
+*** WARNING Latitude of your model is 0 degrees, model located at equator
+*** WARNING no stations and cross-sections defined; HIS-file not created !!
+ Creating new trim-col-hyd.dat
+ Creating new trim-col-hyd.def
+WAQ input written at itime       3600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime       7200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      10800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      14400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      18000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      21600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      25200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      28800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      32400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      36000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      39600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      43200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      46800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      50400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      54000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      57600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      61200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      64800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      68400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      72000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      75600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      79200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      82800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      86400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+*** Restart file written at       1440.0000 minutes after ITDATE
+WAQ input written at itime      90000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      93600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime      97200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     100800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     104400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     108000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     111600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     115200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     118800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     122400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     126000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     129600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     133200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     136800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     140400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     144000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     147600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     151200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     154800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     158400. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     162000. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     165600. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     169200. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+WAQ input written at itime     172800. Closure error:    0.000000E+00,    0.000000E+00(      36): Total[m3], Max.Rel.(segment)
+                                       Maximum timestep:            0.00 s in computational element:       36
+                                       .
+
+
+Maximum timestep whole simulation:            0.00
+*** Restart file written at       2880.0000 minutes after ITDATE
+ 
+*** Simulation finished *******************************************************
+ 
+Performance timers:
+|---------------------------------------------------------------------|
+|Timer name           |       wall clock      |       CPU time        |
+|                     |-----------------------|-----------------------|
+|                     |       sec     |  %    |       sec     |  %    |
+|---------------------------------------------------------------------|
+|Initialization       |         0.22  | 10.1  |         0.08  |  5.6  | 
+|Simulation           |         1.93  | 87.5  |         1.31  | 94.4  | 
+|Close and stop       |         0.05  |  2.4  |         0.00  |  0.0  | 
+|                     |------------- +|----- +|------------- +|----- +|
+|Total                |         2.21  |100.0  |         1.39  |100.0  | 
+|---------------------------------------------|-----------------------|
+|Momentum eq.         |         0.19  |  8.6  |         0.25  | 18.0  | 
+|Continuity eq.       |         0.26  | 11.9  |         0.28  | 20.2  | 
+|Transport eq.        |         0.00  |  0.0  |         0.00  |  0.0  | 
+|Turbulence           |         0.10  |  4.3  |         0.09  |  6.7  | 
+|3D Morphology        |         0.00  |  0.1  |         0.00  |  0.0  | 
+|---------------------------------------------|-----------------------|
+|Wait (dd   module)   |         0.00  |  0.0  |         0.00  |  0.0  | 
+|Wait (ext. modules)  |         0.00  |  0.0  |         0.00  |  0.0  | 
+|---------------------------------------------------------------------|
+| Performance = CPU time / (TimeSteps*MMAX*NMAX*KMAX*LMAX)            |
+|   TimeSteps   :        2880                                         |
+|   MMAX        :           3                                         |
+|   NMAX        :           3                                         |
+|   KMAX        :          10                                         |
+|   LMAX        :           2                                         |
+|   Performance : 0.26825E-05 [sec]                                   |
+|---------------------------------------------------------------------|
+|Explanation:                                                         |
+|                                                                     |
+|Initialization : Everything up to the first time step                |
+|Simulation     : All time steps                                      |
+|Close and stop : Everything after the last time step                 |
+|Total          : FLOW for this subdomain,                            |
+|                 excluding allocation/deallocation of global data    |
+|                                                                     |
+|Momentum eq.   : Part of Simulation ("UZD")                          |
+|Continuity eq. : Part of Simulation ("SUD")                          |
+|Transport eq.  : Part of Simulation ("DIFU")                         |
+|                 Only relevant when constituents are modelled.       |
+|Turbulence     : Part of Simulation ("TURCLO, TRATUR, TUR2D")        |
+|3D Morphology  : Part of Simulation ("EROSED, BOTT3D")               |
+|                 Only relevant when sediments are modelled.          |
+|Wait (dd)      : Part of Initialization, Simulation and Closing.     |
+|                 ("NXTSTP, NXTDRY")                                  |
+|                 Only relevant when DomainDecomposition is used.     |
+|                 Communication with and execution of the "mappers".  |
+|                 Mappers are separate threads, possibly in another   |
+|                 executable, possibly on another node. They copy     |
+|                 data from one subdomain to another.                 |
+|                 FLOWs must wait while the mappers are executing,    |
+|                 mappers must wait while the FLOWs are executing.    |
+|Wait (ext)     : Part of Initialization, Simulation and Closing.     |
+|                 ("SYNC, _TO_, _FROM_")                              |
+|                 Communication with and execution of all "external"  |
+|                 modules:                                            |
+|                 Online WAVES, Online WAQ, Online RTC, Fluid Mud.    |
+|                                                                     |
+|---------------------------------------------------------------------|
+ 
+
+********************************************************************************
+***
+*** FINISHED    Delft3D-FLOW
+***             runid      : col-hyd
+***             date, time : 2019-01-02, 17:37:44
+***
+********************************************************************************
+
+*** MESSAGE Removing file: TMP_col-hyd.grd 
