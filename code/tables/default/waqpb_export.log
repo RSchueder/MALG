@@ -1,0 +1,142 @@
+Using OLD format
+   11 lines read from GRPSUB.CSV
+11303 lines read from ITEMS.CSV
+  140 lines read from FORTRAN.CSV
+  688 lines read from PROCES.CSV
+    4 lines read from CONFIG.CSV
+      processing file CON_PRO.CSV ...
+ 1459 lines read from CON_SUB.CSV
+14797 lines read from INPUTS.CSV
+ INPUTS.CSV sorted
+ 3944 lines read from OUTPUTS.CSV
+ OUTPUTS.CSV sorted
+ 2067 lines read from OUTPFLX.CSV
+ OUTPFLX.CSV sorted
+ 2774 lines read from STOCHI.CSV
+ STOCHI.CSV sorted
+  274 lines read from VELOCS.CSV
+ VELOCS.CSV sorted
+    4 lines read from DISPS.CSV
+ DISPS.CSV sorted
+   55 lines read from TABLE5.CSV
+  443 lines read from old_items.csv
+Unknown item in TABLE5: Sobek      ITSTOP    
+Unknown item in TABLE5: Sobek      ITSTRT    
+Unknown item in TABLE5: Delft3D    ITSTOP    
+Unknown item in TABLE5: Delft3D    ITSTRT    
+Unknown item in TABLE5: WAQ        ITSTOP    
+Unknown item in TABLE5: WAQ        ITSTRT    
+Unknown item in TABLE5: ECO        ITSTOP    
+Unknown item in TABLE5: ECO        ITSTRT    
+Writing NEFIS process definition file
+ opening NEFIS DEF file:
+ proc_def.def                                                                   
+                                                                                
+                                                                                
+                   
+ opening NEFIS DAT file:
+ proc_def.def                                                                   
+                                                                                
+                                                                                
+                   
+  WRITING GROUP:TABLE_P1        
+  WRITING ELEMENT:NO_SGRP         
+  WRITING ELEMENT:SGRP_ID         
+  WRITING ELEMENT:SGRP_NAME       
+  WRITING GROUP:TABLE_P2        
+  WRITING ELEMENT:NO_ITEM         
+  WRITING ELEMENT:ITEM_ID         
+  WRITING ELEMENT:ITEM_NM         
+  WRITING ELEMENT:UNIT            
+  WRITING ELEMENT:DEFAULT         
+  WRITING ELEMENT:AGGREGA         
+  WRITING ELEMENT:DISAGGR         
+  WRITING ELEMENT:GROUPID         
+  WRITING ELEMENT:SEG_EXC         
+  WRITING ELEMENT:WK              
+  WRITING GROUP:TABLE_P3        
+  WRITING ELEMENT:NO_FORT         
+  WRITING ELEMENT:FORT_ID         
+  WRITING GROUP:TABLE_P4        
+  WRITING ELEMENT:NO_PROC         
+  WRITING ELEMENT:PROC_ID         
+  WRITING ELEMENT:PROC_NAME       
+  WRITING ELEMENT:PROC_FORT       
+  WRITING ELEMENT:PROC_TRCO       
+  WRITING GROUP:TABLE_P5        
+  WRITING ELEMENT:NO_CONF         
+  WRITING ELEMENT:CONF_ID         
+  WRITING ELEMENT:CONF_NAME       
+  WRITING GROUP:TABLE_R1        
+  WRITING ELEMENT:NO_CONF_R1      
+  WRITING ELEMENT:NO_PROC_R1      
+  WRITING ELEMENT:CON_PRO         
+  WRITING GROUP:TABLE_R2        
+  WRITING ELEMENT:NO_CNSB         
+  WRITING ELEMENT:R2_CID          
+  WRITING ELEMENT:R2_SID          
+  WRITING GROUP:TABLE_R3        
+  WRITING ELEMENT:NO_INPU         
+  WRITING ELEMENT:R3_PID          
+  WRITING ELEMENT:R3_IID          
+  WRITING ELEMENT:R3_NUMB         
+  WRITING ELEMENT:R3_DEFY         
+  WRITING ELEMENT:R3_DOC          
+  WRITING ELEMENT:R3_SEX          
+  WRITING GROUP:TABLE_R4        
+  WRITING ELEMENT:NO_OUTP         
+  WRITING ELEMENT:R4_PID          
+  WRITING ELEMENT:R4_IID          
+  WRITING ELEMENT:R4_NUMB         
+  WRITING ELEMENT:R4_DOC          
+  WRITING ELEMENT:R4_SEX          
+  WRITING GROUP:TABLE_R5        
+  WRITING ELEMENT:NO_OUTF         
+  WRITING ELEMENT:R5_PID          
+  WRITING ELEMENT:R5_IID          
+  WRITING ELEMENT:R5_NUMB         
+  WRITING ELEMENT:R5_DOC          
+  WRITING GROUP:TABLE_R6        
+  WRITING ELEMENT:NO_STOC         
+  WRITING ELEMENT:R6_FID          
+  WRITING ELEMENT:R6_SID          
+  WRITING ELEMENT:R6_SCAL         
+  WRITING GROUP:TABLE_R7        
+  WRITING ELEMENT:NO_VSTO         
+  WRITING ELEMENT:R7_VID          
+  WRITING ELEMENT:R7_SID          
+  WRITING ELEMENT:R7_SCAL         
+  WRITING GROUP:TABLE_R8        
+  WRITING ELEMENT:NO_DSTO         
+  WRITING ELEMENT:R8_DID          
+  WRITING ELEMENT:R8_SID          
+  WRITING ELEMENT:R8_SCAL         
+  WRITING GROUP:TABLE_R9        
+  WRITING ELEMENT:NO_MODV         
+  WRITING ELEMENT:R9_CID          
+  WRITING ELEMENT:R9_IID          
+  WRITING GROUP:TABLE_M1        
+  WRITING ELEMENT:n_old_items     
+  WRITING ELEMENT:old_name        
+  WRITING ELEMENT:new_name        
+  WRITING ELEMENT:old_default     
+  WRITING ELEMENT:configuration   
+  WRITING ELEMENT:serial          
+  WRITING ELEMENT:action_type     
+  WRITING GROUP:INDICES         
+  WRITING ELEMENT:R2_IINDEX       
+  WRITING ELEMENT:R3_IINDEX       
+  WRITING ELEMENT:R3_PINDEX       
+  WRITING ELEMENT:R4_IINDEX       
+  WRITING ELEMENT:R4_PINDEX       
+  WRITING GROUP:FILE_ID         
+  WRITING ELEMENT:FFORM           
+  WRITING ELEMENT:VFFORM          
+  WRITING ELEMENT:CONTEN          
+  WRITING ELEMENT:VERSIO          
+  WRITING ELEMENT:SERIAL          
+  WRITING ELEMENT:RUNDAT          
+  WRITING ELEMENT:SOURCE          
+  WRITING ELEMENT:REMARK          
+ closing NEFIS file
+ NEFIS file written successfully

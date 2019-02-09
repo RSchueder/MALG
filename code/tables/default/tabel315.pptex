@@ -1,0 +1,14 @@
+VxSedPON1  colsep sedimentation velocity PON1                        colsep (m/s)                colsep SedNPOC1   \\
+VxSedPOP1  colsep sedimentation velocity POP1                        colsep (m/s)                colsep SedNPOC1   \\
+VxSedPON2  colsep sedimentation velocity PON2                        colsep (m/s)                colsep SedNPOC2   \\
+VxSedPOP2  colsep sedimentation velocity POP2                        colsep (m/s)                colsep SedNPOC2   \\
+VxSedPON3  colsep sedimentation velocity PON3                        colsep (m/s)                colsep SedNPOC3   \\
+VxSedPOP3  colsep sedimentation velocity POP3                        colsep (m/s)                colsep SedNPOC3   \\
+VxSedPON4  colsep sedimentation velocity PON4                        colsep (m/s)                colsep SedNPOC4   \\
+VxSedPOP4  colsep sedimentation velocity POP4                        colsep (m/s)                colsep SedNPOC4   \\
+VxSedTIM   colsep sedimentation velocity IM3                         colsep (m/s)                colsep Sum_Sedim  \\
+VxSed0     colsep sedimentation velocity                             colsep (m/s)                colsep AdvTra     \\
+VxSedPOS1  colsep sedimentation velocity POS1                        colsep (m/s)                colsep SedNPOC1   \\
+VxSedPOS2  colsep sedimentation velocity POS2                        colsep (m/s)                colsep SedNPOC2   \\
+VxSedPOS3  colsep sedimentation velocity POS3                        colsep (m/s)                colsep SedNPOC3   \\
+VxSedPOS4  colsep sedimentation velocity POS4                        colsep (m/s)                colsep SedNPOC4   \\
