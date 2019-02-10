@@ -24,7 +24,8 @@
       SUBROUTINE MACROP     ( PMSA   , FL     , IPOINT , INCREM, NOSEG ,
      +                        NOFLUX , IEXPNT , IKNMRK , NOQ1  , NOQ2  ,
      +                        NOQ3   , NOQ4   )
-!
+! will be subroutine to take all fluxes from segments in the same column and
+! apply them to MALS -> MALC
 !*******************************************************************************
 !
       IMPLICIT NONE
