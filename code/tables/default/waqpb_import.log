@@ -1,0 +1,25 @@
+Updating existing tables
+Using OLD format
+Loading database......
+   11 lines read from GRPSUB.CSV
+11303 lines read from ITEMS.CSV
+  140 lines read from FORTRAN.CSV
+  688 lines read from PROCES.CSV
+    4 lines read from CONFIG.CSV
+      processing file CON_PRO.CSV ...
+ 1459 lines read from CON_SUB.CSV
+14797 lines read from INPUTS.CSV
+ INPUTS.CSV sorted
+ 3944 lines read from OUTPUTS.CSV
+ OUTPUTS.CSV sorted
+ 2067 lines read from OUTPFLX.CSV
+ OUTPFLX.CSV sorted
+ 2774 lines read from STOCHI.CSV
+ STOCHI.CSV sorted
+  274 lines read from VELOCS.CSV
+ VELOCS.CSV sorted
+    4 lines read from DISPS.CSV
+ DISPS.CSV sorted
+   55 lines read from TABLE5.CSV
+  443 lines read from old_items.csv
+ Decomposing proces.asc                                                                      ......

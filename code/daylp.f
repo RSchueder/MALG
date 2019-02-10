@@ -21,11 +21,11 @@
 !!  of Stichting Deltares remain the property of Stichting Deltares. All
 !!  rights reserved.
 
-      subroutine dayl   ( pmsa   , fl     , ipoint , increm , noseg  ,
+      subroutine daylp   ( pmsa   , fl     , ipoint , increm , noseg  ,
      &                    noflux , iexpnt , iknmrk , noq1   , noq2   ,
      &                    noq3   , noq4   )
 !>\file
-!>       Daylength calculation in hours
+!>    Daylength calculation in hours cur current and previous day
 
 !
 !     Description of the module :

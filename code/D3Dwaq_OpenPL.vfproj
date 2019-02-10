@@ -26,8 +26,12 @@
 		<Filter Name="Header Files" Filter="fi;fd"/>
 		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
 		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
+		<File RelativePath=".\daylp.f"/>
 		<File RelativePath=".\dhkmrk.f90"/>
 		<File RelativePath=".\errsys.f90"/>
-		<File RelativePath=".\macrop.f"/>
+		<File RelativePath=".\flmalc.f"/>
+		<File RelativePath=".\flmaln.f"/>
+		<File RelativePath=".\flmaln.f"/>
+		<File RelativePath=".\maldis.f"/>
 		<File RelativePath=".\vervlu.f90"/></Filter></Files>
 	<Globals/></VisualStudioProject>
