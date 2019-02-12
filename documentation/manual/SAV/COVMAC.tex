@@ -1,0 +1,91 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Vegetation coverage}
+\begin{flushright}
+\textsc{process: Coverage}
+\end{flushright}
+
+When a water body is covered by emerged macrophytes, the reaeration with oxygen and the light intensity in the water are decreased.
+The parameter $fcov$ for the coverage of the surface water is an existing model coefficient, that is already used in the computation of the reaeration flux.
+On the basis of the model for emerged macrophytes, the coverage can be computed.
+The coverage with emerged macrophytes is assumed to be 100 \% when the actual emerged biomass reaches the maximum emerged biomass.
+The parameter is used in the model equations for light intensity near the water surface.
+
+\subsection{Implementation}
+
+The growth of submerged vegetation can be limited by the underwater light climate. This depends on the dissolved
+and suspended matter in the water (both organic and inorganic)
+\cite{VanDuinEtAl2001} as well as on the shading due to emerged vegetation that covers the surface of
+the water. The growth of emerged vegetation is not limited by light in this model, although several authors
+report that selfshading can occur. In the light extinction function in \DWAQ, the coverage by emerged
+vegetation is included via the following function:
+%
+\begin{equation}
+Itop_1 = Is \times (1 - fcov)
+\end{equation}
+%
+where:
+
+\begin{tabular}{lll}
+Itop$_1$   & light intensity at the surface of the water layer (layer 1)   & [W$\cdot$m$^{-2}$] \\
+Is         & light intensity at the water surface                          & [W$\cdot$m$^{-2}$] \\
+fcov       & fraction of the water surface covered by vegetation           & [-]                \\
+\end{tabular}
+
+The light intensity of the subsequent layers is computed according by the process CalcRad, see also
+\Autoref{fig:lightUnderWater}:
+%
+\begin{align}
+Itop_n = &Ibot_{n-1} \\
+Ibot_n = &Itop_n \times e^{-ExvVl_n \times H_n}
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+ExtVL$_n$  & extinction of visible light in layer n          & [m$^{-1}$]         \\
+Itop       & light intensity at the top of a water layer     & [W$\cdot$m$^{-2}$] \\
+Ibot       & light intensity at the bottom of a water layer  & [W$\cdot$m$^{-2}$] \\
+H          & thickness of the water layer, $z_{n-1} - z_n$   & [m]                \\
+n          & index for water layers                          & [-]                \\
+\end{tabular}
+
+When there is only one water layer (compartment), the depth is equal to the water depth.
+
+In the case that sediment layers are actually modelled the light intensities at the top and the bottom of these
+layers are calculated in a slightly modified way:
+%
+\begin{align}
+Ibot_n = & a \times Itop_n \times e^{-ExvVl_n \times H_n}
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+$a$          & amplification factor by scattering by sediment particles & [-] \\
+\end{tabular}
+
+\begin{figure}
+\centering
+\includegraphics[height=10cm]{Chapters/Vegetation/light_under_water.png}
+\caption{The light intensity under water -- explanation of the variables in the light intensity functions.}
+\label{fig:lightUnderWater}
+\end{figure}
+
+The coverage $fcov$ is calculated via:
+%
+\begin{equation}
+fcov = \sum_i \frac{EM_i}{MaxEM_i}
+\end{equation}
+%
+where:
+
+\begin{tabular}{lll}
+CoverageEM$_i$    & Coverage with emerged vegetation                       & [-]                 \\
+CoverageSM$_i$    & Coverage with submerged vegetation                     & [-]                 \\
+fcov              & Total coverage on the basis of all emerged species     & [-]                 \\
+EM$_i$            & Actual biomass emerged vegetation                      & [g$\cdot$m$^{-2}$]  \\
+SM$_i$            & Actual biomass submerged vegetation                    & [g$\cdot$m$^{-2}$]  \\
+MaxEM$_i$         & Maximum biomass emerged vegetation                     & [g$\cdot$m$^{-2}$]  \\
+MaxSM$_i$         & Maximum biomass submerged vegetation                   & [g$\cdot$m$^{-2}$]  \\
+\end{tabular}

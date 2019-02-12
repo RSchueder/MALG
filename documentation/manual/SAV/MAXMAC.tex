@@ -1,0 +1,73 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Maximum biomass per macrophyte species}
+\begin{flushright}
+\textsc{process: MaxMacro}
+\end{flushright}
+
+With so-called Habitat Suitability Indices (HSI) the occurrence of a particular growth form at a certain
+location can be indicated. The HSI's should vary between 0 and 1, in which 0 implies that the habitat is
+not suitable for the species, and 1 implies that the habitat is very suitable (optimal) for the species.
+It can be computed in the dedicated software tool HABITAT for instance. When the HSI equals 1 for a particular
+growth form, this growth form can reach its potential biomass. When the HSI equals 1 for several growth forms,
+the maximum biomass for each growth form is computed by weighing the HSI by the total index for all species.
+
+\subsection{Implementation}
+The maximum biomass for each growth form and for each species is calculated as follows:
+
+\noindent If $\sum_{i} HSI_i > 0$:
+\begin{align}
+             MaxEM_i &=  \frac{HSI_i \times PotEM_i}{\sum_{i} HSI_i} \\
+   \nonumber MaxSM_i &=  \frac{HSI_i \times PotSM_i}{\sum_{i} HSI_i}
+\end{align}
+\noindent Else
+\begin{align}
+   \nonumber MaxEM_i &= 0 \\
+   \nonumber MaxSM_i &= 0
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+EM$_i$     & Emerged biomass of macrophyte species i    & [g C $\cdot$ m$^{-2}$]  \\
+HSI$_i$    & Habitat Suitability Index for species i    & [-]                     \\
+i          & Subscript for species                      & [-]                     \\
+MaxEM$_i$  & Maximum biomass for EM species i           & [g C $\cdot$ m$^{-2}$]  \\
+PotEM$_i$  & Potential biomass for EM species i         & [g C $\cdot$ m$^{-2}$]  \\
+SM$_i$     & Submerged biomass of macrophyte species i  & [g C $\cdot$ m$^{-2}$]  \\
+MaxSM$_i$  & Maximum biomass for SM species i           & [g C $\cdot$ m$^{-2}$]  \\
+PotSM$_i$  & Potential biomass for SM species i         & [g C $\cdot$ m$^{-2}$]  \\
+\end{tabular}
+
+\subsection{Hints for use}
+The competition between macrophyte species is not modelled as such. The species composition is fully determined
+by the user defined Habitat Suitability Indices.
+\Autoref{tab:exampleHSI} shows some examples.
+
+\begin{table}
+\caption{Computation of the maximum biomass of three macrophyte species as a function of the Habitat
+Suitability Index.}
+\label{tab:exampleHSI}
+\begin{tabular}{lllllll} \hline
+example 1       & parameter      & Name                      & units    & species 1  & species 2      & species 3 \\
+                & HSI            & Habitat Suitability Index & [-]      & 1          & 0              & 0         \\
+                & PotEM          & Potential biomass         & g/m$^2$  & 1000       & 1000           & 1000      \\
+                & MaxEM          & Maximum biomass           & g/m$^2$  & 1000       & 0              & 0         \\
+\hline
+example 2       & parameter      & Name                      & units    & species 1  & species 2      & species 3 \\
+                & HSI            & Habitat Suitability Index & [-]      & 1          & 1              & 1         \\
+                & PotEM          & Potential biomass         & g/m$^2$  & 1000       & 1000           & 1000      \\
+                & MaxEM          & Maximum biomass           & g/m$^2$  & 333        & 333            & 333       \\
+\hline
+example 3       & parameter      & Name                      & units    & species 1  & species 2      & species 3 \\
+                & HSI            & Habitat Suitability Index & [-]      & 0.2        & 0.3            & 0.5       \\
+                & PotEM          & Potential biomass         & g/m$^2$  & 1000       & 1000           & 1000      \\
+                & MaxEM          & Maximum biomass           & g/m$^2$  & 200        & 300            & 500       \\
+\hline
+example 4       & parameter      & Name                      & units    & species 1  & species 2      & species 3 \\
+                & HSI            & Habitat Suitability Index & [-]      & 0.2        & 0.3            & 0.5       \\
+                & PotEM          & Potential biomass         & g/m$^2$  & 500        & 1000           & 250       \\
+                & MaxEM          & Maximum biomass           & g/m$^2$  & 100        & 300            & 125       \\
+\hline
+\end{tabular}
+\end{table}

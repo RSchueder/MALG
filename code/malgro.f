@@ -21,7 +21,7 @@
 !!  of Stichting Deltares remain the property of Stichting Deltares. All
 !!  rights reserved.
 
-      SUBROUTINE MACROP     ( PMSA   , FL     , IPOINT , INCREM, NOSEG ,
+      SUBROUTINE MALGRO     ( PMSA   , FL     , IPOINT , INCREM, NOSEG ,
      +                        NOFLUX , IEXPNT , IKNMRK , NOQ1  , NOQ2  ,
      +                        NOQ3   , NOQ4   )
 ! will be subroutine to take all fluxes from segments in the same column and
@@ -152,35 +152,7 @@
       INTEGER IdGrowEM01  !    Pointer to the growth of EM01 species
       INTEGER IdGrowSM01  !    Pointer to the growth of SM01 species
       INTEGER IdDecayEM01 !    Pointer to the decay of EM01 species
-      INTEGER IdDecaySM01 !    Pointer to the decay of SM01 species
-      INTEGER IdCtEMtRH01 !    Pointer to the translocation of C from EM to RH01
-      INTEGER IdCtSMtRH01 !    Pointer to the translocation of C from SM to RH01
-      INTEGER IdCtRHtEM01 !    Pointer to the translocation of C from RH to EM01
-      INTEGER IdCtRHtSM01 !    Pointer to the translocation of C from RH to SM01
-      INTEGER IdNtEMtRH01 !    Pointer to the translocation of N from EM to RH01
-      INTEGER IdNtSMtRH01 !    Pointer to the translocation of N from SM to RH01
-      INTEGER IdNtRHtEM01 !    Pointer to the translocation of N from RH to EM01
-      INTEGER IdNtRHtSM01 !    Pointer to the translocation of N from RH to SM01
-      INTEGER IdPtEMtRH01 !    Pointer to the translocation of P from EM to RH01
-      INTEGER IdPtSMtRH01 !    Pointer to the translocation of P from SM to RH01
-      INTEGER IdPtRHtEM01 !    Pointer to the translocation of P from RH to EM01
-      INTEGER IdPtRHtSM01 !    Pointer to the translocation of P from RH to SM01
-      INTEGER IdNH4upEM01 !    Pointer to the NH4 uptake by EM01
-      INTEGER IdNO3upEM01 !    Pointer to the NO3 uptake by EM01
-      INTEGER IdPO4upEM01 !    Pointer to the PO4 uptake by EM01
-      INTEGER IdNupSM01   !    Pointer to the uptake flux nitrogen SM01
-      INTEGER IdPupSM01   !    Pointer to the uptake flux phosphorus SM01
-      INTEGER IdPrPOC1M01 !    Pointer to the POC1 production macrophyt 1
-      INTEGER IdPrPOC2M01 !    Pointer to the POC2 production macrophyt 1
-      INTEGER IdPrPOC3M01 !    Pointer to the POC3 production macrophyt 1
-      INTEGER IdPrPON1M01 !    Pointer to the PON1 production macrophyt 1
-      INTEGER IdPrPON2M01 !    Pointer to the PON2 production macrophyt 1
-      INTEGER IdPrPON3M01 !    Pointer to the PON3 production macrophyt 1
-      INTEGER IdPrPOP1M01 !    Pointer to the POP1 production macrophyt 1
-      INTEGER IdPrPOP2M01 !    Pointer to the POP2 production macrophyt 1
-      INTEGER IdPrPOP3M01 !    Pointer to the POP3 production macrophyt 1
-      INTEGER IdSM01OXY   !    Pointer to the oxygen production SM01
-      INTEGER IdSM01CO2   !    Pointer to the CO2 uptake SM01
+
 
       REAL    NRH01M2     !    N contents RH01 (gN/m2)
       REAL    PRH01M2     !    N contents RH01 (gN/m2)
@@ -205,35 +177,7 @@
       IdGrowEM01  = 1
       IdGrowSM01  = 2
       IdDecayEM01 = 3
-      IdDecaySM01 = 4
-      IdCtEMtRH01 = 5
-      IdCtSMtRH01 = 6
-      IdCtRHtEM01 = 7
-      IdCtRHtSM01 = 8
-      IdNtEMtRH01 = 9
-      IdNtSMtRH01 = 10
-      IdNtRHtEM01 = 11
-      IdNtRHtSM01 = 12
-      IdPtEMtRH01 = 13
-      IdPtSMtRH01 = 14
-      IdPtRHtEM01 = 15
-      IdPtRHtSM01 = 16
-      IdNH4upEM01 = 17
-      IdNO3upEM01 = 18
-      IdPO4upEM01 = 19
-      IdNupSM01   = 20
-      IdPupSM01   = 21
-      IdPrPOC1M01 = 22
-      IdPrPOC2M01 = 23
-      IdPrPOC3M01 = 24
-      IdPrPON1M01 = 25
-      IdPrPON2M01 = 26
-      IdPrPON3M01 = 27
-      IdPrPOP1M01 = 28
-      IdPrPOP2M01 = 29
-      IdPrPOP3M01 = 30
-      IdSM01OXY   = 31
-      IdSM01CO2   = 32
+
 
       !
       ! Loop over (essentially) the columns

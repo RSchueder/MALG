@@ -1,0 +1,61 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Uptake of carbon, nitrogen and phosphorus by macrophytes}
+\begin{flushright}
+\textsc{process: MACNUTSMii}
+\end{flushright}
+
+The phosphorus in the rhizomes is the first source for the growth of submerged vegetation. When the phosphorus
+in the rhizomes is exhausted, the vegetation will switch to the uptake of phosphorus via the roots.
+
+\DWAQ has several approaches to sediment modelling:
+\begin{itemize}
+\item
+S1S2 simple sediment model
+\item
+SWITCH: a detailed four-layered model for nutrients in the sediment.
+\item
+DELWAQ-G: flexible number of sediment layers.
+\end{itemize}
+
+Currently only the "simple" sediment model S1S2 is considered. The S1S2 approach does not consider
+dissolved nutrients in the pore water. The dissolved nutrients are released to the surface water immediately.
+However, in the model for microphytobenthos \citep{DevelopmentMicrophytobenthos} a process called MPBNUT
+can "intercept" the dissolved nutrients when they are released from decaying organic matter in the sediment.
+One of the coefficients in MPBNUT is the thickness of the sediment layer, where microphytobenthos is mixed almost
+homogeneously. The same implmentation is used for macrophytes.
+%
+\begin{align}
+Nuptakesediment = &GrowthEM_i \times NCratEM_i - NtranslocRHtoEM_i +
+                   GrowthSM_i \times NCratSM_i - NtranslocRHtoSM_i
+
+\nonumber Puptakesediment = &GrowthEM_i \times PCratEM_i - PtranslocRHtoEM_i +
+                             GrowthSM_i \times PCratSM_i - PtranslocRHtoSM_i
+\end{align}
+%
+where:
+\begin{tabular}{lll}
+Nuptakesediment & Uptake of nitrogen from the sediment   & [g N$\cdot$m$^{-2}$]
+Puptakesediment & Uptake of phosphorus from the sediment & [g P$\cdot$m$^{-2}$]
+\end{tabular}
+
+\subsubsection*{Hints for use}
+The sediment should contain enough nutrients to support the growth of macrophytes. In this model, the growth
+of macrophytes is NOT limited by a lack of nutrients in the sediment.
+
+The release of dissolved nutrients depends on the decay of organic matter, containing nitrogen and
+phosphorus. On the long run, the amount of organic matter in the sediment depends on the production
+of organic matter in the lake. It is therefore possible that the nutrient pool in the sediment is
+exhausted by the macrophytes.
+
+\subsubsection{Sediment module DELWAQ-G}
+\emph{TODO: Has this been done?}
+
+The sediment module DELWAQ-G is a layered sediment model that considers dissolved nutrients. The
+inorganic nutrients in the sediment are accessible for the roots of macrophytes. It is recommended
+to link the macrophyte module to DELWAQ-G, too. The advantage of a layered sediment model is, that
+nutrients will be stored in the deeper layers during the season. Roots affect the surrounding sediment,
+because they can transport oxygen to the sediment.
+
+DELWAQ-G and the other sediment modules will be considered next year.
+

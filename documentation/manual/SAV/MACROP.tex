@@ -1,0 +1,477 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Growth of submerged and emerged biomass of macrophytes}
+\begin{flushright}
+\textsc{process: MacroPhyti}
+\end{flushright}
+
+The start of the growing season depends on the water temperature and the light climate under water. The growth
+function differs for emerged and submerged vegetation. In both cases the potential growth is limited by several
+factors: light climate, nutrient availability, water temperature.  The growth of submerged macrophytes can stop
+at a certain maximum due to light limitation by means of self shading \citep{CaladoDuarte}.
+The growth of submerged macrophytes will stop when a maximum
+amount of biomass is reached. In order to get a quick start at the beginning of the growing season, the growth
+of submerged macrophytes depends on the sum of the submerged biomass at the beginning of the growing season and
+the biomass stored in the rhizomes.
+
+The growth rate is calculated via the following formula:
+
+% As currently limitation by CO2 is not implemented, we leave it out of the formula. In the code the
+% limitation factor is set to 1.
+
+If $EM_i < MaxEM_i$
+\begin{align}
+             GrowthEM_i =& (EM_i + RH_i) \times MaxGrowthEM_i \times LimLightEM_i \\
+\nonumber                & \times LimTEM_i \times LimAgeEM_i
+\end{align}
+Else
+\begin{align}
+\nonumber    GrowthEM_i = 0
+\end{align}
+%
+If $SM_i < MaxSM_i$
+\begin{align}
+\nonumber    GrowthSM_i =& (SM_i + RH_i) \times MaxGrowthSM_i \times LimLightSM_i \\
+\nonumber                & \times LimTSM_i \times LimAgeSM_i
+\end{align}
+Else
+\begin{align}
+\nonumber    GrowthSM_i = 0
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+SM$_i$           & Biomass of submerged (SM) species i        &[g C$\cdot$m$^{-2}$]          \\
+GrowthSM$_i$     & Growth of SM species i                     &[g C$\cdot$m$^{-2}\cdot$d$^{-1}$]  \\
+MaxGrowthSM$_i$  & Potential growth rate of SM species i      &[d$^{-1}$]                         \\
+LimLightSM$_i$   & Light limitation factor SM species i       &[-]                           \\
+LimTSM$_i$       & Temperature limitation factor SM species $i$ &[-]                           \\
+EM$_i$           & Biomass of emerged species (EM) $i$          &[g C$\cdot$m$^{-2}$]          \\
+GrowthEM$_i$     & Growth of EM species $i$                     &[g C$\cdot$m$^{-2}\cdot$d$^{-1}$]  \\
+MaxEM$_i$        & Maximum biomass of EM species $i$            &[g C$\cdot$m$^{-2}$]          \\
+MaxGrowthEM$_i$  & Potential growth rate of EM species i      &[d$^{-1}$]                         \\
+LimNutEM$_i$     & Nutrient limitation factor EM species i    &[-]                           \\
+LimTEM$_i$       & Temperature limitation factor EM species i &[-]                           \\
+\end{tabular}
+
+The limitation factors are explained in the following subsections.
+
+\subsection{Nutrient limitation}
+The growth of \emph{emerged non-rooted vegetation}, such as duck weeds (e.g.\ \emph{Lemna spp.}) can be limited by
+low dissolved nitrogen and phosphorus concentrations in surface water \citep{StowaKrooslagen}. The growth of
+rooted vegetation is not limited by nutrients, for the Dutch shallow eutrophic lakes situation (REF). For
+aquatic macroalgae such as \emph{Chara} and other species uptaking nutrients predominantly from the water column
+nutrients can become limiting, although in naturally eutrophic systems such as the Netherlands this is not
+very likely (REF). The limitation function computed on the basis of a half saturation concentration.
+%
+\begin{align}
+             LimNH4EM_i =& \frac{NH4}{NH4 + NH4hsEM_i} \\
+\nonumber    LimNO3EM_i =& \frac{NO3}{NO3 + NO3hsEM_i} \\
+\nonumber    LimPO4EM_i =& \frac{PO4}{PO4 + NO3hsEM_i} \\
+\nonumber    LimNutEM_i =& \min( LimPO4EM_i, \max( LimNH4EM_i, LimNO3EM_i) )
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+NH4               & Ammonia concentration                                           & [g N$\cdot$m$^{-3}$] \\
+NH4hsEM$_i$       & Half saturation concentration  NH4 for growth of EM species i   & [g N$\cdot$m$^{-3}$] \\
+LimNH4EM$_i$      & Ammonium limitation factor for EM species i                     & [-]                  \\
+NO3               & Nitrate concentration                                           & [g N$\cdot$m$^{-3}$] \\
+NO3hsEM$_i$       & Half saturation concentration NO3 for growth of EM species i    & [g N$\cdot$m$^{-3}$] \\
+LimNO3EM$_i$      & Nitrate limitation factor for EM species i                      & [-]                  \\
+PO4               & Ortho-phosphorus concentration                                  & [g P$\cdot$m$^{-3}$] \\
+PO4hsEM$_i$       & Half saturation concentration PO4 for growth EMi                & [g N$\cdot$m$^{-3}$] \\
+LimPO4EM$_i$      & Phosphorus limitation factor for EM species i                   & [-]                  \\
+LimNutEM$_i$      & Nutrient limitation factor for EM species i                     & [-]                  \\
+\end{tabular}
+
+\subsection{Uptake of carbon, nitrogen and phosphorus from rhizomes}
+The energy stored in the rhizome/root system in the form of glucose (carbon) is the first source for the
+growth of submerged vegetation in early spring. When the nitrogen in the rhizomes is exhausted, the vegetation
+will switch to the uptake of nutrients via the roots (see also Subsection \ref{UptakeSediment}). Uptake is
+regarded as negative translocation. The uptake of carbon and nutrients from the rhizome continues until a
+certain minimum biomass has been reached. The total uptake of nutrients from the sediment by all modelled macrophyte
+types is then used for calculating the nutrient content of the sediment.
+
+If $(GrowthEM_i + GrowthSM_i) \times dt < (RH_i - RHmin_i)$
+\begin{align}
+             CtranslocRHtoEM_i =& GrowthEM_i \\
+\nonumber    CtranslocRHtoSM_i =& GrowthSM_i
+\end{align}
+Else
+\begin{align}
+\nonumber    CtranslocRHtoEM_i =& 0 \\
+\nonumber    CtranslocRHtoSM_i =& 0
+\end{align}
+%
+If $(GrowthEM_i \times NCratEM_i + GrowthSM_i \times NCrateSM_i) \times dt < (NRH_i - NRHmin_i)$
+\begin{align}
+             NtranslocRHtoEM_i =& GrowthEM_i \times NCratEM_i \\
+\nonumber    NtranslocRHtoSM_i =& GrowthSM_i \times NCratSM_i
+\end{align}
+Else
+\begin{align}
+\nonumber    NtranslocRHtoEM_i =& 0 \\
+\nonumber    NtranslocRHtoSM_i =& 0
+\end{align}
+%
+If $(GrowthEM_i \times PCratEM_i + GrowthSM_i \times PCrateSM_i) \times dt < (PRH_i - PRHmin_i)$
+\begin{align}
+             PtranslocRHtoEM_i =& GrowthEM_i \times PCratEM_i \\
+\nonumber    PtranslocRHtoSM_i =& GrowthSM_i \times PCratSM_i
+\end{align}
+Else
+\begin{align}
+\nonumber    PtranslocRHtoEM_i =& 0 \\
+\nonumber    PtranslocRHtoSM_i =& 0
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+RH$_i$                  & Rhizome species $_i$                          & [g C$\cdot$m$^{-2}$]                \\
+RHmin$_i$               & Critical biomass of RH species i              & [g C$\cdot$m$^{-2}$]                \\
+dt                      & Timestep of computation                       & [d]                                 \\
+CtranslocRHtoEM$_i$     & Translocation of C from RH to EM species i    & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+CtranslocRHtoSM$_i$     & Translocation of C from RH to SM species i    & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+NRH$_i$                 & Nitrogen content of rhizome                   & [g N$\cdot$m$^{-2}$]                \\
+NRHmin$_i$              & Critical nitrogen content of RH species i     & [g N$\cdot$m$^{-2}$]                \\
+NtranslocRHtoEM$_i$     & Translocation of N from RH to EM species i    & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+NtranslocRHtoSM$_i$     & Translocation of N from RH to SM species i    & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+NCratEM$_i$             & Nitrogen-carbon ratio of EM species i         & [g N$\cdot$g C$^{-1}$]              \\
+NCratSM$_i$             & Nitrogen-carbon ratio of SM species i         & [g N$\cdot$g C$^{-1}$]              \\
+PRH$_i$                 & Phosphorus content of RH species i            & [g P$\cdot$m$^{-2}$]                \\
+PRHmin$_i$              & Critical phosphorus content of RH species i   & [g P$\cdot$m$^{-2}$]                \\
+PtranslocRHtoEM$_i$     & Translocation of P from RH to EM species i    & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+PtranslocRHtoSM$_i$     & Translocation of P from RH to SM species i    & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+PCratEM$_i$             & Phosphorus-carbon ratio of EM species i       & [g P$\cdot$g C$^{-1}$]              \\
+PCratSM$_i$             & Phosphorus-carbon ratio of SM species i       & [g P$\cdot$g C$^{-1}$]              \\
+\end{tabular}
+
+\subsection{Daylength limitation}
+The daylength function for macrophytes differs from the method that is applied for algae. The daylength
+limitation function for macrophytes becomes zero below a certain threshold value:
+
+If $DL < MinDLEM_i$
+%
+\begin{equation}
+    LimDLEM_i = 0
+\end{equation}
+%
+If $MinDLEM_i < DL < OptDLEM_i$
+%
+\begin{equation}
+    LimDLEM_i = \frac{DL - MinDLEM_i}{OptDLEM_i - MinDLEM_i}
+\end{equation}
+%
+If $DL > OptDLEM_i$
+%
+\begin{equation}
+    LimDLEM_i = 1
+\end{equation}
+
+The daylength limitation functions are the same for submerged macrophytes:
+
+If $DL < MinDLSM_i$
+%
+\begin{equation}
+    LimDLSM_i = 0
+\end{equation}
+%
+If $MinDLSM_i < DL < OptDLSM_i$
+%
+\begin{equation}
+    LimDLSM_i = \frac{DL - MinDLSM_i}{OptDLSM_i - MinDLSM_i}
+\end{equation}
+%
+If $DL > OptDLSM_i$
+%
+\begin{equation}
+    LimDLSM_i = 1
+\end{equation}
+%
+where:
+%
+\begin{tabular}{lll}
+DL                 & Daylength                                      & [d] \\
+LimDLEM$_i$        & Daylength limitation factor for EM species i   & [-] \\
+LimDLSM$_i$        & Daylength limitation factor for SM species i   & [-] \\
+OptDLEM$_i$        & Optimum daylength for EM species i             & [d] \\
+OptDLSM$_i$        & Optimum daylength for SM species i             & [d] \\
+MinDLEM$_i$        & Minimum daylength for EM species i             & [d] \\
+MinDLSM$_i$        & Minimum daylength for SM species i             & [d] \\
+\end{tabular}
+
+\subsection{Temperature limitation}
+Growth rates increase when the water temperature exceeds 20~$\degr$C and decreases when the water temperature drops
+below 20~$\degr$C. Below a certain critical temperature, the growth stops altogether.
+
+If $T > TcritEM_i$
+%
+\begin{equation}
+\nonumber    LimTEM_i = K_{T20}EM_i^{T-20}
+\end{equation}
+%
+Else
+\begin{equation}
+    LimTEM_i = 0
+\end{equation}
+
+If $T > TcritSM_i$
+%
+\begin{equation}
+\nonumber    LimTSM_i = K_{T20}SM_i^{T-20}
+\end{equation}
+%
+Else
+\begin{equation}
+    LimTSM_i = 0
+\end{equation}
+%
+where:
+
+\begin{tabular}{lll}
+T                 & Temperature                                     & [$\degr$C]      \\
+TcritEM$_i$       & Critical temperature for growth EM species i    & [$\degr$C]      \\
+LimTEM$_i$        & Temperature limitation factor for EM species i  & [-]               \\
+K$_{T20}$EM$_i$   & Temperature coefficient for EM species i        & [-]               \\
+TcritSM$_i$       & Critical temperature for growth SM species i    & [$\degr$C]      \\
+LimTEM$_i$        & Temperature limitation factor for SM species i  & [-]               \\
+KT$_{20}$SM$_i$   & Temperature coefficient for SM species i        & [-]               \\
+\end{tabular}
+
+\subsection{Decay of emerged and submerged biomass}
+The decay of emerged and submerged biomass occurs during the autumn and winter. The decay flux is temperature
+dependent. The decay is limited to the autumn and winter, the process is regulated by the daylength function
+that is also used for the growth process.
+%
+\begin{align}
+\nonumber DecayEM_i =& K1DecayEM_i \times EM_i \times (1-LimDLEM_i) \times K_{DecayT20}EM_i^{T-20} \\
+          DecaySM_i =& K1DecaySM_i \times SM_i \times (1-LimDLSM_i) \times K_{DecayT20}SM_i^{T-20}
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+DecayEM$_i$          & Decay of emerged part of species i (EM$_i$)    & [g C $\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K1decayEM$_i$        & First order autumn decay constant of EM$_i$    & [d$^{-1}$]         \\
+K$_{DecayT20}$EM$_i$ & Temperature constant for decay of EM$_i$       & [-]                \\
+DecaySM$_i$          & Decay of submerged part of species $i$ (SM$_i$)  & [d$^{-1}$]         \\
+K1decaySM$_i$        & First order autumn decay constant of SM$_i$    & [d$^{-1}$]         \\
+K$_{DecayT20}$SM$_i$ & Temperature constant for decay of SM$_i$       & [-]                \\
+\end{tabular}
+
+\subsubsection{Hints for use}
+\begin{itemize}
+\item
+A sudden collaps of the vegetation can be modelled by means of a high first order decay rate during a
+short period of time.
+\item
+Some plants remain present over wintertime. This can be modelled by means of a low decay rate.
+\end{itemize}
+
+\subsection{Growth of the rhizomes/root system}
+The below-ground biomass of macrophytes consists of organs for uptake of nutrients from the soil (root) and in
+some cases also storage organs (rhizomes). In plants where both primary roots and rhizomes are present the biomass
+of the rhizomes will be relatively large. Part of the decaying vegetation becomes dead organic matter and part
+of the carbon and nutrients is stored in the rhizomes. The rhizome/root system has its own nitrogen-carbon ratios
+and phosphorus-carbon ratios. The rhizome/root system grows predominantly during the late summer and autumn in
+case the macrophyte stores nutrients in the below-ground system (REF) and translocated these from above-ground
+systems to below-ground systems. All carbon related substances are produced in the above-ground system, and
+translocation from these to the rhizome/root system is modelled as follows.
+
+For emerged vegetation:
+%
+\begin{align}
+\nonumber CtranslocEMtoRH_i = &DecayEM_i \times FrEMtoRH_i                            \\
+\nonumber NtranslocEMtoRH_i = &CtranslocEMtoRH_i \times \min( NCRatRH_i, NCRatEM_i )   \\
+          PtranslocEMtoRH_i = &CtranslocEMtoRH_i \times \min( PCRatRH_i, PCRatEM_i )
+\end{align}
+%
+For submerged vegetation:
+%
+\begin{align}
+\nonumber CtranslocSMtoRH_i = &DecaySM_i \times FrSMtoRH_i                            \\
+\nonumber NtranslocSMtoRH_i = &CtranslocSMtoRH_i \times \min( NCRatRH_i, NCRatSM_i )   \\
+          PtranslocSMtoRH_i = &CtranslocSMtoRH_i \times \min( PCRatRH_i, PCRatSM_i )
+\end{align}
+%
+
+In the current model implementation, the rhizome/root system will not decay.
+Instead, the fraction of the decaying emerged and submerged biomass that is not translocated to the
+rhizome/root system (FrEMtoRH$_i$) is converted into organic matter (POC).
+
+In the above formulae:
+
+\begin{tabular}{lll}
+CtranslocEMtoRH$_i$      & Translocation of C from EM to RH species i      [g C$\cdot$m$^{-2}$d$^{-1}$]   \\
+FrEMtoRH$_i$             & Fraction of EM that becomes RH species i        [-)                            \\
+NtranslocEMtoRH$_i$      & Translocation of N from EMi to RHi              [g N$\cdot$m$^{-2}$d$^{-1}$]   \\
+NCratRH$_i$              & Nitrogen-carbon ratio of RH species i           [g N$\cdot$g C$^{-1}$]         \\
+NCratEM$_i$              & Nitrogen-carbon ratio of EM species i           [g N$\cdot$g C$^{-1}$]         \\
+PtranslocEM$_i$          & Translocation of P from EMi to rhizomes         [g P$\cdot$m$^{-2}$d$^{-1}$]   \\
+PCratRH$_i$              & Phosphorus-carbon ratio of EM species i         [g P$\cdot$g C$^{-1}$]         \\
+PCratEM$_i$              & Phosphorus-carbon ratio of EM species i         [g P$\cdot$g C$^{-1}$]         \\
+CtranslocSMtoRH$_i$      & Translocation of C from EM to RH species i      [g C$\cdot$m$^{-2}$d$^{-1}$]   \\
+FrSMtoRH$_i$             & Fraction of SM that becomes RH species i        [-]                            \\
+NtranslocSMtoRH$_i$      & Translocation of N from EMi to RHi              [g N$\cdot$m$^{-2}$d$^{-1}$]   \\
+NCratSM$_i$              & Nitrogen-carbon ratio of EM species i           [g N$\cdot$g C$^{-1}$]         \\
+PtranslocSM$_i$          & Translocation of P from EMi to rhizomes         [g P$\cdot$m$^{-2}$d$^{-1}$]   \\
+PCratSM$_i$              & Phosphorus-carbon ratio of EM species i         [g P$\cdot$g C$^{-1}$]         \\
+\end{tabular}
+
+\subsection{Formation of particulate organic carbon}
+\DWAQ has two different routines for the fractioning and decay of organic material.
+The first method is the DetC-OOC approach.
+The second approach is the POC-approach that is illustrated in \autoref{fig:pocApproach}.
+This is the approach taken in the macrophytes module.
+
+When the emerged and submerged vegetation starts to die in autumn, some of the carbon and nutrients are stored in the rhizomes while the remaining part becomes particulate organic matter, distributed over three different fractions (see \autoref{fig:pocApproach}).
+The ratio of the three particulate organic carbon fractions is a user-defined parameter.
+The following equation is a recalculation of the fractions in order to guarantee mass conservation in the computations:
+%
+\begin{equation}
+  FrPOCxEM_i = \frac{FrPOCxEM_i}{FrPOC1EM_i + FrPOC2EM_i + FrPOC3EM_i}
+\end{equation}
+%
+(x = 1, 2 or 3) and equivalently for the submerged biomass (SM$_i$).
+
+The production of particulate organic carbon is calculated by:
+%
+\begin{align}
+\nonumber   ProdPOCxEM_i = &(DecayEM_i - CtranslocEMtoRH_i) \times FrPOCxEM_i + \\
+                           &(DecaySM_i - CtranslocSMtoRH_i) \times FrPOCxSM_i
+\end{align}
+
+The production of particulate organic nitrogen amnd phosphorus is calculated by:
+%
+\begin{align}
+\nonumber  ProdPONxEM_i = &(DecayEM_i \times NCratEM_i - NtranslocEMtoRH_i) \times FrPOCxEM_i + \\
+\nonumber                 &(DecaySM_i \times NCratEM_i - NtranslocSMtoRH_i) \times FrPOCxSM_i   \\
+\nonumber  ProdPOPxEM_i = &(DecayEM_i \times PCratEM_i - PtranslocEMtoRH_i) \times FrPOCxEM_i + \\
+                          &(DecaySM_i \times PCratEM_i - PtranslocSMtoRH_i) \times FrPOCxSM_i
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+POC1           & Particulate organic carbon, fraction 1         & [g C$\cdot$m$^{-3}$]                \\
+POC2           & Particulate organic carbon, fraction 2         & [g C$\cdot$m$^{-3}$]                \\
+POC3           & Particulate organic carbon, fraction 3         & [g C$\cdot$m$^{-3}$]                \\
+FrPOC1EM$_i$   & Fraction of decaying EMi that becomes POC1     & [-]                                 \\
+FrPOC2EM$_i$i  & Fraction of decaying EMi that becomes POC2     & [-]                                 \\
+FrPOC3EM$_i$i  & Fraction of decaying EMi that becomes POC3     & [-]                                 \\
+FrPOC1SM$_i$i  & Fraction of decaying SMi that becomes POC1     & [-]                                 \\
+FrPOC2SM$_i$i  & Fraction of decaying SMi that becomes POC2     & [-]                                 \\
+FrPOC3SM$_i$i  & Fraction of decaying SMi that becomes POC3     & [-]                                 \\
+ProdPOC1$_i$i  & POC1 production from decaying vegetation i     & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+ProdPOC2$_i$i  & POC2 production from decaying vegetation i     & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+ProdPOC3$_i$i  & POC3 production from decaying vegetation i     & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+PON1           & Particulate organic nitrogen, fraction 1       & [g N$\cdot$m$^{-3}$]                \\
+PON2           & Particulate organic nitrogen, fraction 2       & [g N$\cdot$m$^{-3}$]                \\
+PON3           & Particulate organic nitrogen, fraction 3       & [g N$\cdot$m$^{-3}$]                \\
+ProdPON1$_i$i  & PON1 production from decaying vegetation i     & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+ProdPON2$_i$i  & PON2 production from decaying vegetation i     & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+ProdPON3$_i$i  & PON3 production from decaying vegetation i     & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+POP1           & Particulate organic phosphorus, fraction 1     & [g P$\cdot$m$^{-3}$]                \\
+POP2           & Particulate organic phosphorus, fraction 2     & [g P$\cdot$m$^{-3}$]                \\
+POP3           & Particulate organic phosphorus, fraction 3     & [g P$\cdot$m$^{-3}$]                \\
+ProdPOP1$_i$i  & POP1 production from decaying vegetation i     & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+ProdPOP2$_i$i  & POP2 production from decaying vegetation i     & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+ProdPOP3$_i$i  & POP3 production from decaying vegetation i     & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$]   \\
+\end{tabular}
+
+\subsection{Uptake of nitrogen and phosphorus from sediment}
+\label{UptakeSediment}
+The phosphorus in the rhizomes is the first source for the growth of submerged vegetation. When the
+phosphorus in the rhizomes is exhausted, the vegetation will switch to the uptake of phosphorus via
+the roots.
+%
+\begin{align}
+\nonumber Nuptakesediment = &GrowthEM_i \times NCratEM_i - NtranslocRHtoEM_i + \\
+\nonumber                   &GrowthSM_i \times NCratSM_i - NtranslocRHtoSM_i   \\
+\nonumber Puptakesediment = &GrowthEM_i \times PCratEM_i - PtranslocRHtoEM_i + \\
+                            &GrowthSM_i \times PCratSM_i - PtranslocRHtoSM_i
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+Nuptakesediment       & Uptake of nitrogen from the sediment           & [g N$\cdot$m$^{-2}$] \\
+Puptakesediment       & Uptake of phosphorus from the sediment         & [g P$\cdot$m$^{-2}$] \\
+\end{tabular}
+
+\subsubsection{Hints for use}
+The sediment should contain enough nutrients to support the growth of macrophytes. In this model,
+the growth of macrophytes is NOT limited by a lack of nutrients in the sediment.
+
+The release of dissolved nutrients depends on the decay of organic matter, containing nitrogen and
+phosphorus. On the long run, the amount of organic matter in the sediment depends on the production
+of organic matter in the lake. It is therefore possible that the nutrient pool in the sediment is
+exhausted by the macrophytes.
+
+\subsection{Uptake of nitrogen and phosphorus from water}
+\todo{revise this section - it is incomplete!}
+
+Nitrogen can only be taken up from the water by the emerged non-rooted vegetation. The growth of emerged
+vegetation is limited at low phosphorus and nitrogen concentrations. The following equations describe the
+uptake of nutrients on the basis of the growth rate and the nutrient-carbon ratios. At low nutrient
+concentrations the growth will be limited.
+
+If $NH4 < NH4critEM_i$
+%
+\begin{equation}
+\nonumber FrNH4EM_i = \frac{NH4}{NH4 + NO3}
+\end{equation}
+%
+Else
+%
+\begin{equation}
+          FrNH4EM_i = 1
+\end{equation}
+%
+\begin{align}
+\nonumber    NH4uptakeEM_i = &GRowthEM_i \times NCratEM_i \times FrNH4EM_i        \\
+\nonumber    NO3uptakeEM_i = &GRowthEM_i \times NCratEM_i \times (1 - FrNH4EM_i)  \\
+             PO4uptakeEM_i = &GRowthEM_i \times PCratEM_i
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+NH4critEM$_i$     & Critical NH4 concentration for uptake by EMi   & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+NH4uptakeEM$_i$   & Ammonium uptake by emerged vegetation          & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+NO3uptakeEM$_i$   & Nitrate uptake by emerged vegetation           & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+PO4uptakeEM$_i$   & Ortho-phosphorus uptake by emerged vegetation  & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+FrNH4EM$_i$       & Fraction of NH4 in total nitrogen uptake       & [-]                               \\
+\end{tabular}
+
+\subsection{Oxygen production and consumption}
+When macrophytes grow, they produce oxygen during the production of biomass. The stoichiometric ratio between
+O$_2$ production [g O$_2$] and CO$_2$ uptake g C] is 2.67 \citep{}.
+
+The assumption is made, that the oxygen produced by emerged macrophytes escapes to the atmosphere immediately.
+The oxygen that is produced by submerged macrophytes dissolves in the water:
+%
+\begin{equation}
+    O2productionSM_i = 2.67 \times CuptakeSM_i
+\end{equation}
+
+Since respiration is not modelled explicitly, the consumption of oxygen in water in the macrophyte model is
+limited to the oxygen that is involved in the decay of organic matter.
+
+\subsection{Net growth of emerged and submerged vegetation and rhizomes}
+All the growth and loss processes together give the net growth of the three parts of the vegetation:
+\begin{align}
+\nonumber    \frac{EM_i}{dt}  =& GrowthEM_i - GrazeEM_i - HarvestEM_i - DecayEM_i           \\
+\nonumber    \frac{SM_i}{dt}  =& GrowthSM_i - GrazeSM_i - HarvestSM_i - DecaySM_i           \\
+\nonumber    \frac{RH_i}{dt}  =& CtranslocEMtoRH_i + CtranslocSMtoRH_i - CtranslocRHtoEM_i  \\
+\nonumber                      & CtranslocRHtoSM_i - GrazeRH_i                              \\
+\nonumber    \frac{NRH_i}{dt} =& NtranslocEMtoRH_i + NtranslocSMtoRH_i - NtranslocRHtoEM_i  \\
+\nonumber                      & NtranslocRHtoSM_i - GrazeNRH_i                             \\
+\nonumber    \frac{PRH_i}{dt} =& PtranslocEMtoRH_i + PtranslocSMtoRH_i - PtranslocRHtoEM_i  \\
+                               & PtranslocRHtoSM_i - GrazePRH_i
+\end{align}
+In these formulae grazing and harvesting terms have been included (see Section \ref{GrazingHarvesting}).

@@ -1,0 +1,25 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Light limitation for macrophytes}
+\begin{flushright}
+\textsc{process: Rad\_SMii}
+\end{flushright}
+
+For the submerged parts of the macrophytes the light limitation is determined from the light intensity at
+the tip of the submerged parts.
+
+\subsection*{Implementation}
+The limitation ($frad$) is expressed as the ratio between the light intensity at the tip and the satuaration
+light intensity:
+%
+\begin{equation}
+   frad = \min( 1, \frac{Itop}{Isat_{ii}} )
+\end{equation}
+%
+where:
+
+\begin{tabular}{lll}
+$frad$        & light limitation factor                                                 & [-] \\
+$Itop$        & light intensity at the tip of the submerged part                        & [-] \\
+$Isat_{ii}$ & light intensity at which saturation occurs for submerged macrophyte ii  & [-] \\
+\end{tabular}

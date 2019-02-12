@@ -33,7 +33,7 @@ C
       REAL(4) MALP        ! I  MacroALgae Phosphorous storage                         (gN/gDM)
       REAL(4) NO3         ! I  Nitrate                                             (gN/m3)
       REAL(4) NH4         ! I  Ammonium                                            (gN/m3)
-      REAL(4) NH4         ! I  Phosphate                                            (gP/m3)
+      REAL(4) PO4         ! I  Phosphate                                            (gP/m3)
       REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                    (-)
       REAL(4) MALNmin     ! I  minimal N in nitrogen storage                       (gN/gDM)
       REAL(4) MALNmax     ! I  maximum N in nitrogen storage                       (gN/gDM)
@@ -116,20 +116,20 @@ C
 
                 ! check input
 
-                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
-                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
+!                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
+!                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
               
                 ! MALN in this segment is the same as all segments in this column
                 ! thus taking from the bottom is fine
                 
                 ! velocity limitation
                 LimVel = 1 - exp(-Vel/Vel65)
-                Nlim = (MALNmax - MALN)/(MALNmax - MALNmin)
-                Plim = (MALPmax - MALP)/(MALPmax - MALPmin)
-                Plim = 1.0
-                IF (Nlim .gt. 0.0 .AND. Plim .gt. 0.0) THEN
-                  LocUpN = LimVel * JNmax * (NO3/(Ks + NO3) * Nlim 
-                  LocUpP = LimVel * JPmax * (PO4/(Ks + PO4) * Plim 
+                LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
+                LimP = (MALPmax - MALP)/(MALPmax - MALPmin)
+                LimP = 1.0
+                IF (LimN .gt. 0.0 .AND. LimP .gt. 0.0) THEN
+                  LocUpN = LimVel * JNmax * (NO3/(Ksn + NO3)) * LimN 
+                  LocUpP = LimVel * JPmax * (PO4/(Ksp + PO4)) * LimP 
                 ELSE
                     LocUpN = 0.0
                     LocUpP = 0.0
@@ -137,7 +137,7 @@ C
                 
                 dUpMALNO3 = LocUpN
                 dUpMALNH4 = 0.0
-                dUpMALP = LocUpP
+                dUpMALPO4 = LocUpP
 
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4

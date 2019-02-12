@@ -31,64 +31,53 @@ C
 C     Type    Name         I/O Description                                        Unit
 C
       REAL(4) MALS        ! I  MacroALgae Structural biomass                       (gDM/m2)
-      REAL(4) MALN        ! I  MacroALgae Nitrogen storage                         (gN/gDM)
-      REAL(4) MALP        ! I  MacroALgae phosphorous storage                      (gP/gDM)
       REAL(4) MALC        ! I  MacroALgae carbon storage                           (gC/gDM)
       REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                    (-)
-      REAL(4) MALNmin     ! I  minimal N in nitrogen storage                       (gN/gDM)
-      REAL(4) MALPmin     ! I  minimal P in phosphorous storage                    (gP/gDM
-      REAL(4) Latitude    ! I  latitude of study area                              (degrees)
-      REAL(4) daylengthd  ! I  length of current day                               (d)
-      REAL(4) daylengthp  ! I  length of previous day                              (d)
-      REAL(4) daylengthm  ! I  max day length at this latitude                     (d)
-      REAL(4) Temp        ! I  ambient water temperature                           (oC)
-      REAL(4) m1          ! I  MALS growth rate parameter 1                        (-)
-      REAL(4) m2          ! I  MALS growth rate parameter 2                        (-)
-      REAL(4) MALS0       ! I  MALS growth rate parameter 3                        (gDM/m2)
-      REAL(4) a1          ! I  MALS photoperiod parameter 1                        (-)
-      REAL(4) a2          ! I  MALS photoperiod parameter 2                        (-)
-      REAL(4) mrtMAL      ! I  (epsilon) erosion/mortality parameter macroalgae    (m2/DM)
+      REAL(4) MALCmin     ! I  minimal C in carbon storage                         (gC/gDM
       REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                  (gC/gDM)
-      REAL(4) NCRatMALS   ! I  Nitrogen to carbon ratio in MALS                    (gN/gC)
-      REAL(4) PCRatMALS   ! I  Phosphorous to carbon ratio in MALS                 (gP/gC)
-      REAL(4) FrPOC1MALS  ! I  Fraction MALS that goes to POC1 in decay            (-)
-      REAL(4) FrPOC2MALS  ! I  Fraction MALS that goes to POC2 in decay            (-)
-      REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment        (m2)
-      REAL(4) DELT        ! I  timestep for processes                             (d)
-      REAL(4) Depth       ! I  depth of segment                                   (m)
-      REAL(4) MALSM2		! O	 macroalgae structural in segment	                (gDM/m2)
-      REAL(4) MALNM2		! O	 macroalgae N storage in segment	                    (gN/gDM)
-      REAL(4) MALPM2		! O	 macroalgae P storage in segment	                    (gP/gDM)
-      REAL(4) MALCM2		! O	 macroalgae C storage in segment                 	(gC/gDM)
-      REAL(4) MALSNC		! O	 ratio N:C in whole plant                            (-)
-      REAL(4) MALSPC		! O	 ratio P:C in whole plant                            (-)
-      REAL(4) LimBioMALS  ! O  density limitation function                        (-)
-      REAL(4) LimPhoMALS  ! O  photoperiod limitation function                    (-)
-      REAL(4) LimTemMALS  ! O  temperature limitation function                    (-)
-      REAL(4) LocGroS     ! O  local growth of MALS                               (gDM/m3/d)
-      REAL(4) LocGroN     ! O  local growth of MALN                               (gN/m3/d)
-      REAL(4) LocGroP     ! O  local growth of MALP                               (gP/m3/d)
-      REAL(4) LocGroC     ! O  local growth of MALC                               (gC/m3/d)
-      REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
-      REAL(4) dMortMALS   !    decay of MALS                                      (gDM/m3/d)
-      REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
-      REAL(4) dPTrMALS    !    translocation of P from MALP to MALS               (gP/m3/d)
-      REAL(4) dCTrMALS    !    translocation of C from MALC to MALS               (gC/m3/d)
-      REAL(4) dPrPOC1MAL  ! F  POC1 production MALS                               (gC/m3/d)
-      REAL(4) dPrPOC2MAL  ! F  POC2 production MALS                               (gC/m3/d)
-      REAL(4) dPrPON1MAL  ! F  PON1 production MALS                               (gN/m3/d)
-      REAL(4) dPrPON2MAL  ! F  PON2 production MALS                               (gN/m3/d)
-      REAL(4) dPrPOP1MAL  ! F  POP1 production MALS                               (gP/m3/d)
-      REAL(4) dPrPOP2MAL  ! F  POP2 production MALS                               (gP/m3/d)
-      REAL(4) dMALSOXY    ! F  oxygen production MALS                             (gO/m3/d)
+      REAL(4) AStruct     ! I  area per structural mass                            (m2/gC)
+      REAL(4) Temp	    ! I  Water temperature
+      REAL(4) R1          ! I 
+      REAL(4) R2          ! I 
+      REAL(4) Tr1         ! I	 reference temperature 1 for respiration
+      REAL(4) Tr2	        ! I  reference temperature 2 for respiration
+      REAL(4) P1          ! I  Reference photosynthetic rate at T1
+      REAL(4) P2          ! I  Reference photosynthetic rate at T2
+      REAL(4) Tp1         ! I  temperature for reference photosynthetic rate 1
+      REAL(4) Tp2         ! I  temperature for reference photosynthetic rate 1
+      REAL(4) Tap	        ! I  Arrhenius temperature for photosynthesis
+      REAL(4) Taph        ! I	 Arrhenius temperature for photosynthesis at high end
+      REAL(4) Tapl        ! I	 Arrhenius temperature for photosynthesis at low end
+      REAL(4) Tar         ! I	 Arrhenius temperature for respiration
+      REAL(4) Rad       	! I  irradiation at the segment upper boundary           (W/m2)
+      REAL(4) ExtVl       ! I  total extinction coefficient of visible light       (1/m)
+      REAL(4) alpha       ! I	 photosynthetic efficiency gC dm-2 d-1 (umol photons m-2 s-1)-1
+      REAL(4) Isat        ! I	 light intensity where photosynthesis is at max (umol photons m-2 s-1)	
+      REAL(4) exuMALC     ! I exudation parameter (gC/g)
+      REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
+      REAL(4) DELT        ! I  timestep for processes                              (d)
+      REAL(4) Depth       ! I  depth of segment                                    (m)
+      REAL(4) LocalDepth  ! I  depth of segment below surface                      (m)
+
+      REAL(4) LocUpC      ! O
       
-      INTEGER IdPrPOC1MAL !    Pointer to the POC1 production macrophyt 1
-      INTEGER IdPrPOC2MAL !    Pointer to the POC2 production macrophyt 1
-      INTEGER IdPrPON1MAL !    Pointer to the PON1 production macrophyt 1
-      INTEGER IdPrPON2MAL !    Pointer to the PON2 production macrophyt 1
-      INTEGER IdPrPOP1MAL !    Pointer to the POP1 production macrophyt 1
-      INTEGER IdPrPOP2MAL !    Pointer to the POP2 production macrophyt 1
-      INTEGER IdMALSOXY   !    Pointer to the oxygen production MALS
+      REAL(4) dMALTIC   ! F  HCO3 uptake MALN                                     (gC/m3/d)
+      REAL(4) dMALDOC   ! F  Exudate MALN                                     (gC/m3/d)
+      REAL(4) dMALOXY   ! F  OXY production                                     (gC/m3/d)
+
+      INTEGER IdUpMALTIC !   
+      INTEGER IdPrMALDOC !   
+      INTEGER IdPrMALOXY !   
+      
+      REAL(4) I       	
+      REAL(4) P	        
+      REAL(4) Ps      
+      REAL(4) Pmax
+      REAL(4) beta
+      real(4) R
+      real(4) E
+      REAL(4) Tpl
+      REAL(4) Tph
 
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -97,169 +86,119 @@ C*******************************************************************************
 C
       IPNT        = IPOINT
      
-      IdPrPOC1MAL = 1
-      IdPrPOC2MAL = 2
-      IdPrPON1MAL = 3
-      IdPrPON2MAL = 4
-      IdPrPOP1MAL = 5
-      IdPrPOP2MAL = 6
-      IdMALSOXY   = 7
+      IdUpMALTIC   = 1
+      IdPrMALDOC   = 2
+      IdPrMALOXY   = 2
       
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
-
          CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
-         
          ! if active
          IF (IKMRK1.EQ.1) THEN
-
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
 
             IF (FrBmMALS > 0.0) THEN
                 ! need to take from bottom segment
-                MALS       = PMSA( IPNT(1) )
-                MALN       = PMSA( IPNT(2) )
-                MALP       = PMSA( IPNT(3) )
-                MALC       = PMSA( IPNT(4) )
-                ! take from this segment
-                FrBmMALS   = PMSA( IPNT(5) )
-                MALNmin    = PMSA( IPNT(6) )
-                MALPmin    = PMSA( IPNT(7) )
-                Latitude   = PMSA( IPNT(8) )
-                daylengthd = PMSA( IPNT(9) )
-                daylenfthp = PMSA( IPNT(10) )
-                daylenfthm = PMSA( IPNT(11) )
-                Temp       = PMSA( IPNT(12) )
-                m1         = PMSA( IPNT(13) )
-                m2         = PMSA( IPNT(14) )
-                MALS0      = PMSA( IPNT(15) )
-                a1         = PMSA( IPNT(16) )
-                a2         = PMSA( IPNT(17) )
-                mrtMAL     = PMSA( IPNT(18) )
-                CDRatMALS  = PMSA( IPNT(19) )
-                NCRatMALS  = PMSA( IPNT(20) )
-                PCRatMALS  = PMSA( IPNT(21) )
-                FrPOC1MALS = PMSA( IPNT(22) )
-                FrPOC2MALS = PMSA( IPNT(23) )
-                Surf       = PMSA( IPNT(24) )
-                DELT       = PMSA( IPNT(25) )
-                Depth      = PMSA( IPNT(26) )
+                MALS      =  PMSA( IPNT(  1) )
+                MALC       = PMSA( IPNT(  2) )
+                ! take from current segment
+                FrBmMALS   = PMSA( IPNT(  3) )
+                MALCmin    = PMSA( IPNT(  4) )
+                CDRatMALS  = PMSA( IPNT(  5) ) 
+                AStruct    = PMSA( IPNT(  6) )
+                Temp	     = PMSA( IPNT(  7) )
+                R1         = PMSA( IPNT(  8) )
+                R2         = PMSA( IPNT(  9) )
+                Tr1        = PMSA( IPNT(  10) )
+                Tr2	     = PMSA( IPNT(  11) )
+                P1         = PMSA( IPNT(  12) )
+                P2         = PMSA( IPNT(  13) )
+                Tp1        = PMSA( IPNT(  14) )
+                Tp2        = PMSA( IPNT(  15) )
+                Tap	     = PMSA( IPNT(  16) )
+                Taph       = PMSA( IPNT(  17) )
+                Tapl       = PMSA( IPNT(  18) )
+                Tar        = PMSA( IPNT(  19) )
+                Rad      	 = PMSA( IPNT(  20) )
+                ExtVl	     = PMSA( IPNT(  21) )
+                alpha      = PMSA( IPNT(  22) )
+                Isat       = PMSA( IPNT(  23) )
+                exuMALC    = PMSA( IPNT(  24) )
+                Surf       = PMSA( IPNT(  25) )
+                DELT       = PMSA( IPNT(  26) )
+                Depth      = PMSA( IPNT(  27) )
+                LocalDepth = PMSA( IPNT(  28) )
               
                 ! check input
 
-                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
-                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
+!                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
+!               IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
               
                 ! find amount of mass in this segment 
                
                 MALS = MALS * FrBmMALS
                
-                ! density limitation
-               
-                LimDen = min(m1 * exp(-(MALS/MALS0)**2)) + m2, 1.0)
-               
-                ! temperature limitation
-
-                IF ( Temp .gt. -1.8 .AND. Temp .lt. 10.0 ) THEN
-                    LimTemp = 0.08 * Temp + 0.2
-                ELSE IF ( Temp .ge. 10.0 .AND. Temp .le. 15.0 )
-                    LimTemp   = 1.0
-                ELSE IF ( Temp .gt. 15.0 .AND. Temp .le. 19.0 )
-                    LimTemp = 19.0/4.0 - Temp/4.0
-                ELSE IF ( Temp .gt. 19.0)
-                    LimTemp= 0.0
-                ENDIF
-               
-                ! photoperiod limitation
+                ! gross photosynthesis
                 
-                dL = (daylengthd - daylengthp) /daylengthm           
-                LimPho = a1 * (1 + sin(dL * ABS(dL)**0.5)) + a2
-               
-                ! decay
+                ! integrate the radiation decay function between z2 (local depth, botom)
+                ! and m1 (Localdepth - segment depth, top)
+                ! Radiation at top is Rad
+                I = -Rad/(ExtVl * Depth) * (exp(-ExtVl * LocalDepth) - 
+     &           exp(-ExtVl * (LocalDepth - Depth)))
+                ! need to convert to correct units
+                ! 1 W/m2 = 4.57 umol photons m-2 s-1
+                ! assumption is data supplied consistent with saturation value
+                I = I * 4.57
                 
-                coeff = exp(mrtMAL*MALS)
-                mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
-                dDecayMALS = MALS * mrt/Depth
-               
-                ! production organic material
+                Pmax = P1 * exp((Tap/Tp1) - (Tap/Temp))/
+     &           (1 + exp((Tapl/Temp) - (Tapl/Tpl)) + 
+     &           exp((Taph/Tph) - (Taph/Temp)))
                 
-                dPrPOC1MAL = (dDecayMALS*CDRatMALS)*FrPOC1MALS 
-                dPrPOC2MAL = (dDecayMALS*CDRatMALS)*FrPOC2MALS 
-
-                dPrPON1MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC1MALS
-                dPrPON2MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC2MALS 
-
-                dPrPOP1MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC1MALS
-                dPrPOP2MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC2MALS
-
-                ! growth
-                ! mortality products are produced regardless 
+                ! solve for beta using newton's method
+                beta = 1e-9
+!                DO 1200 iter = 1, 10
+!                  Pmax = (alpha*Isat/ln(1+alpha/beta) * 
+!     &            (alpha/(alpha+beta)) * 
+!     &             (beta/(alpha+beta))**(beta/alpha)
+                  
+                Ps = alpha*Isat/LOG(1+alpha/beta)               
+                P = Ps * (1-exp(alpha*I/Ps))*exp(beta*I/Ps)
                 
-                Clim = 1-MALCmin/MALC
-                Nlim = 1-MALNmin/MALN
-                Plim = 1-MALPmin/MALP
-                NutLim = min(Nlim,Clim,Plim)
-                mu = LimDen * LimPho * LimTemp * NutLim
-                IF (mu .gt. 0.0) THEN
-                    dGrowMALS = MALS * (mu)/Depth
-                ELSE
-                    dGrowMALS = 0.0
+                ! respiration
+                
+                R = R1 * exp(Tar/Tr1 - Tar/Temp)
                
-                ! uptake from storage
-                IF (dGrowMALS .gt. 0.0) THEN
-                    TotN = MALS*(MALN+CDRatMALS*CNRatMALS)
-                    dNtrMALS=mu*TotN
-                    TotP = MALS*(MALP+CDRatMALS*CPRatMALS)
-                    dPtrMALS=mu*TotP
-                    TotC = MALS*(MALC+CDRatMALS)
-                    dCtrMALS=mu*TotP       
-                ELSE
-                    dNtrMALS=0.0
-                    dPtrMALS=0.0
-                    dCtrMALS=0.0
-                ENDIF
- 
-                LocGroS = dGrowMALS - dDecayMALS
-                LocGroN = dNtrMALS
-                LocGroP = dPtrMALS
-                LocGroC = dCtrMALS
+                ! exudation
+                E = 1-exp(exuMALC*(MALCmin - MALC))
+                
+                
+                dMALTIC = P - R 
+
+                ! exudate is produced as DOC
+                dMALDOC = P*E
+                
+                ! uptake
+                LocUpC = P * (1-E) - R
+                ! because TIC gets converted to DOC in exudate
                 
                 ! oxygen 
-                ! mineralization of stored carbon produces oxygen
+                ! photosynthesis produces oxygen, respiration consumes
                 
-                dMALSOXY   = dCtrMALS * 2.67
+                dMALOXY   = 2.67 * (P - R)
 
-                FL ( IdPrPOC1MAL ) = dPrPOC1MAL 
-                FL ( IdPrPOC2MAL ) = dPrPOC2MAL 
-                FL ( IdPrPON1MAL ) = dPrPON1MAL 
-                FL ( IdPrPON2MAL ) = dPrPON2MAL 
-                FL ( IdPrPOP1MAL ) = dPrPOP1MAL 
-                FL ( IdPrPOP2MAL ) = dPrPOP1MAL 
-                FL ( IdMALSOXY   ) = dMALSOXY
-               
-                PMSA( IPNT( 27)   ) =  MALSM2		
-                PMSA( IPNT( 28)   ) =  MALNM2		
-                PMSA( IPNT( 29)   ) =  MALPM2		
-                PMSA( IPNT( 30)   ) =  MALCM2		
-                PMSA( IPNT( 31)   ) =  MALSNC		
-                PMSA( IPNT( 32)   ) =  MALSPC		
-                PMSA( IPNT( 33)   ) =  LimBioMALS  
-                PMSA( IPNT( 34)   ) =  LimPhoMALS  
-                PMSA( IPNT( 35)   ) =  LimTemMALS 
-                PMSA( IPNT( 36)   ) =  LocGroS     
-                PMSA( IPNT( 37)   ) =  LocGroN    
-                PMSA( IPNT( 38)   ) =  LocGroP    
-                PMSA( IPNT( 39)   ) =  LocGroC     
+                FL ( IdUpMALTIC   ) = dMALTIC
+                FL ( IdPrMALDOC   ) = dMALDOC
+                FL ( IdPrMALOXY   ) = dMALOXY
+
+
+                PMSA( IPNT( 29)   ) =  LocUpC
+                
             ENDIF
-         ENDIF
-
-         IdPrPOC1MAL = IdPrPOC1MAL + NOFLUX
-         IdPrPOC2MAL = IdPrPOC2MAL + NOFLUX
-         IdPrPON1MAL = IdPrPON1MAL + NOFLUX
-         IdPrPON2MAL = IdPrPON2MAL + NOFLUX
-         IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
-         IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
-         IdMALSOXY   = IdMALSOXY + NOFLUX
+            ENDIF
+            
+         IdUpMALTIC   = IdUpMALTIC + NOFLUX
+         IdPrMALDOC   = IdPrMALDOC + NOFLUX
+         IdPrMALOXY   = IdPrMALOXY + NOFLUX
 
          IPNT        = IPNT        + INCREM
 

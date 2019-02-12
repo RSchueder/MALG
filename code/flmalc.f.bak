@@ -36,18 +36,17 @@ C
       REAL(4) MALC        ! I  MacroALgae carbon storage                           (gC/gDM)
       REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                    (-)
       REAL(4) MALNmin     ! I  minimal N in nitrogen storage                       (gN/gDM)
-      REAL(4) MALPmin     ! I  minimal P in phosphorous storage                    (gP/gDM)
-      REAL(4) MALCmin     ! I  minimal C in carbon storage                         (gC/gDM)
+      REAL(4) MALPmin     ! I  minimal P in phosphorous storage                    (gP/gDM
       REAL(4) Latitude    ! I  latitude of study area                              (degrees)
       REAL(4) daylengthd  ! I  length of current day                               (d)
       REAL(4) daylengthp  ! I  length of previous day                              (d)
       REAL(4) daylengthm  ! I  max day length at this latitude                     (d)
       REAL(4) Temp        ! I  ambient water temperature                           (oC)
-      REAL(4) m_1          ! I  MALS growth rate parameter 1                        (-)
-      REAL(4) m_2          ! I  MALS growth rate parameter 2                        (-)
+      REAL(4) m1          ! I  MALS growth rate parameter 1                        (-)
+      REAL(4) m2          ! I  MALS growth rate parameter 2                        (-)
       REAL(4) MALS0       ! I  MALS growth rate parameter 3                        (gDM/m2)
-      REAL(4) a_1          ! I  MALS photoperiod parameter 1                        (-)
-      REAL(4) a_2          ! I  MALS photoperiod parameter 2                        (-)
+      REAL(4) a1          ! I  MALS photoperiod parameter 1                        (-)
+      REAL(4) a2          ! I  MALS photoperiod parameter 2                        (-)
       REAL(4) mrtMAL      ! I  (epsilon) erosion/mortality parameter macroalgae    (m2/DM)
       REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                  (gC/gDM)
       REAL(4) NCRatMALS   ! I  Nitrogen to carbon ratio in MALS                    (gN/gC)
@@ -70,6 +69,11 @@ C
       REAL(4) LocGroN     ! O  local growth of MALN                               (gN/m3/d)
       REAL(4) LocGroP     ! O  local growth of MALP                               (gP/m3/d)
       REAL(4) LocGroC     ! O  local growth of MALC                               (gC/m3/d)
+      REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
+      REAL(4) dMortMALS   !    decay of MALS                                      (gDM/m3/d)
+      REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
+      REAL(4) dPTrMALS    !    translocation of P from MALP to MALS               (gP/m3/d)
+      REAL(4) dCTrMALS    !    translocation of C from MALC to MALS               (gC/m3/d)
       REAL(4) dPrPOC1MAL  ! F  POC1 production MALS                               (gC/m3/d)
       REAL(4) dPrPOC2MAL  ! F  POC2 production MALS                               (gC/m3/d)
       REAL(4) dPrPON1MAL  ! F  PON1 production MALS                               (gN/m3/d)
@@ -84,30 +88,10 @@ C
       INTEGER IdPrPON2MAL !    Pointer to the PON2 production macrophyt 1
       INTEGER IdPrPOP1MAL !    Pointer to the POP1 production macrophyt 1
       INTEGER IdPrPOP2MAL !    Pointer to the POP2 production macrophyt 1
-      INTEGER IdCnMALSOXY   !    Pointer to the oxygen production MALS
+      INTEGER IdMALSOXY   !    Pointer to the oxygen production MALS
 
       INTEGER IKMRK1
       INTEGER IKMRK2
-      
-      REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
-      REAL(4) dDecayMALS   !    decay of MALS                                      (gDM/m3/d)
-      REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
-      REAL(4) dPTrMALS    !    translocation of P from MALP to MALS               (gP/m3/d)
-      REAL(4) dCTrMALS    !    translocation of C from MALC to MALS               (gC/m3/d)
-      REAL(4) DL          !    delta day length
-      REAL(4) LimDen
-      REAL(4) LimTemp
-      REAL(4) LimPho
-      REAL(4) coeff
-      REAL(4) mu
-      real(4) mrt
-      REAL(4) Clim
-      REAL(4) Nlim
-      REAL(4) Plim
-      REAL(4) NutLim
-      REAL(4) TotN
-      REAL(4) TotP
-      REAL(4) TotC
 C
 C*******************************************************************************
 C
@@ -143,14 +127,14 @@ C
                 MALPmin    = PMSA( IPNT(7) )
                 Latitude   = PMSA( IPNT(8) )
                 daylengthd = PMSA( IPNT(9) )
-                daylengthp = PMSA( IPNT(10) )
-                daylengthm = PMSA( IPNT(11) )
+                daylenfthp = PMSA( IPNT(10) )
+                daylenfthm = PMSA( IPNT(11) )
                 Temp       = PMSA( IPNT(12) )
-                m_1        = PMSA( IPNT(13) )
-                m_2        = PMSA( IPNT(14) )
+                m1         = PMSA( IPNT(13) )
+                m2         = PMSA( IPNT(14) )
                 MALS0      = PMSA( IPNT(15) )
-                a_1        = PMSA( IPNT(16) )
-                a_2        = PMSA( IPNT(17) )
+                a1         = PMSA( IPNT(16) )
+                a2         = PMSA( IPNT(17) )
                 mrtMAL     = PMSA( IPNT(18) )
                 CDRatMALS  = PMSA( IPNT(19) )
                 NCRatMALS  = PMSA( IPNT(20) )
@@ -163,8 +147,8 @@ C
               
                 ! check input
 
-!                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
-!                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
+                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
+                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
               
                 ! find amount of mass in this segment 
                
@@ -172,24 +156,24 @@ C
                
                 ! density limitation
                
-                LimDen = MIN((m_1 * exp(-(MALS/MALS0)**2)) + m_2, 1.0)
+                LimDen = min(m1 * exp(-(MALS/MALS0)**2)) + m2, 1.0)
                
                 ! temperature limitation
 
                 IF ( Temp .gt. -1.8 .AND. Temp .lt. 10.0 ) THEN
                     LimTemp = 0.08 * Temp + 0.2
-                ELSE IF ( Temp .ge. 10.0 .AND. Temp .le. 15.0 ) THEN
+                ELSE IF ( Temp .ge. 10.0 .AND. Temp .le. 15.0 )
                     LimTemp   = 1.0
-                ELSE IF ( Temp .gt. 15.0 .AND. Temp .le. 19.0 ) THEN
+                ELSE IF ( Temp .gt. 15.0 .AND. Temp .le. 19.0 )
                     LimTemp = 19.0/4.0 - Temp/4.0
-                ELSE IF ( Temp .gt. 19.0) THEN
+                ELSE IF ( Temp .gt. 19.0)
                     LimTemp= 0.0
                 ENDIF
                
                 ! photoperiod limitation
                 
-                DL = (daylengthd - daylengthp) /daylengthm           
-                LimPho = a_1 * (1 + sin(dL * ABS(dL)**0.5)) + a_2
+                dL = (daylengthd - daylengthp) /daylengthm           
+                LimPho = a1 * (1 + sin(dL * ABS(dL)**0.5)) + a2
                
                 ! decay
                 
@@ -214,20 +198,18 @@ C
                 Clim = 1-MALCmin/MALC
                 Nlim = 1-MALNmin/MALN
                 Plim = 1-MALPmin/MALP
-                NutLim = MIN(Nlim,Clim,Plim)
+                NutLim = min(Nlim,Clim,Plim)
                 mu = LimDen * LimPho * LimTemp * NutLim
                 IF (mu .gt. 0.0) THEN
                     dGrowMALS = MALS * (mu)/Depth
                 ELSE
                     dGrowMALS = 0.0
-                ENDIF
-                
                
                 ! uptake from storage
                 IF (dGrowMALS .gt. 0.0) THEN
-                    TotN = MALS*(MALN+CDRatMALS*NCRatMALS)
+                    TotN = MALS*(MALN+CDRatMALS*CNRatMALS)
                     dNtrMALS=mu*TotN
-                    TotP = MALS*(MALP+CDRatMALS*PCRatMALS)
+                    TotP = MALS*(MALP+CDRatMALS*CPRatMALS)
                     dPtrMALS=mu*TotP
                     TotC = MALS*(MALC+CDRatMALS)
                     dCtrMALS=mu*TotP       
@@ -243,7 +225,7 @@ C
                 LocGroC = dCtrMALS
                 
                 ! oxygen 
-                ! mineralization of stored carbon consumes
+                ! mineralization of stored carbon produces oxygen
                 
                 dMALSOXY   = dCtrMALS * 2.67
 
@@ -253,7 +235,7 @@ C
                 FL ( IdPrPON2MAL ) = dPrPON2MAL 
                 FL ( IdPrPOP1MAL ) = dPrPOP1MAL 
                 FL ( IdPrPOP2MAL ) = dPrPOP1MAL 
-                FL ( IdCnMALSOXY   ) = dMALSOXY
+                FL ( IdMALSOXY   ) = dMALSOXY
                
                 PMSA( IPNT( 27)   ) =  MALSM2		
                 PMSA( IPNT( 28)   ) =  MALNM2		
@@ -277,7 +259,7 @@ C
          IdPrPON2MAL = IdPrPON2MAL + NOFLUX
          IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
          IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
-         IdCnMALSOXY = IdCnMALSOXY + NOFLUX
+         IdMALSOXY   = IdMALSOXY + NOFLUX
 
          IPNT        = IPNT        + INCREM
 

@@ -1,0 +1,203 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Vertical distribution of submerged macrophytes}
+\begin{flushright}
+\textsc{process: MACDISii}
+\end{flushright}
+
+The actual location of the submerged biomass in the water column is species specific. Some species are evenly
+distributed over the water column, where others tend to concentrate in the top layers.
+
+The macrophytes biomass is administratively located in the bottom water layer. If the model is layered
+(1Dv, 2Dv, 3D), the biomass is distributed over the vertical layers to
+provide input for the modules that require such a distribution, in particular the vertical distribution of light
+extinction.
+
+\subsection{Implementation}
+
+This process is implemented for different types of macrophytes, indicated by "ii" throughout this document.
+
+The vertical distribution of the macrophyte biomass is calculated from the following input items
+(for submerged macrophyte species ii):
+
+\begin{tabular}{lll}
+\textbf{Id in process} & \textbf{Symbol used} & \textbf{Description}                                             \\ [1ex]
+Depth                & $D$                & depth of segment, layer thickness [m]                          \\
+TotalDepth           & $T$                & total depth water column [m]                                   \\
+LocalDepth           & $L$                & depth from water surface to bottom of segment [m]              \\
+SMii                 & $M_T$              & submerged macrophyte biomass in water column [gC/m$^2$]        \\
+SwDisSMii            &                    & type of macrophyte shape function (1: linear, 2: exponential)  \\
+HmaxSMii             & $H_{max}$          & maximum height of macrohyte [m]                                \\
+FfacSMii             & $F$                & parameter F in shape function [-]                              \\
+\end{tabular}
+
+\Autoref{fig:verticalDistribution} provides an overview of the geometrical quantities used in the calculation. Note that the
+vertical co-ordinate $z$ is defined in a downward direction, with a value of zero at the water surface.
+
+\begin{figure}
+\centering
+\includegraphics[height=8cm]{Chapters/Vegetation/vertical_distribution.png}
+\caption{Definition of the quantities used for determining the linear vertical distribution.}
+\label{fig:verticalDistribution}
+\end{figure}
+
+The vertical distribution of the submerged macrophytes \emph{m(z)} (in g/m$^3$) is represented either by a linear or
+by an exponential function.
+
+\subsubsection{Linear distribution (SwDisSMii=1)}
+The shape function is defined by means of one dimensionless parameter $F$ with a value ranging from 0 to 2.
+For $F = 0$, the biomass approaches zero at the top of the plant,
+for $F = 1$ the biomass is distributed homogeneously and for $F = 2$, the biomass approaches zero near
+the bed. Values between 0 and 1 result in a decreasing biomass from bottom to top. Values between 1 and 2 result
+in an increasing biomass from bottom to top.
+
+The biomass distribution $m(z)$ can be expressed by means of two constants $A$ and $B$, which are
+formulated in terms of the total biomass $M_T$ and the shape parameter $F$:
+
+\begin{align}
+           m(z) &=  Az + B                                  \\
+\nonumber  A    &=  \frac{M_T}{H_{max}} \frac{2-2F}{T- z_m} \\
+\nonumber  B    &=  \frac{M_T}{H_{max}} \frac{F(z_m + T) - 2z_m}{T- z_m}
+\end{align}
+
+It is easy to derive that for $F = 1$, $A = 0$ and $B = M_T/H_{max}$.
+
+Consequently, the algorithm to calculate the biomass in a layer from $z = Z_1$ to $z = Z_2$ proceeds as follows:
+
+If $z_m > z_2$ (layer above top of plant): $M_{12} = 0$
+
+If $z_m < z_1$ (layer entirely below top of plant): $M_{12} = \int_{Z_1}^{Z_2} m(z)dz$
+
+Else (top of plant inside layer): $M_{12} = \int_{Z_m}^{Z_2} m(z)dz$
+
+By integrating the mass distribution function we can derive the biomass in the layer, e.g.:
+%
+\begin{equation}
+    \int_{Z_1}^{Z_2} m(z)dz = \frac{A}{2}(Z_2^2 - Z_1^2) + B(Z_2 - Z_1)
+\end{equation}
+
+The module calculates the following output items for submerged macrophyte species ii:
+
+\begin{tabular}{ll}
+FrBmSMii              &  Fraction of the macrophyte biomass in present layer [-]  \\
+BmLaySMii             &  Macrophyte biomass density in present layer [gC/m$^3$]      \\
+\end{tabular}
+
+The fraction of the biomass in a layer from $z = Z_1$ to $z = Z_2$ is calculated as $M_{12} / M_T$.
+
+
+\subsubsection{Exponential distribution (SwDisSMii=2)}
+
+The exponential shape function is defined on an inverse vertical co-ordinate \emph{z'}, which is defined as
+(see also \autoref{fig:verticalDistributionExp}):
+%
+\begin{equation}
+   z' = T - z
+\end{equation}
+
+The value of $z'$ equals 0 at the bottom and it equals $H_{max}$ at the tip of the plant.
+
+\begin{figure}
+\centering
+\includegraphics[height=8cm]{Chapters/Vegetation/vertical_distribution_exp.png}
+\caption{Definition of the quantities used for determining the exponential vertical distribution.}
+\label{fig:verticalDistributionExp}
+\end{figure}
+
+The mass distribution function is defined as follows:
+%
+\begin{equation}
+   m(z') = A \cdot \bigl( e^{Fz'/H_{max}} - 1 \bigr)
+\end{equation}
+
+The shape function is defined by means of one parameter $F$. The constant \emph{A} is determined by
+requiring that the integrated mass equals the total mass $M_T$. A value of $F$ approaching 0 defines a
+linear distribution. Increasing values of $F$ define a stronger and stronger concentration of the biomass
+near the plant tip (see \autoref{fig:examplesExpDistribution}).
+%
+The value of A can be determined as:
+%
+\begin{equation}
+   A = \frac{M_T}{H_{max} \Bigl( \frac{{e^F} - 1}{F} - 1 \Bigr)}
+\end{equation}
+
+Consequently, the algorithm to calculate the biomass in a layer from $z' = Z'_1$ to $z' = Z'_2$ proceeds as follows:
+
+If $Z'_1 > H_{max}$ (layer above top of plant): $M_{12} = 0$
+
+If $Z'_2 < H_{max}$ (layer entirely below top of plant): $M_{12} = \int_{Z'_1}^{Z'_2} m(z')dz'$
+
+Else (top of plant inside layer): $M_{12} = \int_{Z'_1}^{H_{max}} m(z')dz'$
+
+
+By integrating the mass distribution function we can derive the biomass in the layer, e.g.:
+%
+\begin{equation}
+\int_{Z'_1}^{Z'_2} m(z')dz' = A \cdot \Bigl( H_{max} \frac{e^{FZ'_2/H_{max}} - e^{FZ'_1/H_{max}}}{F} - (Z'_2 - Z'_1) \Bigr)
+\end{equation}
+
+\begin{figure}
+\begin{subfigure}{0.3\textwidth}
+\includegraphics[width=\textwidth]{Chapters/Vegetation/exponential_distribution1.png}
+\caption{F = 0.001}
+\label{fig:verticalDistributionExp1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.3\textwidth}
+\includegraphics[width=\textwidth]{Chapters/Vegetation/exponential_distribution2.png}
+\caption{F = 5}
+\label{fig:verticalDistributionExp2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.3\textwidth}
+\includegraphics[width=\textwidth]{Chapters/Vegetation/exponential_distribution3.png}
+\caption{F = 20}
+\label{fig:verticalDistributionExp3}
+\end{subfigure}
+\caption{Examples of the exponential vertical distribution for three values of the shape parameter $F$.}
+\label{fig:verticalDistributionExp}
+\end{figure}
+
+%-------------------------------------------------------------------------------
+\subsection{Hints}
+
+The module uses a work array ("IBotSeg") which is filled during the first call.
+This work array contains the segment number of the bottom segment that lies beneath each segment not
+located in the bottom layer. This tells each segment where the biomass in the segment administratively
+resides, as biomass can only exist in the bottom segment but is 'distributed' vertically in a post-processing step.
+Note that in a 2Dh or 1D model this work array is trivial; every segment is the bottom segment of the whole water column.
+
+For an exponential biomass distribution, the value of $F$ can range from a small positive number to
+infinite. The table below provides the share of the biomass of the plant present in the upper 10 \% of the
+plant height, as a function of $F$:
+
+\begin{tabular}{lc}
+\hline
+$F$     &  Share of biomass in top 10\%  \\
+\hline
+0.1          &  19                            \\
+2            &  26                            \\
+4            &  36                            \\
+6            &  46                            \\
+8            &  55                            \\
+10           &  63                            \\
+15           &  78                            \\
+20           &  87                            \\
+25           &  93                            \\
+30           &  96                            \\
+\hline
+\end{tabular}
+
+The maximum allowable value for $F$ is 50 -- this is a numerical limitation, because otherwise the numbers could
+become too large.
+
+%This is an incorrect approach -- so removed from the documentation and the implementation
+%
+%In the present implementation, the input quantity maximum height of the plant $H_{max}$ is defined relative to the
+%total water depth. Within the process module, it is converted to an absolute value based on the actual local
+%value of TotalDepth.
+
+\todo{Is the sentence below true indeed?}
+
+In the present implementation, the overall biomasses are calculated as g/m$^2$.
+

@@ -59,19 +59,22 @@
       REAL(4) MALC        ! I  Macroalgae carbon storage mass             (gC/gDM)
       REAL(4) HmaxMAL     ! I  Maxmimum Length Macroalgae group                (m)
       REAL(4) DenMAL      ! I  Linear density of macroalgae group          (g/m3)
-      REAL(4) BmLayMAL    ! O  Biomass Layer macroalgae structural        (gDM/m2)
+      REAL(4) BmLayMALS   ! O  Biomass Layer macroalgae structural        (gDM/m2)
       REAL(4) HactMAL     ! O  Actual Length Macroalgae                       (m)
+      REAL(4) FrBmMALS    ! O  Fraction BM per layer macroalgae structural    (-)
+      
+      INTEGER IKMRK1
+      
+      INTEGER IKMRK2
       REAL(4) Z2          !    Height Bottom Segment from Bottom              (m)
       REAL(4) Z1          !    Height Top Segment from Bottom                 (m)
       REAL(4) Z2a         !    Height Bottom Segment from Bottom              (m)
       REAL(4) Z1a         !    Height Top Segment from Bottom                 (m)
+      REAL(4) Hact       !    Actual Length Macroalgae - relative to top     (-)
       REAL(4) Hactd       !    Actual Length Macroalgae - relative to top     (-)
       REAL(4) Z2ad        !    Height Bottom Segment from Bottom - relative   (-)
       REAL(4) Z1ad        !    Height Top Segment from Bottom - relative      (-)
       REAL(4) absHmaxMAL  !    Absolute maxmimum Length Macroalgae            (m)
-      INTEGER IKMRK1
-      INTEGER IKMRK2
-      REAL(4) FrBmMALS    ! O  Fraction BM per layer macroalgae structural    (-)
       REAL(4) Zm          !    Watersurface to top Macropyte                  (-)
       REAL(4) A           !    Lineair factor A (Ax + B)                      (-)
       REAL(4) B           !    Lineair factor B (Ax + B)                      (-)
@@ -112,7 +115,7 @@ c     LOGICAL First
             MALS          = PMSA(IPOINT(5)+(IBOTSEG-1)*INCREM(5))
 
 !           Limit the maximum height of the plants to the water depth
-            absHmax     = min( abs(HmaxMAL), TotalDepth )
+            absHmaxMAL     = min( abs(HmaxMAL), TotalDepth )
 
             ! actual height is horizontal density divided by length density
 
@@ -126,7 +129,7 @@ c     LOGICAL First
             ! Hmax < 0: the macrophytes grow from the surface downwards
             !
             OriginalDepth = TotalDepth
-            if ( hmax < 0.0 ) then
+            if ( HmaxMAL < 0.0 ) then
                TotalDepth = Hact
             endif
               
@@ -136,21 +139,18 @@ c     LOGICAL First
             Z1a = TotalDepth - LocalDepth
             Z2a = TotalDepth - LocalDepth + Depth
            
-            A = (MALS / Hact) * (2 - (2 * Ffac)) / Hact
-            B = (MALS / Hact) * (Ffac * (Zm + TotalDepth) -2 * Zm) / Hact
-            write(*,*) 'Zm: ', Zm
-            write(*,*) 'Z1: ', Z1
-            write(*,*) 'Z2: ', Z2
+            A = (MALS / Hact) * (2 - (2)) / Hact
+            B = (MALS / Hact) * (1 * (Zm + TotalDepth) -2 * Zm) / Hact
 
             ! Macrophyte is not in segment:
             If (Zm .GT. Z2) Then
-                BmLaySM = 0
+                BmLayMALS = 0
             ! Macropyhte is completely in segment:
             Elseif (Zm . LT. Z1 ) Then
-                BmLaySM = (A/2)  * (Z2**2 -Z1**2) + B * (Z2 -Z1)
+                BmLayMALS = (A/2)  * (Z2**2 -Z1**2) + B * (Z2 -Z1)
             ! Macropyhte is partialy in segment: TIP !!!!
             Else
-                BmlaySM = (A/2)  * (Z2**2 -Zm**2) + B * (Z2 -Zm)
+                BmlayMALS = (A/2)  * (Z2**2 -Zm**2) + B * (Z2 -Zm)
             ! For the segment IBotSeg, current segment is ITopSeg!!!
                 PMSA(IPOINT(14)+(IBotSeg-1)*INCREM(14   )) = ISEG
             Endif
@@ -158,7 +158,7 @@ c     LOGICAL First
             ! One complication: we need to set the top segment explicitly
             ! if we start at the top
             !
-            If ( Hmax < 0.0 ) Then
+            If ( HmaxMAL < 0.0 ) Then
                 CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
                 If ( IKMRK2 .EQ. 0 .OR. IKMRK2 .EQ. 1 ) Then
                     PMSA(IPOINT(14)+(IBotSeg-1)*INCREM(14   )) = ISEG
@@ -166,21 +166,20 @@ c     LOGICAL First
             Endif
 
             If (MALS .GT. 0) Then
-               FrBmLay = BmLaySm / MALS
+               FrBmMALS = BmLayMALS / MALS
             Else
                If ( iseg .eq. IBotseg ) Then
-                  FrBmLay = 1.0
+                  FrBmMALS = 1.0
                Else
-                  FrBmLay = 0.0
+                  FrBmMALS = 0.0
                Endif
             Endif
-            write(*,*) 'FrBmLay: ', FrBmLay
 
 !           Return Outputparameters to delwaq
 
-            PMSA( IPNT(11) ) = FrBmLay
-            PMSA( IPNT(12) ) = BmLaySM / Depth
-            If ( Hmax > 0.0 ) Then
+            PMSA( IPNT(11) ) = FrBmMALS
+            PMSA( IPNT(12) ) = BmLayMALS / Depth
+            If ( HmaxMAL > 0.0 ) Then
                 PMSA( IPNT(13) ) = Hact
             Else
                 PMSA( IPNT(13) ) = OriginalDepth

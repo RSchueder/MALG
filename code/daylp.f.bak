@@ -20,10 +20,10 @@
 !!  All indications and logos of, and references to registered trademarks
 !!  of Stichting Deltares remain the property of Stichting Deltares. All
 !!  rights reserved.
- 
-      subroutine dayl   ( pmsa   , fl     , ipoint , increm , noseg  ,
-     &                    noflux , iexpnt , iknmrk , noq1   , noq2   ,
-     &                    noq3   , noq4   )
+
+      subroutine daylp   ( pmsa   , fl     , ipoint , increm , noseg  , &
+                          noflux , iexpnt , iknmrk , noq1   , noq2   ,
+                          noq3   , noq4   )
 !>\file
 !>    Daylength calculation in hours cur current and previous day
 
@@ -51,13 +51,13 @@
       
       real     pmsa  ( * ) , fl    (*)
       integer  ipoint( * ) , increm(*) , noseg , noflux,
-     +         iexpnt(4,*) , iknmrk(*) , noq1, noq2, noq3, noq4
-      integer ip1,ip2,ip3,ip4,ip5,ip6,ip7
-      integer in1,in2,in3,in4,in5,in6,in7
+      integer  iexpnt(4,*) , iknmrk(*) , noq1, noq2, noq3, noq4
+      integer ip1,ip2,ip3,ip4,ip5, ip6, ip7
+      integer in1,in2,in3,in4,in5, in6, in7
       real    time, tref, auxsys
-      real    latitudeg, daynrd, daynrp
+      real    daynrd, daynrp
       double precision latitu, declin, temp, daylengthd, daylengthp
-      double precision daylengthm, sin50m, e  , pi 
+      double precision sin50m, e  , pi, daylengthm
       parameter ( sin50m = -1.454389765d-2 )
       parameter ( e  = 1.721420632d-2 )
       parameter ( pi = 3.141592654d0)
@@ -69,7 +69,7 @@
       in4  = increm( 4)
       in5  = increm( 5)
       in6  = increm( 6)
-      in7  = increm( 7)
+      in6  = increm( 7)
 
       ip1  = ipoint( 1)
       ip2  = ipoint( 2)
@@ -94,18 +94,18 @@
           declin = 9.9999d9
       else
           declin = 6.918d-3 -
-     1               3.99912d-1 * dcos ( e * daynrd) -
-     2               6.758d-3   * dcos ( 2.0d0 * e * daynrd) -
-     3               2.697d-3   * dcos ( 3.0d0 * e * daynrd) +
-     4               7.0257d-2  * dsin ( e * daynrd) +
-     5               9.07d-4    * dsin ( 2.0d0 * e * daynrd) +
-     6               1.480d-3   * dsin ( 3.0d0 * e * daynrd)
+                 3.99912d-1 * dcos ( e * daynrd) - &
+                 6.758d-3   * dcos ( 2.0d0 * e * daynrd) - &
+                 2.697d-3   * dcos ( 3.0d0 * e * daynrd) + &
+                 7.0257d-2  * dsin ( e * daynrd) + &
+                 9.07d-4    * dsin ( 2.0d0 * e * daynrd) + &
+                 1.480d-3   * dsin ( 3.0d0 * e * daynrd)
       endif
 
 !     Computes daylenth
 
-      temp = (( sin50m - dsin ( declin) * dsin ( latitu)) /
-     &                    ( dcos ( declin) * dcos ( latitu)))
+      temp = (( sin50m - dsin ( declin) * dsin ( latitu)) / &
+          ( dcos ( declin) * dcos ( latitu)))
 
       if ( temp .gt. 1.0) then
           temp   = 0.0
@@ -114,7 +114,7 @@
       else
           temp   = 7.639437268d0 * acos ( temp)
       endif
-
+      
       daylengthd = temp / 24.0
       
 !     ------------------------------------
@@ -135,8 +135,8 @@
 
 !     Computes daylenth
 
-      temp = (( sin50m - dsin ( declin) * dsin ( latitu)) / 
-     &                    ( dcos ( declin) * dcos ( latitu)))
+      temp = (( sin50m - dsin ( declin) * dsin ( latitu)) / &
+                         ( dcos ( declin) * dcos ( latitu)))
 
       if ( temp .gt. 1.0) then
           temp   = 0.0
@@ -152,24 +152,23 @@
       
 !     ------------------------------------
       
-      do 9102 daynrp = 1 , 365
+      DO 9000 daynrp = 1 , 365
           if (( daynrp .lt. 0.) .or. ( daynrp .gt. 365.)) then
                 declin = 9.9999d9
           else
               declin = 6.918d-3 -
-     1                  3.99912d-1 * dcos ( e * daynrp) -
-     2                  6.758d-3   * dcos ( 2.0d0 * e * daynrp) -
-     3                  2.697d-3   * dcos ( 3.0d0 * e * daynrp) +
-     4                  7.0257d-2  * dsin ( e * daynrp) +
-     5                  9.07d-4    * dsin ( 2.0d0 * e * daynrp) +
-     6                  1.480d-3   * dsin ( 3.0d0 * e * daynrp)
+                     3.99912d-1 * dcos ( e * daynrp) - &
+                     6.758d-3   * dcos ( 2.0d0 * e * daynrp) - &
+                     2.697d-3   * dcos ( 3.0d0 * e * daynrp) + &
+                     7.0257d-2  * dsin ( e * daynrp) + &
+                     9.07d-4    * dsin ( 2.0d0 * e * daynrp) + &
+                     1.480d-3   * dsin ( 3.0d0 * e * daynrp)
           endif
 
+    !     Computes daylenth
 
-!         Computes daylenth
-
-          temp = (( sin50m - dsin ( declin) * dsin ( latitu)) / 
-     +                    ( dcos ( declin) * dcos ( latitu)))
+          temp = (( sin50m - dsin ( declin) * dsin ( latitu)) / &
+          +                    ( dcos ( declin) * dcos ( latitu)))
 
           if ( temp .gt. 1.0) then
               temp   = 0.0
@@ -180,9 +179,8 @@
           endif
           
           daylengthm = MAX(daylengthm, temp / 24.0)
- 9102 continue
 
-      pmsa (ip7) = daylengthm
+          pmsa (ip7) = daylengthm
  !     ------------------------------------
      
       ip1   = ip1   + in1
@@ -193,7 +191,7 @@
       ip6   = ip6   + in6
       ip7   = ip7   + in7
 
-
+ 9000 continue
 
       return
       end

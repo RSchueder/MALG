@@ -1,0 +1,138 @@
+\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
+%------------------------------------------------------------------------------
+\section{Grazing and harvesting}
+\label{GrazingHarvesting}
+\begin{flushright}
+\textsc{process: GRZMACii and HRVMACii}
+\end{flushright}
+
+Grazing by birds and fishes, and mowing of vegetation as a management option both create a decrease in the biomass of macrophytes.
+The characteristics of the grazing/moving depend not only on the species but also on the season.
+The model contains both a zero order and a first order flux for harvesting and grazing.
+The first order grazing/harvesting depends on the amount of vegetation.
+The grazing and harvesting slows down when the macrophytes are gone.
+The zero order grazing flux is independend of the amount of vegetation, until all vegetation has gone.
+
+In general one can define a process coefficient as a global value that is valid for the entire model, or as a local value for  specific location.
+The global value can either be constant or varying in time.
+
+Grazing and harvesting during a certain period of time can be defined by several methods:
+\begin{itemize}
+\item
+As a time varying, first order grazing/harvesting pressure. Every day a certain portion of the vegetation is being eaten until the vegetation is gone.
+\item
+As a time varying, zero order grazing/harvesting function. During a certain episode, the birds eat a constant amount of vegetation.
+\item
+Depth of vegetation: for some species of birds e.g.\ Bewick Swans the grazing is limited by the depth of the lake.
+Feeding on the tubers of Potamogeton pectinatus, these birds need to be able to reach the bottom without diving down ($<0.4$  m) \citet{LiteratureReference}.
+\end{itemize}
+
+Both fluxes can also be defined locally, but not varying in time.
+
+\subsection{Grazing}
+Birds can exert a constant or a first order grazing pressure on the vegetation. The vegetation is removed
+from the lake, until all vegetation has been eaten. Grazing stops, when the amount of vegetation that could
+be eaten within one time step, exceeds the amount vegetation that is available. Birds can eat the emerged
+and submerged vegetation, as well as the rhizomes of for instance \emph{P. pectinatus} \cite{REF}.
+
+If $EM_i > (K0GrazeEM_i + K1GrazeEM_i \times EM_i) \times dt$:
+\begin{equation}
+              GrazeEM_i = K0GrazeEM_i + K1GrazeEM_i \times EM_i
+\end{equation}
+Else
+\begin{equation}
+\nonumber     GrazeEM_i = 0
+\end{equation}
+If $SM_i > (K0GrazeSM_i + K1GrazeSM_i \times SM_i) \times dt$:
+\begin{equation}
+              GrazeSM_i = K0GrazeSM_i + K1GrazeSM_i \times SM_i
+\end{equation}
+Else
+\begin{equation}
+\nonumber     GrazeSM_i = 0
+\end{equation}
+If $RH_i > (K0GrazeRH_i + K1GrazeRH_i \times RH_i) \times dt$:
+\begin{align}
+              GrazeRH_i &= K0GrazeRH_i + K1GrazeRH_i \times RH_i            \\
+\nonumber     GrazeNRH_i &= GrazeRH_i \times \frac{NHR_i}{RH_i}             \\
+\nonumber     GrazePRH_i &= GrazeRH_i \times \frac{PHR_i}{RH_i}
+\end{align}
+Else
+\begin{align}
+\nonumber     GrazeRH_i &= 0   \\
+\nonumber     GrazeNRH_i &= 0  \\
+\nonumber     GrazePRH_i &= 0
+\end{align}
+%
+where:
+
+\begin{tabular}{lll}
+GrazeEM$_i$        & Grazing of EM species i                         & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K0GrazeEM$_i$      & Zero order grazing constant of EM species i     & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K1GrazeEM$_i$      & First order grazing constant o fEM species i    & [d$^{-1}$]                        \\
+dt                 & time step of the simulation                     & [d]                               \\
+GrazeSM$_i$        & Grazing of SM species i                         & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K0GrazeSM$_i$      & Zero order grazing constant of SM species i     & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K1GrazeSM$_i$      & First order grazing constant of SM species i    & [d$^{-1}$]                        \\
+RH$_i$             & Rhizome species i                               & [g C$\cdot$m$^{-2}$]              \\
+GrazeRH$_i$        & Grazing of RH species i                         & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K0GrazeRH$_i$      & Zero order grazing of RH species i              & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K1GrazeRH$_i$      & First order grazing constant of RH species i    & [d$^{-1}$]                        \\
+GrazeNRH$_i$       & Grazing of RH species i, nitrogen component     & [g N$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+GrazePRH$_i$       & Grazing of RH species I, phosphorus component   & [g P$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+\end{tabular}
+
+\subsection{Hints for use}
+The grazing can be estimated on the basis of the number of birds, the period during which they are eating somewhere, the area of the lake and the amount of macrophytes each bird eats.
+An example equation for the estimation of the grazing pressure for emerged vegetation could look like:
+%
+\begin{equation}
+K0GrazeEM_i = \frac{birds \times fooddemand}{area}
+\end{equation}
+%
+where:
+
+\begin{tabular}{lll}
+birds           & Number of birds in the colony                     & [-]                               \\
+fooddemand      & Amount of vegetation per bird per day             & [g C$\cdot$d$\cdot{-1}$]          \\
+area            & Lake area where the colony of birds is feeding    & [m$^2$]                           \\
+\end{tabular}
+
+The grazing of submerged vegetation by birds is limited to a maximum depth. If this is the case, the
+grazing function can be applied locally in the shallow areas in the model schematisation.
+
+
+\subsection{Harvesting}
+Harvesting can be used as a management practise to reduce nuicance biomass (e.g.\ to improve recreational
+values) or to remove nutrients from the system. Both emerged and submerged vegetation can be removed from
+the water system. The harvesting can be modelled as a constant and /or a first order flux. The modelled
+harvesting stops, when all vegetation is removed from the lake.
+
+IF $EM_i > (K0HarvestEM_i + K1HarvestEM_i \times EM_i) \times dt$:
+\begin{equation}
+\nonumber     HarvestEM_i = K0HarvestEM_i + K1HarvestEM_i \times EM_i
+\end{equation}
+ELSE
+\begin{equation}
+\nonumber     HarvestEM_i = 0
+\end{equation}
+IF $SM_i > (K0HarvestSM_i + K1HarvestSM_i \times SM_i) \times dt$:
+\begin{equation}
+\nonumber     HarvestSM_i = K0HarvestSM_i + K1HarvestSM_i \times SM_i
+\end{equation}
+ELSE
+\begin{equation}
+\nonumber     HarvestSM_i = 0
+\end{equation}
+%
+where:
+
+\begin{tabular}{lll}
+K0HarvestEMi    & Zero order harvesting of emerged vegetation             & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K1HarvestEMi    & First order harvesting constants of emerged vegetation  & [d$^{-1}$]                        \\
+dt              & Time step of computation                                & [d]                               \\
+HarvestEMi      & Harvesting of emerged vegetation                        & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K0HarvestSMi    & Zero order harvesting of submerged vegetation           & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+K1HarvestSMi    & First order harvesting constant of submerged vegetation & [d$^{-1}$]                        \\
+HarvestSMi      & Harvesting of submerged vegetation                      & [g C$\cdot$m$^{-2}\cdot$d$^{-1}$] \\
+\end{tabular}
