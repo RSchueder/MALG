@@ -160,6 +160,7 @@ C
 !                  Pmax = (alpha*Isat/ln(1+alpha/beta) * 
 !     &            (alpha/(alpha+beta)) * 
 !     &             (beta/(alpha+beta))**(beta/alpha)
+!                (0.0000375*200/log(1+0.0000375/x)) * (0.0000375/(0.0000375+x)) * (x/(0.0000375+x))^(x/0.0000375)
                   
                 Ps = alpha*Isat/LOG(1+alpha/beta)               
                 P = Ps * (1-exp(alpha*I/Ps))*exp(beta*I/Ps)
