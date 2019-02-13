@@ -29,29 +29,32 @@ C*******************************************************************************
 C
 C     Type    Name         I/O Description                                        Unit
 C
-      REAL(4) MALN        ! I  MacroALgae Nitrogen storage                         (gN/gDM)
-      REAL(4) MALP        ! I  MacroALgae Phosphorous storage                         (gN/gDM)
+      REAL(4) MALS        ! I  MacroALgae structural mass                          (gDM/m2)
+      REAL(4) MALN        ! I  MacroALgae Nitrogen storage                         (gN/m2)
+      REAL(4) MALP        ! I  MacroALgae Phosphorous storage                      (gP/m2)
       REAL(4) NO3         ! I  Nitrate                                             (gN/m3)
       REAL(4) NH4         ! I  Ammonium                                            (gN/m3)
-      REAL(4) PO4         ! I  Phosphate                                            (gP/m3)
+      REAL(4) PO4         ! I  Phosphate                                           (gP/m3)
       REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                    (-)
       REAL(4) MALNmin     ! I  minimal N in nitrogen storage                       (gN/gDM)
       REAL(4) MALNmax     ! I  maximum N in nitrogen storage                       (gN/gDM)
-      REAL(4) MALPmin	    ! I  minimum P in storage	                              gP/gDM
-      REAL(4) MALPmax     ! I	 maximum P in storage	                              gP/gDM
+      REAL(4) MALPmin	    ! I  minimum P in storage	                             (gP/gDM)
+      REAL(4) MALPmax     ! I	 maximum P in storage	                             (gP/gDM)
       REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                  (gC/gDM)
       REAL(4) NCRatMALS   ! I  Nitrogen to carbon ratio in MALS                    (gN/gC)
-      REAL(4) PCRatMALS	! I	 P:C ratio in structural mass	                      gP/gDM
+      REAL(4) PCRatMALS	! I	 P:C ratio in structural mass	                     (gP/gDM)
       REAL(4) KsN		    ! I  half saturation N uptake                            (gN/m3)
-      REAL(4) Ksp	        ! I	 half saturation P uptake	                          gP/m3
-      REAL(4) JNmax	    ! I  maximum N uptake rate                               (gN/dm day)
-      REAL(4) JPmax	    ! I  maximum p uptake rate                               (gP/dm day)
+      REAL(4) Ksp	        ! I	 half saturation P uptake	                         (gP/m3)
+      REAL(4) JNmax	    ! I  maximum N uptake rate                               (gN/m2 d)
+      REAL(4) JPmax	    ! I  maximum p uptake rate                               (gP/m2 d)
       REAL(4) Vel         ! I	 velocity                                            (m/s)
       REAL(4) Vel65	    ! I  current speed at which J = 0.65Jmax                 (m/s)
+      
       REAL(4) MBotSeg     ! I 
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
+      
       REAL(4) LimVel      ! O  velocity limitation MALN                            (-)
       REAL(4) LocUpN      ! O  local uptake of N by MALN                           (gN/m3/d)
       REAL(4) LocUpP      ! O  local uptake of P by MALP                           (gP/m3/d)
@@ -77,6 +80,7 @@ C
      
       IdUpMALNO3 = 1
       IdUpMALNH4 = 2
+      IdUpMALPO4 = 3 
        
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
@@ -89,70 +93,89 @@ C
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
 
             IF (FrBmMALS > 0.0) THEN
-                ! need to take from bottom segment
               
-               
                 ! take from this segment
-                NO3	    =	PMSA( IPNT(3) )
-                NH4	    =	PMSA( IPNT(4) )
-                PO4       =   PMSA( IPNT(5) )
-                FrBmMALS	=	PMSA( IPNT(6) )
-                MALNmin	=	PMSA( IPNT(7) )
-                MALNmax	=	PMSA( IPNT(8) )
-                MALPmin	=	PMSA( IPNT(9) )
-                MALPmax	=	PMSA( IPNT(10) )
-                CDRatMALS	=	PMSA( IPNT(11) )
-                NCRatMALS	=	PMSA( IPNT(12) )
-                PCRatMALS	=	PMSA( IPNT(13) )
-                Ksn	    =	PMSA( IPNT(14) )
-                Ksp	    =	PMSA( IPNT(15) )
-                JNmax	    =	PMSA( IPNT(16) )
-                JPmax	    =	PMSA( IPNT(17) )
-                Vel	    =	PMSA( IPNT(18) )
-                Vel65	    =	PMSA( IPNT(19) )
-                Surf	    =	PMSA( IPNT(21) )
-                DELT	    =	PMSA( IPNT(22) )
-                Depth	    =	PMSA( IPNT(23) )
+                NO3	    =	PMSA( IPNT(4) )
+                NH4	    =	PMSA( IPNT(5) )
+                PO4       =   PMSA( IPNT(6) )
+                FrBmMALS	=	PMSA( IPNT(7) )
+                MALNmin	=	PMSA( IPNT(8) )
+                MALNmax	=	PMSA( IPNT(9) )
+                MALPmin	=	PMSA( IPNT(10) )
+                MALPmax	=	PMSA( IPNT(11) )
+                CDRatMALS	=	PMSA( IPNT(12) )
+                NCRatMALS	=	PMSA( IPNT(13) )
+                PCRatMALS	=	PMSA( IPNT(14) )
+                Ksn	    =	PMSA( IPNT(15) )
+                Ksp	    =	PMSA( IPNT(16) )
+                JNmax	    =	PMSA( IPNT(17) )
+                JPmax	    =	PMSA( IPNT(18) )
+                Vel	    =	PMSA( IPNT(19) )
+                Vel65	    =	PMSA( IPNT(20) )
+                Surf	    =	PMSA( IPNT(22) )
+                DELT	    =	PMSA( IPNT(23) )
+                Depth	    =	PMSA( IPNT(24) )
 
-                MBotSeg    = nint(PMSA( IPNT( 20) ))
+                MBotSeg    = nint(PMSA( IPNT( 21) ))
                 IF (MBotSeg .le. 0)
-     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 20) ),ISEG,'COVMAC')
+     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 21) ),ISEG,'FLMALN')
 
-              ! need to take from bottom segment
-                MALN       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
-                MALP       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
+                ! need to take from bottom segment
+                MALS       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
+                MALN       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
+                MALP       = PMSA( IPNT(3)+(IBotSeg-1)*INCREM( 3) )
+                
+                ! need to convert substances of gN/m2 to gN/gDM
+                ! to be consistent with constants from Broch
+                ! this line shows how we assume the entire plant will have the
+                ! same abundance of nitrogen and carbon stores
+                ! along the length
+                MALN = MALN / MALS ! gN/m2 to gN/gDM
+                MALP = MALP / MALS ! gP/m2 to gP/gDM
+                ! since the storage is relative the amount of DM,
+                ! we calculate how much DM there is in this segment
+                MALS = MALS * FrBmMALS
+                
                 ! check input
 
 !                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
 !                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
-              
-                ! MALN in this segment is the same as all segments in this column
-                ! thus taking from the bottom is fine
                 
                 ! velocity limitation
                 LimVel = 1 - exp(-Vel/Vel65)
+                ! nitrogen hunger will be the same along length
+                ! nutrient abundance will not be
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
                 LimP = (MALPmax - MALP)/(MALPmax - MALPmin)
                 LimP = 1.0
+                
+                ! max rate is gN/m2 plant day, but m2 is m2 of plant
+                ! not segment
+                ! we try to achieve gN/m3 water d
+                ! Broch achieves gN/gDM day
+                ! we multimply this by MALS * area density (g/m2)
+                                
                 IF (LimN .gt. 0.0 .AND. LimP .gt. 0.0) THEN
-                  LocUpN = LimVel * JNmax * (NO3/(Ksn + NO3)) * LimN 
-                  LocUpP = LimVel * JPmax * (PO4/(Ksp + PO4)) * LimP 
+                  LocUpN = (MALS/ArDenMAL) * LimVel * JNmax * 
+     &             (NO3/(Ksn + NO3)) * LimN / Depth
+                  LocUpP = (MALS/ArDenMAL) * LimVel * JPmax * 
+     &             (PO4/(Ksp + PO4)) * LimP / Depth
                 ELSE
                     LocUpN = 0.0
                     LocUpP = 0.0
                 ENDIF
                 
-                dUpMALNO3 = LocUpN
+                dUpMALNO3 = LocUpN 
                 dUpMALNH4 = 0.0
-                dUpMALPO4 = LocUpP
+                dUpMALPO4 = LocUpP 
 
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4
                 FL ( IdUpMALPO4 ) = dUpMALPO4 
      
-                PMSA( IPNT( 23)   ) =  LimVel		
-                PMSA( IPNT( 24)   ) =  LocUpN	
-                PMSA( IPNT( 25)   ) =  LocUpP		
+                PMSA( IPNT( 25)   ) =  LimVel		
+                PMSA( IPNT( 26)   ) =  LocUpN	
+                PMSA( IPNT( 27)   ) =  LocUpP		
                 
             ENDIF
          ENDIF

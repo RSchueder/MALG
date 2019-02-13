@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Wed Feb 13 12:48:50 2019
+        !COMPILER-GENERATED INTERFACE MODULE: Wed Feb 13 17:58:39 2019
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE COVMAC__genmod

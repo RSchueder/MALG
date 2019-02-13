@@ -30,41 +30,41 @@ C*******************************************************************************
 C
 C     Type    Name         I/O Description                                        Unit
 C
-      REAL(4) MALS        ! I  MacroALgae Structural biomass                       (gDM/m2)
-      REAL(4) MALC        ! I  MacroALgae carbon storage                           (gC/gDM)
-      REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                    (-)
-      REAL(4) MALCmin     ! I  minimal C in carbon storage                         (gC/gDM
-      REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                  (gC/gDM)
-      REAL(4) AStruct     ! I  area per structural mass                            (m2/gC)
-      REAL(4) Temp	    ! I  Water temperature
-      REAL(4) R1          ! I 
-      REAL(4) R2          ! I 
-      REAL(4) Tr1         ! I	 reference temperature 1 for respiration
-      REAL(4) Tr2	        ! I  reference temperature 2 for respiration
-      REAL(4) P1          ! I  Reference photosynthetic rate at T1
-      REAL(4) P2          ! I  Reference photosynthetic rate at T2
-      REAL(4) Tp1         ! I  temperature for reference photosynthetic rate 1
-      REAL(4) Tp2         ! I  temperature for reference photosynthetic rate 1
-      REAL(4) Tap	        ! I  Arrhenius temperature for photosynthesis
-      REAL(4) Taph        ! I	 Arrhenius temperature for photosynthesis at high end
-      REAL(4) Tapl        ! I	 Arrhenius temperature for photosynthesis at low end
-      REAL(4) Tar         ! I	 Arrhenius temperature for respiration
-      REAL(4) Rad       	! I  irradiation at the segment upper boundary           (W/m2)
-      REAL(4) ExtVl       ! I  total extinction coefficient of visible light       (1/m)
-      REAL(4) alpha       ! I	 photosynthetic efficiency gC dm-2 d-1 (umol photons m-2 s-1)-1
-      REAL(4) Isat        ! I	 light intensity where photosynthesis is at max (umol photons m-2 s-1)	
-      REAL(4) exuMALC     ! I exudation parameter (gC/g)
-      REAL(4) MBotSeg     ! I
-      REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
-      REAL(4) DELT        ! I  timestep for processes                              (d)
-      REAL(4) Depth       ! I  depth of segment                                    (m)
-      REAL(4) LocalDepth  ! I  depth of segment below surface                      (m)
+      REAL(4) MALS        ! I  MacroALgae Structural biomass                        (gDM/m2)
+      REAL(4) MALC        ! I  MacroALgae carbon storage                            (gC/m2)
+      REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                     (-)
+      REAL(4) MALCmin     ! I  minimal C in carbon storage                          (gC/gDM
+      REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                   (gC/gDM)
+      REAL(4) AStruct     ! I  area per structural mass                             (m2/gC)
+      REAL(4) Temp	    ! I  Water temperature                                    (degC)
+      REAL(4) R1          ! I  Reference respiration rate at T1                     (gC/m2 d)
+      REAL(4) R2          ! I  Reference respiration rate at T2                     (gC/m2 d)
+      REAL(4) Tr1         ! I	 reference temperature 1 for respiration              (K)
+      REAL(4) Tr2	        ! I  reference temperature 2 for respiration              (K)
+      REAL(4) P1          ! I  Reference photosynthetic rate at T1                  (gC/m2 d)
+      REAL(4) P2          ! I  Reference photosynthetic rate at T2                  (gC/m2 d)
+      REAL(4) Tp1         ! I  temperature for reference photosynthetic rate 1      (K)
+      REAL(4) Tp2         ! I  temperature for reference photosynthetic rate 1      (K)
+      REAL(4) Tap	        ! I  Arrhenius temperature for photosynthesis             (K)
+      REAL(4) Taph        ! I	 Arrhenius temperature for photosynthesis at high end (K)
+      REAL(4) Tapl        ! I	 Arrhenius temperature for photosynthesis at low end  (K)
+      REAL(4) Tar         ! I	 Arrhenius temperature for respiration                (K)
+      REAL(4) Rad       	! I  irradiation at the segment upper boundary            (W/m2)
+      REAL(4) ExtVl       ! I  total extinction coefficient of visible light        (1/m)
+      REAL(4) alpha       ! I	 photosynthetic efficiency                            (gC/m2 d/ (umol photons m-2 s-1)-1
+      REAL(4) Isat        ! I	 light intensity where photosynthesis is at max       (umol photons m-2 s-1)	
+      REAL(4) exuMALC     ! I  exudation parameter                                  (gC/g)
+      REAL(4) MBotSeg     ! I  bottem segment for this column
+      REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment          (m2)
+      REAL(4) DELT        ! I  timestep for processes                               (d)
+      REAL(4) Depth       ! I  depth of segment                                     (m)
+      REAL(4) LocalDepth  ! I  depth of segment below surface                       (m)
 
       REAL(4) LocUpC      ! O
       
-      REAL(4) dMALTIC   ! F  HCO3 uptake MALN                                     (gC/m3/d)
-      REAL(4) dMALDOC   ! F  Exudate MALN                                     (gC/m3/d)
-      REAL(4) dMALOXY   ! F  OXY production                                     (gC/m3/d)
+      REAL(4) dMALTIC     ! F  HCO3 uptake MALN                                       (gC/m3/d)
+      REAL(4) dMALDOC     ! F  Exudate MALN                                           (gC/m3/d)
+      REAL(4) dMALCOXY    ! F  OXY production                                        (gC/m3/d)
 
       INTEGER IdUpMALTIC !   
       INTEGER IdPrMALDOC !   
@@ -129,18 +129,24 @@ C
               
                 MBotSeg    = nint(PMSA( IPNT( 25) ))
                 IF (MBotSeg .le. 0)
-     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 25) ),ISEG,'COVMAC')
+     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 25) ),ISEG,'FLMALC')
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
                 MALC       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
                 ! check input
 
-!                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
+!               IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
 !               IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
               
-                ! find amount of mass in this segment 
-               
+                ! need to convert substances of gC/m2 to gC/gDM
+                ! to be consistent with constants from Broch
+                ! this line shows how we assume the entire plant will have the
+                ! same abundance of nitrogen and carbon stores
+                ! along the length
+                MALC = MALC / MALS ! gC/m2 to gC/gDM
+                ! since the storage is relative the amount of DM,
+                ! we calculate how much DM there is in this segment
                 MALS = MALS * FrBmMALS
                
                 ! gross photosynthesis
@@ -170,34 +176,41 @@ C
                 Ps = alpha*Isat/LOG(1+alpha/beta)               
                 P = Ps * (1-exp(alpha*I/Ps))*exp(beta*I/Ps)
                 
-                ! respiration
+                ! all rates will as per the paper yield rates
+                ! of gC/gDM day
+                ! multiply by MALS and divide by depth to get gC/m3 d
                 
+                ! respiration gC/m3 d
                 R = R1 * exp(Tar/Tr1 - Tar/Temp)
                
-                ! exudation
+                ! exudation gC/m3 d
+                
                 E = 1-exp(exuMALC*(MALCmin - MALC))
                 
-                
-                dMALTIC = P - R 
+                ! effect on TIC is net of production and maintenance respiration
+                ! growth respiration is included in FLMALS
+                ! TIC gets converted (lost) to DOC in exudate
 
-                ! exudate is produced as DOC
-                dMALDOC = P*E
+                dMALTIC = ((MALS/ArDenMAL)/Depth) * (P - R) 
+
+                ! exudate is produced as DOC, E is a fraction of production
                 
-                ! uptake
-                LocUpC = P * (1-E) - R
-                ! because TIC gets converted to DOC in exudate
+                dMALDOC = ((MALS/ArDenMAL)/Depth) * P * E 
+                
+                ! uptake into storage
+                LocUpC = ((MALS/ArDenMAL)/Depth) * P * (1-E) - R)
                 
                 ! oxygen 
                 ! photosynthesis produces oxygen, respiration consumes
+                ! look to TIC to see what the balance is
                 
-                dMALOXY   = 2.67 * (P - R)
+                dMALOXY   = 2.67 * dMALTIC
 
                 FL ( IdUpMALTIC   ) = dMALTIC
                 FL ( IdPrMALDOC   ) = dMALDOC
-                FL ( IdPrMALOXY   ) = dMALOXY
+                FL ( IdPrMALOXY   ) = dMALCOXY
 
-
-                PMSA( IPNT( 29)   ) =  LocUpC
+                PMSA( IPNT( 29)   ) = LocUpC
                 
             ENDIF
             ENDIF

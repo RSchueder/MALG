@@ -49,19 +49,22 @@
 !
 !     Type    Name         I/O Description                                        Unit
 !
-      REAL(4) Surf        ! I  surface of segment                            (m2)
+      REAL(4) Surf        ! I  surface of segment                             (m2)
       REAL(4) Depth       ! I  depth of segment                               (m)
       REAL(4) TotalDepth  ! I  total depth water column                       (m)
       REAL(4) LocalDepth  ! I  depth from water surface to bottom of segment  (m)
-      REAL(4) MALS        ! I  Macroalgae structural mass                (gDM/m2)
-      REAL(4) MALN        ! I  Macroalgae nitrogen storage mass           (gN/gDM)
-      REAL(4) MALP        ! I  Macroalgae phosphorous storage mass        (gP/gDM)
-      REAL(4) MALC        ! I  Macroalgae carbon storage mass             (gC/gDM)
-      REAL(4) HmaxMAL     ! I  Maxmimum Length Macroalgae group                (m)
-      REAL(4) DenMAL      ! I  Linear density of macroalgae group          (g/m3)
-      REAL(4) BmLayMALS   ! O  Biomass Layer macroalgae structural        (gDM/m2)
-      REAL(4) HactMAL     ! O  Actual Length Macroalgae                       (m)
+      REAL(4) MALS        ! I  Macroalgae structural mass                     (gDM/m2)
+      REAL(4) MALN        ! I  Macroalgae nitrogen storage mass               (gN/gDM)
+      REAL(4) MALP        ! I  Macroalgae phosphorous storage mass            (gP/gDM)
+      REAL(4) MALC        ! I  Macroalgae carbon storage mass                 (gC/gDM)
+      REAL(4) HmaxMAL     ! I  Maxmimum Length Macroalgae group               (m)
+      REAL(4) LinDenMAL   ! I  Linear density of macroalgae group             (g/m3)
+      REAL(4) ArDenMAL    ! I  grams per m2 of plant                          (g/m2)
+      ! MBotSeg
       REAL(4) FrBmMALS    ! O  Fraction BM per layer macroalgae structural    (-)
+      REAL(4) BmLayMALS   ! O  Biomass Layer macroalgae structural            (gDM/m2)
+      REAL(4) HactMAL     ! O  Actual Length Macroalgae                       (m)
+      REAL(4) AactMAL     ! O  Actual Area Macroalgae                         (m2)
       
       INTEGER IKMRK1
       
@@ -87,7 +90,7 @@ c     LOGICAL First
 
       INTEGER :: LUNREP
 
-      INTEGER IBotSeg     ! Bottom Segment for Macrophyte
+      INTEGER MBotSeg     ! Bottom Segment for Macrophyte
 !     INTEGER ITopSeg     ! Top    Segment for Macrophyte
 !*******************************************************************************
 
@@ -105,22 +108,25 @@ c     LOGICAL First
             TotalDepth  = PMSA( IPNT(  3) )
             LocalDepth  = PMSA( IPNT(  4) )
             HmaxMAL     = PMSA( IPNT(  9) )
-            DenMAL      = PMSA( IPNT(  10) )
-            ! not sure how this works, need to adjust, why was it = 9 previously?
-            IBotSeg     = NINT(PMSA( IPNT(  11) ))
+            LinDenMAL   = PMSA( IPNT(  10) )
+            ArDenMAL    = PMSA( IPNT(  11) )
+            ! assigned from MALGRO
+            MBotSeg     = NINT(PMSA( IPNT(  12) ))
 
             ! get biomass from bottom segment
-
-            !SM          = max( 1.0e-10, PMSA(IPOINT(5)+(IBOTSEG-1)*INCREM(5)) )
-            MALS          = PMSA(IPOINT(5)+(IBOTSEG-1)*INCREM(5))
+            ! gDM/m2
+            MALS = PMSA(IPOINT(5)+(IBOTSEG-1)*INCREM(5))
 
 !           Limit the maximum height of the plants to the water depth
             absHmaxMAL     = min( abs(HmaxMAL), TotalDepth )
 
             ! actual height is horizontal density divided by length density
-
-            Hact        = min( MALS/DenMAL , TotalDepth - 0.001 )
-            Hact        = max(Hact,0.01)
+            ! Linear density is dependent on seeding density
+            ! area is the amount of mass in this segment divided by area density
+            
+            Hact        = min(MALS/LinDenMAL , TotalDepth - 0.001 )
+            Hact        = max(Hact, 0.01)
+            Aact        = min(MALS * Surf / ArDenMAL, 0.01)
 
             Hactd = 1.0 ! Represents the entire length of the plants
 
@@ -138,37 +144,25 @@ c     LOGICAL First
             Z2 = LocalDepth
             Z1a = TotalDepth - LocalDepth
             Z2a = TotalDepth - LocalDepth + Depth
-           
+            ! Ffac = 1 for linear
             A = (MALS / Hact) * (2 - (2)) / Hact
             B = (MALS / Hact) * (1 * (Zm + TotalDepth) -2 * Zm) / Hact
 
-            ! Macrophyte is not in segment:
+            ! Algae is not in segment:
             If (Zm .GT. Z2) Then
                 BmLayMALS = 0
-            ! Macropyhte is completely in segment:
+            ! Algae is completely in segment:
             Elseif (Zm . LT. Z1 ) Then
                 BmLayMALS = (A/2)  * (Z2**2 -Z1**2) + B * (Z2 -Z1)
-            ! Macropyhte is partialy in segment: TIP !!!!
+            ! Algae is partially in segment
             Else
                 BmlayMALS = (A/2)  * (Z2**2 -Zm**2) + B * (Z2 -Zm)
-            ! For the segment IBotSeg, current segment is ITopSeg!!!
-                PMSA(IPOINT(14)+(IBotSeg-1)*INCREM(14   )) = ISEG
-            Endif
-            !
-            ! One complication: we need to set the top segment explicitly
-            ! if we start at the top
-            !
-            If ( HmaxMAL < 0.0 ) Then
-                CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
-                If ( IKMRK2 .EQ. 0 .OR. IKMRK2 .EQ. 1 ) Then
-                    PMSA(IPOINT(14)+(IBotSeg-1)*INCREM(14   )) = ISEG
-                Endif
             Endif
 
             If (MALS .GT. 0) Then
                FrBmMALS = BmLayMALS / MALS
             Else
-               If ( iseg .eq. IBotseg ) Then
+               If ( iseg .eq. MBotseg ) Then
                   FrBmMALS = 1.0
                Else
                   FrBmMALS = 0.0
@@ -177,14 +171,14 @@ c     LOGICAL First
 
 !           Return Outputparameters to delwaq
 
-            PMSA( IPNT(11) ) = FrBmMALS
-            PMSA( IPNT(12) ) = BmLayMALS / Depth
+            PMSA( IPNT(13) ) = FrBmMALS
+            PMSA( IPNT(14) ) = BmLayMALS / Depth
             If ( HmaxMAL > 0.0 ) Then
-                PMSA( IPNT(13) ) = Hact
+                PMSA( IPNT(15) ) = Hact
             Else
-                PMSA( IPNT(13) ) = OriginalDepth
+                PMSA( IPNT(15) ) = OriginalDepth
             Endif
-
+            PMSA( IPNT(16) ) = Aact
         ENDIF
 
         IPNT = IPNT + INCREM

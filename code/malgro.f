@@ -56,13 +56,12 @@
       REAL(4) MALN        ! I  MacroALgae Nitrogen storage                         (gN/gDM)
       REAL(4) MALP        ! I  MacroALgae phosphorous storage                      (gP/gDM)
       REAL(4) MALC        ! I  MacroALgae carbon storage                           (gC/gDM)
-!      REAL(4) MBotSeg     ! I  Macroalgae bottom segment
+!     REAL(4) MBotSeg     ! I  Macroalgae bottom segment
       REAL(4) LocGroS     ! I  local growth of MALS                                (gDM/m3/d)
       REAL(4) LocGroN     ! I  local growth of MALN                                (gN/m3/d)
       REAL(4) LocGroP     ! I  local growth of MALP                                (gP/m3/d)
       REAL(4) LocGroC     ! I  local growth of MALC      
-
-!      REAL(4) MBotSeg     ! O  Macroalgae bottom segment
+!     REAL(4) MBotSeg     ! O  Macroalgae bottom segment
       
       REAL(4) dMALS
       REAL(4) dMALN
