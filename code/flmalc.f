@@ -54,6 +54,7 @@ C
       REAL(4) alpha       ! I	 photosynthetic efficiency gC dm-2 d-1 (umol photons m-2 s-1)-1
       REAL(4) Isat        ! I	 light intensity where photosynthesis is at max (umol photons m-2 s-1)	
       REAL(4) exuMALC     ! I exudation parameter (gC/g)
+      REAL(4) MBotSeg     ! I
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
@@ -98,9 +99,6 @@ C
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
 
             IF (FrBmMALS > 0.0) THEN
-                ! need to take from bottom segment
-                MALS      =  PMSA( IPNT(  1) )
-                MALC       = PMSA( IPNT(  2) )
                 ! take from current segment
                 FrBmMALS   = PMSA( IPNT(  3) )
                 MALCmin    = PMSA( IPNT(  4) )
@@ -124,11 +122,18 @@ C
                 alpha      = PMSA( IPNT(  22) )
                 Isat       = PMSA( IPNT(  23) )
                 exuMALC    = PMSA( IPNT(  24) )
-                Surf       = PMSA( IPNT(  25) )
-                DELT       = PMSA( IPNT(  26) )
-                Depth      = PMSA( IPNT(  27) )
-                LocalDepth = PMSA( IPNT(  28) )
+                Surf       = PMSA( IPNT(  26) )
+                DELT       = PMSA( IPNT(  27) )
+                Depth      = PMSA( IPNT(  28) )
+                LocalDepth = PMSA( IPNT(  29) )
               
+                MBotSeg    = nint(PMSA( IPNT( 25) ))
+                IF (MBotSeg .le. 0)
+     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 25) ),ISEG,'COVMAC')
+
+                ! need to take from bottom segment
+                MALS       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
+                MALC       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
                 ! check input
 
 !                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')

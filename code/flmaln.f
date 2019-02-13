@@ -48,6 +48,7 @@ C
       REAL(4) JPmax	    ! I  maximum p uptake rate                               (gP/dm day)
       REAL(4) Vel         ! I	 velocity                                            (m/s)
       REAL(4) Vel65	    ! I  current speed at which J = 0.65Jmax                 (m/s)
+      REAL(4) MBotSeg     ! I 
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
@@ -89,8 +90,7 @@ C
 
             IF (FrBmMALS > 0.0) THEN
                 ! need to take from bottom segment
-                MALN       = PMSA( IPNT(1) )
-                MALP       = PMSA( IPNT(2) )
+              
                
                 ! take from this segment
                 NO3	    =	PMSA( IPNT(3) )
@@ -110,10 +110,17 @@ C
                 JPmax	    =	PMSA( IPNT(17) )
                 Vel	    =	PMSA( IPNT(18) )
                 Vel65	    =	PMSA( IPNT(19) )
-                Surf	    =	PMSA( IPNT(20) )
-                DELT	    =	PMSA( IPNT(21) )
-                Depth	    =	PMSA( IPNT(22) )
+                Surf	    =	PMSA( IPNT(21) )
+                DELT	    =	PMSA( IPNT(22) )
+                Depth	    =	PMSA( IPNT(23) )
 
+                MBotSeg    = nint(PMSA( IPNT( 20) ))
+                IF (MBotSeg .le. 0)
+     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 20) ),ISEG,'COVMAC')
+
+              ! need to take from bottom segment
+                MALN       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
+                MALP       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
                 ! check input
 
 !                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')

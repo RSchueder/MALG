@@ -54,6 +54,7 @@ C
       REAL(4) PCRatMALS   ! I  Phosphorous to carbon ratio in MALS                 (gP/gC)
       REAL(4) FrPOC1MALS  ! I  Fraction MALS that goes to POC1 in decay            (-)
       REAL(4) FrPOC2MALS  ! I  Fraction MALS that goes to POC2 in decay            (-)
+      REAL(4) MBotSeg     ! I 
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment        (m2)
       REAL(4) DELT        ! I  timestep for processes                             (d)
       REAL(4) Depth       ! I  depth of segment                                   (m)
@@ -132,11 +133,7 @@ C
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
 
             IF (FrBmMALS > 0.0) THEN
-                ! need to take from bottom segment
-                MALS       = PMSA( IPNT(1) )
-                MALN       = PMSA( IPNT(2) )
-                MALP       = PMSA( IPNT(3) )
-                MALC       = PMSA( IPNT(4) )
+
                 ! take from this segment
                 FrBmMALS   = PMSA( IPNT(5) )
                 MALNmin    = PMSA( IPNT(6) )
@@ -157,9 +154,16 @@ C
                 PCRatMALS  = PMSA( IPNT(21) )
                 FrPOC1MALS = PMSA( IPNT(22) )
                 FrPOC2MALS = PMSA( IPNT(23) )
-                Surf       = PMSA( IPNT(24) )
-                DELT       = PMSA( IPNT(25) )
-                Depth      = PMSA( IPNT(26) )
+                
+                MBotSeg    = nint(PMSA( IPNT( 24) ))
+                IF (MBotSeg .le. 0)
+     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 13) ),ISEG,'COVMAC')
+
+              ! need to take from bottom segment
+                MALS       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
+                MALN       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
+                MALP       = PMSA( IPNT(3)+(IBotSeg-1)*INCREM( 3) )
+                MALC       = PMSA( IPNT(4)+(IBotSeg-1)*INCREM( 4) )
               
                 ! check input
 
