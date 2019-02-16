@@ -1,233 +1,29 @@
-\svnid{$Id: processes_library_um.tex 43694 2015-12-21 09:46:22Z markus $}
-%------------------------------------------------------------------------------
-%\svnid{$Id$}
-%
-%Processes included in this chapter (listed alphabetically in the last column):
-%
-%\begin{longtable}{|p{\textwidth-50mm-36pt}|p{25mm}|p{25mm}|} \hline \STRUT
-%\textbf{process}  & \textbf{process name}       & \textbf{module name}   \\ [1ex] \hline \endhead  \STRUT
-%Habitat suitability indices                     &  CEC & CEC \\ [1ex] \hline \STRUT
-%Growth of submerged and emerged biomass         & CONSELAC & CSELAC \\ [1ex] \hline \STRUT
-%CO_2 consumption and production                 & EBULCH4 & EBUCH4 \\ [1ex] \hline \STRUT
-%Decay of submerged and emerged biomass          & CONSELAC & CSELAC \\ [1ex] \hline \STRUT
-%Growth of rhizomes/root system                  & NH3FREE & NH3FRE \\ [1ex] \hline \STRUT
-%Uptake of nitrogen and phosphorus from water    & OXIDCH4 & METHOX \\ [1ex] \hline \STRUT
-%Uptake of carbon, nitrogen and phosphorus       & OXIDCH4 & METHOX \\ [1ex] \hline \STRUT
-%from rhizomes                                   &         &        \\ [1ex] \hline \STRUT
-%Uptake of nutrients from sediment               & OXIDSUD  & SULFOX \\ [1ex] \hline \STRUT
-%Oxygen production and consumption               & pH\_SIMP & SIMPH \\ [1ex] \hline \STRUT
-%Grazing and harvesting                          & PRECSUL & SULFPR \\ [1ex] \hline \STRUT
-%Vertical distribution of submerged macrophytes  & REARCO2 & REAR   \\ [1ex] \hline \STRUT
-%Vegetation coverage                             & SATURCH4 & SATCH4 \\ [1ex] \hline \STRUT
-%\end{longtable}
+\documentclass{article}
+ 
+\begin{document}
 
-%\todo{The original documentation describes several more processes, but it is unclear if they are independent
-%or not and if they are even implemented. This needs to be sorted out.}
+\section{Framework of the macroalgae module}
 
-\section{Framework of the macrophyte module}
+\subsection{relation of macroalgae module to other processes}
 
-\subsection{Relation macrophyte module and other DELWAQ processes}
+The macroalgae module is designed to model the the dynamics of kelp\textit{Saccharina} and is based almost entirely on the model described in Broch \textit{et al.} (2011). The general model organization will be described here, specifically the implementation in the DELWAQ library. For further details of the derivation of the model equations please refer to Broch \textit{et al.} (2011).
 
-Many processes are acknowledged to be of importance to the development of macrophytes and their
-interaction with the environment:
+Macroalgae can be idealized as 4 distinct state variable components:
 \begin{itemize}
-\item   Light climate
-\item   Sedimentation and resuspension
-\item   Nutrient dynamics
-\item   Oxygen and carbon cycles
-\item   Diurnal processes
-\item   Food web structures
-\item   Chemical processes within the root zone
+\item MacroALgae Structural mass (MALS)
+\item MacroALgae Nitrogen storage mass (MALN)
+\item MacroALgae Phosphorous storage mass (MALP)
+\item MacroALgae Carbon storage mass (MALC)
+
+Collectively these components represent the entire macroalgae frond, where frond is the term used to describe the macro structure of the algae visible to the naked eye, including the foot. Each component exhibits its own growth dynamics and interacts with the surrounding water independently. 
+
+For instance, the structural mass represents the part of the macroalgae that increases the volume of the total front when it grows. It does not take nutrients from the water, does not photosynthesize, and loses mass when it decays, producing detritus. It grows by taking nutrients (N/P/C) from its storage, and is thus responsible for growth respiration. The structural mass is analogous to the common notion of 'dry matter' and represents the dry weight of the plant minus the weight of water, nutrient stores, and carbon stores.
+ 
+The nitrogen and phosphorous storage uptake nutrients (NH4, NO3, PO4) from the ambient water and store them for the structural mass during growth periods. In this model it is assumed the phosphorous storage dynamics are analagous to the nitrogen, but in reality the behaviour of phosphorous storage is not well known.
+
+The carbon storage is the part of the plant responsible for photosynthesizing, producing exudate, and maintenence respiration. It produces carbon by taking up inorganic carbon and producing oxygen via photosynthesis. It provides carbon to the structural mass during growth periods. 
+
+It is assumed that there is constant relationship between volume and area of a macroalgae frond. This means that the density of the macroalgae does not change, even if the ratio of structural mass to stored material changes. Additionally, the C:N and C:P ratios of each component are fixed, but because the ratio of stored mass to structural mass changes, the C:N and C:P ratios of the entire frond changes in due to changes in ambient conditions.
+
 \end{itemize}
-
-\autoref{fig:interactionCycles} gives an overview of the most important fluxes that exist within and between
-macrophytes and their abiotic surroundings. It also indicates which relevant processes are already included
-in \DWAQ and which fluxes (and processes within macrophytes/ macrophyte stands) are newly included in the
-\DWAQ macrophyte module. The internal processes of transport between different functional parts of macrophytes
-(being emerged, submerged and root sections of the plant) play an important role too. The development of biomass
-is directly linked to the fluxes between the macrophyte stands and the open water plus sediment as modelled in
-\DWAQ (e.g.\ nutrient uptake for growth, uptake of CO$_2$).
-
-\begin{figure}
-\includegraphics[width=\textwidth]{Chapters/Vegetation/interactions_cycles.png}
-\caption{Interactions between the nutrient cycles and the life cycle of macrophytes.}
-\label{fig:interactionCycles}
-\end{figure}
-
-\subsection{Growth forms}
-In the Macrophytes Module macrophytes can be described based on their growth forms by selecting to include
-sections of the plants: emerged, submerged and root sections. Five growth forms have been selected as examples
-(\Autoref{fig:growthForms}). For each category a few species growing in Western Europe are given as examples.
-
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{Chapters/Vegetation/growth_forms.png}
-\caption{The different macrophytes growth forms that can be modeled with the Macrophyte Module.
-%[TODO: Rudy's remark: charids not shown but described, floating non-rooted forms shown but not described]
-}
-\label{fig:growthForms}
-\end{figure}
-
-The different macrophytes growth forms that can be modeled with the Macrophyte Module.
-\begin{enumerate}
-\item
-Helophytes like the common reed \emph{Phragmites australis}, the cattail or \emph{Typhaceae} family and the arrowhead \emph{Sagittaria saggittifolia}.
-\item
-Eloidids: The submerged angiosperms like the sago pondweed \emph{Potamogeton pectinatus}, the common
-waterweed \emph{Elodea canadensis} and the Eurasian water-milfoil \emph{Myriophyllum spicatum}.
-\item
-Charids: The submerged macro-algae like the stoneworts \emph{Chara sp.} \emph{Chara sp.} can also
-be modeled with the BLOOMmodule, which models the phytoplankton production in \DWAQ).  The coefficients
-concerning this species are also given separately from the other submerged species.
-\item
-Lemnids: The emerged, non-rooted species like the lesser duckweed \emph{Lemna minor}, the star duckweed
-\emph{Lemna gibba} and the water fern \emph{Azolla filiculoides}.
-\item
-The emerged rooted species like the \emph{Nympheaceae} family: the white water
-lily \emph{Nymphea alba}, the spatter-dock \emph{Nuphar lutea} and the yellow floating-heart \emph{Nymphoides peltata}.
-\end{enumerate}
-
-The distinction between emerged and submerged macrophytes is especially important because they have different
-interactions with water quality processes. The major changes concern the nutrient uptake strategies, the
-dependence on light availability and the sedimentation/erosion processes
-\citep{RiversHandbook,BarkoSmart,EcologyRivers}.
-Emerged sections of macrophytes can fully cover the water surface and thereby block light penetration and
-aeration, though oxygen is still released of course into the water via photosynthesis. Submerged macrophytes on the
-other hand, are strongly dependent on the light climate and growth
-is limited through shading. They too can shade lower parts, but influence on aeration processes is not modelled.
-During their life cycle or seasons some plants may change strategy from submerged to emerged (e.g.\ \emph{Nympheaceae}).
-Thus, a good understanding of the life cycle is essential when they are to be included in the macrophyte modelling.
-
-Note that the emerged, non-rooted species can also be affected by drift due to winds. This process is not included
-in the macrophyte module.
-
-\subsection{Plant parts}
-
-\begin{figure}
-\begin{center}
-\includegraphics[height=8cm]{Chapters/Vegetation/plant_parts.png}
-\caption{The abbreviations for the parts of the vegetation that are used in the equations.}
-\label{fig:plantParts}
-\end{center}
-\end{figure}
-
-In the formulas a single species $i$ can consist of emerged parts and/or submerged parts and/or root-rhizome
-parts. The emerged part is indicated by EM$_i$, the submerged part by SM$_i$ and the root-rhizome by RH$_i$. Please note
-that EM$_i$, SM$_i$ and RH$_i$ refer to the same species $i$. This is illustrated in \autoref{fig:plantParts}.
-The submerged section SM$_i$ can be subdivided over multiple layers in case of a vertically differentiated model
-(see \autoref{SomethinAboutLayeredBottom}).
-
-\subsection{Usage note}
-There can be a strong variation in some of the coeffcients (when adopting those from literature) due to local
-settings. Especially the coefficient values concern the macrophytes nutrients uptake and release, the life
-span and the macrophytes density are prone to local variation. We recommend appropriate validation of the
-module for each new application.
-
-\subsection{Different macrophyte growth forms}
-This section provides a detailed description of the various forms in which aquatic macrophytes can grow.
-
-\subsubsection*{Emerged macrophytes}
-Emerged macrophytes take up nutrients from the roots and the rhizome exclusively \citep{GraneliSolander}.
-They contribute to removing some important quantities of nutrients from the sediment, because of that they are
-often called helophytes filters. Nevertheless some researchers suspect that they are not directly taking up
-nutrients, but that the epiphytic community that they often shelter is responsible for it. Because of these
-properties, emerged plants are often grown and harvested in the area of Waste Water Treatment Plants (WWTP)
-in order to remove the excess of nutrients. But the nutrients are translocated from shoots and leaves to
-rhizome and roots during autumn, so the harvesting is only efficient if done before this translocation
-\citep{MeulemanEtAl}. The decomposition of the organic matter, and especially of the rhizome (*),
-which contains a lot of carbohydrates reserves, is slow for the emerged plant since they have tissue
-resistance to microbiological attacks \citep{GraneliSolander}.
-
-As their growth is not limited by light extinction, they can reach some very dense stands stage. Their
-rhizome, stems, and leaves also contribute to the limitation of the wave and wind impact and therefore
-to the stabilization of the sediment in the area where they grow; emerged plants are also acting as a
-sediment trap \citep{Coops}. Moreover those plants are also a source of feeding and a refuge for a
-lot of bird species.
-
-\emph{Water type and habitat:} shoreline or even wet ground, out of water of marshy shores; marshes, ponds,
-lakes, ditches, streams and estuaries with running or standing waters.
-
-\subsubsection*{Submerged macrophytes}
-In general submerged macrophytes take up most of the nutrients from the rhizome and roots system and
-little directly from the water \citep{Eugelink,GraneliSolander}. It has been demonstrated
-that in the case of \emph{Myriophyllum exalbescens} there is an uptake by the leaves but that the foliar uptake
-of Phosphorus goes much faster when the concentration in the water increases \citep{MarteHartman}.
-The mineralization of the organic matter is quite fast since the roots of the submerged plants are
-finer compared to the emerged plants, and don't have a storage system like the emerged plants.
-Their growth can be limited by light availability even in shallow lakes. On the other hand their
-roots, leaves and stems contributes to the increase of the resistance to the water flow and consequently
-to the increase of sedimentation of suspended particles. The result is the maintenance of water
-transparency, a factor which itself influences the probability of colonization by submerged macrophytes.
-The increase of sedimentation concern notably the nutrients associated with particles: therefore
-nutrients are buried in the sediment layer faster and consequently the amount of nutrients in the
-water remains lower than in more open deep water bodies.
-
-Many submerged plants like the pondweeds are a very important source of food for the wildlife.
-
-\emph{Water type:} alkaline fresh to brackish, running or standing water (for \emph{Potamogeton sp.})\newline
-\emph{Habitat:} usually found entirely underwater. Can grow from shallow water to depths greater than ten
-meters in case of very clear water.
-
-\subsubsection*{Submerged macroalgae}
-The plant-like macroalgae like the Characeae family do not have a real root system and  take up
-more nitrogen from the water than from the sediment, \citep{VermeerEtAl} and there are indications
-that the water nutrient concentration can be lowered widely by their presence. In certain cases they seem to
-improve the water transparency significantly, especially because they are stabilizing the sediment
-and therefore limiting its resuspension (see section II.2.B. on submerged plants). They grow faster
-than the submerged plants. Besides, Characeae have the peculiarity to disperse by detaching from the
-substrate and emerging above water with the current. In the already existing BLOOM module (*) of
-Delwaq, Chara sp. is modeled in this particular growth form whereas in the macrophyte module,
-Chara sp. is modeled as an emerged "rooted" plant at which a very small root biomass is attributed,
-since in the reality the root system is very reduced and it tends to lie on or just above the sediment.
-Chara sp. will be included in the submerged plant category in the Macrophyte module, but since it possesses some special features and coefficient, the set of coefficient has been defined properly in the table 8 in section II.3.C. %\todo{References}
-
-\emph{Water type:} Fresh to brackish hard water.\newline
-\emph{Habitat:} They are found from shallow water to very deep areas in clear water. Their presence is
-generally a sign of good 'health' of the ecosystem.
-
-\subsubsection*{Emerging non-rooted macrophytes}
-Emerging non rooted macrophytes, like duckweeds, take up nutrients from the water column and are
-also able to transform the diazote directly from the atmosphere. They usually grow in rather
-nutrient-rich waters and can remove a lot of nutrients from the water during their growth that
-they release during the decay phase. These plants can grow and reproduce very quickly when the
-environmental conditions are adequate, and they have a very short life span (*) compared to the
-other macrophytes: the Lemnids can decompose to 50\ \% of the original biomass within 10 to 20 days
-\citep{StowaKrooslagen}.
-
-As their name indicates, the emerging-non-rooted plants are laying in the surface of the water
-and consequently can block the light up to 99 percent. They might over compete with the submerged
-plant, but they are more often found on the shore, in between other macrophytes. In the model they
-are not considered to be light-limited, even if in the reality they can sometimes be seen forming
-layers on top of each other and consequently auto-competing for the light, which is necessary for
-the photosynthesis.
-
-The emergent non-rooted plants are an important source of feeding for the water fowls.
-
-\emph{Water type:} Still and slow moving waters in many nutrient-rich freshwater.\newline
-\emph{Habitat:} Often found along the shoreline. Sometimes form extensive green mats on the water surface.
-
-\subsubsection*{Emerged and submerged-rooted macrophytes}
-Emergent-rooted macrophytes take up most of the nutrients from the sediment by the rhizome and roots
-system which is very developed.
-
-They block the light penetration in the water by multiplication on top of the water column, so that no
-submerged species are able to grow below these plants since no photosynthesis is possible in absence
-of light. The Nympheaceae can sometimes grow on top of each other and auto-compete for light, but they
-are not limited by light availability in the model. [TODO: Rudy's remark]
-
-The seeds constitute a direct food source for birds like waterfowls and the leaves for mammals like
-beavers, muskrats, porcupines and deer and provides spawning habitat for fishes (Aquatic Plant
-Identification Manual for Washington's Freshwater Plants, year?).
-
-\emph{Water type:} shallow, still or slowly moving water in ponds, lakes, swamps, rivers, canals and ditches.\newline
-\emph{Habitat:} They often form a band along the shallow lake in rich organic sediment.
-
-\subsubsection*{Emerging submerged non-rooted macrophytes}
-These plants have emerged parts, while their root system is in the water, but there are exceptions
-since for example the water soldier (\emph{Stratiotes aloides}) has a submerged phase in winter and is only ermergent
-in summer (see beginning of section II.2.). It requires specific conditions like peat soil and large
-humic layer, which could correspond to a filling-up stage of the water body. Moreover the life
-cycle is rather complex since the shoots formed by vegetative reproduction sink on the ground
-in winter and float again in early summer \citep{Pot}. Other classifications like the one from
-\citet{Dodds}, adapted from \citet{Riener} put this category in the emergent unattached growth form.
-
-\emph{Water type and Habitat:} stagnant water with organic sediment.
+\end{document}
