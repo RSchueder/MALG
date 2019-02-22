@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D3Dwaq_OpenPL", "D3Dwaq_OpenPL", "{50190DAD-B16D-4DD0-B92A-F3DFCE9E4D40}"
+EndProject
+Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "D3Dwaq_OpenPL", "D3Dwaq_OpenPL.vfproj", "{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}.Debug|Win32.Build.0 = Debug|Win32
+		{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}.Release|Win32.ActiveCfg = Release|Win32
+		{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA} = {50190DAD-B16D-4DD0-B92A-F3DFCE9E4D40}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+table-name           'Discharge : 1'
+contents             'regular   '
+location             'In                  '
+time-function        'non-equidistant'
+reference-time       20190101
+time-unit            'minutes'
+interpolation        'linear'
+parameter            'time                '                     unit '[min]'
+parameter            'flux/discharge rate '                     unit '[m3/s]'
+records-in-table     2
+ 0.0000000e+000  1.1500000e-005
+ 8.6400000e+003  1.1500000e-005
+table-name           'Discharge : 2'
+contents             'regular   '
+location             'Out                 '
+time-function        'non-equidistant'
+reference-time       20190101
+time-unit            'minutes'
+interpolation        'linear'
+parameter            'time                '                     unit '[min]'
+parameter            'flux/discharge rate '                     unit '[m3/s]'
+records-in-table     2
+ 0.0000000e+000 -1.1500000e-005
+ 8.6400000e+003 -1.1500000e-005

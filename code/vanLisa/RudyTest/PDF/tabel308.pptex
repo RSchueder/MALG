@@ -1,0 +1,1237 @@
+Salinity   colsep Salinity                                           colsep (g/kg)               colsep VarSal     \\
+Salinity   colsep Salinity                                           colsep (g/kg)               colsep Salinchlor \\
+Temp       colsep ambient water temperature                          colsep (oC)                 colsep Temperatur \\
+pH         colsep pH                                                 colsep (-)                  colsep pH_carb    \\
+pH         colsep pH                                                 colsep (-)                  colsep pH_simp    \\
+DisCO2     colsep concentration of dissolved carbon dioxide          colsep (g/m3)               colsep pH_carb    \\
+DisCO2     colsep concentration of dissolved carbon dioxide          colsep (g/m3)               colsep SpecCarb   \\
+DisHCO3    colsep concentration of dissolved HCO3(-)                 colsep (gC/m3)              colsep pH_carb    \\
+DisHCO3    colsep concentration of dissolved HCO3(-)                 colsep (gC/m3)              colsep SpecCarb   \\
+Surf       colsep horizontal surface area of a DELWAQ segment        colsep (m2)                 colsep DynSurf    \\
+Depth      colsep depth of segment                                   colsep (m)                  colsep DynDepth   \\
+TotalDepth colsep total depth water column                           colsep (m)                  colsep TotDepth   \\
+LocalDepth colsep depth from water surface to bottom of segment      colsep (m)                  colsep TotDepth   \\
+LocSedDept colsep Sediment layer depth to bottom of segment          colsep (m)                  colsep TotDepth   \\
+SwEmersion colsep switch indicating submersion(0) or emersion(1)     colsep (-)                  colsep Emersion   \\
+RadSW      colsep Short wave radiation reaching water                colsep (W/m2)               colsep Meteo      \\
+VWind      colsep wind speed                                         colsep (m/s)                colsep Meteo      \\
+RelHumAir  colsep Relative air humidity                              colsep (%)                  colsep Meteo      \\
+TempAir    colsep Air temperature                                    colsep (oC)                 colsep Meteo      \\
+PAtm       colsep Air pressure                                       colsep (mbar)               colsep Meteo      \\
+SunFac     colsep Percentage sunshine                                colsep (%)                  colsep Meteo      \\
+RhoWater   colsep density of water                                   colsep (kg/m3)              colsep HeatBal    \\
+RhoWater   colsep density of water                                   colsep (kg/m3)              colsep Salinchlor \\
+ModTemp    colsep Water Temperature                                  colsep (oC)                 colsep HeatBal    \\
+MaxEM01    colsep maximum biomass for macrophyt emerged 01           colsep (gC/m2)              colsep MaxMacro   \\
+MaxSM01    colsep maximum biomass for macrophyt submerged 01         colsep (gC/m2)              colsep MaxMacro   \\
+MaxEM02    colsep maximum biomass for EM02                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxSM02    colsep maximum biomass for SM02                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxEM03    colsep maximum biomass for EM03                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxSM03    colsep maximum biomass for SM03                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxEM04    colsep maximum biomass for EM04                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxSM04    colsep maximum biomass for SM04                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxEM05    colsep maximum biomass for EM05                           colsep (gC/m2)              colsep MaxMacro   \\
+MaxSM05    colsep maximum biomass for SM05                           colsep (gC/m2)              colsep MaxMacro   \\
+IBotSeg    colsep Bottom segment number                              colsep (-)                  colsep Coverage   \\
+fcover     colsep fraction of water surface covered <0-1>            colsep (-)                  colsep Coverage   \\
+RadSurf    colsep irradiation at the water surface                   colsep (W/m2)               colsep Coverage   \\
+DayRadSurf colsep actual irradiance over the day                     colsep (W/m2)               colsep DAYRAD     \\
+DelTrad    colsep temperature increase due to radiation              colsep (oC)                 colsep Temperatur \\
+Cl         colsep Chloride                                           colsep (g/m3)               colsep Salinchlor \\
+WSNoseg1   colsep workspace array no. 1                              colsep (-)                  colsep Veloc      \\
+WSNoseg2   colsep workspace array no. 2                              colsep (-)                  colsep Veloc      \\
+WSNoseg3   colsep workspace array no. 3                              colsep (-)                  colsep Veloc      \\
+WSNoseg4   colsep workspace array no. 4                              colsep (-)                  colsep Veloc      \\
+Velocity   colsep horizontal flow velocity                           colsep (m/s)                colsep Veloc      \\
+WSNoseg5   colsep workspace array no. 5                              colsep (-)                  colsep ResTim     \\
+CHEZY      colsep Chezy coefficient                                  colsep (m0.5/s)             colsep Chezy      \\
+FETCH      colsep fetch length for wind                              colsep (m)                  colsep WFetch     \\
+InitDepth  colsep depth where wave is created <-1: actual depth>     colsep (m)                  colsep WDepth     \\
+WaveHeight colsep calculated height of a wind induced wave           colsep (m)                  colsep Wave       \\
+WaveLength colsep calculated length of a wind induced wave           colsep (m)                  colsep Wave       \\
+WavePeriod colsep calculated period of a wind induced wave           colsep (s)                  colsep Wave       \\
+Tau        colsep total bottom shear stress                          colsep (N/m2)               colsep CalTau     \\
+FrBmSM01   colsep Fraction Biomass Layer macrophyte submerged 01     colsep (-)                  colsep MACDIS01   \\
+BmLaySM01  colsep Biomass Layer macrophyt submerged 01               colsep (gC/m3)              colsep MACDIS01   \\
+HactSM01   colsep Actual Height SM 01                                colsep (m)                  colsep MACDIS01   \\
+ITopSeg01  colsep Tip segment number S01                             colsep (-)                  colsep MACDIS01   \\
+FrBmSM02   colsep Fraction Biomass Layer macrophyte submerged 02     colsep (-)                  colsep MACDIS02   \\
+BmLaySM02  colsep Biomass Layer macrophyt submerged 02               colsep (gC/m3)              colsep MACDIS02   \\
+HactSM02   colsep Actual Height SM 02                                colsep (m)                  colsep MACDIS02   \\
+ITopSeg02  colsep Tip segment number S02                             colsep (-)                  colsep MACDIS02   \\
+FrBmSM03   colsep Fraction Biomass Layer macrophyte submerged 03     colsep (-)                  colsep MACDIS03   \\
+BmLaySM03  colsep Biomass Layer macrophyt submerged 03               colsep (gC/m3)              colsep MACDIS03   \\
+HactSM03   colsep Actual Height SM 03                                colsep (m)                  colsep MACDIS03   \\
+ITopSeg03  colsep Tip segment number S03                             colsep (-)                  colsep MACDIS03   \\
+FrBmSM04   colsep Fraction Biomass Layer macrophyte submerged 04     colsep (-)                  colsep MACDIS04   \\
+BmLaySM04  colsep Biomass Layer macrophyt submerged 04               colsep (gC/m3)              colsep MACDIS04   \\
+HactSM04   colsep Actual Height SM 04                                colsep (m)                  colsep MACDIS04   \\
+ITopSeg04  colsep Tip segment number S04                             colsep (-)                  colsep MACDIS04   \\
+FrBmSM05   colsep Fraction Biomass Layer macrophyte submerged 05     colsep (-)                  colsep MACDIS05   \\
+BmLaySM05  colsep Biomass Layer macrophyt submerged 05               colsep (gC/m3)              colsep MACDIS05   \\
+HactSM05   colsep Actual Height SM 05                                colsep (m)                  colsep MACDIS05   \\
+ITopSeg05  colsep Tip segment number S05                             colsep (-)                  colsep MACDIS05   \\
+CO2        colsep CO2                                                colsep (g/m3)               colsep pH_simp    \\
+Poros      colsep volumetric porosity                                colsep (-)                  colsep DMVolume   \\
+DisH2CO3   colsep concentration of dissolved true H2CO3              colsep (gC/m3)              colsep SpecCarb   \\
+FrCO3dis   colsep fraction dissolved free carbonate                  colsep (-)                  colsep SpecCarb   \\
+ExtVlPhyt  colsep VL extinction by phytoplankton                     colsep (1/m)                colsep EXTINABVLP \\
+ExtVlPhyt  colsep VL extinction by phytoplankton                     colsep (1/m)                colsep EXTINALVL  \\
+ExtVlPhyt  colsep VL extinction by phytoplankton                     colsep (1/m)                colsep EXTINABVL  \\
+ExtVlPhyt  colsep VL extinction by phytoplankton                     colsep (1/m)                colsep ExtPhDVL   \\
+ExtUvPhyt  colsep UV extinction by phytoplankton                     colsep (1/m)                colsep EXTINABUVP \\
+ExtUvPhyt  colsep UV extinction by phytoplankton                     colsep (1/m)                colsep EXTINABUV  \\
+ExtUvPhyt  colsep UV extinction by phytoplankton                     colsep (1/m)                colsep ExtPhDUV   \\
+ExtVlMacro colsep VL extinction by macrophytes                       colsep (1/m)                colsep ExtMacroVl \\
+ExtUvMacro colsep UV extinction by macrophytes                       colsep (1/m)                colsep ExtMacroUV \\
+ExtVl      colsep total extinction coefficient visible light         colsep (1/m)                colsep Extinc_VLG \\
+ExtVlODS   colsep VL extinction by DOC                               colsep (1/m)                colsep Extinc_VLG \\
+ExtUv      colsep total extinction coefficient UV light              colsep (1/m)                colsep Extinc_UVG \\
+RadBot     colsep irradiation at the segment lower-boundary          colsep (W/m2)               colsep CalcRad    \\
+fRefl      colsep fraction of radiation reflected at water surface   colsep (-)                  colsep Reflection \\
+Rad        colsep irradiation at the segment upper-boundary          colsep (W/m2)               colsep CalcRad    \\
+RadBotDay  colsep actual irradiation at the lower-boundary           colsep (W/m2)               colsep CalcRadDay \\
+RadBot_uv  colsep UV-irradiation at the segment lower-boundary       colsep (W/m2)               colsep CalcRadUV  \\
+Rad_uv     colsep UV-irradiation at the segment upper-boundary       colsep (W/m2)               colsep CalcRadUV  \\
+DayL       colsep daylength <0-1>                                    colsep (d)                  colsep Daylength  \\
+BloomDepth colsep average depth over Bloom time step                 colsep (m)                  colsep DepAve     \\
+SwVTRANS   colsep switch effect of vertical mixing on light          colsep (-)                  colsep vtrans     \\
+EffMAlg    colsep momentaneous efficiency of algae group             colsep (-)                  colsep EffMBlo_P  \\
+EffMALG01  colsep momentaneous efficiency of algae group 01          colsep (-)                  colsep EffMBlo    \\
+EffMALG02  colsep momentaneous efficiency of algae group 02          colsep (-)                  colsep EffMBlo    \\
+EffMALG03  colsep momentaneous efficiency of algae group 03          colsep (-)                  colsep EffMBlo    \\
+EffMALG04  colsep momentaneous efficiency of algae group 04          colsep (-)                  colsep EffMBlo    \\
+EffMALG05  colsep momentaneous efficiency of algae group 05          colsep (-)                  colsep EffMBlo    \\
+EffMALG06  colsep momentaneous efficiency of algae group 06          colsep (-)                  colsep EffMBlo    \\
+EffMALG07  colsep momentaneous efficiency of algae group 07          colsep (-)                  colsep EffMBlo    \\
+EffMALG08  colsep momentaneous efficiency of algae group 08          colsep (-)                  colsep EffMBlo    \\
+EffMALG09  colsep momentaneous efficiency of algae group 09          colsep (-)                  colsep EffMBlo    \\
+EffMALG10  colsep momentaneous efficiency of algae group 10          colsep (-)                  colsep EffMBlo    \\
+EffMALG11  colsep momentaneous efficiency of algae group 11          colsep (-)                  colsep EffMBlo    \\
+EffMALG12  colsep momentaneous efficiency of algae group 12          colsep (-)                  colsep EffMBlo    \\
+EffMALG13  colsep momentaneous efficiency of algae group 13          colsep (-)                  colsep EffMBlo    \\
+EffMALG14  colsep momentaneous efficiency of algae group 14          colsep (-)                  colsep EffMBlo    \\
+EffMALG15  colsep momentaneous efficiency of algae group 15          colsep (-)                  colsep EffMBlo    \\
+EffMALG16  colsep momentaneous efficiency of algae group 16          colsep (-)                  colsep EffMBlo    \\
+EffMALG17  colsep momentaneous efficiency of algae group 17          colsep (-)                  colsep EffMBlo    \\
+EffMALG18  colsep momentaneous efficiency of algae group 18          colsep (-)                  colsep EffMBlo    \\
+EffMALG19  colsep momentaneous efficiency of algae group 19          colsep (-)                  colsep EffMBlo    \\
+EffMALG20  colsep momentaneous efficiency of algae group 20          colsep (-)                  colsep EffMBlo    \\
+EffMALG21  colsep momentaneous efficiency of algae group 21          colsep (-)                  colsep EffMBlo    \\
+EffMALG22  colsep momentaneous efficiency of algae group 22          colsep (-)                  colsep EffMBlo    \\
+EffMALG23  colsep momentaneous efficiency of algae group 23          colsep (-)                  colsep EffMBlo    \\
+EffMALG24  colsep momentaneous efficiency of algae group 24          colsep (-)                  colsep EffMBlo    \\
+EffMALG25  colsep momentaneous efficiency of algae group 25          colsep (-)                  colsep EffMBlo    \\
+EffMALG26  colsep momentaneous efficiency of algae group 26          colsep (-)                  colsep EffMBlo    \\
+EffMALG27  colsep momentaneous efficiency of algae group 27          colsep (-)                  colsep EffMBlo    \\
+EffMALG28  colsep momentaneous efficiency of algae group 28          colsep (-)                  colsep EffMBlo    \\
+EffMALG29  colsep momentaneous efficiency of algae group 29          colsep (-)                  colsep EffMBlo    \\
+EffMALG30  colsep momentaneous efficiency of algae group 30          colsep (-)                  colsep EffMBlo    \\
+EffiAlg    colsep average light efficiency algae (BLOOM step)        colsep (-)                  colsep EffABlo_P  \\
+EffiALG01  colsep average light efficiency algae 01 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG02  colsep average light efficiency algae 02 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG03  colsep average light efficiency algae 03 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG04  colsep average light efficiency algae 04 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG05  colsep average light efficiency algae 05 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG06  colsep average light efficiency algae 06 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG07  colsep average light efficiency algae 07 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG08  colsep average light efficiency algae 08 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG09  colsep average light efficiency algae 09 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG10  colsep average light efficiency algae 10 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG11  colsep average light efficiency algae 11 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG12  colsep average light efficiency algae 12 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG13  colsep average light efficiency algae 13 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG14  colsep average light efficiency algae 14 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG15  colsep average light efficiency algae 15 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG16  colsep average light efficiency algae 16 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG17  colsep average light efficiency algae 17 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG18  colsep average light efficiency algae 18 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG19  colsep average light efficiency algae 19 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG20  colsep average light efficiency algae 20 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG21  colsep average light efficiency algae 21 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG22  colsep average light efficiency algae 22 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG23  colsep average light efficiency algae 23 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG24  colsep average light efficiency algae 24 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG25  colsep average light efficiency algae 25 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG26  colsep average light efficiency algae 26 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG27  colsep average light efficiency algae 27 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG28  colsep average light efficiency algae 28 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG29  colsep average light efficiency algae 29 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+EffiALG30  colsep average light efficiency algae 30 (BLOOM step)     colsep (-)                  colsep EffABlo    \\
+Cu         colsep C-specific growth rate                             colsep (g/m3)               colsep GroMrt_pla \\
+fPPtot     colsep total net primary production                       colsep (gC/m2/d)            colsep BLOOM_P    \\
+fPPtot     colsep total net primary production                       colsep (gC/m2/d)            colsep BLOOM      \\
+fResptot   colsep total respiration flux                             colsep (gC/m2/d)            colsep BLOOM_P    \\
+fResptot   colsep total respiration flux                             colsep (gC/m2/d)            colsep BLOOM      \\
+Phyt       colsep total carbon in phytoplankton                      colsep (gC/m3)              colsep Phy_Blo_P  \\
+Phyt       colsep total carbon in phytoplankton                      colsep (gC/m3)              colsep Phy_Blo    \\
+Phyt       colsep total carbon in phytoplankton                      colsep (gC/m3)              colsep Phy_dyn    \\
+AlgN       colsep total nitrogen in algae                            colsep (gN/m3)              colsep Phy_Blo_P  \\
+AlgN       colsep total nitrogen in algae                            colsep (gN/m3)              colsep Phy_Blo    \\
+AlgN       colsep total nitrogen in algae                            colsep (gN/m3)              colsep Phy_dyn    \\
+AlgP       colsep total phosphorus in algae                          colsep (gP/m3)              colsep Phy_Blo_P  \\
+AlgP       colsep total phosphorus in algae                          colsep (gP/m3)              colsep Phy_Blo    \\
+AlgP       colsep total phosphorus in algae                          colsep (gP/m3)              colsep Phy_dyn    \\
+AlgSi      colsep total silica in algae                              colsep (gSi/m3)             colsep Phy_Blo_P  \\
+AlgSi      colsep total silica in algae                              colsep (gSi/m3)             colsep Phy_Blo    \\
+AlgSi      colsep total silica in algae                              colsep (gSi/m3)             colsep Phy_dyn    \\
+AlgDM      colsep total DM in algae                                  colsep (gDM/m3)             colsep Phy_Blo_P  \\
+AlgDM      colsep total DM in algae                                  colsep (gDM/m3)             colsep Phy_Blo    \\
+AlgDM      colsep total DM in algae                                  colsep (gDM/m3)             colsep Phy_dyn    \\
+Chlfa      colsep Chlorophyll-a concentration                        colsep (mg/m3)              colsep Phy_Blo_P  \\
+Chlfa      colsep Chlorophyll-a concentration                        colsep (mg/m3)              colsep Phy_Blo    \\
+Chlfa      colsep Chlorophyll-a concentration                        colsep (mg/m3)              colsep Phy_dyn    \\
+POCnoa     colsep total POC (no algae)                               colsep (gC/m3)              colsep MakOOC     \\
+POCnoa     colsep total POC (no algae)                               colsep (gC/m3)              colsep Compos     \\
+POCS1      colsep total POC in layer S1                              colsep (gC/m2)              colsep MakOOCS1   \\
+POCS1      colsep total POC in layer S1                              colsep (gC/m2)              colsep S1_Comp    \\
+POCS2      colsep total POC in layer S2                              colsep (gC/m2)              colsep MakOOCS2   \\
+POCS2      colsep total POC in layer S2                              colsep (gC/m2)              colsep S2_Comp    \\
+DMS1       colsep total amount of dry matter in layer S1             colsep (gDM/m2)             colsep S1_Comp    \\
+PHYTS1     colsep total carbon in phytoplankton in layer S1          colsep (gC/m2)              colsep S1_Comp    \\
+RHOS1      colsep overall bulk density layer S1                      colsep (g/m3)               colsep S1_Comp    \\
+ActThS1    colsep actual thickness layer S1                          colsep (m)                  colsep S1_Comp    \\
+FrIM1S1    colsep fraction IM1 in layer S1                           colsep (gDM/gDM)            colsep S1_Comp    \\
+FrIM2S1    colsep fraction IM2 in layer S1                           colsep (gDM/gDM)            colsep S1_Comp    \\
+FrIM3S1    colsep fraction IM3 in layer S1                           colsep (gDM/gDM)            colsep S1_Comp    \\
+FrDetCS1   colsep fraction DetC in layer S1                          colsep (gC/gDM)             colsep S1_Comp    \\
+FrOOCS1    colsep fraction OOC in layer S1                           colsep (gC/gDM)             colsep S1_Comp    \\
+FrDiatS1   colsep fraction Diatoms in layer S1                       colsep (gC/gDM)             colsep S1_Comp    \\
+N-CDetCS1  colsep N:C ratio Detritus S1                              colsep (gN/gC)              colsep S1_Comp    \\
+P-CDetCS1  colsep P:C ratio Detritus S1                              colsep (gP/gC)              colsep S1_Comp    \\
+S-CDetCS1  colsep Si:C ratio Detritus S1                             colsep (gSi/gC)             colsep S1_Comp    \\
+N-COOCS1   colsep N:C ratio Other organics S1                        colsep (gN/gC)              colsep S1_Comp    \\
+P-COOCS1   colsep P:C ratio Other organics S1                        colsep (gP/gC)              colsep S1_Comp    \\
+S-COOCS1   colsep Si:C ratio Other organics S1                       colsep (gSi/gC)             colsep S1_Comp    \\
+FrAAPS1    colsep fraction AAP in layer S1                           colsep (gP/gDM)             colsep S1_Comp    \\
+FrMPB1S1   colsep fraction MPB1 in layer S1                          colsep (gC/gDM)             colsep S1_Comp    \\
+FrMPB2S1   colsep fraction MPB2 in layer S1                          colsep (gC/gDM)             colsep S1_Comp    \\
+DMS2       colsep total amount of dry matter in layer S2             colsep (gDM/m2)             colsep S2_Comp    \\
+PHYTS2     colsep total carbon in phytoplankton in layer S2          colsep (gC/m2)              colsep S2_Comp    \\
+RHOS2      colsep overall bulk density layer S2                      colsep (g/m3)               colsep S2_Comp    \\
+ActThS2    colsep actual thickness layer S2                          colsep (m)                  colsep S2_Comp    \\
+FrIM1S2    colsep fraction IM1 in layer S2                           colsep (gDM/gDM)            colsep S2_Comp    \\
+FrIM2S2    colsep fraction IM2 in layer S2                           colsep (gDM/gDM)            colsep S2_Comp    \\
+FrIM3S2    colsep fraction IM3 in layer S2                           colsep (gDM/gDM)            colsep S2_Comp    \\
+FrDetCS2   colsep fraction DetC in layer S2                          colsep (gC/gDM)             colsep S2_Comp    \\
+FrOOCS2    colsep fraction OOC in layer S2                           colsep (gC/gDM)             colsep S2_Comp    \\
+FrDiatS2   colsep fraction Diatoms in layer S2                       colsep (gC/gDM)             colsep S2_Comp    \\
+N-CDetCS2  colsep N:C ratio Detritus S2                              colsep (gN/gC)              colsep S2_Comp    \\
+P-CDetCS2  colsep P:C ratio Detritus S2                              colsep (gP/gC)              colsep S2_Comp    \\
+S-CDetCS2  colsep Si:C ratio Detritus S2                             colsep (gSi/gC)             colsep S2_Comp    \\
+N-COOCS2   colsep N:C ratio Other organics S2                        colsep (gN/gC)              colsep S2_Comp    \\
+P-COOCS2   colsep P:C ratio Other organics S2                        colsep (gP/gC)              colsep S2_Comp    \\
+S-COOCS2   colsep Si:C ratio Other organics S2                       colsep (gSi/gC)             colsep S2_Comp    \\
+FrAAPS2    colsep fraction AAP in layer S2                           colsep (gP/gDM)             colsep S2_Comp    \\
+FrMPB1S2   colsep fraction MPB1 in layer S2                          colsep (gC/gDM)             colsep S2_Comp    \\
+FrMPB2S2   colsep fraction MPB2 in layer S2                          colsep (gC/gDM)             colsep S2_Comp    \\
+TPM        colsep total particulate matter (including algae)         colsep (gdw/m3)             colsep Compos     \\
+SS         colsep suspended solids                                   colsep (g/m3)               colsep Compos     \\
+TIM        colsep total inorganic matter                             colsep (gDM/m3)             colsep Compos     \\
+POM        colsep particulate org. matter (incl algae)               colsep (gdw/m3)             colsep Compos     \\
+C-NPOC1    colsep C:N ratio fast decaying detritus                   colsep (gC/gN)              colsep Compos     \\
+C-NPOC2    colsep C:N ratio medium decaying detritus                 colsep (gC/gN)              colsep Compos     \\
+C-NPOC3    colsep C:N ratio slow detritus                            colsep (gC/gN)              colsep Compos     \\
+C-NPOC4    colsep C:N ratio refractory detritus                      colsep (gC/gN)              colsep Compos     \\
+C-PPOC1    colsep C:P ratio fast decaying detritus                   colsep (gC/gP)              colsep Compos     \\
+C-PPOC2    colsep C:P ratio medium decaying detritus                 colsep (gC/gP)              colsep Compos     \\
+C-PPOC3    colsep C:P ratio slow detritus                            colsep (gC/gP)              colsep Compos     \\
+C-PPOC4    colsep C:P ratio refractory detritus                      colsep (gC/gP)              colsep Compos     \\
+C-SPOC1    colsep C:S ratio fast decaying detritus                   colsep (gC/gS)              colsep Compos     \\
+C-SPOC2    colsep C:S ratio medium decaying detritus                 colsep (gC/gS)              colsep Compos     \\
+C-SPOC3    colsep C:S ratio slow detritus                            colsep (gC/gS)              colsep Compos     \\
+C-SPOC4    colsep C:S ratio refractory detritus                      colsep (gC/gS)              colsep Compos     \\
+ActTh      colsep actual thickness total sediment layer              colsep (m)                  colsep DMVolume   \\
+SaturCO2   colsep saturation concentration                           colsep (gCO2/m3)            colsep SaturCO2   \\
+FPIM1      colsep fraction of P adsorbed on IM1                      colsep (-)                  colsep AdsPO4AAP  \\
+FPIM2      colsep fraction of P adsorbed on IM2                      colsep (-)                  colsep AdsPO4AAP  \\
+FPIM3      colsep fraction of P adsorbed on IM3                      colsep (-)                  colsep AdsPO4AAP  \\
+QPIM1      colsep quality IM1 for P                                  colsep (gP/gDM)             colsep AdsPO4AAP  \\
+QPIM2      colsep quality IM2 for P                                  colsep (gP/gDM)             colsep AdsPO4AAP  \\
+QPIM3      colsep quality IM3 for P                                  colsep (gP/gDM)             colsep AdsPO4AAP  \\
+SaturOXY   colsep saturation concentration                           colsep (gO2/m3)             colsep SaturOXY   \\
+CBODu      colsep carbonaceous BOD (first pool) ultimate             colsep (gO2/m3)             colsep DBOD_TEWOR \\
+CBODu_2    colsep carbonaceous BOD (second pool) ultimate            colsep (gO2/m3)             colsep DBOD_TEWOR \\
+f_minPOC1  colsep mineralization flux POC1                           colsep (gC/m3/d)            colsep DecFast    \\
+f_minPOC2  colsep mineralization flux POC2                           colsep (gC/m3/d)            colsep DecMedium  \\
+f_minPOC3  colsep mineralization flux POC3                           colsep (gC/m3/d)            colsep DecSlow    \\
+f_minPOC4  colsep mineralization flux POC4                           colsep (gC/m3/d             colsep DecRefr    \\
+f_minDOC   colsep mineralization flux DOC                            colsep (gC/m3/d)            colsep DecDOC     \\
+f_minPOC5  colsep mineralization flux POC5 submerged                 colsep (gC/m3/d)            colsep DecPOC5    \\
+TFGroGreen colsep temperature function growth Greens <0-1>           colsep (-)                  colsep TF_Green   \\
+TFMrtGreen colsep temperature function mortality Greens <0-1>        colsep (-)                  colsep TF_Green   \\
+TFGroDiat  colsep temperature function growth Diatoms <0-1>          colsep (-)                  colsep TF_Diat    \\
+TFMrtDiat  colsep temperature function mortality Diatoms <0-1>       colsep (-)                  colsep TF_Diat    \\
+LimDLGreen colsep daylength limitation function for Greens <0-1>     colsep (-)                  colsep DL_Green   \\
+LimDLdiat  colsep daylength limitation function for Diatoms <0-1>    colsep (-)                  colsep DL_Diat    \\
+LimDLdiaS1 colsep daylength limit. funct. for Diatoms layer S1 <0-1> colsep (-)                  colsep DL_DiatS1  \\
+LimNutGree colsep nutrient limitation function Greens <0-1>          colsep (-)                  colsep NLGreen    \\
+LimNutDiat colsep nutrient limitation function Diatoms <0-1>         colsep (-)                  colsep NLDiat     \\
+LimRadGree colsep radiation limitation function Greens <0-1>         colsep (-)                  colsep Rad_Green  \\
+LimRadDiat colsep radiation limitation function Diatoms <0-1>        colsep (-)                  colsep Rad_Diat   \\
+LimRadDiS1 colsep radiation limit. funct. Diatoms in layer S1 <0-1>  colsep (-)                  colsep Rad_DiatS1 \\
+RcGroGreen colsep primary production rate (minus respiration) Greens colsep (1/d)                colsep GroMrt_Gre \\
+RcRespGree colsep respiration rate Greens                            colsep (1/d)                colsep GroMrt_Gre \\
+fPPGreen   colsep net primary production of Greens                   colsep (gC/m3/d)            colsep GroMrt_Gre \\
+fMrtGreen  colsep mortality flux Greens                              colsep (gC/m3/d)            colsep GroMrt_Gre \\
+RcGroDiat  colsep primary production rate (minus respiration)Diatoms colsep (1/d)                colsep GroMrt_Dia \\
+RcRespDiat colsep respiration rate Diatoms                           colsep (1/d)                colsep GroMrt_Dia \\
+fPPDiat    colsep net primary production of Diatoms                  colsep (gC/m3/d)            colsep GroMrt_Dia \\
+fMrtDiat   colsep mortality flux Diatoms                             colsep (gC/m3/d)            colsep GroMrt_Dia \\
+fMrtDiatS1 colsep mortality flux Diatoms in layer S1                 colsep (gC/m2/d)            colsep GroMrt_DS1 \\
+fcPPGreen  colsep numerical maximum flux Greens                      colsep (gC/m3/d)            colsep PPrLim     \\
+fcPPDiat   colsep numerical maximum flux Diatoms                     colsep (gC/m3/d)            colsep PPrLim     \\
+SaturCH4   colsep saturation concentration of methane                colsep (gC/m3)              colsep SaturCH4   \\
+DisHSWK    colsep (HS-) in water column                              colsep (mole/l)             colsep SPECSUD    \\
+DisSWK     colsep (S--) in water column                              colsep (mole/l)             colsep SPECSUD    \\
+FrH2Sdis   colsep fraction of dissolved hydrogen sulphide            colsep (-)                  colsep SPECSUD    \\
+FrS2dis    colsep fraction dissolved free sulphide                   colsep (-)                  colsep SPECSUD    \\
+DisHSS1    colsep (HS-) in layer S1                                  colsep (mole/l)             colsep SPECSUDS1  \\
+DisSS1     colsep (S--) in layer S1                                  colsep (mole/l)             colsep SPECSUDS1  \\
+DisHSS2    colsep (HS-) in layer S2                                  colsep (mole/l)             colsep SPECSUDS2  \\
+DisSS2     colsep (S--) in layer S2                                  colsep (mole/l)             colsep SPECSUDS2  \\
+FrFe3dis   colsep fraction dissolved free iron(III)                  colsep (-)                  colsep SPECIRON   \\
+FrFe2dis   colsep fraction dissolved free iron(II)                   colsep (-)                  colsep SPECIRON   \\
+FrFe2OHd   colsep fraction of dissolved FeOH+                        colsep (-)                  colsep SPECIRON   \\
+FrFe2OH2d  colsep fraction of dissolved Fe(OH)2                      colsep (-)                  colsep SPECIRON   \\
+VSedIM1    colsep sedimentation velocity IM1                         colsep (m/d)                colsep CalVS_IM1  \\
+VSedIM1    colsep sedimentation velocity IM1                         colsep (m/d)                colsep CalVS_IM1  \\
+VSedIM2    colsep sedimentation velocity IM2                         colsep (m/d)                colsep CalVS_IM2  \\
+VSedIM2    colsep sedimentation velocity IM2                         colsep (m/d)                colsep CalVS_IM2  \\
+VSedIM3    colsep sedimentation velocity IM3                         colsep (m/d)                colsep CalVS_IM3  \\
+VSedIM3    colsep sedimentation velocity IM3                         colsep (m/d)                colsep CalVS_IM3  \\
+VSedPOC1   colsep sedimentation velocity POC1                        colsep (m/d)                colsep CalVS_POC1 \\
+VSedPOC1   colsep sedimentation velocity POC1                        colsep (m/d)                colsep CalVS_POC1 \\
+VSedPOC2   colsep sedimentation velocity POC2                        colsep (m/d)                colsep CalVS_POC2 \\
+VSedPOC2   colsep sedimentation velocity POC2                        colsep (m/d)                colsep CalVS_POC2 \\
+VSedPOC3   colsep sedimentation velocity POC3                        colsep (m/d)                colsep CalVS_POC3 \\
+VSedPOC3   colsep sedimentation velocity POC3                        colsep (m/d)                colsep CalVS_POC3 \\
+VSedPOC4   colsep sedimentation velocity POC4                        colsep (m/d)                colsep CalVS_POC4 \\
+VSedPOC4   colsep sedimentation velocity POC4                        colsep (m/d)                colsep CalVS_POC4 \\
+VSedDiat   colsep sedimentation velocity Diatoms                     colsep (m/d)                colsep CalVS_Diat \\
+VSedDiat   colsep sedimentation velocity Diatoms                     colsep (m/d)                colsep CalVS_Diat \\
+VSedGreen  colsep sedimentation velocity Greens                      colsep (m/d)                colsep CalVS_Gree \\
+VSedGreen  colsep sedimentation velocity Greens                      colsep (m/d)                colsep CalVS_Gree \\
+VsedAlg    colsep sedimentation velocity algae                       colsep (m/d)                colsep CalVSALG   \\
+VsedAlg    colsep sedimentation velocity algae                       colsep (m/d)                colsep CalVSALG   \\
+VSedAlg01  colsep sedimentation velocity algae type 01               colsep (m/d)                colsep CalVSALG01 \\
+VSedAlg01  colsep sedimentation velocity algae type 01               colsep (m/d)                colsep CalVSALG01 \\
+VSedAlg02  colsep sedimentation velocity algae type 02               colsep (m/d)                colsep CalVSALG02 \\
+VSedAlg02  colsep sedimentation velocity algae type 02               colsep (m/d)                colsep CalVSALG02 \\
+VSedAlg03  colsep sedimentation velocity algae type 03               colsep (m/d)                colsep CalVSALG03 \\
+VSedAlg03  colsep sedimentation velocity algae type 03               colsep (m/d)                colsep CalVSALG03 \\
+VSedAlg04  colsep sedimentation velocity algae type 04               colsep (m/d)                colsep CalVSALG04 \\
+VSedAlg04  colsep sedimentation velocity algae type 04               colsep (m/d)                colsep CalVSALG04 \\
+VSedAlg05  colsep sedimentation velocity algae type 05               colsep (m/d)                colsep CalVSALG05 \\
+VSedAlg05  colsep sedimentation velocity algae type 05               colsep (m/d)                colsep CalVSALG05 \\
+VSedAlg06  colsep sedimentation velocity algae type 06               colsep (m/d)                colsep CalVSALG06 \\
+VSedAlg06  colsep sedimentation velocity algae type 06               colsep (m/d)                colsep CalVSALG06 \\
+VSedAlg07  colsep sedimentation velocity algae type 07               colsep (m/d)                colsep CalVSALG07 \\
+VSedAlg07  colsep sedimentation velocity algae type 07               colsep (m/d)                colsep CalVSALG07 \\
+VSedAlg08  colsep sedimentation velocity algae type 08               colsep (m/d)                colsep CalVSALG08 \\
+VSedAlg08  colsep sedimentation velocity algae type 08               colsep (m/d)                colsep CalVSALG08 \\
+VSedAlg09  colsep sedimentation velocity algae type 09               colsep (m/d)                colsep CalVSALG09 \\
+VSedAlg09  colsep sedimentation velocity algae type 09               colsep (m/d)                colsep CalVSALG09 \\
+VSedAlg10  colsep sedimentation velocity algae type 10               colsep (m/d)                colsep CalVSALG10 \\
+VSedAlg10  colsep sedimentation velocity algae type 10               colsep (m/d)                colsep CalVSALG10 \\
+VSedAlg11  colsep sedimentation velocity algae type 11               colsep (m/d)                colsep CalVSALG11 \\
+VSedAlg11  colsep sedimentation velocity algae type 11               colsep (m/d)                colsep CalVSALG11 \\
+VSedAlg12  colsep sedimentation velocity algae type 12               colsep (m/d)                colsep CalVSALG12 \\
+VSedAlg12  colsep sedimentation velocity algae type 12               colsep (m/d)                colsep CalVSALG12 \\
+VSedAlg13  colsep sedimentation velocity algae type 13               colsep (m/d)                colsep CalVSALG13 \\
+VSedAlg13  colsep sedimentation velocity algae type 13               colsep (m/d)                colsep CalVSALG13 \\
+VSedAlg14  colsep sedimentation velocity algae type 14               colsep (m/d)                colsep CalVSALG14 \\
+VSedAlg14  colsep sedimentation velocity algae type 14               colsep (m/d)                colsep CalVSALG14 \\
+VSedAlg15  colsep sedimentation velocity algae type 15               colsep (m/d)                colsep CalVSALG15 \\
+VSedAlg15  colsep sedimentation velocity algae type 15               colsep (m/d)                colsep CalVSALG15 \\
+VSedAlg16  colsep sedimentation velocity algae type 16               colsep (m/d)                colsep CalVSALG16 \\
+VSedAlg16  colsep sedimentation velocity algae type 16               colsep (m/d)                colsep CalVSALG16 \\
+VSedAlg17  colsep sedimentation velocity algae type 17               colsep (m/d)                colsep CalVSALG17 \\
+VSedAlg17  colsep sedimentation velocity algae type 17               colsep (m/d)                colsep CalVSALG17 \\
+VSedAlg18  colsep sedimentation velocity algae type 18               colsep (m/d)                colsep CalVSALG18 \\
+VSedAlg18  colsep sedimentation velocity algae type 18               colsep (m/d)                colsep CalVSALG18 \\
+VSedAlg19  colsep sedimentation velocity algae type 19               colsep (m/d)                colsep CalVSALG19 \\
+VSedAlg19  colsep sedimentation velocity algae type 19               colsep (m/d)                colsep CalVSALG19 \\
+VSedAlg20  colsep sedimentation velocity algae type 20               colsep (m/d)                colsep CalVSALG20 \\
+VSedAlg20  colsep sedimentation velocity algae type 20               colsep (m/d)                colsep CalVSALG20 \\
+VSedAlg21  colsep sedimentation velocity algae type 21               colsep (m/d)                colsep CalVSALG21 \\
+VSedAlg21  colsep sedimentation velocity algae type 21               colsep (m/d)                colsep CalVSALG21 \\
+VSedAlg22  colsep sedimentation velocity algae type 22               colsep (m/d)                colsep CalVSALG22 \\
+VSedAlg22  colsep sedimentation velocity algae type 22               colsep (m/d)                colsep CalVSALG22 \\
+VSedAlg23  colsep sedimentation velocity algae type 23               colsep (m/d)                colsep CalVSALG23 \\
+VSedAlg23  colsep sedimentation velocity algae type 23               colsep (m/d)                colsep CalVSALG23 \\
+VSedAlg24  colsep sedimentation velocity algae type 24               colsep (m/d)                colsep CalVSALG24 \\
+VSedAlg24  colsep sedimentation velocity algae type 24               colsep (m/d)                colsep CalVSALG24 \\
+VSedAlg25  colsep sedimentation velocity algae type 25               colsep (m/d)                colsep CalVSALG25 \\
+VSedAlg25  colsep sedimentation velocity algae type 25               colsep (m/d)                colsep CalVSALG25 \\
+VSedAlg26  colsep sedimentation velocity algae type 26               colsep (m/d)                colsep CalVSALG26 \\
+VSedAlg26  colsep sedimentation velocity algae type 26               colsep (m/d)                colsep CalVSALG26 \\
+VSedAlg27  colsep sedimentation velocity algae type 27               colsep (m/d)                colsep CalVSALG27 \\
+VSedAlg27  colsep sedimentation velocity algae type 27               colsep (m/d)                colsep CalVSALG27 \\
+VSedAlg28  colsep sedimentation velocity algae type 28               colsep (m/d)                colsep CalVSALG28 \\
+VSedAlg28  colsep sedimentation velocity algae type 28               colsep (m/d)                colsep CalVSALG28 \\
+VSedAlg29  colsep sedimentation velocity algae type 29               colsep (m/d)                colsep CalVSALG29 \\
+VSedAlg29  colsep sedimentation velocity algae type 29               colsep (m/d)                colsep CalVSALG29 \\
+VSedAlg30  colsep sedimentation velocity algae type 30               colsep (m/d)                colsep CalVSALG30 \\
+VSedAlg30  colsep sedimentation velocity algae type 30               colsep (m/d)                colsep CalVSALG30 \\
+FrTIMS2    colsep fraction TIM in layer S2                           colsep (gDM/gDM)            colsep Res_Pickup \\
+fSedIM1    colsep sedimentation flux IM1 towards S1                  colsep (g/m2/d)             colsep Sed_IM1    \\
+fSedIM1S2  colsep sedimentation flux IM1 towards S2                  colsep (g/m2/d)             colsep Sed_IM1    \\
+fSedIM2    colsep sedimentation flux IM2 towards S1                  colsep (g/m2/d)             colsep Sed_IM2    \\
+fSedIM2S2  colsep sedimentation flux IM2 towards S2                  colsep (g/m2/d)             colsep Sed_IM2    \\
+fSedIM3    colsep sedimentation flux IM3 towards S1                  colsep (g/m2/d)             colsep Sed_IM3    \\
+fSedIM3S2  colsep sedimentation flux IM3 towards S2                  colsep (g/m2/d)             colsep Sed_IM3    \\
+fSedDiat   colsep sedimentation flux Diatoms                         colsep (gC/m2/d)            colsep SedDiat    \\
+fSedGreen  colsep sedimentation flux Greens                          colsep (gC/m2/d)            colsep Sed_Gre    \\
+fSedAlg    colsep sedimentation flux algae                           colsep (gC/m2/d)            colsep SEDALG     \\
+fSedAlg01  colsep sedimentation flux algae type 01                   colsep (gC/m2/d)            colsep SEDALG01   \\
+fSedAlg02  colsep sedimentation flux algae type 02                   colsep (gC/m2/d)            colsep SEDALG02   \\
+fSedAlg03  colsep sedimentation flux algae type 03                   colsep (gC/m2/d)            colsep SEDALG03   \\
+fSedAlg04  colsep sedimentation flux algae type 04                   colsep (gC/m2/d)            colsep SEDALG04   \\
+fSedAlg05  colsep sedimentation flux algae type 05                   colsep (gC/m2/d)            colsep SEDALG05   \\
+fSedAlg06  colsep sedimentation flux algae type 06                   colsep (gC/m2/d)            colsep SEDALG06   \\
+fSedAlg07  colsep sedimentation flux algae type 07                   colsep (gC/m2/d)            colsep SEDALG07   \\
+fSedAlg08  colsep sedimentation flux algae type 08                   colsep (gC/m2/d)            colsep SEDALG08   \\
+fSedAlg09  colsep sedimentation flux algae type 09                   colsep (gC/m2/d)            colsep SEDALG09   \\
+fSedAlg10  colsep sedimentation flux algae type 10                   colsep (gC/m2/d)            colsep SEDALG10   \\
+fSedAlg11  colsep sedimentation flux algae type 11                   colsep (gC/m2/d)            colsep SEDALG11   \\
+fSedAlg12  colsep sedimentation flux algae type 12                   colsep (gC/m2/d)            colsep SEDALG12   \\
+fSedAlg13  colsep sedimentation flux algae type 13                   colsep (gC/m2/d)            colsep SEDALG13   \\
+fSedAlg14  colsep sedimentation flux algae type 14                   colsep (gC/m2/d)            colsep SEDALG14   \\
+fSedAlg15  colsep sedimentation flux algae type 15                   colsep (gC/m2/d)            colsep SEDALG15   \\
+fSedAlg16  colsep sedimentation flux algae type 16                   colsep (gC/m2/d)            colsep SEDALG16   \\
+fSedAlg17  colsep sedimentation flux algae type 17                   colsep (gC/m2/d)            colsep SEDALG17   \\
+fSedAlg18  colsep sedimentation flux algae type 18                   colsep (gC/m2/d)            colsep SEDALG18   \\
+fSedAlg19  colsep sedimentation flux algae type 19                   colsep (gC/m2/d)            colsep SEDALG19   \\
+fSedAlg20  colsep sedimentation flux algae type 20                   colsep (gC/m2/d)            colsep SEDALG20   \\
+fSedAlg21  colsep sedimentation flux algae type 21                   colsep (gC/m2/d)            colsep SEDALG21   \\
+fSedAlg22  colsep sedimentation flux algae type 22                   colsep (gC/m2/d)            colsep SEDALG22   \\
+fSedAlg23  colsep sedimentation flux algae type 23                   colsep (gC/m2/d)            colsep SEDALG23   \\
+fSedAlg24  colsep sedimentation flux algae type 24                   colsep (gC/m2/d)            colsep SEDALG24   \\
+fSedAlg25  colsep sedimentation flux algae type 25                   colsep (gC/m2/d)            colsep SEDALG25   \\
+fSedAlg26  colsep sedimentation flux algae type 26                   colsep (gC/m2/d)            colsep SEDALG26   \\
+fSedAlg27  colsep sedimentation flux algae type 27                   colsep (gC/m2/d)            colsep SEDALG27   \\
+fSedAlg28  colsep sedimentation flux algae type 28                   colsep (gC/m2/d)            colsep SEDALG28   \\
+fSedAlg29  colsep sedimentation flux algae type 29                   colsep (gC/m2/d)            colsep SEDALG29   \\
+fSedAlg30  colsep sedimentation flux algae type 30                   colsep (gC/m2/d)            colsep SEDALG30   \\
+fSedBOD5   colsep sedimentation flux CBOD5                           colsep (gO2/m2/d)           colsep S_CBOD51   \\
+fSedBOD5_2 colsep sedimentation flux CBOD5_2                         colsep (gO2/m2/d)           colsep S_CBOD52   \\
+fSedBOD5_3 colsep sedimentation flux CBOD5_3                         colsep (gO2/m2/d)           colsep S_CBOD53   \\
+fSedBODu   colsep sedimentation flux CBODu                           colsep (gO2/m2/d)           colsep S_CBODu1   \\
+fSedBODu_2 colsep sedimentation flux CBODu_2                         colsep (gO2/m2/d)           colsep S_CBODu2   \\
+fSedCODCr  colsep sedimentation flux COD_Cr                          colsep (gO2/m2/d)           colsep S_CODCr    \\
+fSedCODMn  colsep sedimentation flux COD_Mn                          colsep (gO2/m2/d)           colsep S_CODMn    \\
+fSedNBOD5  colsep sedimentation flux NBOD5                           colsep (gO2/m2/d)           colsep S_NBOD5    \\
+fSedNBODu  colsep sedimentation flux NBODu                           colsep (gO2/m2/d)           colsep S_NBODu    \\
+fSedPHYT   colsep total sedimentation flux phytoplankton             colsep (gC/m2/d)            colsep SedPhBlo_P \\
+fSedPHYT   colsep total sedimentation flux phytoplankton             colsep (gC/m2/d)            colsep SedPhBlo   \\
+fSedPHYT   colsep total sedimentation flux phytoplankton             colsep (gC/m2/d)            colsep SedPhDyn   \\
+fSedAlgDM  colsep total sedimentation flux phytoplankton as DM       colsep (gDM/m2/d)           colsep SedPhBlo_P \\
+fSedAlgDM  colsep total sedimentation flux phytoplankton as DM       colsep (gDM/m2/d)           colsep SedPhBlo   \\
+fSedAlgDM  colsep total sedimentation flux phytoplankton as DM       colsep (gDM/m2/d)           colsep SedPhDyn   \\
+fSedPOC1   colsep sedimentation flux POC1                            colsep (gC/m2/d)            colsep Sed_POC1   \\
+fSedPOC2   colsep sedimentation flux POC2                            colsep (gC/m2/d)            colsep Sed_POC2   \\
+fSedPOC3   colsep sedimentation flux POC3                            colsep (gC/m2/d)            colsep Sed_POC3   \\
+fSedPOC4   colsep sedimentation flux POC4                            colsep (gC/m2/d)            colsep Sed_POC4   \\
+fSedDM     colsep total sedimentation flux dry matter                colsep (gDM/m2/d)           colsep Sum_Sedim  \\
+fSedPOCnoa colsep total sedimentation flux POC (no algae)            colsep (gC/m2/d)            colsep Sum_Sedim  \\
+fResS1DM   colsep total resuspension flux DM from layer S1           colsep (g/m2/d)             colsep Res_DM     \\
+fResS2DM   colsep total resuspension flux DM from layer S2           colsep (gDM/m2/d)           colsep Res_DM     \\
+fBurS1DM   colsep total burial flux DM from layer S1                 colsep (gDM/m2/d)           colsep Bur_DM     \\
+fBurS2DM   colsep total burial flux DM from layer S2                 colsep (gDM/m2/d)           colsep Bur_DM     \\
+fDigS1DM   colsep total digging flux DM to layer S1                  colsep (gDM/m2/d)           colsep Dig_DM     \\
+fDigS2DM   colsep total digging flux DM to layer S2                  colsep (gDM/m2/d)           colsep Dig_DM     \\
+fResS1Diat colsep resuspension flux Diatoms from layer S1            colsep (gC/m2/d)            colsep S12TraDiat \\
+fResS2Diat colsep resuspension flux Diatoms from layer S2            colsep (gC/m2/d)            colsep S12TraDiat \\
+KdCdIM1    colsep partition coefficient Cd-IM1                       colsep (m3/kgDM)            colsep RFPART_Cd  \\
+KdCdIM2    colsep partition coefficient Cd-IM2                       colsep (m3/kgDM)            colsep RFPART_Cd  \\
+KdCdIM3    colsep partition coefficient Cd-IM3                       colsep (m3/kgDM)            colsep RFPART_Cd  \\
+KdCuIM1    colsep partition coefficient Cu-IM1                       colsep (m3/kgDM)            colsep RFPART_Cu  \\
+KdCuIM2    colsep partition coefficient Cu-IM2                       colsep (m3/kgDM)            colsep RFPART_Cu  \\
+KdCuIM3    colsep partition coefficient Cu-IM3                       colsep (m3/kgDM)            colsep RFPART_Cu  \\
+KdPbIM1    colsep partition coefficient Pb-IM1                       colsep (m3/kgDM)            colsep RFPART_Pb  \\
+KdPbIM2    colsep partition coefficient Pb-IM2                       colsep (m3/kgDM)            colsep RFPART_Pb  \\
+KdPbIM3    colsep partition coefficient Pb-IM3                       colsep (m3/kgDM)            colsep RFPART_Pb  \\
+KdZnIM1    colsep partition coefficient Zn-IM1                       colsep (m3/kgDM)            colsep RFPART_Zn  \\
+KdZnIM2    colsep partition coefficient Zn-IM2                       colsep (m3/kgDM)            colsep RFPART_Zn  \\
+KdZnIM3    colsep partition coefficient Zn-IM3                       colsep (m3/kgDM)            colsep RFPART_Zn  \\
+KdHgIM1    colsep partition coefficient Hg-IM1                       colsep (m3/kgDM)            colsep RFPART_Hg  \\
+KdHgIM2    colsep partition coefficient Hg-IM2                       colsep (m3/kgDM)            colsep RFPART_Hg  \\
+KdHgIM3    colsep partition coefficient Hg-IM3                       colsep (m3/kgDM)            colsep RFPART_Hg  \\
+KdNiIM1    colsep partition coefficient Ni-IM1                       colsep (m3/kgDM)            colsep RFPART_Ni  \\
+KdNiIM2    colsep partition coefficient Ni-IM2                       colsep (m3/kgDM)            colsep RFPART_Ni  \\
+KdNiIM3    colsep partition coefficient Ni-IM3                       colsep (m3/kgDM)            colsep RFPART_Ni  \\
+KdCrIM1    colsep partition coefficient Cr-IM1                       colsep (m3/kgDM)            colsep RFPART_Cr  \\
+KdCrIM2    colsep partition coefficient Cr-IM2                       colsep (m3/kgDM)            colsep RFPART_Cr  \\
+KdCrIM3    colsep partition coefficient Cr-IM3                       colsep (m3/kgDM)            colsep RFPART_Cr  \\
+KdAsIM1    colsep partition coefficient for As and IM1               colsep (m3/kgDW)            colsep RFPART_As  \\
+KdAsIM2    colsep partition coefficient for As and IM2               colsep (m3/kgDW)            colsep RFPART_As  \\
+KdAsIM3    colsep partition coefficient for As and IM3               colsep (m3/kgDW)            colsep RFPART_As  \\
+SWWaterKCh colsep switch for oxic (1) or sufidic (0) water           colsep (-)                  colsep SwOXYParWK \\
+FrCdIM1    colsep fraction Cd adsorbed to IM1                        colsep (-)                  colsep PartWK_Cd  \\
+FrCdIM2    colsep fraction Cd adsorbed to IM2                        colsep (-)                  colsep PartWK_Cd  \\
+FrCdIM3    colsep fraction Cd adsorbed to IM3                        colsep (-)                  colsep PartWK_Cd  \\
+FrCdPOC    colsep fraction Cd adsorbed to POC                        colsep (-)                  colsep PartWK_Cd  \\
+FrCdPHYT   colsep fraction Cd adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Cd  \\
+QCdIM1     colsep quality IM1 for Cd                                 colsep (gCd/gDM)            colsep PartWK_Cd  \\
+QCdIM2     colsep quality IM2 for Cd                                 colsep (gCd/gDM)            colsep PartWK_Cd  \\
+QCdIM3     colsep quality IM3 for Cd                                 colsep (gCd/gDM)            colsep PartWK_Cd  \\
+QCdPOC     colsep quality POC for Cd                                 colsep (gCd/gC)             colsep PartWK_Cd  \\
+QCdPHYT    colsep quality phytoplankton for Cd                       colsep (gCd/gC)             colsep PartWK_Cd  \\
+FrCrIM1    colsep fraction Cr adsorbed to IM1                        colsep (-)                  colsep PartWK_Cr  \\
+FrCrIM2    colsep fraction Cr adsorbed to IM2                        colsep (-)                  colsep PartWK_Cr  \\
+FrCrIM3    colsep fraction Cr adsorbed to IM3                        colsep (-)                  colsep PartWK_Cr  \\
+FrCrPOC    colsep fraction Cr adsorbed to POC                        colsep (-)                  colsep PartWK_Cr  \\
+FrCrPHYT   colsep fraction Cr adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Cr  \\
+QCrIM1     colsep quality IM1 for Cr                                 colsep (gCr/gDM)            colsep PartWK_Cr  \\
+QCrIM2     colsep quality IM2 for Cr                                 colsep (gCr/gDM)            colsep PartWK_Cr  \\
+QCrIM3     colsep quality IM3 for Cr                                 colsep (gCr/gDM)            colsep PartWK_Cr  \\
+QCrPOC     colsep quality POC for Cr                                 colsep (gCr/gC)             colsep PartWK_Cr  \\
+QCrPHYT    colsep quality phytoplankton for Cr                       colsep (gCr/gC)             colsep PartWK_Cr  \\
+FrCuIM1    colsep fraction Cu adsorbed to IM1                        colsep (-)                  colsep PartWK_Cu  \\
+FrCuIM2    colsep fraction Cu adsorbed to IM2                        colsep (-)                  colsep PartWK_Cu  \\
+FrCuIM3    colsep fraction Cu adsorbed to IM3                        colsep (-)                  colsep PartWK_Cu  \\
+FrCuPOC    colsep fraction Cu adsorbed to POC                        colsep (-)                  colsep PartWK_Cu  \\
+FrCuPHYT   colsep fraction Cu adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Cu  \\
+QCuIM1     colsep quality IM1 for Cu                                 colsep (gCu/gDM)            colsep PartWK_Cu  \\
+QCuIM2     colsep quality IM2 for Cu                                 colsep (gCu/gDM)            colsep PartWK_Cu  \\
+QCuIM3     colsep quality IM3 for Cu                                 colsep (gCu/gDM)            colsep PartWK_Cu  \\
+QCuPOC     colsep quality POC for Cu                                 colsep (gCu/gC)             colsep PartWK_Cu  \\
+QCuPHYT    colsep quality phytoplankton for Cu                       colsep (gCu/gC)             colsep PartWK_Cu  \\
+FrHgIM1    colsep fraction Hg adsorbed to IM1                        colsep (-)                  colsep PartWK_Hg  \\
+FrHgIM2    colsep fraction Hg adsorbed to IM2                        colsep (-)                  colsep PartWK_Hg  \\
+FrHgIM3    colsep fraction Hg adsorbed to IM3                        colsep (-)                  colsep PartWK_Hg  \\
+FrHgPOC    colsep fraction Hg adsorbed to POC                        colsep (-)                  colsep PartWK_Hg  \\
+FrHgPHYT   colsep fraction Hg adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Hg  \\
+QHgIM1     colsep quality IM1 for Hg                                 colsep (gHg/gDM)            colsep PartWK_Hg  \\
+QHgIM2     colsep quality IM2 for Hg                                 colsep (gHg/gDM)            colsep PartWK_Hg  \\
+QHgIM3     colsep quality IM3 for Hg                                 colsep (gHg/gDM)            colsep PartWK_Hg  \\
+QHgPOC     colsep quality POC for Hg                                 colsep (gHg/gC)             colsep PartWK_Hg  \\
+QHgPHYT    colsep quality phytoplankton for Hg                       colsep (gHg/gC)             colsep PartWK_Hg  \\
+FrNiIM1    colsep fraction Ni adsorbed to IM1                        colsep (-)                  colsep PartWK_Ni  \\
+FrNiIM2    colsep fraction Ni adsorbed to IM2                        colsep (-)                  colsep PartWK_Ni  \\
+FrNiIM3    colsep fraction Ni adsorbed to IM3                        colsep (-)                  colsep PartWK_Ni  \\
+FrNiPOC    colsep fraction Ni adsorbed to POC                        colsep (-)                  colsep PartWK_Ni  \\
+FrNiPHYT   colsep fraction Ni adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Ni  \\
+QNiIM1     colsep quality IM1 for Ni                                 colsep (gNi/gDM)            colsep PartWK_Ni  \\
+QNiIM2     colsep quality IM2 for Ni                                 colsep (gNi/gDM)            colsep PartWK_Ni  \\
+QNiIM3     colsep quality IM3 for Ni                                 colsep (gNi/gDM)            colsep PartWK_Ni  \\
+QNiPOC     colsep quality POC for Ni                                 colsep (gNi/gC)             colsep PartWK_Ni  \\
+QNiPHYT    colsep quality phytoplankton for Ni                       colsep (gNi/gC)             colsep PartWK_Ni  \\
+FrPbIM1    colsep fraction Pb adsorbed to IM1                        colsep (-)                  colsep PartWK_Pb  \\
+FrPbIM2    colsep fraction Pb adsorbed to IM2                        colsep (-)                  colsep PartWK_Pb  \\
+FrPbIM3    colsep fraction Pb adsorbed to IM3                        colsep (-)                  colsep PartWK_Pb  \\
+FrPbPOC    colsep fraction Pb adsorbed to POC                        colsep (-)                  colsep PartWK_Pb  \\
+FrPbPHYT   colsep fraction Pb adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Pb  \\
+QPbIM1     colsep quality IM1 for Pb                                 colsep (gPb/gDM)            colsep PartWK_Pb  \\
+QPbIM2     colsep quality IM2 for Pb                                 colsep (gPb/gDM)            colsep PartWK_Pb  \\
+QPbIM3     colsep quality IM3 for Pb                                 colsep (gPb/gDM)            colsep PartWK_Pb  \\
+QPbPOC     colsep quality POC for Pb                                 colsep (gPb/gC)             colsep PartWK_Pb  \\
+QPbPHYT    colsep quality phytoplankton for Pb                       colsep (gPb/gC)             colsep PartWK_Pb  \\
+FrAsIM1    colsep fraction As adsorbed to IM1                        colsep (-)                  colsep PartWK_As  \\
+FrAsIM2    colsep fraction As adsorbed to IM2                        colsep (-)                  colsep PartWK_As  \\
+FrAsIM3    colsep fraction As adsorbed to IM3                        colsep (-)                  colsep PartWK_As  \\
+FrAsPOC    colsep fraction As adsorbed to POC                        colsep (-)                  colsep PartWK_As  \\
+FrAsPHYT   colsep fraction As adsorbed to phytoplankton              colsep (-)                  colsep PartWK_As  \\
+QAsIM1     colsep quality IM1 for As                                 colsep (gAs/gDM)            colsep PartWK_As  \\
+QAsIM2     colsep quality IM2 for As                                 colsep (gAs/gDM)            colsep PartWK_As  \\
+QAsIM3     colsep quality IM3 for As                                 colsep (gAs/gDM)            colsep PartWK_As  \\
+QAsPOC     colsep quality POC for As                                 colsep (gAs/gC)             colsep PartWK_As  \\
+QAsPHYT    colsep quality phytoplankton for As                       colsep (gAs/gC)             colsep PartWK_As  \\
+FrVaIM1    colsep fraction Va adsorbed to IM1                        colsep (-)                  colsep PartWK_Va  \\
+FrVaIM2    colsep fraction Va adsorbed to IM2                        colsep (-)                  colsep PartWK_Va  \\
+FrVaIM3    colsep fraction Va adsorbed to IM3                        colsep (-)                  colsep PartWK_Va  \\
+FrVaPOC    colsep fraction Va adsorbed to POC                        colsep (-)                  colsep PartWK_Va  \\
+FrVaPHYT   colsep fraction Va adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Va  \\
+QVaIM1     colsep quality IM1 for Va                                 colsep (gVa/gDM)            colsep PartWK_Va  \\
+QVaIM2     colsep quality IM2 for Va                                 colsep (gVa/gDM)            colsep PartWK_Va  \\
+QVaIM3     colsep quality IM3 for Va                                 colsep (gVa/gDM)            colsep PartWK_Va  \\
+QVaPOC     colsep quality POC for Va                                 colsep (gVa/gC)             colsep PartWK_Va  \\
+QVaPHYT    colsep quality phytoplankton for Va                       colsep (gVa/gC)             colsep PartWK_Va  \\
+FrZnIM1    colsep fraction Zn adsorbed to IM1                        colsep (-)                  colsep PartWK_Zn  \\
+FrZnIM2    colsep fraction Zn adsorbed to IM2                        colsep (-)                  colsep PartWK_Zn  \\
+FrZnIM3    colsep fraction Zn adsorbed to IM3                        colsep (-)                  colsep PartWK_Zn  \\
+FrZnPOC    colsep fraction Zn adsorbed to POC                        colsep (-)                  colsep PartWK_Zn  \\
+FrZnPHYT   colsep fraction Zn adsorbed to phytoplankton              colsep (-)                  colsep PartWK_Zn  \\
+QZnIM1     colsep quality IM1 for Zn                                 colsep (gZn/gDM)            colsep PartWK_Zn  \\
+QZnIM2     colsep quality IM2 for Zn                                 colsep (gZn/gDM)            colsep PartWK_Zn  \\
+QZnIM3     colsep quality IM3 for Zn                                 colsep (gZn/gDM)            colsep PartWK_Zn  \\
+QZnPOC     colsep quality POC for Zn                                 colsep (gZn/gC)             colsep PartWK_Zn  \\
+QZnPHYT    colsep quality phytoplankton for Zn                       colsep (gZn/gC)             colsep PartWK_Zn  \\
+SWPoreChS1 colsep switch for oxic (1) or sufidic (0) pore water      colsep (-)                  colsep SwOXYParWK \\
+QCdDMS1    colsep overall sediment quality for Cd in S1              colsep (mgCd/kgDM)          colsep PartS1_Cd  \\
+QCrDMS1    colsep overall sediment quality for Cr in S1              colsep (mgCr/kgDM)          colsep PartS1_Cr  \\
+QCuDMS1    colsep overall sediment quality for Cu in S1              colsep (mgCu/kgDM)          colsep PartS1_Cu  \\
+QHgDMS1    colsep overall sediment quality for Hg in S1              colsep (mgHg/kgDM)          colsep PartS1_Hg  \\
+QNiDMS1    colsep overall sediment quality for Ni in S1              colsep (mgNi/kgDM)          colsep PartS1_Ni  \\
+QPbDMS1    colsep overall sediment quality for Pb in S1              colsep (mgPb/kgDM)          colsep PartS1_Pb  \\
+QAsDMS1    colsep overall sediment quality for As in S1              colsep (mgAs/kgDM)          colsep PartS1_As  \\
+QVaDMS1    colsep overall sediment quality for Va in S1              colsep (mgVa/kgDM)          colsep PartS1_Va  \\
+QZnDMS1    colsep overall sediment quality for Zn in S1              colsep (mgZn/kgDM)          colsep PartS1_Zn  \\
+SWPoreChS2 colsep switch for oxic (1) or sufidic (0) pore water      colsep (-)                  colsep SwOXYParWK \\
+QCdDMS2    colsep overall sediment quality for Cd in S2              colsep (mgCd/kgDM)          colsep PartS2_Cd  \\
+QCrDMS2    colsep overall sediment quality for Cr in S2              colsep (mgCr/kgDM)          colsep PartS2_Cr  \\
+QCuDMS2    colsep overall sediment quality for Cu in S2              colsep (mgCu/kgDM)          colsep PartS2_Cu  \\
+QHgDMS2    colsep overall sediment quality for Hg in S2              colsep (mgHg/kgDM)          colsep PartS2_Hg  \\
+QNiDMS2    colsep overall sediment quality for Ni in S2              colsep (mgNi/kgDM)          colsep PartS2_Ni  \\
+QPbDMS2    colsep overall sediment quality for Pb in S2              colsep (mgPb/kgDM)          colsep PartS2_Pb  \\
+QAsDMS2    colsep overall sediment quality for As in S2              colsep (mgAs/kgDM)          colsep PartS2_As  \\
+QVaDMS2    colsep overall sediment quality for Va in S2              colsep (mgVa/kgDM)          colsep PartS2_Va  \\
+QZnDMS2    colsep overall sediment quality for Zn in S2              colsep (mgZn/kgDM)          colsep PartS2_Zn  \\
+Fr153DisS1 colsep fraction free dissolved 153 in layer S1            colsep (-)                  colsep PartS1_153 \\
+Fr153DOCS1 colsep fraction 153 adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_153 \\
+Q153DMS1   colsep overall sediment quality for 153 in S1             colsep (mg153/kgDM)         colsep PartS1_153 \\
+FrAtrDisS1 colsep fraction free dissolved Atr in layer S1            colsep (-)                  colsep PartS1_Atr \\
+FrAtrDOCS1 colsep fraction Atr adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_Atr \\
+QAtrDMS1   colsep overall sediment quality for Atr in S1             colsep (mgAtr/kgDM)         colsep PartS1_Atr \\
+FrBaPDisS1 colsep fraction free dissolved BaP in layer S1            colsep (-)                  colsep PartS1_BaP \\
+FrBaPDOCS1 colsep fraction BaP adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_BaP \\
+QBaPDMS1   colsep overall sediment quality for BaP in S1             colsep (mgBaP/kgDM)         colsep PartS1_BaP \\
+FrDiuDisS1 colsep fraction free dissolved Diu in layer S1            colsep (-)                  colsep PartS1_Diu \\
+FrDiuDOCS1 colsep fraction Diu adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_Diu \\
+QDiuDMS1   colsep overall sediment quality for Diu in S1             colsep (mgDiu/kgDM)         colsep PartS1_Diu \\
+FrFluDisS1 colsep fraction free dissolved Flu in layer S1            colsep (-)                  colsep PartS1_Flu \\
+FrFluDOCS1 colsep fraction Flu adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_Flu \\
+QFluDMS1   colsep overall sediment quality for Flu in S1             colsep (mgFlu/kgDM)         colsep PartS1_Flu \\
+FrHCBDisS1 colsep fraction free dissolved HCB in layer S1            colsep (-)                  colsep PartS1_HCB \\
+FrHCBDOCS1 colsep fraction HCB adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_HCB \\
+QHCBDMS1   colsep overall sediment quality for HCB in S1             colsep (mgHCB/kgDM)         colsep PartS1_HCB \\
+FrHCHDisS1 colsep fraction free dissolved HCH in layer S1            colsep (-)                  colsep PartS1_HCH \\
+FrHCHDOCS1 colsep fraction HCH adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_HCH \\
+QHCHDMS1   colsep overall sediment quality for HCH in S1             colsep (mgHCH/kgDM)         colsep PartS1_HCH \\
+FrMefDisS1 colsep fraction free dissolved Mef in layer S1            colsep (-)                  colsep PartS1_Mef \\
+FrMefDOCS1 colsep fraction Mef adsorbed to DOC in layer S1           colsep (-)                  colsep PartS1_Mef \\
+QMefDMS1   colsep overall sediment quality for Mef in S1             colsep (mgMef/kgDM)         colsep PartS1_Mef \\
+Fr153DisS2 colsep fraction free dissolved 153 in layer S2            colsep (-)                  colsep PartS2_153 \\
+Fr153DOCS2 colsep fraction 153 adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_153 \\
+Q153DMS2   colsep overall sediment quality for 153 in S2             colsep (mg153/kgDM)         colsep PartS2_153 \\
+FrAtrDisS2 colsep fraction free dissolved Atr in layer S2            colsep (-)                  colsep PartS2_Atr \\
+FrAtrDOCS2 colsep fraction Atr adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_Atr \\
+QAtrDMS2   colsep overall sediment quality for Atr in S2             colsep (mgAtr/kgDM)         colsep PartS2_Atr \\
+FrBaPDisS2 colsep fraction free dissolved BaP in layer S2            colsep (-)                  colsep PartS2_BaP \\
+FrBaPDOCS2 colsep fraction BaP adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_BaP \\
+QBaPDMS2   colsep overall sediment quality for BaP in S2             colsep (mgBaP/kgDM)         colsep PartS2_BaP \\
+FrDiuDisS2 colsep fraction free dissolved Diu in layer S2            colsep (-)                  colsep PartS2_Diu \\
+FrDiuDOCS2 colsep fraction Diu adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_Diu \\
+QDiuDMS2   colsep overall sediment quality for Diu in S2             colsep (mgDiu/kgDM)         colsep PartS2_Diu \\
+FrFluDisS2 colsep fraction free dissolved Flu in layer S2            colsep (-)                  colsep PartS2_Flu \\
+FrFluDOCS2 colsep fraction Flu adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_Flu \\
+QFluDMS2   colsep overall sediment quality for Flu in S2             colsep (mgFlu/kgDM)         colsep PartS2_Flu \\
+FrHCBDisS2 colsep fraction free dissolved HCB in layer S2            colsep (-)                  colsep PartS2_HCB \\
+FrHCBDOCS2 colsep fraction HCB adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_HCB \\
+QHCBDMS2   colsep overall sediment quality for HCB in S2             colsep (mgHCB/kgDM)         colsep PartS2_HCB \\
+FrHCHDisS2 colsep fraction free dissolved HCH in layer S2            colsep (-)                  colsep PartS2_HCH \\
+FrHCHDOCS2 colsep fraction HCH adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_HCH \\
+QHCHDMS2   colsep overall sediment quality for HCH in S2             colsep (mgHCH/kgDM)         colsep PartS2_HCH \\
+FrMefDisS2 colsep fraction free dissolved Mef in layer S2            colsep (-)                  colsep PartS2_Mef \\
+FrMefDOCS2 colsep fraction Mef adsorbed to DOC in layer S2           colsep (-)                  colsep PartS2_Mef \\
+QMefDMS2   colsep overall sediment quality for Mef in S2             colsep (mgMef/kgDM)         colsep PartS2_Mef \\
+Fr153Dis   colsep fraction free dissolved 153 in water column        colsep (-)                  colsep PartWK_153 \\
+Fr153DOC   colsep fraction 153 adsorbed to DOC                       colsep (-)                  colsep PartWK_153 \\
+Fr153POC   colsep fraction 153 adsorbed to POC                       colsep (-)                  colsep PartWK_153 \\
+Fr153PHYT  colsep fraction 153 adsorbed to phytoplankton             colsep (-)                  colsep PartWK_153 \\
+Dis153     colsep free dissolved 153 in water column                 colsep (g153/m3)            colsep PartWK_153 \\
+Q153POC    colsep quality POC for 153 in water column                colsep (g153/gC)            colsep PartWK_153 \\
+Q153PHYT   colsep quality phytoplankton for 153 in water column      colsep (g153/gC)            colsep PartWK_153 \\
+FrAtrDis   colsep fraction free dissolved Atr in water column        colsep (-)                  colsep PartWK_Atr \\
+FrAtrDOC   colsep fraction Atr adsorbed to DOC                       colsep (-)                  colsep PartWK_Atr \\
+FrAtrPOC   colsep fraction Atr adsorbed to POC                       colsep (-)                  colsep PartWK_Atr \\
+FrAtrPHYT  colsep fraction Atr adsorbed to phytoplankton             colsep (-)                  colsep PartWK_Atr \\
+DisAtr     colsep free dissolved Atrazine in water column            colsep (gAtr/m3)            colsep PartWK_Atr \\
+QAtrPOC    colsep quality POC for Atrazine in water column           colsep (gAtr/gC)            colsep PartWK_Atr \\
+QAtrPHYT   colsep quality phytoplankton for Atrazine in water column colsep (gAtr/gC)            colsep PartWK_Atr \\
+FrBaPDis   colsep fraction free dissolved BaP in water column        colsep (-)                  colsep PartWK_BaP \\
+FrBaPDOC   colsep fraction BaP adsorbed to DOC                       colsep (-)                  colsep PartWK_BaP \\
+FrBaPPOC   colsep fraction BaP adsorbed to POC                       colsep (-)                  colsep PartWK_BaP \\
+FrBaPPHYT  colsep fraction BaP adsorbed to phytoplankton             colsep (-)                  colsep PartWK_BaP \\
+DisBaP     colsep free dissolved BaP in water column                 colsep (gBaP/m3)            colsep PartWK_BaP \\
+QBaPPOC    colsep quality POC for BaP in water column                colsep (gBaP/gC)            colsep PartWK_BaP \\
+QBaPPHYT   colsep quality phytoplankton for BaP in water column      colsep (gBaP/gC)            colsep PartWK_BaP \\
+FrDiuDis   colsep fraction free dissolved Diu in water column        colsep (-)                  colsep PartWK_Diu \\
+FrDiuDOC   colsep fraction Diu adsorbed to DOC                       colsep (-)                  colsep PartWK_Diu \\
+FrDiuPOC   colsep fraction Diu adsorbed to POC                       colsep (-)                  colsep PartWK_Diu \\
+FrDiuPHYT  colsep fraction Diu adsorbed to phytoplankton             colsep (-)                  colsep PartWK_Diu \\
+DisDiu     colsep free dissolved Diu in water column                 colsep (gDiu/m3)            colsep PartWK_Diu \\
+QDiuPOC    colsep quality POC for Diu in water column                colsep (gDiu/gC)            colsep PartWK_Diu \\
+QDiuPHYT   colsep quality phytoplankton for Diu in water column      colsep (gDiu/gC)            colsep PartWK_Diu \\
+FrFluDis   colsep fraction free dissolved Flu in water column        colsep (-)                  colsep PartWK_Flu \\
+FrFluDOC   colsep fraction Flu adsorbed to DOC                       colsep (-)                  colsep PartWK_Flu \\
+FrFluPOC   colsep fraction Flu adsorbed to POC                       colsep (-)                  colsep PartWK_Flu \\
+FrFluPHYT  colsep fraction Flu adsorbed to phytoplankton             colsep (-)                  colsep PartWK_Flu \\
+DisFlu     colsep free dissolved Flu in water column                 colsep (gFlu/m3)            colsep PartWK_Flu \\
+QFluPOC    colsep quality POC for Flu in water column                colsep (gFlu/gC)            colsep PartWK_Flu \\
+QFluPHYT   colsep quality phytoplankton for Flu in water column      colsep (gFlu/gC)            colsep PartWK_Flu \\
+FrHCBDis   colsep fraction free dissolved HCB in water column        colsep (-)                  colsep PartWK_HCB \\
+FrHCBDOC   colsep fraction HCB adsorbed to DOC                       colsep (-)                  colsep PartWK_HCB \\
+FrHCBPOC   colsep fraction HCB adsorbed to POC                       colsep (-)                  colsep PartWK_HCB \\
+FrHCBPHYT  colsep fraction HCB adsorbed to phytoplankton             colsep (-)                  colsep PartWK_HCB \\
+DisHCB     colsep free dissolved HCB in water column                 colsep (gHCB/m3)            colsep PartWK_HCB \\
+QHCBPOC    colsep quality POC for HCB in water column                colsep (gHCB/gC)            colsep PartWK_HCB \\
+QHCBPHYT   colsep quality phytoplankton for HCB in water column      colsep (gHCB/gC)            colsep PartWK_HCB \\
+FrHCHDis   colsep fraction free dissolved HCH in water column        colsep (-)                  colsep PartWK_HCH \\
+FrHCHDOC   colsep fraction HCH adsorbed to DOC                       colsep (-)                  colsep PartWK_HCH \\
+FrHCHPOC   colsep fraction HCH adsorbed to POC                       colsep (-)                  colsep PartWK_HCH \\
+FrHCHPHYT  colsep fraction HCH adsorbed to phytoplankton             colsep (-)                  colsep PartWK_HCH \\
+DisHCH     colsep free dissolved HCH in water column                 colsep (gHCH/m3)            colsep PartWK_HCH \\
+QHCHPOC    colsep quality POC for HCH in water column                colsep (gHCH/gC)            colsep PartWK_HCH \\
+QHCHPHYT   colsep quality phytoplankton for HCH in water column      colsep (gHCH/gC)            colsep PartWK_HCH \\
+FrMefDis   colsep fraction free dissolved Mef in water column        colsep (-)                  colsep PartWK_Mef \\
+FrMefDOC   colsep fraction Mef adsorbed to DOC                       colsep (-)                  colsep PartWK_Mef \\
+FrMefPOC   colsep fraction Mef adsorbed to POC                       colsep (-)                  colsep PartWK_Mef \\
+FrMefPHYT  colsep fraction Mef adsorbed to phytoplankton             colsep (-)                  colsep PartWK_Mef \\
+DisMef     colsep free dissolved Mef in water column                 colsep (gMef/m3)            colsep PartWK_Mef \\
+QMefPOC    colsep quality POC for Mef in water column                colsep (gMef/gC)            colsep PartWK_Mef \\
+QMefPHYT   colsep quality phytoplankton for Mef in water column      colsep (gMef/gC)            colsep PartWK_Mef \\
+CZooplank  colsep calculated concentration of zooplankton-grazer1    colsep (gC/m3)              colsep CONSBL     \\
+CMussel    colsep calculated concentration of mussel-grazer2         colsep (gC/m3)              colsep CONSBL     \\
+CGrazer3   colsep calculated concentration of Grazer3                colsep (gC/m3)              colsep CONSBL     \\
+CGrazer4   colsep calculated concentration of Grazer4                colsep (gC/m3)              colsep CONSBL     \\
+CGrazer5   colsep calculated concentration of Grazer5                colsep (gC/m3)              colsep CONSBL     \\
+Kl153      colsep liquid phase exchange coefficient 153              colsep (m/d)                colsep TrCoef_153 \\
+Kg153      colsep gas phase exchange coefficient 153                 colsep (m/d)                colsep TrCoef_153 \\
+KlHCB      colsep liquid phase exchange coefficient HCB              colsep (m/d)                colsep TrCoef_HCB \\
+KgHCB      colsep gas phase exchange coefficient HCB                 colsep (m/d)                colsep TrCoef_HCB \\
+KlHCH      colsep liquid phase exchange coefficient HCH              colsep (m/d)                colsep TrCoef_HCH \\
+KgHCH      colsep gas phase exchange coefficient HCH                 colsep (m/d)                colsep TrCoef_HCH \\
+KlFlu      colsep liquid phase exchange coefficient Flu              colsep (m/d)                colsep TrCoef_Flu \\
+KgFlu      colsep gas phase exchange coefficient Flu                 colsep (m/d)                colsep TrCoef_Flu \\
+KlBaP      colsep liquid phase exchange coefficient BaP              colsep (m/d)                colsep TrCoef_BaP \\
+KgBaP      colsep gas phase exchange coefficient BaP                 colsep (m/d)                colsep TrCoef_BaP \\
+KlAtr      colsep liquid phase exchange coefficient Atrazine         colsep (m/d)                colsep TrCoef_Atr \\
+KgAtr      colsep gas phase exchange coefficient Atrazine            colsep (m/d)                colsep TrCoef_Atr \\
+KlMef      colsep liquid phase exchange coefficient Mef              colsep (m/d)                colsep TrCoef_Mef \\
+KgMef      colsep gas phase exchange coefficient Mef                 colsep (m/d)                colsep TrCoef_Mef \\
+KlDiu      colsep liquid phase exchange coefficient Diu              colsep (m/d)                colsep TrCoef_Diu \\
+KgDiu      colsep gas phase exchange coefficient Diu                 colsep (m/d)                colsep TrCoef_Diu \\
+QOMPDMS1   colsep overall sediment quality for OMP in S1             colsep (mgOMP/kgDM)         colsep PartS1_OMP \\
+QOMPDMS2   colsep overall sediment quality for OMP in S2             colsep (mgOMP/kgDM)         colsep PartS2_OMP \\
+FrOMPDisS1 colsep fraction free dissolved OMP in S1                  colsep (-)                  colsep PartS1_OMP \\
+FrOMPDOCS1 colsep fraction OMP in S1 adsorbed to DOC                 colsep (-)                  colsep PartS1_OMP \\
+FrOMPDisS2 colsep fraction free dissolved OMP in S2                  colsep (-)                  colsep PartS2_OMP \\
+FrOMPDOCS2 colsep fraction OMP in S2 adsorbed to DOC                 colsep (-)                  colsep PartS2_OMP \\
+FrOMPDis   colsep fraction free dissolved OMP in water column        colsep (-)                  colsep PartWK_OMP \\
+FrOMPDOC   colsep fraction OMP adsorbed to DOC                       colsep (-)                  colsep PartWK_OMP \\
+FrOMPPOC   colsep fraction OMP adsorbed to POC                       colsep (-)                  colsep PartWK_OMP \\
+FrOMPPHYT  colsep fraction OMP adsorbed to PHYT                      colsep (-)                  colsep PartWK_OMP \\
+DisOMP     colsep free dissolved OMP in water column                 colsep (gOMP/m3)            colsep PartWK_OMP \\
+QOMPPOC    colsep quality POC for OMP in water column                colsep (gOMP/gC)            colsep PartWK_OMP \\
+QOMPPHYT   colsep quality PHYT for OMP in water column               colsep (gOMP/gC)            colsep PartWK_OMP \\
+KlOMP      colsep liquid phase exchange coefficient OMP              colsep (m/d)                colsep TrCoef_OMP \\
+KgOMP      colsep gas phase exchange coefficient OMP                 colsep (m/d)                colsep TrCoef_OMP \\
+botsegVB01 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus01 \\
+VB01Navail colsep VB01 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB01availN \\
+VB01Pavail colsep VB01 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB01availN \\
+VB01Savail colsep VB01 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB01availN \\
+nsfVB01    colsep nr successive emersion(flood) VB01                 colsep (d)                  colsep VBStatus01 \\
+nsnlVB01   colsep number of successive days nutrient lim. VB01       colsep (d)                  colsep VBStatus01 \\
+SwVB01Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus01 \\
+SwVB01Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus01 \\
+ageVB01    colsep age of vegetation cohort 1                         colsep (d)                  colsep VBGrowth01 \\
+SWVB01Dec  colsep biomass is decaying after prev mort type 1         colsep (-)                  colsep VBGrowth01 \\
+fVB01      colsep area scaled flux dVB01                             colsep (gC/m2/d)            colsep VBGrowth01 \\
+fC2VB01P1  colsep mortality foliage VB01 to POC1                     colsep (gC/m2/d)            colsep VBMort01   \\
+fC2VB01P2  colsep mortality foliage VB01 to POC2                     colsep (gC/m2/d)            colsep VBMort01   \\
+fC2VB01P3  colsep mortality foliage VB01 to POC3                     colsep (gC/m2/d)            colsep VBMort01   \\
+fN2VB01P1  colsep mortality foliage VB01 to PON1                     colsep (gN/m2/d)            colsep VBMort01   \\
+fN2VB01P2  colsep mortality foliage VB01 to PON2                     colsep (gN/m2/d)            colsep VBMort01   \\
+fN2VB01P3  colsep mortality foliage VB01 to PON3                     colsep (gN/m2/d)            colsep VBMort01   \\
+fP2VB01P1  colsep mortality foliage VB01 to POP1                     colsep (gP/m2/d)            colsep VBMort01   \\
+fP2VB01P2  colsep mortality foliage VB01 to POP2                     colsep (gP/m2/d)            colsep VBMort01   \\
+fP2VB01P3  colsep mortality foliage VB01 to POP3                     colsep (gP/m2/d)            colsep VBMort01   \\
+fS2VB01P1  colsep mortality foliage VB01 to POS1                     colsep (gS/m2/d)            colsep VBMort01   \\
+fS2VB01P2  colsep mortality foliage VB01 to POS2                     colsep (gS/m2/d)            colsep VBMort01   \\
+fS2VB01P3  colsep mortality foliage VB01 to POS3                     colsep (gS/m2/d)            colsep VBMort01   \\
+fC5VB01P1  colsep mortality fineroot VB01 to POC1                    colsep (gC/m2/d)            colsep VBMort01   \\
+fC5VB01P2  colsep mortality fineroot VB01 to POC2                    colsep (gC/m2/d)            colsep VBMort01   \\
+fC5VB01P3  colsep mortality fineroot VB01 to POC3                    colsep (gC/m2/d)            colsep VBMort01   \\
+fN5VB01P1  colsep mortality fineroot VB01 to PON1                    colsep (gN/m2/d)            colsep VBMort01   \\
+fN5VB01P2  colsep mortality fineroot VB01 to PON2                    colsep (gN/m2/d)            colsep VBMort01   \\
+fN5VB01P3  colsep mortality fineroot VB01 to PON3                    colsep (gN/m2/d)            colsep VBMort01   \\
+fP5VB01P1  colsep mortality fineroot VB01 to POP1                    colsep (gP/m2/d)            colsep VBMort01   \\
+fP5VB01P2  colsep mortality fineroot VB01 to POP2                    colsep (gP/m2/d)            colsep VBMort01   \\
+fP5VB01P3  colsep mortality fineroot VB01 to POP3                    colsep (gP/m2/d)            colsep VBMort01   \\
+fS5VB01P1  colsep mortality fineroot VB01 to POS1                    colsep (gS/m2/d)            colsep VBMort01   \\
+fS5VB01P2  colsep mortality fineroot VB01 to POS2                    colsep (gS/m2/d)            colsep VBMort01   \\
+fS5VB01P3  colsep mortality fineroot VB01 to POS3                    colsep (gS/m2/d)            colsep VBMort01   \\
+fC1VB01P5  colsep mortality stem VB01tto POC5                        colsep (gC/m3/d)            colsep VBMort01   \\
+fC3VB01P5  colsep mortality branch VB01 to POC5                      colsep (gC/m3/d)            colsep VBMort01   \\
+fC4VB01P5  colsep mortality root VB01 to POC5                        colsep (gC/m3/d)            colsep VBMort01   \\
+fN1VB01P5  colsep mortality stem VB01tto PON5                        colsep (gN/m3/d)            colsep VBMort01   \\
+fN3VB01P5  colsep mortality branch VB01 to PON5                      colsep (gN/m3/d)            colsep VBMort01   \\
+fN4VB01P5  colsep mortality root VB01 to PON5                        colsep (gN/m3/d)            colsep VBMort01   \\
+fP1VB01P5  colsep mortality stem VB01tto POP5                        colsep (gP/m3/d)            colsep VBMort01   \\
+fP3VB01P5  colsep mortality branch VB01 to POP5                      colsep (gP/m3/d)            colsep VBMort01   \\
+fP4VB01P5  colsep mortality root VB01 to POP5                        colsep (gP/m3/d)            colsep VBMort01   \\
+fS1VB01P5  colsep mortality stem VB01tto POS5                        colsep (gS/m3/d)            colsep VBMort01   \\
+fS3VB01P5  colsep mortality branch VB01 to POS5                      colsep (gS/m3/d)            colsep VBMort01   \\
+fS4VB01P5  colsep mortality root VB01 to POS5                        colsep (gS/m3/d)            colsep VBMort01   \\
+fNVB01up   colsep uptake (fine)roots VB01                            colsep (gN/m2/d)            colsep VB01Upt    \\
+fPVB01up   colsep uptake roots VB01                                  colsep (gP/m2/d)            colsep VB01Upt    \\
+fSVB01up   colsep uptake roots VB01                                  colsep (gS/m2/d)            colsep VB01Upt    \\
+botsegVB02 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus02 \\
+VB02Navail colsep VB02 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB02availN \\
+VB02Pavail colsep VB02 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB02availN \\
+VB02Savail colsep VB02 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB02availN \\
+nsfVB02    colsep nr successive emersion(flood) VB02                 colsep (d)                  colsep VBStatus02 \\
+nsnlVB02   colsep number of successive days nutrient lim. VB02       colsep (d)                  colsep VBStatus02 \\
+SwVB02Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus02 \\
+SwVB02Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus02 \\
+ageVB02    colsep age of vegetation cohort 2                         colsep (d)                  colsep VBGrowth02 \\
+SWVB02Dec  colsep biomass is decaying after prev mort type 2         colsep (-)                  colsep VBGrowth02 \\
+fVB02      colsep area scaled flux dVB02                             colsep (gC/m2/d)            colsep VBGrowth02 \\
+fC2VB02P1  colsep mortality foliage VB02 to POC1                     colsep (gC/m2/d)            colsep VBMort02   \\
+fC2VB02P2  colsep mortality foliage VB02 to POC2                     colsep (gC/m2/d)            colsep VBMort02   \\
+fC2VB02P3  colsep mortality foliage VB02 to POC3                     colsep (gC/m2/d)            colsep VBMort02   \\
+fN2VB02P1  colsep mortality foliage VB02 to PON1                     colsep (gN/m2/d)            colsep VBMort02   \\
+fN2VB02P2  colsep mortality foliage VB02 to PON2                     colsep (gN/m2/d)            colsep VBMort02   \\
+fN2VB02P3  colsep mortality foliage VB02 to PON3                     colsep (gN/m2/d)            colsep VBMort02   \\
+fP2VB02P1  colsep mortality foliage VB02 to POP1                     colsep (gP/m2/d)            colsep VBMort02   \\
+fP2VB02P2  colsep mortality foliage VB02 to POP2                     colsep (gP/m2/d)            colsep VBMort02   \\
+fP2VB02P3  colsep mortality foliage VB02 to POP3                     colsep (gP/m2/d)            colsep VBMort02   \\
+fS2VB02P1  colsep mortality foliage VB02 to POS1                     colsep (gS/m2/d)            colsep VBMort02   \\
+fS2VB02P2  colsep mortality foliage VB02 to POS2                     colsep (gS/m2/d)            colsep VBMort02   \\
+fS2VB02P3  colsep mortality foliage VB02 to POS3                     colsep (gS/m2/d)            colsep VBMort02   \\
+fC5VB02P1  colsep mortality fineroot VB02 to POC1                    colsep (gC/m2/d)            colsep VBMort02   \\
+fC5VB02P2  colsep mortality fineroot VB02 to POC2                    colsep (gC/m2/d)            colsep VBMort02   \\
+fC5VB02P3  colsep mortality fineroot VB02 to POC3                    colsep (gC/m2/d)            colsep VBMort02   \\
+fN5VB02P1  colsep mortality fineroot VB02 to PON1                    colsep (gN/m2/d)            colsep VBMort02   \\
+fN5VB02P2  colsep mortality fineroot VB02 to PON2                    colsep (gN/m2/d)            colsep VBMort02   \\
+fN5VB02P3  colsep mortality fineroot VB02 to PON3                    colsep (gN/m2/d)            colsep VBMort02   \\
+fP5VB02P1  colsep mortality fineroot VB02 to POP1                    colsep (gP/m2/d)            colsep VBMort02   \\
+fP5VB02P2  colsep mortality fineroot VB02 to POP2                    colsep (gP/m2/d)            colsep VBMort02   \\
+fP5VB02P3  colsep mortality fineroot VB02 to POP3                    colsep (gP/m2/d)            colsep VBMort02   \\
+fS5VB02P1  colsep mortality fineroot VB02 to POS1                    colsep (gS/m2/d)            colsep VBMort02   \\
+fS5VB02P2  colsep mortality fineroot VB02 to POS2                    colsep (gS/m2/d)            colsep VBMort02   \\
+fS5VB02P3  colsep mortality fineroot VB02 to POS3                    colsep (gS/m2/d)            colsep VBMort02   \\
+fC1VB02P5  colsep mortality stem VB02tto POC5                        colsep (gC/m3/d)            colsep VBMort02   \\
+fC3VB02P5  colsep mortality branch VB02 to POC5                      colsep (gC/m3/d)            colsep VBMort02   \\
+fC4VB02P5  colsep mortality root VB02 to POC5                        colsep (gC/m3/d)            colsep VBMort02   \\
+fN1VB02P5  colsep mortality stem VB02tto PON5                        colsep (gN/m3/d)            colsep VBMort02   \\
+fN3VB02P5  colsep mortality branch VB02 to PON5                      colsep (gN/m3/d)            colsep VBMort02   \\
+fN4VB02P5  colsep mortality root VB02 to PON5                        colsep (gN/m3/d)            colsep VBMort02   \\
+fP1VB02P5  colsep mortality stem VB02tto POP5                        colsep (gP/m3/d)            colsep VBMort02   \\
+fP3VB02P5  colsep mortality branch VB02 to POP5                      colsep (gP/m3/d)            colsep VBMort02   \\
+fP4VB02P5  colsep mortality root VB02 to POP5                        colsep (gP/m3/d)            colsep VBMort02   \\
+fS1VB02P5  colsep mortality stem VB02tto POS5                        colsep (gS/m3/d)            colsep VBMort02   \\
+fS3VB02P5  colsep mortality branch VB02 to POS5                      colsep (gS/m3/d)            colsep VBMort02   \\
+fS4VB02P5  colsep mortality root VB02 to POS5                        colsep (gS/m3/d)            colsep VBMort02   \\
+fNVB02up   colsep uptake (fine)roots VB02                            colsep (gN/m2/d)            colsep VB02Upt    \\
+fPVB02up   colsep uptake roots VB02                                  colsep (gP/m2/d)            colsep VB02Upt    \\
+fSVB02up   colsep uptake roots VB02                                  colsep (gS/m2/d)            colsep VB02Upt    \\
+botsegVB03 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus03 \\
+VB03Navail colsep VB03 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB03availN \\
+VB03Pavail colsep VB03 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB03availN \\
+VB03Savail colsep VB03 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB03availN \\
+nsfVB03    colsep nr successive emersion(flood) VB03                 colsep (d)                  colsep VBStatus03 \\
+nsnlVB03   colsep number of successive days nutrient lim. VB03       colsep (d)                  colsep VBStatus03 \\
+SwVB03Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus03 \\
+SwVB03Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus03 \\
+ageVB03    colsep age of vegetation cohort 3                         colsep (d)                  colsep VBGrowth03 \\
+SWVB03Dec  colsep biomass is decaying after prev mort type 3         colsep (-)                  colsep VBGrowth03 \\
+fVB03      colsep area scaled flux dVB03                             colsep (gC/m2/d)            colsep VBGrowth03 \\
+fC2VB03P1  colsep mortality foliage VB03 to POC1                     colsep (gC/m2/d)            colsep VBMort03   \\
+fC2VB03P2  colsep mortality foliage VB03 to POC2                     colsep (gC/m2/d)            colsep VBMort03   \\
+fC2VB03P3  colsep mortality foliage VB03 to POC3                     colsep (gC/m2/d)            colsep VBMort03   \\
+fN2VB03P1  colsep mortality foliage VB03 to PON1                     colsep (gN/m2/d)            colsep VBMort03   \\
+fN2VB03P2  colsep mortality foliage VB03 to PON2                     colsep (gN/m2/d)            colsep VBMort03   \\
+fN2VB03P3  colsep mortality foliage VB03 to PON3                     colsep (gN/m2/d)            colsep VBMort03   \\
+fP2VB03P1  colsep mortality foliage VB03 to POP1                     colsep (gP/m2/d)            colsep VBMort03   \\
+fP2VB03P2  colsep mortality foliage VB03 to POP2                     colsep (gP/m2/d)            colsep VBMort03   \\
+fP2VB03P3  colsep mortality foliage VB03 to POP3                     colsep (gP/m2/d)            colsep VBMort03   \\
+fS2VB03P1  colsep mortality foliage VB03 to POS1                     colsep (gS/m2/d)            colsep VBMort03   \\
+fS2VB03P2  colsep mortality foliage VB03 to POS2                     colsep (gS/m2/d)            colsep VBMort03   \\
+fS2VB03P3  colsep mortality foliage VB03 to POS3                     colsep (gS/m2/d)            colsep VBMort03   \\
+fC5VB03P1  colsep mortality fineroot VB03 to POC1                    colsep (gC/m2/d)            colsep VBMort03   \\
+fC5VB03P2  colsep mortality fineroot VB03 to POC2                    colsep (gC/m2/d)            colsep VBMort03   \\
+fC5VB03P3  colsep mortality fineroot VB03 to POC3                    colsep (gC/m2/d)            colsep VBMort03   \\
+fN5VB03P1  colsep mortality fineroot VB03 to PON1                    colsep (gN/m2/d)            colsep VBMort03   \\
+fN5VB03P2  colsep mortality fineroot VB03 to PON2                    colsep (gN/m2/d)            colsep VBMort03   \\
+fN5VB03P3  colsep mortality fineroot VB03 to PON3                    colsep (gN/m2/d)            colsep VBMort03   \\
+fP5VB03P1  colsep mortality fineroot VB03 to POP1                    colsep (gP/m2/d)            colsep VBMort03   \\
+fP5VB03P2  colsep mortality fineroot VB03 to POP2                    colsep (gP/m2/d)            colsep VBMort03   \\
+fP5VB03P3  colsep mortality fineroot VB03 to POP3                    colsep (gP/m2/d)            colsep VBMort03   \\
+fS5VB03P1  colsep mortality fineroot VB03 to POS1                    colsep (gS/m2/d)            colsep VBMort03   \\
+fS5VB03P2  colsep mortality fineroot VB03 to POS2                    colsep (gS/m2/d)            colsep VBMort03   \\
+fS5VB03P3  colsep mortality fineroot VB03 to POS3                    colsep (gS/m2/d)            colsep VBMort03   \\
+fC1VB03P5  colsep mortality stem VB03tto POC5                        colsep (gC/m3/d)            colsep VBMort03   \\
+fC3VB03P5  colsep mortality branch VB03 to POC5                      colsep (gC/m3/d)            colsep VBMort03   \\
+fC4VB03P5  colsep mortality root VB03 to POC5                        colsep (gC/m3/d)            colsep VBMort03   \\
+fN1VB03P5  colsep mortality stem VB03tto PON5                        colsep (gN/m3/d)            colsep VBMort03   \\
+fN3VB03P5  colsep mortality branch VB03 to PON5                      colsep (gN/m3/d)            colsep VBMort03   \\
+fN4VB03P5  colsep mortality root VB03 to PON5                        colsep (gN/m3/d)            colsep VBMort03   \\
+fP1VB03P5  colsep mortality stem VB03tto POP5                        colsep (gP/m3/d)            colsep VBMort03   \\
+fP3VB03P5  colsep mortality branch VB03 to POP5                      colsep (gP/m3/d)            colsep VBMort03   \\
+fP4VB03P5  colsep mortality root VB03 to POP5                        colsep (gP/m3/d)            colsep VBMort03   \\
+fS1VB03P5  colsep mortality stem VB03tto POS5                        colsep (gS/m3/d)            colsep VBMort03   \\
+fS3VB03P5  colsep mortality branch VB03 to POS5                      colsep (gS/m3/d)            colsep VBMort03   \\
+fS4VB03P5  colsep mortality root VB03 to POS5                        colsep (gS/m3/d)            colsep VBMort03   \\
+fNVB03up   colsep uptake (fine)roots VB03                            colsep (gN/m2/d)            colsep VB03Upt    \\
+fPVB03up   colsep uptake roots VB03                                  colsep (gP/m2/d)            colsep VB03Upt    \\
+fSVB03up   colsep uptake roots VB03                                  colsep (gS/m2/d)            colsep VB03Upt    \\
+botsegVB04 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus04 \\
+VB04Navail colsep VB04 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB04availN \\
+VB04Pavail colsep VB04 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB04availN \\
+VB04Savail colsep VB04 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB04availN \\
+nsfVB04    colsep nr successive emersion(flood) VB04                 colsep (d)                  colsep VBStatus04 \\
+nsnlVB04   colsep number of successive days nutrient lim. VB04       colsep (d)                  colsep VBStatus04 \\
+SwVB04Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus04 \\
+SwVB04Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus04 \\
+ageVB04    colsep age of vegetation cohort 4                         colsep (d)                  colsep VBGrowth04 \\
+SWVB04Dec  colsep biomass is decaying after prev mort type 4         colsep (-)                  colsep VBGrowth04 \\
+fVB04      colsep area scaled flux dVB04                             colsep (gC/m2/d)            colsep VBGrowth04 \\
+fC2VB04P1  colsep mortality foliage VB04 to POC1                     colsep (gC/m2/d)            colsep VBMort04   \\
+fC2VB04P2  colsep mortality foliage VB04 to POC2                     colsep (gC/m2/d)            colsep VBMort04   \\
+fC2VB04P3  colsep mortality foliage VB04 to POC3                     colsep (gC/m2/d)            colsep VBMort04   \\
+fN2VB04P1  colsep mortality foliage VB04 to PON1                     colsep (gN/m2/d)            colsep VBMort04   \\
+fN2VB04P2  colsep mortality foliage VB04 to PON2                     colsep (gN/m2/d)            colsep VBMort04   \\
+fN2VB04P3  colsep mortality foliage VB04 to PON3                     colsep (gN/m2/d)            colsep VBMort04   \\
+fP2VB04P1  colsep mortality foliage VB04 to POP1                     colsep (gP/m2/d)            colsep VBMort04   \\
+fP2VB04P2  colsep mortality foliage VB04 to POP2                     colsep (gP/m2/d)            colsep VBMort04   \\
+fP2VB04P3  colsep mortality foliage VB04 to POP3                     colsep (gP/m2/d)            colsep VBMort04   \\
+fS2VB04P1  colsep mortality foliage VB04 to POS1                     colsep (gS/m2/d)            colsep VBMort04   \\
+fS2VB04P2  colsep mortality foliage VB04 to POS2                     colsep (gS/m2/d)            colsep VBMort04   \\
+fS2VB04P3  colsep mortality foliage VB04 to POS3                     colsep (gS/m2/d)            colsep VBMort04   \\
+fC5VB04P1  colsep mortality fineroot VB04 to POC1                    colsep (gC/m2/d)            colsep VBMort04   \\
+fC5VB04P2  colsep mortality fineroot VB04 to POC2                    colsep (gC/m2/d)            colsep VBMort04   \\
+fC5VB04P3  colsep mortality fineroot VB04 to POC3                    colsep (gC/m2/d)            colsep VBMort04   \\
+fN5VB04P1  colsep mortality fineroot VB04 to PON1                    colsep (gN/m2/d)            colsep VBMort04   \\
+fN5VB04P2  colsep mortality fineroot VB04 to PON2                    colsep (gN/m2/d)            colsep VBMort04   \\
+fN5VB04P3  colsep mortality fineroot VB04 to PON3                    colsep (gN/m2/d)            colsep VBMort04   \\
+fP5VB04P1  colsep mortality fineroot VB04 to POP1                    colsep (gP/m2/d)            colsep VBMort04   \\
+fP5VB04P2  colsep mortality fineroot VB04 to POP2                    colsep (gP/m2/d)            colsep VBMort04   \\
+fP5VB04P3  colsep mortality fineroot VB04 to POP3                    colsep (gP/m2/d)            colsep VBMort04   \\
+fS5VB04P1  colsep mortality fineroot VB04 to POS1                    colsep (gS/m2/d)            colsep VBMort04   \\
+fS5VB04P2  colsep mortality fineroot VB04 to POS2                    colsep (gS/m2/d)            colsep VBMort04   \\
+fS5VB04P3  colsep mortality fineroot VB04 to POS3                    colsep (gS/m2/d)            colsep VBMort04   \\
+fC1VB04P5  colsep mortality stem VB04tto POC5                        colsep (gC/m3/d)            colsep VBMort04   \\
+fC3VB04P5  colsep mortality branch VB04 to POC5                      colsep (gC/m3/d)            colsep VBMort04   \\
+fC4VB04P5  colsep mortality root VB04 to POC5                        colsep (gC/m3/d)            colsep VBMort04   \\
+fN1VB04P5  colsep mortality stem VB04tto PON5                        colsep (gN/m3/d)            colsep VBMort04   \\
+fN3VB04P5  colsep mortality branch VB04 to PON5                      colsep (gN/m3/d)            colsep VBMort04   \\
+fN4VB04P5  colsep mortality root VB04 to PON5                        colsep (gN/m3/d)            colsep VBMort04   \\
+fP1VB04P5  colsep mortality stem VB04tto POP5                        colsep (gP/m3/d)            colsep VBMort04   \\
+fP3VB04P5  colsep mortality branch VB04 to POP5                      colsep (gP/m3/d)            colsep VBMort04   \\
+fP4VB04P5  colsep mortality root VB04 to POP5                        colsep (gP/m3/d)            colsep VBMort04   \\
+fS1VB04P5  colsep mortality stem VB04tto POS5                        colsep (gS/m3/d)            colsep VBMort04   \\
+fS3VB04P5  colsep mortality branch VB04 to POS5                      colsep (gS/m3/d)            colsep VBMort04   \\
+fS4VB04P5  colsep mortality root VB04 to POS5                        colsep (gS/m3/d)            colsep VBMort04   \\
+fNVB04up   colsep uptake (fine)roots VB04                            colsep (gN/m2/d)            colsep VB04Upt    \\
+fPVB04up   colsep uptake roots VB04                                  colsep (gP/m2/d)            colsep VB04Upt    \\
+fSVB04up   colsep uptake roots VB04                                  colsep (gS/m2/d)            colsep VB04Upt    \\
+botsegVB05 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus05 \\
+VB05Navail colsep VB05 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB05availN \\
+VB05Pavail colsep VB05 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB05availN \\
+VB05Savail colsep VB05 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB05availN \\
+nsfVB05    colsep nr successive emersion(flood) VB05                 colsep (d)                  colsep VBStatus05 \\
+nsnlVB05   colsep number of successive days nutrient lim. VB05       colsep (d)                  colsep VBStatus05 \\
+SwVB05Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus05 \\
+SwVB05Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus05 \\
+ageVB05    colsep age of vegetation cohort 5                         colsep (d)                  colsep VBGrowth05 \\
+SWVB05Dec  colsep biomass is decaying after prev mort type 5         colsep (-)                  colsep VBGrowth05 \\
+fVB05      colsep area scaled flux dVB05                             colsep (gC/m2/d)            colsep VBGrowth05 \\
+fC2VB05P1  colsep mortality foliage VB05 to POC1                     colsep (gC/m2/d)            colsep VBMort05   \\
+fC2VB05P2  colsep mortality foliage VB05 to POC2                     colsep (gC/m2/d)            colsep VBMort05   \\
+fC2VB05P3  colsep mortality foliage VB05 to POC3                     colsep (gC/m2/d)            colsep VBMort05   \\
+fN2VB05P1  colsep mortality foliage VB05 to PON1                     colsep (gN/m2/d)            colsep VBMort05   \\
+fN2VB05P2  colsep mortality foliage VB05 to PON2                     colsep (gN/m2/d)            colsep VBMort05   \\
+fN2VB05P3  colsep mortality foliage VB05 to PON3                     colsep (gN/m2/d)            colsep VBMort05   \\
+fP2VB05P1  colsep mortality foliage VB05 to POP1                     colsep (gP/m2/d)            colsep VBMort05   \\
+fP2VB05P2  colsep mortality foliage VB05 to POP2                     colsep (gP/m2/d)            colsep VBMort05   \\
+fP2VB05P3  colsep mortality foliage VB05 to POP3                     colsep (gP/m2/d)            colsep VBMort05   \\
+fS2VB05P1  colsep mortality foliage VB05 to POS1                     colsep (gS/m2/d)            colsep VBMort05   \\
+fS2VB05P2  colsep mortality foliage VB05 to POS2                     colsep (gS/m2/d)            colsep VBMort05   \\
+fS2VB05P3  colsep mortality foliage VB05 to POS3                     colsep (gS/m2/d)            colsep VBMort05   \\
+fC5VB05P1  colsep mortality fineroot VB05 to POC1                    colsep (gC/m2/d)            colsep VBMort05   \\
+fC5VB05P2  colsep mortality fineroot VB05 to POC2                    colsep (gC/m2/d)            colsep VBMort05   \\
+fC5VB05P3  colsep mortality fineroot VB05 to POC3                    colsep (gC/m2/d)            colsep VBMort05   \\
+fN5VB05P1  colsep mortality fineroot VB05 to PON1                    colsep (gN/m2/d)            colsep VBMort05   \\
+fN5VB05P2  colsep mortality fineroot VB05 to PON2                    colsep (gN/m2/d)            colsep VBMort05   \\
+fN5VB05P3  colsep mortality fineroot VB05 to PON3                    colsep (gN/m2/d)            colsep VBMort05   \\
+fP5VB05P1  colsep mortality fineroot VB05 to POP1                    colsep (gP/m2/d)            colsep VBMort05   \\
+fP5VB05P2  colsep mortality fineroot VB05 to POP2                    colsep (gP/m2/d)            colsep VBMort05   \\
+fP5VB05P3  colsep mortality fineroot VB05 to POP3                    colsep (gP/m2/d)            colsep VBMort05   \\
+fS5VB05P1  colsep mortality fineroot VB05 to POS1                    colsep (gS/m2/d)            colsep VBMort05   \\
+fS5VB05P2  colsep mortality fineroot VB05 to POS2                    colsep (gS/m2/d)            colsep VBMort05   \\
+fS5VB05P3  colsep mortality fineroot VB05 to POS3                    colsep (gS/m2/d)            colsep VBMort05   \\
+fC1VB05P5  colsep mortality stem VB05tto POC5                        colsep (gC/m3/d)            colsep VBMort05   \\
+fC3VB05P5  colsep mortality branch VB05 to POC5                      colsep (gC/m3/d)            colsep VBMort05   \\
+fC4VB05P5  colsep mortality root VB05 to POC5                        colsep (gC/m3/d)            colsep VBMort05   \\
+fN1VB05P5  colsep mortality stem VB05tto PON5                        colsep (gN/m3/d)            colsep VBMort05   \\
+fN3VB05P5  colsep mortality branch VB05 to PON5                      colsep (gN/m3/d)            colsep VBMort05   \\
+fN4VB05P5  colsep mortality root VB05 to PON5                        colsep (gN/m3/d)            colsep VBMort05   \\
+fP1VB05P5  colsep mortality stem VB05tto POP5                        colsep (gP/m3/d)            colsep VBMort05   \\
+fP3VB05P5  colsep mortality branch VB05 to POP5                      colsep (gP/m3/d)            colsep VBMort05   \\
+fP4VB05P5  colsep mortality root VB05 to POP5                        colsep (gP/m3/d)            colsep VBMort05   \\
+fS1VB05P5  colsep mortality stem VB05tto POS5                        colsep (gS/m3/d)            colsep VBMort05   \\
+fS3VB05P5  colsep mortality branch VB05 to POS5                      colsep (gS/m3/d)            colsep VBMort05   \\
+fS4VB05P5  colsep mortality root VB05 to POS5                        colsep (gS/m3/d)            colsep VBMort05   \\
+fNVB05up   colsep uptake roots VB05                                  colsep (gN/m2/d)            colsep VB05Upt    \\
+fPVB05up   colsep uptake roots VB05                                  colsep (gP/m2/d)            colsep VB05Upt    \\
+fSVB05up   colsep uptake roots VB05                                  colsep (gS/m2/d)            colsep VB05Upt    \\
+botsegVB06 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus06 \\
+VB06Navail colsep VB06 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB06availN \\
+VB06Pavail colsep VB06 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB06availN \\
+VB06Savail colsep VB06 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB06availN \\
+nsfVB06    colsep nr successive emersion(flood) VB06                 colsep (d)                  colsep VBStatus06 \\
+nsnlVB06   colsep number of successive days nutrient lim. VB06       colsep (d)                  colsep VBStatus06 \\
+SwVB06Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus06 \\
+SwVB06Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus06 \\
+ageVB06    colsep age of vegetation cohort 6                         colsep (d)                  colsep VBGrowth06 \\
+SWVB06Dec  colsep biomass is decaying after prev mort type 6         colsep (-)                  colsep VBGrowth06 \\
+fVB06      colsep area scaled flux dVB06                             colsep (gC/m2/d)            colsep VBGrowth06 \\
+fC2VB06P1  colsep mortality foliage VB06 to POC1                     colsep (gC/m2/d)            colsep VBMort06   \\
+fC2VB06P2  colsep mortality foliage VB06 to POC2                     colsep (gC/m2/d)            colsep VBMort06   \\
+fC2VB06P3  colsep mortality foliage VB06 to POC3                     colsep (gC/m2/d)            colsep VBMort06   \\
+fN2VB06P1  colsep mortality foliage VB06 to PON1                     colsep (gN/m2/d)            colsep VBMort06   \\
+fN2VB06P2  colsep mortality foliage VB06 to PON2                     colsep (gN/m2/d)            colsep VBMort06   \\
+fN2VB06P3  colsep mortality foliage VB06 to PON3                     colsep (gN/m2/d)            colsep VBMort06   \\
+fP2VB06P1  colsep mortality foliage VB06 to POP1                     colsep (gP/m2/d)            colsep VBMort06   \\
+fP2VB06P2  colsep mortality foliage VB06 to POP2                     colsep (gP/m2/d)            colsep VBMort06   \\
+fP2VB06P3  colsep mortality foliage VB06 to POP3                     colsep (gP/m2/d)            colsep VBMort06   \\
+fS2VB06P1  colsep mortality foliage VB06 to POS1                     colsep (gS/m2/d)            colsep VBMort06   \\
+fS2VB06P2  colsep mortality foliage VB06 to POS2                     colsep (gS/m2/d)            colsep VBMort06   \\
+fS2VB06P3  colsep mortality foliage VB06 to POS3                     colsep (gS/m2/d)            colsep VBMort06   \\
+fC5VB06P1  colsep mortality fineroot VB06 to POC1                    colsep (gC/m2/d)            colsep VBMort06   \\
+fC5VB06P2  colsep mortality fineroot VB06 to POC2                    colsep (gC/m2/d)            colsep VBMort06   \\
+fC5VB06P3  colsep mortality fineroot VB06 to POC3                    colsep (gC/m2/d)            colsep VBMort06   \\
+fN5VB06P1  colsep mortality fineroot VB06 to PON1                    colsep (gN/m2/d)            colsep VBMort06   \\
+fN5VB06P2  colsep mortality fineroot VB06 to PON2                    colsep (gN/m2/d)            colsep VBMort06   \\
+fN5VB06P3  colsep mortality fineroot VB06 to PON3                    colsep (gN/m2/d)            colsep VBMort06   \\
+fP5VB06P1  colsep mortality fineroot VB06 to POP1                    colsep (gP/m2/d)            colsep VBMort06   \\
+fP5VB06P2  colsep mortality fineroot VB06 to POP2                    colsep (gP/m2/d)            colsep VBMort06   \\
+fP5VB06P3  colsep mortality fineroot VB06 to POP3                    colsep (gP/m2/d)            colsep VBMort06   \\
+fS5VB06P1  colsep mortality fineroot VB06 to POS1                    colsep (gS/m2/d)            colsep VBMort06   \\
+fS5VB06P2  colsep mortality fineroot VB06 to POS2                    colsep (gS/m2/d)            colsep VBMort06   \\
+fS5VB06P3  colsep mortality fineroot VB06 to POS3                    colsep (gS/m2/d)            colsep VBMort06   \\
+fC1VB06P5  colsep mortality stem VB06tto POC5                        colsep (gC/m3/d)            colsep VBMort06   \\
+fC3VB06P5  colsep mortality branch VB06 to POC5                      colsep (gC/m3/d)            colsep VBMort06   \\
+fC4VB06P5  colsep mortality root VB06 to POC5                        colsep (gC/m3/d)            colsep VBMort06   \\
+fN1VB06P5  colsep mortality stem VB06tto PON5                        colsep (gN/m3/d)            colsep VBMort06   \\
+fN3VB06P5  colsep mortality branch VB06 to PON5                      colsep (gN/m3/d)            colsep VBMort06   \\
+fN4VB06P5  colsep mortality root VB06 to PON5                        colsep (gN/m3/d)            colsep VBMort06   \\
+fP1VB06P5  colsep mortality stem VB06tto POP5                        colsep (gP/m3/d)            colsep VBMort06   \\
+fP3VB06P5  colsep mortality branch VB06 to POP5                      colsep (gP/m3/d)            colsep VBMort06   \\
+fP4VB06P5  colsep mortality root VB06 to POP5                        colsep (gP/m3/d)            colsep VBMort06   \\
+fS1VB06P5  colsep mortality stem VB06tto POS5                        colsep (gS/m3/d)            colsep VBMort06   \\
+fS3VB06P5  colsep mortality branch VB06 to POS5                      colsep (gS/m3/d)            colsep VBMort06   \\
+fS4VB06P5  colsep mortality root VB06 to POS5                        colsep (gS/m3/d)            colsep VBMort06   \\
+fNVB06up   colsep uptake (fine)roots VB06                            colsep (gN/m2/d)            colsep VB06Upt    \\
+fPVB06up   colsep uptake roots VB06                                  colsep (gP/m2/d)            colsep VB06Upt    \\
+fSVB06up   colsep uptake roots VB06                                  colsep (gS/m2/d)            colsep VB06Upt    \\
+botsegVB07 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus07 \\
+VB07Navail colsep VB07 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB07availN \\
+VB07Pavail colsep VB07 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB07availN \\
+VB07Savail colsep VB07 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB07availN \\
+nsfVB07    colsep nr successive emersion(flood) VB07                 colsep (d)                  colsep VBStatus07 \\
+nsnlVB07   colsep number of successive days nutrient lim. VB07       colsep (d)                  colsep VBStatus07 \\
+SwVB07Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus07 \\
+SwVB07Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus07 \\
+ageVB07    colsep age of vegetation cohort 7                         colsep (d)                  colsep VBGrowth07 \\
+SWVB07Dec  colsep biomass is decaying after prev mort type 7         colsep (-)                  colsep VBGrowth07 \\
+fVB07      colsep area scaled flux dVB07                             colsep (gC/m2/d)            colsep VBGrowth07 \\
+fC2VB07P1  colsep mortality foliage VB07 to POC1                     colsep (gC/m2/d)            colsep VBMort07   \\
+fC2VB07P2  colsep mortality foliage VB07 to POC2                     colsep (gC/m2/d)            colsep VBMort07   \\
+fC2VB07P3  colsep mortality foliage VB07 to POC3                     colsep (gC/m2/d)            colsep VBMort07   \\
+fN2VB07P1  colsep mortality foliage VB07 to PON1                     colsep (gN/m2/d)            colsep VBMort07   \\
+fN2VB07P2  colsep mortality foliage VB07 to PON2                     colsep (gN/m2/d)            colsep VBMort07   \\
+fN2VB07P3  colsep mortality foliage VB07 to PON3                     colsep (gN/m2/d)            colsep VBMort07   \\
+fP2VB07P1  colsep mortality foliage VB07 to POP1                     colsep (gP/m2/d)            colsep VBMort07   \\
+fP2VB07P2  colsep mortality foliage VB07 to POP2                     colsep (gP/m2/d)            colsep VBMort07   \\
+fP2VB07P3  colsep mortality foliage VB07 to POP3                     colsep (gP/m2/d)            colsep VBMort07   \\
+fS2VB07P1  colsep mortality foliage VB07 to POS1                     colsep (gS/m2/d)            colsep VBMort07   \\
+fS2VB07P2  colsep mortality foliage VB07 to POS2                     colsep (gS/m2/d)            colsep VBMort07   \\
+fS2VB07P3  colsep mortality foliage VB07 to POS3                     colsep (gS/m2/d)            colsep VBMort07   \\
+fC5VB07P1  colsep mortality fineroot VB07 to POC1                    colsep (gC/m2/d)            colsep VBMort07   \\
+fC5VB07P2  colsep mortality fineroot VB07 to POC2                    colsep (gC/m2/d)            colsep VBMort07   \\
+fC5VB07P3  colsep mortality fineroot VB07 to POC3                    colsep (gC/m2/d)            colsep VBMort07   \\
+fN5VB07P1  colsep mortality fineroot VB07 to PON1                    colsep (gN/m2/d)            colsep VBMort07   \\
+fN5VB07P2  colsep mortality fineroot VB07 to PON2                    colsep (gN/m2/d)            colsep VBMort07   \\
+fN5VB07P3  colsep mortality fineroot VB07 to PON3                    colsep (gN/m2/d)            colsep VBMort07   \\
+fP5VB07P1  colsep mortality fineroot VB07 to POP1                    colsep (gP/m2/d)            colsep VBMort07   \\
+fP5VB07P2  colsep mortality fineroot VB07 to POP2                    colsep (gP/m2/d)            colsep VBMort07   \\
+fP5VB07P3  colsep mortality fineroot VB07 to POP3                    colsep (gP/m2/d)            colsep VBMort07   \\
+fS5VB07P1  colsep mortality fineroot VB07 to POS1                    colsep (gS/m2/d)            colsep VBMort07   \\
+fS5VB07P2  colsep mortality fineroot VB07 to POS2                    colsep (gS/m2/d)            colsep VBMort07   \\
+fS5VB07P3  colsep mortality fineroot VB07 to POS3                    colsep (gS/m2/d)            colsep VBMort07   \\
+fC1VB07P5  colsep mortality stem VB07tto POC5                        colsep (gC/m3/d)            colsep VBMort07   \\
+fC3VB07P5  colsep mortality branch VB07 to POC5                      colsep (gC/m3/d)            colsep VBMort07   \\
+fC4VB07P5  colsep mortality root VB07 to POC5                        colsep (gC/m3/d)            colsep VBMort07   \\
+fN1VB07P5  colsep mortality stem VB07tto PON5                        colsep (gN/m3/d)            colsep VBMort07   \\
+fN3VB07P5  colsep mortality branch VB07 to PON5                      colsep (gN/m3/d)            colsep VBMort07   \\
+fN4VB07P5  colsep mortality root VB07 to PON5                        colsep (gN/m3/d)            colsep VBMort07   \\
+fP1VB07P5  colsep mortality stem VB07tto POP5                        colsep (gP/m3/d)            colsep VBMort07   \\
+fP3VB07P5  colsep mortality branch VB07 to POP5                      colsep (gP/m3/d)            colsep VBMort07   \\
+fP4VB07P5  colsep mortality root VB07 to POP5                        colsep (gP/m3/d)            colsep VBMort07   \\
+fS1VB07P5  colsep mortality stem VB07tto POS5                        colsep (gS/m3/d)            colsep VBMort07   \\
+fS3VB07P5  colsep mortality branch VB07 to POS5                      colsep (gS/m3/d)            colsep VBMort07   \\
+fS4VB07P5  colsep mortality root VB07 to POS5                        colsep (gS/m3/d)            colsep VBMort07   \\
+fNVB07up   colsep uptake (fine)roots VB07                            colsep (gN/m2/d)            colsep VB07Upt    \\
+fPVB07up   colsep uptake roots VB07                                  colsep (gP/m2/d)            colsep VB07Upt    \\
+fSVB07up   colsep uptake roots VB07                                  colsep (gS/m2/d)            colsep VB07Upt    \\
+botsegVB08 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus08 \\
+VB08Navail colsep VB08 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB08availN \\
+VB08Pavail colsep VB08 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB08availN \\
+VB08Savail colsep VB08 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB08availN \\
+nsfVB08    colsep nr successive emersion(flood) VB08                 colsep (d)                  colsep VBStatus08 \\
+nsnlVB08   colsep number of successive days nutrient lim. VB08       colsep (d)                  colsep VBStatus08 \\
+SwVB08Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus08 \\
+SwVB08Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus08 \\
+ageVB08    colsep age of vegetation cohort 8                         colsep (d)                  colsep VBGrowth08 \\
+SWVB08Dec  colsep biomass is decaying after prev mort type 8         colsep (-)                  colsep VBGrowth08 \\
+fVB08      colsep area scaled flux dVB08                             colsep (gC/m2/d)            colsep VBGrowth08 \\
+fC2VB08P1  colsep mortality foliage VB08 to POC1                     colsep (gC/m2/d)            colsep VBMort08   \\
+fC2VB08P2  colsep mortality foliage VB08 to POC2                     colsep (gC/m2/d)            colsep VBMort08   \\
+fC2VB08P3  colsep mortality foliage VB08 to POC3                     colsep (gC/m2/d)            colsep VBMort08   \\
+fN2VB08P1  colsep mortality foliage VB08 to PON1                     colsep (gN/m2/d)            colsep VBMort08   \\
+fN2VB08P2  colsep mortality foliage VB08 to PON2                     colsep (gN/m2/d)            colsep VBMort08   \\
+fN2VB08P3  colsep mortality foliage VB08 to PON3                     colsep (gN/m2/d)            colsep VBMort08   \\
+fP2VB08P1  colsep mortality foliage VB08 to POP1                     colsep (gP/m2/d)            colsep VBMort08   \\
+fP2VB08P2  colsep mortality foliage VB08 to POP2                     colsep (gP/m2/d)            colsep VBMort08   \\
+fP2VB08P3  colsep mortality foliage VB08 to POP3                     colsep (gP/m2/d)            colsep VBMort08   \\
+fS2VB08P1  colsep mortality foliage VB08 to POS1                     colsep (gS/m2/d)            colsep VBMort08   \\
+fS2VB08P2  colsep mortality foliage VB08 to POS2                     colsep (gS/m2/d)            colsep VBMort08   \\
+fS2VB08P3  colsep mortality foliage VB08 to POS3                     colsep (gS/m2/d)            colsep VBMort08   \\
+fC5VB08P1  colsep mortality fineroot VB08 to POC1                    colsep (gC/m2/d)            colsep VBMort08   \\
+fC5VB08P2  colsep mortality fineroot VB08 to POC2                    colsep (gC/m2/d)            colsep VBMort08   \\
+fC5VB08P3  colsep mortality fineroot VB08 to POC3                    colsep (gC/m2/d)            colsep VBMort08   \\
+fN5VB08P1  colsep mortality fineroot VB08 to PON1                    colsep (gN/m2/d)            colsep VBMort08   \\
+fN5VB08P2  colsep mortality fineroot VB08 to PON2                    colsep (gN/m2/d)            colsep VBMort08   \\
+fN5VB08P3  colsep mortality fineroot VB08 to PON3                    colsep (gN/m2/d)            colsep VBMort08   \\
+fP5VB08P1  colsep mortality fineroot VB08 to POP1                    colsep (gP/m2/d)            colsep VBMort08   \\
+fP5VB08P2  colsep mortality fineroot VB08 to POP2                    colsep (gP/m2/d)            colsep VBMort08   \\
+fP5VB08P3  colsep mortality fineroot VB08 to POP3                    colsep (gP/m2/d)            colsep VBMort08   \\
+fS5VB08P1  colsep mortality fineroot VB08 to POS1                    colsep (gS/m2/d)            colsep VBMort08   \\
+fS5VB08P2  colsep mortality fineroot VB08 to POS2                    colsep (gS/m2/d)            colsep VBMort08   \\
+fS5VB08P3  colsep mortality fineroot VB08 to POS3                    colsep (gS/m2/d)            colsep VBMort08   \\
+fC1VB08P5  colsep mortality stem VB08tto POC5                        colsep (gC/m3/d)            colsep VBMort08   \\
+fC3VB08P5  colsep mortality branch VB08 to POC5                      colsep (gC/m3/d)            colsep VBMort08   \\
+fC4VB08P5  colsep mortality root VB08 to POC5                        colsep (gC/m3/d)            colsep VBMort08   \\
+fN1VB08P5  colsep mortality stem VB08tto PON5                        colsep (gN/m3/d)            colsep VBMort08   \\
+fN3VB08P5  colsep mortality branch VB08 to PON5                      colsep (gN/m3/d)            colsep VBMort08   \\
+fN4VB08P5  colsep mortality root VB08 to PON5                        colsep (gN/m3/d)            colsep VBMort08   \\
+fP1VB08P5  colsep mortality stem VB08tto POP5                        colsep (gP/m3/d)            colsep VBMort08   \\
+fP3VB08P5  colsep mortality branch VB08 to POP5                      colsep (gP/m3/d)            colsep VBMort08   \\
+fP4VB08P5  colsep mortality root VB08 to POP5                        colsep (gP/m3/d)            colsep VBMort08   \\
+fS1VB08P5  colsep mortality stem VB08tto POS5                        colsep (gS/m3/d)            colsep VBMort08   \\
+fS3VB08P5  colsep mortality branch VB08 to POS5                      colsep (gS/m3/d)            colsep VBMort08   \\
+fS4VB08P5  colsep mortality root VB08 to POS5                        colsep (gS/m3/d)            colsep VBMort08   \\
+fNVB08up   colsep uptake (fine)roots VB08                            colsep (gN/m2/d)            colsep VB08Upt    \\
+fPVB08up   colsep uptake roots VB08                                  colsep (gP/m2/d)            colsep VB08Upt    \\
+fSVB08up   colsep uptake roots VB08                                  colsep (gS/m2/d)            colsep VB08Upt    \\
+botsegVB09 colsep bottom segment pointer                             colsep (-)                  colsep VBStatus09 \\
+VB09Navail colsep VB09 nitrogen availability in rooting zone         colsep (gN/m2)              colsep VB09availN \\
+VB09Pavail colsep VB09 phosphorus availability in rooting z.         colsep (gP/m2)              colsep VB09availN \\
+VB09Savail colsep VB09 sulfur availability in rooting zone           colsep (gS/m2)              colsep VB09availN \\
+nsfVB09    colsep nr successive emersion(flood) VB09                 colsep (d)                  colsep VBStatus09 \\
+nsnlVB09   colsep number of successive days nutrient lim. VB09       colsep (d)                  colsep VBStatus09 \\
+SwVB09Gro  colsep vegetation biomass growth allowed (0=no,1=yes)     colsep (-)                  colsep VBStatus09 \\
+SwVB09Mrt  colsep vegetation biomass dead (0=no,1=yes)               colsep (-)                  colsep VBStatus09 \\
+ageVB09    colsep age of vegetation cohort 9                         colsep (d)                  colsep VBGrowth09 \\
+SWVB09Dec  colsep biomass is decaying after prev mort type 9         colsep (-)                  colsep VBGrowth09 \\
+fVB09      colsep area scaled flux dVB09                             colsep (gC/m2/d)            colsep VBGrowth09 \\
+fC2VB09P1  colsep mortality foliage VB09 to POC1                     colsep (gC/m2/d)            colsep VBMort09   \\
+fC2VB09P2  colsep mortality foliage VB09 to POC2                     colsep (gC/m2/d)            colsep VBMort09   \\
+fC2VB09P3  colsep mortality foliage VB09 to POC3                     colsep (gC/m2/d)            colsep VBMort09   \\
+fN2VB09P1  colsep mortality foliage VB09 to PON1                     colsep (gN/m2/d)            colsep VBMort09   \\
+fN2VB09P2  colsep mortality foliage VB09 to PON2                     colsep (gN/m2/d)            colsep VBMort09   \\
+fN2VB09P3  colsep mortality foliage VB09 to PON3                     colsep (gN/m2/d)            colsep VBMort09   \\
+fP2VB09P1  colsep mortality foliage VB09 to POP1                     colsep (gP/m2/d)            colsep VBMort09   \\
+fP2VB09P2  colsep mortality foliage VB09 to POP2                     colsep (gP/m2/d)            colsep VBMort09   \\
+fP2VB09P3  colsep mortality foliage VB09 to POP3                     colsep (gP/m2/d)            colsep VBMort09   \\
+fS2VB09P1  colsep mortality foliage VB09 to POS1                     colsep (gS/m2/d)            colsep VBMort09   \\
+fS2VB09P2  colsep mortality foliage VB09 to POS2                     colsep (gS/m2/d)            colsep VBMort09   \\
+fS2VB09P3  colsep mortality foliage VB09 to POS3                     colsep (gS/m2/d)            colsep VBMort09   \\
+fC5VB09P1  colsep mortality fineroot VB09 to POC1                    colsep (gC/m2/d)            colsep VBMort09   \\
+fC5VB09P2  colsep mortality fineroot VB09 to POC2                    colsep (gC/m2/d)            colsep VBMort09   \\
+fC5VB09P3  colsep mortality fineroot VB09 to POC3                    colsep (gC/m2/d)            colsep VBMort09   \\
+fN5VB09P1  colsep mortality fineroot VB09 to PON1                    colsep (gN/m2/d)            colsep VBMort09   \\
+fN5VB09P2  colsep mortality fineroot VB09 to PON2                    colsep (gN/m2/d)            colsep VBMort09   \\
+fN5VB09P3  colsep mortality fineroot VB09 to PON3                    colsep (gN/m2/d)            colsep VBMort09   \\
+fP5VB09P1  colsep mortality fineroot VB09 to POP1                    colsep (gP/m2/d)            colsep VBMort09   \\
+fP5VB09P2  colsep mortality fineroot VB09 to POP2                    colsep (gP/m2/d)            colsep VBMort09   \\
+fP5VB09P3  colsep mortality fineroot VB09 to POP3                    colsep (gP/m2/d)            colsep VBMort09   \\
+fS5VB09P1  colsep mortality fineroot VB09 to POS1                    colsep (gS/m2/d)            colsep VBMort09   \\
+fS5VB09P2  colsep mortality fineroot VB09 to POS2                    colsep (gS/m2/d)            colsep VBMort09   \\
+fS5VB09P3  colsep mortality fineroot VB09 to POS3                    colsep (gS/m2/d)            colsep VBMort09   \\
+fC1VB09P5  colsep mortality stem VB09tto POC5                        colsep (gC/m3/d)            colsep VBMort09   \\
+fC3VB09P5  colsep mortality branch VB09 to POC5                      colsep (gC/m3/d)            colsep VBMort09   \\
+fC4VB09P5  colsep mortality root VB09 to POC5                        colsep (gC/m3/d)            colsep VBMort09   \\
+fN1VB09P5  colsep mortality stem VB09tto PON5                        colsep (gN/m3/d)            colsep VBMort09   \\
+fN3VB09P5  colsep mortality branch VB09 to PON5                      colsep (gN/m3/d)            colsep VBMort09   \\
+fN4VB09P5  colsep mortality root VB09 to PON5                        colsep (gN/m3/d)            colsep VBMort09   \\
+fP1VB09P5  colsep mortality stem VB09tto POP5                        colsep (gP/m3/d)            colsep VBMort09   \\
+fP3VB09P5  colsep mortality branch VB09 to POP5                      colsep (gP/m3/d)            colsep VBMort09   \\
+fP4VB09P5  colsep mortality root VB09 to POP5                        colsep (gP/m3/d)            colsep VBMort09   \\
+fS1VB09P5  colsep mortality stem VB09tto POS5                        colsep (gS/m3/d)            colsep VBMort09   \\
+fS3VB09P5  colsep mortality branch VB09 to POS5                      colsep (gS/m3/d)            colsep VBMort09   \\
+fS4VB09P5  colsep mortality root VB09 to POS5                        colsep (gS/m3/d)            colsep VBMort09   \\
+fNVB09up   colsep uptake (fine)roots VB09                            colsep (gN/m2/d)            colsep VB09Upt    \\
+fPVB09up   colsep uptake roots VB09                                  colsep (gP/m2/d)            colsep VB09Upt    \\
+fSVB09up   colsep uptake roots VB09                                  colsep (gS/m2/d)            colsep VB09Upt    \\
+LimRadSM01 colsep radiation limitation function SM01 <0-1>           colsep (-)                  colsep Rad_SM01   \\
+LimRadSM02 colsep radiation limitation function SM02 <0-1>           colsep (-)                  colsep Rad_SM02   \\
+LimRadSM03 colsep radiation limitation function SM03 <0-1>           colsep (-)                  colsep Rad_SM03   \\
+LimRadSM04 colsep radiation limitation function SM04 <0-1>           colsep (-)                  colsep Rad_SM04   \\
+LimRadSM05 colsep radiation limitation function SM05 <0-1>           colsep (-)                  colsep Rad_SM05   \\
+NH4S12     colsep NH4 in S12 pore water                              colsep (gN/m3)              colsep NPPoreS12  \\
+PO4S12     colsep PO4 in S12 pore water                              colsep (gN/m3)              colsep NPPoreS12  \\
+CDINSM01W  colsep average water concentration DIN for SM01           colsep (m)                  colsep MACNUTSM01 \\
+CPO4SM01W  colsep average water concentration PO4 for SM01           colsep (m)                  colsep MACNUTSM01 \\
+CCO2SM01   colsep average concentration CO2+H2CO3 for SM01           colsep (m)                  colsep MACNUTSM01 \\
+CHCO3SM01  colsep average concentration HCO3 for SM01                colsep (m)                  colsep MACNUTSM01 \\
+CDINSM01B  colsep average sediment concentration DIN for SM01        colsep (m)                  colsep MACNUTSM01 \\
+CPO4SM01B  colsep average sediment concentration PO4 for SM01        colsep (m)                  colsep MACNUTSM01 \\
+LimNutSM01 colsep nutrient limitation function SM01 <0-1>            colsep (-)                  colsep MACNUTSM01 \\
+FrootNSM01 colsep fraction root uptake nitrogen SM01                 colsep (-)                  colsep MACNUTSM01 \\
+FrootPSM01 colsep fraction root uptake phosphorus SM01               colsep (-)                  colsep MACNUTSM01 \\
+MnTempSM01 colsep depth/biomass-averaged temperature for SM01        colsep (oC)                 colsep MACNUTSM01 \\
+CDINSM02W  colsep average water concentration DIN for SM02           colsep (m)                  colsep MACNUTSM02 \\
+CPO4SM02W  colsep average water concentration PO4 for SM02           colsep (m)                  colsep MACNUTSM02 \\
+CCO2SM02   colsep average concentration CO2+H2CO3 for SM02           colsep (m)                  colsep MACNUTSM02 \\
+CHCO3SM02  colsep average concentration HCO3 for SM02                colsep (m)                  colsep MACNUTSM02 \\
+CDINSM02B  colsep average sediment concentration DIN for SM02        colsep (m)                  colsep MACNUTSM02 \\
+CPO4SM02B  colsep average sediment concentration PO4 for SM02        colsep (m)                  colsep MACNUTSM02 \\
+LimNutSM02 colsep nutrient limitation function SM02 <0-1>            colsep (-)                  colsep MACNUTSM02 \\
+FrootNSM02 colsep fraction root uptake nitrogen SM02                 colsep (-)                  colsep MACNUTSM02 \\
+FrootPSM02 colsep fraction root uptake phosphorus SM02               colsep (-)                  colsep MACNUTSM02 \\
+MnTempSM02 colsep depth/biomass-averaged temperature for SM01        colsep (oC)                 colsep MACNUTSM02 \\
+CDINSM03W  colsep average water concentration DIN for SM03           colsep (m)                  colsep MACNUTSM03 \\
+CPO4SM03W  colsep average water concentration PO4 for SM03           colsep (m)                  colsep MACNUTSM03 \\
+CCO2SM03   colsep average concentration CO2+H2CO3 for SM03           colsep (m)                  colsep MACNUTSM03 \\
+CHCO3SM03  colsep average concentration HCO3 for SM03                colsep (m)                  colsep MACNUTSM03 \\
+CDINSM03B  colsep average sediment concentration DIN for SM03        colsep (m)                  colsep MACNUTSM03 \\
+CPO4SM03B  colsep average sediment concentration PO4 for SM03        colsep (m)                  colsep MACNUTSM03 \\
+LimNutSM03 colsep nutrient limitation function SM03 <0-1>            colsep (-)                  colsep MACNUTSM03 \\
+FrootNSM03 colsep fraction root uptake nitrogen SM03                 colsep (-)                  colsep MACNUTSM03 \\
+FrootPSM03 colsep fraction root uptake phosphorus SM03               colsep (-)                  colsep MACNUTSM03 \\
+MnTempSM03 colsep depth/biomass-averaged temperature for SM01        colsep (oC)                 colsep MACNUTSM03 \\
+CDINSM04W  colsep average water concentration DIN for SM04           colsep (m)                  colsep MACNUTSM04 \\
+CPO4SM04W  colsep average water concentration PO4 for SM04           colsep (m)                  colsep MACNUTSM04 \\
+CCO2SM04   colsep average concentration CO2+H2CO3 for SM04           colsep (m)                  colsep MACNUTSM04 \\
+CHCO3SM04  colsep average concentration HCO3 for SM04                colsep (m)                  colsep MACNUTSM04 \\
+CDINSM04B  colsep average sediment concentration DIN for SM04        colsep (m)                  colsep MACNUTSM04 \\
+CPO4SM04B  colsep average sediment concentration PO4 for SM04        colsep (m)                  colsep MACNUTSM04 \\
+LimNutSM04 colsep nutrient limitation function SM04 <0-1>            colsep (-)                  colsep MACNUTSM04 \\
+FrootNSM04 colsep fraction root uptake nitrogen SM04                 colsep (-)                  colsep MACNUTSM04 \\
+FrootPSM04 colsep fraction root uptake phosphorus SM04               colsep (-)                  colsep MACNUTSM04 \\
+MnTempSM04 colsep depth/biomass-averaged temperature for SM01        colsep (oC)                 colsep MACNUTSM04 \\
+CDINSM05W  colsep average water concentration DIN for SM05           colsep (m)                  colsep MACNUTSM05 \\
+CPO4SM05W  colsep average water concentration PO4 for SM05           colsep (m)                  colsep MACNUTSM05 \\
+CCO2SM05   colsep average concentration CO2+H2CO3 for SM05           colsep (m)                  colsep MACNUTSM05 \\
+CHCO3SM05  colsep average concentration HCO3 for SM05                colsep (m)                  colsep MACNUTSM05 \\
+CDINSM05B  colsep average sediment concentration DIN for SM05        colsep (m)                  colsep MACNUTSM05 \\
+CPO4SM05B  colsep average sediment concentration PO4 for SM05        colsep (m)                  colsep MACNUTSM05 \\
+LimNutSM05 colsep nutrient limitation function SM05 <0-1>            colsep (-)                  colsep MACNUTSM05 \\
+FrootNSM05 colsep fraction root uptake nitrogen SM05                 colsep (-)                  colsep MACNUTSM05 \\
+FrootPSM05 colsep fraction root uptake phosphorus SM05               colsep (-)                  colsep MACNUTSM05 \\
+MnTempSM05 colsep depth/biomass-averaged temperature for SM01        colsep (oC)                 colsep MACNUTSM05 \\
+M_DoSpawn  colsep indication of spawning of DEB Mussel               colsep (-)                  colsep DEBGRZ_M   \\
+Z_DoSpawn  colsep indication of spawning of DEB Zooplankton          colsep (-)                  colsep DEBGRZ_Z   \\
+G3_DoSpawn colsep indication of spawning of DEB Grazer3              colsep (-)                  colsep DEBGRZ_G3  \\
+G4_DoSpawn colsep indication of spawning of DEB Grazer4              colsep (-)                  colsep DEBGRZ_G4  \\
+G5_DoSpawn colsep indication of spawning of DEB Grazer5              colsep (-)                  colsep DEBGRZ_G5  \\
+MBotSeg    colsep Bottom segment for this segment                    colsep (-)                  colsep MalGro     \\
+LocGroS    colsep Local growth flux MALS                             colsep (gDM/m3/d)           colsep FlMALS     \\
+LocGroN    colsep Local growth flux MALN                             colsep (gN/m3/d)            colsep FlMALS     \\
+LocGroP    colsep Local growth flux MALP                             colsep (gP/m3/d)            colsep FlMALS     \\
+LocGroC    colsep Local growth flux MALC                             colsep (gC/m3/d)            colsep FlMALS     \\

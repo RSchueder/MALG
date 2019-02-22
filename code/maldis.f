@@ -33,8 +33,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(14)  ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(14)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(16)  ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(16)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -43,7 +43,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT(14)    !    Local work array for the pointering
+      INTEGER IPNT(16)    !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 !*******************************************************************************
 !
@@ -67,14 +67,15 @@
       REAL(4) AactMAL     ! O  Actual Area Macroalgae                         (m2)
       
       INTEGER IKMRK1
-      
       INTEGER IKMRK2
+      
       REAL(4) Z2          !    Height Bottom Segment from Bottom              (m)
       REAL(4) Z1          !    Height Top Segment from Bottom                 (m)
       REAL(4) Z2a         !    Height Bottom Segment from Bottom              (m)
       REAL(4) Z1a         !    Height Top Segment from Bottom                 (m)
-      REAL(4) Hact       !    Actual Length Macroalgae - relative to top     (-)
-      REAL(4) Hactd       !    Actual Length Macroalgae - relative to top     (-)
+      REAL(4) Hact        !    Actual Length Macroalgae - relative to top     (m)
+      REAL(4) Aact        !    Actual Area Macroalgae - relative to top       (m)
+      REAL(4) Hactd       !    Actual Length Macroalgae - relative to top     (m2)
       REAL(4) Z2ad        !    Height Bottom Segment from Bottom - relative   (-)
       REAL(4) Z1ad        !    Height Top Segment from Bottom - relative      (-)
       REAL(4) absHmaxMAL  !    Absolute maxmimum Length Macroalgae            (m)
@@ -115,7 +116,7 @@ c     LOGICAL First
 
             ! get biomass from bottom segment
             ! gDM/m2
-            MALS = PMSA(IPOINT(5)+(IBOTSEG-1)*INCREM(5))
+            MALS = PMSA(IPOINT(5)+(MBOTSEG-1)*INCREM(5))
 
 !           Limit the maximum height of the plants to the water depth
             absHmaxMAL     = min( abs(HmaxMAL), TotalDepth )

@@ -1,0 +1,4 @@
+VertDisp   colsep vertical dispersion                                colsep (m2/s)               colsep     1.00 colsep ALLACTIVE  colsep VertDisp   \\
+HorzDisp   colsep variable horizontal dispersion                     colsep (m2/s)               colsep     1.00 colsep ALLACTIVE  colsep HorzDisp   \\
+HorzDispV  colsep variable horizontal dispersion                     colsep (m2/s)               colsep     1.00 colsep ALLACTIVE  colsep HorzDispV  \\
+HorzDispA  colsep variable horizontal dispersion                     colsep (m2/s)               colsep     1.00 colsep ALLACTIVE  colsep HorzDispA  \\

@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Wed Feb 13 17:58:39 2019
+        !COMPILER-GENERATED INTERFACE MODULE: Thu Feb 21 17:12:02 2019
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE COVMAC__genmod
@@ -7,8 +7,8 @@
      &IKNMRK,NOQ1,NOQ2,NOQ3,NOQ4)
               REAL(KIND=4) :: PMSA(*)
               REAL(KIND=4) :: FL(*)
-              INTEGER(KIND=4) :: IPOINT(22)
-              INTEGER(KIND=4) :: INCREM(22)
+              INTEGER(KIND=4) :: IPOINT(14)
+              INTEGER(KIND=4) :: INCREM(14)
               INTEGER(KIND=4) :: NOSEG
               INTEGER(KIND=4) :: NOFLUX
               INTEGER(KIND=4) :: IEXPNT(4,*)

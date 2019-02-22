@@ -13,8 +13,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(66)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(66)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(43)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(43)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -23,7 +23,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 66)   !    Local work array for the pointering
+      INTEGER IPNT( 43)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -60,6 +60,7 @@ C
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
+      
       REAL(4) MALSM2		! O	 macroalgae structural in segment	                 (gDM/m2)
       REAL(4) MALNM2		! O	 macroalgae N storage in segment                     (gN/gDM)
       REAL(4) MALPM2		! O	 macroalgae P storage in segment                     (gP/gDM)
@@ -73,13 +74,14 @@ C
       REAL(4) LocGroN     ! O  local growth of MALN                                (gN/m3/d)
       REAL(4) LocGroP     ! O  local growth of MALP                                (gP/m3/d)
       REAL(4) LocGroC     ! O  local growth of MALC                                (gC/m3/d)
+      
       REAL(4) dPrPOC1MAL  ! F  POC1 production MALS                                (gC/m3/d)
       REAL(4) dPrPOC2MAL  ! F  POC2 production MALS                                (gC/m3/d)
       REAL(4) dPrPON1MAL  ! F  PON1 production MALS                                (gN/m3/d)
       REAL(4) dPrPON2MAL  ! F  PON2 production MALS                                (gN/m3/d)
       REAL(4) dPrPOP1MAL  ! F  POP1 production MALS                                (gP/m3/d)
       REAL(4) dPrPOP2MAL  ! F  POP2 production MALS                                (gP/m3/d)
-      REAL(4) dMALSOXY    ! F  oxygen production MALS                              (gO/m3/d)
+      REAL(4) dCnOXYMAL  ! F  oxygen production MALS                              (gO/m3/d)
       
       INTEGER IdPrPOC1MAL !    Pointer to the POC1 production macrophyt 1
       INTEGER IdPrPOC2MAL !    Pointer to the POC2 production macrophyt 1
@@ -87,13 +89,13 @@ C
       INTEGER IdPrPON2MAL !    Pointer to the PON2 production macrophyt 1
       INTEGER IdPrPOP1MAL !    Pointer to the POP1 production macrophyt 1
       INTEGER IdPrPOP2MAL !    Pointer to the POP2 production macrophyt 1
-      INTEGER IdCnMALSOXY   !    Pointer to the oxygen production MALS
+      INTEGER IdCnOXYMAL !    Pointer to the oxygen production MALS
 
       INTEGER IKMRK1
       INTEGER IKMRK2
       
-      REAL(4) length
-      REAL(4) area
+      REAL(4) lengthLoc
+      REAL(4) areaLoc
       REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
       REAL(4) dDecayMALS  !    decay of MALS                                      (gDM/m3/d)
       REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
@@ -124,7 +126,7 @@ C
       IdPrPON2MAL = 4
       IdPrPOP1MAL = 5
       IdPrPOP2MAL = 6
-      IdMALSOXY   = 7
+      IdCnOXYMAL   = 7
       
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
@@ -135,7 +137,7 @@ C
          IF (IKMRK1.EQ.1) THEN
 
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
-
+            ! compute growth if maldis has allocated mass to this segment
             IF (FrBmMALS > 0.0) THEN
 
                 ! take from this segment
@@ -161,24 +163,26 @@ C
                 PCRatMALS  = PMSA( IPNT(24) )
                 FrPOC1MALS = PMSA( IPNT(25) )
                 FrPOC2MALS = PMSA( IPNT(26) )
+                MBotSeg    = nint(PMSA( IPNT( 27) ))
                 Surf       = PMSA( IPNT(28) )     
                 DELT       = PMSA( IPNT(29) )      
                 Depth      = PMSA( IPNT(30) )      
                 
-                MBotSeg    = nint(PMSA( IPNT( 27) ))
-                IF (MBotSeg .le. 0)
-     j            CALL DHERR2('IBotSeg',PMSA( IPNT( 27) ),ISEG,'FLMALS')
+                !IF (MBotSeg .le. 0) THEN
+                !  CALL DHERR2('MBotSeg',PMSA( IPNT( 27) ),ISEG,'FLMALS')
+                !END IF
 
                 ! need to take from bottom segment
-                MALS       = PMSA( IPNT(1)+(IBotSeg-1)*INCREM( 1) )
-                MALN       = PMSA( IPNT(2)+(IBotSeg-1)*INCREM( 2) )
-                MALP       = PMSA( IPNT(3)+(IBotSeg-1)*INCREM( 3) )
-                MALC       = PMSA( IPNT(4)+(IBotSeg-1)*INCREM( 4) )
+                MALS       = PMSA( IPNT(1)+(MBotSeg-1)*INCREM( 1) )
+                MALN       = PMSA( IPNT(2)+(MBotSeg-1)*INCREM( 2) )
+                MALP       = PMSA( IPNT(3)+(MBotSeg-1)*INCREM( 3) )
+                MALC       = PMSA( IPNT(4)+(MBotSeg-1)*INCREM( 4) )
                 ! mass in this water column
                 
                 ! need to convert substances of gN/m2 to gN/gDM
                 ! to be consistent with constants from Broch
                 ! gN/m2 to gN/gDM
+                
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
@@ -191,8 +195,8 @@ C
                 ! find amount of mass in this segment (gDM/m2)
    
                 MALS = MALS * FrBmMALS 
-                length = Hact * FrBmMALS
-                area = Aact * FrBmMALS
+                lengthLoc = HactMAL * FrBmMALS
+                areaLoc = AactMAL * FrBmMALS
                
                 ! density limitation
                 ! based on how this model is made it makes sense to make the
@@ -211,7 +215,8 @@ C
                 ! LimDen = MIN((m_1 * exp(-(MALS/MALS0)**2)) + m_2, 1.0)
                 ! formulation here
                 ! if the plant is too big overall then all segments suffer
-                LimDen = MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
+                
+                LimDen=MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
                 
                 ! temperature limitation
 
@@ -231,13 +236,16 @@ C
                 LimPho = a_1 * (1 + sin(dL * ABS(dL)**0.5)) + a_2
                
                 ! decay
-                
-                coeff = exp(mrtMAL*area)
+                ! decay is calculated as a percent of the total frond decay
+                ! this superfluous because the next 2 lines will be the same for all
+                ! segments in this column
+                coeff = exp(mrtMAL*AactMAL)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
                 ! gDM per day per m3
-                dDecayMALS = MALS * mrt/Depth
+                ! local decay
+                dDecayMALS = MALS * mrt * FrBmMALS/Depth
                
                 ! production organic material
                 
@@ -245,7 +253,7 @@ C
                 dPrPOC2MAL = (dDecayMALS*CDRatMALS)*FrPOC2MALS 
 
                 dPrPON1MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC1MALS
-                dPrPON2MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC2MALS 
+                dPrPON2MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC2MALS
 
                 dPrPOP1MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC1MALS
                 dPrPOP2MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC2MALS
@@ -270,7 +278,7 @@ C
                 ! uptake from storage
                 IF (dGrowMALS .gt. 0.0) THEN
                     ! gN/m3 d
-                    TotN = MALS*(MALN+CDRatMALS*NCRatMALS)
+                    TotN = MALS*(MALN+(CDRatMALS*NCRatMALS))
                     dNtrMALS=mu*TotN/Depth
                     ! gP/m3 d
                     TotP = MALS*(MALP+CDRatMALS*PCRatMALS)
@@ -292,7 +300,7 @@ C
                 ! oxygen 
                 ! mineralization of stored carbon consumes oxygen
                 
-                dMALSOXY   = dCtrMALS * 2.67
+                dCnOXYMAL   = dCtrMALS * 2.67
 
                 FL ( IdPrPOC1MAL ) = dPrPOC1MAL 
                 FL ( IdPrPOC2MAL ) = dPrPOC2MAL 
@@ -300,21 +308,21 @@ C
                 FL ( IdPrPON2MAL ) = dPrPON2MAL 
                 FL ( IdPrPOP1MAL ) = dPrPOP1MAL 
                 FL ( IdPrPOP2MAL ) = dPrPOP1MAL 
-                FL ( IdCnMALSOXY ) = dMALSOXY
+                FL ( IdCnOXYMAL ) = dCnOXYMAL
                
-                PMSA( IPNT( 27)   ) =  MALSM2		
-                PMSA( IPNT( 28)   ) =  MALNM2		
-                PMSA( IPNT( 29)   ) =  MALPM2		
-                PMSA( IPNT( 30)   ) =  MALCM2		
-                PMSA( IPNT( 31)   ) =  MALSNC		
-                PMSA( IPNT( 32)   ) =  MALSPC		
-                PMSA( IPNT( 33)   ) =  LimBioMALS  
-                PMSA( IPNT( 34)   ) =  LimPhoMALS  
-                PMSA( IPNT( 35)   ) =  LimTemMALS 
-                PMSA( IPNT( 36)   ) =  LocGroS     
-                PMSA( IPNT( 37)   ) =  LocGroN    
-                PMSA( IPNT( 38)   ) =  LocGroP    
-                PMSA( IPNT( 39)   ) =  LocGroC  
+                PMSA( IPNT( 31)   ) =  MALSM2		
+                PMSA( IPNT( 32)   ) =  MALNM2		
+                PMSA( IPNT( 33)   ) =  MALPM2		
+                PMSA( IPNT( 34)   ) =  MALCM2		
+                PMSA( IPNT( 35)   ) =  MALSNC		
+                PMSA( IPNT( 36)   ) =  MALSPC		
+                PMSA( IPNT( 37)   ) =  LimBioMALS  
+                PMSA( IPNT( 38)   ) =  LimPhoMALS  
+                PMSA( IPNT( 39)   ) =  LimTemMALS 
+                PMSA( IPNT( 40)   ) =  LocGroS     
+                PMSA( IPNT( 41)   ) =  LocGroN    
+                PMSA( IPNT( 42)   ) =  LocGroP    
+                PMSA( IPNT( 43)   ) =  LocGroC  
                 
             ENDIF
          ENDIF
@@ -325,7 +333,7 @@ C
          IdPrPON2MAL = IdPrPON2MAL + NOFLUX
          IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
          IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
-         IdCnMALSOXY = IdCnMALSOXY + NOFLUX
+         IdCnOXYMAL  = IdCnOXYMAL + NOFLUX
 
          ! IPNT at the first allocation is given for the first segment, I guess
          ! as we iterate it by increm, we are providing the same values but for the

@@ -1,0 +1,28 @@
+MALDIS     ;                                            Distribution of macroalgae mass in water column
+MALDIS
+        123
+           12;     # input items for segments
+Surf       -999.000x                                    horizontal surface area of a DELWAQ segment    m2/DM
+Depth      -999.000x                                    depth of segment                               m
+TotalDepth -999.000x                                    total depth of water column                    m
+LocalDepth -999.000x                                    depth from water syrface to bottom of segment  m
+MALS       -999.000x                                    MacroALgae Structural biomass                  gDM/m2
+MALN       -999.000x                                    MacroALgae Nitrogen storage                    gN/m2
+MALP       -999.000x                                    MacroALgae Phosphorous storage                 gP/m2
+MALC       -999.000x                                    MacroALgae Carbon storage                      gC/m2
+HmaxMAL      10.000x                                    Maximum heigh MAL                              m
+LinDenMAL   300.000x                                    linear density of macroalgae                   g/m3
+ArDenMAL     60.000x                                    grams per m2 surface area of plant (Broch)     gDM/m2
+MBotSeg    -999.000x                                    Bottem segment for this segment
+           0;      # input items for exchanges
+           4;      # output items for segments
+FrBmMALS           x                                    Fraction biomass per layer macroalgae structura-
+BmLayMAL           x                                    Biomass of MAL in segment                      gDM/m2
+HactMAL            x                                    Actual length of macroalgae                    m
+AactMAL            x                                    Actual area of entire macroalgae               m2
+           0;      # output items for exchanges
+           0;      # fluxes
+           0;      # stoichiometry lines
+           0;       # stoichiometry lines dispersion arrays
+           0;       # stoichiometry lines velocity arrays
+END

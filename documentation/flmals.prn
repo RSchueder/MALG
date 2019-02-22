@@ -1,0 +1,67 @@
+FlMALS        ;                                  Flux calculation for Macroalgae Structural Mass
+FLMALS
+           123
+                      30; # input items for segments
+MALS          -999.000x                          MacroALgae Structural biomass                  gDM/m2
+MALN          -999.000x                          MacroALgae Nitrogen storage                    gN/m2
+MALP          -999.000x                          MacroALgae Phosphorous storage                 gP/m2
+MALC          -999.000x                          MacroALgae Carbon storage                      gC/m2
+FrBmMALS      -999.000x                          Fraction of bottom layer MALS in this segment  gDM/m2
+MALNmin          0.010x                          minimum N in storage                           gN/gDM
+MALPmin          0.010x                          minimum P in storage                           gP/gDM
+MALCmin          0.010x                          minimum C instorage                            gC/gDM
+latitude      -999.000x                          latitude (degrees)                             degrees
+daylengthd    -999.000x                          length of current day                          (d)
+daylengthp    -999.000x                          length of previous day                         (d)
+daylengthm    -999.000x                          maximum length of day at this latitude         (d)
+Temp            15.000x                          Temperature                                    degC
+m1               0.109x                          growth rate parameter 1                        -
+m2               0.030x                          growth rate parameter 2                        -
+HactMAL       -999.000x                          length of frond in this column                 m
+AactMAL       -999.000x                          area of frond in this column                   m2
+MALS0            0.060x                          growth rate parameter 3                        m2
+a1               0.850x                          photoperiod parameter 1                        -
+a2               0.300x                          photoperiod parameter 2                        -
+mrtMAL          22.000x                          (epsilon) erosion/mortality parameter macroalga1/m2
+CDRatMALS        0.200x                          C to dry mass ratio in MALS                    -
+NCRatMALS        0.050x                          N:C ratio in MALS                              -
+PCRatMALS        0.005x                          P:C ratio in MALS                              -
+FrPOC1MALS       0.750x                          fraction of MALS that goes to POC1 in decay    -
+FrPOC2MALS       0.250x                          fraction of MALS that goes to POC2 in decay    -
+MBotSeg       -999.000x                          bottom segment for this segment
+Surf          -999.000x                          horizontal surface area of a DELWAQ segment    m2
+DELT          -999.000x                          timestep for processes                         d
+Depth         -999.000x                          depth of segment                               m
+                      0; # input items for exchanges
+                      13; # output items for segments
+MALSM2                x                          macroalgae structural in segment               gDM/m2
+MALNM2                x                          macroalgae N storage in segment                gN/gDM
+MALPM2                x                          macroalgae P storage in segment                gP/gDM
+MALCM2                x                          macroalgae C storage in segment                gC/gDM
+MALSNC                x                          ratio N:C in whole plant                       -
+MALSPC                x                          ratio P:C in whole plant                       -
+LimBioMALS            x                          biomass limitation MALS                        -
+LimPhoMALS            x                          photoperiod limitation MALS                    -
+LimTemMALS            x                          temperature limitation MALS                    -
+LocGroS               x                          local growth of MALS                           (gDM/m3/d)
+LocGroN               x                          local growth of MALN                           (gN/m3/d)
+LocGroP               x                          local growth of MALP                           (gP/m3/d)
+LocGroC               x                          local growth of MALC                           (gC/m3/d)
+                      0; # output items for exchanges
+                      7; # fluxes
+dPrPOC1MAL            x                          POC1 production MALS                           (gC/m3/d)
+dPrPOC2MAL            x                          POC2 production MALS                           (gC/m3/d)
+dPrPON1MAL            x                          PON1 production MALS                           (gN/m3/d)
+dPrPON2MAL            x                          PON2 production MALS                           (gN/m3/d)
+dPrPOP1MAL            x                          POP1 production MALS                           (gP/m3/d)
+dPrPOP2MAL            x                          POP2 production MALS                           (gP/m3/d)
+dCnMALSOXY            x                          oxygen production MALS                         (gO/m3/d)
+                      0; # stoichiometry lines
+POC1                  dPrPOC1MAL                                                           1.000
+POC2                  dPrPOC2MAL                                                           1.000
+PON1                  dPrPON1MAL                                                           1.000
+PON2                  dPrPON2MAL                                                           1.000
+POP1                  dPrPOP1MAL                                                           1.000
+POP2                  dPrPOP2MAL                                                           1.000
+OXY                   dCnMALSOXY                                                          -1.000
+END

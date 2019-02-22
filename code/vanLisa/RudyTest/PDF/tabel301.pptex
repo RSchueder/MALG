@@ -1,0 +1,692 @@
+pH_carb    colsep Integrated calculation of pH, carbonate system     colsep PHCARB     \\
+DynDepth   colsep dynamic calculation of the depth                   colsep DDEPTH     \\
+DynSurf    colsep Dynamic calculation of the horizontal surface area colsep DSURF      \\
+TotDepth   colsep depth water column                                 colsep TOTDEP     \\
+Emersion   colsep handle emersion z layers                           colsep EMERSI     \\
+Meteo      colsep Process meteo from various meteo-stations          colsep METEO      \\
+HeatBal    colsep Total heat flux for surface water                  colsep HEATFL     \\
+MaxMacro   colsep maximum biomass macrophytes                        colsep MAXMAC     \\
+Coverage   colsep coverage by macrophytes                            colsep COVMAC     \\
+DAYRAD     colsep Irradiance over the day                            colsep DAYRAD     \\
+Temperatur colsep Temperature and heat exchange                      colsep TEMPER     \\
+VarSal     colsep Salinity in case of constant river discharge       colsep VARSAL     \\
+Salinchlor colsep Conversion of salinity into chloride or vv         colsep SALCHL     \\
+Veloc      colsep Horizontal flow velocity                           colsep VELOC      \\
+ResTim     colsep Residence time                                     colsep RESTIM     \\
+VertDisp   colsep Vertical dispersion (segment -> exchange)          colsep STOX3D     \\
+HorzDisper colsep Horizontal dispersion in a 1D model                colsep HDISP      \\
+HDisperVel colsep Horizontal dispersion velocity dependent           colsep HDISPV     \\
+HDisperAdd colsep Additional horizontal dispersion                   colsep HDISPA     \\
+Age1       colsep Age of water from source 1                         colsep WATAGE     \\
+Age2       colsep Age of water from source 2                         colsep WATAGE     \\
+Age3       colsep Age of water from source 3                         colsep WATAGE     \\
+Age4       colsep Age of water from source 4                         colsep WATAGE     \\
+Age5       colsep Age of water from source 5                         colsep WATAGE     \\
+WFetch     colsep Wind Fetch from wind direction                     colsep INTPOL     \\
+WDepth     colsep Depth where wave is created from wind direction    colsep INTPOL     \\
+Chezy      colsep Chezy coefficient                                  colsep CALCHZ     \\
+Wave       colsep Wave characteristics                               colsep CALWAV     \\
+CalTau     colsep Calculation of bottom friction                     colsep CALTAU     \\
+MACDIS01   colsep Submerged Macrophyte 1 Distibution function        colsep MACDIS     \\
+MACDIS02   colsep Submerged Macrophyte 2 Distibution function        colsep MACDIS     \\
+MACDIS03   colsep Submerged Macrophyte 3 Distibution function        colsep MACDIS     \\
+MACDIS04   colsep Submerged Macrophyte 4 Distibution function        colsep MACDIS     \\
+MACDIS05   colsep Submerged Macrophyte 5 Distibution function        colsep MACDIS     \\
+pH_simp    colsep Simple calculation of pH                           colsep SIMPH      \\
+SpecCarb   colsep Speciation of carbonate in solution                colsep SPCARB     \\
+EXTINABVLP colsep Extinction of light by algae (Bloom)               colsep EXTINA     \\
+EXTINALVL  colsep xtinction of light by algae (Bloom)                colsep EXTINA     \\
+EXTINABVL  colsep Extinction of light by algae (Bloom)               colsep EXTINA     \\
+ExtPhDVL   colsep Extinction of visual light by algae (Dynamo)       colsep EXTINA     \\
+EXTINABUVP colsep Extinction of UV light by algae (Bloom)            colsep EXTINA     \\
+EXTINABUV  colsep Extinction of UV light by algae (Bloom)            colsep EXTINA     \\
+ExtPhDUV   colsep Extinction of UV light by algae (Dynamo)           colsep EXTINA     \\
+ExtMacroVl colsep Extinction of light by macrophytes                 colsep EXTINA     \\
+ExtMacroUV colsep Extinction of UV by macrophytes                    colsep EXTINA     \\
+Extinc_VLG colsep Extinction of visible-light (370-680nm) DLWQ-G     colsep EXTINC     \\
+Extinc_UVG colsep Extinction of ultraviolet-light (350-480nm) DLWQ-G colsep EXTINC     \\
+CalcRad    colsep Radiation at segment upper and lower boundaries    colsep CLCRAD     \\
+CalcRadDay colsep Actual radiation at segment boundaries             colsep CLCRAD     \\
+CalcRadUV  colsep UV-Radiation at segment upper and lower boundaries colsep CLCRAD     \\
+Daylength  colsep Daylength calculation                              colsep DAYL       \\
+Reflection colsep Reflection calculation                             colsep REFL       \\
+DepAve     colsep Average depth for Bloom step                       colsep DEPAVE     \\
+vtrans     colsep Vertical mixing distribution over a period         colsep VTRANS     \\
+EffMBlo_P  colsep Momentaneous efficiency of phytoplankton - Bloom   colsep EFFBLO     \\
+EffMBlo    colsep Momentaneous efficiency of phytoplankton - Bloom   colsep EFFBLO     \\
+EffABlo_P  colsep Average efficiency of phytoplankton - Bloom        colsep EFFAVE     \\
+EffABlo    colsep Average efficiency of phytoplankton - Bloom        colsep EFFAVE     \\
+GroMrt_pla colsep Growth/(mortality) plankton                        colsep MALGP2     \\
+BLOOM_P    colsep BLOOM II algae module                              colsep D40BLO     \\
+BLOOM      colsep BLOOM II algae module                              colsep D40BLO     \\
+Phy_Blo_P  colsep Computation of phytoplankton output - Bloom        colsep PHCOMB     \\
+Phy_Blo    colsep Computation of phytoplankton output - Bloom        colsep PHCOMB     \\
+MakOOC     colsep Derive POCnoa from IM-fractions                    colsep MAKPOC     \\
+MakOOCS1   colsep Derive POC in S1 from IM-fractions in S1           colsep MAKPOC     \\
+MakOOCS2   colsep Derive POC in S2 from IM-fractions in S2           colsep MAKPOC     \\
+Phy_dyn    colsep Computation of phytoplankton - Dynamo              colsep PHCOMP     \\
+S1_Comp    colsep Composition sediment layer S1                      colsep SEDCOM     \\
+S2_Comp    colsep Composition sediment layer S2                      colsep SEDCOM     \\
+Compos     colsep Composition                                        colsep WKCOMP     \\
+DMVolume   colsep Volume of dry matter in a segment                  colsep DMVOL      \\
+EColiMrt   colsep Mortality EColi bacteria                           colsep BACMRT     \\
+FColiMrt   colsep Mortality FColi bacteria                           colsep BACMRT     \\
+TColiMrt   colsep Mortality TColi bacteria                           colsep BACMRT     \\
+EnCocMrt   colsep Mortality Enterococci bacteria                     colsep BACMRT     \\
+SaturCO2   colsep Saturation concentration carbon dioxide            colsep SATCO2     \\
+RearCO2    colsep Reaeration of carbon dioxide                       colsep REAR       \\
+AdsPO4AAP  colsep Ad(De)Sorption ortho phosphorus to inorg. matter   colsep ADSPO4     \\
+DenSed_NO3 colsep Denitrification in sediment                        colsep DENSED     \\
+DenWat_NO3 colsep Denitrification in water column                    colsep DENWAT     \\
+Nitrif_NH4 colsep Nitrification of ammonium                          colsep NITRIF     \\
+SaturOXY   colsep Saturation concentration oxygen                    colsep SATOXY     \\
+RearOXY    colsep Reaeration of oxygen                               colsep REAR       \\
+VAROXY     colsep Variation of primary production within day         colsep VAROXY     \\
+BMS1_DetC  colsep Mineralisation detritus carbon in sediment S1      colsep BOTMIN     \\
+BMS2_DetC  colsep Mineralisation detritus carbon in sediment S2      colsep BOTMIN     \\
+BMS1_DetN  colsep Mineralisation detritus nitrogen in sediment S1    colsep BOTMIN     \\
+BMS2_DetN  colsep Mineralisation detritus nitrogen in sediment S2    colsep BOTMIN     \\
+BMS1_DetP  colsep Mineralisation detritus phosphorus in sediment S1  colsep BOTMIN     \\
+BMS2_DetP  colsep Mineralisation detritus phosphorus in sediment S2  colsep BOTMIN     \\
+BMS1_DetSi colsep Mineralisation detritus silica in sediment S1      colsep BOTMIN     \\
+BMS2_DetSi colsep Mineralisation detritus silica in sediment S2      colsep BOTMIN     \\
+BMS1_OOC   colsep Mineralisation other organic C in sediment S1      colsep BOTMIN     \\
+BMS2_OOC   colsep Mineralisation other organic C in sediment S2      colsep BOTMIN     \\
+BMS1_OON   colsep Mineralisation other organic N in sediment S1      colsep BOTMIN     \\
+BMS2_OON   colsep Mineralisation other organic N in sediment S2      colsep BOTMIN     \\
+BMS1_OOP   colsep Mineralisation other organic P in sediment S1      colsep BOTMIN     \\
+BMS2_OOP   colsep Mineralisation other organic P in sediment S2      colsep BOTMIN     \\
+BMS1_OOSi  colsep Mineralisation other organic Si in sediment S1     colsep BOTMIN     \\
+BMS2_OOSi  colsep Mineralisation other organic Si in sediment S2     colsep BOTMIN     \\
+Deso_AAPS1 colsep Desorption of adsorbed phosphates in sediment S1   colsep BOTMIN     \\
+Deso_AAPS2 colsep Desorption of adsorbed phosphates in sediment S2   colsep BOTMIN     \\
+BODCOD     colsep Mineralisation BOD and COD                         colsep BODCOD     \\
+DBOD_TEWOR colsep Oxydation of BOD                                   colsep DECBOD     \\
+DecFast    colsep Mineralization fast decomp. detritus POC1          colsep DECDET     \\
+DecMedium  colsep Mineralization medium decomp. detritus POC2        colsep DECDET     \\
+DecSlow    colsep Mineralization slow decomp. detritus POC3          colsep DECDET     \\
+DecRefr    colsep Mineralization part. refractory detritus POC4      colsep DECDET     \\
+DecDOC     colsep Mineralization DOC (diss. refr. detritus)          colsep DECDET     \\
+DecPOC5    colsep Mineralisation POC5                                colsep DECPC5     \\
+Vivianit   colsep Dissolution/precipitation of P in vivianite        colsep VIVIAN     \\
+DisSi      colsep Dissolution of Si in opal (SWITCH defaults)        colsep DISSI      \\
+SedOXYDem  colsep Sediment oxygen demand                             colsep SEDOX      \\
+TF_Green   colsep Temperature functions for green algae              colsep TFALG      \\
+TF_Diat    colsep Temperature functions for diatoms                  colsep TFALG      \\
+DL_Green   colsep Daylength function for green algae                 colsep DLALG      \\
+DL_Diat    colsep Daylength function for diatoms                     colsep DLALG      \\
+DL_DiatS1  colsep Daylength function for diatoms                     colsep DLALG      \\
+NLGreen    colsep Nutrient limiation function for green algae        colsep NLALG      \\
+NLDiat     colsep Nutrient limiation function for diatoms            colsep NLALG      \\
+Rad_Green  colsep Light efficiency function green algae              colsep RADALG     \\
+Rad_Diat   colsep Light efficiency function diatoms                  colsep RADALG     \\
+Rad_DiatS1 colsep Light efficiency function benthic diatoms          colsep RDBALG     \\
+GroMrt_Gre colsep Nett primary production and mortality green algae  colsep PRIPRO     \\
+GroMrt_Dia colsep Nett primary production and mortality diatoms      colsep PRIPRO     \\
+GroMrt_DS1 colsep Nett primary production and mortality diatoms      colsep SDPPRO     \\
+PPrLim     colsep Limitation (numerical) on primary production       colsep PPRLIM     \\
+NutUpt_Alg colsep Uptake of nutrients by growth of algae             colsep NUTUPT     \\
+NutRel_Alg colsep Release (nutrients/detritus) by of mortality algae colsep NUTREL     \\
+NRAlg_S1   colsep Nutrient release of algae in S1                    colsep NRALGS     \\
+OXYMin     colsep Potential mimimum dissolved oxygen concentration   colsep OXYMIN     \\
+CONSELAC   colsep Consumption oxygen/other electron acceptors        colsep CSELAC     \\
+EBULCH4    colsep Ebullition of methane                              colsep EBUCH4     \\
+SaturCH4   colsep Saturation concentration methane                   colsep SATCH4     \\
+VolatCH4   colsep Volatilisation of methane                          colsep REAR       \\
+SPECSUD    colsep Speciation of dissolved sulphide                   colsep SULFID     \\
+SPECSUDS1  colsep Speciation of dissolved sulphide in S1             colsep SULFID     \\
+SPECSUDS2  colsep Speciation of dissolved sulphide in S2             colsep SULFID     \\
+OXIDSUD    colsep Oxidation of dissolved sulphide                    colsep SULFOX     \\
+PRECSUL    colsep Precipitation and dissolution of sulphide          colsep SULFPR     \\
+OXIDCH4    colsep Oxidation of methane                               colsep METHOX     \\
+SPECIRON   colsep Speciation of dissolved iron                       colsep SPECFE     \\
+IRONOX     colsep Oxidation of dissolved iron                        colsep IRONOX     \\
+SULPHOX    colsep Oxidation of iron sulphides                        colsep SULPHO     \\
+IRONRED    colsep Reduction of iron by sulphides                     colsep IRONRE     \\
+PRIRON     colsep Precipitation, dissolution and conversion of iron  colsep PRIRON     \\
+CalVS_IM1  colsep Sedimentation velocity IM1 = f (Temp SS Sal)       colsep CALSED     \\
+CalVS_IM2  colsep Sedimentation velocity IM2 = f (Temp SS Sal)       colsep CALSED     \\
+CalVS_IM3  colsep Sedimentation velocity IM3 = f (Temp SS Sal)       colsep CALSED     \\
+CalVS_POC1 colsep Sedimentation velocity POC1 = f (Temp SS Sal)      colsep CALSED     \\
+CalVS_POC2 colsep Sedimentation velocity POC2 = f (Temp SS Sal)      colsep CALSED     \\
+CalVS_POC3 colsep Sedimentation velocity POC3 = f (Temp SS Sal)      colsep CALSED     \\
+CalVS_POC4 colsep Sedimentation velocity POC4 = f (Temp SS Sal)      colsep CALSED     \\
+CalVS_Diat colsep Sedimentation velocity Diat = f (Temp SS Sal)      colsep CALSED     \\
+CalVS_Gree colsep Sedimentation velocity Gree = f (Temp SS Sal)      colsep CALSED     \\
+CalVSALG   colsep Sedimentation velocity algae = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG01 colsep Sedimentation velocity ALG01 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG02 colsep Sedimentation velocity ALG02 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG03 colsep Sedimentation velocity ALG03 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG04 colsep Sedimentation velocity ALG04 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG05 colsep Sedimentation velocity ALG05 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG06 colsep Sedimentation velocity ALG06 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG07 colsep Sedimentation velocity ALG07 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG08 colsep Sedimentation velocity ALG08 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG09 colsep Sedimentation velocity ALG09 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG10 colsep Sedimentation velocity ALG10 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG11 colsep Sedimentation velocity ALG11 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG12 colsep Sedimentation velocity ALG12 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG13 colsep Sedimentation velocity ALG13 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG14 colsep Sedimentation velocity ALG14 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG15 colsep Sedimentation velocity ALG15 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG16 colsep Sedimentation velocity ALG16 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG17 colsep Sedimentation velocity ALG17 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG18 colsep Sedimentation velocity ALG18 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG19 colsep Sedimentation velocity ALG19 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG20 colsep Sedimentation velocity ALG20 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG21 colsep Sedimentation velocity ALG21 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG22 colsep Sedimentation velocity ALG22 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG23 colsep Sedimentation velocity ALG23 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG24 colsep Sedimentation velocity ALG24 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG25 colsep Sedimentation velocity ALG25 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG26 colsep Sedimentation velocity ALG26 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG27 colsep Sedimentation velocity ALG27 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG28 colsep Sedimentation velocity ALG28 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG29 colsep Sedimentation velocity ALG29 = f (Temp SS Sal)     colsep CALSED     \\
+CalVSALG30 colsep Sedimentation velocity ALG30 = f (Temp SS Sal)     colsep CALSED     \\
+Res_Pickup colsep Resuspension S2 van Rijn pick-up                   colsep RESPUP     \\
+Sed_IM1    colsep Sedimentation IM1                                  colsep SEDIM      \\
+Sed_IM2    colsep Sedimentation IM2                                  colsep SEDIM      \\
+Sed_IM3    colsep Sedimentation IM3                                  colsep SEDIM      \\
+SedDiat    colsep Sedimentation diatoms                              colsep SEDCAR     \\
+Sed_Gre    colsep Sedimentation green algae                          colsep SEDCAR     \\
+SEDALG     colsep Sedimentation of algae species                     colsep SEDCAR     \\
+SEDALG01   colsep Sedimentation of algae species 1                   colsep SEDCAR     \\
+SEDALG02   colsep Sedimentation of algae species 2                   colsep SEDCAR     \\
+SEDALG03   colsep Sedimentation of algae species 3                   colsep SEDCAR     \\
+SEDALG04   colsep Sedimentation of algae species 4                   colsep SEDCAR     \\
+SEDALG05   colsep Sedimentation of algae species 5                   colsep SEDCAR     \\
+SEDALG06   colsep Sedimentation of algae species 6                   colsep SEDCAR     \\
+SEDALG07   colsep Sedimentation of algae species 7                   colsep SEDCAR     \\
+SEDALG08   colsep Sedimentation of algae species 8                   colsep SEDCAR     \\
+SEDALG09   colsep Sedimentation of algae species 9                   colsep SEDCAR     \\
+SEDALG10   colsep Sedimentation of algae species 10                  colsep SEDCAR     \\
+SEDALG11   colsep Sedimentation of algae species 11                  colsep SEDCAR     \\
+SEDALG12   colsep Sedimentation of algae species 12                  colsep SEDCAR     \\
+SEDALG13   colsep Sedimentation of algae species 13                  colsep SEDCAR     \\
+SEDALG14   colsep Sedimentation of algae species 14                  colsep SEDCAR     \\
+SEDALG15   colsep Sedimentation of algae species 15                  colsep SEDCAR     \\
+SEDALG16   colsep Sedimentation of algae species 16                  colsep SEDCAR     \\
+SEDALG17   colsep Sedimentation of algae species 17                  colsep SEDCAR     \\
+SEDALG18   colsep Sedimentation of algae species 18                  colsep SEDCAR     \\
+SEDALG19   colsep Sedimentation of algae species 19                  colsep SEDCAR     \\
+SEDALG20   colsep Sedimentation of algae species 20                  colsep SEDCAR     \\
+SEDALG21   colsep Sedimentation of algae species 21                  colsep SEDCAR     \\
+SEDALG22   colsep Sedimentation of algae species 22                  colsep SEDCAR     \\
+SEDALG23   colsep Sedimentation of algae species 23                  colsep SEDCAR     \\
+SEDALG24   colsep Sedimentation of algae species 24                  colsep SEDCAR     \\
+SEDALG25   colsep Sedimentation of algae species 25                  colsep SEDCAR     \\
+SEDALG26   colsep Sedimentation of algae species 26                  colsep SEDCAR     \\
+SEDALG27   colsep Sedimentation of algae species 27                  colsep SEDCAR     \\
+SEDALG28   colsep Sedimentation of algae species 28                  colsep SEDCAR     \\
+SEDALG29   colsep Sedimentation of algae species 29                  colsep SEDCAR     \\
+SEDALG30   colsep Sedimentation of algae species 30                  colsep SEDCAR     \\
+S_CBOD51   colsep Sedimentation CBOD5 (first pool)                   colsep SEDCAR     \\
+S_CBOD52   colsep Sedimentation CBOD5_2 (second pool)                colsep SEDCAR     \\
+S_CBOD53   colsep Sedimentation CBOD5_3 (third pool)                 colsep SEDCAR     \\
+S_CBODu1   colsep Sedimentation CBODu (first pool)                   colsep SEDCAR     \\
+S_CBODu2   colsep Sedimentation CBODu_2 (second pool)                colsep SEDCAR     \\
+S_CODCr    colsep Sedimentation COD Cr method                        colsep SEDCAR     \\
+S_CODMn    colsep Sedimentation COD Mn method                        colsep SEDCAR     \\
+S_NBOD5    colsep Sedimentation of NBOD5                             colsep SEDCAR     \\
+S_NBODu    colsep Sedimentation of NBODu                             colsep SEDCAR     \\
+SED_SOD    colsep Sedimentation of oxygen demand                     colsep SEDSOD     \\
+SedPhBlo_P colsep Sum sedimentation of algae - Bloom                 colsep SSEDPH     \\
+SedPhBlo   colsep Sum sedimentation of algae - Bloom                 colsep SSEDPH     \\
+SedPhDyn   colsep Sum sedimentation of algae - Dynamo                colsep SSEDPH     \\
+Sed_MPB1   colsep Sedimentation MPB1peli   algae 3d                  colsep SEDCAR     \\
+Sed_MPB2   colsep Sedimentation MPB2psam   algae 3d                  colsep SEDCAR     \\
+Sed_Opal   colsep Sedimentation Opal 3d                              colsep SEDCAR     \\
+Sed_POC1   colsep Sedimentation POC1 3d                              colsep SEDCAR     \\
+Sed_POC2   colsep Sedimentation POC2 3d                              colsep SEDCAR     \\
+Sed_POC3   colsep Sedimentation POC3 3d                              colsep SEDCAR     \\
+Sed_POC4   colsep Sedimentation POC4 3d                              colsep SEDCAR     \\
+Sed_VivP   colsep Sedimentation vivianite 3d                         colsep SEDCAR     \\
+Sed_ApatP  colsep Sedimentation Apatite-P                            colsep SEDCAR     \\
+Sed_Fe3pa  colsep Sedimentation Fe3pa                                colsep SEDCAR     \\
+Sed_Fe3pc  colsep Sedimentation Fe3pc                                colsep SEDCAR     \\
+Sed_FeS    colsep Sedimentation FeS                                  colsep SEDCAR     \\
+Sed_FeS2   colsep Sedimentation FeS2                                 colsep SEDCAR     \\
+Sed_FeCO3  colsep Sedimentation FeCO3                                colsep SEDCAR     \\
+SedNPOC1   colsep Sedim. nutrients in POC1                           colsep SEDNUT     \\
+SedNPOC2   colsep Sedim. nutrients in POC2                           colsep SEDNUT     \\
+SedNPOC3   colsep Sedim. nutrients in POC3                           colsep SEDNUT     \\
+SedNPOC4   colsep Sedim. nutrients in POC4                           colsep SEDNUT     \\
+Sum_Sedim  colsep Total of all sedimenting substances                colsep SOMSED     \\
+Sed_AAP    colsep Sedimentation AAP (adsorbed PO4)                   colsep SEDAAP     \\
+Sed_CAAP   colsep Sedimentation adsorbed P as component              colsep SEDCAR     \\
+Res_DM     colsep Resuspension total bottom material (dry mass)      colsep RESDM      \\
+Bur_DM     colsep Burial total bottom mass (dry matter)              colsep BURIAL     \\
+Dig_DM     colsep Digging dry matter to sediment S1 and S2           colsep DIGGIN     \\
+S12TraDetC colsep Resuspension, transport in S1-S2 DetC              colsep S12TRA     \\
+S12TraDetN colsep Resuspension, transport in S1-S2 DetN              colsep S12TRA     \\
+S12TraDetP colsep Resuspension, transport in S1-S2 DetP              colsep S12TRA     \\
+S12TraDetS colsep Resuspension, transport in S1-S2 DetSi             colsep S12TRA     \\
+S12TraOOC  colsep Resuspension, transport in S1-S2 OOC               colsep S12TRA     \\
+S12TraOON  colsep Resuspension, transport in S1-S2 OON               colsep S12TRA     \\
+S12TraOOP  colsep Resuspension, transport in S1-S2 OOP               colsep S12TRA     \\
+S12TraOOSi colsep Resuspension, transport in S1-S2 OOSi              colsep S12TRA     \\
+S12TraDiat colsep Resuspension, transport in S1-S2 Diatoms           colsep S12TRA     \\
+ResN_DiaS1 colsep Resuspension nutrients in detritus                 colsep RESANT     \\
+ResN_DiaS2 colsep Resuspension nutrients in detritus                 colsep RESANT     \\
+S12TraMPB1 colsep Resuspension, transport in S1-S2 MPB1              colsep S12TRA     \\
+S12TraMPB2 colsep Resuspension, transport in S1-S2 MPB2              colsep S12TRA     \\
+S12TraIM1  colsep Resuspension, transport in S1-S2 IM1               colsep S12TIM     \\
+S12TraIM2  colsep Resuspension, transport in S1-S2 IM2               colsep S12TIM     \\
+S12TraIM3  colsep Resuspension, transport in S1-S2 IM3               colsep S12TIM     \\
+S12TraAAP  colsep Resuspension, transport in S1-S2 AAP               colsep S12TRA     \\
+AdvTra     colsep Advective transport of solids in sediment          colsep ADVTRA     \\
+DSPTra     colsep Dispersion/diffusion in the sediment               colsep DSPTRA     \\
+RFPART_Cd  colsep Reprofunctions for cadmium partition coefficient   colsep RFPART     \\
+RFPART_Cu  colsep Reprofunctions for copper partition coefficient    colsep RFPART     \\
+RFPART_Pb  colsep Reprofunctions for lead partition coefficient      colsep RFPART     \\
+RFPART_Zn  colsep Reprofunctions for zinc partition coefficient      colsep RFPART     \\
+RFPART_Hg  colsep Reprofunctions for mercury partition coefficient   colsep RFPART     \\
+RFPART_Ni  colsep Reprofunctions for nickel partition coefficient    colsep RFPART     \\
+RFPART_Cr  colsep Reprofunctions for chromium partition coefficient  colsep RFPART     \\
+RFPART_As  colsep Reprofunctions for arsenic partition coefficient   colsep RFPART     \\
+PartWK_Cd  colsep Partitioning Cd in water column                    colsep PARTMP     \\
+PartWK_Cr  colsep Partitioning Cr in water column                    colsep PARTMP     \\
+PartWK_Cu  colsep Partitioning Cu in water column                    colsep PARTMP     \\
+PartWK_Hg  colsep Partitioning Hg in water column                    colsep PARTMP     \\
+PartWK_Ni  colsep Partitioning Ni in water column                    colsep PARTMP     \\
+PartWK_Pb  colsep Partitioning Pb in water column                    colsep PARTMP     \\
+PartWK_As  colsep Partitioning Arsenic in water column               colsep PARTMP     \\
+PartWK_Va  colsep Partitioning Va in water column                    colsep PARTMP     \\
+PartWK_Zn  colsep Partitioning Zn in water column                    colsep PARTMP     \\
+PartS1_Cd  colsep Partitioning Cd in S1                              colsep PARTMP     \\
+PartS1_Cr  colsep Partitioning Cr in S1                              colsep PARTMP     \\
+PartS1_Cu  colsep Partitioning Cu in S1                              colsep PARTMP     \\
+PartS1_Hg  colsep Partitioning Hg in S1                              colsep PARTMP     \\
+PartS1_Ni  colsep Partitioning Ni in S1                              colsep PARTMP     \\
+PartS1_Pb  colsep Partitioning Pb in S1                              colsep PARTMP     \\
+PartS1_As  colsep Partitioning As in S1                              colsep PARTMP     \\
+PartS1_Va  colsep Partitioning Va in S1                              colsep PARTMP     \\
+PartS1_Zn  colsep Partitioning Zn in S1                              colsep PARTMP     \\
+PartS2_Cd  colsep Partitioning Cd in S2                              colsep PARTMP     \\
+PartS2_Cr  colsep Partitioning Cr in S2                              colsep PARTMP     \\
+PartS2_Cu  colsep Partitioning Cu in S2                              colsep PARTMP     \\
+PartS2_Hg  colsep Partitioning Hg in S2                              colsep PARTMP     \\
+PartS2_Ni  colsep Partitioning Ni in S2                              colsep PARTMP     \\
+PartS2_Pb  colsep Partitioning Pb in S2                              colsep PARTMP     \\
+PartS2_As  colsep Partitioning As in S2                              colsep PARTMP     \\
+PartS2_Va  colsep Partitioning Va in S2                              colsep PARTMP     \\
+PartS2_Zn  colsep Partitioning Zn in S2                              colsep PARTMP     \\
+PartS1_153 colsep Partitioning 153 in S1                             colsep PARTMP     \\
+PartS1_Atr colsep Partitioning Atr in S1                             colsep PARTMP     \\
+PartS1_BaP colsep Partitioning BaP in S1                             colsep PARTMP     \\
+PartS1_Diu colsep Partitioning Diu in S1                             colsep PARTMP     \\
+PartS1_Flu colsep Partitioning Flu in S1                             colsep PARTMP     \\
+PartS1_HCB colsep Partitioning HCB in S1                             colsep PARTMP     \\
+PartS1_HCH colsep Partitioning HCH in S1                             colsep PARTMP     \\
+PartS1_Mef colsep Partitioning Mef in S1                             colsep PARTMP     \\
+PartS2_153 colsep Partitioning 153 in S2                             colsep PARTMP     \\
+PartS2_Atr colsep Partitioning Atr in S2                             colsep PARTMP     \\
+PartS2_BaP colsep Partitioning BaP in S2                             colsep PARTMP     \\
+PartS2_Diu colsep Partitioning Diu in S2                             colsep PARTMP     \\
+PartS2_Flu colsep Partitioning Flu in S2                             colsep PARTMP     \\
+PartS2_HCB colsep Partitioning HCB in S2                             colsep PARTMP     \\
+PartS2_HCH colsep Partitioning HCH in S2                             colsep PARTMP     \\
+PartS2_Mef colsep Partitioning Mef in S2                             colsep PARTMP     \\
+PartWK_153 colsep Partitioning 153 in water column                   colsep PARTMP     \\
+PartWK_Atr colsep Partitioning Atr in water column                   colsep PARTMP     \\
+PartWK_BaP colsep Partitioning BaP in water column                   colsep PARTMP     \\
+PartWK_Diu colsep Partitioning Diu in water column                   colsep PARTMP     \\
+PartWK_Flu colsep Partitioning Flu in water column                   colsep PARTMP     \\
+PartWK_HCB colsep Partitioning HCB in water column                   colsep PARTMP     \\
+PartWK_HCH colsep Partitioning HCH in water column                   colsep PARTMP     \\
+PartWK_Mef colsep Partitioning Mef in water column                   colsep PARTMP     \\
+TraSe2_IM1 colsep Total of transport in sediment for IM1             colsep TRASE2     \\
+TraSe2_OXY colsep Total of transport in sediment for OXY             colsep TRASE2     \\
+TraSe2_BaP colsep Total of transport in sediment for BaP             colsep TRASE2     \\
+TrSe2_POC1 colsep Total of transport in sediment for POC1            colsep TRASE2     \\
+TrSe2_POC2 colsep Total of transport in sediment for POC2            colsep TRASE2     \\
+TrSe2_POC3 colsep Total of transport in sediment for POC3            colsep TRASE2     \\
+TrSe2_PON1 colsep Total of transport in sediment for PON1            colsep TRASE2     \\
+TrSe2_PON2 colsep Total of transport in sediment for PON2            colsep TRASE2     \\
+TrSe2_PON3 colsep Total of transport in sediment for PON3            colsep TRASE2     \\
+TrSe2_POP1 colsep Total of transport in sediment for POP1            colsep TRASE2     \\
+TrSe2_POP2 colsep Total of transport in sediment for POP2            colsep TRASE2     \\
+TrSe2_POP3 colsep Total of transport in sediment for POP3            colsep TRASE2     \\
+TrSe2_POC4 colsep Total of transport in sediment for POC4            colsep TRASE2     \\
+TrSe2_PON4 colsep Total of transport in sediment for PON4            colsep TRASE2     \\
+TrSe2_POP4 colsep Total of transport in sediment for POP4            colsep TRASE2     \\
+TrSe2_POS1 colsep Total of transport in sediment for POS1            colsep TRASE2     \\
+TrSe2_POS2 colsep Total of transport in sediment for POS2            colsep TRASE2     \\
+TrSe2_POS3 colsep Total of transport in sediment for POS3            colsep TRASE2     \\
+TrSe2_POS4 colsep Total of transport in sediment for POS4            colsep TRASE2     \\
+TraSe2_DOC colsep Total of transport in sediment for DOC             colsep TRASE2     \\
+TraSe2_DON colsep Total of transport in sediment for DON             colsep TRASE2     \\
+TraSe2_DOP colsep Total of transport in sediment for DOP             colsep TRASE2     \\
+TraSe2_DOS colsep Total of transport in sediment for DOS             colsep TRASE2     \\
+TraSe2_NH4 colsep Total of transport in sediment for NH4             colsep TRASE2     \\
+TraSe2_PO4 colsep Total of transport in sediment for PO4             colsep TRASE2     \\
+TraSe2_NO3 colsep Total of transport in sediment for NO3             colsep TRASE2     \\
+TraSe2_SO4 colsep Total of transport in sediment for SO4             colsep TRASE2     \\
+TraSe2_CH4 colsep Total of transport in sediment for CH4             colsep TRASE2     \\
+TraSe2_SUD colsep Total of transport in sediment for SUD             colsep TRASE2     \\
+TraSe2_SUP colsep Total of transport in sediment for SUP             colsep TRASE2     \\
+TraSe2_IM2 colsep Total of transport in sediment for IM2             colsep TRASE2     \\
+TraSe2_IM3 colsep Total of transport in sediment for IM3             colsep TRASE2     \\
+TraSe2_Cl  colsep Total of transport in sediment for Cl              colsep TRASE2     \\
+TraSe2_Sal colsep Total of transport in sediment for Salinity        colsep TRASE2     \\
+TraSe2_AAP colsep Total of transport in sediment for AAP             colsep TRASE2     \\
+TraSe2_Si  colsep Total of transport in sediment for Si              colsep TRASE2     \\
+TrSe2_VIVP colsep Total of transport in sediment for VIVP            colsep TRASE2     \\
+TrSe2_APAT colsep Total of transport in sediment for APATP           colsep TRASE2     \\
+TrSe2_F3pa colsep Total of transport in sediment for Fe3pa           colsep TRASE2     \\
+TrSe2_F3pc colsep Total of transport in sediment for Fe3pc           colsep TRASE2     \\
+TrSe2_Fe3d colsep Total of transport in sediment for Fe3d            colsep TRASE2     \\
+TrSe2_Fe2d colsep Total of transport in sediment for Fe2d            colsep TRASE2     \\
+TrSe2_FeS  colsep Total of transport in sediment for FeS             colsep TRASE2     \\
+TrSe2_FeS2 colsep Total of transport in sediment for FeS2            colsep TRASE2     \\
+TrSe2_FCO3 colsep Total of transport in sediment for FeCO3           colsep TRASE2     \\
+TrSe2_Opal colsep Total of transport in sediment for Opal            colsep TRASE2     \\
+TraSe2_TIC colsep Total of transport in sediment for TIC             colsep TRASE2     \\
+TrSe2_Alka colsep Total of transport in sediment for Alka            colsep TRASE2     \\
+TrSe2_MPB1 colsep Total of transport in sediment for MPB1peli        colsep TRASE2     \\
+TrSe2_MPB2 colsep Total of transport in sediment for MPB2psam        colsep TRASE2     \\
+TrSe2Alg01 colsep Total of transport in sediment for BloomAlg01      colsep TRASE2     \\
+TrSe2Alg02 colsep Total of transport in sediment for BloomAlg02      colsep TRASE2     \\
+TrSe2Alg03 colsep Total of transport in sediment for BloomAlg03      colsep TRASE2     \\
+TrSe2Alg04 colsep Total of transport in sediment for BloomAlg04      colsep TRASE2     \\
+TrSe2Alg05 colsep Total of transport in sediment for BloomAlg05      colsep TRASE2     \\
+TrSe2Alg06 colsep Total of transport in sediment for BloomAlg06      colsep TRASE2     \\
+TrSe2Alg07 colsep Total of transport in sediment for BloomAlg07      colsep TRASE2     \\
+TrSe2Alg08 colsep Total of transport in sediment for BloomAlg08      colsep TRASE2     \\
+TrSe2Alg09 colsep Total of transport in sediment for BloomAlg09      colsep TRASE2     \\
+TrSe2Alg10 colsep Total of transport in sediment for BloomAlg10      colsep TRASE2     \\
+TrSe2Alg11 colsep Total of transport in sediment for BloomAlg11      colsep TRASE2     \\
+TrSe2Alg12 colsep Total of transport in sediment for BloomAlg12      colsep TRASE2     \\
+TrSe2Alg13 colsep Total of transport in sediment for BloomAlg13      colsep TRASE2     \\
+TrSe2Alg14 colsep Total of transport in sediment for BloomAlg14      colsep TRASE2     \\
+TrSe2Alg15 colsep Total of transport in sediment for BloomAlg15      colsep TRASE2     \\
+TrSe2Alg16 colsep Total of transport in sediment for BloomAlg16      colsep TRASE2     \\
+TrSe2Alg17 colsep Total of transport in sediment for BloomAlg17      colsep TRASE2     \\
+TrSe2Alg18 colsep Total of transport in sediment for BloomAlg18      colsep TRASE2     \\
+TrSe2Alg19 colsep Total of transport in sediment for BloomAlg19      colsep TRASE2     \\
+TrSe2Alg20 colsep Total of transport in sediment for BloomAlg20      colsep TRASE2     \\
+TrSe2Alg21 colsep Total of transport in sediment for BloomAlg21      colsep TRASE2     \\
+TrSe2Alg22 colsep Total of transport in sediment for BloomAlg22      colsep TRASE2     \\
+TrSe2Alg23 colsep Total of transport in sediment for BloomAlg23      colsep TRASE2     \\
+TrSe2Alg24 colsep Total of transport in sediment for BloomAlg24      colsep TRASE2     \\
+TrSe2Alg25 colsep Total of transport in sediment for BloomAlg25      colsep TRASE2     \\
+TrSe2Alg26 colsep Total of transport in sediment for BloomAlg26      colsep TRASE2     \\
+TrSe2Alg27 colsep Total of transport in sediment for BloomAlg27      colsep TRASE2     \\
+TrSe2Alg28 colsep Total of transport in sediment for BloomAlg28      colsep TRASE2     \\
+TrSe2Alg29 colsep Total of transport in sediment for BloomAlg29      colsep TRASE2     \\
+TrSe2Alg30 colsep Total of transport in sediment for BloomAlg30      colsep TRASE2     \\
+UlvaFix_P  colsep Fixation of BLOOM algae at the bottom              colsep ULFIX      \\
+UlvaFix    colsep Fixation of BLOOM algae at the bottom              colsep ULFIX      \\
+CONSBL     colsep Grazing module                                     colsep CONSBL     \\
+SwOXYParWK colsep Calculates Crit Oxygen conc. for partitioning      colsep SWOXY      \\
+TrCoef_153 colsep Gas and liquid exchange coefficients PCB-153       colsep TRCOEF     \\
+Volat_153  colsep Atmospheric exch. 153 (volatilization/intake)      colsep VERVLU     \\
+TrCoef_HCB colsep Gas and liquid exchange coefficients HCB           colsep TRCOEF     \\
+Volat_HCB  colsep Atmospheric exch. HCB (volatilization/intake)      colsep VERVLU     \\
+TrCoef_HCH colsep Gas and liquid exchange coefficients HCH           colsep TRCOEF     \\
+Volat_HCH  colsep Atmospheric exch. HCH (volatilization/intake)      colsep VERVLU     \\
+TrCoef_Flu colsep Gas and liquid exchange coefficients Flu           colsep TRCOEF     \\
+Volat_Flu  colsep Atmospheric exch. Flu (volatilization/intake)      colsep VERVLU     \\
+TrCoef_BaP colsep Gas and liquid exchange coefficients BaP           colsep TRCOEF     \\
+Volat_BaP  colsep Atmospheric exch. BaP (volatilization/intake)      colsep VERVLU     \\
+TrCoef_Atr colsep Gas and liquid exchange coefficients Atr           colsep TRCOEF     \\
+Volat_Atr  colsep Atmospheric exch. Atr (volatilization/intake)      colsep VERVLU     \\
+TrCoef_Mef colsep Gas and liquid exchange coefficients Mef           colsep TRCOEF     \\
+Volat_Mef  colsep Atmospheric exch. Mef (volatilization/intake)      colsep VERVLU     \\
+TrCoef_Diu colsep Gas and liquid exchange coefficients Diu           colsep TRCOEF     \\
+Volat_Diu  colsep Atmospheric exch. Diu (volatilization/intake)      colsep VERVLU     \\
+Los_WK_153 colsep Overall loss of 153 from water column              colsep DEGMP      \\
+Los_WK_HCB colsep Overall loss of HCB from water column              colsep DEGMP      \\
+Los_WK_HCH colsep Overall loss of HCH from water column              colsep DEGMP      \\
+Los_WK_Flu colsep Overall loss of Flu from water column              colsep DEGMP      \\
+Los_WK_BaP colsep Overall loss of BaP from water column              colsep DEGMP      \\
+Los_WK_Atr colsep Overall loss of Atr from water column              colsep DEGMP      \\
+Los_WK_Mef colsep Overall loss of Mef from water column              colsep DEGMP      \\
+Los_WK_Diu colsep Overall loss of Diu from water column              colsep DEGMP      \\
+Los_S1_153 colsep Overall loss of 153 from S1                        colsep DEGMP      \\
+Los_S1_HCB colsep Overall loss of HCB from S1                        colsep DEGMP      \\
+Los_S1_HCH colsep Overall loss of HCH from S1                        colsep DEGMP      \\
+Los_S1_Flu colsep Overall loss of Flu from S1                        colsep DEGMP      \\
+Los_S1_BaP colsep Overall loss of BaP from S1                        colsep DEGMP      \\
+Los_S1_Atr colsep Overall loss of Atr from S1                        colsep DEGMP      \\
+Los_S1_Mef colsep Overall loss of Mef from S1                        colsep DEGMP      \\
+Los_S1_Diu colsep Overall loss of Diu from S1                        colsep DEGMP      \\
+Los_S2_153 colsep Overall loss of 153 from S2                        colsep DEGMP      \\
+Los_S2_HCB colsep Overall loss of HCB from S2                        colsep DEGMP      \\
+Los_S2_HCH colsep Overall loss of HCH from S2                        colsep DEGMP      \\
+Los_S2_Flu colsep Overall loss of Flu from S2                        colsep DEGMP      \\
+Los_S2_BaP colsep Overall loss of BaP from S2                        colsep DEGMP      \\
+Los_S2_Atr colsep Overall loss of Atr from S2                        colsep DEGMP      \\
+Los_S2_Mef colsep Overall loss of Mef from S2                        colsep DEGMP      \\
+Los_S2_Diu colsep Overall loss of Diu from S2                        colsep DEGMP      \\
+Sed_Cd     colsep Sedimentation adsorbed Cd                          colsep SEDHM      \\
+Sed_Cu     colsep Sedimentation adsorbed Cu                          colsep SEDHM      \\
+Sed_Zn     colsep Sedimentation adsorbed Zn                          colsep SEDHM      \\
+Sed_Hg     colsep Sedimentation adsorbed Hg                          colsep SEDHM      \\
+Sed_Ni     colsep Sedimentation adsorbed Ni                          colsep SEDHM      \\
+Sed_Pb     colsep Sedimentation adsorbed Pb                          colsep SEDHM      \\
+Sed_Cr     colsep Sedimentation adsorbed Cr                          colsep SEDHM      \\
+Sed_As     colsep Sedimentation adsorbed As                          colsep SEDHM      \\
+Sed_Va     colsep Sedimentation adsorbed Va                          colsep SEDHM      \\
+Sed_153    colsep Sedimentation adsorbed 153                         colsep SEDOMV     \\
+Sed_HCB    colsep Sedimentation adsorbed HCB                         colsep SEDOMV     \\
+Sed_HCH    colsep Sedimentation adsorbed HCH                         colsep SEDOMV     \\
+Sed_Flu    colsep Sedimentation adsorbed Flu                         colsep SEDOMV     \\
+Sed_Bap    colsep Sedimentation adsorbed Bap                         colsep SEDOMV     \\
+Sed_Atr    colsep Sedimentation adsorbed Atr                         colsep SEDOMV     \\
+Sed_Mef    colsep Sedimentation adsorbed Mef                         colsep SEDOMV     \\
+Sed_Diu    colsep Sedimentation adsorbed Diu                         colsep SEDOMV     \\
+S12TraAs   colsep Resuspension, transport in S1-S2 As                colsep S12TRA     \\
+S12TraCd   colsep Resuspension, transport in S1-S2 Cd                colsep S12TRA     \\
+S12TraCr   colsep Resuspension, transport in S1-S2 Cr                colsep S12TRA     \\
+S12TraCu   colsep Resuspension, transport in S1-S2 Cu                colsep S12TRA     \\
+S12TraHg   colsep Resuspension, transport in S1-S2 Hg                colsep S12TRA     \\
+S12TraNi   colsep Resuspension, transport in S1-S2 Ni                colsep S12TRA     \\
+S12TraPb   colsep Resuspension, transport in S1-S2 Pb                colsep S12TRA     \\
+S12TraVa   colsep Resuspension, transport in S1-S2 Va                colsep S12TRA     \\
+S12TraZn   colsep Resuspension, transport in S1-S2 Zn                colsep S12TRA     \\
+S12Tra153  colsep Resuspension, transport in S1-S2 153               colsep S12TRA     \\
+S12TraAtr  colsep Resuspension, transport in S1-S2 Atr               colsep S12TRA     \\
+S12TraMef  colsep Resuspension, transport in S1-S2 Mef               colsep S12TRA     \\
+S12TraDiu  colsep Resuspension, transport in S1-S2 Diu               colsep S12TRA     \\
+S12TraBaP  colsep Resuspension, transport in S1-S2 BaP               colsep S12TRA     \\
+S12TraOMP  colsep Resuspension, transport in S1-S2 OMP               colsep S12TRA     \\
+S12TraFlu  colsep Resuspension, transport in S1-S2 Flu               colsep S12TRA     \\
+S12TraHCB  colsep Resuspension, transport in S1-S2 HCB               colsep S12TRA     \\
+S12TraHCH  colsep Resuspension, transport in S1-S2 HCH               colsep S12TRA     \\
+Evap_Conti colsep Evaporation and rain continuity                    colsep ATMDEP     \\
+AtmDep_IM1 colsep Atmospheric deposition IM1                         colsep ATMDEP     \\
+AtmDep_IM2 colsep Atmospheric deposition IM2                         colsep ATMDEP     \\
+AtmDep_IM3 colsep Atmospheric deposition IM3                         colsep ATMDEP     \\
+Dfwast_IM1 colsep Diffusive waste IM1                                colsep ATMDEP     \\
+Dfwast_IM2 colsep Diffusive waste IM2                                colsep ATMDEP     \\
+Dfwast_IM3 colsep Diffusive waste IM3                                colsep ATMDEP     \\
+AtmDep_NH4 colsep Atmospheric deposition NH4                         colsep ATMDEP     \\
+AtmDep_NO3 colsep Atmospheric deposition NO3                         colsep ATMDEP     \\
+AtmDep_PO4 colsep Atmospheric deposition PO4                         colsep ATMDEP     \\
+AtmDep_SO4 colsep Atmospheric deposition SO4                         colsep ATMDEP     \\
+AtmDep_153 colsep Atmospheric deposition 153                         colsep ATMDEP     \\
+AtmDep_HCB colsep Atmospheric deposition HCB                         colsep ATMDEP     \\
+AtmDep_HCH colsep Atmospheric deposition HCH                         colsep ATMDEP     \\
+AtmDep_Flu colsep Atmospheric deposition Flu                         colsep ATMDEP     \\
+AtmDep_Bap colsep Atmospheric deposition Bap                         colsep ATMDEP     \\
+AtmDep_Atr colsep Atmospheric deposition Atr                         colsep ATMDEP     \\
+AtmDep_Mef colsep Atmospheric deposition Mef                         colsep ATMDEP     \\
+AtmDep_Diu colsep Atmospheric deposition Diu                         colsep ATMDEP     \\
+AtmDep_Cd  colsep Atmospheric deposition Cd                          colsep ATMDEP     \\
+AtmDep_Cu  colsep Atmospheric deposition Cu                          colsep ATMDEP     \\
+AtmDep_Zn  colsep Atmospheric deposition Zn                          colsep ATMDEP     \\
+AtmDep_Hg  colsep Atmospheric deposition Hg                          colsep ATMDEP     \\
+AtmDep_Ni  colsep Atmospheric deposition Ni                          colsep ATMDEP     \\
+AtmDep_Pb  colsep Atmospheric deposition Pb                          colsep ATMDEP     \\
+AtmDep_Cr  colsep Atmospheric deposition Cr                          colsep ATMDEP     \\
+AtmDep_As  colsep Atmospheric deposition As                          colsep ATMDEP     \\
+AtmDep_Va  colsep Atmospheric deposition Va                          colsep ATMDEP     \\
+Dfwast_NO3 colsep Diffusive waste NO3                                colsep ATMDEP     \\
+Dfwast_NH4 colsep Diffusive waste NH4                                colsep ATMDEP     \\
+Dfwast_PO4 colsep Diffusive waste PO4                                colsep ATMDEP     \\
+Dfwast_Si  colsep Diffusive waste Si                                 colsep ATMDEP     \\
+Dfwast_SO4 colsep Diffusive waste SO4                                colsep ATMDEP     \\
+Dfwast_153 colsep Diffusive waste 153                                colsep ATMDEP     \\
+Dfwast_HCB colsep Diffusive waste HCB                                colsep ATMDEP     \\
+Dfwast_HCH colsep Diffusive waste HCH                                colsep ATMDEP     \\
+Dfwast_Flu colsep Diffusive waste Flu                                colsep ATMDEP     \\
+Dfwast_Bap colsep Diffusive waste Bap                                colsep ATMDEP     \\
+Dfwast_Atr colsep Diffusive waste Atr                                colsep ATMDEP     \\
+Dfwast_Mef colsep Diffusive waste Mef                                colsep ATMDEP     \\
+Dfwast_Diu colsep Diffusive waste Diu                                colsep ATMDEP     \\
+Dfwast_Cd  colsep Diffusive waste Cd                                 colsep ATMDEP     \\
+Dfwast_Cu  colsep Diffusive waste Cu                                 colsep ATMDEP     \\
+Dfwast_Zn  colsep Diffusive waste Zn                                 colsep ATMDEP     \\
+Dfwast_Hg  colsep Diffusive waste Hg                                 colsep ATMDEP     \\
+Dfwast_Ni  colsep Diffusive waste Ni                                 colsep ATMDEP     \\
+Dfwast_Pb  colsep Diffusive waste Pb                                 colsep ATMDEP     \\
+Dfwast_Cr  colsep Diffusive waste Cr                                 colsep ATMDEP     \\
+Dfwast_As  colsep Diffusive waste As                                 colsep ATMDEP     \\
+Dfwast_Va  colsep Diffusive waste Va                                 colsep ATMDEP     \\
+NH3free    colsep Calculation conc. unionized ammonia                colsep NH3FRE     \\
+PosOXY     colsep Positive oxygen concentration                      colsep POSOXY     \\
+Secchi     colsep Secchi depth for visible-light (370-680nm)         colsep SECCHI     \\
+Prod_TEWOR colsep Production fluxes for TEWOR+                       colsep PTEWOR     \\
+PartS1_OMP colsep Partitioning OMP in S1                             colsep PARTMP     \\
+PartS2_OMP colsep Partitioning OMP in S2                             colsep PARTMP     \\
+PartWK_OMP colsep Partitioning OMP in water column                   colsep PARTMP     \\
+TrCoef_OMP colsep Gas and liquid exchange coefficients OMP           colsep TRCOEF     \\
+Volat_OMP  colsep Atmospheric exch. OMP (volatilization/intake)      colsep VERVLU     \\
+Los_WK_OMP colsep Overall loss of OMP from water column              colsep DEGMP      \\
+Los_S1_OMP colsep Overall loss of OMP from S1                        colsep DEGMP      \\
+Los_S2_OMP colsep Overall loss of OMP from S2                        colsep DEGMP      \\
+Sed_OMP    colsep Sedimentation adsorbed OMP                         colsep SEDOMV     \\
+AtmDep_OMP colsep Atmospheric deposition OMP                         colsep ATMDEP     \\
+Dfwast_OMP colsep Diffusive waste OMP                                colsep ATMDEP     \\
+TraSe2_OMP colsep Total of transport in sediment for OMP             colsep TRASE2     \\
+Damrear    colsep Reaeration at weirs                                colsep STREAR     \\
+TRSOXY     colsep Correction vertical transport OXY emersion         colsep TRSOXY     \\
+APATITE    colsep Dissolution/precipitation of apatite-like mineral  colsep APATIT     \\
+HarveZoop  colsep Harvesting zooplankton-grazer1                     colsep HARVES     \\
+HarveMuss  colsep Harvesting mussel-grazer2                          colsep HARVES     \\
+HarveG3    colsep Harvesting grazer3                                 colsep HARVES     \\
+HarveG4    colsep Harvesting grazer4                                 colsep HARVES     \\
+HarveG5    colsep Harvesting grazer5                                 colsep HARVES     \\
+VB01availN colsep Vegetation module VB01 availability of nutrients   colsep VEG2DN     \\
+VBStatus01 colsep Status of Vegation Biomass cohort 01               colsep VBSTAT     \\
+VBGrowth01 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort01   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB01_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB01_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB01Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB01_Upt3D colsep Vegetation module uptake 3D flux distribution      colsep VEG3DU     \\
+VB02availN colsep Vegetation module VB02 availability of nutrients   colsep VEG2DN     \\
+VBStatus02 colsep Status of Vegation Biomass cohort 02               colsep VBSTAT     \\
+VBGrowth02 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort02   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB02_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB02_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB02Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB02_Upt3D colsep Vegetation module uptake 3D flux distribution      colsep VEG3DU     \\
+VB03availN colsep Vegetation module VB03 availability of nutrients   colsep VEG2DN     \\
+VBStatus03 colsep Status of Vegation Biomass cohort 03               colsep VBSTAT     \\
+VBGrowth03 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort03   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB03_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB03_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB03Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB03_Upt3D colsep Vegetation module VB03 uptake 3D flux distribution colsep VEG3DU     \\
+VB04availN colsep Vegetation module VB04 availability of nutrients   colsep VEG2DN     \\
+VBStatus04 colsep Status of Vegation Biomass cohort 04               colsep VBSTAT     \\
+VBGrowth04 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort04   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB04_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB04_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB04Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB04_Upt3D colsep Vegetation module VB04 uptake 3D flux distribution colsep VEG3DU     \\
+VB05availN colsep Vegetation module VB05 availability of nutrients   colsep VEG2DN     \\
+VBStatus05 colsep Status of Vegation Biomass cohort 05               colsep VBSTAT     \\
+VBGrowth05 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort05   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB05_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB05_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB05Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB05_Upt3D colsep Vegetation module VB05 uptake 3D flux distribution colsep VEG3DU     \\
+VB06availN colsep Vegetation module VB06 availability of nutrients   colsep VEG2DN     \\
+VBStatus06 colsep Status of Vegation Biomass cohort 06               colsep VBSTAT     \\
+VBGrowth06 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort06   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB06_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB06_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB06Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB06_Upt3D colsep Vegetation module VB06 uptake 3D flux distribution colsep VEG3DU     \\
+VB07availN colsep Vegetation module VB07 availability of nutrients   colsep VEG2DN     \\
+VBStatus07 colsep Status of Vegation Biomass cohort 07               colsep VBSTAT     \\
+VBGrowth07 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort07   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB07_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB07_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB07Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB07_Upt3D colsep Vegetation module VB07 uptake 3D flux distribution colsep VEG3DU     \\
+VB08availN colsep Vegetation module VB08 availability of nutrients   colsep VEG2DN     \\
+VBStatus08 colsep Status of Vegation Biomass cohort 08               colsep VBSTAT     \\
+VBGrowth08 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort08   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB08_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB08_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB08Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB08_Upt3D colsep Vegetation module VB08 uptake 3D flux distribution colsep VEG3DU     \\
+VB09availN colsep Vegetation module VB09 availability of nutrients   colsep VEG2DN     \\
+VBStatus09 colsep Status of Vegation Biomass cohort 09               colsep VBSTAT     \\
+VBGrowth09 colsep Vegation Biomass Growth                            colsep VBGRO      \\
+VBMort09   colsep Vegation Biomass Mortality                         colsep VBMRT      \\
+VB09_Mrt3W colsep Vegetation module mortality 3D flux water          colsep VEG3DX     \\
+VB09_Mrt3S colsep Vegetation module mortality 3D flux sediment       colsep VEG3DX     \\
+VB09Upt    colsep Vegetation Biomass Nutrient Uptake                 colsep VBUPT      \\
+VB09_Upt3D colsep Vegetation module VB09 uptake 3D flux distribution colsep VEG3DU     \\
+Rad_SM01   colsep Light efficiency function submerged macrophyt 1    colsep RADMAC     \\
+Rad_SM02   colsep Light efficiency function submerged macrophyt 2    colsep RADMAC     \\
+Rad_SM03   colsep Light efficiency function submerged macrophyt 3    colsep RADMAC     \\
+Rad_SM04   colsep Light efficiency function submerged macrophyt 4    colsep RADMAC     \\
+Rad_SM05   colsep Light efficiency function submerged macrophyt 5    colsep RADMAC     \\
+NPPoreS12  colsep NH4 and PO4 in pore water S12                      colsep NPPS12     \\
+MACNUTSM01 colsep Nutrient limitation function for macrophyte SM01   colsep MACNUT     \\
+MACNUTSM02 colsep Nutrient limitation function for macrophyte SM02   colsep MACNUT     \\
+MACNUTSM03 colsep Nutrient limitation function for macrophyte SM03   colsep MACNUT     \\
+MACNUTSM04 colsep Nutrient limitation function for macrophyte SM04   colsep MACNUT     \\
+MACNUTSM05 colsep Nutrient limitation function for macrophyte SM05   colsep MACNUT     \\
+MacroPhyt1 colsep Macrophyte production species 1                    colsep MACROP     \\
+SM01_Upt3D colsep Macrophyte module uptake 3D flux distribution      colsep MAC3DU     \\
+MacroPhyt2 colsep Macrophyte production species 2                    colsep MACROP     \\
+SM02_Upt3D colsep Macrophyte module uptake 3D flux distribution      colsep MAC3DU     \\
+MacroPhyt3 colsep Macrophyte production species 3                    colsep MACROP     \\
+SM03_Upt3D colsep Macrophyte module uptake 3D flux distribution      colsep MAC3DU     \\
+MacroPhyt4 colsep Macrophyte production species 4                    colsep MACROP     \\
+SM04_Upt3D colsep Macrophyte module uptake 3D flux distribution      colsep MAC3DU     \\
+MacroPhyt5 colsep Macrophyte production species 5                    colsep MACROP     \\
+SM05_Upt3D colsep Macrophyte module uptake 3D flux distribution      colsep MAC3DU     \\
+GRZMAC01   colsep Grazing on macrophyte 01                           colsep GRZMAC     \\
+GRZMACO2   colsep Grazing on macrophyte 02                           colsep GRZMAC     \\
+GRZMAC03   colsep Grazing on macrophyte 03                           colsep GRZMAC     \\
+GRZMAC04   colsep Grazing on macrophyte 04                           colsep GRZMAC     \\
+GRZMAC05   colsep Grazing on macrophyte 05                           colsep GRZMAC     \\
+HRVMAC01   colsep Harvesting on macrophyte 01                        colsep GRZMAC     \\
+HRVMACO2   colsep Harvesting on macrophyte 02                        colsep GRZMAC     \\
+HRVMAC03   colsep Harvesting on macrophyte 03                        colsep GRZMAC     \\
+HRVMAC04   colsep Harvesting on macrophyte 04                        colsep GRZMAC     \\
+HRVMAC05   colsep Harvesting on macrophyte 05                        colsep GRZMAC     \\
+DEBGRZ_M   colsep Dynamics of DEB Mussel (def: benthic V1-morphs)    colsep DEBGRZ     \\
+DEBGRZ_Z   colsep Dynamics of DEB Zooplankton (def: Active V1morphs) colsep DEBGRZ     \\
+DEBGRZ_G3  colsep Dynamics of DEB Grazer3 (def: passive isomorphs)   colsep DEBGRZ     \\
+DEBGRZ_G4  colsep Dynamics of DEB Grazer4 (def: passive isomorphs)   colsep DEBGRZ     \\
+DEBGRZ_G5  colsep Dynamics of DEB Grazer5 (def: passive isomorphs)   colsep DEBGRZ     \\
+Dredge     colsep Dredging and dumping of basins                     colsep DREDGE     \\
+IM_Floceq  colsep Flocculation equilibrium emperical model Manning   colsep FLOCEQ     \\
+AtmDep_Sal colsep Atmospheric deposition salinity                    colsep ATMDEP     \\
+AtmDep_Ecl colsep Atmospheric deposition E-coli bacteria             colsep ATMDEP     \\
+AttribOut  colsep Output segment attribute                           colsep ATTOUT     \\
+Cascade    colsep  Cascadal transformation                           colsep CASCAD     \\
+Decay1     colsep Decay of decayable tracer 1                        colsep DECTRA     \\
+Decay2     colsep Decay of decayable tracer 2                        colsep DECTRA     \\
+Decay3     colsep Decay of decayable tracer 3                        colsep DECTRA     \\
+Decay4     colsep Decay of decayable tracer 4                        colsep DECTRA     \\
+Decay5     colsep Decay of decayable tracer 5                        colsep DECTRA     \\
+MalGro     colsep Growth of macroalgae                               colsep MALGRO     \\
+FlMALS     colsep Flux calculation for Macroalgae Structural Mass    colsep FLMALS     \\

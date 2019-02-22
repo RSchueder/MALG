@@ -33,8 +33,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT( 22) ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM( 22) ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT( 14) ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM( 14) ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -43,7 +43,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 22)   !    Local work array for the pointering
+      INTEGER IPNT( 14)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
       INTEGER CSEG        !    Local loop counter for computational element loop
 
@@ -84,31 +84,32 @@
       SAVE    FIRST
 !
 !*******************************************************************************
-!     Initialise variable indicating BOTTOM SEGMENT
+!     ! Initialise variable indicating BOTTOM SEGMENT
       ! If this is the first time doing this, i.e. the first segment and 
       ! first time step
-      ! 5 is mbotseg in input
-      ! 13 is mbotseg in ourput
+      ! 10 is mbotseg in input
+      ! 15 is mbotseg in ourput
       IF (FIRST) THEN
       
           ! local array point assignment
-          ! normall we do the entire array, but now we only do it for the
+          ! normally we do the entire array, but now we only do it for the
           ! 21st element? This is weird because I thought IPOINT was 
           ! a pointer for the first element of a given segment in the PMSA array
           ! this only makes sense if the IPOINT is a local segment pointer
           ! unless this is not a scalar, but a vector!
           ! do not see how it could be a vector as PMSA(IPNT(x)) is assigned to a scalar value
-          IPNT(10) = IPOINT(10)
+          ! the IPNT typically increments each segment 
+          IPNT(14) = IPOINT(14)
           ! for all segs
           DO ISEG = 1,NOSEG
-              ! assign IbotSeg output for all segs = -1, therefore invalid
-             PMSA( IPNT(10) ) = -1
+              ! assign MbotSeg output for all segs = -1, therefore invalid
+             PMSA( IPNT(14) ) = -1
              CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
              ! if it is a bottom seg, its ibot seg is itself
              IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
-                PMSA( IPNT( 10) ) = ISEG
+                PMSA( IPNT( 14) ) = ISEG
              ENDIF
-             IPNT(10) = IPNT(10) + INCREM(10)
+             IPNT(14) = IPNT(14) + INCREM(14)
           ENDDO
               
     !     Loop to find bottom segment for water segments
@@ -118,12 +119,13 @@
              Ifrom  = IEXPNT(1,IQ)
              Ito    = IEXPNT(2,IQ)
              if (ifrom.gt.0.and.ito.gt.0) then
-                MBotSeg = nint(PMSA(IPOINT(21)+(ITO-1)*INCREM(21)))
+                MBotSeg = nint(PMSA(IPOINT(14)+(ITO-1)*INCREM(14)))
                 IF ( MBotSeg .GT.0 ) THEN
-                   PMSA(IPOINT(10)+(IFROM-1)*INCREM(10)) = real(MBotSeg)
+                   PMSA(IPOINT(14)+(IFROM-1)*INCREM(14)) = real(MBotSeg)
                 ENDIF
              endif
           ENDDO
+          
       ! so for every segment, if it is a bottom segment, grab the fluxes from
       ! all segments whose Ibotseg is = to the current botseg. save these pointers
       ! as an array and for each time step loop through these segments and grab
@@ -169,7 +171,7 @@
               IdgrMALP = IdGrMALP + NOFLUX
               IdgrMALC = IdGrMALC + NOFLUX
 
-              IPNT        = IPNT        + INCREM
+              IPNT     = IPNT     + INCREM
           END IF
  9000 CONTINUE
 
