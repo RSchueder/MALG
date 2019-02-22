@@ -150,7 +150,13 @@ C
                 ! nitrogen hunger will be the same along length
                 ! nutrient abundance will not be
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
+                IF (LimN .lt. 0.0) THEN
+                    LimN = 0.0
+                ENDIF
                 LimP = (MALPmax - MALP)/(MALPmax - MALPmin)
+                IF (LimP .lt. 0.0) THEN
+                    LimP = 0.0
+                ENDIF
                 LimP = 1.0
                 
                 ! max rate is gN/m2 plant day, but m2 is m2 of plant

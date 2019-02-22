@@ -1,12 +1,12 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/02/22 14:33:58 
+ Execution start: 2019/02/22 18:01:56 
                                                                                 
  found -p command line switch                                                   
 
  Info: This processes definition file does not contain standard names and units for NetCDF files.
 
  
- Using process definition file : ../../code/tables/proc_def
+ Using process definition file : ..\..\code\tables\proc_def
  Version number                :       5.08
  Serial                        : 2019020601
  
@@ -279,7 +279,7 @@ total number of substances with fractions :  0
        [Tp2                 ] temp for reference photosynthetic rate 2                              
        using default value:  288.000                                                                
        [Tap                 ] Arrhenius temperature for photosynthesis                              
-       using default value:  1421.40                                                                
+       using default value:  1694.00                                                                
        [Taph                ] Arrhenius temp for photosynthesis high end                            
        using default value:  25924.0                                                                
        [Tapl                ] Arrhenius temp for photosynthesis low end                             
@@ -401,7 +401,7 @@ total number of substances with fractions :  0
        [a2                  ] photoperiod parameter 2                                               
        using default value: 0.300000                                                                
        [mrtMAL              ] epsilon erosion/mortality parameter macro                             
-       using default value:  22.0000                                                                
+       using default value: 0.220000                                                                
        [CDRatMAL            ] C:DM ratio in MALS                                                    
        using default value: 0.200000                                                                
        [NCRatMAL            ] N:C ratio in MALS                                                     

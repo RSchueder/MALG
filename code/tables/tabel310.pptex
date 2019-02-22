@@ -5578,7 +5578,7 @@ m2         colsep growth rate parameter 2                            colsep (-) 
 MALS0      colsep growth rate parameter 3                            colsep (m2)                 colsep           0.060 \\
 a1         colsep photoperiod parameter 1                            colsep (-)                  colsep           0.850 \\
 a2         colsep photoperiod parameter 2                            colsep (-)                  colsep           0.300 \\
-mrtMAL     colsep epsilon erosion/mortality parameter macro          colsep (1/m2)               colsep          22.000 \\
+mrtMAL     colsep epsilon erosion/mortality parameter macro          colsep (1/m2)               colsep           0.220 \\
 CDRatMAL   colsep C:DM ratio in MALS                                 colsep (-)                  colsep           0.200 \\
 NCRatMAL   colsep N:C ratio in MALS                                  colsep (-)                  colsep           0.050 \\
 PCRatMAL   colsep P:C ratio in MALS                                  colsep (-)                  colsep           0.005 \\
@@ -5606,7 +5606,7 @@ P1         colsep Reference photosynthetic rate at T1                colsep (gC/
 P2         colsep Reference photosynthetic rate at T2                colsep (gC/m2/d)            colsep           3.456 \\
 Tp1        colsep temp for reference photosynthetic rate 1           colsep (degK)               colsep         283.000 \\
 Tp2        colsep temp for reference photosynthetic rate 2           colsep (degK)               colsep         288.000 \\
-Tap        colsep Arrhenius temperature for photosynthesis           colsep (degK)               colsep        1421.400 \\
+Tap        colsep Arrhenius temperature for photosynthesis           colsep (degK)               colsep        1694.000 \\
 Taph       colsep Arrhenius temp for photosynthesis high end         colsep (degK)               colsep       25924.000 \\
 Tapl       colsep Arrhenius temp for photosynthesis low end          colsep (degK)               colsep       27774.000 \\
 Tar        colsep Arrhenius temp for respiration                     colsep (degK)               colsep       11033.000 \\

@@ -21,9 +21,11 @@
 !!  of Stichting Deltares remain the property of Stichting Deltares. All
 !!  rights reserved.
 
-      SUBROUTINE COVMAC     ( PMSA   , FL     , IPOINT , INCREM, NOSEG ,
+      SUBROUTINE MALGRO     ( PMSA   , FL     , IPOINT , INCREM, NOSEG ,
      +                        NOFLUX , IEXPNT , IKNMRK , NOQ1  , NOQ2  ,
      +                        NOQ3   , NOQ4   )
+      !DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'MALGRO' :: MALGRO 
+
 !
 !*******************************************************************************
 !

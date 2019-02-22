@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/02/22 14:33:58 
+ Execution start: 2019/02/22 18:01:56 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -48,6 +48,11 @@
  All the process fluxes will be scaled from the auxiliary timer to the system timer.
 
  Integration option :               15.73
+ Keyword ( 9) detected: BAL_NOLUMPPROCESSES                     
+ Keyword (10) detected: BAL_NOLUMPLOADS                         
+ Keyword (11) detected: BAL_LUMPTRANSPORT                       
+ Keyword (14) detected: BAL_NOSUPPRESSSPACE                     
+ Keyword (15) detected: BAL_NOSUPPRESSTIME                      
  Start of simulation : 0Y-  0D- 0H- 0M- 0S.
  End of simulation   : 0Y-  6D- 0H- 0M- 0S.
  Selected option for time step size :  0
@@ -542,4 +547,4 @@ Number of periods defined:     0
  total integer   array space:       4267
  total character array space:       6170
  grand total in 4-byte words:      15530 =   0-GB   0-MB  62-KB 120-Byte.
- Execution stop : 2019/02/22 14:33:58 
+ Execution stop : 2019/02/22 18:01:56 

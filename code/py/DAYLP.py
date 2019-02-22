@@ -1,0 +1,87 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 22 15:33:05 2019
+
+@author: schueder
+"""
+
+#     Only constant inputs, so only single calculation of daylength needed to be set to all segments
+
+import numpy as np
+
+sin50m = -1.454389765e-2 
+e  = 1.721420632e-2
+#     Conversion Latitude to rads
+latitu  = 52 / 360 * 2 * np.pi
+daylengthm = 0.0
+
+#     Conversion time to daynumbers relative to tref
+daynrd =  5
+#     Computes declination of sun on day DAYNR.
+if daynrd < 0. or  daynrd > 365.:
+    declin = 9.9999
+else:
+    declin = 6.918e-3 - 3.99912e-1 * np.cos ( e * daynrd) -6.758e-3   * np.cos ( 2.0 * e * daynrd) -2.697e-3   * np.cos ( 3.0 * e * daynrd) +7.0257e-2  * np.sin ( e * daynrd) +9.07e-4    * np.sin ( 2.0 * e * daynrd) +1.480e-3   * np.sin ( 3.0 * e * daynrd)
+
+
+#     Computes daylenth
+
+temp = (( sin50m - np.sin ( declin) * np.sin ( latitu)) /( np.cos ( declin) * np.cos ( latitu)))
+
+if temp > 1.0:
+    temp   = 0.0
+elif temp < -1.0:
+    temp   = 24.0
+else:
+    temp   = 7.639437268 * np.arccos ( temp)
+  
+
+daylengthd = temp / 24.0
+  
+#     ------------------------------------
+  
+daynrp = daynrd - 1
+
+if (( daynrp < 0.) or ( daynrp > 365.)):
+    declin = 9.9999e9
+else:
+    declin = 6.918e-3 -3.99912e-1 * np.cos ( e * daynrp) -6.758e-3   * np.cos ( 2.0 * e * daynrp) -2.697e-3   * np.cos ( 3.0 * e * daynrp) +7.0257e-2  * np.sin ( e * daynrp) +9.07e-4    * np.sin ( 2.0 * e * daynrp) +1.480e-3   * np.sin ( 3.0 * e * daynrp)
+
+
+#     Computes daylenth
+
+temp = (( sin50m - np.sin ( declin) * np.sin ( latitu)) / ( np.cos ( declin) * np.cos ( latitu)))
+
+if temp > 1.0:
+    temp   = 0.0
+elif  temp < -1.0:
+    temp   = 24.0
+else:
+    temp   = 7.639437268 * np.arccos(temp)
+  
+
+daylengthp = temp / 24.0
+
+  
+#     ------------------------------------
+  
+for daynrp in range(1 , 366):
+    if (( daynrp < 0.) or ( daynrp > 365.)):
+        declin = 9.9999e9
+    else:
+        declin = 6.918e-3 -3.99912e-1 * np.cos ( e * daynrp) -6.758e-3   * np.cos ( 2.0 * e * daynrp) -2.697e-3   * np.cos ( 3.0 * e * daynrp) +7.0257e-2  * np.sin ( e * daynrp) +9.07e-4    * np.sin ( 2.0 * e * daynrp) +1.480e-3   * np.sin ( 3.0 * e * daynrp)
+    
+#     Computes daylenth
+
+    temp = (( sin50m - np.sin ( declin) * np.sin ( latitu)) / ( np.cos ( declin) * np.cos ( latitu)))
+
+    if  temp > 1.0:
+        temp   = 0.0
+    elif  temp < -1.0:
+        temp   = 24.0
+    else:
+        temp   = 7.639437268 * np.arccos ( temp)
+  
+  
+    daylengthm = np.max([daylengthm, temp / 24.0])
+ 

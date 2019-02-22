@@ -21,9 +21,11 @@
 !!  of Stichting Deltares remain the property of Stichting Deltares. All
 !!  rights reserved.
  
-      subroutine daylp   ( pmsa   , fl     , ipoint , increm , noseg  ,
+      subroutine DAYLP   ( pmsa   , fl     , ipoint , increm , noseg  ,
      &                    noflux , iexpnt , iknmrk , noq1   , noq2   ,
      &                    noq3   , noq4   )
+      !DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'DAYLP' :: DAYLP 
+
 !>\file
 !>    Daylength calculation in hours cur current and previous day
 
@@ -86,6 +88,7 @@
       latitu  = pmsa( ip2 ) / 360 * 2 * pi
       tref    = pmsa( ip3 )
       auxsys  = pmsa( ip4 )
+      daylengthm = 0.0
 
 !     Conversion time to daynumbers relative to tref
       daynrd =  mod (time / auxsys + tref, 365.)

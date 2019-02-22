@@ -1,7 +1,7 @@
       SUBROUTINE FLMALC     ( PMSA   , FL     , IPOINT , INCREM, NOSEG ,
      +                        NOFLUX , IEXPNT , IKNMRK , NOQ1  , NOQ2  ,
      +                        NOQ3   , NOQ4   )
-!DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'FLMALS' :: FLMALS
+!DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'FLMALC' :: FLMALC
 C
 ! was called macrop
 ! should have been based on macnut actually!
@@ -74,13 +74,16 @@ C
       
       REAL(4) I       	
       REAL(4) P	
-      REAL(4) Ps      
+      REAL(4) Ps    
       REAL(4) Pmax
+      REAL(4) PmaxT
+      REAL(4) PmaxB
       REAL(4) beta
       REAL(4) R
       REAL(4) E
       REAL(4) Tpl
       REAL(4) Tph
+      REAL(4) alpha0
 
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -162,23 +165,31 @@ C
                 ! need to convert to correct units
                 ! 1 W/m2 = 4.57 umol photons m-2 s-1
                 ! assumption is data supplied consistent with saturation value
-                I = I * 4.57
+                I = I * 4.57 ! umol/m2s
+                Isat = Isat * 4.57 ! umol/m2s
                 Temp = Temp + 273
+                ! P1 = P1 / 2400.0
+                Tpl = 283.0
+                Tph = 303.0
+                alpha0 = 0.0000375
                 Pmax = P1 * exp((Tap/Tp1) - (Tap/Temp))/
      &           (1 + exp((Tapl/Temp) - (Tapl/Tpl)) + 
      &           exp((Taph/Tph) - (Taph/Temp)))
                 
                 ! solve for beta using newton's method
-                beta = 1e-9
+                ! if we were we could need to use original units for P1 Pmax, alpha and beta
+                beta = 1.023d-7
+                ! P1 = P1 / 2400.0
+
 !                DO 1200 iter = 1, 10
-!                  Pmax = (alpha*Isat/ln(1+alpha/beta) * 
-!     &            (alpha/(alpha+beta)) * 
-!     &             (beta/(alpha+beta))**(beta/alpha)
+!                  Pmax = (alpha*Isat/ln(1+alpha0/beta) * 
+!     &            (alpha0/(alph0a+beta)) * 
+!     &             (beta/(alpha0+beta))**(beta/alpha0)
 !                (0.0000375*200/log(1+0.0000375/x)) * (0.0000375/(0.0000375+x)) * (x/(0.0000375+x))^(x/0.0000375)
                   
-                Ps = alpha*Isat/LOG(1+alpha/beta)  
-                
-                P = Ps * (1-exp(alpha*I/Ps))*exp(beta*I/Ps)
+                Ps = alpha*Isat/LOG(1+alpha0/beta)  
+                ! gC/m2/day
+                P = Ps * (1-exp(-alpha*I/Ps))*exp(-beta*I/Ps)
                 
                 ! all rates will as per the paper yield rates
                 ! of gC/gDM day

@@ -233,7 +233,7 @@ C
                 ! photoperiod limitation
                 
                 DL = (daylengthd - daylengthp) /daylengthm           
-                LimPho = a_1 * (1 + sin(dL * ABS(dL)**0.5)) + a_2
+                LimPho = a_1 * (1 + sin(DL * ABS(DL)**0.5)) + a_2
                
                 ! decay
                 ! decay is calculated as a percent of the total frond decay
