@@ -1,6 +1,6 @@
 Domain, Checked : Yes       
-     Grid                  : 1x1.grd
-     Grid enclosure        : 1x1.enc
+     Grid                  : 3x3.grd
+     Grid enclosure        : 3x3.enc
      Bathymetry            : none
      Dry points            : none
      Thin dams             : none
@@ -12,12 +12,12 @@ Processes, Checked : Yes
 Initial conditions, Checked : Yes       
 
 Boundaries, Checked : Yes       
-     Boundary definitions  : none
+     Boundary definitions  : com-col-hyd.bnd
      Astronomical flow conditions : none
      Astronomical corrections : none
      Harmonic flow conditions : none
      QH-relation flow conditions : none
-     Time series flow conditions : none
+     Time series flow conditions : 7_day_retention.bct
      Transport conditions  : none
 
 Physical parameters, Checked : Yes       
@@ -37,11 +37,11 @@ Operations, Checked : Yes
      Dredging and dumping data : none
 
 Monitoring, Checked : Yes       
-     Observation points    : none
+     Observation points    : obs.obs
      Drogues               : none
      Cross-sections        : none
 
 Additional parameters, Checked : Yes       
 
-Output, Checked : Yes       
+Output, Checked : No        
      Fourier analysis data : none

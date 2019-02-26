@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/02/22 18:01:56 
+ Execution start: 2019/02/26 17:36:22 
                                                                                 
  found -p command line switch                                                   
 
@@ -134,7 +134,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [POC1                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dPrPOC1M            ] POC1 production MALS                                            
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
 -dispersion for [POC1                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -143,7 +145,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [POC2                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dPrPOC2M            ] POC2 production MALS                                            
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
 -dispersion for [POC2                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -152,7 +156,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [PON1                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dPrPON1M            ] PON1 production MALS                                            
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
 -dispersion for [PON1                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -161,7 +167,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [PON2                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dPrPON2M            ] PON2 production MALS                                            
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
 -dispersion for [PON2                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -170,7 +178,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [POP1                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dPrPOP1M            ] POP1 production MALS                                            
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
 -dispersion for [POP1                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -179,7 +189,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [POP2                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dPrPOP2M            ] POP2 production MALS                                            
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
 -dispersion for [POP2                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -237,7 +249,7 @@ total number of substances with fractions :  0
        [MALC                ] MacroALgae Carbon storage                                             
        Using substance nr  17                                                                       
        [MBotSeg             ] bottom segment for this segment                                       
-       Using constant nr 21 with value:  10.0000                                                    
+       Using constant nr 21 with value:  86.0000                                                    
        [LocGroS             ] local growth of MALS                                                  
        Using output from proces [FlMALS              ]                                              
        [LocGroN             ] local growth of MALN                                                  
@@ -261,7 +273,7 @@ total number of substances with fractions :  0
        [ArDenMALS           ] grams/m2 surface area of frond                                        
        using default value:  60.0000                                                                
        [Temp                ] ambient water temperature                                             
-       Using constant nr 20 with value:  20.0000                                                    
+       Using constant nr 20 with value:  15.0000                                                    
        [R1                  ] Reference respiration rate at T1                                      
        using default value: 0.668000                                                                
        [R2                  ] Reference respiration rate at T2                                      
@@ -297,7 +309,7 @@ total number of substances with fractions :  0
        [exuMALC             ] exudation parameter                                                   
        using default value: 0.500000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
-       Using constant nr 21 with value:  10.0000                                                    
+       Using constant nr 21 with value:  86.0000                                                    
        [Surf                ] horizontal surface area of a DELWAQ segment                           
        Using parameter nr  1                                                                        
        [DELT                ] timestep for processes                                                
@@ -351,7 +363,7 @@ total number of substances with fractions :  0
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
-       Using constant nr 21 with value:  10.0000                                                    
+       Using constant nr 21 with value:  86.0000                                                    
        [Surf                ] horizontal surface area of a DELWAQ segment                           
        Using parameter nr  1                                                                        
        [DELT                ] timestep for processes                                                
@@ -385,7 +397,7 @@ total number of substances with fractions :  0
        [daylenm             ] maximum daylength at this latitude                                    
        Using output from proces [DaylP               ]                                              
        [Temp                ] ambient water temperature                                             
-       Using constant nr 20 with value:  20.0000                                                    
+       Using constant nr 20 with value:  15.0000                                                    
        [m1                  ] growth rate parameter 1                                               
        using default value: 0.109000                                                                
        [m2                  ] growth rate parameter 2                                               
@@ -413,7 +425,7 @@ total number of substances with fractions :  0
        [FrPO2MAL            ] fraction of MALS that goes to POC2 in decay                           
        using default value: 0.250000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
-       Using constant nr 21 with value:  10.0000                                                    
+       Using constant nr 21 with value:  86.0000                                                    
        [Surf                ] horizontal surface area of a DELWAQ segment                           
        Using parameter nr  1                                                                        
        [DELT                ] timestep for processes                                                
@@ -445,7 +457,7 @@ total number of substances with fractions :  0
        [ArDenMAL            ] grams/m2 surface area of frond                                        
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
-       Using constant nr 21 with value:  10.0000                                                    
+       Using constant nr 21 with value:  86.0000                                                    
                                                                                                     
  Input for [DaylP               ] ent, previous, and max daylength                                  
        [ITIME               ] DELWAQ time                                                           
@@ -486,6 +498,7 @@ total number of substances with fractions :  0
 # locating requested output from active processes                                                   
                                                                                                     
  output [LocalDepth          ] from proces [TotDepth  ]                                             
+ output [TotalDepth          ] from proces [TotDepth  ]                                             
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             

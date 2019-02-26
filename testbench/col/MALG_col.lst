@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/02/22 18:01:56 
+ Execution start: 2019/02/26 17:36:21 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -61,57 +61,62 @@
  Dump areas:
  option selected for input :    1
 
- Number of dump areas :   10
+ Number of dump areas :   11
 
- Dump area :    1 : Seg1                
+ Dump area :    1 : first               
  Number of segments in area :              1
           number   segment
               1              1
 
- Dump area :    2 : Seg2                
- Number of segments in area :              1
-          number   segment
-              1              2
-
- Dump area :    3 : Seg3                
- Number of segments in area :              1
-          number   segment
-              1              3
-
- Dump area :    4 : Seg4                
- Number of segments in area :              1
-          number   segment
-              1              4
-
- Dump area :    5 : Seg5                
+ Dump area :    2 : Seg1                
  Number of segments in area :              1
           number   segment
               1              5
 
- Dump area :    6 : Seg6                
+ Dump area :    3 : Seg2                
  Number of segments in area :              1
           number   segment
-              1              6
+              1             14
 
- Dump area :    7 : Seg7                
+ Dump area :    4 : Seg3                
  Number of segments in area :              1
           number   segment
-              1              7
+              1             23
 
- Dump area :    8 : Seg8                
+ Dump area :    5 : Seg4                
  Number of segments in area :              1
           number   segment
-              1              8
+              1             32
 
- Dump area :    9 : Seg9                
+ Dump area :    6 : Seg5                
  Number of segments in area :              1
           number   segment
-              1              9
+              1             41
 
- Dump area :   10 : Seg10               
+ Dump area :    7 : Seg6                
  Number of segments in area :              1
           number   segment
-              1             10
+              1             50
+
+ Dump area :    8 : Seg7                
+ Number of segments in area :              1
+          number   segment
+              1             59
+
+ Dump area :    9 : Seg8                
+ Number of segments in area :              1
+          number   segment
+              1             68
+
+ Dump area :   10 : Seg9                
+ Number of segments in area :              1
+          number   segment
+              1             77
+
+ Dump area :   11 : Seg10               
+ Number of segments in area :              1
+          number   segment
+              1             86
 
  Transects:
  option selected for input : 2
@@ -139,7 +144,7 @@
 
 
 
- Number of segments :             10
+ Number of segments :             90
 
  NO process decomposition selected
 
@@ -193,10 +198,10 @@
 
 
  Dimensions of the system :
- Number of exchanges 1st direction :       0
- Number of exchanges 2nd direction :       0
- Number of exchanges 3rd direction :       9
- Total number of exchanges         :       9
+ Number of exchanges 1st direction :     120
+ Number of exchanges 2nd direction :      60
+ Number of exchanges 3rd direction :      81
+ Total number of exchanges         :     261
 
  Number of dispersion arrays       :       0
 
@@ -209,11 +214,73 @@
  Information from unformatted intermediate file.
  Filename is: ../col-hyd/com-col-hyd.poi                                                                                                                                                                                                                                     
 
- Number of boundaries  :       0
+ Number of boundaries  :      60
 
 
+ boundary  exchange    from        to
+  number    number    segment    segment
+      1         1        -1         1
+      2         4         3        -2
+      3         5        -3         4
+      4         8         6        -4
+      5         9        -5         7
+      6        12         9        -6
+      7        13        -7        10
+      8        16        12        -8
+      9        17        -9        13
+     10        20        15       -10
+     11        21       -11        16
+     12        24        18       -12
+     13        25       -13        19
+     14        28        21       -14
+     15        29       -15        22
+     16        32        24       -16
+     17        33       -17        25
+     18        36        27       -18
+     19        37       -19        28
+     20        40        30       -20
+     21        41       -21        31
+     22        44        33       -22
+     23        45       -23        34
+     24        48        36       -24
+     25        49       -25        37
+     26        52        39       -26
+     27        53       -27        40
+     28        56        42       -28
+     29        57       -29        43
+     30        60        45       -30
+     31        61       -31        46
+     32        64        48       -32
+     33        65       -33        49
+     34        68        51       -34
+     35        69       -35        52
+     36        72        54       -36
+     37        73       -37        55
+     38        76        57       -38
+     39        77       -39        58
+     40        80        60       -40
+     41        81       -41        61
+     42        84        63       -42
+     43        85       -43        64
+     44        88        66       -44
+     45        89       -45        67
+     46        92        69       -46
+     47        93       -47        70
+     48        96        72       -48
+     49        97       -49        73
+     50       100        75       -50
+     51       101       -51        76
+     52       104        78       -52
+     53       105       -53        79
+     54       108        81       -54
+     55       109       -55        82
+     56       112        84       -56
+     57       113       -57        85
+     58       116        87       -58
+     59       117       -59        88
+     60       120        90       -60
 
- Size of the big matrix for fast solvers is:         20
+ Size of the big matrix for fast solvers is:        480
 
  Dispersion:
 
@@ -253,8 +320,273 @@
  ************************************************************************************************************* B L O C K - 4 *****
 
 
+ Bound nr:      boundary-IDs:       boundary-names:                         boundary-types:
 
- No boundary conditions
+
+ Including file: includes\bnd.inc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+      1         1 (Left-right 1)    1 (Left-right 1)                        1/1 (Left-right 1)  
+      2         2 (Left-right 2)    2 (Left-right 2)                        2/1 (Left-right 2)  
+      3         3 (Left-right 1)    3 (Left-right 1)                        1/1 (Left-right 1)  
+      4         4 (Left-right 2)    4 (Left-right 2)                        2/1 (Left-right 2)  
+      5         5 (Left-right 1)    5 (Left-right 1)                        1/1 (Left-right 1)  
+      6         6 (Left-right 2)    6 (Left-right 2)                        2/1 (Left-right 2)  
+      7         7 (Left-right 1)    7 (Left-right 1)                        1/2 (Left-right 1)  
+      8         8 (Left-right 2)    8 (Left-right 2)                        2/2 (Left-right 2)  
+      9         9 (Left-right 1)    9 (Left-right 1)                        1/2 (Left-right 1)  
+     10         10 (Left-right 2)   10 (Left-right 2)                       2/2 (Left-right 2)  
+     11         11 (Left-right 1)   11 (Left-right 1)                       1/2 (Left-right 1)  
+     12         12 (Left-right 2)   12 (Left-right 2)                       2/2 (Left-right 2)  
+     13         13 (Left-right 1)   13 (Left-right 1)                       1/3 (Left-right 1)  
+     14         14 (Left-right 2)   14 (Left-right 2)                       2/3 (Left-right 2)  
+     15         15 (Left-right 1)   15 (Left-right 1)                       1/3 (Left-right 1)  
+     16         16 (Left-right 2)   16 (Left-right 2)                       2/3 (Left-right 2)  
+     17         17 (Left-right 1)   17 (Left-right 1)                       1/3 (Left-right 1)  
+     18         18 (Left-right 2)   18 (Left-right 2)                       2/3 (Left-right 2)  
+     19         19 (Left-right 1)   19 (Left-right 1)                       1/4 (Left-right 1)  
+     20         20 (Left-right 2)   20 (Left-right 2)                       2/4 (Left-right 2)  
+     21         21 (Left-right 1)   21 (Left-right 1)                       1/4 (Left-right 1)  
+     22         22 (Left-right 2)   22 (Left-right 2)                       2/4 (Left-right 2)  
+     23         23 (Left-right 1)   23 (Left-right 1)                       1/4 (Left-right 1)  
+     24         24 (Left-right 2)   24 (Left-right 2)                       2/4 (Left-right 2)  
+     25         25 (Left-right 1)   25 (Left-right 1)                       1/5 (Left-right 1)  
+     26         26 (Left-right 2)   26 (Left-right 2)                       2/5 (Left-right 2)  
+     27         27 (Left-right 1)   27 (Left-right 1)                       1/5 (Left-right 1)  
+     28         28 (Left-right 2)   28 (Left-right 2)                       2/5 (Left-right 2)  
+     29         29 (Left-right 1)   29 (Left-right 1)                       1/5 (Left-right 1)  
+     30         30 (Left-right 2)   30 (Left-right 2)                       2/5 (Left-right 2)  
+     31         31 (Left-right 1)   31 (Left-right 1)                       1/6 (Left-right 1)  
+     32         32 (Left-right 2)   32 (Left-right 2)                       2/6 (Left-right 2)  
+     33         33 (Left-right 1)   33 (Left-right 1)                       1/6 (Left-right 1)  
+     34         34 (Left-right 2)   34 (Left-right 2)                       2/6 (Left-right 2)  
+     35         35 (Left-right 1)   35 (Left-right 1)                       1/6 (Left-right 1)  
+     36         36 (Left-right 2)   36 (Left-right 2)                       2/6 (Left-right 2)  
+     37         37 (Left-right 1)   37 (Left-right 1)                       1/7 (Left-right 1)  
+     38         38 (Left-right 2)   38 (Left-right 2)                       2/7 (Left-right 2)  
+     39         39 (Left-right 1)   39 (Left-right 1)                       1/7 (Left-right 1)  
+     40         40 (Left-right 2)   40 (Left-right 2)                       2/7 (Left-right 2)  
+     41         41 (Left-right 1)   41 (Left-right 1)                       1/7 (Left-right 1)  
+     42         42 (Left-right 2)   42 (Left-right 2)                       2/7 (Left-right 2)  
+     43         43 (Left-right 1)   43 (Left-right 1)                       1/8 (Left-right 1)  
+     44         44 (Left-right 2)   44 (Left-right 2)                       2/8 (Left-right 2)  
+     45         45 (Left-right 1)   45 (Left-right 1)                       1/8 (Left-right 1)  
+     46         46 (Left-right 2)   46 (Left-right 2)                       2/8 (Left-right 2)  
+     47         47 (Left-right 1)   47 (Left-right 1)                       1/8 (Left-right 1)  
+     48         48 (Left-right 2)   48 (Left-right 2)                       2/8 (Left-right 2)  
+     49         49 (Left-right 1)   49 (Left-right 1)                       1/9 (Left-right 1)  
+     50         50 (Left-right 2)   50 (Left-right 2)                       2/9 (Left-right 2)  
+     51         51 (Left-right 1)   51 (Left-right 1)                       1/9 (Left-right 1)  
+     52         52 (Left-right 2)   52 (Left-right 2)                       2/9 (Left-right 2)  
+     53         53 (Left-right 1)   53 (Left-right 1)                       1/9 (Left-right 1)  
+     54         54 (Left-right 2)   54 (Left-right 2)                       2/9 (Left-right 2)  
+     55         55 (Left-right 1)   55 (Left-right 1)                       1/10 (Left-right 1) 
+     56         56 (Left-right 2)   56 (Left-right 2)                       2/10 (Left-right 2) 
+     57         57 (Left-right 1)   57 (Left-right 1)                       1/10 (Left-right 1) 
+     58         58 (Left-right 2)   58 (Left-right 2)                       2/10 (Left-right 2) 
+     59         59 (Left-right 1)   59 (Left-right 1)                       1/10 (Left-right 1) 
+     60         60 (Left-right 2)   60 (Left-right 2)                       2/10 (Left-right 2) 
+ 
+ Number of different boundary types:   20
+ Type:  Type-string
+     1  1/1 (Left-right 1)  
+     2  2/1 (Left-right 2)  
+     3  1/2 (Left-right 1)  
+     4  2/2 (Left-right 2)  
+     5  1/3 (Left-right 1)  
+     6  2/3 (Left-right 2)  
+     7  1/4 (Left-right 1)  
+     8  2/4 (Left-right 2)  
+     9  1/5 (Left-right 1)  
+    10  2/5 (Left-right 2)  
+    11  1/6 (Left-right 1)  
+    12  2/6 (Left-right 2)  
+    13  1/7 (Left-right 1)  
+    14  2/7 (Left-right 2)  
+    15  1/8 (Left-right 1)  
+    16  2/8 (Left-right 2)  
+    17  1/9 (Left-right 1)  
+    18  2/9 (Left-right 2)  
+    19  1/10 (Left-right 1) 
+    20  2/10 (Left-right 2) 
+ 
+
+ Time lag option:  2
+ Constant time lags with defaults
+ Default value     : 0Y-  0D- 0H- 0M- 0S 
+ Number of overridings :  60
+ Number       values
+
+     1        0Y-  0D- 0H- 0M- 0S 
+     7        0Y-  0D- 0H- 0M- 0S 
+    13        0Y-  0D- 0H- 0M- 0S 
+    19        0Y-  0D- 0H- 0M- 0S 
+    25        0Y-  0D- 0H- 0M- 0S 
+    31        0Y-  0D- 0H- 0M- 0S 
+    37        0Y-  0D- 0H- 0M- 0S 
+    43        0Y-  0D- 0H- 0M- 0S 
+    49        0Y-  0D- 0H- 0M- 0S 
+    55        0Y-  0D- 0H- 0M- 0S 
+     3        0Y-  0D- 0H- 0M- 0S 
+     9        0Y-  0D- 0H- 0M- 0S 
+    15        0Y-  0D- 0H- 0M- 0S 
+    21        0Y-  0D- 0H- 0M- 0S 
+    27        0Y-  0D- 0H- 0M- 0S 
+    33        0Y-  0D- 0H- 0M- 0S 
+    39        0Y-  0D- 0H- 0M- 0S 
+    45        0Y-  0D- 0H- 0M- 0S 
+    51        0Y-  0D- 0H- 0M- 0S 
+    57        0Y-  0D- 0H- 0M- 0S 
+     5        0Y-  0D- 0H- 0M- 0S 
+    11        0Y-  0D- 0H- 0M- 0S 
+    17        0Y-  0D- 0H- 0M- 0S 
+    23        0Y-  0D- 0H- 0M- 0S 
+    29        0Y-  0D- 0H- 0M- 0S 
+    35        0Y-  0D- 0H- 0M- 0S 
+    41        0Y-  0D- 0H- 0M- 0S 
+    47        0Y-  0D- 0H- 0M- 0S 
+    53        0Y-  0D- 0H- 0M- 0S 
+    59        0Y-  0D- 0H- 0M- 0S 
+     2        0Y-  0D- 0H- 0M- 0S 
+     8        0Y-  0D- 0H- 0M- 0S 
+    14        0Y-  0D- 0H- 0M- 0S 
+    20        0Y-  0D- 0H- 0M- 0S 
+    26        0Y-  0D- 0H- 0M- 0S 
+    32        0Y-  0D- 0H- 0M- 0S 
+    38        0Y-  0D- 0H- 0M- 0S 
+    44        0Y-  0D- 0H- 0M- 0S 
+    50        0Y-  0D- 0H- 0M- 0S 
+    56        0Y-  0D- 0H- 0M- 0S 
+     4        0Y-  0D- 0H- 0M- 0S 
+    10        0Y-  0D- 0H- 0M- 0S 
+    16        0Y-  0D- 0H- 0M- 0S 
+    22        0Y-  0D- 0H- 0M- 0S 
+    28        0Y-  0D- 0H- 0M- 0S 
+    34        0Y-  0D- 0H- 0M- 0S 
+    40        0Y-  0D- 0H- 0M- 0S 
+    46        0Y-  0D- 0H- 0M- 0S 
+    52        0Y-  0D- 0H- 0M- 0S 
+    58        0Y-  0D- 0H- 0M- 0S 
+     6        0Y-  0D- 0H- 0M- 0S 
+    12        0Y-  0D- 0H- 0M- 0S 
+    18        0Y-  0D- 0H- 0M- 0S 
+    24        0Y-  0D- 0H- 0M- 0S 
+    30        0Y-  0D- 0H- 0M- 0S 
+    36        0Y-  0D- 0H- 0M- 0S 
+    42        0Y-  0D- 0H- 0M- 0S 
+    48        0Y-  0D- 0H- 0M- 0S 
+    54        0Y-  0D- 0H- 0M- 0S 
+    60        0Y-  0D- 0H- 0M- 0S 
+
+ Boundary concentrations
+
+ Closing file: includes\bnd.inc                                                              
+
+ Continuing on file: MALG_col.inp                                                                  
+
+ BLOCKED per ITEM:
+ Input BOUNDARIES nr:    1 is BOUNDARIES nr:    1 with type: 1/1 (Left-right 1)  
+ Input BOUNDARIES nr:    2 is BOUNDARIES nr:    3 with type: 1/2 (Left-right 1)  
+ Input BOUNDARIES nr:    3 is BOUNDARIES nr:    5 with type: 1/3 (Left-right 1)  
+ Input BOUNDARIES nr:    4 is BOUNDARIES nr:    7 with type: 1/4 (Left-right 1)  
+ Input BOUNDARIES nr:    5 is BOUNDARIES nr:    9 with type: 1/5 (Left-right 1)  
+ Input BOUNDARIES nr:    6 is BOUNDARIES nr:   11 with type: 1/6 (Left-right 1)  
+ Input BOUNDARIES nr:    7 is BOUNDARIES nr:   13 with type: 1/7 (Left-right 1)  
+ Input BOUNDARIES nr:    8 is BOUNDARIES nr:   15 with type: 1/8 (Left-right 1)  
+ Input BOUNDARIES nr:    9 is BOUNDARIES nr:   17 with type: 1/9 (Left-right 1)  
+ Input BOUNDARIES nr:   10 is BOUNDARIES nr:   19 with type: 1/10 (Left-right 1) 
+
+ CONCENTRATIONs within the item blocks:
+ Input CONCENTR.  nr:    1 is CONCENTR.  nr:    1 with ID  : Continuity           and local substitution: Continuity          
+
+ Linear interpolation is selected !
+ 
+ Column:  1 contains: Continuity                               Status: used    
+
+ DATA grouped in        10 blocks of         1 Substance 
+
+ Number of breakpoints with full data:    2
+ breakpoint       1 :         0
+ Substance      1
+ boundary     Continuity  
+         1    1.0000E+00
+         3    1.0000E+00
+         5    1.0000E+00
+         7    1.0000E+00
+         9    1.0000E+00
+        11    1.0000E+00
+        13    1.0000E+00
+        15    1.0000E+00
+        17    1.0000E+00
+        19    1.0000E+00
+ breakpoint       2 :    518400
+ Substance      1
+ boundary     Continuity  
+         1    1.0000E+00
+         3    1.0000E+00
+         5    1.0000E+00
+         7    1.0000E+00
+         9    1.0000E+00
+        11    1.0000E+00
+        13    1.0000E+00
+        15    1.0000E+00
+        17    1.0000E+00
+        19    1.0000E+00
+
+ ====> input item completed <==== 
+
+
+
+ BLOCKED per ITEM:
+ Input BOUNDARIES nr:    1 is BOUNDARIES nr:    2 with type: 2/1 (Left-right 2)  
+ Input BOUNDARIES nr:    2 is BOUNDARIES nr:    4 with type: 2/2 (Left-right 2)  
+ Input BOUNDARIES nr:    3 is BOUNDARIES nr:    6 with type: 2/3 (Left-right 2)  
+ Input BOUNDARIES nr:    4 is BOUNDARIES nr:    8 with type: 2/4 (Left-right 2)  
+ Input BOUNDARIES nr:    5 is BOUNDARIES nr:   10 with type: 2/5 (Left-right 2)  
+ Input BOUNDARIES nr:    6 is BOUNDARIES nr:   12 with type: 2/6 (Left-right 2)  
+ Input BOUNDARIES nr:    7 is BOUNDARIES nr:   14 with type: 2/7 (Left-right 2)  
+ Input BOUNDARIES nr:    8 is BOUNDARIES nr:   16 with type: 2/8 (Left-right 2)  
+ Input BOUNDARIES nr:    9 is BOUNDARIES nr:   18 with type: 2/9 (Left-right 2)  
+ Input BOUNDARIES nr:   10 is BOUNDARIES nr:   20 with type: 2/10 (Left-right 2) 
+
+ CONCENTRATIONs within the item blocks:
+ Input CONCENTR.  nr:    1 is CONCENTR.  nr:    1 with ID  : Continuity           and local substitution: Continuity          
+
+ Linear interpolation is selected !
+ 
+ Column:  1 contains: Continuity                               Status: used    
+
+ DATA grouped in        10 blocks of         1 Substance 
+
+ Number of breakpoints with full data:    2
+ breakpoint       1 :         0
+ Substance      1
+ boundary     Continuity  
+         2    1.0000E+00
+         4    1.0000E+00
+         6    1.0000E+00
+         8    1.0000E+00
+        10    1.0000E+00
+        12    1.0000E+00
+        14    1.0000E+00
+        16    1.0000E+00
+        18    1.0000E+00
+        20    1.0000E+00
+ breakpoint       2 :    518400
+ Substance      1
+ boundary     Continuity  
+         2    1.0000E+00
+         4    1.0000E+00
+         6    1.0000E+00
+         8    1.0000E+00
+        10    1.0000E+00
+        12    1.0000E+00
+        14    1.0000E+00
+        16    1.0000E+00
+        18    1.0000E+00
+        20    1.0000E+00
+
+ ====> input item completed <==== 
+
+
 
  ************************************************************************************************************* B L O C K - 5 *****
 
@@ -322,7 +654,7 @@
  constant values in this block.
  values        20
  constants    Temp        
-         1    2.0000E+01
+         1    1.5000E+01
 
  ====> input item completed <==== 
 
@@ -331,7 +663,7 @@
  constant values in this block.
  values        21
  constants    MBotSeg     
-         1    1.0000E+01
+         1    8.6000E+01
 
  ====> input item completed <==== 
 
@@ -340,11 +672,11 @@
  Input parameter  nr:    1 is parameter  nr:    1 with ID  : SURF                
  Input parameter  nr:    2 is parameter  nr:    2 with ID  : bottomdept          
 
- Input will be given for all         10 segments.
+ Input will be given for all         90 segments.
 
  parameter s ordered in groups of segments per parameter .
- Input comes from binary file: SACC_col_gui.par                                                                                                                                                                                                                                                
- info comes at runtime from binary file: SACC_col_gui.par
+ Input comes from binary file: includes\3x3.par                                                                                                                                                                                                                                                
+ info comes at runtime from binary file: includes\3x3.par
 
  ====> input item completed <==== 
 
@@ -352,7 +684,7 @@
   
  Input seg-funct. nr:    1 is seg-funct. nr:    1 with ID  : VertDisper          
 
- Input will be given for all         10 segments.
+ Input will be given for all         90 segments.
 
  seg-funct.s ordered in groups of segments per seg-funct..
  Input comes from binary file: ../col-hyd/com-col-hyd.vdf                                                                                                                                                                                                                                      
@@ -423,40 +755,41 @@
 
  All substances plus extra output variables
 
- (     31) number of output variables specified
+ (     32) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
        2           LocalDepth                                
-       3           daylend                                   
-       4           daylenp                                   
-       5           daylenm                                   
-       6           MALSM2                                    
-       7           MALNM2                                    
-       8           MALPM2                                    
-       9           MALCM2                                    
-      10           MALSNC                                    
-      11           MALSPC                                    
-      12           LimBioM                                   
-      13           LimPhoM                                   
-      14           LimTemM                                   
-      15           LocGroS                                   
-      16           LocGroN                                   
-      17           LocGroP                                   
-      18           LocGroC                                   
-      19           FrBmMALS                                  
-      20           BmLayMAL                                  
-      21           HactMAL                                   
-      22           AactMAL                                   
-      23           LimVel                                    
-      24           LocUpN                                    
-      25           LocUpP                                    
-      26           LocUpC                                    
-      27           TotGroS                                   
-      28           TotGroN                                   
-      29           TotGroP                                   
-      30           TotGroC                                   
-      31           MBotSeg                                   
+       3           TotalDepth                                
+       4           daylend                                   
+       5           daylenp                                   
+       6           daylenm                                   
+       7           MALSM2                                    
+       8           MALNM2                                    
+       9           MALPM2                                    
+      10           MALCM2                                    
+      11           MALSNC                                    
+      12           MALSPC                                    
+      13           LimBioM                                   
+      14           LimPhoM                                   
+      15           LimTemM                                   
+      16           LocGroS                                   
+      17           LocGroN                                   
+      18           LocGroP                                   
+      19           LocGroC                                   
+      20           FrBmMALS                                  
+      21           BmLayMAL                                  
+      22           HactMAL                                   
+      23           AactMAL                                   
+      24           LimVel                                    
+      25           LocUpN                                    
+      26           LocUpP                                    
+      27           LocUpC                                    
+      28           TotGroS                                   
+      29           TotGroN                                   
+      30           TotGroP                                   
+      31           TotGroC                                   
+      32           MBotSeg                                   
 
  Specification of map output
 
@@ -484,6 +817,7 @@
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
         SURF                ; Using parameter nr           1
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
+   INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
@@ -516,7 +850,7 @@
         SURF                ; Using parameter nr           1
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          31
+  Number off missing variables :          32
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -543,8 +877,8 @@ Number of periods defined:     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       5093
- total integer   array space:       4267
- total character array space:       6170
- grand total in 4-byte words:      15530 =   0-GB   0-MB  62-KB 120-Byte.
- Execution stop : 2019/02/22 18:01:56 
+ total real      array space:      45918
+ total integer   array space:       9557
+ total character array space:       7291
+ grand total in 4-byte words:      62766 =   0-GB   0-MB 251-KB  64-Byte.
+ Execution stop : 2019/02/26 17:36:22 

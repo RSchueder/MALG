@@ -132,8 +132,10 @@
       ! all segments whose Ibotseg is = to the current botseg. save these pointers
       ! as an array and for each time step loop through these segments and grab
       ! the local fluxes 
-      END If
-      
+      END IF
+!*******************************************************************************          
+      IPNT        = IPOINT
+
       IdGrMALS = 1 
       IdGrMALN = 2 
       IdGrMALP = 3 
@@ -152,10 +154,17 @@
                   CALL DHKMRK(2,IKNMRK(CSEG),IKMRK2)
                   MBotSeg    = nint(PMSA( IPNT( 5) ))
                   IF (MBotSeg .eq. CSEG) THEN
-                      LocGroS  =  PMSA( IPNT( 6))   
-                      LocGroN  =  PMSA( IPNT( 7))       
-                      LocGroP  =  PMSA( IPNT( 8))      
-                      LocGroC  =  PMSA( IPNT( 9))   
+                      ! need to do this increment properly!
+                      ! currently always grabbing from the same (zero) location
+                      !IPOINT(5)+(MBOTSEG-1)*INCREM(5)
+                      !LocGroS  =  PMSA( IPNT( 6))  
+                      ! left here on Feb 26!
+                      ! below is one such idea
+                      ! go backwards in the pmsa array
+                      LocGroS  =  PMSA(IPNT( 6)-(NOSEG-CSEG)*INCREM(6))
+                      LocGroN  =  PMSA(IPNT( 7)-(NOSEG-CSEG)*INCREM(7))
+                      LocGroP  =  PMSA(IPNT( 8)-(NOSEG-CSEG)*INCREM(8)) 
+                      LocGroC  =  PMSA(IPNT( 9)-(NOSEG-CSEG)*INCREM(9))
                       
                       dMALS = dMALS + LocGroS
                       dMALN = dMALN + LocGroN

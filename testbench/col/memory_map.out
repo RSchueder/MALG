@@ -2,55 +2,55 @@
   ==> REAL arrays in 4-byte words <==
   nr array name            array size
 
-   1 VOLUME                        10
-   2 AREA                           9
-   3 FLOW                           9
-   4 LENG                          18
+   1 VOLUME                        90
+   2 AREA                         261
+   3 FLOW                         261
+   4 LENG                         522
    5 DISP                           3
-   6 CONC                         170
-   7 MASS                         170
-   8 DERIV                        170
-   9 BOUND                          0
-  10 BSET                           0
-  11 BSAVE                          0
+   6 CONC                        1530
+   7 MASS                        2550
+   8 DERIV                       1530
+   9 BOUND                        780
+  10 BSET                         780
+  11 BSAVE                        780
   12 WASTE                          0
   13 CONS                          21
-  14 PARAM                         20
+  14 PARAM                        180
   15 FUNC                           0
-  16 SFUNC                         10
-  17 DISPNW                         9
+  16 SFUNC                         90
+  17 DISPNW                       261
   18 DISPER                         0
   19 VELONW                         0
   20 VELO                           0
   21 HARMAT                         0
-  22 FARR                          56
+  22 FARR                        1224
   23 MASS2                         85
-  24 TIMER                         20
-  25 VOL2                          10
+  24 TIMER                        480
+  25 VOL2                         150
   26                                0
   27                                0
   28                                0
   29                                0
   30                                0
   31                                0
-  32 ASMASS                      1020
-  33 LOCAL                        320
+  32 ASMASS                      1122
+  33 LOCAL                       2880
   34 DEFAUL                        74
-  35 FLUX                         180
+  35 FLUX                        1620
   36 STOCHI                       306
-  37 FLXDMP                       180
-  38 FLXINT                       180
-  39 RIOBUF                       480
-  40 DISPX                          9
+  37 FLXDMP                       198
+  38 FLXINT                       198
+  39 RIOBUF                       539
+  40 DISPX                        261
   41 VELX                           0
   42 VLOCX                          0
   43 DSTO                          13
   44 VSTO                           0
-  45 DMPQ                         234
-  46 DMPS                         510
+  45 DMPQ                        1378
+  46 DMPS                         561
   47 TRRAAI                         0
-  48 INWRSP                         0
-  49 VOLUML                        10
+  48 INWRSP                        53
+  49 VOLUML                        90
   50                                0
   51                                0
   52                                0
@@ -80,21 +80,21 @@
   76                                0
   77                                0
   78 WSTDMP                         0
-  79 surface                       10
-  80 wdrawal                       10
-  81 mixlen                         9
-  82 gm_rhs                        20
-  83 gm_sol                        20
-  84 gm_work                      280
-  85 gm_hess                      220
-  86 gm_amat                       40
-  87 gm_diag                       20
-  88 gm_diac                       20
+  79 surface                       90
+  80 wdrawal                       90
+  81 mixlen                       261
+  82 gm_rhs                       300
+  83 gm_sol                       300
+  84 gm_work                    16500
+  85 gm_hess                     5304
+  86 gm_amat                      960
+  87 gm_diag                      300
+  88 gm_diac                      300
   89 gm_trid                      120
-  90 flowtot                        9
-  91 disptot                        9
+  90 flowtot                      261
+  91 disptot                      261
 
-     Total (4 byte words)        5093
+     Total (4 byte words)       45918
 
   ==> INTEGER arrays 4-byte words <==
   nr array name            array size
@@ -107,9 +107,9 @@
    6 ARRDM1                       178
    7 ARRDM2                       178
    8 ARRDM3                       178
-   9 IXPOIN                        36
+   9 IXPOIN                      1044
   10 IIDUMP                         0
-  11 IBPNT                          0
+  11 IBPNT                        240
   12 IWAST                          0
   13 IDPNEW                        13
   14 IDPNT                         13
@@ -118,7 +118,7 @@
   17 IHARM                          0
   18 NRHARM                        11
   19 NRFTOT                        11
-  20 IPOINT                        37
+  20 IPOINT                       621
   21 IP                             8
   22 LGRID                          0
   23 NSVAR                          9
@@ -127,21 +127,21 @@
   26 IPSSA                        167
   27 IMODU                          9
   28 IOUTPS                        63
-  29 IOPOIN                        86
-  30 IKNMRK                        10
+  29 IOPOIN                        88
+  30 IKNMRK                        90
   31 IKTIM                          0
-  32 IQDMP                          9
-  33 ISDMP                         10
-  34 IPDMP                         48
+  32 IQDMP                        261
+  33 ISDMP                         90
+  34 IPDMP                         95
   35 IORAAI                         0
   36 NQRAAI                         0
   37 IQRAAI                         0
-  38 INWISP                         0
-  39 INTYPE                         0
-  40 IWORK                          0
-  41 ITRACE                        10
-  42 IMATRX                        20
-  43 IWRK                          10
+  38 INWISP                        60
+  39 INTYPE                        60
+  40 IWORK                        780
+  41 ITRACE                       150
+  42 IMATRX                       480
+  43 IWRK                         150
   44 ISYSN                         72
   45 ISYSI                         21
   46                                0
@@ -163,22 +163,22 @@
   62 VGRSET                       205
   63 GRDNOS                         1
   64 GRDREF                         1
-  65 GRDSEG                        10
-  66 OWNERS                        10
-  67 OWNERQ                         9
+  65 GRDSEG                        90
+  66 OWNERS                        90
+  67 OWNERQ                       261
   68 PROREF                        63
   69 PROPNT                         9
   70 PRODON                         9
-  71 DMPBAL                        10
-  72 iknmkv                        10
+  71 DMPBAL                        11
+  72 iknmkv                        90
   73 iwstkind                       0
-  74 rowpnt                        11
-  75 fmat                           9
-  76 tmat                           9
-  77 iexseg                        10
-  78 isegcol                       10
+  74 rowpnt                       151
+  75 fmat                         261
+  76 tmat                         261
+  77 iexseg                       150
+  78 isegcol                       90
 
-     Total (4 byte words)        4267
+     Total (4 byte words)        9557
 
   => CHARACTER arrays 4-byte words <=
   nr array name            array size
@@ -187,9 +187,9 @@
    2 MNAME                         40
    3 SNAME                         85
    4 DNAME                          0
-   5 BNDID                          0
-   6 BNAME                          0
-   7 BNTYP                          0
+   5 BNDID                        300
+   6 BNAME                        600
+   7 BNTYP                        100
    8 WASTID                         0
    9 WNAME                          0
   10 WTYPE                          0
@@ -199,18 +199,18 @@
   14 SFNAM                          5
   15 CGRID                          0
   16 PRNAM                         45
-  17 OUNAM                        430
+  17 OUNAM                        440
   18 DINAM                          0
   19 VENAM                          0
-  20 DANAM                         50
+  20 DANAM                         55
   21 RANAM                          0
-  22 CBUFF                        240
+  22 CBUFF                        245
   23 LUNT                           0
-  24 OUSNM                       2150
-  25 OUUNI                        860
-  26 OUDSC                       1290
+  24 OUSNM                       2200
+  25 OUUNI                        880
+  26 OUDSC                       1320
   27 OSSNM                        425
   28 OSUNI                        170
   29 OSDSC                        255
 
-     Total (4 byte words)        6160
+     Total (4 byte words)        7280

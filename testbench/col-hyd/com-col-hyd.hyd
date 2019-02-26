@@ -1,5 +1,5 @@
 file-created-by  Deltares, FLOW2D3D Version 6.02.13.7545M, Sep 13 2017, 21:16:30
-file-creation-date  2019-02-22, 13:53:02 
+file-creation-date  2019-02-25, 14:34:02 
 task      full-coupling
 geometry  curvilinear-grid
 horizontal-aggregation       automatic
@@ -18,8 +18,8 @@ conversion-ref-time      '20190101000000'
 conversion-start-time     '20190101000000'
 conversion-stop-time     '20190107000000'
 conversion-timestep      '00000000010000'
-grid-cells-first-direction                    3
-grid-cells-second-direction                   3
+grid-cells-first-direction                    5
+grid-cells-second-direction                   5
 number-hydrodynamic-layers                   10
 number-water-quality-layers                  10
 hydrodynamic-file        'com-col-hyd.dat'

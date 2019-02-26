@@ -12,8 +12,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(27)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(27)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(28)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(28)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -22,7 +22,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 27)   !    Local work array for the pointering
+      INTEGER IPNT( 28)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -184,9 +184,9 @@ C
                 FL ( IdUpMALNH4 ) = dUpMALNH4
                 FL ( IdUpMALPO4 ) = dUpMALPO4 
      
-                PMSA( IPNT( 25)   ) =  LimVel		
-                PMSA( IPNT( 26)   ) =  LocUpN	
-                PMSA( IPNT( 27)   ) =  LocUpP		
+                PMSA( IPNT( 26)   ) =  LimVel		
+                PMSA( IPNT( 27)   ) =  LocUpN	
+                PMSA( IPNT( 28)   ) =  LocUpP		
                 
             ENDIF
          ENDIF

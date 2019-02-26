@@ -94,7 +94,7 @@ C
      
       IdUpMALTIC   = 1
       IdPrMALDOC   = 2
-      IdPrMALOXY   = 2
+      IdPrMALOXY   = 3
       
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG

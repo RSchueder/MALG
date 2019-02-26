@@ -1,10 +1,10 @@
 Ident  = #Delft3D-FLOW 3.59.01.48550#
 Commnt =                  
-Filcco = #1x1.grd#
+Filcco = #3x3.grd#
 Anglat =  5.2000000e+001
 Grdang =  0.0000000e+000
-Filgrd = #1x1.enc#
-MNKmax = 3 3 10
+Filgrd = #3x3.enc#
+MNKmax = 5 5 10
 Thick  =  1.0000000e+001
           1.0000000e+001
           1.0000000e+001
@@ -36,7 +36,9 @@ Wndint = #Y#
 Commnt =                  
 Zeta0  =  0.0000000e+000
 Commnt =                  
-Commnt =                 no. open boundaries: 0
+Commnt =                 no. open boundaries: 2
+Filbnd = #com-col-hyd.bnd#
+FilbcT = #7_day_retention.bct#
 Commnt =                  
 Ag     =  9.8100000e+000
 Rhow   =  1.0000000e+003
@@ -78,7 +80,8 @@ Trasol = #Cyclic-method#
 Momsol = #Cyclic#
 Commnt =                  
 Commnt =                 no. discharges: 0
-Commnt =                 no. observation points: 0
+Commnt =                 no. observation points: 1
+Filsta = #obs.obs#
 Commnt =                 no. drogues: 0
 Commnt =                  
 Commnt =                  

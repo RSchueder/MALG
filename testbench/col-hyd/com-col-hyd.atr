@@ -5,88 +5,128 @@
     1    ; data follows in this file 
     1    ; all data is given without defaults
    ;    layer:            1
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            2
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            3
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            4
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            5
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            6
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            7
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            8
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            9
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:           10
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
     1    ; number of attributes, they are :
     2    ;  '1' has surface '3' has bottom
          ;  '0' has both    '2' has none  
     1    ; data follows in this file 
     1    ; all data is given without defaults
    ;    layer:            1
-      
-   1  
-      
+          
+   1 1 1  
+   1 1 1  
+   1 1 1  
+          
    ;    layer:            2
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            3
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            4
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            5
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            6
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            7
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            8
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:            9
-      
-   2  
-      
+          
+   2 2 2  
+   2 2 2  
+   2 2 2  
+          
    ;    layer:           10
-      
-   3  
-      
+          
+   3 3 3  
+   3 3 3  
+   3 3 3  
+          
     0    ; no time dependent attributes

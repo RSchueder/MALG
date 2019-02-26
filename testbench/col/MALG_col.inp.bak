@@ -1,0 +1,345 @@
+1000 132 ';'    ; width of input and output, comment
+;
+; Type of DELWAQ input file:
+; DELWAQ_VERSION_4.91
+; Option for printing the report: verbose
+; PRINT_OUTPUT_OPTION_4
+
+; first block: identification
+''
+''
+''
+'T0: 2019.01.01 00:00:00  (scu=       1s)'
+;
+; substances file: 
+; hydrodynamic file: ../col-hyd/com-col-hyd.dat
+;
+; areachar.dat: ../col-hyd/com-col-hyd.srfold
+;
+  13  4    ; number of active and inactive substances
+
+; Index  Name
+      1 'Continuity'
+	  2 'OXY'
+	  3 'NH4'
+	  4 'NO3'
+	  5 'PO4'
+	  6 'TIC'
+	  7 'ALKA'
+	  8 'POC1'
+	  9 'POC2'
+	 10 'PON1'
+	 11 'PON2'
+	 12 'POP1'
+	 13 'POP2'
+	 14 'MALS'
+	 15 'MALN'
+	 16 'MALP'
+	 17 'MALC'
+;
+#1 ; delimiter for the first block
+; 
+; second block of model input (timers)
+; 
+; integration timers 
+; 
+ 86400  'ddhhmmss' 'ddhhmmss' ; system clock in sec, aux in days
+ 15.73    ; integration option
+    BAL_NOLUMPPROCESSES BAL_NOLUMPLOADS BAL_LUMPTRANSPORT
+   BAL_NOSUPPRESSSPACE BAL_NOSUPPRESSTIME
+ 2019/01/01-00:00:00      ; start time 
+ 2019/01/07-00:00:00      ; stop time 
+ 0                  ; constant timestep 
+ 0000100      ; time step
+;
+ 1     ; monitoring points/areas used
+ 10
+'Seg1'  1  5
+'Seg2'  1  14
+'Seg3'  1  23
+'Seg4'  1  32
+'Seg5'  1  41
+'Seg6'  1  50
+'Seg7'  1  59
+'Seg8'  1  68
+'Seg9'  1  77
+'Seg10'  1  86
+
+ 2     ; monitoring transects not used
+;
+; start time      stop time     time step 
+ 2019/01/01-00:00:00       2019/01/07-00:00:00       0010000      ; monitoring
+ 2019/01/01-00:00:00       2019/01/07-00:00:00       0010000      ; map, dump
+ 2019/01/01-00:00:00       2019/01/07-00:00:00       0010000      ; history
+;
+#2 ; delimiter for the second block
+; 
+; third block of model input (grid layout)
+ 90      ; number of segments
+ 2        ; grid layout not used
+INCLUDE '../col-hyd/com-col-hyd.atr'  ; attributes file
+;
+; volumes
+;
+-2  ; first volume option
+'../col-hyd/com-col-hyd.vol'  ; volumes file
+;
+#3 ; delimiter for the third block
+; 
+; fourth block of model input (transport)
+ 120  ; exchanges in direction 1
+ 60  ; exchanges in direction 2
+ 81  ; exchanges in direction 3
+; 
+ 0  ; dispersion arrays
+ 0  ; velocity arrays
+; 
+ 1  ; first form is used for input 
+ 0  ; exchange pointer option
+'../col-hyd/com-col-hyd.poi'  ; pointers file
+; 
+ 1  ; first dispersion option nr
+ 1.0 1.0 1.0   ; scale factors in 3 directions
+ 1.00000e+000 1.00000e+000 ; dispersion in 1st and 2nd direction
+ 1.00000e-007 ; dispersion in 3rd direction
+; 
+ -2  ; first area option
+'../col-hyd/com-col-hyd.are'  ; area file
+; 
+ -2  ; first flow option
+'../col-hyd/com-col-hyd.flo'  ; flow file
+; 
+; No explicit velocity arrays
+; 
+  1  ; length vary
+ 0   ; length option
+'../col-hyd/com-col-hyd.len'  ; length file
+;
+#4 ; delimiter for the fourth block
+; 
+; fifth block of model input (boundary condition)
+;
+INCLUDE 'includes\bnd.inc'
+
+ITEM
+ '1/1 (Left-right 1)' '1/2 (Left-right 1)' '1/3 (Left-right 1)' '1/4 (Left-right 1)' '1/5 (Left-right 1)'
+ '1/6 (Left-right 1)' '1/7 (Left-right 1)' '1/8 (Left-right 1)' '1/9 (Left-right 1)' '1/10 (Left-right 1)'
+
+CONCENTRATIONS
+   USEFOR 'Continuity' 'Continuity'
+TIME LINEAR
+DATA
+ 'Continuity'
+
+2019/01/01-00:00:00  1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+           
+2019/01/07-00:00:00  1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+           
+ITEM
+ '2/1 (Left-right 2)' '2/2 (Left-right 2)' '2/3 (Left-right 2)' '2/4 (Left-right 2)' '2/5 (Left-right 2)'
+ '2/6 (Left-right 2)' '2/7 (Left-right 2)' '2/8 (Left-right 2)' '2/9 (Left-right 2)' '2/10 (Left-right 2)'
+
+CONCENTRATIONS
+   USEFOR 'Continuity' 'Continuity'
+TIME LINEAR
+DATA
+ 'Continuity'
+
+2019/01/01-00:00:00  1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+           
+2019/01/07-00:00:00  1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+            1.0000e+000 
+           
+;
+ #5 ; delimiter for the fifth block
+; 
+; sixth block of model input (waste loads)
+   0   ; no waste loads/continuous releases
+
+;
+ #6 ; delimiter for the sixth block
+; 
+; seventh block of model input (process parameters)
+;
+CONSTANTS
+; 9 - number of constants
+
+ 
+ 'ACTIVE_VERTDISP'
+ 'ACTIVE_TOTDEPTH'
+ 'ACTIVE_DYNDEPTH'
+ 
+ 'ACTIVE_FLMALS'
+ 'ACTIVE_DAYLP'
+ 'ACTIVE_MALDIS'
+ 'ACTIVE_FLMALN'
+ 'ACTIVE_FLMALC'
+ 'ACTIVE_MALGRO'
+ 
+ 'CLOSE_ERR'
+ 'ScaleVDisp'
+ 'MaxIter'
+ 'Tolerance'
+ 'Iteration Report'
+ 
+ 'ONLY_ACTIVE'
+DATA
+ 0.00000e+000 ; ACTIVE_VERTDISP
+ 0.00000e+000 ; ACTIVE_TOTDEPTH
+ 0.00000e+000 ; ACTIVE_DYNDEPTH
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.00000e+000 ; CLOSE_ERR
+ 1.00000e+000 ; ScaleVDisp
+ 1.00000e+002 ; MaxIter
+ 1.00000e-007 ; Tolerance
+ 0.00000e+000 ; Iteration Report
+ 1.00000e+000 ; ONLY_ACTIVE
+;
+ CONSTANTS 'Latitude' DATA 52
+ CONSTANTS 'Vel' DATA 0.075
+ CONSTANTS 'ExtVl' 1
+ CONSTANTS Rad DATA 50.00
+ CONSTANTS Temp DATA 20.0
+ CONSTANTS MBotSeg DATA 10
+ 
+PARAMETERS
+; 2 - number of parameters
+ 'SURF'
+ 'bottomdept'
+ALL
+ ; parameters in binary file
+BINARY_FILE  'SACC_col_gui.par'  ; binary file
+; 0 - number of functions
+SEG_FUNCTIONS
+'VertDisper' ; name of segment function
+ALL
+BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
+;
+#7 ; delimiter for the seventh block
+; 
+; eighth block of model input (initial conditions)
+ MASS/M2 ; unit for inactive substances
+ 1 ; initial conditions follow
+ 2 ; all values with default
+ 17*1.0 ; scale factors
+      1 ;'Continuity'
+	  7 ;'OXY'
+	  1 ;'NH4'
+	  1 ;'NO3'
+	  1 ;'PO4'
+	  30 ;'TIC'
+	  200 ;'ALKA'
+	  1 ;'POC1'
+	  1 ;'POC2'
+	  1 ;'PON1'
+	  1 ;'PON2'
+	  1 ;'POP1'
+	  1 ;'POP2'
+	  5 ;'MALS'
+	  0.5 ;'MALN'
+	  0.05 ;'MALP'
+	  0.2 ;'MALC' 
+	  
+	  0  ; overridings
+;
+;
+ #8 ; delimiter for the eighth block
+; 
+; ninth block of model input (specification of output)
+  1 ; output information in this file
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF' ' '
+  'LocalDepth' ' '
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF'    
+  'LocalDepth'    
+  2 ; all substances and extra output
+31 ; number of extra variables
+  'SURF' ' '
+  'LocalDepth' ' '
+  'daylend' ' '                     ;x daylength default definition                           (-)                 
+  'daylenp' ' '                     ;x daylength of previous day                              (-)                 
+  'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   
+  'MALSM2' ' '                      ;x macroalgae structural in segment                       (gDM/m2)            
+  'MALNM2' ' '                      ;x macroalgae N storage in segment                        (gN/gDM)            
+  'MALPM2' ' '                      ;x macroalgae P storage in segment                        (gP/gDM)            
+  'MALCM2' ' '                      ;x macroalgae C storage in segment                        (gC/gDM)            
+  'MALSNC' ' '                      ;x ratio N:C in whole frond                               (gN/gC)             
+  'MALSPC' ' '                      ;x ratio P:C in whole frond                               (gP/gC)             
+  'LimBioM' ' '                     ;x biomass limitation MALS                                (-)                 
+  'LimPhoM' ' '                     ;x photoperiod limitation MALS                            (-)                 
+  'LimTemM' ' '                     ;x temperature limitation MALS                            (-)                 
+  'LocGroS' ' '                     ;x local growth of MALS                                   (DM/m3/d)           
+  'LocGroN' ' '                     ;x local growth of MALN                                   (gN/m3/d)           
+  'LocGroP' ' '                     ;x local growth of MALP                                   (gP/m3/d)           
+  'LocGroC' ' '                     ;x local growth of MALC                                   (gC/m3/d)     
+  'FrBmMALS' ' '                    ;x Fraction of bottom layer MALS in this seg              (DM/m2)             
+  'BmLayMAL' ' '                    ;x   Biomass of MALS in segment                            (gDM/m2)           
+  'HactMAL' ' '                     ;x length of frond in this column                         (m)                 
+  'AactMAL' ' '                     ;x area of frond in this column                           (m2)          
+  'LimVel' ' '                      ;x velocity limitation                                    (-)                 
+  'LocUpN' ' '                      ;x Local N storage uptake flux                            (gN/m3/d)           
+  'LocUpP' ' '                      ;x Local P storage uptake flux                            (gP/m3/d)   
+  'LocUpC' ' '                      ;x Local C uptake flux                                    (gC/m3/d)       
+  'TotGroS' ' '                     ;x Total growth flux MALS                                 (gDM/m3/d)          
+  'TotGroN' ' '                     ;x Total growth flux MALN                                 (gN/m3/d)           
+  'TotGroP' ' '                     ;x Total growth flux MALP                                 (gP/m3/d)           
+  'TotGroC' ' '                     ;x Total growth flux MALC                                 (gC/m3/d)           
+  'MBotSeg' ' '                     ;x bottom segment for this segment                        (-)          
+      
+  2 ; all substances and extra output
+2 ; number of extra variables
+  'SURF'    
+  'LocalDepth'    
+  1 ; binary history file on
+  1 ; binary map     file on
+  0 ; nefis  history file on
+  0 ; nefis  map     file on
+;
+ #9 ; delimiter for the ninth block
+;
+; Statistical output - if any
+;
+ #10 ; delimiter for the tenth block

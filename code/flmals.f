@@ -115,6 +115,7 @@ C
       REAL(4) TotN
       REAL(4) TotP
       REAL(4) TotC
+      INTEGER chk
 C
 C*******************************************************************************
 C
@@ -126,7 +127,7 @@ C
       IdPrPON2MAL = 4
       IdPrPOP1MAL = 5
       IdPrPOP2MAL = 6
-      IdCnOXYMAL   = 7
+      IdCnOXYMAL  = 7
       
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
@@ -138,10 +139,14 @@ C
 
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
             ! compute growth if maldis has allocated mass to this segment
+            if (ISEG .eq. 86) then
+                chk = 1
+            endif
+            FrBmMALS   = PMSA( IPNT(5) )
+
             IF (FrBmMALS > 0.0) THEN
 
                 ! take from this segment
-                FrBmMALS   = PMSA( IPNT(5) )
                 MALNmin    = PMSA( IPNT(6) )
                 MALPmin    = PMSA( IPNT(7) )
                 MALCmin    = PMSA( IPNT(8) )
@@ -307,8 +312,8 @@ C
                 FL ( IdPrPON1MAL ) = dPrPON1MAL 
                 FL ( IdPrPON2MAL ) = dPrPON2MAL 
                 FL ( IdPrPOP1MAL ) = dPrPOP1MAL 
-                FL ( IdPrPOP2MAL ) = dPrPOP1MAL 
-                FL ( IdCnOXYMAL ) = dCnOXYMAL
+                FL ( IdPrPOP2MAL ) = dPrPOP2MAL 
+                FL ( IdCnOXYMAL )  = dCnOXYMAL
                
                 PMSA( IPNT( 31)   ) =  MALSM2		
                 PMSA( IPNT( 32)   ) =  MALNM2		
@@ -333,7 +338,7 @@ C
          IdPrPON2MAL = IdPrPON2MAL + NOFLUX
          IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
          IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
-         IdCnOXYMAL  = IdCnOXYMAL + NOFLUX
+         IdCnOXYMAL  = IdCnOXYMAL  + NOFLUX
 
          ! IPNT at the first allocation is given for the first segment, I guess
          ! as we iterate it by increm, we are providing the same values but for the

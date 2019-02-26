@@ -2824,13 +2824,13 @@ dDecaydTR2 colsep Decay tracer from source 2                         colsep (g/m
 dDecaydTR3 colsep Decay tracer from source 3                         colsep (g/m3/d)             colsep    -1.00 colsep dTR3       colsep Decay3     \\
 dDecaydTR4 colsep Decay tracer from source 4                         colsep (g/m3/d)             colsep    -1.00 colsep dTR4       colsep Decay4     \\
 dDecaydTR5 colsep Decay tracer from source 5                         colsep (g/m3/d)             colsep    -1.00 colsep dTR5       colsep Decay5     \\
-dPrPOC1M   colsep POC1 production MALS                               colsep (gC/m3/d)            colsep     0.00 colsep POC1       colsep FlMALS     \\
-dPrPOC2M   colsep POC2 production MALS                               colsep (gC/m3/d)            colsep     0.00 colsep POC2       colsep FlMALS     \\
-dPrPON1M   colsep PON1 production MALS                               colsep (gN/m3/d)            colsep     0.00 colsep PON1       colsep FlMALS     \\
-dPrPON2M   colsep PON2 production MALS                               colsep (gN/m3/d)            colsep     0.00 colsep PON2       colsep FlMALS     \\
-dPrPOP1M   colsep POP1 production MALS                               colsep (gP/m3/d)            colsep     0.00 colsep POP1       colsep FlMALS     \\
-dPrPOP2M   colsep POP2 production MALS                               colsep (gP/m3/d)            colsep     0.00 colsep POP2       colsep FlMALS     \\
-dCnOXYM    colsep oxygen production MALS                             colsep (gO/m3/d)            colsep     1.00 colsep OXY        colsep FlMALS     \\
+dPrPOC1M   colsep POC1 production MALS                               colsep (gC/m3/d)            colsep     1.00 colsep POC1       colsep FlMALS     \\
+dPrPOC2M   colsep POC2 production MALS                               colsep (gC/m3/d)            colsep     1.00 colsep POC2       colsep FlMALS     \\
+dPrPON1M   colsep PON1 production MALS                               colsep (gN/m3/d)            colsep     1.00 colsep PON1       colsep FlMALS     \\
+dPrPON2M   colsep PON2 production MALS                               colsep (gN/m3/d)            colsep     1.00 colsep PON2       colsep FlMALS     \\
+dPrPOP1M   colsep POP1 production MALS                               colsep (gP/m3/d)            colsep     1.00 colsep POP1       colsep FlMALS     \\
+dPrPOP2M   colsep POP2 production MALS                               colsep (gP/m3/d)            colsep     1.00 colsep POP2       colsep FlMALS     \\
+dCnOXYM    colsep oxygen production MALS                             colsep (gO/m3/d)            colsep    -1.00 colsep OXY        colsep FlMALS     \\
 dUpMALNO3  colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.00 colsep NO3        colsep FlMALN     \\
 dUpMALNH4  colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.00 colsep NH4        colsep FlMALN     \\
 dUpMALPO4  colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep    -1.00 colsep PO4        colsep FlMALN     \\

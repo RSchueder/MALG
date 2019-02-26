@@ -82,6 +82,7 @@
       ip7  = ipoint( 7)
 
 !     ------------------------------------
+      do 9000 iseg = 1 , noseg
 !     Only constant inputs, so only single calculation of daylength needed to be set to all segments
       time    = pmsa( ip1 )
 !     Conversion Latitude to rads
@@ -195,8 +196,7 @@
       ip5   = ip5   + in5
       ip6   = ip6   + in6
       ip7   = ip7   + in7
-
-
+ 9000 continue
 
       return
       end

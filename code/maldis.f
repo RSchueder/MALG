@@ -94,6 +94,8 @@ c     LOGICAL First
       INTEGER :: LUNREP
 
       INTEGER MBotSeg     ! Bottom Segment for Macrophyte
+      INTEGER chk
+
 !     INTEGER ITopSeg     ! Top    Segment for Macrophyte
 !*******************************************************************************
 
@@ -116,6 +118,7 @@ c     LOGICAL First
             ! assigned from MALGRO
             MBotSeg     = NINT(PMSA( IPNT(  12) ))
 
+            
             ! get biomass from bottom segment
             ! gDM/m2
             MALS = PMSA(IPOINT(5)+(MBOTSEG-1)*INCREM(5))
