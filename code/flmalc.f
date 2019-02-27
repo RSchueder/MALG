@@ -138,8 +138,8 @@ C
                 !END IF
          
                 ! need to take from bottom segment
-                MALS       = PMSA( IPNT(1)+(MBotSeg-1)*INCREM( 1) )
-                MALC       = PMSA( IPNT(2)+(MBotSeg-1)*INCREM( 2) )
+                MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
+                MALC       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 ! check input
 
 !               IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
@@ -220,21 +220,20 @@ C
                 ! look to TIC to see what the balance is
                 
                 dPrMALOXY   = 2.67 * dMALTIC
+                
+                PMSA( IPNT( 30)   ) = LocUpC
 
                 FL ( IdUpMALTIC   ) = dMALTIC
                 FL ( IdPrMALDOC   ) = dMALDOC
                 FL ( IdPrMALOXY   ) = dPrMALOXY
-
-                PMSA( IPNT( 30)   ) = LocUpC
-                
+   
             ENDIF
-          ENDIF
-            
-         IdUpMALTIC   = IdUpMALTIC + NOFLUX
-         IdPrMALDOC   = IdPrMALDOC + NOFLUX
-         IdPrMALOXY   = IdPrMALOXY + NOFLUX
+            ENDIF
 
-         IPNT        = IPNT        + INCREM
+       IdUpMALTIC   = IdUpMALTIC + NOFLUX
+       IdPrMALDOC   = IdPrMALDOC + NOFLUX
+       IdPrMALOXY   = IdPrMALOXY + NOFLUX            
+       IPNT         = IPNT       + INCREM
 
  9000 CONTINUE
 

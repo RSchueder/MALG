@@ -2228,8 +2228,15 @@ MALSPC     colsep ratio P:C in whole frond                           colsep (gP/
 LimBioM    colsep biomass limitation MALS                            colsep (-)                  colsep FlMALS     \\
 LimPhoM    colsep photoperiod limitation MALS                        colsep (-)                  colsep FlMALS     \\
 LimTemM    colsep temperature limitation MALS                        colsep (-)                  colsep FlMALS     \\
+LimMALN    colsep nitrogen storage limitation MALS                   colsep (-)                  colsep FlMALS     \\
+LimMALP    colsep phosphorous storage limitation MALS                colsep (-)                  colsep FlMALS     \\
+LimMALC    colsep carbon storage limitation MALS                     colsep (-)                  colsep FlMALS     \\
+LimNutS    colsep net nutrient storage limitation MALS               colsep (-)                  colsep FlMALS     \\
+LocDecS    colsep local decay  of MALS                               colsep (DM/m3/d)            colsep FlMALS     \\
 BmLayMAL   colsep   Biomass of MALS in segment                       colsep  (gDM/m2)            colsep MALDIS     \\
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\
+LimN       colsep ambient nitrogen limitation for storage            colsep (-)                  colsep FlMALN     \\
+LimP       colsep ambient phosphorous limitation for storage         colsep (-)                  colsep FlMALN     \\
 LocUpN     colsep Local N storage uptake flux                        colsep (gN/m3/d)            colsep FlMALN     \\
 LocUpP     colsep Local P storage uptake flux                        colsep (gP/m3/d)            colsep FlMALN     \\
 LocUpC     colsep Local C uptake flux                                colsep (gC/m3/d)            colsep FlMALC     \\

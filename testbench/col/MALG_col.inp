@@ -16,7 +16,7 @@
 ;
 ; areachar.dat: ../col-hyd/com-col-hyd.srfold
 ;
-  13  4    ; number of active and inactive substances
+  14  4    ; number of active and inactive substances
 
 ; Index  Name
       1 'Continuity'
@@ -32,10 +32,11 @@
 	 11 'PON2'
 	 12 'POP1'
 	 13 'POP2'
-	 14 'MALS'
-	 15 'MALN'
-	 16 'MALP'
-	 17 'MALC'
+	 14 'DOC'
+	 15 'MALS'
+	 16 'MALN'
+	 17 'MALP'
+	 18 'MALC'
 ;
 #1 ; delimiter for the first block
 ; 
@@ -45,33 +46,34 @@
 ; 
  86400  'ddhhmmss' 'ddhhmmss' ; system clock in sec, aux in days
  15.73    ; integration option
-    BAL_NOLUMPPROCESSES BAL_NOLUMPLOADS BAL_LUMPTRANSPORT
+    BAL_NOLUMPPROCESSES BAL_LUMPLOADS BAL_LUMPTRANSPORT
    BAL_NOSUPPRESSSPACE BAL_NOSUPPRESSTIME
  2019/01/01-00:00:00      ; start time 
- 2019/01/07-00:00:00      ; stop time 
+ 2020/01/01-00:00:00      ; stop time 
  0                  ; constant timestep 
- 0000100      ; time step
+ 0010000      ; time step
 ;
  1     ; monitoring points/areas used
- 11
- 'first' 1 1 
-'Seg1'  1  5
-'Seg2'  1  14
-'Seg3'  1  23
-'Seg4'  1  32
-'Seg5'  1  41
-'Seg6'  1  50
-'Seg7'  1  59
-'Seg8'  1  68
-'Seg9'  1  77
+ 12
+'First'  1  1 
+'Last'   1  9
+'Seg1'   1  5
+'Seg2'   1  14
+'Seg3'   1  23
+'Seg4'   1  32
+'Seg5'   1  41
+'Seg6'   1  50
+'Seg7'   1  59
+'Seg8'   1  68
+'Seg9'   1  77
 'Seg10'  1  86
 
  2     ; monitoring transects not used
 ;
 ; start time      stop time     time step 
- 2019/01/01-00:00:00       2019/01/07-00:00:00       0010000      ; monitoring
- 2019/01/01-00:00:00       2019/01/07-00:00:00       0010000      ; map, dump
- 2019/01/01-00:00:00       2019/01/07-00:00:00       0010000      ; history
+ 2019/01/01-00:00:00       2020/01/01-00:00:00       0010000      ; monitoring
+ 2019/01/01-00:00:00       2020/01/01-00:00:00       0010000      ; map, dump
+ 2019/01/01-00:00:00       2020/01/01-00:00:00       0010000      ; history
 ;
 #2 ; delimiter for the second block
 ; 
@@ -239,9 +241,17 @@ DATA
  CONSTANTS 'Latitude' DATA 52
  CONSTANTS 'Vel' DATA 0.075
  CONSTANTS 'ExtVl' 1
- CONSTANTS Rad DATA 50.00
- CONSTANTS Temp DATA 15.0
- CONSTANTS MBotSeg DATA 86
+ ;CONSTANTS Rad DATA 50.00
+ ;CONSTANTS Temp DATA 15.0
+ ;CONSTANTS MBotSeg DATA 86
+ 
+FUNCTIONS
+'Temp'
+LINEAR
+DATA
+INCLUDE 'Terneuzen_temp.inc'
+
+INCLUDE 'VWind_RadSurf.inc'
  
 PARAMETERS
 ; 2 - number of parameters
@@ -262,7 +272,7 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
  MASS/M2 ; unit for inactive substances
  1 ; initial conditions follow
  2 ; all values with default
- 17*1.0 ; scale factors
+ 18*1.0 ; scale factors
       1 ;'Continuity'
 	  7 ;'OXY'
 	  1 ;'NH4'
@@ -276,10 +286,11 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
 	  1 ;'PON2'
 	  1 ;'POP1'
 	  1 ;'POP2'
+	  1 ; 'DOC'
 	  5 ;'MALS'
-	  0.5 ;'MALN'
-	  0.05 ;'MALP'
-	  0.2 ;'MALC' 
+	  0.06 ;'MALN'
+	  0.006 ;'MALP'
+	  0.06 ;'MALC' 
 	  
 	  0  ; overridings
 ;
@@ -297,10 +308,12 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-32 ; number of extra variables
+41 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
+  'Depth' ' '
+  'Temp' ' '
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   
@@ -313,10 +326,17 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
   'LimBioM' ' '                     ;x biomass limitation MALS                                (-)                 
   'LimPhoM' ' '                     ;x photoperiod limitation MALS                            (-)                 
   'LimTemM' ' '                     ;x temperature limitation MALS                            (-)                 
+  'LimN' ' '                        ;x ambient nitrogen limitation for storage                (-)
+  'LimP' ' '                        ;x ambient phosphorous limitation for storage             (-)
+  'LimNutS' ' '                     ;x nutrient storage limitation MALS                       (-)                 
+  'LimMALN' ' '                     ;x nitrogen storage limitation MALS                       (-)
+  'LimMALP' ' '                     ;x phosphorous storage limitation MALS                    (-)
+  'LimMALC' ' '                     ;x carbon storage limitation MALS                         (-)
   'LocGroS' ' '                     ;x local growth of MALS                                   (DM/m3/d)           
   'LocGroN' ' '                     ;x local growth of MALN                                   (gN/m3/d)           
   'LocGroP' ' '                     ;x local growth of MALP                                   (gP/m3/d)           
   'LocGroC' ' '                     ;x local growth of MALC                                   (gC/m3/d)     
+  'LocDecS' ' '                     ;x local decay  of MALS                                   (DM/m3/d)           
   'FrBmMALS' ' '                    ;x Fraction of bottom layer MALS in this seg              (DM/m2)             
   'BmLayMAL' ' '                    ;x   Biomass of MALS in segment                            (gDM/m2)           
   'HactMAL' ' '                     ;x length of frond in this column                         (m)                 

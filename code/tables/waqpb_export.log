@@ -1,6 +1,6 @@
 Using NEW format
     1 lines read from GRPSUB.CSV
-11486 lines read from ITEMS.CSV
+11493 lines read from ITEMS.CSV
   147 lines read from FORTRAN.CSV
   696 lines read from PROCES.CSV
     1 lines read from CONFIG.CSV
@@ -8,7 +8,7 @@ Using NEW format
   465 lines read from CON_SUB.CSV
 14967 lines read from INPUTS.CSV
  INPUTS.CSV sorted
- 3997 lines read from OUTPUTS.CSV
+ 4004 lines read from OUTPUTS.CSV
  OUTPUTS.CSV sorted
  2103 lines read from OUTPFLX.CSV
  OUTPFLX.CSV sorted

@@ -13,8 +13,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(43)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(43)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(48)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(48)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -23,7 +23,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 43)   !    Local work array for the pointering
+      INTEGER IPNT( 48)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -108,10 +108,10 @@ C
       REAL(4) coeff
       REAL(4) mu
       real(4) mrt
-      REAL(4) Clim
-      REAL(4) Nlim
-      REAL(4) Plim
-      REAL(4) NutLim
+      REAL(4) LimC
+      REAL(4) LimN
+      REAL(4) LimP
+      REAL(4) LimNut
       REAL(4) TotN
       REAL(4) TotP
       REAL(4) TotC
@@ -139,9 +139,7 @@ C
 
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
             ! compute growth if maldis has allocated mass to this segment
-            if (ISEG .eq. 86) then
-                chk = 1
-            endif
+
             FrBmMALS   = PMSA( IPNT(5) )
 
             IF (FrBmMALS > 0.0) THEN
@@ -178,10 +176,10 @@ C
                 !END IF
 
                 ! need to take from bottom segment
-                MALS       = PMSA( IPNT(1)+(MBotSeg-1)*INCREM( 1) )
-                MALN       = PMSA( IPNT(2)+(MBotSeg-1)*INCREM( 2) )
-                MALP       = PMSA( IPNT(3)+(MBotSeg-1)*INCREM( 3) )
-                MALC       = PMSA( IPNT(4)+(MBotSeg-1)*INCREM( 4) )
+                MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
+                MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
+                MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
+                MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
                 ! mass in this water column
                 
                 ! need to convert substances of gN/m2 to gN/gDM
@@ -202,7 +200,9 @@ C
                 MALS = MALS * FrBmMALS 
                 lengthLoc = HactMAL * FrBmMALS
                 areaLoc = AactMAL * FrBmMALS
-               
+                IF (ISEG .eq. 86) THEN
+                   chk = 1
+                ENDIF              
                 ! density limitation
                 ! based on how this model is made it makes sense to make the
                 ! density limitation based on length rather than fatness
@@ -221,7 +221,7 @@ C
                 ! formulation here
                 ! if the plant is too big overall then all segments suffer
                 
-                LimDen=MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
+                LimDen =MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
                 
                 ! temperature limitation
 
@@ -244,7 +244,8 @@ C
                 ! decay is calculated as a percent of the total frond decay
                 ! this superfluous because the next 2 lines will be the same for all
                 ! segments in this column
-                coeff = exp(mrtMAL*AactMAL)
+                ! m2 to dm2
+                coeff = exp(mrtMAL*AactMAL*100)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
@@ -265,13 +266,23 @@ C
 
                 ! growth
                 ! mortality products are produced regardless 
+                IF (MALN .lt. MALNmin) THEN
+                    write(*,*) 'ERROR: MALN (gN/gDM) LESS THAN MALNmin'
+                ENDIF
+                IF (MALP .lt. MALPmin) THEN
+                    write(*,*) 'ERROR: MALP (gP/gDM) LESS THAN MALPmin'
+                ENDIF
+                IF (MALC .lt. MALCmin) THEN
+                    write(*,*) 'ERROR: MALC (gC/gDM) LESS THAN MALCmin'
+                ENDIF           
                 
-                Clim = 1-MALCmin/MALC
-                Nlim = 1-MALNmin/MALN
-                Plim = 1-MALPmin/MALP
-                NutLim = MIN(Nlim,Clim,Plim)
+                LimN = MAX(1-MALNmin/MALN, 0.0)
+                LimP = MAX(1-MALPmin/MALP, 0.0)
+                LimC = MAX(1-MALCmin/MALC, 0.0)
+
+                LimNut = MIN(LimN,LimC,LimP)
                 
-                mu = LimDen * LimPho * LimTemp * NutLim
+                mu = LimDen * LimPho * LimTemp * LimNut
                 IF (mu .gt. 0.0) THEN
                     ! gDM per day per m3
                     dGrowMALS = MALS * (mu)/Depth
@@ -321,30 +332,29 @@ C
                 PMSA( IPNT( 34)   ) =  MALCM2		
                 PMSA( IPNT( 35)   ) =  MALSNC		
                 PMSA( IPNT( 36)   ) =  MALSPC		
-                PMSA( IPNT( 37)   ) =  LimBioMALS  
-                PMSA( IPNT( 38)   ) =  LimPhoMALS  
-                PMSA( IPNT( 39)   ) =  LimTemMALS 
-                PMSA( IPNT( 40)   ) =  LocGroS     
-                PMSA( IPNT( 41)   ) =  LocGroN    
-                PMSA( IPNT( 42)   ) =  LocGroP    
-                PMSA( IPNT( 43)   ) =  LocGroC  
-                
+                PMSA( IPNT( 37)   ) =  LimDen
+                PMSA( IPNT( 38)   ) =  LimPho  
+                PMSA( IPNT( 39)   ) =  LimTemp 
+                PMSA( IPNT( 40)   ) =  LimN  
+                PMSA( IPNT( 41)   ) =  LimP  
+                PMSA( IPNT( 42)   ) =  LimC   
+                PMSA( IPNT( 43)   ) =  LimNut  
+                PMSA( IPNT( 44)   ) =  LocGroS     
+                PMSA( IPNT( 45)   ) =  LocGroN    
+                PMSA( IPNT( 46)   ) =  LocGroP    
+                PMSA( IPNT( 47)   ) =  LocGroC  
+                PMSA( IPNT( 48)   ) =  dDecayMALS  
+
             ENDIF
          ENDIF
-
-         IdPrPOC1MAL = IdPrPOC1MAL + NOFLUX
-         IdPrPOC2MAL = IdPrPOC2MAL + NOFLUX
-         IdPrPON1MAL = IdPrPON1MAL + NOFLUX
-         IdPrPON2MAL = IdPrPON2MAL + NOFLUX
-         IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
-         IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
-         IdCnOXYMAL  = IdCnOXYMAL  + NOFLUX
-
-         ! IPNT at the first allocation is given for the first segment, I guess
-         ! as we iterate it by increm, we are providing the same values but for the
-         ! next segment
-         
-         IPNT        = IPNT        + INCREM
+          IdPrPOC1MAL = IdPrPOC1MAL + NOFLUX
+          IdPrPOC2MAL = IdPrPOC2MAL + NOFLUX
+          IdPrPON1MAL = IdPrPON1MAL + NOFLUX
+          IdPrPON2MAL = IdPrPON2MAL + NOFLUX
+          IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
+          IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
+          IdCnOXYMAL  = IdCnOXYMAL  + NOFLUX         
+          IPNT        = IPNT        + INCREM
 
  9000 CONTINUE
 

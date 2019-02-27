@@ -35,8 +35,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(16)  ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(16)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(17)  ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(17)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -45,7 +45,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT(16)    !    Local work array for the pointering
+      INTEGER IPNT(17)    !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 !*******************************************************************************
 !
@@ -93,21 +93,75 @@ c     LOGICAL First
 
       INTEGER :: LUNREP
 
-      INTEGER MBotSeg     ! Bottom Segment for Macrophyte
+      INTEGER IQ              !        Loop counter
+      INTEGER Ifrom           !        From Segment
+      INTEGER Ito             !        From Segment
+      LOGICAL First           !        is the first time
+      INTEGER MBotSeg         !        Bottom Segment for Macrophyte      
       INTEGER chk
 
-!     INTEGER ITopSeg     ! Top    Segment for Macrophyte
 !*******************************************************************************
+      DATA    FIRST /.TRUE./
+      SAVE    FIRST
+!
+!*******************************************************************************
+!     ! Initialise variable indicating BOTTOM SEGMENT
+      ! If this is the first time doing this, i.e. the first segment and 
+      ! first time step
+      ! 10 is mbotseg in input
+      ! 15 is mbotseg in ourput
+      IF (FIRST) THEN
+      
+          ! local array point assignment
+          ! normally we do the entire array, but now we only do it for the
+          ! 21st element? This is weird because I thought IPOINT was 
+          ! a pointer for the first element of a given segment in the PMSA array
+          ! this only makes sense if the IPOINT is a local segment pointer
+          ! unless this is not a scalar, but a vector!
+          ! do not see how it could be a vector as PMSA(IPNT(x)) is assigned to a scalar value
+          ! the IPNT typically increments each segment 
+          IPNT(17) = IPOINT(17)
+          ! for all segs
+          DO 9001 ISEG = 1,NOSEG
+              ! assign MbotSeg output for all segs = -1, therefore invalid
+             PMSA( IPNT(17) ) = -1
+             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
+             ! if it is a bottom seg, its ibot seg is itself
+             IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
+                PMSA( IPNT( 17) ) = ISEG
+             ENDIF
+             IPNT(17) = IPNT(17) + INCREM(17)
+9001  CONTINUE
+              
+    !     Loop to find bottom segment for water segments
+          ! for the length of all exchanges, to length of all horizontal exchanges + 1, decreasinf by 1
+          ! this means for the number of vertical exchanges!
+          DO 9005 IQ = NOQ1+NOQ2+NOQ3, NOQ1 + NOQ2 +1, -1
+             Ifrom  = IEXPNT(1,IQ)
+             Ito    = IEXPNT(2,IQ)
+             if (ifrom.gt.0.and.ito.gt.0) then
+                MBotSeg = nint(PMSA(IPOINT(17)+(ITO-1)*INCREM(17)))
+                IF ( MBotSeg .GT.0 ) THEN
+                   PMSA(IPOINT(17)+(IFROM-1)*INCREM(17)) = real(MBotSeg)
+                ENDIF
+             ENDIF
+9005      CONTINUE  
+      ENDIF
 
+!*******************************************************************************    
 
       IPNT = IPOINT
 !     Loop over segments
       DO 9000 ISEG = 1 , NOSEG
 
 !        Check on active segments
-         CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
+        CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
+         
+         ! if active
          IF (IKMRK1.EQ.1) THEN
 
+            CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2) 
+            
             Surf        = PMSA( IPNT(  1) )
             Depth       = PMSA( IPNT(  2) )
             TotalDepth  = PMSA( IPNT(  3) )
@@ -115,15 +169,14 @@ c     LOGICAL First
             HmaxMAL     = PMSA( IPNT(  9) )
             LinDenMAL   = PMSA( IPNT(  10) )
             ArDenMAL    = PMSA( IPNT(  11) )
-            ! assigned from MALGRO
             MBotSeg     = NINT(PMSA( IPNT(  12) ))
 
             
             ! get biomass from bottom segment
             ! gDM/m2
-            MALS = PMSA(IPOINT(5)+(MBOTSEG-1)*INCREM(5))
+            MALS = PMSA(IPNT(5)+(MBotSeg-ISEG)*INCREM(5))
 
-!           Limit the maximum height of the plants to the water depth
+    !           Limit the maximum height of the plants to the water depth
             absHmaxMAL     = min( abs(HmaxMAL), TotalDepth )
 
             ! actual height is horizontal density divided by length density
@@ -132,7 +185,11 @@ c     LOGICAL First
             
             Hact        = min(MALS/LinDenMAL , TotalDepth - 0.001 )
             Hact        = max(Hact, 0.01)
-            Aact        = min(MALS * Surf / ArDenMAL, 0.01)
+            Aact        = max(MALS * Surf / ArDenMAL, 1.0d-7)
+            IF (ISEG .eq. 86) THEN
+                chk = 1
+            ENDIF
+            
 
             Hactd = 1.0 ! Represents the entire length of the plants
 
@@ -142,7 +199,7 @@ c     LOGICAL First
             !
             OriginalDepth = TotalDepth
             if ( HmaxMAL < 0.0 ) then
-               TotalDepth = Hact
+                TotalDepth = Hact
             endif
               
             Zm = TotalDepth - Hact
@@ -165,28 +222,32 @@ c     LOGICAL First
                 BmlayMALS = (A/2)  * (Z2**2 -Zm**2) + B * (Z2 -Zm)
             Endif
 
-            If (MALS .GT. 0) Then
-               FrBmMALS = BmLayMALS / MALS
+            If (BmLayMALS .GT. 0) Then
+                FrBmMALS = BmLayMALS / MALS
             Else
-               If ( iseg .eq. MBotseg ) Then
-                  FrBmMALS = 1.0
-               Else
-                  FrBmMALS = 0.0
-               Endif
+                If ( iseg .eq. MBotseg ) Then
+                    FrBmMALS = 1.0
+                Else
+                    FrBmMALS = 0.0
+                Endif
             Endif
 
-!           Return Outputparameters to delwaq
+    !       Return Outputparameters to delwaq
 
             PMSA( IPNT(13) ) = FrBmMALS
             PMSA( IPNT(14) ) = BmLayMALS / Depth
+        
             If ( HmaxMAL > 0.0 ) Then
                 PMSA( IPNT(15) ) = Hact
             Else
                 PMSA( IPNT(15) ) = OriginalDepth
             Endif
+        
             PMSA( IPNT(16) ) = Aact
-        ENDIF
-
+            PMSA( IPNT(17) ) = MBotSeg
+         ENDIF
+         
+      
         IPNT = IPNT + INCREM
 
  9000 CONTINUE

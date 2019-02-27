@@ -1236,7 +1236,7 @@ daylenm    colsep maximum daylength at this latitude                 colsep (-) 
 FrBmMALS   colsep Fraction of bottom layer MALS in this seg          colsep (DM/m2)              colsep MALDIS     \\
 HactMAL    colsep length of frond in this column                     colsep (m)                  colsep MALDIS     \\
 AactMAL    colsep area of frond in this column                       colsep (m2)                 colsep MALDIS     \\
-MBotSeg    colsep bottom segment for this segment                    colsep (-)                  colsep MalGro     \\
+MBotSeg    colsep bottom segment for this segment                    colsep (-)                  colsep MALDIS     \\
 LocGroS    colsep local growth of MALS                               colsep (DM/m3/d)            colsep FlMALS     \\
 LocGroN    colsep local growth of MALN                               colsep (gN/m3/d)            colsep FlMALS     \\
 LocGroP    colsep local growth of MALP                               colsep (gP/m3/d)            colsep FlMALS     \\

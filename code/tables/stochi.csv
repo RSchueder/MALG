@@ -2832,12 +2832,12 @@ stocfl,stocsu,stocsc
 "dPrPOP1M  ","POP1      ",   1.00000
 "dPrPOP2M  ","POP2      ",   1.00000
 "dCnOXYM   ","OXY       ",  -1.00000
-"dUpMALNO3 ","NO3       ",  -1.00000
-"dUpMALNH4 ","NH4       ",  -1.00000
-"dUpMALPO4 ","PO4       ",  -1.00000
+"dUpNO3M   ","NO3       ",  -1.00000
+"dUpNH4M   ","NH4       ",  -1.00000
+"dUpPO4M   ","PO4       ",  -1.00000
 "dMALTIC   ","TIC       ",  -1.00000
 "dMALDOC   ","DOC       ",   1.00000
-"dPrMALOXY ","OXY       ",   1.00000
+"dPrOXYM   ","OXY       ",   1.00000
 "dGrMALS   ","MALS      ",   1.00000
 "dGrMALN   ","MALN      ",   1.00000
 "dGrMALP   ","MALP      ",   1.00000

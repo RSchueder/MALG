@@ -12,7 +12,7 @@ Processes, Checked : Yes
 Initial conditions, Checked : Yes       
 
 Boundaries, Checked : Yes       
-     Boundary definitions  : com-col-hyd.bnd
+     Boundary definitions  : bnd.bnd
      Astronomical flow conditions : none
      Astronomical corrections : none
      Harmonic flow conditions : none
@@ -29,7 +29,7 @@ Physical parameters, Checked : Yes
      Uniform wind data     : none
      Space varying wind data : none
 
-Numerical parameters, Checked : Yes       
+Numerical parameters, Checked : No        
 
 Operations, Checked : Yes       
      Discharge definitions : none
@@ -37,7 +37,7 @@ Operations, Checked : Yes
      Dredging and dumping data : none
 
 Monitoring, Checked : Yes       
-     Observation points    : obs.obs
+     Observation points    : none
      Drogues               : none
      Cross-sections        : none
 

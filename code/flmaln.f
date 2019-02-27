@@ -12,8 +12,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(28)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(28)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(30)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(30)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -22,7 +22,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 28)   !    Local work array for the pointering
+      INTEGER IPNT( 30)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -93,6 +93,7 @@ C
          IF (IKMRK1.EQ.1) THEN
 
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
+            FrBmMALS	    =	PMSA( IPNT(7) )
 
             IF (FrBmMALS > 0.0) THEN
               
@@ -100,7 +101,6 @@ C
                 NO3	    =	PMSA( IPNT(4) )
                 NH4	    =	PMSA( IPNT(5) )
                 PO4       =   PMSA( IPNT(6) )
-                FrBmMALS	=	PMSA( IPNT(7) )
                 ArDenMAL	=	PMSA( IPNT(8) )
                 
                 MALNmin	=	PMSA( IPNT(9) )
@@ -125,9 +125,12 @@ C
                 !  CALL DHERR2('MBotSeg',PMSA( IPNT( 22) ),ISEG,'FLMALN')
 
                 ! need to take from bottom segment
-                MALS       = PMSA( IPNT(1)+(MBotSeg-1)*INCREM( 1) )
-                MALN       = PMSA( IPNT(2)+(MBotSeg-1)*INCREM( 2) )
-                MALP       = PMSA( IPNT(3)+(MBotSeg-1)*INCREM( 3) )
+                MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
+                MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
+                ! was
+                ! MALP       = PMSA( IPNT(3)+(MBotSeg-1)*INCREM( 3) )
+                ! now
+                MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 
                 ! need to convert substances of gN/m2 to gN/gDM
                 ! to be consistent with constants from Broch
@@ -149,6 +152,14 @@ C
                 LimVel = 1 - exp(-Vel/Vel65)
                 ! nitrogen hunger will be the same along length
                 ! nutrient abundance will not be
+                
+                IF (MALN .gt. MALNmax) THEN
+                    write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
+                ENDIF
+                IF (MALP .gt. MALPmax) THEN
+                    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
+                ENDIF                
+                
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
                 IF (LimN .lt. 0.0) THEN
                     LimN = 0.0
@@ -185,17 +196,18 @@ C
                 FL ( IdUpMALPO4 ) = dUpMALPO4 
      
                 PMSA( IPNT( 26)   ) =  LimVel		
-                PMSA( IPNT( 27)   ) =  LocUpN	
-                PMSA( IPNT( 28)   ) =  LocUpP		
+                PMSA( IPNT( 27)   ) =  LimN		
+                PMSA( IPNT( 28)   ) =  LimP		
+                PMSA( IPNT( 29)   ) =  LocUpN	
+                PMSA( IPNT( 30)   ) =  LocUpP	
                 
             ENDIF
          ENDIF
-
-         IdUpMALNO3  = IdUpMALNO3 + NOFLUX
-         IdUpMALNH4  = IdUpMALNH4 + NOFLUX
-         IdUpMALPO4  = IdUpMALPO4 + NOFLUX
-
-         IPNT        = IPNT        + INCREM
+         
+        IdUpMALNO3  = IdUpMALNO3 + NOFLUX
+        IdUpMALNH4  = IdUpMALNH4 + NOFLUX
+        IdUpMALPO4  = IdUpMALPO4 + NOFLUX
+        IPNT        = IPNT        + INCREM
 
  9000 CONTINUE
 

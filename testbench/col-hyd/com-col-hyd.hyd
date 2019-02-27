@@ -1,5 +1,5 @@
 file-created-by  Deltares, FLOW2D3D Version 6.02.13.7545M, Sep 13 2017, 21:16:30
-file-creation-date  2019-02-25, 14:34:02 
+file-creation-date  2019-02-27, 16:09:06 
 task      full-coupling
 geometry  curvilinear-grid
 horizontal-aggregation       automatic
@@ -12,11 +12,11 @@ description
 end-description
 reference-time           '20190101000000'
 hydrodynamic-start-time  '20190101000000'
-hydrodynamic-stop-time   '20190107000000'
-hydrodynamic-timestep    '00000000000100'
+hydrodynamic-stop-time   '20200101000000'
+hydrodynamic-timestep    '00000000001000'
 conversion-ref-time      '20190101000000'
 conversion-start-time     '20190101000000'
-conversion-stop-time     '20190107000000'
+conversion-stop-time     '20200101000000'
 conversion-timestep      '00000000010000'
 grid-cells-first-direction                    5
 grid-cells-second-direction                   5
@@ -38,7 +38,7 @@ surfaces-file            'com-col-hyd.srfold'
 depths-file              'com-col-hyd.dps'
 total-grid-file          'com-col-hyd.lgt'
 discharges-file          'com-col-hyd.src'
-chezy-coefficients-file  none
+chezy-coefficients-file  'com-col-hyd.chz'
 shear-stresses-file      'com-col-hyd.tau'
 walking-discharges-file  'com-col-hyd.wlk'
 attributes-file          'com-col-hyd.atr'

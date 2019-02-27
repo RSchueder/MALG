@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Tue Feb 26 15:40:31 2019
+        !COMPILER-GENERATED INTERFACE MODULE: Wed Feb 27 18:10:53 2019
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE MALDIS__genmod
@@ -7,8 +7,8 @@
      &IKNMRK,NOQ1,NOQ2,NOQ3,NOQ4)
               REAL(KIND=4) :: PMSA(*)
               REAL(KIND=4) :: FL(*)
-              INTEGER(KIND=4) :: IPOINT(16)
-              INTEGER(KIND=4) :: INCREM(16)
+              INTEGER(KIND=4) :: IPOINT(17)
+              INTEGER(KIND=4) :: INCREM(17)
               INTEGER(KIND=4) :: NOSEG
               INTEGER(KIND=4) :: NOFLUX
               INTEGER(KIND=4) :: IEXPNT(4,*)

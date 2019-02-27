@@ -10,7 +10,7 @@ parameter            'total discharge (t)  end A'               unit '[m3/s]'
 parameter            'total discharge (t)  end B'               unit '[m3/s]'
 records-in-table     2
  0.0000000e+000  1.4880000e-004  9.9999900e+002
- 8.6400000e+003  1.4880000e-004  9.9999900e+002
+ 5.2560000e+005  1.4880000e-004  9.9999900e+002
 table-name           'Boundary Section : 2'
 contents             'Uniform             '
 location             'Out                 '
@@ -23,4 +23,4 @@ parameter            'water elevation (z)  end A'               unit '[m]'
 parameter            'water elevation (z)  end B'               unit '[m]'
 records-in-table     2
  0.0000000e+000  0.0000000e+000  0.0000000e+000
- 8.6400000e+003  0.0000000e+000  0.0000000e+000
+ 5.2560000e+005  0.0000000e+000  0.0000000e+000
