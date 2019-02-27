@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioUserFile ProjectType="typeDynamicLibrary" ProjectCreator="Intel Fortran" Keyword="Dll" Version="11.0" ProjectIdGuid="{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}">
+	<Configurations>
+		<Configuration Name="Debug|Win32"/>
+		<Configuration Name="Release|Win32"/>
+		<Configuration Name="Debug|x64" Command="d:\projects\IMPAQT\MALG\exe\dwaq\bin\delwaq2.exe" CommandArguments="MALG_col.inp -p ..\..\code\tables\proc_def MALG_col.inp -openpb ..\..\code\x64\Debug\D3Dwaq_OpenPL.dll" WorkingDirectory="d:\projects\IMPAQT\MALG\testbench\col\"/>
+		<Configuration Name="Release|x64"/></Configurations></VisualStudioUserFile>
