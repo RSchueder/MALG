@@ -3,8 +3,6 @@
      +                        NOQ3   , NOQ4   )
 !DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'FLMALS' :: FLMALS
 C
-! was called macrop
-! should have been based on macnut actually!
 C*******************************************************************************
 C
       IMPLICIT NONE
@@ -199,10 +197,7 @@ C
    
                 MALS = MALS * FrBmMALS 
                 lengthLoc = HactMAL * FrBmMALS
-                areaLoc = AactMAL * FrBmMALS
-                IF (ISEG .eq. 86) THEN
-                   chk = 1
-                ENDIF              
+                areaLoc = AactMAL * FrBmMALS          
                 ! density limitation
                 ! based on how this model is made it makes sense to make the
                 ! density limitation based on length rather than fatness
@@ -251,6 +246,8 @@ C
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
                 ! gDM per day per m3
                 ! local decay
+                ! since all segments are doing this, only send the fraction
+                ! as it will be compared to the local growth
                 dDecayMALS = MALS * mrt * FrBmMALS/Depth
                
                 ! production organic material
@@ -265,7 +262,7 @@ C
                 dPrPOP2MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC2MALS
 
                 ! growth
-                ! mortality products are produced regardless 
+                ! mortality products are produced regardless of net prod-mort
                 IF (MALN .lt. MALNmin) THEN
                     write(*,*) 'ERROR: MALN (gN/gDM) LESS THAN MALNmin'
                 ENDIF
@@ -290,7 +287,6 @@ C
                     dGrowMALS = 0.0
                 ENDIF
                 
-               
                 ! uptake from storage
                 IF (dGrowMALS .gt. 0.0) THEN
                     ! gN/m3 d
@@ -317,8 +313,14 @@ C
                 ! mineralization of stored carbon consumes oxygen
                 
                 dCnOXYMAL   = dCtrMALS * 2.67
-
-                FL ( IdPrPOC1MAL ) = dPrPOC1MAL 
+                
+                ! If I want to send the fluxes to the bottom segment I do this
+                ! FL ( IdPrPOC1MAL + MBotSeg-ISEG*NOFLUX) = dPrPOC1MAL 
+                ! but how to do x = x + y instead of x = y?
+                ! like this?
+                ! FL ( IdPrPOC1MAL + MBotSeg-ISEG*NOFLUX) = FL ( IdPrPOC1MAL + MBotSeg-ISEG*NOFLUX) + dPrPOC1MAL
+                
+                FL ( IdPrPOC1MAL) = dPrPOC1MAL 
                 FL ( IdPrPOC2MAL ) = dPrPOC2MAL 
                 FL ( IdPrPON1MAL ) = dPrPON1MAL 
                 FL ( IdPrPON2MAL ) = dPrPON2MAL 
@@ -346,7 +348,8 @@ C
                 PMSA( IPNT( 48)   ) =  dDecayMALS  
 
             ENDIF
-         ENDIF
+          ENDIF
+            
           IdPrPOC1MAL = IdPrPOC1MAL + NOFLUX
           IdPrPOC2MAL = IdPrPOC2MAL + NOFLUX
           IdPrPON1MAL = IdPrPON1MAL + NOFLUX

@@ -3,8 +3,6 @@
      +                        NOQ3   , NOQ4   )
 !DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'FLMALC' :: FLMALC
 C
-! was called macrop
-! should have been based on macnut actually!
 C*******************************************************************************
 C
       IMPLICIT NONE
@@ -90,7 +88,7 @@ C
 C
 C*******************************************************************************
 C
-      IPNT        = IPOINT
+      IPNT         = IPOINT
      
       IdUpMALTIC   = 1
       IdPrMALDOC   = 2
@@ -102,10 +100,10 @@ C
          ! if active
          IF (IKMRK1.EQ.1) THEN
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
+            FrBmMALS   = PMSA( IPNT(  3) )
 
             IF (FrBmMALS > 0.0) THEN
                 ! take from current segment
-                FrBmMALS   = PMSA( IPNT(  3) )
                 MALCmin    = PMSA( IPNT(  4) )
                 CDRatMALS  = PMSA( IPNT(  5) ) 
                 ArDenMAL   = PMSA( IPNT(  6) )
@@ -133,17 +131,10 @@ C
                 LocalDepth = PMSA( IPNT(  29) )
               
                 MBotSeg    = nint(PMSA( IPNT( 25) ))
-                !IF (MBotSeg .le. 0) THEN
-                !  CALL DHERR2('MBotSeg',PMSA( IPNT( 27) ),ISEG,'FLMALS')
-                !END IF
          
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
                 MALC       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
-                ! check input
-
-!               IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
-!               IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
               
                 ! need to convert substances of gC/m2 to gC/gDM
                 ! to be consistent with constants from Broch
@@ -167,7 +158,7 @@ C
                 ! assumption is data supplied consistent with saturation value
                 I = I * 4.57 ! umol/m2s
                 Isat = Isat * 4.57 ! umol/m2s
-                Temp = Temp + 273
+                Temp = Temp + 273.0
                 ! P1 = P1 / 2400.0
                 Tpl = 283.0
                 Tph = 303.0
@@ -177,6 +168,8 @@ C
      &           exp((Taph/Tph) - (Taph/Temp)))
                 
                 ! solve for beta using newton's method
+                ! for the moment we do not do this due to complexity of the expression
+                ! instead we choose a good value for moderate growth conditions
                 ! if we were we could need to use original units for P1 Pmax, alpha and beta
                 beta = 1.023d-7
                 ! P1 = P1 / 2400.0
@@ -199,7 +192,6 @@ C
                 R = R1 * exp(Tar/Tr1 - Tar/Temp)
                
                 ! exudation gC/m3 d
-                
                 E = 1-exp(exuMALC*(MALCmin - MALC))
                 
                 ! effect on TIC is net of production and maintenance respiration
@@ -207,9 +199,10 @@ C
                 ! TIC gets converted (lost) to DOC in exudate
 
                 dMALTIC = ((MALS/ArDenMAL)/Depth) * (P - R) 
+                
+                ! NEED ALKA HERE!
 
                 ! exudate is produced as DOC, E is a fraction of production
-                
                 dMALDOC = ((MALS/ArDenMAL)/Depth) * P * E 
                 
                 ! uptake into storage

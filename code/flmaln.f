@@ -102,7 +102,6 @@ C
                 NH4	    =	PMSA( IPNT(5) )
                 PO4       =   PMSA( IPNT(6) )
                 ArDenMAL	=	PMSA( IPNT(8) )
-                
                 MALNmin	=	PMSA( IPNT(9) )
                 MALNmax	=	PMSA( IPNT(10) )
                 MALPmin	=	PMSA( IPNT(11) )
@@ -121,15 +120,10 @@ C
                 Depth	    =	PMSA( IPNT(25) )
 
                 MBotSeg    = nint(PMSA( IPNT( 22) ))
-                !IF (MBotSeg .le. 0)
-                !  CALL DHERR2('MBotSeg',PMSA( IPNT( 22) ),ISEG,'FLMALN')
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
-                ! was
-                ! MALP       = PMSA( IPNT(3)+(MBotSeg-1)*INCREM( 3) )
-                ! now
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 
                 ! need to convert substances of gN/m2 to gN/gDM
@@ -142,11 +136,6 @@ C
                 ! since the storage is relative the amount of DM,
                 ! we calculate how much DM there is in this segment
                 MALS = MALS * FrBmMALS
-                
-                ! check input
-
-!                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
-!                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
                 
                 ! velocity limitation
                 LimVel = 1 - exp(-Vel/Vel65)
@@ -170,8 +159,8 @@ C
                 ENDIF
                 LimP = 1.0
                 
-                ! max rate is gN/m2 plant day, but m2 is m2 of plant
-                ! not segment
+                ! max rate is gN/m2 plant day, but m2 is m2 of plant,
+                ! not segment (SURF)
                 ! we try to achieve gN/m3 water d
                 ! Broch achieves gN/gDM day
                 ! we multimply this by MALS * area density (g/m2)
@@ -207,7 +196,8 @@ C
         IdUpMALNO3  = IdUpMALNO3 + NOFLUX
         IdUpMALNH4  = IdUpMALNH4 + NOFLUX
         IdUpMALPO4  = IdUpMALPO4 + NOFLUX
-        IPNT        = IPNT        + INCREM
+        
+        IPNT        = IPNT       + INCREM
 
  9000 CONTINUE
 

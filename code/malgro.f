@@ -85,8 +85,10 @@
       IdGrMALN = 2 
       IdGrMALP = 3 
       IdGrMALC = 4 
-        ! right now I do not know how to save an array to be stored later (only a value)
-        ! so I do this every time step, will be much to time intensive!
+      ! right now I do not know how to save an array to be stored later (only a value)
+      ! so I do this every time step, will be much to time intensive!
+      ! hopefully this can be fixed by assigning an incremented index in the flux array
+      ! for FlMALS, FlMALN, and FlMALC
       DO 9000 ISEG = 1,NOSEG
         CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
            IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
@@ -120,15 +122,13 @@
               FL ( IdGrMALP ) = dMALP  
               FL ( IdGrMALC ) = dMALC 
               
-          END IF
+           END IF
+           
           IdGrMALS = IdGrMALS + NOFLUX
           IdGrMALN = IdGrMALN + NOFLUX
           IdGrMALP = IdGrMALP + NOFLUX
           IdGrMALC = IdGrMALC + NOFLUX
-              !IdGrMALS = IdGrMALS + NFLUX
-              !IdGrMALN = IdGrMALN + NFLUX
-              !IdGrMALP = IdGrMALP + NFLUX
-              !IdGrMALC = IdGrMALC + NFLUX             
+         
           IPNT     = IPNT     + INCREM
 
  9000 CONTINUE

@@ -105,37 +105,23 @@ c     LOGICAL First
       SAVE    FIRST
 !
 !*******************************************************************************
-!     ! Initialise variable indicating BOTTOM SEGMENT
-      ! If this is the first time doing this, i.e. the first segment and 
-      ! first time step
-      ! 10 is mbotseg in input
-      ! 15 is mbotseg in ourput
-      IF (FIRST) THEN
-      
-          ! local array point assignment
-          ! normally we do the entire array, but now we only do it for the
-          ! 21st element? This is weird because I thought IPOINT was 
-          ! a pointer for the first element of a given segment in the PMSA array
-          ! this only makes sense if the IPOINT is a local segment pointer
-          ! unless this is not a scalar, but a vector!
-          ! do not see how it could be a vector as PMSA(IPNT(x)) is assigned to a scalar value
-          ! the IPNT typically increments each segment 
+      IF (FIRST) THEN 
           IPNT(17) = IPOINT(17)
           ! for all segs
           DO 9001 ISEG = 1,NOSEG
-              ! assign MbotSeg output for all segs = -1, therefore invalid
+             ! assign MbotSeg output for all segs = -1, therefore initially invalid
              PMSA( IPNT(17) ) = -1
              CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
-             ! if it is a bottom seg, its ibot seg is itself
+             ! if it is a bottom seg, its mbot seg is itself
              IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
                 PMSA( IPNT( 17) ) = ISEG
              ENDIF
              IPNT(17) = IPNT(17) + INCREM(17)
-9001  CONTINUE
+9001      CONTINUE
               
-    !     Loop to find bottom segment for water segments
-          ! for the length of all exchanges, to length of all horizontal exchanges + 1, decreasinf by 1
-          ! this means for the number of vertical exchanges!
+          ! Now all bottom segs have identified themselves as the Mbotseg
+          ! Loop to find bottom segment for attribute 1&2 water segments
+          ! for the number of vertical exchanges, which is equal to all non attribute 3 segments
           DO 9005 IQ = NOQ1+NOQ2+NOQ3, NOQ1 + NOQ2 +1, -1
              Ifrom  = IEXPNT(1,IQ)
              Ito    = IEXPNT(2,IQ)
@@ -170,17 +156,16 @@ c     LOGICAL First
             LinDenMAL   = PMSA( IPNT(  10) )
             ArDenMAL    = PMSA( IPNT(  11) )
             MBotSeg     = NINT(PMSA( IPNT(  12) ))
-
-            
+       
             ! get biomass from bottom segment
             ! gDM/m2
             MALS = PMSA(IPNT(5)+(MBotSeg-ISEG)*INCREM(5))
 
-    !           Limit the maximum height of the plants to the water depth
+    !       Limit the maximum height of the plants to the water depth
             absHmaxMAL     = min( abs(HmaxMAL), TotalDepth )
 
             ! actual height is horizontal density divided by length density
-            ! Linear density is dependent on seeding density
+            ! linear density is dependent on seeding density
             ! area is the amount of mass in this segment divided by area density
             
             Hact        = min(MALS/LinDenMAL , TotalDepth - 0.001 )
@@ -190,7 +175,6 @@ c     LOGICAL First
                 chk = 1
             ENDIF
             
-
             Hactd = 1.0 ! Represents the entire length of the plants
 
             !
@@ -207,7 +191,7 @@ c     LOGICAL First
             Z2 = LocalDepth
             Z1a = TotalDepth - LocalDepth
             Z2a = TotalDepth - LocalDepth + Depth
-            ! Ffac = 1 for linear
+            ! Ffac = 1 for linear, MALG only linear
             A = (MALS / Hact) * (2 - (2)) / Hact
             B = (MALS / Hact) * (1 * (Zm + TotalDepth) -2 * Zm) / Hact
 
@@ -232,8 +216,6 @@ c     LOGICAL First
                 Endif
             Endif
 
-    !       Return Outputparameters to delwaq
-
             PMSA( IPNT(13) ) = FrBmMALS
             PMSA( IPNT(14) ) = BmLayMALS / Depth
         
@@ -247,7 +229,6 @@ c     LOGICAL First
             PMSA( IPNT(17) ) = MBotSeg
          ENDIF
          
-      
         IPNT = IPNT + INCREM
 
  9000 CONTINUE
