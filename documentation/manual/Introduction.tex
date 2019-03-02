@@ -4,7 +4,7 @@
 
 \section{Framework of the macroalgae module}
 
-\subsection{relation of macroalgae module to other processes}
+\subsection{General description}
 
 The macroalgae module is designed to model the the dynamics of kelp\textit{Saccharina} and is based almost entirely on the model described in Broch \textit{et al.} (2011). The general model organization will be described here, specifically the implementation in the DELWAQ library. For further details of the derivation of the model equations please refer to Broch \textit{et al.} (2011).
 
@@ -14,7 +14,7 @@ Macroalgae can be idealized as 4 distinct state variable components:
 \item MacroALgae Nitrogen storage mass (MALN)
 \item MacroALgae Phosphorous storage mass (MALP)
 \item MacroALgae Carbon storage mass (MALC)
-
+\end{itemize}
 Collectively these components represent the entire macroalgae frond, where frond is the term used to describe the macro structure of the algae visible to the naked eye, including the foot. Each component exhibits its own growth dynamics and interacts with the surrounding water independently. 
 
 For instance, the structural mass represents the part of the macroalgae that increases the volume of the total front when it grows. It does not take nutrients from the water, does not photosynthesize, and loses mass when it decays, producing detritus. It grows by taking nutrients (N/P/C) from its storage, and is thus responsible for growth respiration. The structural mass is analogous to the common notion of 'dry matter' and represents the dry weight of the plant minus the weight of water, nutrient stores, and carbon stores.
@@ -25,5 +25,61 @@ The carbon storage is the part of the plant responsible for photosynthesizing, p
 
 It is assumed that there is constant relationship between volume and area of a macroalgae frond. This means that the density of the macroalgae does not change, even if the ratio of structural mass to stored material changes. Additionally, the C:N and C:P ratios of each component are fixed, but because the ratio of stored mass to structural mass changes, the C:N and C:P ratios of the entire frond changes in due to changes in ambient conditions.
 
+\subsection{Flux of Macroalgae structural biomass}
+\begin{flushright}
+\textsc{process: FLMALS}
+\end{flushright}
+
+The structural component of the macroalgae is the dry material that gives shape and structure to the macroalgae frond. 
+
+\subsection{Implementation} 
+The net growth of the structural mass is the resulting rate of structural biomass production and frond erosion (considered to be analagous to mortallity used in other DELWAQ processes). This balance can be defined by the following function:
+
+\[dGrowMALS =MALS \times (mu - mrt)\]
+ 
+The growth $mu$ rate of MALS is dependent firstly on the nutrient (N, P, and C) stores available. Its growth rate is defined as follows:
+
+\[mu = f_{density} f_{photoperiod} f_{temperature}\times min\big\{1-\frac{N_{min}}{MALN},1-\frac{P_{min}}{MALP},1-\frac{C_{min}}{MALC}\big\}\]
+
+Where:
+\begin{itemize}
+\item $f_{density}$ biomass density limitation function (-)
+\item $f_{photoperiod}$ photoperiod limitation function (-)
+\item $f_{temperature}$ temperature limitation function (-)
+\item $N_{min}$ minimum N storage (gN/gDM)
+\item $MALN$ nitrogen storage (gN/gDM)
+\item $P_{min}$ minimum phosphorous storage (gP/gDM)
+\item $MALP$ phosphorous storage (gP/gDM)
+\item $C_{min}$ minimum carbon storage (gC/gDM)
+\item $MALC$ carbon storage (gC/gDM)
 \end{itemize}
+
+The limitation functions are formulated as follows:
+\[f_{density} = m_1 exp\big\{-(\frac{MALS}{MALS_0})^2 \big\}+m_2\]
+\[f_{photoperiod} = a_1 \big\{ 1+sin(\tau (n) | \tau (n)| ^{\fract{1}{2}}) \big\} + a_2\]
+
+\[ 
+\left \{
+  \begin{tabular}{ccc}
+  1 & 5 & 8 \\
+  0 & 2 & 4 \\
+  3 & 3 & -8 
+  \end{tabular}
+\right \}
+\]
+
+\[\left \{
+\begin{tabular}{cc}
+  0.08T + 0.2 & -1.8 < 10 \\
+  1 & 10 < T < 15 \\
+  \frac{19}{4}-\frac{T}{4} & 15 < T < 19 \\
+  0 & T > 19 
+  \end{tabular}
+  \right \}
+  \]
+
+
+
+
+
 \end{document}
