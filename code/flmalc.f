@@ -63,10 +63,13 @@ C
       REAL(4) dMALTIC     ! F  HCO3 uptake MALN                                       (gC/m3/d)
       REAL(4) dMALDOC     ! F  Exudate MALN                                           (gC/m3/d)
       REAL(4) dPrMALOXY    ! F  OXY production                                        (gC/m3/d)
+      REAL(4) dStrMALC
 
       INTEGER IdUpMALTIC !   
       INTEGER IdPrMALDOC !   
       INTEGER IdPrMALOXY !   
+      INTEGER IdStrMALC  !
+      INTEGER FLCREM
       
       INTEGER MBotSeg
       
@@ -93,6 +96,7 @@ C
       IdUpMALTIC   = 1
       IdPrMALDOC   = 2
       IdPrMALOXY   = 3
+      IdStrMALC    = 4
       
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
@@ -206,26 +210,32 @@ C
                 dMALDOC = ((MALS/ArDenMAL)/Depth) * P * E 
                 
                 ! uptake into storage
-                LocUpC = ((MALS/ArDenMAL)/Depth) * P * (1-E) - R
+                LocUpC = (MALS/ArDenMAL) * ( P * (1.0-E) - R )
                 
                 ! oxygen 
                 ! photosynthesis produces oxygen, respiration consumes
                 ! look to TIC to see what the balance is
                 
                 dPrMALOXY   = 2.67 * dMALTIC
+                ! need ALKA!
                 
                 PMSA( IPNT( 30)   ) = LocUpC
 
                 FL ( IdUpMALTIC   ) = dMALTIC
                 FL ( IdPrMALDOC   ) = dMALDOC
                 FL ( IdPrMALOXY   ) = dPrMALOXY
+                
+                ! allocate to bottom segment flux address
+                FLCREM = (MBotSeg-ISEG)*NOFLUX
+                FL(IdStrMALC+FLCREM) = FL(IdStrMALC + FLCREM) + LocUpC
    
             ENDIF
             ENDIF
 
        IdUpMALTIC   = IdUpMALTIC + NOFLUX
        IdPrMALDOC   = IdPrMALDOC + NOFLUX
-       IdPrMALOXY   = IdPrMALOXY + NOFLUX            
+       IdPrMALOXY   = IdPrMALOXY + NOFLUX   
+       IdStrMALC    = IdStrMALC  + NOFLUX
        IPNT         = IPNT       + INCREM
 
  9000 CONTINUE

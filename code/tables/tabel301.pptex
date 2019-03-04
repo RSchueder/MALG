@@ -693,4 +693,3 @@ FlMALS     colsep Flux calculation for Macroalgae Structural Mass    colsep FLMA
 MALDIS     colsep Distribution of macroalgae mass in water column    colsep MALDIS     \\
 FlMALN     colsep Flux for Macroalgae nutrient storage (N/P)         colsep FLMALN     \\
 FlMALC     colsep Flux calculation for Macroalgae carbon storage (C) colsep FLMALC     \\
-MalGro     colsep Growth of macroalgae                               colsep MALGRO     \\

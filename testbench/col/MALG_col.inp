@@ -130,31 +130,48 @@ ITEM
 
 CONCENTRATIONS
    USEFOR 'Continuity' 'Continuity'
+   USEFOR 'OXY' 'OXY'
+   USEFOR 'NH4' 'NH4'
+   USEFOR 'NO3' 'NO3'
+   USEFOR 'PO4' 'PO4'
+   USEFOR 'TIC' 'TIC'
+   USEFOR 'ALKA' 'ALKA'
+   USEFOR 'POC1' 'POC1'
+   USEFOR 'POC2' 'POC2'
+   USEFOR 'PON1' 'PON1'
+   USEFOR 'PON2' 'PON2'
+   USEFOR 'POP1' 'POP1'
+   USEFOR 'POP2' 'POP2'
+   USEFOR 'DOC' 'DOC'
 TIME LINEAR
 DATA
- 'Continuity'
+ 'Continuity' 'OXY' 'NH4' 'NO3' 'PO4' 'TIC' 'ALKA' 'POC1' 'POC2' 'PON1' 'PON2' 'POP1' 'POP2' 'DOC'
 
-2019/01/01-00:00:00  1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
+2019/01/01-00:00:00 
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+
            
-2019/01/07-00:00:00  1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
+2019/01/07-00:00:00  
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+
            
 ITEM
  '2/1 (Left-right 2)' '2/2 (Left-right 2)' '2/3 (Left-right 2)' '2/4 (Left-right 2)' '2/5 (Left-right 2)'
@@ -162,31 +179,48 @@ ITEM
 
 CONCENTRATIONS
    USEFOR 'Continuity' 'Continuity'
+   USEFOR 'OXY' 'OXY'
+   USEFOR 'NH4' 'NH4'
+   USEFOR 'NO3' 'NO3'
+   USEFOR 'PO4' 'PO4'
+   USEFOR 'TIC' 'TIC'
+   USEFOR 'ALKA' 'ALKA'
+   USEFOR 'POC1' 'POC1'
+   USEFOR 'POC2' 'POC2'
+   USEFOR 'PON1' 'PON1'
+   USEFOR 'PON2' 'PON2'
+   USEFOR 'POP1' 'POP1'
+   USEFOR 'POP2' 'POP2'
+   USEFOR 'DOC' 'DOC'
 TIME LINEAR
 DATA
- 'Continuity'
+ 'Continuity' 'OXY' 'NH4' 'NO3' 'PO4' 'TIC' 'ALKA' 'POC1' 'POC2' 'PON1' 'PON2' 'POP1' 'POP2' 'DOC'
 
-2019/01/01-00:00:00  1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
+2019/01/01-00:00:00  
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+
            
-2019/01/07-00:00:00  1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
-            1.0000e+000 
+2019/01/07-00:00:00  
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+1.0	7.0	1.0	1.0	1.0	30.0	200.0	1.0	1.0	1.0	1.0	1.0	1.0	1.0
+ 
            
 ;
  #5 ; delimiter for the fifth block
@@ -212,7 +246,6 @@ CONSTANTS
  'ACTIVE_MALDIS'
  'ACTIVE_FLMALN'
  'ACTIVE_FLMALC'
- 'ACTIVE_MALGRO'
  
  'CLOSE_ERR'
  'ScaleVDisp'
@@ -230,7 +263,6 @@ DATA
  1.0 ;
  1.0 ;
  1.0 ;
- 1.0 ;
  1.00000e+000 ; CLOSE_ERR
  1.00000e+000 ; ScaleVDisp
  1.00000e+002 ; MaxIter
@@ -240,7 +272,7 @@ DATA
 ;
  CONSTANTS 'Latitude' DATA 52
  CONSTANTS 'Vel' DATA 0.075
- CONSTANTS 'ExtVl' 1
+ CONSTANTS 'ExtVl' DATA 0.000001
  ;CONSTANTS Rad DATA 50.00
  ;CONSTANTS Temp DATA 15.0
  ;CONSTANTS MBotSeg DATA 86
@@ -308,7 +340,7 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-41 ; number of extra variables
+37 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -318,9 +350,9 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   
   'MALSM2' ' '                      ;x macroalgae structural in segment                       (gDM/m2)            
-  'MALNM2' ' '                      ;x macroalgae N storage in segment                        (gN/gDM)            
-  'MALPM2' ' '                      ;x macroalgae P storage in segment                        (gP/gDM)            
-  'MALCM2' ' '                      ;x macroalgae C storage in segment                        (gC/gDM)            
+  'MALNDM' ' '                      ;x macroalgae N storage in segment                        (gN/gDM)            
+  'MALPDM' ' '                      ;x macroalgae P storage in segment                        (gP/gDM)            
+  'MALCDM' ' '                      ;x macroalgae C storage in segment                        (gC/gDM)            
   'MALSNC' ' '                      ;x ratio N:C in whole frond                               (gN/gC)             
   'MALSPC' ' '                      ;x ratio P:C in whole frond                               (gP/gC)             
   'LimBioM' ' '                     ;x biomass limitation MALS                                (-)                 
@@ -345,10 +377,6 @@ BINARY_FILE  '../col-hyd/com-col-hyd.vdf'  ; binary file
   'LocUpN' ' '                      ;x Local N storage uptake flux                            (gN/m3/d)           
   'LocUpP' ' '                      ;x Local P storage uptake flux                            (gP/m3/d)   
   'LocUpC' ' '                      ;x Local C uptake flux                                    (gC/m3/d)       
-  'TotGroS' ' '                     ;x Total growth flux MALS                                 (gDM/m3/d)          
-  'TotGroN' ' '                     ;x Total growth flux MALN                                 (gN/m3/d)           
-  'TotGroP' ' '                     ;x Total growth flux MALP                                 (gP/m3/d)           
-  'TotGroC' ' '                     ;x Total growth flux MALC                                 (gC/m3/d)           
   'MBotSeg' ' '                     ;x bottom segment for this segment                        (-)          
       
   2 ; all substances and extra output

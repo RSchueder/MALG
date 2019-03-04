@@ -1,7 +1,7 @@
 FUNCTIONS
 
 USEFOR VWind   VWind
-USEFOR RadSurf    RadSurf
+USEFOR RadSurf     RadSurf
 
 LINEAR
 DATA

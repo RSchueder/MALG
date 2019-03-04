@@ -1,18 +1,18 @@
 Using NEW format
     1 lines read from GRPSUB.CSV
-11493 lines read from ITEMS.CSV
-  147 lines read from FORTRAN.CSV
-  696 lines read from PROCES.CSV
+11492 lines read from ITEMS.CSV
+  146 lines read from FORTRAN.CSV
+  695 lines read from PROCES.CSV
     1 lines read from CONFIG.CSV
       processing file CON_PRO.CSV ...
   465 lines read from CON_SUB.CSV
-14967 lines read from INPUTS.CSV
+14958 lines read from INPUTS.CSV
  INPUTS.CSV sorted
- 4004 lines read from OUTPUTS.CSV
+ 4000 lines read from OUTPUTS.CSV
  OUTPUTS.CSV sorted
- 2103 lines read from OUTPFLX.CSV
+ 2106 lines read from OUTPFLX.CSV
  OUTPFLX.CSV sorted
- 2843 lines read from STOCHI.CSV
+ 2846 lines read from STOCHI.CSV
  STOCHI.CSV sorted
   274 lines read from VELOCS.CSV
  VELOCS.CSV sorted

@@ -3971,9 +3971,9 @@ outppr,outpit,outpnm,outpdo,outpsx
 "DaylP     ","daylenp   ",   2,"x",1
 "DaylP     ","daylenm   ",   3,"x",1
 "FlMALS    ","MALSM2    ",   1,"x",1
-"FlMALS    ","MALNM2    ",   2,"x",1
-"FlMALS    ","MALPM2    ",   3,"x",1
-"FlMALS    ","MALCM2    ",   4,"x",1
+"FlMALS    ","MALNDM    ",   2,"x",1
+"FlMALS    ","MALPDM    ",   3,"x",1
+"FlMALS    ","MALCDM    ",   4,"x",1
 "FlMALS    ","MALSNC    ",   5,"x",1
 "FlMALS    ","MALSPC    ",   6,"x",1
 "FlMALS    ","LimBioM   ",   7,"x",1
@@ -3999,7 +3999,3 @@ outppr,outpit,outpnm,outpdo,outpsx
 "FlMALN    ","LocUpN    ",   4,"x",1
 "FlMALN    ","LocUpP    ",   5,"x",1
 "FlMALC    ","LocUpC    ",   1,"x",1
-"MalGro    ","TotGroS   ",   1,"x",1
-"MalGro    ","TotGroN   ",   2,"x",1
-"MalGro    ","TotGroP   ",   3,"x",1
-"MalGro    ","TotGroC   ",   4,"x",1

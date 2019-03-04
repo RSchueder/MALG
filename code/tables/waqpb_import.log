@@ -696,7 +696,6 @@ Process FlMALS
 Process MALDIS    
 Process FlMALN    
 Process FlMALC    
-Process MalGro    
  chksto
  stochi table indexed
   flux dCaut                2

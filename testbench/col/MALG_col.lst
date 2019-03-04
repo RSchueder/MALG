@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/01 18:54:43 
+ Execution start: 2019/03/04 15:01:56 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -502,40 +502,90 @@
 
  CONCENTRATIONs within the item blocks:
  Input CONCENTR.  nr:    1 is CONCENTR.  nr:    1 with ID  : Continuity           and local substitution: Continuity          
+ Input CONCENTR.  nr:    2 is CONCENTR.  nr:    2 with ID  : OXY                  and local substitution: OXY                 
+ Input CONCENTR.  nr:    3 is CONCENTR.  nr:    3 with ID  : NH4                  and local substitution: NH4                 
+ Input CONCENTR.  nr:    4 is CONCENTR.  nr:    4 with ID  : NO3                  and local substitution: NO3                 
+ Input CONCENTR.  nr:    5 is CONCENTR.  nr:    5 with ID  : PO4                  and local substitution: PO4                 
+ Input CONCENTR.  nr:    6 is CONCENTR.  nr:    6 with ID  : TIC                  and local substitution: TIC                 
+ Input CONCENTR.  nr:    7 is CONCENTR.  nr:    7 with ID  : ALKA                 and local substitution: ALKA                
+ Input CONCENTR.  nr:    8 is CONCENTR.  nr:    8 with ID  : POC1                 and local substitution: POC1                
+ Input CONCENTR.  nr:    9 is CONCENTR.  nr:    9 with ID  : POC2                 and local substitution: POC2                
+ Input CONCENTR.  nr:   10 is CONCENTR.  nr:   10 with ID  : PON1                 and local substitution: PON1                
+ Input CONCENTR.  nr:   11 is CONCENTR.  nr:   11 with ID  : PON2                 and local substitution: PON2                
+ Input CONCENTR.  nr:   12 is CONCENTR.  nr:   12 with ID  : POP1                 and local substitution: POP1                
+ Input CONCENTR.  nr:   13 is CONCENTR.  nr:   13 with ID  : POP2                 and local substitution: POP2                
+ Input CONCENTR.  nr:   14 is CONCENTR.  nr:   14 with ID  : DOC                  and local substitution: DOC                 
 
  Linear interpolation is selected !
  
  Column:  1 contains: Continuity                               Status: used    
+ Column:  2 contains: OXY                                      Status: used    
+ Column:  3 contains: NH4                                      Status: used    
+ Column:  4 contains: NO3                                      Status: used    
+ Column:  5 contains: PO4                                      Status: used    
+ Column:  6 contains: TIC                                      Status: used    
+ Column:  7 contains: ALKA                                     Status: used    
+ Column:  8 contains: POC1                                     Status: used    
+ Column:  9 contains: POC2                                     Status: used    
+ Column: 10 contains: PON1                                     Status: used    
+ Column: 11 contains: PON2                                     Status: used    
+ Column: 12 contains: POP1                                     Status: used    
+ Column: 13 contains: POP2                                     Status: used    
+ Column: 14 contains: DOC                                      Status: used    
 
- DATA grouped in        10 blocks of         1 Substance 
+ DATA grouped in        10 blocks of        14 Substance 
 
  Number of breakpoints with full data:    2
  breakpoint       1 :         0
- Substance      1
- boundary     Continuity  
-         1    1.0000E+00
-         3    1.0000E+00
-         5    1.0000E+00
-         7    1.0000E+00
-         9    1.0000E+00
-        11    1.0000E+00
-        13    1.0000E+00
-        15    1.0000E+00
-        17    1.0000E+00
-        19    1.0000E+00
+ Substance      1           2           3           4           5           6           7           8           9          10
+ boundary     Continuity  OXY         NH4         NO3         PO4         TIC         ALKA        POC1        POC2        PON1      
+         1    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         3    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         5    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         7    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         9    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        11    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        13    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        15    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        17    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        19    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         1    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         3    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         5    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         7    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         9    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        11    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        13    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        15    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        17    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        19    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  breakpoint       2 :    518400
- Substance      1
- boundary     Continuity  
-         1    1.0000E+00
-         3    1.0000E+00
-         5    1.0000E+00
-         7    1.0000E+00
-         9    1.0000E+00
-        11    1.0000E+00
-        13    1.0000E+00
-        15    1.0000E+00
-        17    1.0000E+00
-        19    1.0000E+00
+ Substance      1           2           3           4           5           6           7           8           9          10
+ boundary     Continuity  OXY         NH4         NO3         PO4         TIC         ALKA        POC1        POC2        PON1      
+         1    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         3    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         5    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         7    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         9    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        11    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        13    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        15    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        17    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        19    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         1    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         3    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         5    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         7    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         9    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        11    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        13    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        15    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        17    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        19    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
 
  ====> input item completed <==== 
 
@@ -555,40 +605,90 @@
 
  CONCENTRATIONs within the item blocks:
  Input CONCENTR.  nr:    1 is CONCENTR.  nr:    1 with ID  : Continuity           and local substitution: Continuity          
+ Input CONCENTR.  nr:    2 is CONCENTR.  nr:    2 with ID  : OXY                  and local substitution: OXY                 
+ Input CONCENTR.  nr:    3 is CONCENTR.  nr:    3 with ID  : NH4                  and local substitution: NH4                 
+ Input CONCENTR.  nr:    4 is CONCENTR.  nr:    4 with ID  : NO3                  and local substitution: NO3                 
+ Input CONCENTR.  nr:    5 is CONCENTR.  nr:    5 with ID  : PO4                  and local substitution: PO4                 
+ Input CONCENTR.  nr:    6 is CONCENTR.  nr:    6 with ID  : TIC                  and local substitution: TIC                 
+ Input CONCENTR.  nr:    7 is CONCENTR.  nr:    7 with ID  : ALKA                 and local substitution: ALKA                
+ Input CONCENTR.  nr:    8 is CONCENTR.  nr:    8 with ID  : POC1                 and local substitution: POC1                
+ Input CONCENTR.  nr:    9 is CONCENTR.  nr:    9 with ID  : POC2                 and local substitution: POC2                
+ Input CONCENTR.  nr:   10 is CONCENTR.  nr:   10 with ID  : PON1                 and local substitution: PON1                
+ Input CONCENTR.  nr:   11 is CONCENTR.  nr:   11 with ID  : PON2                 and local substitution: PON2                
+ Input CONCENTR.  nr:   12 is CONCENTR.  nr:   12 with ID  : POP1                 and local substitution: POP1                
+ Input CONCENTR.  nr:   13 is CONCENTR.  nr:   13 with ID  : POP2                 and local substitution: POP2                
+ Input CONCENTR.  nr:   14 is CONCENTR.  nr:   14 with ID  : DOC                  and local substitution: DOC                 
 
  Linear interpolation is selected !
  
  Column:  1 contains: Continuity                               Status: used    
+ Column:  2 contains: OXY                                      Status: used    
+ Column:  3 contains: NH4                                      Status: used    
+ Column:  4 contains: NO3                                      Status: used    
+ Column:  5 contains: PO4                                      Status: used    
+ Column:  6 contains: TIC                                      Status: used    
+ Column:  7 contains: ALKA                                     Status: used    
+ Column:  8 contains: POC1                                     Status: used    
+ Column:  9 contains: POC2                                     Status: used    
+ Column: 10 contains: PON1                                     Status: used    
+ Column: 11 contains: PON2                                     Status: used    
+ Column: 12 contains: POP1                                     Status: used    
+ Column: 13 contains: POP2                                     Status: used    
+ Column: 14 contains: DOC                                      Status: used    
 
- DATA grouped in        10 blocks of         1 Substance 
+ DATA grouped in        10 blocks of        14 Substance 
 
  Number of breakpoints with full data:    2
  breakpoint       1 :         0
- Substance      1
- boundary     Continuity  
-         2    1.0000E+00
-         4    1.0000E+00
-         6    1.0000E+00
-         8    1.0000E+00
-        10    1.0000E+00
-        12    1.0000E+00
-        14    1.0000E+00
-        16    1.0000E+00
-        18    1.0000E+00
-        20    1.0000E+00
+ Substance      1           2           3           4           5           6           7           8           9          10
+ boundary     Continuity  OXY         NH4         NO3         PO4         TIC         ALKA        POC1        POC2        PON1      
+         2    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         4    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         6    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         8    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        12    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        14    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        16    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        18    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        20    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         2    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         4    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         6    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         8    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        10    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        12    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        14    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        16    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        18    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        20    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  breakpoint       2 :    518400
- Substance      1
- boundary     Continuity  
-         2    1.0000E+00
-         4    1.0000E+00
-         6    1.0000E+00
-         8    1.0000E+00
-        10    1.0000E+00
-        12    1.0000E+00
-        14    1.0000E+00
-        16    1.0000E+00
-        18    1.0000E+00
-        20    1.0000E+00
+ Substance      1           2           3           4           5           6           7           8           9          10
+ boundary     Continuity  OXY         NH4         NO3         PO4         TIC         ALKA        POC1        POC2        PON1      
+         2    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         4    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         6    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+         8    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        12    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        14    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        16    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        18    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+        20    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         2    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         4    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         6    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+         8    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        10    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        12    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        14    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        16    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        18    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+        20    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
 
  ====> input item completed <==== 
 
@@ -609,44 +709,50 @@
  Input constant   nr:    6 is constant   nr:    6 with ID  : ACTIVE_MALDIS       
  Input constant   nr:    7 is constant   nr:    7 with ID  : ACTIVE_FLMALN       
  Input constant   nr:    8 is constant   nr:    8 with ID  : ACTIVE_FLMALC       
- Input constant   nr:    9 is constant   nr:    9 with ID  : ACTIVE_MALGRO       
- Input constant   nr:   10 is constant   nr:   10 with ID  : CLOSE_ERR           
- Input constant   nr:   11 is constant   nr:   11 with ID  : ScaleVDisp          
- Input constant   nr:   12 is constant   nr:   12 with ID  : MaxIter             
- Input constant   nr:   13 is constant   nr:   13 with ID  : Tolerance           
- Input constant   nr:   14 is constant   nr:   14 with ID  : Iteration Report    
- Input constant   nr:   15 is constant   nr:   15 with ID  : ONLY_ACTIVE         
+ Input constant   nr:    9 is constant   nr:    9 with ID  : CLOSE_ERR           
+ Input constant   nr:   10 is constant   nr:   10 with ID  : ScaleVDisp          
+ Input constant   nr:   11 is constant   nr:   11 with ID  : MaxIter             
+ Input constant   nr:   12 is constant   nr:   12 with ID  : Tolerance           
+ Input constant   nr:   13 is constant   nr:   13 with ID  : Iteration Report    
+ Input constant   nr:   14 is constant   nr:   14 with ID  : ONLY_ACTIVE         
  constant values in this block.
  values         1           2           3           4           5           6           7           8           9          10
- constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  ACTIVE_MAL  CLOSE_ERR 
+ constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  CLOSE_ERR   ScaleVDisp
          1    0.0000E+00  0.0000E+00  0.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
- values        11          12          13          14          15
- constants    ScaleVDisp  MaxIter     Tolerance   Iteration   ONLY_ACTIV  
-         1    1.0000E+00  1.0000E+02  1.0000E-07  0.0000E+00  1.0000E+00
+ values        11          12          13          14
+ constants    MaxIter     Tolerance   Iteration   ONLY_ACTIV  
+         1    1.0000E+02  1.0000E-07  0.0000E+00  1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   16 with ID  : Latitude            
+ Input constant   nr:    1 is constant   nr:   15 with ID  : Latitude            
  constant values in this block.
- values        16
+ values        15
  constants    Latitude    
          1    5.2000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   17 with ID  : Vel                 
+ Input constant   nr:    1 is constant   nr:   16 with ID  : Vel                 
  constant values in this block.
- values        17
+ values        16
  constants    Vel         
          1    7.5000E-02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   18 with ID  : ExtVl               
- Input constant   nr:    2 is constant   nr:    1 with ID  : ACTIVE_VERTDISP     
+ Input constant   nr:    1 is constant   nr:   17 with ID  : ExtVl               
+ constant values in this block.
+ values        17
+ constants    ExtVl       
+         1    1.0000E-06
+
+ ====> input item completed <==== 
+
+
   
  Input function   nr:    1 is function   nr:    1 with ID  : Temp                
 
@@ -35801,7 +35907,7 @@
 
 
 
- Total number of constants        :   18
+ Total number of constants        :   17
 
  Total number of parameters       :    2
 
@@ -35862,7 +35968,7 @@
 
  All substances plus extra output variables
 
- (     41) number of output variables specified
+ (     37) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -35874,9 +35980,9 @@
        7           daylenp                                   
        8           daylenm                                   
        9           MALSM2                                    
-      10           MALNM2                                    
-      11           MALPM2                                    
-      12           MALCM2                                    
+      10           MALNDM                                    
+      11           MALPDM                                    
+      12           MALCDM                                    
       13           MALSNC                                    
       14           MALSPC                                    
       15           LimBioM                                   
@@ -35901,11 +36007,7 @@
       34           LocUpN                                    
       35           LocUpP                                    
       36           LocUpC                                    
-      37           TotGroS                                   
-      38           TotGroN                                   
-      39           TotGroP                                   
-      40           TotGroC                                   
-      41           MBotSeg                                   
+      37           MBotSeg                                   
 
  Specification of map output
 
@@ -35940,9 +36042,9 @@
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSM2              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALNM2              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALPM2              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALCM2              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimBioM             ; NOT FOUND, delwaq will detect variables from process library
@@ -35967,15 +36069,11 @@
    INFO:LocUpN              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpP              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:TotGroS             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:TotGroN             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:TotGroP             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:TotGroC             ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
         SURF                ; Using parameter nr           1
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          41
+  Number off missing variables :          37
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -35996,14 +36094,14 @@ Number of periods defined:     0
 
 
  Messages presented including .lsp file:
- Number of WARNINGS            :     2
+ Number of WARNINGS            :     0
 
  Number of ERRORS during input :     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:      47353
- total integer   array space:       9458
- total character array space:       8222
- grand total in 4-byte words:      65033 =   0-GB   0-MB 260-KB 132-Byte.
- Execution stop : 2019/03/01 18:54:43 
+ total real      array space:      48362
+ total integer   array space:       9700
+ total character array space:       8087
+ grand total in 4-byte words:      66149 =   0-GB   0-MB 264-KB 596-Byte.
+ Execution stop : 2019/03/04 15:01:56 

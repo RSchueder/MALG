@@ -63,11 +63,16 @@ C
       REAL(4) dUpMALNO3   ! F  NO3 uptake MALN                                     (gN/m3/d)
       REAL(4) dUpMALNH4   ! F  NH4 uptake MALN                                     (gN/m3/d)
       REAL(4) dUpMALPO4   ! F  PO4 uptake MALP                                     (gP/m3/d)
+      REAL(4) dStrMALN
+      REAL(4) dStrMALP
 
       
       INTEGER IdUpMALNO3 !    Pointer to the NO3 uptake
       INTEGER IdUpMALNH4 !    Pointer to the NH4 uptake
       INTEGER IdUpMALPO4 !    Pointer to the PO4 uptake
+      INTEGER IdStrMALN
+      INTEGER IdStrMALP
+      INTEGER FLCREM
 
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -83,6 +88,8 @@ C
       IdUpMALNO3 = 1
       IdUpMALNH4 = 2
       IdUpMALPO4 = 3 
+      IdStrMALN  = 4
+      IdStrMALP  = 5
        
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
@@ -161,29 +168,38 @@ C
                 
                 ! max rate is gN/m2 plant day, but m2 is m2 of plant,
                 ! not segment (SURF)
-                ! we try to achieve gN/m3 water d
+                ! we try to achieve gN/m2 water d
                 ! Broch achieves gN/gDM day
                 ! we multimply this by MALS * area density (g/m2)
                                 
-                IF (LimN .gt. 0.0 .AND. LimP .gt. 0.0) THEN
+                IF (LimN .gt. 0.0 .AND. LimP .gt. 0.0 .AND. MALN .lt. 
+     &               MALNmax .AND. MALP .lt. MALPmax) THEN
                   LocUpN = (MALS/ArDenMAL) * LimVel * JNmax * 
-     &             (NO3/(Ksn + NO3)) * LimN / Depth
+     &             (NO3/(Ksn + NO3)) * LimN
                   LocUpP = (MALS/ArDenMAL) * LimVel * JPmax * 
-     &             (PO4/(Ksp + PO4)) * LimP / Depth
+     &             (PO4/(Ksp + PO4)) * LimP
                 ELSE
                     LocUpN = 0.0
                     LocUpP = 0.0
                 ENDIF
                 
-                dUpMALNO3 = LocUpN 
+                dUpMALNO3 = LocUpN/Depth 
                 ! can not take up NH4 at the moment, Broch ignores this
                 dUpMALNH4 = 0.0
-                dUpMALPO4 = LocUpP 
+                dUpMALPO4 = LocUpP/Depth
+                
+                ! need ALKA!
 
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4
                 FL ( IdUpMALPO4 ) = dUpMALPO4 
-     
+                
+                 ! allocate to bottom segment flux address
+                FLCREM = (MBotSeg-ISEG)*NOFLUX
+
+                FL(IdStrMALN + FLCREM) = FL(IdStrMALN + FLCREM) + LocUpN
+                FL(IdStrMALP + FLCREM) = FL(IdStrMALP + FLCREM) + LocUpP
+               
                 PMSA( IPNT( 26)   ) =  LimVel		
                 PMSA( IPNT( 27)   ) =  LimN		
                 PMSA( IPNT( 28)   ) =  LimP		
@@ -196,6 +212,8 @@ C
         IdUpMALNO3  = IdUpMALNO3 + NOFLUX
         IdUpMALNH4  = IdUpMALNH4 + NOFLUX
         IdUpMALPO4  = IdUpMALPO4 + NOFLUX
+        IdStrMALN   = IdStrMALN  + NOFLUX
+        IdStrMALP   = IdStrMALP  + NOFLUX
         
         IPNT        = IPNT       + INCREM
 

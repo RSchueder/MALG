@@ -14,7 +14,7 @@
   10 BSET                         840
   11 BSAVE                        840
   12 WASTE                          0
-  13 CONS                          18
+  13 CONS                          17
   14 PARAM                        180
   15 FUNC                           3
   16 SFUNC                         90
@@ -34,13 +34,13 @@
   30                                0
   31                                0
   32 ASMASS                      1296
-  33 LOCAL                       3510
-  34 DEFAUL                        56
-  35 FLUX                        1350
-  36 STOCHI                       270
-  37 FLXDMP                       180
-  38 FLXINT                       180
-  39 RIOBUF                       708
+  33 LOCAL                       3240
+  34 DEFAUL                        72
+  35 FLUX                        1890
+  36 STOCHI                       378
+  37 FLXDMP                       252
+  38 FLXINT                       252
+  39 RIOBUF                       660
   40 DISPX                        261
   41 VELX                           0
   42 VLOCX                          0
@@ -49,7 +49,7 @@
   45 DMPQ                        1596
   46 DMPS                         648
   47 TRRAAI                         0
-  48 INWRSP                        54
+  48 INWRSP                       574
   49 VOLUML                        90
   50                                0
   51                                0
@@ -94,7 +94,7 @@
   90 flowtot                      261
   91 disptot                      261
 
-     Total (4 byte words)       47353
+     Total (4 byte words)       48362
 
   ==> INTEGER arrays 4-byte words <==
   nr array name            array size
@@ -123,11 +123,11 @@
   22 LGRID                          0
   23 NSVAR                          8
   24 IFLUX                          8
-  25 IPMSA                        141
-  26 IPSSA                        141
+  25 IPMSA                        164
+  26 IPSSA                        164
   27 IMODU                          8
   28 IOUTPS                        63
-  29 IOPOIN                       103
+  29 IOPOIN                       101
   30 IKNMRK                        90
   31 IKTIM                          0
   32 IQDMP                        261
@@ -136,7 +136,7 @@
   35 IORAAI                         0
   36 NQRAAI                         0
   37 IQRAAI                         0
-  38 INWISP                        61
+  38 INWISP                        87
   39 INTYPE                        60
   40 IWORK                        840
   41 ITRACE                       150
@@ -152,15 +152,15 @@
   51                                0
   52 PROGRD                         8
   53 PRONDT                         8
-  54 PRVVAR                       141
-  55 PRVTYP                       141
-  56 VARARR                       194
-  57 VARIDX                       194
-  58 VARTDA                       194
-  59 VARDAG                       194
-  60 VARTAG                       194
-  61 VARAGG                       194
-  62 VGRSET                       194
+  54 PRVVAR                       164
+  55 PRVTYP                       164
+  56 VARARR                       212
+  57 VARIDX                       212
+  58 VARTDA                       212
+  59 VARDAG                       212
+  60 VARTAG                       212
+  61 VARAGG                       212
+  62 VGRSET                       212
   63 GRDNOS                         1
   64 GRDREF                         1
   65 GRDSEG                        90
@@ -178,7 +178,7 @@
   77 iexseg                       150
   78 isegcol                       90
 
-     Total (4 byte words)        9458
+     Total (4 byte words)        9700
 
   => CHARACTER arrays 4-byte words <=
   nr array name            array size
@@ -193,24 +193,24 @@
    8 WASTID                         0
    9 WNAME                          0
   10 WTYPE                          0
-  11 CONAM                         90
+  11 CONAM                         85
   12 PANAM                         10
   13 FUNAM                         15
   14 SFNAM                          5
   15 CGRID                          0
   16 PRNAM                         40
-  17 OUNAM                        515
+  17 OUNAM                        505
   18 DINAM                          0
   19 VENAM                          0
   20 DANAM                         60
   21 RANAM                          0
-  22 CBUFF                        295
+  22 CBUFF                        275
   23 LUNT                           0
-  24 OUSNM                       2575
-  25 OUUNI                       1030
-  26 OUDSC                       1545
+  24 OUSNM                       2525
+  25 OUUNI                       1010
+  26 OUDSC                       1515
   27 OSSNM                        450
   28 OSUNI                        180
   29 OSDSC                        270
 
-     Total (4 byte words)        8210
+     Total (4 byte words)        8075

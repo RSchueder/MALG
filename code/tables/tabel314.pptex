@@ -2220,9 +2220,9 @@ G5_Pbal    colsep P balance DEB Grazer5(should be zero)              colsep (gP 
 SPMratioem colsep Flocculation ratio macro:micro empirical model     colsep (-)                  colsep IM_Floceq  \\
 Attribute  colsep value of the attribute                             colsep (-)                  colsep AttribOut  \\
 MALSM2     colsep macroalgae structural in segment                   colsep (gDM/m2)             colsep FlMALS     \\
-MALNM2     colsep macroalgae N storage in segment                    colsep (gN/gDM)             colsep FlMALS     \\
-MALPM2     colsep macroalgae P storage in segment                    colsep (gP/gDM)             colsep FlMALS     \\
-MALCM2     colsep macroalgae C storage in segment                    colsep (gC/gDM)             colsep FlMALS     \\
+MALNDM     colsep macroalgae N storage in segment                    colsep (gN/gDM)             colsep FlMALS     \\
+MALPDM     colsep macroalgae P storage in segment                    colsep (gP/gDM)             colsep FlMALS     \\
+MALCDM     colsep macroalgae C storage in segment                    colsep (gC/gDM)             colsep FlMALS     \\
 MALSNC     colsep ratio N:C in whole frond                           colsep (gN/gC)              colsep FlMALS     \\
 MALSPC     colsep ratio P:C in whole frond                           colsep (gP/gC)              colsep FlMALS     \\
 LimBioM    colsep biomass limitation MALS                            colsep (-)                  colsep FlMALS     \\
@@ -2232,15 +2232,15 @@ LimMALN    colsep nitrogen storage limitation MALS                   colsep (-) 
 LimMALP    colsep phosphorous storage limitation MALS                colsep (-)                  colsep FlMALS     \\
 LimMALC    colsep carbon storage limitation MALS                     colsep (-)                  colsep FlMALS     \\
 LimNutS    colsep net nutrient storage limitation MALS               colsep (-)                  colsep FlMALS     \\
-LocDecS    colsep local decay  of MALS                               colsep (DM/m3/d)            colsep FlMALS     \\
+LocGroS    colsep local growth of MALS                               colsep (DM/m2/d)            colsep FlMALS     \\
+LocGroN    colsep local utilization of MALN                          colsep (gN/m2/d)            colsep FlMALS     \\
+LocGroP    colsep local utilization of MALP                          colsep (gP/m2/d)            colsep FlMALS     \\
+LocGroC    colsep local utilization of MALC                          colsep (gC/m2/d)            colsep FlMALS     \\
+LocDecS    colsep local decay of MALS                                colsep (DM/m2/d)            colsep FlMALS     \\
 BmLayMAL   colsep   Biomass of MALS in segment                       colsep  (gDM/m2)            colsep MALDIS     \\
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\
 LimN       colsep ambient nitrogen limitation for storage            colsep (-)                  colsep FlMALN     \\
 LimP       colsep ambient phosphorous limitation for storage         colsep (-)                  colsep FlMALN     \\
-LocUpN     colsep Local N storage uptake flux                        colsep (gN/m3/d)            colsep FlMALN     \\
-LocUpP     colsep Local P storage uptake flux                        colsep (gP/m3/d)            colsep FlMALN     \\
+LocUpN     colsep Local N storage uptake flux                        colsep (gN/m2/d)            colsep FlMALN     \\
+LocUpP     colsep Local P storage uptake flux                        colsep (gP/m2/d)            colsep FlMALN     \\
 LocUpC     colsep Local C uptake flux                                colsep (gC/m3/d)            colsep FlMALC     \\
-TotGroS    colsep Total growth flux MALS                             colsep (gDM/m3/d)           colsep MalGro     \\
-TotGroN    colsep Total growth flux MALN                             colsep (gN/m3/d)            colsep MalGro     \\
-TotGroP    colsep Total growth flux MALP                             colsep (gP/m3/d)            colsep MalGro     \\
-TotGroC    colsep Total growth flux MALC                             colsep (gC/m3/d)            colsep MalGro     \\

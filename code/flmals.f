@@ -60,9 +60,9 @@ C
       REAL(4) Depth       ! I  depth of segment                                    (m)
       
       REAL(4) MALSM2		! O	 macroalgae structural in segment	                 (gDM/m2)
-      REAL(4) MALNM2		! O	 macroalgae N storage in segment                     (gN/gDM)
-      REAL(4) MALPM2		! O	 macroalgae P storage in segment                     (gP/gDM)
-      REAL(4) MALCM2		! O	 macroalgae C storage in segment                 	 (gC/gDM)
+      REAL(4) MALNDM		! O	 macroalgae N storage in segment                     (gN/gDM)
+      REAL(4) MALPDM		! O	 macroalgae P storage in segment                     (gP/gDM)
+      REAL(4) MALCDM		! O	 macroalgae C storage in segment                 	 (gC/gDM)
       REAL(4) MALSNC		! O	 ratio N:C in whole plant                            (-)
       REAL(4) MALSPC		! O	 ratio P:C in whole plant                            (-)
       REAL(4) LimBioMALS  ! O  density limitation function                         (-)
@@ -88,6 +88,11 @@ C
       INTEGER IdPrPOP1MAL !    Pointer to the POP1 production macrophyt 1
       INTEGER IdPrPOP2MAL !    Pointer to the POP2 production macrophyt 1
       INTEGER IdCnOXYMAL !    Pointer to the oxygen production MALS
+      INTEGER IdGrMALS     
+      INTEGER IdGrMALN     
+      INTEGER IdGrMALP     
+      INTEGER IdGrMALC  
+      INTEGER FLCREM
 
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -126,6 +131,10 @@ C
       IdPrPOP1MAL = 5
       IdPrPOP2MAL = 6
       IdCnOXYMAL  = 7
+      IdGrMALS    = 8 
+      IdGrMALN    = 9 
+      IdGrMALP    = 10 
+      IdGrMALC    = 11
       
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
@@ -168,17 +177,12 @@ C
                 Surf       = PMSA( IPNT(28) )     
                 DELT       = PMSA( IPNT(29) )      
                 Depth      = PMSA( IPNT(30) )      
-                
-                !IF (MBotSeg .le. 0) THEN
-                !  CALL DHERR2('MBotSeg',PMSA( IPNT( 27) ),ISEG,'FLMALS')
-                !END IF
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
-                ! mass in this water column
                 
                 ! need to convert substances of gN/m2 to gN/gDM
                 ! to be consistent with constants from Broch
@@ -187,33 +191,15 @@ C
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
-
-                ! check input
-
-!                IF (SURF .LT. 1E-20) CALL DHERR2('SURF'   ,SURF   ,ISEG,'MACROP')
-!                IF (DEPTH.LT. 1E-20) CALL DHERR2('DEPTH'  ,DEPTH  ,ISEG,'MACROP')
-              
+                ! valid with assumption that storage content is homogeneous
+                            
                 ! find amount of mass in this segment (gDM/m2)
    
                 MALS = MALS * FrBmMALS 
                 lengthLoc = HactMAL * FrBmMALS
                 areaLoc = AactMAL * FrBmMALS          
                 ! density limitation
-                ! based on how this model is made it makes sense to make the
-                ! density limitation based on length rather than fatness
-                
-                ! As the algae grow, as in the sw grows, their surface area increases because they get fatter
-                ! So in the model the g/m2 is analogous to the length of the plant. 
-                ! In our model they will not get fatter but they will get longer. 
-                ! however, although the area is proportional to the length,
-                ! we must not calculate it using the length. We calculate it using
-                ! the mass and an indepentent area density ArDenMAL
-                ! length came from the amount of mass compared to the Linear density
-                ! area came from the amount of mass compared to the area density
-              
-                ! formulation in Broch
-                ! LimDen = MIN((m_1 * exp(-(MALS/MALS0)**2)) + m_2, 1.0)
-                ! formulation here
+             
                 ! if the plant is too big overall then all segments suffer
                 
                 LimDen =MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
@@ -244,22 +230,25 @@ C
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
-                ! gDM per day per m3
+                ! gDM per day per m2
                 ! local decay
                 ! since all segments are doing this, only send the fraction
                 ! as it will be compared to the local growth
-                dDecayMALS = MALS * mrt * FrBmMALS/Depth
+                dDecayMALS = MALS * mrt * FrBmMALS
                
                 ! production organic material
-                
-                dPrPOC1MAL = (dDecayMALS*CDRatMALS)*FrPOC1MALS 
-                dPrPOC2MAL = (dDecayMALS*CDRatMALS)*FrPOC2MALS 
+                ! g/(d*m3)
+                dPrPOC1MAL = (dDecayMALS*CDRatMALS)*FrPOC1MALS/Depth 
+                dPrPOC2MAL = (dDecayMALS*CDRatMALS)*FrPOC2MALS/Depth 
 
-                dPrPON1MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC1MALS
-                dPrPON2MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*FrPOC2MALS
-
-                dPrPOP1MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC1MALS
-                dPrPOP2MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*FrPOC2MALS
+                dPrPON1MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*
+     &                FrPOC1MALS/Depth
+                dPrPON2MAL = (dDecayMALS*CDRatMALS*NCRatMALS)*
+     &                FrPOC2MALS/Depth
+                dPrPOP1MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*
+     &               FrPOC1MALS/Depth
+                dPrPOP2MAL = (dDecayMALS*CDRatMALS*PCRatMALS)*
+     &                FrPOC2MALS/Depth
 
                 ! growth
                 ! mortality products are produced regardless of net prod-mort
@@ -281,57 +270,67 @@ C
                 
                 mu = LimDen * LimPho * LimTemp * LimNut
                 IF (mu .gt. 0.0) THEN
-                    ! gDM per day per m3
-                    dGrowMALS = MALS * (mu)/Depth
+                    ! gDM/(m2 d)
+                    dGrowMALS = MALS * (mu)
                 ELSE
                     dGrowMALS = 0.0
+                ENDIF
+                IF (ISEG .eq. 82) THEN
+                    chk = 1
                 ENDIF
                 
                 ! uptake from storage
                 IF (dGrowMALS .gt. 0.0) THEN
-                    ! gN/m3 d
+                    ! gN/(m2 d)
                     TotN = MALS*(MALN+(CDRatMALS*NCRatMALS))
-                    dNtrMALS=mu*TotN/Depth
-                    ! gP/m3 d
+                    dNtrMALS=mu*TotN
+                    ! gP/(m2 d)
                     TotP = MALS*(MALP+CDRatMALS*PCRatMALS)
-                    dPtrMALS=mu*TotP/Depth
-                    ! gC/m3 d
+                    dPtrMALS=mu*TotP
+                    ! gC/(m2 d)
                     TotC = MALS*(MALC+CDRatMALS)
-                    dCtrMALS=mu*TotC/Depth       
+                    dCtrMALS=mu*TotC      
                 ELSE
                     dNtrMALS=0.0
                     dPtrMALS=0.0
                     dCtrMALS=0.0
                 ENDIF
-                ! gDM/m3 d
+                ! gDM/(m2 d)
                 LocGroS = dGrowMALS - dDecayMALS
                 LocGroN = dNtrMALS
                 LocGroP = dPtrMALS
                 LocGroC = dCtrMALS
                 
+                MALNDM = MALN
+                MALPDM = MALP
+                MALCDM = MALC
+                
+                MALSNC = TotN/TotC		
+                MALSPC = TotP/TotC	            
                 ! oxygen 
                 ! mineralization of stored carbon consumes oxygen
                 
-                dCnOXYMAL   = dCtrMALS * 2.67
-                
-                ! If I want to send the fluxes to the bottom segment I do this
-                ! FL ( IdPrPOC1MAL + MBotSeg-ISEG*NOFLUX) = dPrPOC1MAL 
-                ! but how to do x = x + y instead of x = y?
-                ! like this?
-                ! FL ( IdPrPOC1MAL + MBotSeg-ISEG*NOFLUX) = FL ( IdPrPOC1MAL + MBotSeg-ISEG*NOFLUX) + dPrPOC1MAL
-                
-                FL ( IdPrPOC1MAL) = dPrPOC1MAL 
+                dCnOXYMAL   = dCtrMALS * 2.67/Depth
+                                
+                FL ( IdPrPOC1MAL ) = dPrPOC1MAL 
                 FL ( IdPrPOC2MAL ) = dPrPOC2MAL 
                 FL ( IdPrPON1MAL ) = dPrPON1MAL 
                 FL ( IdPrPON2MAL ) = dPrPON2MAL 
                 FL ( IdPrPOP1MAL ) = dPrPOP1MAL 
                 FL ( IdPrPOP2MAL ) = dPrPOP2MAL 
                 FL ( IdCnOXYMAL )  = dCnOXYMAL
-               
+                
+                ! allocate to bottom segment flux address
+                FLCREM = (MBotSeg-ISEG)*NOFLUX
+                FL(IdGrMALS + FLCREM) = FL(IdGrMALS + FLCREM)  + LocGroS
+                FL(IdGrMALN + FLCREM) = FL(IdGrMALN + FLCREM ) + LocGroN
+                FL(IdGrMALP + FLCREM) = FL(IdGrMALP + FLCREM)  + LocGroP
+                FL(IdGrMALC + FLCREM) = FL(IdGrMALC + FLCREM)  + LocGroC
+
                 PMSA( IPNT( 31)   ) =  MALSM2		
-                PMSA( IPNT( 32)   ) =  MALNM2		
-                PMSA( IPNT( 33)   ) =  MALPM2		
-                PMSA( IPNT( 34)   ) =  MALCM2		
+                PMSA( IPNT( 32)   ) =  MALNDM		
+                PMSA( IPNT( 33)   ) =  MALPDM		
+                PMSA( IPNT( 34)   ) =  MALCDM		
                 PMSA( IPNT( 35)   ) =  MALSNC		
                 PMSA( IPNT( 36)   ) =  MALSPC		
                 PMSA( IPNT( 37)   ) =  LimDen
@@ -356,7 +355,12 @@ C
           IdPrPON2MAL = IdPrPON2MAL + NOFLUX
           IdPrPOP1MAL = IdPrPOP1MAl + NOFLUX
           IdPrPOP2MAL = IdPrPOP2MAL + NOFLUX
-          IdCnOXYMAL  = IdCnOXYMAL  + NOFLUX         
+          IdCnOXYMAL  = IdCnOXYMAL  + NOFLUX  
+          IdGrMALS    = IdGrMALS    + NOFLUX 
+          IdGrMALN    = IdGrMALN    + NOFLUX 
+          IdGrMALP    = IdGrMALP    + NOFLUX 
+          IdGrMALC    = IdGrMALC    + NOFLUX 
+          
           IPNT        = IPNT        + INCREM
 
  9000 CONTINUE

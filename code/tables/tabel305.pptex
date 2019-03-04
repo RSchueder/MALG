@@ -2831,13 +2831,16 @@ dPrPON2M   colsep PON2 production MALS                               colsep (gN/
 dPrPOP1M   colsep POP1 production MALS                               colsep (gP/m3/d)            colsep     1.00 colsep POP1       colsep FlMALS     \\
 dPrPOP2M   colsep POP2 production MALS                               colsep (gP/m3/d)            colsep     1.00 colsep POP2       colsep FlMALS     \\
 dCnOXYM    colsep oxygen production MALS                             colsep (gO/m3/d)            colsep    -1.00 colsep OXY        colsep FlMALS     \\
+dGrMALS    colsep Growth of MALS on storage                          colsep (DM/m2/d)            colsep     1.00 colsep MALS       colsep FlMALS     \\
+dGrMALN    colsep Utilization of MALN in growth                      colsep (gN/m2/d)            colsep    -1.00 colsep MALN       colsep FlMALS     \\
+dGrMALP    colsep Utilization of MALP in growth                      colsep (gP/m2/d)            colsep    -1.00 colsep MALP       colsep FlMALS     \\
+dGrMALC    colsep Utilization of MALC in growth                      colsep (gC/m2/d)            colsep    -1.00 colsep MALC       colsep FlMALS     \\
 dUpNO3M    colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.00 colsep NO3        colsep FlMALN     \\
 dUpNH4M    colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.00 colsep NH4        colsep FlMALN     \\
 dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep    -1.00 colsep PO4        colsep FlMALN     \\
+dStrMALN   colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep     1.00 colsep MALN       colsep FlMALN     \\
+dStrMALN   colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep     1.00 colsep MALP       colsep FlMALN     \\
 dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/m3/d)            colsep    -1.00 colsep TIC        colsep FlMALC     \\
 dMALDOC    colsep DOC production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep DOC        colsep FlMALC     \\
 dPrOXYM    colsep OXY production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep OXY        colsep FlMALC     \\
-dGrMALS    colsep growth of structural mass                          colsep (gC/m3/d)            colsep     1.00 colsep MALS       colsep MalGro     \\
-dGrMALN    colsep growth of nitrogen storage                         colsep (gN/m3/d)            colsep     1.00 colsep MALN       colsep MalGro     \\
-dGrMALP    colsep growth of phosphorous storage                      colsep (gP/m3/d)            colsep     1.00 colsep MALP       colsep MalGro     \\
-dGrMALC    colsep growth of carbon storage                           colsep (gC/m3/d)            colsep     1.00 colsep MALC       colsep MalGro     \\
+dStrMALC   colsep storage of carbon by macroalgae                    colsep (gC/m2/d)            colsep     1.00 colsep MALC       colsep FlMALC     \\

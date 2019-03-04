@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/01 18:54:43 
+ Execution start: 2019/03/04 15:01:56 
                                                                                 
  found -p command line switch                                                   
 
@@ -49,10 +49,6 @@ total number of substances with fractions :  0
    Process is activated                                                                             
                                                                                                     
  Input for [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)                
-   WARNING : activated process can NOT be switched on                                               
-   Not found:[Rad                 ] irradiation at the segment upper-boundary                       
-                                                                                                    
- Input for [MalGro              ] Growth of macroalgae                                              
    Process is activated                                                                             
                                                                                                     
                                                                                                     
@@ -73,7 +69,7 @@ total number of substances with fractions :  0
    process is switched on.                                                                          
  found flux  [dPrOXYM             ] OXY production by MALS                                          
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
-   info : can not switch [FlMALC              ] on, not using flux.                                 
+   process is switched on.                                                                          
 -dispersion for [OXY                 ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -117,7 +113,7 @@ total number of substances with fractions :  0
 -fluxes for [TIC                 ]                                                                  
  found flux  [dMALTIC             ] TIC uptake by MALS                                              
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
-   info : can not switch [FlMALC              ] on, not using flux.                                 
+   process is switched on.                                                                          
 -dispersion for [TIC                 ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -203,7 +199,7 @@ total number of substances with fractions :  0
 -fluxes for [DOC                 ]                                                                  
  found flux  [dMALDOC             ] DOC production by MALS                                          
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
-   info : can not switch [FlMALC              ] on, not using flux.                                 
+   process is switched on.                                                                          
 -dispersion for [DOC                 ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -212,8 +208,8 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [MALS                ]                                                                  
- found flux  [dGrMALS             ] growth of structural mass                                       
-   from proces [MalGro              ] Growth of macroalgae                                          
+ found flux  [dGrMALS             ] Growth of MALS on storage                                       
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
    process is switched on.                                                                          
 -dispersion for [MALS                ]                                                              
  no dispersions found                                                                               
@@ -221,8 +217,11 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [MALN                ]                                                                  
- found flux  [dGrMALN             ] growth of nitrogen storage                                      
-   from proces [MalGro              ] Growth of macroalgae                                          
+ found flux  [dGrMALN             ] Utilization of MALN in growth                                   
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
+ found flux  [dStrMALN            ] storage of nitrogen by macroalgae                               
+   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
 -dispersion for [MALN                ]                                                              
  no dispersions found                                                                               
@@ -230,8 +229,11 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [MALP                ]                                                                  
- found flux  [dGrMALP             ] growth of phosphorous storage                                   
-   from proces [MalGro              ] Growth of macroalgae                                          
+ found flux  [dGrMALP             ] Utilization of MALP in growth                                   
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
+ found flux  [dStrMALN            ] storage of nitrogen by macroalgae                               
+   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
 -dispersion for [MALP                ]                                                              
  no dispersions found                                                                               
@@ -239,8 +241,11 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [MALC                ]                                                                  
- found flux  [dGrMALC             ] growth of carbon storage                                        
-   from proces [MalGro              ] Growth of macroalgae                                          
+ found flux  [dGrMALC             ] Utilization of MALC in growth                                   
+   from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
+ found flux  [dStrMALC            ] storage of carbon by macroalgae                                 
+   from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
    process is switched on.                                                                          
 -dispersion for [MALC                ]                                                              
  no dispersions found                                                                               
@@ -251,25 +256,65 @@ total number of substances with fractions :  0
                                                                                                     
 # determining the input for the processes (in reversed order)                                       
                                                                                                     
- Input for [MalGro              ] Growth of macroalgae                                              
+ Input for [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)                
        [MALS                ] MacroALgae Structural biomass                                         
        Using substance nr  15                                                                       
-       [MALN                ] MacroALgae Nitrogen storage                                           
-       Using substance nr  16                                                                       
-       [MALP                ] MacroALgae Phosphorous storage                                        
-       Using substance nr  17                                                                       
        [MALC                ] MacroALgae Carbon storage                                             
        Using substance nr  18                                                                       
+       [FrBmMALS            ] Fraction of bottom layer MALS in this seg                             
+       Using output from proces [MALDIS              ]                                              
+       [MALCmin             ] minimum C in storage                                                  
+       using default value: 0.100000E-01                                                            
+       [CDRatMALS           ] C to dry mass ratio in MALS                                           
+       using default value: 0.200000                                                                
+       [ArDenMALS           ] grams/m2 surface area of frond                                        
+       using default value:  60.0000                                                                
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [R1                  ] Reference respiration rate at T1                                      
+       using default value: 0.668000                                                                
+       [R2                  ] Reference respiration rate at T2                                      
+       using default value:  1.30300                                                                
+       [Tr1                 ] reference temperature 1 for respiration                               
+       using default value:  285.000                                                                
+       [Tr2                 ] reference temperature 2 for respiration                               
+       using default value:  290.000                                                                
+       [P1                  ] Reference photosynthetic rate at T1                                   
+       using default value:  2.92800                                                                
+       [P2                  ] Reference photosynthetic rate at T2                                   
+       using default value:  3.45600                                                                
+       [Tp1                 ] temp for reference photosynthetic rate 1                              
+       using default value:  283.000                                                                
+       [Tp2                 ] temp for reference photosynthetic rate 2                              
+       using default value:  288.000                                                                
+       [Tap                 ] Arrhenius temperature for photosynthesis                              
+       using default value:  1694.00                                                                
+       [Taph                ] Arrhenius temp for photosynthesis high end                            
+       using default value:  25924.0                                                                
+       [Tapl                ] Arrhenius temp for photosynthesis low end                             
+       using default value:  27774.0                                                                
+       [Tar                 ] Arrhenius temp for respiration                                        
+       using default value:  11033.0                                                                
+       [RadSurf             ] irradiation at the water surface                                      
+       Using function nr  3                                                                         
+       [ExtVl               ] total extinction coefficient visible light                            
+       Using constant nr 17 with value: 0.100000E-05                                                
+       [alpha               ] salpha for density distribution Rayleigh                              
+       using default value: 0.900000E-01                                                            
+       [Isat                ] light intensity where photosynthesis is max                           
+       using default value:  44.0000                                                                
+       [exuMALC             ] exudation parameter                                                   
+       using default value: 0.500000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
        Using output from proces [MALDIS              ]                                              
-       [LocGroS             ] local growth of MALS                                                  
-       Using output from proces [FlMALS              ]                                              
-       [LocGroN             ] local growth of MALN                                                  
-       Using output from proces [FlMALS              ]                                              
-       [LocGroP             ] local growth of MALP                                                  
-       Using output from proces [FlMALS              ]                                              
-       [LocGroC             ] local growth of MALC                                                  
-       Using output from proces [FlMALS              ]                                              
+       [Surf                ] horizontal surface area of a DELWAQ segment                           
+       Using parameter nr  1                                                                        
+       [DELT                ] timestep for processes                                                
+       Using DELWAQ timestep in days                                                                
+       [Depth               ] depth of segment                                                      
+       Using output from proces [DynDepth            ]                                              
+       [LocalDepth          ] depth from water surface to bottom of segment                         
+       Using output from proces [TotDepth            ]                                              
                                                                                                     
  Input for [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                        
        [MALS                ] MacroALgae Structural biomass                                         
@@ -311,7 +356,7 @@ total number of substances with fractions :  0
        [JPmax               ] maximum MALP P uptake rate                                            
        using default value: 0.743280                                                                
        [Vel                 ] velocity                                                              
-       Using constant nr 17 with value: 0.750000E-01                                                
+       Using constant nr 16 with value: 0.750000E-01                                                
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -341,7 +386,7 @@ total number of substances with fractions :  0
        [MALCmin             ] minimum C in storage                                                  
        using default value: 0.100000E-01                                                            
        [Latitude            ] latitude of study area                                                
-       Using constant nr 16 with value:  52.0000                                                    
+       Using constant nr 15 with value:  52.0000                                                    
        [daylend             ] daylength default definition                                          
        Using output from proces [DaylP               ]                                              
        [daylenp             ] daylength of previous day                                             
@@ -415,7 +460,7 @@ total number of substances with fractions :  0
        [ITIME               ] DELWAQ time                                                           
        Using DELWAQ time                                                                            
        [Latitude            ] latitude of study area                                                
-       Using constant nr 16 with value:  52.0000                                                    
+       Using constant nr 15 with value:  52.0000                                                    
        [RefDay              ] daynumber of reference day simulation                                 
        using default value:  0.00000                                                                
        [AuxSys              ] ratio between days and system clock                                   
@@ -425,7 +470,7 @@ total number of substances with fractions :  0
        [VertDisper          ] vertical dispersion                                                   
        Using segment function nr  1                                                                 
        [ScaleVdisp          ] scaling factor for vertical diffusion                                 
-       Using constant nr 11 with value:  1.00000                                                    
+       Using constant nr 10 with value:  1.00000                                                    
                                                                                                     
  Input for [TotDepth            ] depth water column                                                
        [Depth               ] depth of segment                                                      
@@ -445,10 +490,8 @@ total number of substances with fractions :  0
  info: constant [MaxIter   ] is not used by the proces system                   
  info: constant [Tolerance ] is not used by the proces system                   
  info: constant [Iteration ] is not used by the proces system                   
- info: constant [ExtVl     ] is not used by the proces system                   
  info: parameter [bottomdept] is not used by the proces system                  
  info: function [VWind     ] is not used by the proces system                   
- info: function [RadSurf   ] is not used by the proces system                   
                                                                                 
 # locating requested output from active processes                                                   
                                                                                                     
@@ -459,9 +502,9 @@ total number of substances with fractions :  0
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             
  output [MALSM2              ] from proces [FlMALS    ]                                             
- output [MALNM2              ] from proces [FlMALS    ]                                             
- output [MALPM2              ] from proces [FlMALS    ]                                             
- output [MALCM2              ] from proces [FlMALS    ]                                             
+ output [MALNDM              ] from proces [FlMALS    ]                                             
+ output [MALPDM              ] from proces [FlMALS    ]                                             
+ output [MALCDM              ] from proces [FlMALS    ]                                             
  output [MALSNC              ] from proces [FlMALS    ]                                             
  output [MALSPC              ] from proces [FlMALS    ]                                             
  output [LimBioM             ] from proces [FlMALS    ]                                             
@@ -485,10 +528,6 @@ total number of substances with fractions :  0
  output [LimVel              ] from proces [FlMALN    ]                                             
  output [LocUpN              ] from proces [FlMALN    ]                                             
  output [LocUpP              ] from proces [FlMALN    ]                                             
- warning: output [LocUpC              ] not located                                                 
- output [TotGroS             ] from proces [MalGro    ]                                             
- output [TotGroN             ] from proces [MalGro    ]                                             
- output [TotGroP             ] from proces [MalGro    ]                                             
- output [TotGroC             ] from proces [MalGro    ]                                             
+ output [LocUpC              ] from proces [FlMALC    ]                                             
  output [MBotSeg             ] from proces [MALDIS    ]                                             
                                                                                                     

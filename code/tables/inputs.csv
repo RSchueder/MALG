@@ -14947,7 +14947,7 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALC    ","Taph      ",  17,"Y","x",1
 "FlMALC    ","Tapl      ",  18,"Y","x",1
 "FlMALC    ","Tar       ",  19,"Y","x",1
-"FlMALC    ","Rad       ",  20,"N","x",1
+"FlMALC    ","RadSurf   ",  20,"N","x",1
 "FlMALC    ","ExtVl     ",  21,"N","x",1
 "FlMALC    ","alpha     ",  22,"Y","x",1
 "FlMALC    ","Isat      ",  23,"Y","x",1
@@ -14957,12 +14957,3 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALC    ","DELT      ",  27,"N","x",1
 "FlMALC    ","Depth     ",  28,"N","x",1
 "FlMALC    ","LocalDepth",  29,"N","x",1
-"MalGro    ","MALS      ",   1,"N","x",1
-"MalGro    ","MALN      ",   2,"N","x",1
-"MalGro    ","MALP      ",   3,"N","x",1
-"MalGro    ","MALC      ",   4,"N","x",1
-"MalGro    ","MBotSeg   ",   5,"N","x",1
-"MalGro    ","LocGroS   ",   6,"N","x",1
-"MalGro    ","LocGroN   ",   7,"N","x",1
-"MalGro    ","LocGroP   ",   8,"N","x",1
-"MalGro    ","LocGroC   ",   9,"N","x",1

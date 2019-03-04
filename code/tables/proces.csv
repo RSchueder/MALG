@@ -694,4 +694,3 @@ procid,procco,procfo,procnm
 "MALDIS    ",123,"MALDIS    ","Distribution of macroalgae mass in water column   "
 "FlMALN    ",123,"FLMALN    ","Flux for Macroalgae nutrient storage (N/P)        "
 "FlMALC    ",123,"FLMALC    ","Flux calculation for Macroalgae carbon storage (C)"
-"MalGro    ",123,"MALGRO    ","Growth of macroalgae                              "

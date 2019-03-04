@@ -2837,7 +2837,10 @@ Cascade5   colsep Transformation of C1 into C5                       colsep (g/m
 Cascade5   colsep Transformation of C2 into C5                       colsep (g/m3/d)             colsep Cascade    \\
 Cascade5   colsep Transformation of C3 into C5                       colsep (g/m3/d)             colsep Cascade    \\
 Cascade5   colsep Transformation of C4 into C5                       colsep (g/m3/d)             colsep Cascade    \\
-MALS       colsep growth of structural mass                          colsep (gC/m3/d)            colsep MalGro     \\
-MALN       colsep growth of nitrogen storage                         colsep (gN/m3/d)            colsep MalGro     \\
-MALP       colsep growth of phosphorous storage                      colsep (gP/m3/d)            colsep MalGro     \\
-MALC       colsep growth of carbon storage                           colsep (gC/m3/d)            colsep MalGro     \\
+MALS       colsep Growth of MALS on storage                          colsep (DM/m2/d)            colsep FlMALS     \\
+MALN       colsep Utilization of MALN in growth                      colsep (gN/m2/d)            colsep FlMALS     \\
+MALN       colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
+MALP       colsep Utilization of MALP in growth                      colsep (gP/m2/d)            colsep FlMALS     \\
+MALP       colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
+MALC       colsep Utilization of MALC in growth                      colsep (gC/m2/d)            colsep FlMALS     \\
+MALC       colsep storage of carbon by macroalgae                    colsep (gC/m2/d)            colsep FlMALC     \\
