@@ -1,4 +1,0 @@
-ALLACTIVE  colsep vertical dispersion                                colsep (m2/s)               colsep VertDisp   \\
-ALLACTIVE  colsep variable horizontal dispersion                     colsep (m2/s)               colsep HorzDisper \\
-ALLACTIVE  colsep variable horizontal dispersion                     colsep (m2/s)               colsep HDisperVel \\
-ALLACTIVE  colsep variable horizontal dispersion                     colsep (m2/s)               colsep HDisperAdd \\
