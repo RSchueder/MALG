@@ -1,0 +1,907 @@
+ Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
+ Execution start: 2019/03/11 19:36:00 
+       ----------> Version number of the input file is:  4.910
+       ----------> Output level of the listfile is: 4
+
+
+ Model :            Monopile acidification                  
+                    Hydro incl. waves. 2011                 
+
+
+ Run   :                                                    
+                    T0: 2019.01.01 00:00:00  (scu=       1s)
+
+ Intermediate version absolute timer detected !
+ System clock is     1 seconds !
+
+ Number of active constituents   : 14
+ Number of inactive constituents :  4
+ Total number of constituents    : 18
+ Number   name
+    1     Continuity          
+    2     OXY                 
+    3     NH4                 
+    4     NO3                 
+    5     PO4                 
+    6     TIC                 
+    7     ALKA                
+    8     POC1                
+    9     POC2                
+   10     PON1                
+   11     PON2                
+   12     POP1                
+   13     POP2                
+   14     DOC                 
+   15     MALS                
+   16     MALN                
+   17     MALP                
+   18     MALC                
+
+ ************************************************************************************************************* B L O C K - 1 *****
+
+
+
+ Factor between two clocks :       86400
+ System clock in date-format  DDHHMMSS 
+ Auxiliary timer in date-format DDHHMMSS 
+
+ The auxiliary timer is not equal to the system timer.
+ All the process fluxes will be scaled from the auxiliary timer to the system timer.
+
+ Integration option :               15.73
+ Keyword ( 9) detected: BAL_NOLUMPPROCESSES                     
+ Keyword (10) detected: BAL_NOLUMPLOADS                         
+ Keyword (11) detected: BAL_NOLUMPTRANSPORT                     
+ Keyword (14) detected: BAL_NOSUPPRESSSPACE                     
+ Keyword (15) detected: BAL_NOSUPPRESSTIME                      
+ Keyword ( 1) detected: DISP-AT-NOFLOW                          
+ Keyword ( 2) detected: NODISP-AT-BOUND                         
+ Start of simulation : 0Y-212D- 0H- 0M- 0S.
+ End of simulation   : 1Y-274D- 0H- 0M- 0S.
+ Selected option for time step size :  0
+ Integration time stepsize is : 0Y-  0D- 0H- 1M- 0S.
+
+ Dump areas:
+ option selected for input :    1
+
+ Number of dump areas :   10
+
+ Dump area :    1 : Seg1                
+ Number of segments in area :              1
+          number   segment
+              1              1
+
+ Dump area :    2 : Seg2                
+ Number of segments in area :              1
+          number   segment
+              1              2
+
+ Dump area :    3 : Seg3                
+ Number of segments in area :              1
+          number   segment
+              1              3
+
+ Dump area :    4 : Seg4                
+ Number of segments in area :              1
+          number   segment
+              1              4
+
+ Dump area :    5 : Seg5                
+ Number of segments in area :              1
+          number   segment
+              1              5
+
+ Dump area :    6 : Seg6                
+ Number of segments in area :              1
+          number   segment
+              1              6
+
+ Dump area :    7 : Seg7                
+ Number of segments in area :              1
+          number   segment
+              1              7
+
+ Dump area :    8 : Seg8                
+ Number of segments in area :              1
+          number   segment
+              1              8
+
+ Dump area :    9 : Seg9                
+ Number of segments in area :              1
+          number   segment
+              1              9
+
+ Dump area :   10 : Seg10               
+ Number of segments in area :              1
+          number   segment
+              1             10
+
+ Transects:
+ option selected for input : 2
+ No transects used.
+
+
+ Monitoring  timings :
+ Start time : 0Y-212D- 0H- 0M- 0S 
+ Stop time  : 1Y-274D- 0H- 0M- 0S 
+ Time step  : 0Y-  0D- 1H- 0M- 0S 
+
+
+ Output      timings :
+ Start time : 0Y-212D- 0H- 0M- 0S 
+ Stop time  : 1Y-274D- 0H- 0M- 0S 
+ Time step  : 0Y-  0D- 1H- 0M- 0S 
+
+
+ History     timings :
+ Start time : 0Y-212D- 0H- 0M- 0S 
+ Stop time  : 1Y-274D- 0H- 0M- 0S 
+ Time step  : 0Y-  0D- 1H- 0M- 0S 
+
+ ************************************************************************************************************* B L O C K - 2 *****
+
+
+
+ Number of segments :             10
+
+ NO process decomposition selected
+
+ option selected for grid layout : 2
+ Grid layout not used.
+
+  1 blocks of time independent attribute contribution
+
+  1 attributes in this block
+
+ Selected file option is   1
+ Information from the standard input file.
+
+ second selected option  1
+
+ constant values without defaults
+ Information will be printed for output option is 5 or higher !
+
+ Pointer of contribution      1 mapped to attribute     2
+
+ option for time dependent attributes   0
+ NO time dependent attributes
+ No first attribute set, using default 1
+
+ Volumes:
+
+ First  selected option   :       1
+ Information from the standard input file.
+ Second selected option   :       1
+ Constant values without defaults 
+
+ Scale factors:
+                 1
+              1.0000E+00
+ Unscaled values:
+         1    1.0000E+00
+         2    1.0000E+00
+         3    1.0000E+00
+         4    1.0000E+00
+         5    1.0000E+00
+         6    1.0000E+00
+         7    1.0000E+00
+         8    1.0000E+00
+         9    1.0000E+00
+        10    1.0000E+00
+
+ ************************************************************************************************************* B L O C K - 3 *****
+
+
+
+ Dimensions of the system :
+ Number of exchanges 1st direction :       0
+ Number of exchanges 2nd direction :       0
+ Number of exchanges 3rd direction :      18
+ Total number of exchanges         :      18
+
+ Number of dispersion arrays       :       0
+
+ Number of velocity arrays         :       0
+
+ Input option                      :       1
+
+ Option selected for pointers      :       1
+ Information from the standard input file.
+
+           Third direction :
+   Item nr.  From      To  From-1    To+1
+       1       1       2       0       0
+       2       2       1       0       0
+       3       2       3       0       0
+       4       3       2       0       0
+       5       3       4       0       0
+       6       4       3       0       0
+       7       4       5       0       0
+       8       5       4       0       0
+       9       5       6       0       0
+      10       6       5       0       0
+      11       6       7       0       0
+      12       7       6       0       0
+      13       7       8       0       0
+      14       8       7       0       0
+      15       8       9       0       0
+      16       9       8       0       0
+      17       9      10       0       0
+      18      10       9       0       0
+
+ Number of boundaries  :       0
+
+
+
+ Size of the big matrix for fast solvers is:         20
+
+ Dispersion:
+
+ First  selected option   :       1
+ Information from the standard input file.
+ Constant values without defaults 
+
+ Scale factors:
+                 1           2           3
+              1.0000E+00  1.0000E+00  1.0000E+00
+ Unscaled values:
+         1    0.0000E+00  0.0000E+00  1.0000E-06
+
+ Area:
+
+ First  selected option   :       1
+ Information from the standard input file.
+ Second selected option   :       1
+ Constant values without defaults 
+
+ Scale factors:
+                 1
+              1.0000E+00
+ Unscaled values:
+         1    1.0000E+00
+         2    1.0000E+00
+         3    1.0000E+00
+         4    1.0000E+00
+         5    1.0000E+00
+         6    1.0000E+00
+         7    1.0000E+00
+         8    1.0000E+00
+         9    1.0000E+00
+        10    1.0000E+00
+        11    1.0000E+00
+        12    1.0000E+00
+        13    1.0000E+00
+        14    1.0000E+00
+        15    1.0000E+00
+        16    1.0000E+00
+        17    1.0000E+00
+        18    1.0000E+00
+
+ Flows:
+
+ First  selected option   :       1
+ Information from the standard input file.
+ Second selected option   :       1
+ Constant values without defaults 
+
+ Scale factors:
+                 1
+              1.0000E+00
+ Unscaled values:
+         1    1.0000E-02
+         2    1.0000E-02
+         3    1.0000E-02
+         4    1.0000E-02
+         5    1.0000E-02
+         6    1.0000E-02
+         7    1.0000E-02
+         8    1.0000E-02
+         9    1.0000E-02
+        10    1.0000E-02
+        11    1.0000E-02
+        12    1.0000E-02
+        13    1.0000E-02
+        14    1.0000E-02
+        15    1.0000E-02
+        16    1.0000E-02
+        17    1.0000E-02
+        18    1.0000E-02
+
+ Lengths:
+ Option for lengths          :      0
+ Lengths constant per direction all over the area.
+ Constant values without defaults 
+
+ Scale factors:
+                 1
+              1.0000E+00
+ Unscaled values:
+         1    1.0000E+00  1.0000E+00  1.0000E+00
+
+ ************************************************************************************************************* B L O C K - 4 *****
+
+
+
+ No boundary conditions
+
+ ************************************************************************************************************* B L O C K - 5 *****
+
+
+ No waste loads 
+
+ ************************************************************************************************************* B L O C K - 6 *****
+
+ Input constant   nr:    1 is constant   nr:    1 with ID  : Nothreads           
+ constant values in this block.
+ values         1
+ constants    Nothreads   
+         1    1.0000E+00
+
+ ====> input item completed <==== 
+
+
+
+ NOTHREADS Keyword found
+ Number of threads for parallel processing set to :     1
+ Input constant   nr:    1 is constant   nr:    2 with ID  : ACTIVE_VERTDISP     
+ Input constant   nr:    2 is constant   nr:    3 with ID  : ACTIVE_TOTDEPTH     
+ Input constant   nr:    3 is constant   nr:    4 with ID  : ACTIVE_DYNDEPTH     
+ Input constant   nr:    4 is constant   nr:    5 with ID  : ACTIVE_FLMALS       
+ Input constant   nr:    5 is constant   nr:    6 with ID  : ACTIVE_DAYLP        
+ Input constant   nr:    6 is constant   nr:    7 with ID  : ACTIVE_MALDIS       
+ Input constant   nr:    7 is constant   nr:    8 with ID  : ACTIVE_FLMALN       
+ Input constant   nr:    8 is constant   nr:    9 with ID  : ACTIVE_FLMALC       
+ Input constant   nr:    9 is constant   nr:   10 with ID  : CLOSE_ERR           
+ Input constant   nr:   10 is constant   nr:   11 with ID  : ScaleVDisp          
+ Input constant   nr:   11 is constant   nr:   12 with ID  : MaxIter             
+ Input constant   nr:   12 is constant   nr:   13 with ID  : Tolerance           
+ Input constant   nr:   13 is constant   nr:   14 with ID  : Iteration Report    
+ Input constant   nr:   14 is constant   nr:   15 with ID  : ONLY_ACTIVE         
+ constant values in this block.
+ values         2           3           4           5           6           7           8           9          10          11
+ constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  CLOSE_ERR   ScaleVDisp
+         1    0.0000E+00  0.0000E+00  0.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+ values        12          13          14          15
+ constants    MaxIter     Tolerance   Iteration   ONLY_ACTIV  
+         1    1.0000E+02  1.0000E-07  0.0000E+00  1.0000E+00
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   16 with ID  : Latitude            
+ constant values in this block.
+ values        16
+ constants    Latitude    
+         1    5.2000E+01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   17 with ID  : Vel                 
+ constant values in this block.
+ values        17
+ constants    Vel         
+         1    7.5000E-02
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   18 with ID  : ExtVl               
+ constant values in this block.
+ values        18
+ constants    ExtVl       
+         1    1.0000E-06
+
+ ====> input item completed <==== 
+
+
+  
+ Input function   nr:    1 is function   nr:    1 with ID  : Temp                
+
+ Time function is linearly interpolated.
+
+ Including file: Temp.prn                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+ Closing file: Temp.prn                                                                      
+
+ Continuing on file: broch_col.inp                                                                 
+
+ number of breakpoints with full data:   14
+ breakpoint   1 :  18316800
+ values         1
+ functions    Temp        
+         1    1.2000E+01
+ breakpoint   2 :  20995200
+ values         1
+ functions    Temp        
+         1    1.4000E+01
+ breakpoint   3 :  23587200
+ values         1
+ functions    Temp        
+         1    1.2000E+01
+ breakpoint   4 :  26265600
+ values         1
+ functions    Temp        
+         1    1.0000E+01
+ breakpoint   5 :  28857600
+ values         1
+ functions    Temp        
+         1    8.0000E+00
+ breakpoint   6 :  31536000
+ values         1
+ functions    Temp        
+         1    5.0000E+00
+ breakpoint   7 :  34214400
+ values         1
+ functions    Temp        
+         1    4.0000E+00
+ breakpoint   8 :  36720000
+ values         1
+ functions    Temp        
+         1    3.0000E+00
+ breakpoint   9 :  39398400
+ values         1
+ functions    Temp        
+         1    4.0000E+00
+ breakpoint  10 :  41990400
+ values         1
+ functions    Temp        
+         1    7.0000E+00
+ breakpoint  11 :  44668800
+ values         1
+ functions    Temp        
+         1    1.1000E+01
+ breakpoint  12 :  47260800
+ values         1
+ functions    Temp        
+         1    1.4000E+01
+ breakpoint  13 :  49939200
+ values         1
+ functions    Temp        
+         1    1.4000E+01
+ breakpoint  14 :  52617600
+ values         1
+ functions    Temp        
+         1    1.3000E+01
+
+ ====> input item completed <==== 
+
+
+  
+ Input function   nr:    1 is function   nr:    2 with ID  : NO3                 
+
+ Time function is linearly interpolated.
+
+ Including file: NO3.prn                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+ Closing file: NO3.prn                                                                       
+
+ Continuing on file: broch_col.inp                                                                 
+
+ number of breakpoints with full data:   14
+ breakpoint   1 :  18316800
+ values         2
+ functions    NO3         
+         1    1.4000E-03
+ breakpoint   2 :  20995200
+ values         2
+ functions    NO3         
+         1    0.0000E+00
+ breakpoint   3 :         0
+ values         2
+ functions    NO3         
+         1    7.0000E-03
+ breakpoint   4 :  26265600
+ values         2
+ functions    NO3         
+         1    0.0000E+00
+ breakpoint   5 :  28857600
+ values         2
+ functions    NO3         
+         1    7.0000E-02
+ breakpoint   6 :  31536000
+ values         2
+ functions    NO3         
+         1    0.0000E+00
+ breakpoint   7 :  34214400
+ values         2
+ functions    NO3         
+         1    9.8000E-02
+ breakpoint   8 :  36720000
+ values         2
+ functions    NO3         
+         1    3.5000E-02
+ breakpoint   9 :  39398400
+ values         2
+ functions    NO3         
+         1    7.7000E-02
+ breakpoint  10 :  41990400
+ values         2
+ functions    NO3         
+         1    1.4000E-03
+ breakpoint  11 :  44668800
+ values         2
+ functions    NO3         
+         1    2.8000E-03
+ breakpoint  12 :  47260800
+ values         2
+ functions    NO3         
+         1    1.4000E-03
+ breakpoint  13 :  49939200
+ values         2
+ functions    NO3         
+         1    7.0000E-05
+ breakpoint  14 :  52617600
+ values         2
+ functions    NO3         
+         1    7.0000E-05
+
+ ====> input item completed <==== 
+
+
+  
+ Input function   nr:    1 is function   nr:    3 with ID  : RadSurf             
+
+ Time function is linearly interpolated.
+
+ Including file: RadSurf.prn                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+ Closing file: RadSurf.prn                                                                   
+
+ Continuing on file: broch_col.inp                                                                 
+
+ number of breakpoints with full data:   14
+ breakpoint   1 :  18316800
+ values         3
+ functions    RadSurf     
+         1    1.8990E+01
+ breakpoint   2 :  20995200
+ values         3
+ functions    RadSurf     
+         1    1.0130E+01
+ breakpoint   3 :  23587200
+ values         3
+ functions    RadSurf     
+         1    5.0700E+00
+ breakpoint   4 :  26265600
+ values         3
+ functions    RadSurf     
+         1    2.5300E+00
+ breakpoint   5 :  28857600
+ values         3
+ functions    RadSurf     
+         1    2.5300E+00
+ breakpoint   6 :  31536000
+ values         3
+ functions    RadSurf     
+         1    3.8000E+00
+ breakpoint   7 :  34214400
+ values         3
+ functions    RadSurf     
+         1    6.3300E+00
+ breakpoint   8 :  36720000
+ values         3
+ functions    RadSurf     
+         1    1.5200E+01
+ breakpoint   9 :  39398400
+ values         3
+ functions    RadSurf     
+         1    1.5200E+01
+ breakpoint  10 :  41990400
+ values         3
+ functions    RadSurf     
+         1    2.5330E+01
+ breakpoint  11 :  44668800
+ values         3
+ functions    RadSurf     
+         1    8.8640E+01
+ breakpoint  12 :  47260800
+ values         3
+ functions    RadSurf     
+         1    5.0650E+01
+ breakpoint  13 :  49939200
+ values         3
+ functions    RadSurf     
+         1    2.5330E+01
+ breakpoint  14 :  52617600
+ values         3
+ functions    RadSurf     
+         1    1.2660E+01
+
+ ====> input item completed <==== 
+
+
+  
+ Input parameter  nr:    1 is parameter  nr:    1 with ID  : SURF                
+
+ Input will be given for all         10 segments.
+
+ parameter s ordered in groups of segments per parameter .
+ constant values in this block.
+ segments       1
+ parameters   SURF        
+         1    1.0000E+00
+         2    1.0000E+00
+         3    1.0000E+00
+         4    1.0000E+00
+         5    1.0000E+00
+         6    1.0000E+00
+         7    1.0000E+00
+         8    1.0000E+00
+         9    1.0000E+00
+        10    1.0000E+00
+
+ ====> input item completed <==== 
+
+
+  
+ Input parameter  nr:    1 is parameter  nr:    2 with ID  : Depth               
+
+ Input will be given for all         10 segments.
+
+ parameter s ordered in groups of segments per parameter .
+ constant values in this block.
+ segments       2
+ parameters   Depth       
+         1    1.0000E+00
+         2    1.0000E+00
+         3    1.0000E+00
+         4    1.0000E+00
+         5    1.0000E+00
+         6    1.0000E+00
+         7    1.0000E+00
+         8    1.0000E+00
+         9    1.0000E+00
+        10    1.0000E+00
+
+ ====> input item completed <==== 
+
+
+  
+ Input parameter  nr:    1 is parameter  nr:    3 with ID  : bottomdept          
+
+ Input will be given for all         10 segments.
+
+ parameter s ordered in groups of segments per parameter .
+ constant values in this block.
+ segments       3
+ parameters   bottomdept  
+         1    1.0000E+00
+         2    2.0000E+00
+         3    3.0000E+00
+         4    4.0000E+00
+         5    5.0000E+00
+         6    6.0000E+00
+         7    7.0000E+00
+         8    8.0000E+00
+         9    9.0000E+00
+        10    1.0000E+01
+
+ ====> input item completed <==== 
+
+
+  
+ Input parameter  nr:    1 is parameter  nr:    4 with ID  : LocalDepth          
+
+ Input will be given for all         10 segments.
+
+ parameter s ordered in groups of segments per parameter .
+ constant values in this block.
+ segments       4
+ parameters   LocalDepth  
+         1    1.0000E+00
+         2    2.0000E+00
+         3    3.0000E+00
+         4    4.0000E+00
+         5    5.0000E+00
+         6    6.0000E+00
+         7    7.0000E+00
+         8    8.0000E+00
+         9    9.0000E+00
+        10    1.0000E+01
+
+ ====> input item completed <==== 
+
+
+
+ Total number of constants        :   18
+
+ Total number of parameters       :    4
+
+ Total number of functions        :    3
+
+ Total number of segment functions:    0
+
+ ************************************************************************************************************* B L O C K - 7 *****
+
+
+ Initials for passive substances are in mass/m2
+
+ Option selected for initials    :   1
+ Information from the standard input file.
+ Second option for initials      :   2
+ Constant values with defaults 
+
+ Scale factors:
+                 1           2           3           4           5           6           7           8           9          10
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+ Unscaled default values:
+              1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+ Scale factors:
+                11          12          13          14          15          16          17          18
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+ Unscaled default values:
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+ Number of overridings :    1
+ Number         values
+        10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  5.0000E+00  6.0000E-02  6.0000E-03  6.0000E-02
+
+ ************************************************************************************************************* B L O C K - 8 *****
+
+
+
+ Option selected for output specification :   1
+ Information from the standard input file.
+
+ Specification of monitor output
+
+ All substances plus extra output variables
+
+ (      2) number of output variables specified
+
+ Number           Identification        Weight variable
+       1           SURF                                      
+       2           LocalDepth                                
+
+ Specification of grid dump output
+
+ All substances plus extra output variables
+
+ (      2) number of output variables specified
+
+ Number           Identification 
+       1           SURF                
+       2           LocalDepth          
+
+ Specification of history output
+
+ All substances plus extra output variables
+
+ (     37) number of output variables specified
+
+ Number           Identification        Weight variable
+       1           SURF                                      
+       2           LocalDepth                                
+       3           TotalDepth                                
+       4           Depth                                     
+       5           Temp                                      
+       6           daylend                                   
+       7           daylenp                                   
+       8           daylenm                                   
+       9           MALSM2                                    
+      10           MALNDM                                    
+      11           MALPDM                                    
+      12           MALCDM                                    
+      13           MALSNC                                    
+      14           MALSPC                                    
+      15           LimBioM                                   
+      16           LimPhoM                                   
+      17           LimTemM                                   
+      18           LimN                                      
+      19           LimP                                      
+      20           LimNutS                                   
+      21           LimMALN                                   
+      22           LimMALP                                   
+      23           LimMALC                                   
+      24           LocGroS                                   
+      25           LocGroN                                   
+      26           LocGroP                                   
+      27           LocGroC                                   
+      28           LocDecS                                   
+      29           FrBmMALS                                  
+      30           BmLayMAL                                  
+      31           HactMAL                                   
+      32           AactMAL                                   
+      33           LimVel                                    
+      34           LocUpN                                    
+      35           LocUpP                                    
+      36           LocUpC                                    
+      37           MBotSeg                                   
+
+ Specification of map output
+
+ All substances plus extra output variables
+
+ (      2) number of output variables specified
+
+ Number           Identification 
+       1           SURF                
+       2           LocalDepth          
+
+ Binary history file switched on
+
+ Binary map file switched on
+
+ NEFIS history file switched off
+
+ NEFIS map file switched off
+
+ NO GRID output : output grid not defined !
+ 
+  Determining the place of the output variables
+ 
+        SURF                ; Using parameter nr           1
+        LocalDepth          ; Using parameter nr           4
+        SURF                ; Using parameter nr           1
+        LocalDepth          ; Using parameter nr           4
+   INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
+        Depth               ; Using parameter nr           2
+        Temp                ; Using function nr           1
+   INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSM2              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimBioM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimPhoM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimTemM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimN                ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimP                ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimNutS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimMALN             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimMALP             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimMALC             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocGroS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocGroN             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocGroP             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocGroC             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:FrBmMALS            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:BmLayMAL            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:HactMAL             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:AactMAL             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimVel              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocUpN              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocUpP              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
+        SURF                ; Using parameter nr           1
+        LocalDepth          ; Using parameter nr           4
+  Not all variables available.
+  Number off missing variables :          33
+
+ ************************************************************************************************************* B L O C K - 9 *****
+
+
+ Output operations
+Number of periods defined:     0
+ 
+
+ *********************************************************** B L O C K -10 *****
+
+
+
+ Messages presented in this .lst file:
+
+ Number of WARNINGS            :     0
+ Number of ERRORS during input :     0
+ 
+
+
+ Messages presented including .lsp file:
+ Number of WARNINGS            :     1
+
+ Number of ERRORS during input :     0
+
+ Parallel processing with   1 processor(s)
+
+ total real      array space:       5535
+ total integer   array space:       4317
+ total character array space:       7025
+ grand total in 4-byte words:      16877 =   0-GB   0-MB  67-KB 508-Byte.
+ Execution stop : 2019/03/11 19:36:00 
