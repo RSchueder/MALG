@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Mon Mar 04 14:15:59 2019
+        !COMPILER-GENERATED INTERFACE MODULE: Tue Mar 12 15:45:13 2019
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE FLMALC__genmod
@@ -7,8 +7,8 @@
      &IKNMRK,NOQ1,NOQ2,NOQ3,NOQ4)
               REAL(KIND=4) :: PMSA(*)
               REAL(KIND=4) :: FL(*)
-              INTEGER(KIND=4) :: IPOINT(30)
-              INTEGER(KIND=4) :: INCREM(30)
+              INTEGER(KIND=4) :: IPOINT(35)
+              INTEGER(KIND=4) :: INCREM(35)
               INTEGER(KIND=4) :: NOSEG
               INTEGER(KIND=4) :: NOFLUX
               INTEGER(KIND=4) :: IEXPNT(4,*)

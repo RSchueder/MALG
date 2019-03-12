@@ -20,27 +20,26 @@
 ;
 ; areachar.dat: ../../../Small_NEW_v7b_final_inclWaves/overall_for_waq/v7b_final_inclWaves_ddc_vag.srf
 ;
-  14  4    ; number of active and inactive substances
+  13  4    ; number of active and inactive substances
 
 ; Index  Name
       1 'Continuity'
 	  2 'OXY'
 	  3 'NH4'
-	  4 'NO3'
-	  5 'PO4'
-	  6 'TIC'
-	  7 'ALKA'
-	  8 'POC1'
-	  9 'POC2'
-	 10 'PON1'
-	 11 'PON2'
-	 12 'POP1'
-	 13 'POP2'
-	 14 'DOC'
-	 15 'MALS'
-	 16 'MALN'
-	 17 'MALP'
-	 18 'MALC'
+	  4 'PO4'
+	  5 'TIC'
+	  6 'ALKA'
+	  7 'POC1'
+	  8 'POC2'
+	  9 'PON1'
+	 10 'PON2'
+	 11 'POP1'
+	 12 'POP2'
+	 13 'DOC'
+	 14 'MALS'
+	 15 'MALN'
+	 16 'MALP'
+	 17 'MALC'
 ;
 #1 ; delimiter for the first block
 ; 
@@ -58,12 +57,12 @@
    
 
  2019/08/01-00:00:00      ; start time 
- 2020/10/01-00:00:00      ; stop time 
+ 2020/09/01-00:00:00      ; stop time 
  0                  ; constant timestep 
- 0000100      ; time step
+ 0010000      ; time step
 ;
  1                                           ; Monitoring areas in this file
- 10
+ 11
 'Seg1'  1  1
 'Seg2'  1  2
 'Seg3'  1  3
@@ -74,12 +73,14 @@
 'Seg8'  1  8
 'Seg9'  1  9
 'Seg10'  1  10
-
+'column' 
+ 10 
+ 1 2 3 4 5 6 7 8 9 10
  
  2                                           ; No monitoring cross areas
 ; output control (see DELWAQ-manual)
 ; yyyy/mm/dd-hh:mm:ss  yyyy/mm/dd-hh:mm:ss  ddhhmmss
- 2019/08/01-00:00:00       2020/10/01-00:00:00       0010000      ; monitoring
+ 2019/08/01-00:00:00       2020/10/01-00:00:00       1000000      ; monitoring
  2019/08/01-00:00:00       2020/10/01-00:00:00       0010000      ; map, dump
  2019/08/01-00:00:00       2020/10/01-00:00:00       0010000      ; history
 ;
@@ -195,7 +196,7 @@ DATA
  CONSTANTS 'Latitude' DATA 52
  CONSTANTS 'Vel' DATA 0.075
  CONSTANTS 'ExtVl' DATA 0.000001
-
+ CONSTANTS 'LinDenMAL' DATA 300.0
  
  FUNCTIONS
  'Temp'
@@ -231,6 +232,8 @@ PARAMETERS 'LocalDepth'
 ALL
 DATA 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
 
+CONSTANTS 'TotalDepth'
+DATA 10.0
 ;
 #7 ; delimiter for the seventh block
 ; 
@@ -238,11 +241,11 @@ DATA 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
  MASS/M2 ; unit for inactive substances
  1 ; initial conditions follow
  2 ; all values with default
- 18*1.0 ; scale factors
+ 17*1.0 ; scale factors
       1 ;'Continuity'
 	  7 ;'OXY'
 	  1 ;'NH4'
-	  1 ;'NO3'
+	  ;1 ;'NO3'
 	  1 ;'PO4'
 	  30 ;'TIC'
 	  200 ;'ALKA'
@@ -263,7 +266,7 @@ DATA 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
       1.0 ;'Continuity'
 	  7.0 ;'OXY'
 	  1.0 ;'NH4'
-	  1.0 ;'NO3'
+	  ;1.0 ;'NO3'
 	  1.0 ;'PO4'
 	  30.0 ;'TIC'
 	  200.0 ;'ALKA'
@@ -293,35 +296,46 @@ DATA 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-37 ; number of extra variables
+48 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
   'Depth' ' '
   'Temp' ' '
+  'NO3' ' '
+  'RadSurf' ' '
+  'Itip' ' '
+  'Itipu' ' '
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   
-  'MALSM2' ' '                      ;x macroalgae structural in segment                       (gDM/m2)            
   'MALNDM' ' '                      ;x macroalgae N storage in segment                        (gN/gDM)            
   'MALPDM' ' '                      ;x macroalgae P storage in segment                        (gP/gDM)            
   'MALCDM' ' '                      ;x macroalgae C storage in segment                        (gC/gDM)            
   'MALSNC' ' '                      ;x ratio N:C in whole frond                               (gN/gC)             
   'MALSPC' ' '                      ;x ratio P:C in whole frond                               (gP/gC)             
-  'LimBioM' ' '                     ;x biomass limitation MALS                                (-)                 
-  'LimPhoM' ' '                     ;x photoperiod limitation MALS                            (-)                 
-  'LimTemM' ' '                     ;x temperature limitation MALS                            (-)                 
+  'MALSCD' ' '                      ;x ratio C:DM in whole frond                              (gC/gDM)             
+  'MALSND' ' '                      ;x ratio N:DM in whole frond                              (gN/gDM)
+  'MALSPD' ' '                      ;x ratio P:DM in whole frond                              (gP/gDM) 
+  'LimDenS' ' '                     ;x biomass limitation MALS                                (-)                 
+  'LimPhoS' ' '                     ;x photoperiod limitation MALS                            (-)                 
+  'LimTemS' ' '                     ;x temperature limitation MALS                            (-)                 
   'LimN' ' '                        ;x ambient nitrogen limitation for storage                (-)
   'LimP' ' '                        ;x ambient phosphorous limitation for storage             (-)
   'LimNutS' ' '                     ;x nutrient storage limitation MALS                       (-)                 
   'LimMALN' ' '                     ;x nitrogen storage limitation MALS                       (-)
   'LimMALP' ' '                     ;x phosphorous storage limitation MALS                    (-)
   'LimMALC' ' '                     ;x carbon storage limitation MALS                         (-)
-  'LocGroS' ' '                     ;x local growth of MALS                                   (DM/m3/d)           
+  'LocGroPS' ' '                    ;x local gross production of MALS                         (DM/m2/d)           
+  'LocNetPS' ' '                    ;x local net production of MALS                           (DM/m2/d)           
+  'LocDecS' ' '                     ;x local decay of MALS                                    (DM/m2/d)           
   'LocGroN' ' '                     ;x local growth of MALN                                   (gN/m3/d)           
   'LocGroP' ' '                     ;x local growth of MALP                                   (gP/m3/d)           
   'LocGroC' ' '                     ;x local growth of MALC                                   (gC/m3/d)     
   'LocDecS' ' '                     ;x local decay  of MALS                                   (DM/m3/d)           
+  'GrosMALC' ' '                    ;x gross photosynthesis MALC                              (gC/m2/d) 
+  'RespMALC' ' '                    ;x respiration MALC                                       (gC/m2/d)             
+  'ExudMALC' ' '                    ;x exudation MALC                                         (gC/m2/d) 
   'FrBmMALS' ' '                    ;x Fraction of bottom layer MALS in this seg              (DM/m2)             
   'BmLayMAL' ' '                    ;x   Biomass of MALS in segment                            (gDM/m2)           
   'HactMAL' ' '                     ;x length of frond in this column                         (m)                 

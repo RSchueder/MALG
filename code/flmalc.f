@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(30)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(30)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(35)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(35)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 30)   !    Local work array for the pointering
+      INTEGER IPNT( 35)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -47,7 +47,7 @@ C
       REAL(4) Taph        ! I	 Arrhenius temperature for photosynthesis at high end (K)
       REAL(4) Tapl        ! I	 Arrhenius temperature for photosynthesis at low end  (K)
       REAL(4) Tar         ! I	 Arrhenius temperature for respiration                (K)
-      REAL(4) Rad       	! I  irradiation at the segment upper boundary            (W/m2)
+      REAL(4) RadSurf     ! I  irradiation at the water surface                     (W/m2)
       REAL(4) ExtVl       ! I  total extinction coefficient of visible light        (1/m)
       REAL(4) alpha       ! I	 photosynthetic efficiency                            (gC/m2 d/ (umol photons m-2 s-1)-1
       REAL(4) Isat        ! I	 light intensity where photosynthesis is at max       (umol photons m-2 s-1)	
@@ -57,8 +57,13 @@ C
       REAL(4) DELT        ! I  timestep for processes                               (d)
       REAL(4) Depth       ! I  depth of segment                                     (m)
       REAL(4) LocalDepth  ! I  depth of segment below surface                       (m)
-
+      
+      REAL(4) Itip        ! O
+      REAL(4) Itipu       ! O
       REAL(4) LocUpC      ! O
+      REAL(4) GrosMALC    ! O 
+      REAL(4) RespMALC    ! O
+      REAL(4) ExudMALC    ! O
       
       REAL(4) dMALTIC     ! F  HCO3 uptake MALN                                       (gC/m3/d)
       REAL(4) dMALDOC     ! F  Exudate MALN                                           (gC/m3/d)
@@ -85,6 +90,7 @@ C
       REAL(4) Tpl
       REAL(4) Tph
       REAL(4) alpha0
+      REAL(4) areaLoc
 
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -124,7 +130,7 @@ C
                 Taph       = PMSA( IPNT(  17) )
                 Tapl       = PMSA( IPNT(  18) )
                 Tar        = PMSA( IPNT(  19) )
-                Rad      	 = PMSA( IPNT(  20) )
+                RadSurf  	 = PMSA( IPNT(  20) )
                 ExtVl	     = PMSA( IPNT(  21) )
                 alpha      = PMSA( IPNT(  22) )
                 Isat       = PMSA( IPNT(  23) )
@@ -143,30 +149,35 @@ C
                 ! need to convert substances of gC/m2 to gC/gDM
                 ! to be consistent with constants from Broch
                 ! this line shows how we assume the entire plant will have the
-                ! same abundance of nitrogen and carbon stores
+                ! same abundance of carbon stores
                 ! along the length
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
                 ! since the storage is relative the amount of DM,
                 ! we calculate how much DM there is in this segment
                 MALS = MALS * FrBmMALS
-               
+                
                 ! gross photosynthesis
                 
                 ! integrate the radiation decay function between z2 (local depth, botom)
                 ! and m1 (Localdepth - segment depth, top)
-                ! Radiation at top is Rad
-                I = -Rad/(ExtVl * Depth) * (exp(-ExtVl * LocalDepth) - 
-     &           exp(-ExtVl * (LocalDepth - Depth)))
+                ! Radiation at top is RadSurf
+                I = -RadSurf/(ExtVl * Depth) * (exp(-ExtVl * LocalDepth) 
+     &           - exp(-ExtVl * (LocalDepth - Depth)))
                 ! need to convert to correct units
                 ! 1 W/m2 = 4.57 umol photons m-2 s-1
                 ! assumption is data supplied consistent with saturation value
+                Itip = I
                 I = I * 4.57 ! umol/m2s
+                Itipu = I
+
                 Isat = Isat * 4.57 ! umol/m2s
                 Temp = Temp + 273.0
                 ! P1 = P1 / 2400.0
                 Tpl = 283.0
                 Tph = 303.0
-                alpha0 = 0.0000375
+                ! this is the alpha for gC/dm2 plant/hr
+                alpha0 = alpha/(100.0*24.0)
+                ! gC/(dm2 hr)
                 Pmax = P1 * exp((Tap/Tp1) - (Tap/Temp))/
      &           (1 + exp((Tapl/Temp) - (Tapl/Tpl)) + 
      &           exp((Taph/Tph) - (Taph/Temp)))
@@ -176,6 +187,7 @@ C
                 ! instead we choose a good value for moderate growth conditions
                 ! if we were we could need to use original units for P1 Pmax, alpha and beta
                 beta = 1.023d-7
+                
                 ! P1 = P1 / 2400.0
 
 !                DO 1200 iter = 1, 10
@@ -183,35 +195,39 @@ C
 !     &            (alpha0/(alph0a+beta)) * 
 !     &             (beta/(alpha0+beta))**(beta/alpha0)
 !                (0.0000375*200/log(1+0.0000375/x)) * (0.0000375/(0.0000375+x)) * (x/(0.0000375+x))^(x/0.0000375)
-                  
-                Ps = alpha*Isat/LOG(1+alpha0/beta)  
-                ! gC/m2/day
-                P = Ps * (1-exp(-alpha*I/Ps))*exp(-beta*I/Ps)
                 
+                ! gC/(dm2 hr)
+                Ps = alpha0*Isat/LOG(1+alpha0/beta)  
+                P = Ps * (1-exp(-alpha0*I/Ps))*exp(-beta*I/Ps)
+                ! converted to m2 d instead of dm hr because R1 is in the former
+                P = (alpha/alpha0) * P
                 ! all rates will as per the paper yield rates
-                ! of gC/gDM day
-                ! multiply by MALS and divide by depth to get gC/m3 d
+                ! of gC/area plant/ hr
                 
-                ! respiration gC/m3 d
+                ! respiration gC/m2 d (m2 of plant not water segment)
                 R = R1 * exp(Tar/Tr1 - Tar/Temp)
                
-                ! exudation gC/m3 d
+                ! exudation (-)
                 E = 1-exp(exuMALC*(MALCmin - MALC))
+                ! need the area of the frond in this segment
+                ! already in this segment by virtue of the FrBmMALS
+                areaLoc = MALS * Surf / ArDenMAL
                 
                 ! effect on TIC is net of production and maintenance respiration
                 ! growth respiration is included in FLMALS
                 ! TIC gets converted (lost) to DOC in exudate
 
-                dMALTIC = ((MALS/ArDenMAL)/Depth) * (P - R) 
+                dMALTIC = areaLoc * (P - R) / (Surf*Depth) 
                 
                 ! NEED ALKA HERE!
 
                 ! exudate is produced as DOC, E is a fraction of production
-                dMALDOC = ((MALS/ArDenMAL)/Depth) * P * E 
+              
+                ! exudation (leakage) gC/(m3 d)
+                dMALDOC = areaLoc * P * E / (Surf*Depth) 
                 
-                ! uptake into storage
-                LocUpC = (MALS/ArDenMAL) * ( P * (1.0-E) - R )
-                
+                ! uptake into storage gC/(m2 d)
+                LocUpC  = areaLoc * ( P * (1.0-E) - R ) / Surf
                 ! oxygen 
                 ! photosynthesis produces oxygen, respiration consumes
                 ! look to TIC to see what the balance is
@@ -219,7 +235,15 @@ C
                 dPrMALOXY   = 2.67 * dMALTIC
                 ! need ALKA!
                 
+                GrosMALC            = areaLoc * P / Surf 
+                RespMALC            = areaLoc * R / Surf 
+                ExudMALC            = areaLoc * P * E / Surf
                 PMSA( IPNT( 30)   ) = LocUpC
+                PMSA( IPNT( 31)   ) = Itip
+                PMSA( IPNT( 32)   ) = Itipu
+                PMSA( IPNT( 33)   ) = GrosMALC
+                PMSA( IPNT( 34)   ) = RespMALC
+                PMSA( IPNT( 35)   ) = ExudMALC
 
                 FL ( IdUpMALTIC   ) = dMALTIC
                 FL ( IdPrMALDOC   ) = dMALDOC

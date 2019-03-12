@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/11 19:36:00 
+ Execution start: 2019/03/12 15:48:47 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -14,28 +14,27 @@
  Intermediate version absolute timer detected !
  System clock is     1 seconds !
 
- Number of active constituents   : 14
+ Number of active constituents   : 13
  Number of inactive constituents :  4
- Total number of constituents    : 18
+ Total number of constituents    : 17
  Number   name
     1     Continuity          
     2     OXY                 
     3     NH4                 
-    4     NO3                 
-    5     PO4                 
-    6     TIC                 
-    7     ALKA                
-    8     POC1                
-    9     POC2                
-   10     PON1                
-   11     PON2                
-   12     POP1                
-   13     POP2                
-   14     DOC                 
-   15     MALS                
-   16     MALN                
-   17     MALP                
-   18     MALC                
+    4     PO4                 
+    5     TIC                 
+    6     ALKA                
+    7     POC1                
+    8     POC2                
+    9     PON1                
+   10     PON2                
+   11     POP1                
+   12     POP2                
+   13     DOC                 
+   14     MALS                
+   15     MALN                
+   16     MALP                
+   17     MALC                
 
  ************************************************************************************************************* B L O C K - 1 *****
 
@@ -57,14 +56,14 @@
  Keyword ( 1) detected: DISP-AT-NOFLOW                          
  Keyword ( 2) detected: NODISP-AT-BOUND                         
  Start of simulation : 0Y-212D- 0H- 0M- 0S.
- End of simulation   : 1Y-274D- 0H- 0M- 0S.
+ End of simulation   : 1Y-244D- 0H- 0M- 0S.
  Selected option for time step size :  0
- Integration time stepsize is : 0Y-  0D- 0H- 1M- 0S.
+ Integration time stepsize is : 0Y-  0D- 1H- 0M- 0S.
 
  Dump areas:
  option selected for input :    1
 
- Number of dump areas :   10
+ Number of dump areas :   11
 
  Dump area :    1 : Seg1                
  Number of segments in area :              1
@@ -116,6 +115,20 @@
           number   segment
               1             10
 
+ Dump area :   11 : column              
+ Number of segments in area :             10
+          number   segment
+              1              1
+              2              2
+              3              3
+              4              4
+              5              5
+              6              6
+              7              7
+              8              8
+              9              9
+             10             10
+
  Transects:
  option selected for input : 2
  No transects used.
@@ -124,7 +137,7 @@
  Monitoring  timings :
  Start time : 0Y-212D- 0H- 0M- 0S 
  Stop time  : 1Y-274D- 0H- 0M- 0S 
- Time step  : 0Y-  0D- 1H- 0M- 0S 
+ Time step  : 0Y-  1D- 0H- 0M- 0S 
 
 
  Output      timings :
@@ -395,6 +408,15 @@
  ====> input item completed <==== 
 
 
+ Input constant   nr:    1 is constant   nr:   19 with ID  : LinDenMAL           
+ constant values in this block.
+ values        19
+ constants    LinDenMAL   
+         1    3.0000E+02
+
+ ====> input item completed <==== 
+
+
   
  Input function   nr:    1 is function   nr:    1 with ID  : Temp                
 
@@ -478,60 +500,52 @@
 
  Continuing on file: broch_col.inp                                                                 
 
- number of breakpoints with full data:   14
+ number of breakpoints with full data:   12
  breakpoint   1 :  18316800
  values         2
  functions    NO3         
          1    1.4000E-03
- breakpoint   2 :  20995200
- values         2
- functions    NO3         
-         1    0.0000E+00
- breakpoint   3 :         0
+ breakpoint   2 :  23587200
  values         2
  functions    NO3         
          1    7.0000E-03
- breakpoint   4 :  26265600
- values         2
- functions    NO3         
-         1    0.0000E+00
- breakpoint   5 :  28857600
+ breakpoint   3 :  28857600
  values         2
  functions    NO3         
          1    7.0000E-02
- breakpoint   6 :  31536000
- values         2
- functions    NO3         
-         1    0.0000E+00
- breakpoint   7 :  34214400
+ breakpoint   4 :  34214400
  values         2
  functions    NO3         
          1    9.8000E-02
- breakpoint   8 :  36720000
+ breakpoint   5 :  36720000
  values         2
  functions    NO3         
          1    3.5000E-02
- breakpoint   9 :  39398400
+ breakpoint   6 :  39398400
  values         2
  functions    NO3         
          1    7.7000E-02
- breakpoint  10 :  41990400
+ breakpoint   7 :  41990400
  values         2
  functions    NO3         
          1    1.4000E-03
- breakpoint  11 :  44668800
+ breakpoint   8 :  44668800
  values         2
  functions    NO3         
          1    2.8000E-03
- breakpoint  12 :  47260800
+ breakpoint   9 :  47260800
  values         2
  functions    NO3         
          1    1.4000E-03
- breakpoint  13 :  49939200
+ breakpoint  10 :  49939200
  values         2
  functions    NO3         
          1    7.0000E-05
- breakpoint  14 :  52617600
+ breakpoint  11 :  52617600
+ values         2
+ functions    NO3         
+         1    7.0000E-05
+ breakpoint  12 :  55209600
  values         2
  functions    NO3         
          1    7.0000E-05
@@ -550,7 +564,7 @@
 
  Continuing on file: broch_col.inp                                                                 
 
- number of breakpoints with full data:   14
+ number of breakpoints with full data:   15
  breakpoint   1 :  18316800
  values         3
  functions    RadSurf     
@@ -604,6 +618,10 @@
  functions    RadSurf     
          1    2.5330E+01
  breakpoint  14 :  52617600
+ values         3
+ functions    RadSurf     
+         1    1.2660E+01
+ breakpoint  15 :  55209600
  values         3
  functions    RadSurf     
          1    1.2660E+01
@@ -703,8 +721,17 @@
  ====> input item completed <==== 
 
 
+ Input constant   nr:    1 is constant   nr:   20 with ID  : TotalDepth          
+ constant values in this block.
+ values        20
+ constants    TotalDepth  
+         1    1.0000E+01
 
- Total number of constants        :   18
+ ====> input item completed <==== 
+
+
+
+ Total number of constants        :   20
 
  Total number of parameters       :    4
 
@@ -726,16 +753,16 @@
                  1           2           3           4           5           6           7           8           9          10
               1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  Unscaled default values:
-              1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+              1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  Scale factors:
-                11          12          13          14          15          16          17          18
-              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+                11          12          13          14          15          16          17
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  Unscaled default values:
-              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+              1.0000E+00  1.0000E+00  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
  Number of overridings :    1
  Number         values
-        10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
-              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  5.0000E+00  6.0000E-02  6.0000E-03  6.0000E-02
+        10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+              1.0000E+00  1.0000E+00  1.0000E+00  5.0000E+00  6.0000E-02  6.0000E-03  6.0000E-02
 
  ************************************************************************************************************* B L O C K - 8 *****
 
@@ -768,7 +795,7 @@
 
  All substances plus extra output variables
 
- (     37) number of output variables specified
+ (     48) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -776,38 +803,49 @@
        3           TotalDepth                                
        4           Depth                                     
        5           Temp                                      
-       6           daylend                                   
-       7           daylenp                                   
-       8           daylenm                                   
-       9           MALSM2                                    
-      10           MALNDM                                    
-      11           MALPDM                                    
-      12           MALCDM                                    
-      13           MALSNC                                    
-      14           MALSPC                                    
-      15           LimBioM                                   
-      16           LimPhoM                                   
-      17           LimTemM                                   
-      18           LimN                                      
-      19           LimP                                      
-      20           LimNutS                                   
-      21           LimMALN                                   
-      22           LimMALP                                   
-      23           LimMALC                                   
-      24           LocGroS                                   
-      25           LocGroN                                   
-      26           LocGroP                                   
-      27           LocGroC                                   
-      28           LocDecS                                   
-      29           FrBmMALS                                  
-      30           BmLayMAL                                  
-      31           HactMAL                                   
-      32           AactMAL                                   
-      33           LimVel                                    
-      34           LocUpN                                    
-      35           LocUpP                                    
-      36           LocUpC                                    
-      37           MBotSeg                                   
+       6           NO3                                       
+       7           RadSurf                                   
+       8           Itip                                      
+       9           Itipu                                     
+      10           daylend                                   
+      11           daylenp                                   
+      12           daylenm                                   
+      13           MALNDM                                    
+      14           MALPDM                                    
+      15           MALCDM                                    
+      16           MALSNC                                    
+      17           MALSPC                                    
+      18           MALSCD                                    
+      19           MALSND                                    
+      20           MALSPD                                    
+      21           LimDenS                                   
+      22           LimPhoS                                   
+      23           LimTemS                                   
+      24           LimN                                      
+      25           LimP                                      
+      26           LimNutS                                   
+      27           LimMALN                                   
+      28           LimMALP                                   
+      29           LimMALC                                   
+      30           LocGroPS                                  
+      31           LocNetPS                                  
+      32           LocDecS                                   
+      33           LocGroN                                   
+      34           LocGroP                                   
+      35           LocGroC                                   
+      36           LocDecS                                   
+      37           GrosMALC                                  
+      38           RespMALC                                  
+      39           ExudMALC                                  
+      40           FrBmMALS                                  
+      41           BmLayMAL                                  
+      42           HactMAL                                   
+      43           AactMAL                                   
+      44           LimVel                                    
+      45           LocUpN                                    
+      46           LocUpP                                    
+      47           LocUpC                                    
+      48           MBotSeg                                   
 
  Specification of map output
 
@@ -821,7 +859,7 @@
 
  Binary history file switched on
 
- Binary map file switched on
+ Binary map file switched off
 
  NEFIS history file switched off
 
@@ -835,32 +873,43 @@
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
-   INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
+        TotalDepth          ; Using constant nr          20
         Depth               ; Using parameter nr           2
         Temp                ; Using function nr           1
+        NO3                 ; Using function nr           2
+        RadSurf             ; Using function nr           3
+   INFO:Itip                ; NOT FOUND, delwaq will detect variables from process library
+   INFO:Itipu               ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSM2              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LimBioM             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LimPhoM             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LimTemM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSCD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSND              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSPD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimDenS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimPhoS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimTemS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimN                ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimP                ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimNutS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALN             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALP             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALC             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LocGroS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocGroPS            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocNetPS            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroN             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroP             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroC             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:GrosMALC            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:RespMALC            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:ExudMALC            ; NOT FOUND, delwaq will detect variables from process library
    INFO:FrBmMALS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:BmLayMAL            ; NOT FOUND, delwaq will detect variables from process library
    INFO:HactMAL             ; NOT FOUND, delwaq will detect variables from process library
@@ -870,10 +919,8 @@
    INFO:LocUpP              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
-        SURF                ; Using parameter nr           1
-        LocalDepth          ; Using parameter nr           4
   Not all variables available.
-  Number off missing variables :          33
+  Number off missing variables :          41
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -894,14 +941,14 @@ Number of periods defined:     0
 
 
  Messages presented including .lsp file:
- Number of WARNINGS            :     1
+ Number of WARNINGS            :     2
 
  Number of ERRORS during input :     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       5535
- total integer   array space:       4317
- total character array space:       7025
- grand total in 4-byte words:      16877 =   0-GB   0-MB  67-KB 508-Byte.
- Execution stop : 2019/03/11 19:36:00 
+ total real      array space:       5702
+ total integer   array space:       4406
+ total character array space:       8136
+ grand total in 4-byte words:      18244 =   0-GB   0-MB  72-KB 976-Byte.
+ Execution stop : 2019/03/12 15:48:47 

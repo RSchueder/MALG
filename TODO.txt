@@ -1,4 +1,10 @@
 TODO
 
 Mar 6 - 
+DONE - Send fluxes to non-local index in flux array
 Need to add alkalinity and TIC fluxes from uptake
+
+Mar 12 - 
+Day length can be sped up, maybe copying from previous pmsa location before re-assignment
+Make a lookup table for beta instead of the computationally expensive newton’s method.
+

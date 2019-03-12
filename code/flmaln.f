@@ -149,12 +149,12 @@ C
                 ! nitrogen hunger will be the same along length
                 ! nutrient abundance will not be
                 
-                IF (MALN .gt. MALNmax) THEN
-                    write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
-                ENDIF
-                IF (MALP .gt. MALPmax) THEN
-                    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
-                ENDIF                
+                !IF (MALN .gt. MALNmax) THEN
+                !    write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
+                !ENDIF
+                !IF (MALP .gt. MALPmax) THEN
+                !    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
+                !ENDIF                
                 
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
                 IF (LimN .lt. 0.0) THEN
@@ -172,19 +172,22 @@ C
                 ! Broch achieves gN/gDM day
                 ! we multimply this by MALS * area density (g/m2)
                                 
-                IF (LimN .gt. 0.0 .AND. LimP .gt. 0.0 .AND. MALN .lt. 
-     &               MALNmax .AND. MALP .lt. MALPmax) THEN
+                IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
                   LocUpN = (MALS/ArDenMAL) * LimVel * JNmax * 
      &             (NO3/(Ksn + NO3)) * LimN
+                ELSE
+                    LocUpN = 0.0
+                ENDIF
+                
+                IF (LimP .gt. 0.0 .AND. MALP .lt. MALPmax) THEN
                   LocUpP = (MALS/ArDenMAL) * LimVel * JPmax * 
      &             (PO4/(Ksp + PO4)) * LimP
                 ELSE
-                    LocUpN = 0.0
                     LocUpP = 0.0
                 ENDIF
                 
                 dUpMALNO3 = LocUpN/Depth 
-                ! can not take up NH4 at the moment, Broch ignores this
+                ! can not take up NH4 at the moment, Broch ignores NH4
                 dUpMALNH4 = 0.0
                 dUpMALPO4 = LocUpP/Depth
                 

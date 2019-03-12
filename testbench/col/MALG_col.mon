@@ -1,0 +1,49 @@
+ Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
+ Execution start: 2019/03/12 09:28:25 
+
+ Parallel processing with   1 processor(s)
+
+ total real      array space:      48362
+ total integer   array space:       9700
+ total character array space:       8087
+ grand total in 4-byte words:      66149 =   0-GB   0-MB 264-KB 596-Byte.
+                                                             
+                                                             
+
+                                                             
+                     T0: 2019.01.01 00:00:00  (scu=       1s)
+
+                     Initialisation from system file completed.
+
+ No process decomposition active
+ partit: noseg,nolay=          90          10 , nseghr=           9
+ partit: npart=  1, assigning all segments to part "npart", none to other parts
+ 
+ CONSTANT ON UNIT:        26, READING: ../col-hyd/com-col-hyd.len                                                                                                                                                                                                                                     
+ SIMULATION TIME :    0D  0H  0M  0S ! 
+ TIME IN FILE    :    0D  0H  4M 21S ! 
+  Closure error correction enabled
+ 
+ Initialising numerical options for method 15...18
+ 
+ Preconditioner switch not found, using default
+ switch = 3, corrections based on lower and upper 
+ 
+ Maximum number of iterations found in input
+ Maximum number of iterations set to :   100
+ Maximum number of vectors is:    50
+ 
+ Relative tolerance found in input
+ Relative tolerance set to : 0.100E-06
+ 
+ Scaling switch not found, using default
+ switch = 1, scaling is switched on
+ 
+ Iteration report switch found in input
+ switch = 0, iteration report is switched off
+ 
+ Extra functionality DLWQTR
+ Dispersion length in third dir. will be calculated
+ End extra functionality DLWQTR
+  -openpb command line argument found
+  using dll : ..\..\code\x64\Debug\D3Dwaq_OpenPL.dll

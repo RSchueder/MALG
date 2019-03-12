@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(48)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(48)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(50)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(50)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 48)   !    Local work array for the pointering
+      INTEGER IPNT( 50)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -59,12 +59,14 @@ C
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
       
-      REAL(4) MALSM2		! O	 macroalgae structural in segment	                 (gDM/m2)
       REAL(4) MALNDM		! O	 macroalgae N storage in segment                     (gN/gDM)
       REAL(4) MALPDM		! O	 macroalgae P storage in segment                     (gP/gDM)
       REAL(4) MALCDM		! O	 macroalgae C storage in segment                 	 (gC/gDM)
       REAL(4) MALSNC		! O	 ratio N:C in whole plant                            (-)
       REAL(4) MALSPC		! O	 ratio P:C in whole plant                            (-)
+      REAL(4) MALSCD		! O	 ratio C:DM in whole plant                           (-)
+      REAL(4) MALSND		! O	 ratio N:DM in whole plant                           (-)
+      REAL(4) MALSPD		! O	 ratio P:DM in whole plant                           (-)      
       REAL(4) LimBioMALS  ! O  density limitation function                         (-)
       REAL(4) LimPhoMALS  ! O  photoperiod limitation function                     (-)
       REAL(4) LimTemMALS  ! O  temperature limitation function                     (-)
@@ -184,9 +186,9 @@ C
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
                 
-                ! need to convert substances of gN/m2 to gN/gDM
+                ! need to convert storage substance from gX/m2 to gX/gDM
                 ! to be consistent with constants from Broch
-                ! gN/m2 to gN/gDM
+                ! gX/m2 to gX/gDM
                 
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
@@ -197,9 +199,9 @@ C
    
                 MALS = MALS * FrBmMALS 
                 lengthLoc = HactMAL * FrBmMALS
-                areaLoc = AactMAL * FrBmMALS          
+                areaLoc = AactMAL * FrBmMALS   
+                
                 ! density limitation
-             
                 ! if the plant is too big overall then all segments suffer
                 
                 LimDen =MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
@@ -230,14 +232,14 @@ C
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
-                ! gDM per day per m2
                 ! local decay
                 ! since all segments are doing this, only send the fraction
                 ! as it will be compared to the local growth
+                ! gDM/(m2 d)
                 dDecayMALS = MALS * mrt * FrBmMALS
                
                 ! production organic material
-                ! g/(d*m3)
+                ! g/(m3 d)
                 dPrPOC1MAL = (dDecayMALS*CDRatMALS)*FrPOC1MALS/Depth 
                 dPrPOC2MAL = (dDecayMALS*CDRatMALS)*FrPOC2MALS/Depth 
 
@@ -262,6 +264,7 @@ C
                     write(*,*) 'ERROR: MALC (gC/gDM) LESS THAN MALCmin'
                 ENDIF           
                 
+                ! storage limitations
                 LimN = MAX(1-MALNmin/MALN, 0.0)
                 LimP = MAX(1-MALPmin/MALP, 0.0)
                 LimC = MAX(1-MALCmin/MALC, 0.0)
@@ -271,23 +274,20 @@ C
                 mu = LimDen * LimPho * LimTemp * LimNut
                 IF (mu .gt. 0.0) THEN
                     ! gDM/(m2 d)
-                    dGrowMALS = MALS * (mu)
+                    dGrowMALS = MALS * mu
                 ELSE
                     dGrowMALS = 0.0
-                ENDIF
-                IF (ISEG .eq. 82) THEN
-                    chk = 1
                 ENDIF
                 
                 ! uptake from storage
                 IF (dGrowMALS .gt. 0.0) THEN
-                    ! gN/(m2 d)
+                    ! TotN = gN/m2
                     TotN = MALS*(MALN+(CDRatMALS*NCRatMALS))
                     dNtrMALS=mu*TotN
-                    ! gP/(m2 d)
+                    ! TotP = gP/m2
                     TotP = MALS*(MALP+CDRatMALS*PCRatMALS)
                     dPtrMALS=mu*TotP
-                    ! gC/(m2 d)
+                    ! TotC = 
                     TotC = MALS*(MALC+CDRatMALS)
                     dCtrMALS=mu*TotC      
                 ELSE
@@ -306,7 +306,10 @@ C
                 MALCDM = MALC
                 
                 MALSNC = TotN/TotC		
-                MALSPC = TotP/TotC	            
+                MALSPC = TotP/TotC	  
+                MALSCD = TotC/MALS
+                MALSND = TotN/MALS		
+                MALSPD = TotP/MALS	  
                 ! oxygen 
                 ! mineralization of stored carbon consumes oxygen
                 
@@ -326,25 +329,28 @@ C
                 FL(IdGrMALN + FLCREM) = FL(IdGrMALN + FLCREM ) + LocGroN
                 FL(IdGrMALP + FLCREM) = FL(IdGrMALP + FLCREM)  + LocGroP
                 FL(IdGrMALC + FLCREM) = FL(IdGrMALC + FLCREM)  + LocGroC
-
-                PMSA( IPNT( 31)   ) =  MALSM2		
-                PMSA( IPNT( 32)   ) =  MALNDM		
-                PMSA( IPNT( 33)   ) =  MALPDM		
-                PMSA( IPNT( 34)   ) =  MALCDM		
-                PMSA( IPNT( 35)   ) =  MALSNC		
-                PMSA( IPNT( 36)   ) =  MALSPC		
-                PMSA( IPNT( 37)   ) =  LimDen
-                PMSA( IPNT( 38)   ) =  LimPho  
-                PMSA( IPNT( 39)   ) =  LimTemp 
-                PMSA( IPNT( 40)   ) =  LimN  
-                PMSA( IPNT( 41)   ) =  LimP  
-                PMSA( IPNT( 42)   ) =  LimC   
-                PMSA( IPNT( 43)   ) =  LimNut  
-                PMSA( IPNT( 44)   ) =  LocGroS     
-                PMSA( IPNT( 45)   ) =  LocGroN    
-                PMSA( IPNT( 46)   ) =  LocGroP    
-                PMSA( IPNT( 47)   ) =  LocGroC  
-                PMSA( IPNT( 48)   ) =  dDecayMALS  
+                                  
+                PMSA( IPNT( 31)   ) =  MALNDM		
+                PMSA( IPNT( 32)   ) =  MALPDM		
+                PMSA( IPNT( 33)   ) =  MALCDM		
+                PMSA( IPNT( 34)   ) =  MALSNC		
+                PMSA( IPNT( 35)   ) =  MALSPC	
+                PMSA( IPNT( 36)   ) =  MALSCD
+                PMSA( IPNT( 37)   ) =  MALSND
+                PMSA( IPNT( 38)   ) =  MALSPD
+                PMSA( IPNT( 39)   ) =  LimDen
+                PMSA( IPNT( 40)   ) =  LimPho  
+                PMSA( IPNT( 41)   ) =  LimTemp 
+                PMSA( IPNT( 42)   ) =  LimN  
+                PMSA( IPNT( 43)   ) =  LimP  
+                PMSA( IPNT( 44)   ) =  LimC   
+                PMSA( IPNT( 45)   ) =  LimNut  
+                
+                PMSA( IPNT( 46)   ) =  dGrowMALS     
+                PMSA( IPNT( 47)   ) =  LocGroS
+                PMSA( IPNT( 48)   ) =  dDecayMALS
+                PMSA( IPNT( 49)   ) =  LocGroP    
+                PMSA( IPNT( 50)   ) =  LocGroC  
 
             ENDIF
           ENDIF

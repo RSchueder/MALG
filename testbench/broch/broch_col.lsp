@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/11 19:36:00 
+ Execution start: 2019/03/12 15:48:47 
                                                                                 
  found -p command line switch                                                   
 
@@ -87,17 +87,6 @@ total number of substances with fractions :  0
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
    info : can not switch [VertDisp            ] on, not using disp.                                 
 -velocity for [NH4                 ]                                                                
- no velocity found                                                                                  
-                                                                                                    
--fluxes for [NO3                 ]                                                                  
- found flux  [dUpNO3M             ] NO3 uptake by Macroalgae nitrogen storage                       
-   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
-   process is switched on.                                                                          
--dispersion for [NO3                 ]                                                              
- found dispersion[VertDisp            ] vertical dispersion                                         
-   from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
-   info : can not switch [VertDisp            ] on, not using disp.                                 
--velocity for [NO3                 ]                                                                
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [PO4                 ]                                                                  
@@ -259,9 +248,9 @@ total number of substances with fractions :  0
                                                                                                     
  Input for [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)                
        [MALS                ] MacroALgae Structural biomass                                         
-       Using substance nr  15                                                                       
+       Using substance nr  14                                                                       
        [MALC                ] MacroALgae Carbon storage                                             
-       Using substance nr  18                                                                       
+       Using substance nr  17                                                                       
        [FrBmMALS            ] Fraction of bottom layer MALS in this seg                             
        Using output from proces [MALDIS              ]                                              
        [MALCmin             ] minimum C in storage                                                  
@@ -319,17 +308,17 @@ total number of substances with fractions :  0
                                                                                                     
  Input for [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                        
        [MALS                ] MacroALgae Structural biomass                                         
-       Using substance nr  15                                                                       
+       Using substance nr  14                                                                       
        [MALN                ] MacroALgae Nitrogen storage                                           
-       Using substance nr  16                                                                       
+       Using substance nr  15                                                                       
        [MALP                ] MacroALgae Phosphorous storage                                        
-       Using substance nr  17                                                                       
+       Using substance nr  16                                                                       
        [NO3                 ] external NO3 concentration                                            
-       Using substance nr   4                                                                       
+       Using function nr  2                                                                         
        [NH4                 ] external NH4 concentration                                            
        Using substance nr   3                                                                       
        [PO4                 ] external P concentration                                              
-       Using substance nr   5                                                                       
+       Using substance nr   4                                                                       
        [FrBmMALS            ] Fraction of bottom layer MALS in this seg                             
        Using output from proces [MALDIS              ]                                              
        [ArDenMAL            ] grams/m2 surface area of frond                                        
@@ -371,13 +360,13 @@ total number of substances with fractions :  0
                                                                                                     
  Input for [FlMALS              ] Flux calculation for Macroalgae Structural Mass                   
        [MALS                ] MacroALgae Structural biomass                                         
-       Using substance nr  15                                                                       
+       Using substance nr  14                                                                       
        [MALN                ] MacroALgae Nitrogen storage                                           
-       Using substance nr  16                                                                       
+       Using substance nr  15                                                                       
        [MALP                ] MacroALgae Phosphorous storage                                        
-       Using substance nr  17                                                                       
+       Using substance nr  16                                                                       
        [MALC                ] MacroALgae Carbon storage                                             
-       Using substance nr  18                                                                       
+       Using substance nr  17                                                                       
        [FrBmMALS            ] Fraction of bottom layer MALS in this seg                             
        Using output from proces [MALDIS              ]                                              
        [MALNmin             ] minimum N in storage                                                  
@@ -437,21 +426,21 @@ total number of substances with fractions :  0
        [Depth               ] depth of segment                                                      
        Using parameter nr  2                                                                        
        [TotalDepth          ] total depth water column                                              
-       Using output from proces [TotDepth            ]                                              
+       Using constant nr 20 with value:  10.0000                                                    
        [LocalDepth          ] depth from water surface to bottom of segment                         
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
-       Using substance nr  15                                                                       
+       Using substance nr  14                                                                       
        [MALN                ] MacroALgae Nitrogen storage                                           
-       Using substance nr  16                                                                       
+       Using substance nr  15                                                                       
        [MALP                ] MacroALgae Phosphorous storage                                        
-       Using substance nr  17                                                                       
+       Using substance nr  16                                                                       
        [MALC                ] MacroALgae Carbon storage                                             
-       Using substance nr  18                                                                       
+       Using substance nr  17                                                                       
        [HmaxMAL             ] Maximum height MALG                                                   
        using default value:  10.0000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
-       using default value:  300.000                                                                
+       Using constant nr 19 with value:  300.000                                                    
        [ArDenMAL            ] grams/m2 surface area of frond                                        
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -488,34 +477,40 @@ total number of substances with fractions :  0
  info: constant [Tolerance ] is not used by the proces system                   
  info: constant [Iteration ] is not used by the proces system                   
  info: parameter [bottomdept] is not used by the proces system                  
- info: function [NO3       ] is not used by the proces system                   
                                                                                 
 # locating requested output from active processes                                                   
                                                                                                     
- output [TotalDepth          ] from proces [TotDepth  ]                                             
+ output [Itip                ] from proces [FlMALC    ]                                             
+ output [Itipu               ] from proces [FlMALC    ]                                             
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             
- output [MALSM2              ] from proces [FlMALS    ]                                             
  output [MALNDM              ] from proces [FlMALS    ]                                             
  output [MALPDM              ] from proces [FlMALS    ]                                             
  output [MALCDM              ] from proces [FlMALS    ]                                             
  output [MALSNC              ] from proces [FlMALS    ]                                             
  output [MALSPC              ] from proces [FlMALS    ]                                             
- output [LimBioM             ] from proces [FlMALS    ]                                             
- output [LimPhoM             ] from proces [FlMALS    ]                                             
- output [LimTemM             ] from proces [FlMALS    ]                                             
+ output [MALSCD              ] from proces [FlMALS    ]                                             
+ output [MALSND              ] from proces [FlMALS    ]                                             
+ output [MALSPD              ] from proces [FlMALS    ]                                             
+ warning: output [LimDenS             ] not located                                                 
+ output [LimPhoS             ] from proces [FlMALS    ]                                             
+ output [LimTemS             ] from proces [FlMALS    ]                                             
  output [LimN                ] from proces [FlMALN    ]                                             
  output [LimP                ] from proces [FlMALN    ]                                             
  output [LimNutS             ] from proces [FlMALS    ]                                             
  output [LimMALN             ] from proces [FlMALS    ]                                             
  output [LimMALP             ] from proces [FlMALS    ]                                             
  output [LimMALC             ] from proces [FlMALS    ]                                             
- output [LocGroS             ] from proces [FlMALS    ]                                             
+ output [LocGroPS            ] from proces [FlMALS    ]                                             
+ output [LocNetPS            ] from proces [FlMALS    ]                                             
+ output [LocDecS             ] from proces [FlMALS    ]                                             
  output [LocGroN             ] from proces [FlMALS    ]                                             
  output [LocGroP             ] from proces [FlMALS    ]                                             
  output [LocGroC             ] from proces [FlMALS    ]                                             
- output [LocDecS             ] from proces [FlMALS    ]                                             
+ output [GrosMALC            ] from proces [FlMALC    ]                                             
+ output [RespMALC            ] from proces [FlMALC    ]                                             
+ output [ExudMALC            ] from proces [FlMALC    ]                                             
  output [FrBmMALS            ] from proces [MALDIS    ]                                             
  output [BmLayMAL            ] from proces [MALDIS    ]                                             
  output [HactMAL             ] from proces [MALDIS    ]                                             

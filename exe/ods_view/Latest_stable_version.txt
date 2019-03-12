@@ -1,0 +1,14 @@
+This document describes the status of the different versions for: ODS_VIEW
+
+2009.03.24 11:50
+
+
+
+VERSION     STATUS                  COMMENTS
+v3.22.0001  TEST RELEASE            Solves bug in Help / Search menu
+
+2007.11.14 17:25
+
+VERSION     STATUS                  COMMENTS
+v3.22.0000  LATEST STABLE VERSION   Uses DelftIO 1.07 or better
+
