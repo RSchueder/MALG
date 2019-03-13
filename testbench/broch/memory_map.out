@@ -14,7 +14,7 @@
   10 BSET                           0
   11 BSAVE                          0
   12 WASTE                          0
-  13 CONS                          22
+  13 CONS                          21
   14 PARAM                         40
   15 FUNC                           3
   16 SFUNC                          0
@@ -35,7 +35,7 @@
   31                                0
   32 ASMASS                      1122
   33 LOCAL                        420
-  34 DEFAUL                        69
+  34 DEFAUL                        70
   35 FLUX                         210
   36 STOCHI                       357
   37 FLXDMP                       210
@@ -193,7 +193,7 @@
    8 WASTID                         0
    9 WNAME                          0
   10 WTYPE                          0
-  11 CONAM                        110
+  11 CONAM                        105
   12 PANAM                         20
   13 FUNAM                         15
   14 SFNAM                          0
@@ -213,4 +213,4 @@
   28 OSUNI                        170
   29 OSDSC                        255
 
-     Total (4 byte words)        8305
+     Total (4 byte words)        8300

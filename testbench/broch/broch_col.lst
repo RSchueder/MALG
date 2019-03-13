@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/13 18:54:03 
+ Execution start: 2019/03/13 20:04:06 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -426,15 +426,6 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   21 with ID  : a1                  
- constant values in this block.
- values        21
- constants    a1          
-         1    1.5000E+00
-
- ====> input item completed <==== 
-
-
   
  Input function   nr:    1 is function   nr:    1 with ID  : Temp                
 
@@ -739,9 +730,9 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   22 with ID  : TotalDepth          
+ Input constant   nr:    1 is constant   nr:   21 with ID  : TotalDepth          
  constant values in this block.
- values        22
+ values        21
  constants    TotalDepth  
          1    1.0000E+01
 
@@ -749,7 +740,7 @@
 
 
 
- Total number of constants        :   22
+ Total number of constants        :   21
 
  Total number of parameters       :    4
 
@@ -892,7 +883,7 @@
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
-        TotalDepth          ; Using constant nr          22
+        TotalDepth          ; Using constant nr          21
         Depth               ; Using parameter nr           2
         Temp                ; Using function nr           1
         NO3                 ; Using function nr           2
@@ -969,6 +960,6 @@ Number of periods defined:     0
 
  total real      array space:       5781
  total integer   array space:       4438
- total character array space:       8316
- grand total in 4-byte words:      18535 =   0-GB   0-MB  74-KB 140-Byte.
- Execution stop : 2019/03/13 18:54:03 
+ total character array space:       8311
+ grand total in 4-byte words:      18530 =   0-GB   0-MB  74-KB 120-Byte.
+ Execution stop : 2019/03/13 20:04:06 

@@ -121,16 +121,15 @@
       else
           temp   = 7.639437268d0 * acos ( temp)
       endif
-
       daylengthd = temp / 24.0
       
 !     ------------------------------------
-
-      daynrp = daynrd - 1
-      IF (daynrp .lt. 1) THEN
-          daynrp = 365 + daynrp
-      ENDIF
       
+      daynrp = daynrd - 1
+      IF (daynrp .lt. 0) THEN
+          ! if daynrd = 0 then it is jan 1
+          daynrp = 364 + daynrd
+      ENDIF    
 
       if (( daynrp .lt. 0.) .OR. ( daynrp .gt. 365.)) then
             declin = 9.9999d9
@@ -160,7 +159,7 @@
 
       pmsa (ip5) = daylengthd
       pmsa (ip6) = daylengthp
-      
+    
 !     ------------------------------------
       do 9102 daynrd = 1 , 365
           ! go through all days and calculate the maximim daylength difference
@@ -188,8 +187,10 @@
               tempd   = 7.639437268d0 * acos ( tempd)
           endif          
           
-          IF (daynrp .lt. 1) THEN
-              daynrp = 365 + daynrp
+          daynrp = daynrd - 1
+          IF (daynrp .lt. 0) THEN
+              ! if daynrd = 0 then it is jan 1
+              daynrp = 364 + daynrd
           ENDIF
       
           if (( daynrp .lt. 0.) .or. ( daynrp .gt. 365.)) then

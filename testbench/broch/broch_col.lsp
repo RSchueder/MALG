@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/13 18:54:03 
+ Execution start: 2019/03/13 20:04:06 
                                                                                 
  found -p command line switch                                                   
 
@@ -399,7 +399,7 @@ total number of substances with fractions :  0
        [MALS0               ] growth rate parameter 3                                               
        Using constant nr 20 with value: 0.220000                                                    
        [a1                  ] photoperiod parameter 1                                               
-       Using constant nr 21 with value:  1.50000                                                    
+       using default value: 0.850000                                                                
        [a2                  ] photoperiod parameter 2                                               
        using default value: 0.300000                                                                
        [mrtMAL              ] epsilon erosion/mortality parameter macro                             
@@ -429,7 +429,7 @@ total number of substances with fractions :  0
        [Depth               ] depth of segment                                                      
        Using parameter nr  2                                                                        
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 22 with value:  10.0000                                                    
+       Using constant nr 21 with value:  10.0000                                                    
        [LocalDepth          ] depth from water surface to bottom of segment                         
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
