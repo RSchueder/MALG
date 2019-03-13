@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/12 15:48:47 
+ Execution start: 2019/03/13 18:54:03 
                                                                                 
  found -p command line switch                                                   
 
@@ -201,6 +201,9 @@ total number of substances with fractions :  0
  found flux  [dGrMALS             ] Growth of MALS on storage                                       
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
    process is switched on.                                                                          
+ found flux  [dCanMALS            ] cannibalization of structural mass in respiration               
+   from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
+   process is switched on.                                                                          
 -dispersion for [MALS                ]                                                              
  no dispersions found                                                                               
 -velocity for [MALS                ]                                                                
@@ -262,17 +265,17 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [R1                  ] Reference respiration rate at T1                                      
-       using default value: 0.668000                                                                
+       using default value: 0.278500E-03                                                            
        [R2                  ] Reference respiration rate at T2                                      
-       using default value:  1.30300                                                                
+       using default value: 0.542900E-03                                                            
        [Tr1                 ] reference temperature 1 for respiration                               
        using default value:  285.000                                                                
        [Tr2                 ] reference temperature 2 for respiration                               
        using default value:  290.000                                                                
        [P1                  ] Reference photosynthetic rate at T1                                   
-       using default value:  2.92800                                                                
+       using default value: 0.122000E-02                                                            
        [P2                  ] Reference photosynthetic rate at T2                                   
-       using default value:  3.45600                                                                
+       using default value: 0.144000E-02                                                            
        [Tp1                 ] temp for reference photosynthetic rate 1                              
        using default value:  283.000                                                                
        [Tp2                 ] temp for reference photosynthetic rate 2                              
@@ -290,7 +293,7 @@ total number of substances with fractions :  0
        [ExtVl               ] total extinction coefficient visible light                            
        Using constant nr 18 with value: 0.100000E-05                                                
        [alpha               ] salpha for density distribution Rayleigh                              
-       using default value: 0.900000E-01                                                            
+       using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
        using default value:  44.0000                                                                
        [exuMALC             ] exudation parameter                                                   
@@ -326,11 +329,11 @@ total number of substances with fractions :  0
        [MALNmin             ] minimum N in storage                                                  
        using default value: 0.100000E-01                                                            
        [MALNmax             ] maximum N in MALN                                                     
-       using default value: 0.100000                                                                
+       using default value: 0.220000E-01                                                            
        [MALPmin             ] minimum P in storage                                                  
        using default value: 0.100000E-02                                                            
        [MALPmax             ] maximum P in MALP                                                     
-       using default value: 0.100000E-01                                                            
+       using default value: 0.220000E-02                                                            
        [CDRatMALS           ] C to dry mass ratio in MALS                                           
        using default value: 0.200000                                                                
        [NCRatMALS           ] N:C ratio in MALS                                                     
@@ -346,7 +349,7 @@ total number of substances with fractions :  0
        [JPmax               ] maximum MALP P uptake rate                                            
        using default value: 0.743280                                                                
        [Vel                 ] velocity                                                              
-       Using constant nr 17 with value: 0.750000E-01                                                
+       Using constant nr 17 with value: 0.600000E-01                                                
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -386,7 +389,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [m1                  ] growth rate parameter 1                                               
-       using default value: 0.109000                                                                
+       using default value: 0.108500                                                                
        [m2                  ] growth rate parameter 2                                               
        using default value: 0.300000E-01                                                            
        [HactMAL             ] length of frond in this column                                        
@@ -394,9 +397,9 @@ total number of substances with fractions :  0
        [AactMAL             ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
        [MALS0               ] growth rate parameter 3                                               
-       using default value: 0.600000E-01                                                            
+       Using constant nr 20 with value: 0.220000                                                    
        [a1                  ] photoperiod parameter 1                                               
-       using default value: 0.850000                                                                
+       Using constant nr 21 with value:  1.50000                                                    
        [a2                  ] photoperiod parameter 2                                               
        using default value: 0.300000                                                                
        [mrtMAL              ] epsilon erosion/mortality parameter macro                             
@@ -426,7 +429,7 @@ total number of substances with fractions :  0
        [Depth               ] depth of segment                                                      
        Using parameter nr  2                                                                        
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 20 with value:  10.0000                                                    
+       Using constant nr 22 with value:  10.0000                                                    
        [LocalDepth          ] depth from water surface to bottom of segment                         
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
@@ -482,6 +485,7 @@ total number of substances with fractions :  0
                                                                                                     
  output [Itip                ] from proces [FlMALC    ]                                             
  output [Itipu               ] from proces [FlMALC    ]                                             
+ output [BrochP              ] from proces [FlMALC    ]                                             
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             
@@ -493,7 +497,7 @@ total number of substances with fractions :  0
  output [MALSCD              ] from proces [FlMALS    ]                                             
  output [MALSND              ] from proces [FlMALS    ]                                             
  output [MALSPD              ] from proces [FlMALS    ]                                             
- warning: output [LimDenS             ] not located                                                 
+ output [LimDenS             ] from proces [FlMALS    ]                                             
  output [LimPhoS             ] from proces [FlMALS    ]                                             
  output [LimTemS             ] from proces [FlMALS    ]                                             
  output [LimN                ] from proces [FlMALN    ]                                             

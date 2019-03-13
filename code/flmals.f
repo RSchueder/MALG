@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(50)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(50)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(51)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(51)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 50)   !    Local work array for the pointering
+      INTEGER IPNT( 51)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -203,6 +203,7 @@ C
                 
                 ! density limitation
                 ! if the plant is too big overall then all segments suffer
+                ! area is in m2 and MALS0 is in m2 as well
                 
                 LimDen =MIN((m_1 * exp(-(AactMAL/MALS0)**2)) + m_2, 1.0)
                 
@@ -219,16 +220,21 @@ C
                 ENDIF
                
                 ! photoperiod limitation
-                
-                DL = (daylengthd - daylengthp) /daylengthm           
-                LimPho = a_1 * (1 + sin(DL * ABS(DL)**0.5)) + a_2
+                DL = (daylengthd - daylengthp) / daylengthm
+
+                LimPho = a_1 * (1 + sin(DL) *(ABS(DL))**0.5) + a_2
                
                 ! decay
                 ! decay is calculated as a percent of the total frond decay
                 ! this superfluous because the next 2 lines will be the same for all
                 ! segments in this column
                 ! m2 to dm2
-                coeff = exp(mrtMAL*AactMAL*100)
+                ! coeff = exp(mrtMAL*AactMAL*100)
+                ! thinking about this more, it is not the total area that should be limiting
+                ! because a ton of young plants have a lot of area
+                ! it should be the length, which is linearly related to area
+                ! But, you could also just adjust AactMAL accordingly
+                  coeff = exp(mrtMAL*AactMAL*100)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
@@ -267,6 +273,7 @@ C
                 ! storage limitations
                 LimN = MAX(1-MALNmin/MALN, 0.0)
                 LimP = MAX(1-MALPmin/MALP, 0.0)
+                LimP = 1.0
                 LimC = MAX(1-MALCmin/MALC, 0.0)
 
                 LimNut = MIN(LimN,LimC,LimP)
@@ -349,8 +356,9 @@ C
                 PMSA( IPNT( 46)   ) =  dGrowMALS     
                 PMSA( IPNT( 47)   ) =  LocGroS
                 PMSA( IPNT( 48)   ) =  dDecayMALS
-                PMSA( IPNT( 49)   ) =  LocGroP    
-                PMSA( IPNT( 50)   ) =  LocGroC  
+                PMSA( IPNT( 49)   ) =  LocGroN    
+                PMSA( IPNT( 50)   ) =  LocGroP    
+                PMSA( IPNT( 51)   ) =  LocGroC  
 
             ENDIF
           ENDIF

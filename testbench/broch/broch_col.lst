@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/12 15:48:47 
+ Execution start: 2019/03/13 18:54:03 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -394,7 +394,7 @@
  constant values in this block.
  values        17
  constants    Vel         
-         1    7.5000E-02
+         1    6.0000E-02
 
  ====> input item completed <==== 
 
@@ -413,6 +413,24 @@
  values        19
  constants    LinDenMAL   
          1    3.0000E+02
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   20 with ID  : MALS0               
+ constant values in this block.
+ values        20
+ constants    MALS0       
+         1    2.2000E-01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   21 with ID  : a1                  
+ constant values in this block.
+ values        21
+ constants    a1          
+         1    1.5000E+00
 
  ====> input item completed <==== 
 
@@ -721,9 +739,9 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   20 with ID  : TotalDepth          
+ Input constant   nr:    1 is constant   nr:   22 with ID  : TotalDepth          
  constant values in this block.
- values        20
+ values        22
  constants    TotalDepth  
          1    1.0000E+01
 
@@ -731,7 +749,7 @@
 
 
 
- Total number of constants        :   20
+ Total number of constants        :   22
 
  Total number of parameters       :    4
 
@@ -762,7 +780,7 @@
  Number of overridings :    1
  Number         values
         10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
-              1.0000E+00  1.0000E+00  1.0000E+00  5.0000E+00  6.0000E-02  6.0000E-03  6.0000E-02
+              1.0000E+00  1.0000E+00  1.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01  6.3000E+00
 
  ************************************************************************************************************* B L O C K - 8 *****
 
@@ -795,7 +813,7 @@
 
  All substances plus extra output variables
 
- (     48) number of output variables specified
+ (     49) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -807,45 +825,46 @@
        7           RadSurf                                   
        8           Itip                                      
        9           Itipu                                     
-      10           daylend                                   
-      11           daylenp                                   
-      12           daylenm                                   
-      13           MALNDM                                    
-      14           MALPDM                                    
-      15           MALCDM                                    
-      16           MALSNC                                    
-      17           MALSPC                                    
-      18           MALSCD                                    
-      19           MALSND                                    
-      20           MALSPD                                    
-      21           LimDenS                                   
-      22           LimPhoS                                   
-      23           LimTemS                                   
-      24           LimN                                      
-      25           LimP                                      
-      26           LimNutS                                   
-      27           LimMALN                                   
-      28           LimMALP                                   
-      29           LimMALC                                   
-      30           LocGroPS                                  
-      31           LocNetPS                                  
-      32           LocDecS                                   
-      33           LocGroN                                   
-      34           LocGroP                                   
-      35           LocGroC                                   
-      36           LocDecS                                   
-      37           GrosMALC                                  
-      38           RespMALC                                  
-      39           ExudMALC                                  
-      40           FrBmMALS                                  
-      41           BmLayMAL                                  
-      42           HactMAL                                   
-      43           AactMAL                                   
-      44           LimVel                                    
-      45           LocUpN                                    
-      46           LocUpP                                    
-      47           LocUpC                                    
-      48           MBotSeg                                   
+      10           BrochP                                    
+      11           daylend                                   
+      12           daylenp                                   
+      13           daylenm                                   
+      14           MALNDM                                    
+      15           MALPDM                                    
+      16           MALCDM                                    
+      17           MALSNC                                    
+      18           MALSPC                                    
+      19           MALSCD                                    
+      20           MALSND                                    
+      21           MALSPD                                    
+      22           LimDenS                                   
+      23           LimPhoS                                   
+      24           LimTemS                                   
+      25           LimN                                      
+      26           LimP                                      
+      27           LimNutS                                   
+      28           LimMALN                                   
+      29           LimMALP                                   
+      30           LimMALC                                   
+      31           LocGroPS                                  
+      32           LocNetPS                                  
+      33           LocDecS                                   
+      34           LocGroN                                   
+      35           LocGroP                                   
+      36           LocGroC                                   
+      37           LocDecS                                   
+      38           GrosMALC                                  
+      39           RespMALC                                  
+      40           ExudMALC                                  
+      41           FrBmMALS                                  
+      42           BmLayMAL                                  
+      43           HactMAL                                   
+      44           AactMAL                                   
+      45           LimVel                                    
+      46           LocUpN                                    
+      47           LocUpP                                    
+      48           LocUpC                                    
+      49           MBotSeg                                   
 
  Specification of map output
 
@@ -873,13 +892,14 @@
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
-        TotalDepth          ; Using constant nr          20
+        TotalDepth          ; Using constant nr          22
         Depth               ; Using parameter nr           2
         Temp                ; Using function nr           1
         NO3                 ; Using function nr           2
         RadSurf             ; Using function nr           3
    INFO:Itip                ; NOT FOUND, delwaq will detect variables from process library
    INFO:Itipu               ; NOT FOUND, delwaq will detect variables from process library
+   INFO:BrochP              ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
@@ -920,7 +940,7 @@
    INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          41
+  Number off missing variables :          42
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -941,14 +961,14 @@ Number of periods defined:     0
 
 
  Messages presented including .lsp file:
- Number of WARNINGS            :     2
+ Number of WARNINGS            :     1
 
  Number of ERRORS during input :     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       5702
- total integer   array space:       4406
- total character array space:       8136
- grand total in 4-byte words:      18244 =   0-GB   0-MB  72-KB 976-Byte.
- Execution stop : 2019/03/12 15:48:47 
+ total real      array space:       5781
+ total integer   array space:       4438
+ total character array space:       8316
+ grand total in 4-byte words:      18535 =   0-GB   0-MB  74-KB 140-Byte.
+ Execution stop : 2019/03/13 18:54:03 

@@ -2844,3 +2844,4 @@ dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/
 dMALDOC    colsep DOC production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep DOC        colsep FlMALC     \\
 dPrOXYM    colsep OXY production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep OXY        colsep FlMALC     \\
 dStrMALC   colsep storage of carbon by macroalgae                    colsep (gC/m2/d)            colsep     1.00 colsep MALC       colsep FlMALC     \\
+dCanMALS   colsep cannibalization of structural mass in respiration  colsep (gC/m2/d)            colsep    -1.00 colsep MALS       colsep FlMALC     \\

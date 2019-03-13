@@ -58,6 +58,7 @@
       integer in1,in2,in3,in4,in5,in6,in7
       real    time, tref, auxsys
       real    latitudeg, daynrd, daynrp
+      real    tempd, tempp, diff
       double precision latitu, declin, temp, daylengthd, daylengthp
       double precision daylengthm, sin50m, e  , pi 
       parameter ( sin50m = -1.454389765d-2 )
@@ -93,6 +94,8 @@
 
 !     Conversion time to daynumbers relative to tref
       daynrd =  mod (time / auxsys + tref, 365.)
+      daynrd =  mod (time / auxsys + tref, 365.)
+
 !     Computes declination of sun on day DAYNR.
       if (( daynrd .lt. 0.) .or. ( daynrd .gt. 365.)) then
           declin = 9.9999d9
@@ -122,8 +125,12 @@
       daylengthd = temp / 24.0
       
 !     ------------------------------------
-      
+
       daynrp = daynrd - 1
+      IF (daynrp .lt. 1) THEN
+          daynrp = 365 + daynrp
+      ENDIF
+      
 
       if (( daynrp .lt. 0.) .OR. ( daynrp .gt. 365.)) then
             declin = 9.9999d9
@@ -155,10 +162,39 @@
       pmsa (ip6) = daylengthp
       
 !     ------------------------------------
+      do 9102 daynrd = 1 , 365
+          ! go through all days and calculate the maximim daylength difference
       
-      do 9102 daynrp = 1 , 365
+          if (( daynrd .lt. 0.) .or. ( daynrd .gt. 365.)) then
+                declin = 9.9999d9
+          else
+              declin = 6.918d-3 -
+     1                  3.99912d-1 * dcos ( e * daynrd) -
+     2                  6.758d-3   * dcos ( 2.0d0 * e * daynrd) -
+     3                  2.697d-3   * dcos ( 3.0d0 * e * daynrd) +
+     4                  7.0257d-2  * dsin ( e * daynrd) +
+     5                  9.07d-4    * dsin ( 2.0d0 * e * daynrd) +
+     6                  1.480d-3   * dsin ( 3.0d0 * e * daynrd)
+          endif
+
+          tempd = (( sin50m - dsin ( declin) * dsin ( latitu)) / 
+     +                    ( dcos ( declin) * dcos ( latitu)))
+
+          if ( tempd .gt. 1.0) then
+              tempd   = 0.0
+          elseif ( tempd .lt. -1.0) then
+              tempd   = 24.0
+          else
+              tempd   = 7.639437268d0 * acos ( tempd)
+          endif          
+          
+          IF (daynrp .lt. 1) THEN
+              daynrp = 365 + daynrp
+          ENDIF
+      
           if (( daynrp .lt. 0.) .or. ( daynrp .gt. 365.)) then
                 declin = 9.9999d9
+                
           else
               declin = 6.918d-3 -
      1                  3.99912d-1 * dcos ( e * daynrp) -
@@ -169,21 +205,19 @@
      6                  1.480d-3   * dsin ( 3.0d0 * e * daynrp)
           endif
 
-
-!         Computes daylenth
-
-          temp = (( sin50m - dsin ( declin) * dsin ( latitu)) / 
+          tempp = (( sin50m - dsin ( declin) * dsin ( latitu)) / 
      +                    ( dcos ( declin) * dcos ( latitu)))
 
-          if ( temp .gt. 1.0) then
-              temp   = 0.0
-          elseif ( temp .lt. -1.0) then
-              temp   = 24.0
+          if ( tempp .gt. 1.0) then
+              tempp   = 0.0
+          elseif ( tempp .lt. -1.0) then
+              tempp   = 24.0
           else
-              temp   = 7.639437268d0 * acos ( temp)
+              tempp   = 7.639437268d0 * acos ( tempp)
           endif
           
-          daylengthm = MAX(daylengthm, temp / 24.0)
+          daylengthm = MAX(daylengthm, (tempd-tempp) / 24.0)
+          
  9102 continue
 
       pmsa (ip7) = daylengthm

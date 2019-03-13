@@ -194,10 +194,11 @@ DATA
  1.00000e+000 ; ONLY_ACTIVE
 ;
  CONSTANTS 'Latitude' DATA 52
- CONSTANTS 'Vel' DATA 0.075
+ CONSTANTS 'Vel' DATA 0.06
  CONSTANTS 'ExtVl' DATA 0.000001
  CONSTANTS 'LinDenMAL' DATA 300.0
- 
+ CONSTANTS 'MALS0' DATA 0.22
+ CONSTANTS 'a1' DATA 1.5
  FUNCTIONS
  'Temp'
  LINEAR
@@ -214,6 +215,7 @@ INCLUDE 'NO3.prn'
  'RadSurf'
  LINEAR
  DATA
+;INCLUDE 'KNMI_20180318_hourly.inc'
 INCLUDE 'RadSurf.prn'
 
 PARAMETERS 'SURF' 
@@ -277,10 +279,10 @@ DATA 10.0
 	  1.0 ;'POP1'
 	  1.0 ;'POP2'
 	  1.0 ; 'DOC'
-	  5.0 ;'MALS'
-	  0.06 ;'MALN'
-	  0.006 ;'MALP'
-	  0.06 ;'MALC' 
+	  18.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
+	  0.18 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal
+	  0.1 ;'MALP'
+	  6.3 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
 ;
 ;
   #8 ; delimiter for the eighth block
@@ -296,7 +298,7 @@ DATA 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-48 ; number of extra variables
+49 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -306,6 +308,7 @@ DATA 10.0
   'RadSurf' ' '
   'Itip' ' '
   'Itipu' ' '
+  'BrochP' ' '
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   

@@ -58,7 +58,7 @@ plt.grid()
 plt.legend()
 
 plt.subplot(223)
-MALC = his['MALSCD',seg,:]
+MALC = his['MALCDM',seg,:]
 plt.plot(his.dates,MALC)
 plt.xlabel('time')
 plt.ylabel('carbon content [gC/gDM]')
@@ -66,7 +66,7 @@ plt.legend()
 plt.grid()
 
 plt.subplot(224)
-MALN = his['MALSND',seg,:]
+MALN = his['MALNDM',seg,:]
 plt.plot(his.dates,MALN)
 plt.xlabel('time')
 plt.ylabel('nitrogen content [gN/gDM]')
@@ -87,4 +87,27 @@ plt.plot(his.dates,exud, 'k', label = 'exudation')
 plt.grid()
 plt.legend()
 plt.ylabel('gC/d')
+
+###############################################################################
+plt.figure(4)
+lims = ['LimDenS','LimMALC','LimMALN','LimMALP','LimN','LimNutS','LimP','LimPhoS','LimTemS','LimVel']
+#lims = ['LimN','LimMALN','LimMALP','LimMALC']
+
+for ll in lims:
+    val = his[ll,seg,:]
+    plt.plot(his.dates,val,label = ll)
+plt.grid()
+plt.xlabel('time')
+plt.ylabel('limitation factor [-]')
+#plt.plot(his.dates,his['LimNutS',seg,:], 'o', label = 'LimNutS')
+plt.legend()
+
+daylend = his['daylend',seg,:]
+daylenp = his['daylenp',seg,:]
+daylenm = his['daylenm',seg,:]
+tau = (daylend-daylenp)/daylenm
+plt.figure(5)
+# plt.plot(his.dates,tau)
+photo = 0.85 *(1 + np.sin(tau) * (np.abs(tau))**0.5) + 0.3
+plt.plot(his.dates,photo)
 
