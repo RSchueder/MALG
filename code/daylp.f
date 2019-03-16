@@ -156,7 +156,7 @@
           daylengthm = MAX(daylengthm, tempd - tempp )
           
  9102 continue
-          ! place this value in all segments
+          ! place this value in all segments, and it never changes hereafter
           DO 4500 iseg = 1, noseg
           pmsa (ip7) = daylengthm
           ip7   = ip7   + in7
@@ -166,7 +166,6 @@
       First = .FALSE.
       ENDIF
 
-      do 9000 iseg = 1 , noseg
         
 !     ------------------------------------
                     
@@ -176,10 +175,8 @@
       latitu  = pmsa( ip2 ) / 360 * 2 * pi
       tref    = pmsa( ip3 )
       auxsys  = pmsa( ip4 )
-      daylengthm = 0.0
 
 !     Conversion time to daynumbers relative to tref
-      daynrd =  mod (time / auxsys + tref, 365.)
       daynrd =  mod (time / auxsys + tref, 365.)
 
 !     Computes declination of sun on day DAYNR.
@@ -243,7 +240,8 @@
       endif
       
       daylengthp = temp / 24.0
-      
+    
+      do 9000 iseg = 1 , noseg
 
           pmsa (ip5) = daylengthd
           pmsa (ip6) = daylengthp
@@ -254,7 +252,8 @@
           ip4   = ip4   + in4
           ip5   = ip5   + in5
           ip6   = ip6   + in6
-          
+          ip7   = ip7   + in7
+         
  9000 continue
 
       return

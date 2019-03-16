@@ -2830,14 +2830,22 @@ dPrPON1M   colsep PON1 production MALS                               colsep (gN/
 dPrPON2M   colsep PON2 production MALS                               colsep (gN/m3/d)            colsep     1.00 colsep PON2       colsep FlMALS     \\
 dPrPOP1M   colsep POP1 production MALS                               colsep (gP/m3/d)            colsep     1.00 colsep POP1       colsep FlMALS     \\
 dPrPOP2M   colsep POP2 production MALS                               colsep (gP/m3/d)            colsep     1.00 colsep POP2       colsep FlMALS     \\
-dCnOXYM    colsep oxygen production MALS                             colsep (gO/m3/d)            colsep    -1.00 colsep OXY        colsep FlMALS     \\
+dCnOXYM    colsep oxygen consumption MALS                            colsep (gO/m3/d)            colsep    -1.00 colsep OXY        colsep FlMALS     \\
 dGrMALS    colsep Growth of MALS on storage                          colsep (DM/m2/d)            colsep     1.00 colsep MALS       colsep FlMALS     \\
 dGrMALN    colsep Utilization of MALN in growth                      colsep (gN/m2/d)            colsep    -1.00 colsep MALN       colsep FlMALS     \\
 dGrMALP    colsep Utilization of MALP in growth                      colsep (gP/m2/d)            colsep    -1.00 colsep MALP       colsep FlMALS     \\
 dGrMALC    colsep Utilization of MALC in growth                      colsep (gC/m2/d)            colsep    -1.00 colsep MALC       colsep FlMALS     \\
 dUpNO3M    colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.00 colsep NO3        colsep FlMALN     \\
+dUpNO3M    colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep     4.57 colsep OXY        colsep FlMALN     \\
+dUpNO3M    colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -0.07 colsep H+         colsep FlMALN     \\
+dUpNO3M    colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep     4.36 colsep ALKA       colsep FlMALN     \\
+dUpNO3M    colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.29 colsep H2O        colsep FlMALN     \\
 dUpNH4M    colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -1.00 colsep NH4        colsep FlMALN     \\
+dUpNH4M    colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep     0.07 colsep H+         colsep FlMALN     \\
+dUpNH4M    colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep    -4.36 colsep ALKA       colsep FlMALN     \\
 dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep    -1.00 colsep PO4        colsep FlMALN     \\
+dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep    -0.03 colsep H+         colsep FlMALN     \\
+dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep     1.97 colsep ALKA       colsep FlMALN     \\
 dStrMALN   colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep     1.00 colsep MALN       colsep FlMALN     \\
 dStrMALN   colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep     1.00 colsep MALP       colsep FlMALN     \\
 dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/m3/d)            colsep    -1.00 colsep TIC        colsep FlMALC     \\

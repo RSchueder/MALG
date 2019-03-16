@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/16 18:19:22 
+ Execution start: 2019/03/16 19:11:08 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -359,69 +359,97 @@
  Input constant   nr:    1 is constant   nr:    2 with ID  : ACTIVE_VERTDISP     
  Input constant   nr:    2 is constant   nr:    3 with ID  : ACTIVE_TOTDEPTH     
  Input constant   nr:    3 is constant   nr:    4 with ID  : ACTIVE_DYNDEPTH     
- Input constant   nr:    4 is constant   nr:    5 with ID  : ACTIVE_FLMALS       
- Input constant   nr:    5 is constant   nr:    6 with ID  : ACTIVE_DAYLP        
- Input constant   nr:    6 is constant   nr:    7 with ID  : ACTIVE_MALDIS       
- Input constant   nr:    7 is constant   nr:    8 with ID  : ACTIVE_FLMALN       
- Input constant   nr:    8 is constant   nr:    9 with ID  : ACTIVE_FLMALC       
- Input constant   nr:    9 is constant   nr:   10 with ID  : CLOSE_ERR           
- Input constant   nr:   10 is constant   nr:   11 with ID  : ScaleVDisp          
- Input constant   nr:   11 is constant   nr:   12 with ID  : MaxIter             
- Input constant   nr:   12 is constant   nr:   13 with ID  : Tolerance           
- Input constant   nr:   13 is constant   nr:   14 with ID  : Iteration Report    
- Input constant   nr:   14 is constant   nr:   15 with ID  : ONLY_ACTIVE         
+ Input constant   nr:    4 is constant   nr:    5 with ID  : ACTIVE_RearOXY      
+ Input constant   nr:    5 is constant   nr:    6 with ID  : ACTIVE_pH_carb      
+ Input constant   nr:    6 is constant   nr:    7 with ID  : ACTIVE_pH_simp      
+ Input constant   nr:    7 is constant   nr:    8 with ID  : ACTIVE_SpecCarb     
+ Input constant   nr:    8 is constant   nr:    9 with ID  : ACTIVE_RearCO2      
+ Input constant   nr:    9 is constant   nr:   10 with ID  : ACTIVE_SaturOXY     
+ Input constant   nr:   10 is constant   nr:   11 with ID  : ACTIVE_SaturCO2     
+ Input constant   nr:   11 is constant   nr:   12 with ID  : ACTIVE_FLMALS       
+ Input constant   nr:   12 is constant   nr:   13 with ID  : ACTIVE_DAYLP        
+ Input constant   nr:   13 is constant   nr:   14 with ID  : ACTIVE_MALDIS       
+ Input constant   nr:   14 is constant   nr:   15 with ID  : ACTIVE_FLMALN       
+ Input constant   nr:   15 is constant   nr:   16 with ID  : ACTIVE_FLMALC       
+ Input constant   nr:   16 is constant   nr:   17 with ID  : CLOSE_ERR           
+ Input constant   nr:   17 is constant   nr:   18 with ID  : ScaleVDisp          
+ Input constant   nr:   18 is constant   nr:   19 with ID  : MaxIter             
+ Input constant   nr:   19 is constant   nr:   20 with ID  : Tolerance           
+ Input constant   nr:   20 is constant   nr:   21 with ID  : Iteration Report    
+ Input constant   nr:   21 is constant   nr:   22 with ID  : ONLY_ACTIVE         
  constant values in this block.
  values         2           3           4           5           6           7           8           9          10          11
- constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  CLOSE_ERR   ScaleVDisp
+ constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_Rea  ACTIVE_pH_  ACTIVE_pH_  ACTIVE_Spe  ACTIVE_Rea  ACTIVE_Sat  ACTIVE_Sat
          1    0.0000E+00  0.0000E+00  0.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
- values        12          13          14          15
- constants    MaxIter     Tolerance   Iteration   ONLY_ACTIV  
-         1    1.0000E+02  1.0000E-07  0.0000E+00  1.0000E+00
+ values        12          13          14          15          16          17          18          19          20          21
+ constants    ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  CLOSE_ERR   ScaleVDisp  MaxIter     Tolerance   Iteration 
+         1    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+02  1.0000E-07  0.0000E+00
+ values        22
+ constants    ONLY_ACTIV  
+         1    1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   16 with ID  : Latitude            
+ Input constant   nr:    1 is constant   nr:   23 with ID  : Latitude            
  constant values in this block.
- values        16
+ values        23
  constants    Latitude    
          1    5.2000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   17 with ID  : Vel                 
+ Input constant   nr:    1 is constant   nr:   24 with ID  : Vel                 
  constant values in this block.
- values        17
+ values        24
  constants    Vel         
          1    6.0000E-02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   18 with ID  : ExtVl               
+ Input constant   nr:    1 is constant   nr:   25 with ID  : ExtVl               
  constant values in this block.
- values        18
+ values        25
  constants    ExtVl       
          1    1.0000E-06
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   19 with ID  : LinDenMAL           
+ Input constant   nr:    1 is constant   nr:   26 with ID  : LinDenMAL           
  constant values in this block.
- values        19
+ values        26
  constants    LinDenMAL   
          1    3.0000E+02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   20 with ID  : MALS0               
+ Input constant   nr:    1 is constant   nr:   27 with ID  : MALS0               
  constant values in this block.
- values        20
+ values        27
  constants    MALS0       
          1    2.2000E-01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   28 with ID  : SWRear              
+ constant values in this block.
+ values        28
+ constants    SWRear      
+         1    1.0000E+01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   29 with ID  : SWRearCO2           
+ constant values in this block.
+ values        29
+ constants    SWRearCO2   
+         1    1.1000E+01
 
  ====> input item completed <==== 
 
@@ -730,9 +758,9 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   21 with ID  : TotalDepth          
+ Input constant   nr:    1 is constant   nr:   30 with ID  : TotalDepth          
  constant values in this block.
- values        21
+ values        30
  constants    TotalDepth  
          1    1.0000E+01
 
@@ -740,7 +768,7 @@
 
 
 
- Total number of constants        :   21
+ Total number of constants        :   30
 
  Total number of parameters       :    4
 
@@ -804,7 +832,7 @@
 
  All substances plus extra output variables
 
- (     49) number of output variables specified
+ (     54) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -817,45 +845,50 @@
        8           Itip                                      
        9           Itipu                                     
       10           BrochP                                    
-      11           daylend                                   
-      12           daylenp                                   
-      13           daylenm                                   
-      14           MALNDM                                    
-      15           MALPDM                                    
-      16           MALCDM                                    
-      17           MALSNC                                    
-      18           MALSPC                                    
-      19           MALSCD                                    
-      20           MALSND                                    
-      21           MALSPD                                    
-      22           LimDenS                                   
-      23           LimPhoS                                   
-      24           LimTemS                                   
-      25           LimN                                      
-      26           LimP                                      
-      27           LimNutS                                   
-      28           LimMALN                                   
-      29           LimMALP                                   
-      30           LimMALC                                   
-      31           LocGroPS                                  
-      32           LocNetPS                                  
-      33           LocDecS                                   
-      34           LocGroN                                   
-      35           LocGroP                                   
-      36           LocGroC                                   
-      37           LocDecS                                   
-      38           GrosMALC                                  
-      39           RespMALC                                  
-      40           ExudMALC                                  
-      41           FrBmMALS                                  
-      42           BmLayMAL                                  
-      43           HactMAL                                   
-      44           AactMAL                                   
-      45           LimVel                                    
-      46           LocUpN                                    
-      47           LocUpP                                    
-      48           LocUpC                                    
-      49           MBotSeg                                   
+      11           pH                                        
+      12           DisCO2                                    
+      13           pCO2water                                 
+      14           DisHCO3                                   
+      15           CO2                                       
+      16           daylend                                   
+      17           daylenp                                   
+      18           daylenm                                   
+      19           MALNDM                                    
+      20           MALPDM                                    
+      21           MALCDM                                    
+      22           MALSNC                                    
+      23           MALSPC                                    
+      24           MALSCD                                    
+      25           MALSND                                    
+      26           MALSPD                                    
+      27           LimDenS                                   
+      28           LimPhoS                                   
+      29           LimTemS                                   
+      30           LimN                                      
+      31           LimP                                      
+      32           LimNutS                                   
+      33           LimMALN                                   
+      34           LimMALP                                   
+      35           LimMALC                                   
+      36           LocGroPS                                  
+      37           LocNetPS                                  
+      38           LocDecS                                   
+      39           LocGroN                                   
+      40           LocGroP                                   
+      41           LocGroC                                   
+      42           LocDecS                                   
+      43           GrosMALC                                  
+      44           RespMALC                                  
+      45           ExudMALC                                  
+      46           FrBmMALS                                  
+      47           BmLayMAL                                  
+      48           HactMAL                                   
+      49           AactMAL                                   
+      50           LimVel                                    
+      51           LocUpN                                    
+      52           LocUpP                                    
+      53           LocUpC                                    
+      54           MBotSeg                                   
 
  Specification of map output
 
@@ -883,7 +916,7 @@
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
-        TotalDepth          ; Using constant nr          21
+        TotalDepth          ; Using constant nr          30
         Depth               ; Using parameter nr           2
         Temp                ; Using function nr           1
         NO3                 ; Using function nr           2
@@ -891,6 +924,11 @@
    INFO:Itip                ; NOT FOUND, delwaq will detect variables from process library
    INFO:Itipu               ; NOT FOUND, delwaq will detect variables from process library
    INFO:BrochP              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:pH                  ; NOT FOUND, delwaq will detect variables from process library
+   INFO:DisCO2              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:pCO2water           ; NOT FOUND, delwaq will detect variables from process library
+   INFO:DisHCO3             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:CO2                 ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
@@ -931,7 +969,7 @@
    INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          42
+  Number off missing variables :          47
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -958,8 +996,8 @@ Number of periods defined:     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       5781
- total integer   array space:       4438
- total character array space:       8311
- grand total in 4-byte words:      18530 =   0-GB   0-MB  74-KB 120-Byte.
- Execution stop : 2019/03/16 18:19:22 
+ total real      array space:       6241
+ total integer   array space:       5602
+ total character array space:       9241
+ grand total in 4-byte words:      21084 =   0-GB   0-MB  84-KB 336-Byte.
+ Execution stop : 2019/03/16 19:11:08 

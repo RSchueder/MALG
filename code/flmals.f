@@ -120,7 +120,6 @@ C
       REAL(4) TotN
       REAL(4) TotP
       REAL(4) TotC
-      INTEGER chk
 C
 C*******************************************************************************
 C
@@ -234,7 +233,7 @@ C
                 ! because a ton of young plants have a lot of area
                 ! it should be the length, which is linearly related to area
                 ! But, you could also just adjust AactMAL accordingly
-                  coeff = exp(mrtMAL*AactMAL*100)
+                coeff = exp(mrtMAL*AactMAL*100)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + 10e-6*(coeff - 1 ))
@@ -302,7 +301,7 @@ C
                     dPtrMALS=0.0
                     dCtrMALS=0.0
                 ENDIF
-                ! gDM/(m2 d)
+                ! gDM/(m2 d), sent to bottom
                 LocGroS = dGrowMALS - dDecayMALS
                 LocGroN = dNtrMALS
                 LocGroP = dPtrMALS
@@ -317,8 +316,12 @@ C
                 MALSCD = TotC/MALS
                 MALSND = TotN/MALS		
                 MALSPD = TotP/MALS	  
+                
                 ! oxygen 
                 ! mineralization of stored carbon consumes oxygen
+                ! assigned own flux because it occurs in this segment
+                ! and is the result of gross growth (translocation)
+                ! and not net growth, which LocGroS is
                 
                 dCnOXYMAL   = dCtrMALS * 2.67/Depth
                                 

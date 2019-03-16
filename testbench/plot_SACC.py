@@ -111,3 +111,19 @@ plt.figure(5)
 photo = 0.85 *(1 + np.sin(tau) * (np.abs(tau))**0.5) + 0.3
 plt.plot(his.dates,photo)
 
+###############################################################################
+
+plt.figure(6)
+plt.subplot(311)
+ph = his['pH',seg,:]
+plt.plot(his.dates,ph)
+plt.ylabel('pH [-]')
+plt.subplot(312)
+alka = his['ALKA',seg,:]
+plt.plot(his.dates,alka)
+plt.ylabel('Alkalinity [mg HCO3-/l]')
+plt.subplot(313)
+tic = his['TIC',seg,:]
+plt.plot(his.dates,tic)
+plt.ylabel('Total inorganic carbon [mg C/l]')
+plt.xlabel('time')

@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/16 18:19:22 
+ Execution start: 2019/03/16 19:11:08 
                                                                                 
  found -p command line switch                                                   
 
@@ -27,6 +27,9 @@
 total number of substances with fractions :  0
 # Determining which processes can be switched on                                                    
                                                                                                     
+ Input for [pH_carb             ] Integrated calculation of pH, carbonate system                    
+   Process is activated                                                                             
+                                                                                                    
  Input for [DynDepth            ] dynamic calculation of the depth                                  
    Process is activated                                                                             
                                                                                                     
@@ -36,6 +39,24 @@ total number of substances with fractions :  0
  Input for [VertDisp            ] Vertical dispersion (segment -> exchange)                         
    WARNING : activated process can NOT be switched on                                               
    Not found:[VertDisper          ] vertical dispersion                                             
+                                                                                                    
+ Input for [pH_simp             ] Simple calculation of pH                                          
+   Process is activated                                                                             
+                                                                                                    
+ Input for [SpecCarb            ] Speciation of carbonate in solution                               
+   Process is activated                                                                             
+                                                                                                    
+ Input for [SaturCO2            ] Saturation concentration carbon dioxide                           
+   Process is activated                                                                             
+                                                                                                    
+ Input for [RearCO2             ] Reaeration of carbon dioxide                                      
+   Process is activated                                                                             
+                                                                                                    
+ Input for [SaturOXY            ] Saturation concentration oxygen                                   
+   Process is activated                                                                             
+                                                                                                    
+ Input for [RearOXY             ] Reaeration of oxygen                                              
+   Process is activated                                                                             
                                                                                                     
  Input for [DaylP               ] ent, previous, and max daylength                                  
    Process is activated                                                                             
@@ -65,8 +86,14 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [OXY                 ]                                                                  
- found flux  [dCnOXYM             ] oxygen production MALS                                          
+ found flux  [dREAROXY            ] reaeration flux of dissolved oxygen                             
+   from proces [RearOXY             ] Reaeration of oxygen                                          
+   process is switched on.                                                                          
+ found flux  [dCnOXYM             ] oxygen consumption MALS                                         
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
+   process is switched on.                                                                          
+ found flux  [dUpNO3M             ] NO3 uptake by Macroalgae nitrogen storage                       
+   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
  found flux  [dPrOXYM             ] OXY production by MALS                                          
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
@@ -101,6 +128,9 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [TIC                 ]                                                                  
+ found flux  [dREARCO2            ] reaeration flux of CO2                                          
+   from proces [RearCO2             ] Reaeration of carbon dioxide                                  
+   process is switched on.                                                                          
  found flux  [dMALTIC             ] TIC uptake by MALS                                              
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
    process is switched on.                                                                          
@@ -112,7 +142,15 @@ total number of substances with fractions :  0
  no velocity found                                                                                  
                                                                                                     
 -fluxes for [ALKA                ]                                                                  
- no fluxes found                                                                                    
+ found flux  [dUpNO3M             ] NO3 uptake by Macroalgae nitrogen storage                       
+   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
+   process is switched on.                                                                          
+ found flux  [dUpNH4M             ] NH4 uptake by Macroalgae nitrogen storage                       
+   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
+   process is switched on.                                                                          
+ found flux  [dUpPO4M             ] PO4 uptake by Macroalgae nitrogen storage                       
+   from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
+   process is switched on.                                                                          
 -dispersion for [ALKA                ]                                                              
  found dispersion[VertDisp            ] vertical dispersion                                         
    from proces [VertDisp            ] Vertical dispersion (segment -> exchange)                     
@@ -291,7 +329,7 @@ total number of substances with fractions :  0
        [RadSurf             ] irradiation at the water surface                                      
        Using function nr  3                                                                         
        [ExtVl               ] total extinction coefficient visible light                            
-       Using constant nr 18 with value: 0.100000E-05                                                
+       Using constant nr 25 with value: 0.100000E-05                                                
        [alpha               ] salpha for density distribution Rayleigh                              
        using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
@@ -349,7 +387,7 @@ total number of substances with fractions :  0
        [JPmax               ] maximum MALP P uptake rate                                            
        using default value: 0.743280                                                                
        [Vel                 ] velocity                                                              
-       Using constant nr 17 with value: 0.600000E-01                                                
+       Using constant nr 24 with value: 0.600000E-01                                                
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -379,7 +417,7 @@ total number of substances with fractions :  0
        [MALCmin             ] minimum C in storage                                                  
        using default value: 0.100000E-01                                                            
        [Latitude            ] latitude of study area                                                
-       Using constant nr 16 with value:  52.0000                                                    
+       Using constant nr 23 with value:  52.0000                                                    
        [daylend             ] daylength default definition                                          
        Using output from proces [DaylP               ]                                              
        [daylenp             ] daylength of previous day                                             
@@ -397,7 +435,7 @@ total number of substances with fractions :  0
        [AactMAL             ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
        [MALS0               ] growth rate parameter 3                                               
-       Using constant nr 20 with value: 0.220000                                                    
+       Using constant nr 27 with value: 0.220000                                                    
        [a1                  ] photoperiod parameter 1                                               
        using default value: 0.850000                                                                
        [a2                  ] photoperiod parameter 2                                               
@@ -429,7 +467,7 @@ total number of substances with fractions :  0
        [Depth               ] depth of segment                                                      
        Using parameter nr  2                                                                        
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 21 with value:  10.0000                                                    
+       Using constant nr 30 with value:  10.0000                                                    
        [LocalDepth          ] depth from water surface to bottom of segment                         
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
@@ -443,7 +481,7 @@ total number of substances with fractions :  0
        [HmaxMAL             ] Maximum height MALG                                                   
        using default value:  10.0000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
-       Using constant nr 19 with value:  300.000                                                    
+       Using constant nr 26 with value:  300.000                                                    
        [ArDenMAL            ] grams/m2 surface area of frond                                        
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -453,11 +491,167 @@ total number of substances with fractions :  0
        [ITIME               ] DELWAQ time                                                           
        Using DELWAQ time                                                                            
        [Latitude            ] latitude of study area                                                
-       Using constant nr 16 with value:  52.0000                                                    
+       Using constant nr 23 with value:  52.0000                                                    
        [RefDay              ] daynumber of reference day simulation                                 
        using default value:  0.00000                                                                
        [AuxSys              ] ratio between days and system clock                                   
        using default value:  86400.0                                                                
+                                                                                                    
+ Input for [RearOXY             ] Reaeration of oxygen                                              
+       [OXY                 ] Dissolved Oxygen                                                      
+       Using substance nr   2                                                                       
+       [Depth               ] depth of segment                                                      
+       Using parameter nr  2                                                                        
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [Velocity            ] horizontal flow velocity                                              
+       using default value: 0.500000                                                                
+       [VWind               ] wind speed                                                            
+       using default value:  3.00000                                                                
+       [SWRear              ] switch for oxygen reaeration formulation (1-13)                       
+       Using constant nr 28 with value:  10.0000                                                    
+       [KLRear              ] reaeration transfer coefficient                                       
+       using default value:  1.00000                                                                
+       [TCRear              ] temperature coefficient for rearation                                 
+       using default value:  1.01600                                                                
+       [DELT                ] timestep for processes                                                
+       Using DELWAQ timestep in days                                                                
+       [SaturOXY            ] saturation concentration                                              
+       Using output from proces [SaturOXY            ]                                              
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+       [TotalDepth          ] total depth water column                                              
+       Using constant nr 30 with value:  10.0000                                                    
+       [fcover              ] fraction of water surface covered <0-1>                               
+       using default value:  0.00000                                                                
+       [KLRearMax           ] maximum KLREAR oxygen for temp. correction                            
+       using default value:  1000.00                                                                
+       [KLRearMin           ] minimum rearation transfer coefficient oxygen                         
+       using default value: 0.200000                                                                
+       [Rain                ] rainfall rate                                                         
+       using default value:  0.00000                                                                
+       [coefAOxy            ] gas transfer Oxy coefficient transmission                             
+       using default value:  1.66000                                                                
+       [coefB1Oxy           ] gas transfer O2 coefficient wind scale 1                              
+       using default value: 0.260000                                                                
+       [coefB2Oxy           ] gas transfer O2 coefficient wind scale 2                              
+       using default value:  1.00000                                                                
+       [coefC1Oxy           ] gas transfer O2 coefficient rain scale 1                              
+       using default value: 0.660000                                                                
+       [coefC2Oxy           ] gas transfer O2 coefficient rain scale 2                              
+       using default value:  1.00000                                                                
+       [coefD1Oxy           ] fresh water coefficient1 for Schmidt nr Oxy                           
+       using default value:  1800.06                                                                
+       [coefD2Oxy           ] fresh water coefficient2 for Schmidt nr Oxy                           
+       using default value:  120.100                                                                
+       [coefD3Oxy           ] fresh water coefficient3 for Schmidt nr Oxy                           
+       using default value:  3.78180                                                                
+       [coefD4Oxy           ] fresh water coefficient4 for Schmidt nr Oxy                           
+       using default value: 0.476080E-01                                                            
+                                                                                                    
+ Input for [SaturOXY            ] Saturation concentration oxygen                                   
+       [Cl                  ] Chloride                                                              
+       using default value:  20000.0                                                                
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [SWSatOXY            ] switch for oxygen saturation formulation (1, 2)                       
+       using default value:  1.00000                                                                
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+                                                                                                    
+ Input for [RearCO2             ] Reaeration of carbon dioxide                                      
+       [DisCO2              ] concentration of dissolved carbon dioxide                             
+       Using output from proces [pH_carb             ]                                              
+       [Depth               ] depth of segment                                                      
+       Using parameter nr  2                                                                        
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [Velocity            ] horizontal flow velocity                                              
+       using default value: 0.500000                                                                
+       [VWind               ] wind speed                                                            
+       using default value:  3.00000                                                                
+       [SWRearCO2           ] switch for CO2 reaeration formulation (11,13)                         
+       Using constant nr 29 with value:  11.0000                                                    
+       [KLRearCO2           ] CO2 reaeration transfer coefficient                                   
+       using default value:  1.00000                                                                
+       [TCRearCO2           ] temperature coefficient for rearation CO2                             
+       using default value:  1.01600                                                                
+       [DELT                ] timestep for processes                                                
+       Using DELWAQ timestep in days                                                                
+       [SaturCO2            ] saturation concentration                                              
+       Using output from proces [SaturCO2            ]                                              
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+       [TotalDepth          ] total depth water column                                              
+       Using constant nr 30 with value:  10.0000                                                    
+       [fcover              ] fraction of water surface covered <0-1>                               
+       using default value:  0.00000                                                                
+       [KLRMaxCO2           ] maximum KLREAR CO2 for temperature correction                         
+       using default value:  1000.00                                                                
+       [KLRMinCO2           ] minimum rearation transfer coefficient CO2                            
+       using default value: 0.200000                                                                
+       [Rain                ] rainfall rate                                                         
+       using default value:  0.00000                                                                
+       [coefACO2            ] gas transfer CO2 coefficient transmission                             
+       using default value:  1.66000                                                                
+       [coefB1CO2           ] gas transfer CO2 coefficient wind scale 1                             
+       using default value: 0.260000                                                                
+       [coefB2CO2           ] gas transfer CO2 coefficient wind scale 2                             
+       using default value:  1.00000                                                                
+       [coefC1CO2           ] gas transfer CO2 coefficient rain scale 1                             
+       using default value: 0.660000                                                                
+       [coefC2CO2           ] gas transfer CO2 coefficient rain scale 2                             
+       using default value:  1.00000                                                                
+       [coefD1CO2           ] fresh water coefficient1 for Schmidt nr CO2                           
+       using default value:  1800.06                                                                
+       [coefD2CO2           ] fresh water coefficient2 for Schmidt nr CO2                           
+       using default value:  120.100                                                                
+       [coefD3CO2           ] fresh water coefficient3 for Schmidt nr CO2                           
+       using default value:  3.78180                                                                
+       [coefD4CO2           ] fresh water coefficient4 for Schmidt nr CO2                           
+       using default value: 0.476080E-01                                                            
+                                                                                                    
+ Input for [SaturCO2            ] Saturation concentration carbon dioxide                           
+       [Cl                  ] Chloride                                                              
+       using default value:  20000.0                                                                
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [SWSatCO2            ] switch for CO2 saturation formulation (1, 2)                          
+       using default value:  1.00000                                                                
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+       [PCO2                ] partial atmospheric CO2 pressure                                      
+       using default value: 0.316000E-03                                                            
+                                                                                                    
+ Input for [SpecCarb            ] Speciation of carbonate in solution                               
+       [TIC                 ] total inorganic carbonate                                             
+       Using substance nr   5                                                                       
+       [CO2                 ] CO2                                                                   
+       Using output from proces [pH_simp             ]                                              
+       [SWTICdummy          ] dummy option for TIC, do not change value                             
+       using default value:  0.00000                                                                
+       [pH                  ] pH                                                                    
+       Using output from proces [pH_carb             ]                                              
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [Poros               ] volumetric porosity                                                   
+       using default value:  1.00000                                                                
+                                                                                                    
+ Input for [pH_simp             ] Simple calculation of pH                                          
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+       [TIC                 ] total inorganic carbonate                                             
+       Using substance nr   5                                                                       
+       [Alka                ] alkalinity                                                            
+       Using substance nr   6                                                                       
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [pH_min              ] minimum allowed calculated pH                                         
+       using default value:  1.00000                                                                
+       [pH_max              ] maximum allowed calculated pH                                         
+       using default value:  14.0000                                                                
                                                                                                     
  Input for [TotDepth            ] depth water column                                                
        [Depth               ] depth of segment                                                      
@@ -470,6 +664,20 @@ total number of substances with fractions :  0
        Using DELWAQ volume                                                                          
        [Surf                ] horizontal surface area of a DELWAQ segment                           
        Using parameter nr  1                                                                        
+                                                                                                    
+ Input for [pH_carb             ] Integrated calculation of pH, carbonate system                    
+       [Salinity            ] Salinity                                                              
+       using default value:  35.0000                                                                
+       [TIC                 ] total inorganic carbonate                                             
+       Using substance nr   5                                                                       
+       [Alka                ] alkalinity                                                            
+       Using substance nr   6                                                                       
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [pH_min              ] minimum allowed calculated pH                                         
+       using default value:  1.00000                                                                
+       [pH_max              ] maximum allowed calculated pH                                         
+       using default value:  14.0000                                                                
                                                                                                     
 # determining the use of the delwaq input                                       
                                                                                 
@@ -486,6 +694,11 @@ total number of substances with fractions :  0
  output [Itip                ] from proces [FlMALC    ]                                             
  output [Itipu               ] from proces [FlMALC    ]                                             
  output [BrochP              ] from proces [FlMALC    ]                                             
+ output [pH                  ] from proces [pH_simp   ]                                             
+ output [DisCO2              ] from proces [SpecCarb  ]                                             
+ output [pCO2water           ] from proces [pH_carb   ]                                             
+ output [DisHCO3             ] from proces [SpecCarb  ]                                             
+ output [CO2                 ] from proces [pH_simp   ]                                             
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             

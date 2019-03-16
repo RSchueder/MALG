@@ -11444,7 +11444,7 @@ itemid,itemse,itemex,itemde,itemun,itemnm,itemag,itemda,itemwk,itemgr
 "dPrPON2M  ","x"," ",   -999.000    ,"(gN/m3/d)           ","PON2 production MALS                              ","volume    ","volume    "," ","                              "
 "dPrPOP1M  ","x"," ",   -999.000    ,"(gP/m3/d)           ","POP1 production MALS                              ","volume    ","volume    "," ","                              "
 "dPrPOP2M  ","x"," ",   -999.000    ,"(gP/m3/d)           ","POP2 production MALS                              ","volume    ","volume    "," ","                              "
-"dCnOXYM   ","x"," ",   -999.000    ,"(gO/m3/d)           ","oxygen production MALS                            ","volume    ","volume    "," ","                              "
+"dCnOXYM   ","x"," ",   -999.000    ,"(gO/m3/d)           ","oxygen consumption MALS                           ","volume    ","volume    "," ","                              "
 "dGrMALS   ","x"," ",   -999.000    ,"(DM/m2/d)           ","Growth of MALS on storage                         ","volume    ","volume    "," ","                              "
 "dGrMALN   ","x"," ",   -999.000    ,"(gN/m2/d)           ","Utilization of MALN in growth                     ","volume    ","volume    "," ","                              "
 "dGrMALP   ","x"," ",   -999.000    ,"(gP/m2/d)           ","Utilization of MALP in growth                     ","volume    ","volume    "," ","                              "

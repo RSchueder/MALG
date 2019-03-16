@@ -122,6 +122,9 @@ Alka       colsep respiration flux of DEB Grazer4                    colsep (gN/
 Alka       colsep respiration flux of DEB Grazer4                    colsep (gP/m3/d)            colsep DEBGRZ_G4  \\
 Alka       colsep respiration flux of DEB Grazer5                    colsep (gN/m3/d)            colsep DEBGRZ_G5  \\
 Alka       colsep respiration flux of DEB Grazer5                    colsep (gP/m3/d)            colsep DEBGRZ_G5  \\
+Alka       colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
+Alka       colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
+Alka       colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep FlMALN     \\
 Continuity colsep dummy flux to access Emersion                      colsep (-)                  colsep Emersion   \\
 Continuity colsep dummy flux to access restim                        colsep (-)                  colsep ResTim     \\
 Continuity colsep dummy flux to access HorzDisper                    colsep (-)                  colsep HDisperVel \\
@@ -209,7 +212,8 @@ OXY        colsep respiration flux DEB Zooplankton                   colsep (gC/
 OXY        colsep respiration flux of DEB Grazer3                    colsep (gC/m3/d)            colsep DEBGRZ_G3  \\
 OXY        colsep respiration flux of DEB Grazer4                    colsep (gC/m3/d)            colsep DEBGRZ_G4  \\
 OXY        colsep respiration flux of DEB Grazer5                    colsep (gC/m3/d)            colsep DEBGRZ_G5  \\
-OXY        colsep oxygen production MALS                             colsep (gO/m3/d)            colsep FlMALS     \\
+OXY        colsep oxygen consumption MALS                            colsep (gO/m3/d)            colsep FlMALS     \\
+OXY        colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
 OXY        colsep OXY production by MALS                             colsep (gC/m3/d)            colsep FlMALC     \\
 dTR1       colsep decay tracer from source 1                         colsep (g/m3/d)             colsep Age1       \\
 dTR1       colsep Decay tracer from source 1                         colsep (g/m3/d)             colsep Decay1     \\
@@ -999,6 +1003,7 @@ H2O        colsep mineralisation flux oxidised with nitrate          colsep (gC/
 H2O        colsep mineralisation flux oxid. with sulphate            colsep (gC/m3/d)            colsep CONSELAC   \\
 H2O        colsep methane oxidation flux with DO                     colsep (gC/m3/d)            colsep OXIDCH4    \\
 H2O        colsep methane oxidation flux with sulphate               colsep (gC/m3/d)            colsep OXIDCH4    \\
+H2O        colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
 SO4        colsep cellular-C flux                                    colsep    (gC/m3/d)         colsep GroMrt_pla \\
 SO4        colsep uptake of carbon by algae growth                   colsep (gC/m3/d)            colsep BLOOM_P    \\
 SO4        colsep mineralisation flux oxid. with sulphate            colsep (gC/m3/d)            colsep CONSELAC   \\
@@ -1074,6 +1079,9 @@ H+         colsep respiration flux of DEB Grazer4                    colsep (gN/
 H+         colsep respiration flux of DEB Grazer4                    colsep (gP/m3/d)            colsep DEBGRZ_G4  \\
 H+         colsep respiration flux of DEB Grazer5                    colsep (gN/m3/d)            colsep DEBGRZ_G5  \\
 H+         colsep respiration flux of DEB Grazer5                    colsep (gP/m3/d)            colsep DEBGRZ_G5  \\
+H+         colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
+H+         colsep NH4 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
+H+         colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep FlMALN     \\
 SUD        colsep cellular-C mortality through Autolysis             colsep    (gC/m3/d)         colsep GroMrt_pla \\
 SUD        colsep autolysis flux of carbon                           colsep (gC/m3/d)            colsep BLOOM_P    \\
 SUD        colsep mineralization flux POS1 to SUD                    colsep (gS/m3/d)            colsep DecFast    \\

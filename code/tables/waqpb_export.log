@@ -12,7 +12,7 @@ Using NEW format
  OUTPUTS.CSV sorted
  2107 lines read from OUTPFLX.CSV
  OUTPFLX.CSV sorted
- 2847 lines read from STOCHI.CSV
+ 2855 lines read from STOCHI.CSV
  STOCHI.CSV sorted
   274 lines read from VELOCS.CSV
  VELOCS.CSV sorted

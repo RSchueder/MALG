@@ -2837,8 +2837,16 @@ stocfl,stocsu,stocsc
 "dGrMALP   ","MALP      ",  -1.00000
 "dGrMALC   ","MALC      ",  -1.00000
 "dUpNO3M   ","NO3       ",  -1.00000
+"dUpNO3M   ","OXY       ",   4.57100
+"dUpNO3M   ","H+        ",  -0.07100
+"dUpNO3M   ","ALKA      ",   4.35700
+"dUpNO3M   ","H2O       ",  -1.28600
 "dUpNH4M   ","NH4       ",  -1.00000
+"dUpNH4M   ","H+        ",   0.07100
+"dUpNH4M   ","ALKA      ",  -4.35700
 "dUpPO4M   ","PO4       ",  -1.00000
+"dUpPO4M   ","H+        ",  -0.03200
+"dUpPO4M   ","ALKA      ",   1.96800
 "dStrMALN  ","MALN      ",   1.00000
 "dStrMALN  ","MALP      ",   1.00000
 "dMALTIC   ","TIC       ",  -1.00000

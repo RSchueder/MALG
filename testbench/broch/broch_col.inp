@@ -162,11 +162,20 @@ CONSTANTS
  'ACTIVE_TOTDEPTH'
  'ACTIVE_DYNDEPTH'
  
+ 'ACTIVE_RearOXY'
+ 'ACTIVE_pH_carb'
+ 'ACTIVE_pH_simp'
+ 'ACTIVE_SpecCarb'
+ 'ACTIVE_RearCO2'
+ 'ACTIVE_SaturOXY'
+ 'ACTIVE_SaturCO2'
+
  'ACTIVE_FLMALS'
  'ACTIVE_DAYLP'
  'ACTIVE_MALDIS'
  'ACTIVE_FLMALN'
  'ACTIVE_FLMALC'
+ 
  
  'CLOSE_ERR'
  'ScaleVDisp'
@@ -186,6 +195,14 @@ DATA
  1.0 ;
  1.0 ;
  1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+ 1.0 ;
+
  1.00000e+000 ; CLOSE_ERR
  1.00000e+000 ; ScaleVDisp
  1.00000e+002 ; MaxIter
@@ -198,6 +215,9 @@ DATA
  CONSTANTS 'ExtVl' DATA 0.000001
  CONSTANTS 'LinDenMAL' DATA 300.0
  CONSTANTS 'MALS0' DATA 0.22
+ CONSTANTS SWRear DATA 10.0
+ CONSTANTS SWRearCO2 DATA 11.0
+
  FUNCTIONS
  'Temp'
  LINEAR
@@ -297,7 +317,7 @@ DATA 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-49 ; number of extra variables
+54 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -308,6 +328,11 @@ DATA 10.0
   'Itip' ' '
   'Itipu' ' '
   'BrochP' ' '
+  'pH' ' '
+  'DisCO2' ' '
+  'pCO2water' ' '
+  'DisHCO3' ' '
+  'CO2' ' '
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   

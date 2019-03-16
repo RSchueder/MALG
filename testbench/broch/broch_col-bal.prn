@@ -51,10 +51,10 @@ SUM OF ALL TERMS                  0.34301E+06   -0.34301E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35873E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
-OXY   _Seg2                       0.61270E+07   -0.61270E+07
+OXY   _Seg2                       0.36217E+07   -0.36215E+07
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
@@ -64,9 +64,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+03
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.61270E+07   -0.61270E+07
+SUM OF ALL TERMS                  0.36217E+07   -0.36217E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -106,10 +108,10 @@ SUM OF ALL TERMS                  0.34291E+06   -0.34291E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
-TIC   _Seg2                       0.76185E+07   -0.76185E+07
+TIC   _Seg2                       0.82183E+07   -0.82184E+07
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
@@ -119,15 +121,16 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+02    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.76185E+07   -0.76185E+07
+SUM OF ALL TERMS                  0.82184E+07   -0.82184E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
-ALKA  _Seg2                       0.68577E+08   -0.68577E+08
+ALKA  _Seg2                       0.68785E+08   -0.68785E+08
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
@@ -137,7 +140,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.68577E+08   -0.68577E+08
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.68785E+08   -0.68785E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -405,11 +411,11 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35887E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
-OXY   _Seg1                       0.61270E+07   -0.61270E+07
+OXY   _Seg1                       0.36215E+07   -0.36217E+07
 OXY   _Seg2                       0.00000E+00    0.00000E+00
-OXY   _Seg3                       0.61270E+07   -0.61270E+07
+OXY   _Seg3                       0.36220E+07   -0.36217E+07
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
@@ -418,9 +424,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72435E+07   -0.72435E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -460,11 +468,11 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
-TIC   _Seg1                       0.76185E+07   -0.76185E+07
+TIC   _Seg1                       0.82184E+07   -0.82183E+07
 TIC   _Seg2                       0.00000E+00    0.00000E+00
-TIC   _Seg3                       0.76185E+07   -0.76185E+07
+TIC   _Seg3                       0.82183E+07   -0.82183E+07
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
@@ -473,16 +481,17 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16437E+08   -0.16437E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
-ALKA  _Seg1                       0.68577E+08   -0.68577E+08
+ALKA  _Seg1                       0.68785E+08   -0.68785E+08
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
-ALKA  _Seg3                       0.68577E+08   -0.68577E+08
+ALKA  _Seg3                       0.68785E+08   -0.68785E+08
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
@@ -491,7 +500,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -759,12 +771,12 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35901E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
-OXY   _Seg2                       0.61270E+07   -0.61270E+07
+OXY   _Seg2                       0.36217E+07   -0.36220E+07
 OXY   _Seg3                       0.00000E+00    0.00000E+00
-OXY   _Seg4                       0.61271E+07   -0.61270E+07
+OXY   _Seg4                       0.36223E+07   -0.36220E+07
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
@@ -772,9 +784,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72440E+07   -0.72440E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -814,12 +828,12 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
-TIC   _Seg2                       0.76185E+07   -0.76185E+07
+TIC   _Seg2                       0.82183E+07   -0.82183E+07
 TIC   _Seg3                       0.00000E+00    0.00000E+00
-TIC   _Seg4                       0.76184E+07   -0.76185E+07
+TIC   _Seg4                       0.82182E+07   -0.82183E+07
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
@@ -827,17 +841,18 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16437E+08   -0.16437E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
-ALKA  _Seg2                       0.68577E+08   -0.68577E+08
+ALKA  _Seg2                       0.68785E+08   -0.68785E+08
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
-ALKA  _Seg4                       0.68577E+08   -0.68577E+08
+ALKA  _Seg4                       0.68785E+08   -0.68785E+08
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
@@ -845,7 +860,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -1113,22 +1131,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28668E+02
+OXY   _Storage                    0.00000E+00   -0.35915E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
-OXY   _Seg3                       0.61270E+07   -0.61271E+07
+OXY   _Seg3                       0.36220E+07   -0.36223E+07
 OXY   _Seg4                       0.00000E+00    0.00000E+00
-OXY   _Seg5                       0.61273E+07   -0.61271E+07
+OXY   _Seg5                       0.36225E+07   -0.36223E+07
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72445E+07   -0.72445E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -1168,38 +1188,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
-TIC   _Seg3                       0.76185E+07   -0.76184E+07
+TIC   _Seg3                       0.82183E+07   -0.82182E+07
 TIC   _Seg4                       0.00000E+00    0.00000E+00
-TIC   _Seg5                       0.76183E+07   -0.76184E+07
+TIC   _Seg5                       0.82181E+07   -0.82182E+07
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
-ALKA  _Seg3                       0.68577E+08   -0.68577E+08
+ALKA  _Seg3                       0.68785E+08   -0.68785E+08
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
-ALKA  _Seg5                       0.68577E+08   -0.68577E+08
+ALKA  _Seg5                       0.68785E+08   -0.68785E+08
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -1467,22 +1491,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28668E+02
+OXY   _Storage                    0.00000E+00   -0.35928E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
-OXY   _Seg4                       0.61271E+07   -0.61273E+07
+OXY   _Seg4                       0.36223E+07   -0.36225E+07
 OXY   _Seg5                       0.00000E+00    0.00000E+00
-OXY   _Seg6                       0.61274E+07   -0.61273E+07
+OXY   _Seg6                       0.36228E+07   -0.36225E+07
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72451E+07   -0.72451E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -1522,38 +1548,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
-TIC   _Seg4                       0.76184E+07   -0.76183E+07
+TIC   _Seg4                       0.82182E+07   -0.82181E+07
 TIC   _Seg5                       0.00000E+00    0.00000E+00
-TIC   _Seg6                       0.76182E+07   -0.76183E+07
+TIC   _Seg6                       0.82180E+07   -0.82181E+07
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
-ALKA  _Seg4                       0.68577E+08   -0.68577E+08
+ALKA  _Seg4                       0.68785E+08   -0.68785E+08
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
-ALKA  _Seg6                       0.68577E+08   -0.68577E+08
+ALKA  _Seg6                       0.68785E+08   -0.68785E+08
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -1821,22 +1851,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+02
+OXY   _Storage                    0.00000E+00   -0.35942E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
-OXY   _Seg5                       0.61273E+07   -0.61274E+07
+OXY   _Seg5                       0.36225E+07   -0.36228E+07
 OXY   _Seg6                       0.00000E+00    0.00000E+00
-OXY   _Seg7                       0.61276E+07   -0.61274E+07
+OXY   _Seg7                       0.36231E+07   -0.36228E+07
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72457E+07   -0.72457E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -1876,38 +1908,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
-TIC   _Seg5                       0.76183E+07   -0.76182E+07
+TIC   _Seg5                       0.82181E+07   -0.82180E+07
 TIC   _Seg6                       0.00000E+00    0.00000E+00
-TIC   _Seg7                       0.76181E+07   -0.76182E+07
+TIC   _Seg7                       0.82179E+07   -0.82180E+07
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
-ALKA  _Seg5                       0.68577E+08   -0.68577E+08
+ALKA  _Seg5                       0.68785E+08   -0.68785E+08
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
-ALKA  _Seg7                       0.68577E+08   -0.68577E+08
+ALKA  _Seg7                       0.68785E+08   -0.68785E+08
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -2175,22 +2211,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28670E+02
+OXY   _Storage                    0.00000E+00   -0.35955E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
-OXY   _Seg6                       0.61274E+07   -0.61276E+07
+OXY   _Seg6                       0.36228E+07   -0.36231E+07
 OXY   _Seg7                       0.00000E+00    0.00000E+00
-OXY   _Seg8                       0.61278E+07   -0.61276E+07
+OXY   _Seg8                       0.36234E+07   -0.36231E+07
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72462E+07   -0.72462E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -2230,38 +2268,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
-TIC   _Seg6                       0.76182E+07   -0.76181E+07
+TIC   _Seg6                       0.82180E+07   -0.82179E+07
 TIC   _Seg7                       0.00000E+00    0.00000E+00
-TIC   _Seg8                       0.76180E+07   -0.76181E+07
+TIC   _Seg8                       0.82177E+07   -0.82179E+07
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
-ALKA  _Seg6                       0.68577E+08   -0.68577E+08
+ALKA  _Seg6                       0.68785E+08   -0.68785E+08
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
-ALKA  _Seg8                       0.68577E+08   -0.68577E+08
+ALKA  _Seg8                       0.68785E+08   -0.68785E+08
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -2529,7 +2571,7 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28671E+02
+OXY   _Storage                    0.00000E+00   -0.35968E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -2537,14 +2579,16 @@ OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
-OXY   _Seg7                       0.61276E+07   -0.61278E+07
+OXY   _Seg7                       0.36231E+07   -0.36234E+07
 OXY   _Seg8                       0.00000E+00    0.00000E+00
-OXY   _Seg9                       0.61280E+07   -0.61278E+07
+OXY   _Seg9                       0.36237E+07   -0.36234E+07
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12256E+08   -0.12256E+08
+SUM OF ALL TERMS                  0.72468E+07   -0.72468E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -2584,7 +2628,7 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14855E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -2592,17 +2636,18 @@ TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
-TIC   _Seg7                       0.76181E+07   -0.76180E+07
+TIC   _Seg7                       0.82179E+07   -0.82177E+07
 TIC   _Seg8                       0.00000E+00    0.00000E+00
-TIC   _Seg9                       0.76179E+07   -0.76180E+07
+TIC   _Seg9                       0.82175E+07   -0.82177E+07
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16435E+08   -0.16435E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -2610,12 +2655,15 @@ ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
-ALKA  _Seg7                       0.68577E+08   -0.68577E+08
+ALKA  _Seg7                       0.68785E+08   -0.68785E+08
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
-ALKA  _Seg9                       0.68577E+08   -0.68577E+08
+ALKA  _Seg9                       0.68785E+08   -0.68785E+08
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -2883,7 +2931,7 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28672E+02
+OXY   _Storage                    0.00000E+00   -0.35981E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -2892,13 +2940,15 @@ OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
-OXY   _Seg8                       0.61278E+07   -0.61280E+07
+OXY   _Seg8                       0.36234E+07   -0.36237E+07
 OXY   _Seg9                       0.00000E+00    0.00000E+00
-OXY   _Seg10                      0.61283E+07   -0.61280E+07
+OXY   _Seg10                      0.36240E+07   -0.36237E+07
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12256E+08   -0.12256E+08
+SUM OF ALL TERMS                  0.72474E+07   -0.72474E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -2938,7 +2988,7 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14855E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -2947,16 +2997,17 @@ TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
-TIC   _Seg8                       0.76180E+07   -0.76179E+07
+TIC   _Seg8                       0.82177E+07   -0.82175E+07
 TIC   _Seg9                       0.00000E+00    0.00000E+00
-TIC   _Seg10                      0.76177E+07   -0.76179E+07
+TIC   _Seg10                      0.82174E+07   -0.82175E+07
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16435E+08   -0.16435E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -2965,11 +3016,14 @@ ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
-ALKA  _Seg8                       0.68577E+08   -0.68577E+08
+ALKA  _Seg8                       0.68785E+08   -0.68785E+08
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
-ALKA  _Seg10                      0.68577E+08   -0.68577E+08
+ALKA  _Seg10                      0.68785E+08   -0.68785E+08
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -3237,7 +3291,7 @@ SUM OF ALL TERMS                  0.34301E+06   -0.34301E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28673E+02
+OXY   _Storage                    0.00000E+00   -0.35994E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -3247,12 +3301,14 @@ OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
-OXY   _Seg9                       0.61280E+07   -0.61283E+07
+OXY   _Seg9                       0.36237E+07   -0.36240E+07
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+03
+OXY   _dUpNO3M                    0.11207E+02    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+03    0.00000E+00
-SUM OF ALL TERMS                  0.61285E+07   -0.61285E+07
+SUM OF ALL TERMS                  0.36242E+07   -0.36242E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -3292,7 +3348,7 @@ SUM OF ALL TERMS                  0.34291E+06   -0.34291E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14856E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -3302,15 +3358,16 @@ TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
-TIC   _Seg9                       0.76179E+07   -0.76177E+07
+TIC   _Seg9                       0.82175E+07   -0.82174E+07
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+03
-SUM OF ALL TERMS                  0.76179E+07   -0.76179E+07
+SUM OF ALL TERMS                  0.82176E+07   -0.82176E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -3320,10 +3377,13 @@ ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
-ALKA  _Seg9                       0.68577E+08   -0.68577E+08
+ALKA  _Seg9                       0.68785E+08   -0.68785E+08
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.68577E+08   -0.68577E+08
+ALKA  _dUpNO3M                    0.10682E+02    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.68785E+08   -0.68785E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -3591,7 +3651,7 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+03
+OXY   _Storage                    0.00000E+00   -0.35934E+02
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -3604,9 +3664,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+03
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+03
+OXY   _dUpNO3M                    0.11207E+02    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+03    0.00000E+00
-SUM OF ALL TERMS                  0.49634E+03   -0.49628E+03
+SUM OF ALL TERMS                  0.50754E+03   -0.50751E+03
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -3646,7 +3708,7 @@ SUM OF ALL TERMS                  0.56801E-02    0.00000E+00
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+03    0.00000E+00
+TIC   _Storage                    0.14854E+03    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -3659,12 +3721,13 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+02    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+03
-SUM OF ALL TERMS                  0.18606E+03   -0.18589E+03
+SUM OF ALL TERMS                  0.18607E+03   -0.18589E+03
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+01    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+01
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -3677,7 +3740,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.14539E+01    0.00000E+00
+ALKA  _dUpNO3M                    0.10682E+02    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.10682E+02   -0.92212E+01
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -3945,22 +4011,24 @@ SUM OF ALL TERMS                  0.61741E+07   -0.61741E+07
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.57338E+03
+OXY   _Storage                    0.00000E+00   -0.71869E+02
 OXY   _Other                      0.00000E+00    0.00000E+00
-OXY   _Seg1                       0.61270E+07   -0.61270E+07
-OXY   _Seg2                       0.12254E+08   -0.12254E+08
-OXY   _Seg3                       0.12254E+08   -0.12254E+08
-OXY   _Seg4                       0.12254E+08   -0.12254E+08
-OXY   _Seg5                       0.12255E+08   -0.12255E+08
-OXY   _Seg6                       0.12255E+08   -0.12255E+08
-OXY   _Seg7                       0.12255E+08   -0.12255E+08
-OXY   _Seg8                       0.12256E+08   -0.12256E+08
-OXY   _Seg9                       0.12256E+08   -0.12256E+08
-OXY   _Seg10                      0.61283E+07   -0.61280E+07
+OXY   _Seg1                       0.36215E+07   -0.36217E+07
+OXY   _Seg2                       0.72435E+07   -0.72435E+07
+OXY   _Seg3                       0.72440E+07   -0.72440E+07
+OXY   _Seg4                       0.72445E+07   -0.72445E+07
+OXY   _Seg5                       0.72451E+07   -0.72451E+07
+OXY   _Seg6                       0.72457E+07   -0.72457E+07
+OXY   _Seg7                       0.72462E+07   -0.72462E+07
+OXY   _Seg8                       0.72468E+07   -0.72468E+07
+OXY   _Seg9                       0.72474E+07   -0.72474E+07
+OXY   _Seg10                      0.36240E+07   -0.36237E+07
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.52397E+03
 OXY   _dCnOXYM                    0.00000E+00   -0.41918E+03
+OXY   _dUpNO3M                    0.22414E+02    0.00000E+00
 OXY   _dPrOXYM                    0.99267E+03    0.00000E+00
-SUM OF ALL TERMS                  0.11029E+09   -0.11029E+09
+SUM OF ALL TERMS                  0.65210E+08   -0.65210E+08
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4000,38 +4068,42 @@ SUM OF ALL TERMS                  0.61724E+07   -0.61724E+07
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.37212E+03    0.00000E+00
+TIC   _Storage                    0.29708E+03    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
-TIC   _Seg1                       0.76185E+07   -0.76185E+07
-TIC   _Seg2                       0.15237E+08   -0.15237E+08
-TIC   _Seg3                       0.15237E+08   -0.15237E+08
-TIC   _Seg4                       0.15237E+08   -0.15237E+08
-TIC   _Seg5                       0.15237E+08   -0.15237E+08
-TIC   _Seg6                       0.15236E+08   -0.15236E+08
-TIC   _Seg7                       0.15236E+08   -0.15236E+08
-TIC   _Seg8                       0.15236E+08   -0.15236E+08
-TIC   _Seg9                       0.15236E+08   -0.15236E+08
-TIC   _Seg10                      0.76177E+07   -0.76179E+07
+TIC   _Seg1                       0.82184E+07   -0.82183E+07
+TIC   _Seg2                       0.16437E+08   -0.16437E+08
+TIC   _Seg3                       0.16437E+08   -0.16437E+08
+TIC   _Seg4                       0.16436E+08   -0.16436E+08
+TIC   _Seg5                       0.16436E+08   -0.16436E+08
+TIC   _Seg6                       0.16436E+08   -0.16436E+08
+TIC   _Seg7                       0.16436E+08   -0.16436E+08
+TIC   _Seg8                       0.16435E+08   -0.16435E+08
+TIC   _Seg9                       0.16435E+08   -0.16435E+08
+TIC   _Seg10                      0.82174E+07   -0.82175E+07
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.75065E+02    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.37179E+03
-SUM OF ALL TERMS                  0.13713E+09   -0.13713E+09
+SUM OF ALL TERMS                  0.14792E+09   -0.14792E+09
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.29077E+01    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.18442E+02
 ALKA  _Other                      0.00000E+00    0.00000E+00
-ALKA  _Seg1                       0.68577E+08   -0.68577E+08
-ALKA  _Seg2                       0.13715E+09   -0.13715E+09
-ALKA  _Seg3                       0.13715E+09   -0.13715E+09
-ALKA  _Seg4                       0.13715E+09   -0.13715E+09
-ALKA  _Seg5                       0.13715E+09   -0.13715E+09
-ALKA  _Seg6                       0.13715E+09   -0.13715E+09
-ALKA  _Seg7                       0.13715E+09   -0.13715E+09
-ALKA  _Seg8                       0.13715E+09   -0.13715E+09
-ALKA  _Seg9                       0.13715E+09   -0.13715E+09
-ALKA  _Seg10                      0.68577E+08   -0.68577E+08
+ALKA  _Seg1                       0.68785E+08   -0.68785E+08
+ALKA  _Seg2                       0.13757E+09   -0.13757E+09
+ALKA  _Seg3                       0.13757E+09   -0.13757E+09
+ALKA  _Seg4                       0.13757E+09   -0.13757E+09
+ALKA  _Seg5                       0.13757E+09   -0.13757E+09
+ALKA  _Seg6                       0.13757E+09   -0.13757E+09
+ALKA  _Seg7                       0.13757E+09   -0.13757E+09
+ALKA  _Seg8                       0.13757E+09   -0.13757E+09
+ALKA  _Seg9                       0.13757E+09   -0.13757E+09
+ALKA  _Seg10                      0.68785E+08   -0.68785E+08
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12344E+10   -0.12344E+10
+ALKA  _dUpNO3M                    0.21365E+02    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.12381E+10   -0.12381E+10
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4303,10 +4375,10 @@ SUM OF ALL TERMS                  0.34301E+06   -0.34301E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35873E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
-OXY   _Seg2                       0.61270E+07   -0.61270E+07
+OXY   _Seg2                       0.36217E+07   -0.36215E+07
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
@@ -4316,9 +4388,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+03
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.61270E+07   -0.61270E+07
+SUM OF ALL TERMS                  0.36217E+07   -0.36217E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4358,10 +4432,10 @@ SUM OF ALL TERMS                  0.34291E+06   -0.34291E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
-TIC   _Seg2                       0.76185E+07   -0.76185E+07
+TIC   _Seg2                       0.82183E+07   -0.82184E+07
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
@@ -4371,15 +4445,16 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+02    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.76185E+07   -0.76185E+07
+SUM OF ALL TERMS                  0.82184E+07   -0.82184E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
-ALKA  _Seg2                       0.68577E+08   -0.68577E+08
+ALKA  _Seg2                       0.68785E+08   -0.68785E+08
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
@@ -4389,7 +4464,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.68577E+08   -0.68577E+08
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.68785E+08   -0.68785E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4657,11 +4735,11 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35887E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
-OXY   _Seg1                       0.61270E+07   -0.61270E+07
+OXY   _Seg1                       0.36215E+07   -0.36217E+07
 OXY   _Seg2                       0.00000E+00    0.00000E+00
-OXY   _Seg3                       0.61270E+07   -0.61270E+07
+OXY   _Seg3                       0.36220E+07   -0.36217E+07
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
@@ -4670,9 +4748,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72435E+07   -0.72435E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4712,11 +4792,11 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
-TIC   _Seg1                       0.76185E+07   -0.76185E+07
+TIC   _Seg1                       0.82184E+07   -0.82183E+07
 TIC   _Seg2                       0.00000E+00    0.00000E+00
-TIC   _Seg3                       0.76185E+07   -0.76185E+07
+TIC   _Seg3                       0.82183E+07   -0.82183E+07
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
@@ -4725,16 +4805,17 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16437E+08   -0.16437E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
-ALKA  _Seg1                       0.68577E+08   -0.68577E+08
+ALKA  _Seg1                       0.68785E+08   -0.68785E+08
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
-ALKA  _Seg3                       0.68577E+08   -0.68577E+08
+ALKA  _Seg3                       0.68785E+08   -0.68785E+08
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
@@ -4743,7 +4824,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -5011,12 +5095,12 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35901E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
-OXY   _Seg2                       0.61270E+07   -0.61270E+07
+OXY   _Seg2                       0.36217E+07   -0.36220E+07
 OXY   _Seg3                       0.00000E+00    0.00000E+00
-OXY   _Seg4                       0.61271E+07   -0.61270E+07
+OXY   _Seg4                       0.36223E+07   -0.36220E+07
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
@@ -5024,9 +5108,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72440E+07   -0.72440E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -5066,12 +5152,12 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
-TIC   _Seg2                       0.76185E+07   -0.76185E+07
+TIC   _Seg2                       0.82183E+07   -0.82183E+07
 TIC   _Seg3                       0.00000E+00    0.00000E+00
-TIC   _Seg4                       0.76184E+07   -0.76185E+07
+TIC   _Seg4                       0.82182E+07   -0.82183E+07
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
@@ -5079,17 +5165,18 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16437E+08   -0.16437E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
-ALKA  _Seg2                       0.68577E+08   -0.68577E+08
+ALKA  _Seg2                       0.68785E+08   -0.68785E+08
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
-ALKA  _Seg4                       0.68577E+08   -0.68577E+08
+ALKA  _Seg4                       0.68785E+08   -0.68785E+08
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
@@ -5097,7 +5184,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -5365,22 +5455,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28668E+02
+OXY   _Storage                    0.00000E+00   -0.35915E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
-OXY   _Seg3                       0.61270E+07   -0.61271E+07
+OXY   _Seg3                       0.36220E+07   -0.36223E+07
 OXY   _Seg4                       0.00000E+00    0.00000E+00
-OXY   _Seg5                       0.61273E+07   -0.61271E+07
+OXY   _Seg5                       0.36225E+07   -0.36223E+07
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72445E+07   -0.72445E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -5420,38 +5512,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
-TIC   _Seg3                       0.76185E+07   -0.76184E+07
+TIC   _Seg3                       0.82183E+07   -0.82182E+07
 TIC   _Seg4                       0.00000E+00    0.00000E+00
-TIC   _Seg5                       0.76183E+07   -0.76184E+07
+TIC   _Seg5                       0.82181E+07   -0.82182E+07
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
-ALKA  _Seg3                       0.68577E+08   -0.68577E+08
+ALKA  _Seg3                       0.68785E+08   -0.68785E+08
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
-ALKA  _Seg5                       0.68577E+08   -0.68577E+08
+ALKA  _Seg5                       0.68785E+08   -0.68785E+08
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -5719,22 +5815,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28668E+02
+OXY   _Storage                    0.00000E+00   -0.35928E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
-OXY   _Seg4                       0.61271E+07   -0.61273E+07
+OXY   _Seg4                       0.36223E+07   -0.36225E+07
 OXY   _Seg5                       0.00000E+00    0.00000E+00
-OXY   _Seg6                       0.61274E+07   -0.61273E+07
+OXY   _Seg6                       0.36228E+07   -0.36225E+07
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72451E+07   -0.72451E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -5774,38 +5872,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
-TIC   _Seg4                       0.76184E+07   -0.76183E+07
+TIC   _Seg4                       0.82182E+07   -0.82181E+07
 TIC   _Seg5                       0.00000E+00    0.00000E+00
-TIC   _Seg6                       0.76182E+07   -0.76183E+07
+TIC   _Seg6                       0.82180E+07   -0.82181E+07
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
-ALKA  _Seg4                       0.68577E+08   -0.68577E+08
+ALKA  _Seg4                       0.68785E+08   -0.68785E+08
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
-ALKA  _Seg6                       0.68577E+08   -0.68577E+08
+ALKA  _Seg6                       0.68785E+08   -0.68785E+08
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -6073,22 +6175,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+02
+OXY   _Storage                    0.00000E+00   -0.35942E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
-OXY   _Seg5                       0.61273E+07   -0.61274E+07
+OXY   _Seg5                       0.36225E+07   -0.36228E+07
 OXY   _Seg6                       0.00000E+00    0.00000E+00
-OXY   _Seg7                       0.61276E+07   -0.61274E+07
+OXY   _Seg7                       0.36231E+07   -0.36228E+07
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72457E+07   -0.72457E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -6128,38 +6232,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
-TIC   _Seg5                       0.76183E+07   -0.76182E+07
+TIC   _Seg5                       0.82181E+07   -0.82180E+07
 TIC   _Seg6                       0.00000E+00    0.00000E+00
-TIC   _Seg7                       0.76181E+07   -0.76182E+07
+TIC   _Seg7                       0.82179E+07   -0.82180E+07
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
-ALKA  _Seg5                       0.68577E+08   -0.68577E+08
+ALKA  _Seg5                       0.68785E+08   -0.68785E+08
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
-ALKA  _Seg7                       0.68577E+08   -0.68577E+08
+ALKA  _Seg7                       0.68785E+08   -0.68785E+08
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -6427,22 +6535,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28670E+02
+OXY   _Storage                    0.00000E+00   -0.35955E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
-OXY   _Seg6                       0.61274E+07   -0.61276E+07
+OXY   _Seg6                       0.36228E+07   -0.36231E+07
 OXY   _Seg7                       0.00000E+00    0.00000E+00
-OXY   _Seg8                       0.61278E+07   -0.61276E+07
+OXY   _Seg8                       0.36234E+07   -0.36231E+07
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72462E+07   -0.72462E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -6482,38 +6592,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
-TIC   _Seg6                       0.76182E+07   -0.76181E+07
+TIC   _Seg6                       0.82180E+07   -0.82179E+07
 TIC   _Seg7                       0.00000E+00    0.00000E+00
-TIC   _Seg8                       0.76180E+07   -0.76181E+07
+TIC   _Seg8                       0.82177E+07   -0.82179E+07
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
-ALKA  _Seg6                       0.68577E+08   -0.68577E+08
+ALKA  _Seg6                       0.68785E+08   -0.68785E+08
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
-ALKA  _Seg8                       0.68577E+08   -0.68577E+08
+ALKA  _Seg8                       0.68785E+08   -0.68785E+08
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -6781,7 +6895,7 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28671E+02
+OXY   _Storage                    0.00000E+00   -0.35968E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -6789,14 +6903,16 @@ OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
-OXY   _Seg7                       0.61276E+07   -0.61278E+07
+OXY   _Seg7                       0.36231E+07   -0.36234E+07
 OXY   _Seg8                       0.00000E+00    0.00000E+00
-OXY   _Seg9                       0.61280E+07   -0.61278E+07
+OXY   _Seg9                       0.36237E+07   -0.36234E+07
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12256E+08   -0.12256E+08
+SUM OF ALL TERMS                  0.72468E+07   -0.72468E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -6836,7 +6952,7 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14855E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -6844,17 +6960,18 @@ TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
-TIC   _Seg7                       0.76181E+07   -0.76180E+07
+TIC   _Seg7                       0.82179E+07   -0.82177E+07
 TIC   _Seg8                       0.00000E+00    0.00000E+00
-TIC   _Seg9                       0.76179E+07   -0.76180E+07
+TIC   _Seg9                       0.82175E+07   -0.82177E+07
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16435E+08   -0.16435E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -6862,12 +6979,15 @@ ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
-ALKA  _Seg7                       0.68577E+08   -0.68577E+08
+ALKA  _Seg7                       0.68785E+08   -0.68785E+08
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
-ALKA  _Seg9                       0.68577E+08   -0.68577E+08
+ALKA  _Seg9                       0.68785E+08   -0.68785E+08
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -7135,7 +7255,7 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28672E+02
+OXY   _Storage                    0.00000E+00   -0.35981E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -7144,13 +7264,15 @@ OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
-OXY   _Seg8                       0.61278E+07   -0.61280E+07
+OXY   _Seg8                       0.36234E+07   -0.36237E+07
 OXY   _Seg9                       0.00000E+00    0.00000E+00
-OXY   _Seg10                      0.61283E+07   -0.61280E+07
+OXY   _Seg10                      0.36240E+07   -0.36237E+07
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12256E+08   -0.12256E+08
+SUM OF ALL TERMS                  0.72474E+07   -0.72474E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -7190,7 +7312,7 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14855E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -7199,16 +7321,17 @@ TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
-TIC   _Seg8                       0.76180E+07   -0.76179E+07
+TIC   _Seg8                       0.82177E+07   -0.82175E+07
 TIC   _Seg9                       0.00000E+00    0.00000E+00
-TIC   _Seg10                      0.76177E+07   -0.76179E+07
+TIC   _Seg10                      0.82174E+07   -0.82175E+07
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16435E+08   -0.16435E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -7217,11 +7340,14 @@ ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
-ALKA  _Seg8                       0.68577E+08   -0.68577E+08
+ALKA  _Seg8                       0.68785E+08   -0.68785E+08
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
-ALKA  _Seg10                      0.68577E+08   -0.68577E+08
+ALKA  _Seg10                      0.68785E+08   -0.68785E+08
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -7489,7 +7615,7 @@ SUM OF ALL TERMS                  0.34301E+06   -0.34301E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28673E+02
+OXY   _Storage                    0.00000E+00   -0.35994E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -7499,12 +7625,14 @@ OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
-OXY   _Seg9                       0.61280E+07   -0.61283E+07
+OXY   _Seg9                       0.36237E+07   -0.36240E+07
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+03
+OXY   _dUpNO3M                    0.11207E+02    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+03    0.00000E+00
-SUM OF ALL TERMS                  0.61285E+07   -0.61285E+07
+SUM OF ALL TERMS                  0.36242E+07   -0.36242E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -7544,7 +7672,7 @@ SUM OF ALL TERMS                  0.34291E+06   -0.34291E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14856E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -7554,15 +7682,16 @@ TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
-TIC   _Seg9                       0.76179E+07   -0.76177E+07
+TIC   _Seg9                       0.82175E+07   -0.82174E+07
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+03
-SUM OF ALL TERMS                  0.76179E+07   -0.76179E+07
+SUM OF ALL TERMS                  0.82176E+07   -0.82176E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -7572,10 +7701,13 @@ ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
-ALKA  _Seg9                       0.68577E+08   -0.68577E+08
+ALKA  _Seg9                       0.68785E+08   -0.68785E+08
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.68577E+08   -0.68577E+08
+ALKA  _dUpNO3M                    0.10682E+02    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.68785E+08   -0.68785E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -7843,7 +7975,7 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+03
+OXY   _Storage                    0.00000E+00   -0.35934E+02
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -7856,9 +7988,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+03
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+03
+OXY   _dUpNO3M                    0.11207E+02    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+03    0.00000E+00
-SUM OF ALL TERMS                  0.49634E+03   -0.49628E+03
+SUM OF ALL TERMS                  0.50754E+03   -0.50751E+03
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -7898,7 +8032,7 @@ SUM OF ALL TERMS                  0.56801E-02    0.00000E+00
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+03    0.00000E+00
+TIC   _Storage                    0.14854E+03    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -7911,12 +8045,13 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+02    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+03
-SUM OF ALL TERMS                  0.18606E+03   -0.18589E+03
+SUM OF ALL TERMS                  0.18607E+03   -0.18589E+03
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+01    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+01
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -7929,7 +8064,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.14539E+01    0.00000E+00
+ALKA  _dUpNO3M                    0.10682E+02    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.10682E+02   -0.92212E+01
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8197,22 +8335,24 @@ SUM OF ALL TERMS                  0.56129E+06   -0.56129E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.52126E+02
+OXY   _Storage                    0.00000E+00   -0.65335E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
-OXY   _Seg1                       0.55700E+06   -0.55700E+06
-OXY   _Seg2                       0.11140E+07   -0.11140E+07
-OXY   _Seg3                       0.11140E+07   -0.11140E+07
-OXY   _Seg4                       0.11140E+07   -0.11140E+07
-OXY   _Seg5                       0.11140E+07   -0.11140E+07
-OXY   _Seg6                       0.11141E+07   -0.11141E+07
-OXY   _Seg7                       0.11141E+07   -0.11141E+07
-OXY   _Seg8                       0.11141E+07   -0.11141E+07
-OXY   _Seg9                       0.11142E+07   -0.11142E+07
-OXY   _Seg10                      0.55711E+06   -0.55709E+06
+OXY   _Seg1                       0.32922E+06   -0.32925E+06
+OXY   _Seg2                       0.65850E+06   -0.65850E+06
+OXY   _Seg3                       0.65855E+06   -0.65855E+06
+OXY   _Seg4                       0.65859E+06   -0.65859E+06
+OXY   _Seg5                       0.65865E+06   -0.65865E+06
+OXY   _Seg6                       0.65870E+06   -0.65870E+06
+OXY   _Seg7                       0.65875E+06   -0.65875E+06
+OXY   _Seg8                       0.65880E+06   -0.65880E+06
+OXY   _Seg9                       0.65885E+06   -0.65885E+06
+OXY   _Seg10                      0.32945E+06   -0.32943E+06
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.47634E+02
 OXY   _dCnOXYM                    0.00000E+00   -0.38107E+02
+OXY   _dUpNO3M                    0.20377E+01    0.00000E+00
 OXY   _dPrOXYM                    0.90243E+02    0.00000E+00
-SUM OF ALL TERMS                  0.10027E+08   -0.10027E+08
+SUM OF ALL TERMS                  0.59281E+07   -0.59281E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8252,38 +8392,42 @@ SUM OF ALL TERMS                  0.56113E+06   -0.56113E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.33829E+02    0.00000E+00
+TIC   _Storage                    0.27007E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
-TIC   _Seg1                       0.69259E+06   -0.69259E+06
-TIC   _Seg2                       0.13852E+07   -0.13852E+07
-TIC   _Seg3                       0.13852E+07   -0.13852E+07
-TIC   _Seg4                       0.13852E+07   -0.13852E+07
-TIC   _Seg5                       0.13852E+07   -0.13852E+07
-TIC   _Seg6                       0.13851E+07   -0.13851E+07
-TIC   _Seg7                       0.13851E+07   -0.13851E+07
-TIC   _Seg8                       0.13851E+07   -0.13851E+07
-TIC   _Seg9                       0.13851E+07   -0.13851E+07
-TIC   _Seg10                      0.69252E+06   -0.69253E+06
+TIC   _Seg1                       0.74713E+06   -0.74712E+06
+TIC   _Seg2                       0.14942E+07   -0.14942E+07
+TIC   _Seg3                       0.14942E+07   -0.14942E+07
+TIC   _Seg4                       0.14942E+07   -0.14942E+07
+TIC   _Seg5                       0.14942E+07   -0.14942E+07
+TIC   _Seg6                       0.14942E+07   -0.14942E+07
+TIC   _Seg7                       0.14942E+07   -0.14942E+07
+TIC   _Seg8                       0.14941E+07   -0.14941E+07
+TIC   _Seg9                       0.14941E+07   -0.14941E+07
+TIC   _Seg10                      0.74703E+06   -0.74705E+06
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.68241E+01    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.33799E+02
-SUM OF ALL TERMS                  0.12466E+08   -0.12466E+08
+SUM OF ALL TERMS                  0.13448E+08   -0.13448E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.26434E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.16766E+01
 ALKA  _Other                      0.00000E+00    0.00000E+00
-ALKA  _Seg1                       0.62342E+07   -0.62342E+07
-ALKA  _Seg2                       0.12468E+08   -0.12468E+08
-ALKA  _Seg3                       0.12468E+08   -0.12468E+08
-ALKA  _Seg4                       0.12468E+08   -0.12468E+08
-ALKA  _Seg5                       0.12468E+08   -0.12468E+08
-ALKA  _Seg6                       0.12468E+08   -0.12468E+08
-ALKA  _Seg7                       0.12468E+08   -0.12468E+08
-ALKA  _Seg8                       0.12468E+08   -0.12468E+08
-ALKA  _Seg9                       0.12468E+08   -0.12468E+08
-ALKA  _Seg10                      0.62342E+07   -0.62342E+07
+ALKA  _Seg1                       0.62532E+07   -0.62532E+07
+ALKA  _Seg2                       0.12506E+08   -0.12506E+08
+ALKA  _Seg3                       0.12506E+08   -0.12506E+08
+ALKA  _Seg4                       0.12506E+08   -0.12506E+08
+ALKA  _Seg5                       0.12506E+08   -0.12506E+08
+ALKA  _Seg6                       0.12506E+08   -0.12506E+08
+ALKA  _Seg7                       0.12506E+08   -0.12506E+08
+ALKA  _Seg8                       0.12506E+08   -0.12506E+08
+ALKA  _Seg9                       0.12506E+08   -0.12506E+08
+ALKA  _Seg10                      0.62532E+07   -0.62532E+07
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.11222E+09   -0.11222E+09
+ALKA  _dUpNO3M                    0.19423E+01    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.11256E+09   -0.11256E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8555,10 +8699,10 @@ SUM OF ALL TERMS                  0.34301E+06   -0.34301E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35873E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
-OXY   _Seg2                       0.61270E+07   -0.61270E+07
+OXY   _Seg2                       0.36217E+07   -0.36215E+07
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
@@ -8568,9 +8712,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+03
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.61270E+07   -0.61270E+07
+SUM OF ALL TERMS                  0.36217E+07   -0.36217E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8610,10 +8756,10 @@ SUM OF ALL TERMS                  0.34291E+06   -0.34291E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
-TIC   _Seg2                       0.76185E+07   -0.76185E+07
+TIC   _Seg2                       0.82183E+07   -0.82184E+07
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
@@ -8623,15 +8769,16 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+02    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.76185E+07   -0.76185E+07
+SUM OF ALL TERMS                  0.82184E+07   -0.82184E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
-ALKA  _Seg2                       0.68577E+08   -0.68577E+08
+ALKA  _Seg2                       0.68785E+08   -0.68785E+08
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
@@ -8641,7 +8788,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.68577E+08   -0.68577E+08
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.68785E+08   -0.68785E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8909,11 +9059,11 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35887E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
-OXY   _Seg1                       0.61270E+07   -0.61270E+07
+OXY   _Seg1                       0.36215E+07   -0.36217E+07
 OXY   _Seg2                       0.00000E+00    0.00000E+00
-OXY   _Seg3                       0.61270E+07   -0.61270E+07
+OXY   _Seg3                       0.36220E+07   -0.36217E+07
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
@@ -8922,9 +9072,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72435E+07   -0.72435E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8964,11 +9116,11 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
-TIC   _Seg1                       0.76185E+07   -0.76185E+07
+TIC   _Seg1                       0.82184E+07   -0.82183E+07
 TIC   _Seg2                       0.00000E+00    0.00000E+00
-TIC   _Seg3                       0.76185E+07   -0.76185E+07
+TIC   _Seg3                       0.82183E+07   -0.82183E+07
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
@@ -8977,16 +9129,17 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16437E+08   -0.16437E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
-ALKA  _Seg1                       0.68577E+08   -0.68577E+08
+ALKA  _Seg1                       0.68785E+08   -0.68785E+08
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
-ALKA  _Seg3                       0.68577E+08   -0.68577E+08
+ALKA  _Seg3                       0.68785E+08   -0.68785E+08
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
@@ -8995,7 +9148,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -9263,12 +9419,12 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28667E+02
+OXY   _Storage                    0.00000E+00   -0.35901E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
-OXY   _Seg2                       0.61270E+07   -0.61270E+07
+OXY   _Seg2                       0.36217E+07   -0.36220E+07
 OXY   _Seg3                       0.00000E+00    0.00000E+00
-OXY   _Seg4                       0.61271E+07   -0.61270E+07
+OXY   _Seg4                       0.36223E+07   -0.36220E+07
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
@@ -9276,9 +9432,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72440E+07   -0.72440E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -9318,12 +9476,12 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
-TIC   _Seg2                       0.76185E+07   -0.76185E+07
+TIC   _Seg2                       0.82183E+07   -0.82183E+07
 TIC   _Seg3                       0.00000E+00    0.00000E+00
-TIC   _Seg4                       0.76184E+07   -0.76185E+07
+TIC   _Seg4                       0.82182E+07   -0.82183E+07
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
@@ -9331,17 +9489,18 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16437E+08   -0.16437E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
-ALKA  _Seg2                       0.68577E+08   -0.68577E+08
+ALKA  _Seg2                       0.68785E+08   -0.68785E+08
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
-ALKA  _Seg4                       0.68577E+08   -0.68577E+08
+ALKA  _Seg4                       0.68785E+08   -0.68785E+08
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
@@ -9349,7 +9508,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -9617,22 +9779,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28668E+02
+OXY   _Storage                    0.00000E+00   -0.35915E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
-OXY   _Seg3                       0.61270E+07   -0.61271E+07
+OXY   _Seg3                       0.36220E+07   -0.36223E+07
 OXY   _Seg4                       0.00000E+00    0.00000E+00
-OXY   _Seg5                       0.61273E+07   -0.61271E+07
+OXY   _Seg5                       0.36225E+07   -0.36223E+07
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12254E+08   -0.12254E+08
+SUM OF ALL TERMS                  0.72445E+07   -0.72445E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -9672,38 +9836,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18605E+02    0.00000E+00
+TIC   _Storage                    0.14853E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
-TIC   _Seg3                       0.76185E+07   -0.76184E+07
+TIC   _Seg3                       0.82183E+07   -0.82182E+07
 TIC   _Seg4                       0.00000E+00    0.00000E+00
-TIC   _Seg5                       0.76183E+07   -0.76184E+07
+TIC   _Seg5                       0.82181E+07   -0.82182E+07
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
-ALKA  _Seg3                       0.68577E+08   -0.68577E+08
+ALKA  _Seg3                       0.68785E+08   -0.68785E+08
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
-ALKA  _Seg5                       0.68577E+08   -0.68577E+08
+ALKA  _Seg5                       0.68785E+08   -0.68785E+08
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -9971,22 +10139,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28668E+02
+OXY   _Storage                    0.00000E+00   -0.35928E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
-OXY   _Seg4                       0.61271E+07   -0.61273E+07
+OXY   _Seg4                       0.36223E+07   -0.36225E+07
 OXY   _Seg5                       0.00000E+00    0.00000E+00
-OXY   _Seg6                       0.61274E+07   -0.61273E+07
+OXY   _Seg6                       0.36228E+07   -0.36225E+07
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72451E+07   -0.72451E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -10026,38 +10196,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
-TIC   _Seg4                       0.76184E+07   -0.76183E+07
+TIC   _Seg4                       0.82182E+07   -0.82181E+07
 TIC   _Seg5                       0.00000E+00    0.00000E+00
-TIC   _Seg6                       0.76182E+07   -0.76183E+07
+TIC   _Seg6                       0.82180E+07   -0.82181E+07
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15237E+08   -0.15237E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
-ALKA  _Seg4                       0.68577E+08   -0.68577E+08
+ALKA  _Seg4                       0.68785E+08   -0.68785E+08
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
-ALKA  _Seg6                       0.68577E+08   -0.68577E+08
+ALKA  _Seg6                       0.68785E+08   -0.68785E+08
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -10325,22 +10499,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+02
+OXY   _Storage                    0.00000E+00   -0.35942E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
-OXY   _Seg5                       0.61273E+07   -0.61274E+07
+OXY   _Seg5                       0.36225E+07   -0.36228E+07
 OXY   _Seg6                       0.00000E+00    0.00000E+00
-OXY   _Seg7                       0.61276E+07   -0.61274E+07
+OXY   _Seg7                       0.36231E+07   -0.36228E+07
 OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72457E+07   -0.72457E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -10380,38 +10556,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
-TIC   _Seg5                       0.76183E+07   -0.76182E+07
+TIC   _Seg5                       0.82181E+07   -0.82180E+07
 TIC   _Seg6                       0.00000E+00    0.00000E+00
-TIC   _Seg7                       0.76181E+07   -0.76182E+07
+TIC   _Seg7                       0.82178E+07   -0.82180E+07
 TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
-ALKA  _Seg5                       0.68577E+08   -0.68577E+08
+ALKA  _Seg5                       0.68785E+08   -0.68785E+08
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
-ALKA  _Seg7                       0.68577E+08   -0.68577E+08
+ALKA  _Seg7                       0.68785E+08   -0.68785E+08
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -10679,22 +10859,24 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28670E+02
+OXY   _Storage                    0.00000E+00   -0.35955E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
 OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
-OXY   _Seg6                       0.61274E+07   -0.61276E+07
+OXY   _Seg6                       0.36228E+07   -0.36231E+07
 OXY   _Seg7                       0.00000E+00    0.00000E+00
-OXY   _Seg8                       0.61278E+07   -0.61276E+07
+OXY   _Seg8                       0.36234E+07   -0.36231E+07
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12255E+08   -0.12255E+08
+SUM OF ALL TERMS                  0.72462E+07   -0.72462E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -10734,38 +10916,42 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
 TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
-TIC   _Seg6                       0.76182E+07   -0.76181E+07
+TIC   _Seg6                       0.82180E+07   -0.82178E+07
 TIC   _Seg7                       0.00000E+00    0.00000E+00
-TIC   _Seg8                       0.76180E+07   -0.76181E+07
+TIC   _Seg8                       0.82177E+07   -0.82178E+07
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16436E+08   -0.16436E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
 ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
-ALKA  _Seg6                       0.68577E+08   -0.68577E+08
+ALKA  _Seg6                       0.68785E+08   -0.68785E+08
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
-ALKA  _Seg8                       0.68577E+08   -0.68577E+08
+ALKA  _Seg8                       0.68785E+08   -0.68785E+08
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -11033,7 +11219,7 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28671E+02
+OXY   _Storage                    0.00000E+00   -0.35968E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -11041,14 +11227,16 @@ OXY   _Seg3                       0.00000E+00    0.00000E+00
 OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
-OXY   _Seg7                       0.61276E+07   -0.61278E+07
+OXY   _Seg7                       0.36231E+07   -0.36234E+07
 OXY   _Seg8                       0.00000E+00    0.00000E+00
-OXY   _Seg9                       0.61280E+07   -0.61278E+07
+OXY   _Seg9                       0.36237E+07   -0.36234E+07
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12256E+08   -0.12256E+08
+SUM OF ALL TERMS                  0.72468E+07   -0.72468E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -11088,7 +11276,7 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14855E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -11096,17 +11284,18 @@ TIC   _Seg3                       0.00000E+00    0.00000E+00
 TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
-TIC   _Seg7                       0.76181E+07   -0.76180E+07
+TIC   _Seg7                       0.82178E+07   -0.82177E+07
 TIC   _Seg8                       0.00000E+00    0.00000E+00
-TIC   _Seg9                       0.76179E+07   -0.76180E+07
+TIC   _Seg9                       0.82175E+07   -0.82177E+07
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16435E+08   -0.16435E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -11114,12 +11303,15 @@ ALKA  _Seg3                       0.00000E+00    0.00000E+00
 ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
-ALKA  _Seg7                       0.68577E+08   -0.68577E+08
+ALKA  _Seg7                       0.68785E+08   -0.68785E+08
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
-ALKA  _Seg9                       0.68577E+08   -0.68577E+08
+ALKA  _Seg9                       0.68785E+08   -0.68785E+08
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -11387,7 +11579,7 @@ SUM OF ALL TERMS                  0.68602E+06   -0.68602E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28672E+02
+OXY   _Storage                    0.00000E+00   -0.35981E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -11396,13 +11588,15 @@ OXY   _Seg4                       0.00000E+00    0.00000E+00
 OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
-OXY   _Seg8                       0.61278E+07   -0.61280E+07
+OXY   _Seg8                       0.36234E+07   -0.36237E+07
 OXY   _Seg9                       0.00000E+00    0.00000E+00
-OXY   _Seg10                      0.61283E+07   -0.61280E+07
+OXY   _Seg10                      0.36240E+07   -0.36237E+07
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00    0.00000E+00
+OXY   _dUpNO3M                    0.00000E+00    0.00000E+00
 OXY   _dPrOXYM                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.12256E+08   -0.12256E+08
+SUM OF ALL TERMS                  0.72474E+07   -0.72474E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -11442,7 +11636,7 @@ SUM OF ALL TERMS                  0.68582E+06   -0.68582E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14855E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -11451,16 +11645,17 @@ TIC   _Seg4                       0.00000E+00    0.00000E+00
 TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
-TIC   _Seg8                       0.76180E+07   -0.76179E+07
+TIC   _Seg8                       0.82177E+07   -0.82175E+07
 TIC   _Seg9                       0.00000E+00    0.00000E+00
-TIC   _Seg10                      0.76177E+07   -0.76179E+07
+TIC   _Seg10                      0.82174E+07   -0.82175E+07
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.15236E+08   -0.15236E+08
+SUM OF ALL TERMS                  0.16435E+08   -0.16435E+08
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -11469,11 +11664,14 @@ ALKA  _Seg4                       0.00000E+00    0.00000E+00
 ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
-ALKA  _Seg8                       0.68577E+08   -0.68577E+08
+ALKA  _Seg8                       0.68785E+08   -0.68785E+08
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
-ALKA  _Seg10                      0.68577E+08   -0.68577E+08
+ALKA  _Seg10                      0.68785E+08   -0.68785E+08
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13715E+09   -0.13715E+09
+ALKA  _dUpNO3M                    0.00000E+00    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.13757E+09   -0.13757E+09
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -11741,7 +11939,7 @@ SUM OF ALL TERMS                  0.34301E+06   -0.34301E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28673E+02
+OXY   _Storage                    0.00000E+00   -0.35994E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -11751,12 +11949,14 @@ OXY   _Seg5                       0.00000E+00    0.00000E+00
 OXY   _Seg6                       0.00000E+00    0.00000E+00
 OXY   _Seg7                       0.00000E+00    0.00000E+00
 OXY   _Seg8                       0.00000E+00    0.00000E+00
-OXY   _Seg9                       0.61280E+07   -0.61283E+07
+OXY   _Seg9                       0.36237E+07   -0.36240E+07
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00    0.00000E+00
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+03
+OXY   _dUpNO3M                    0.11207E+02    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+03    0.00000E+00
-SUM OF ALL TERMS                  0.61285E+07   -0.61285E+07
+SUM OF ALL TERMS                  0.36242E+07   -0.36242E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -11796,7 +11996,7 @@ SUM OF ALL TERMS                  0.34291E+06   -0.34291E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18607E+02    0.00000E+00
+TIC   _Storage                    0.14856E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -11806,15 +12006,16 @@ TIC   _Seg5                       0.00000E+00    0.00000E+00
 TIC   _Seg6                       0.00000E+00    0.00000E+00
 TIC   _Seg7                       0.00000E+00    0.00000E+00
 TIC   _Seg8                       0.00000E+00    0.00000E+00
-TIC   _Seg9                       0.76179E+07   -0.76177E+07
+TIC   _Seg9                       0.82175E+07   -0.82174E+07
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.00000E+00    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+03
-SUM OF ALL TERMS                  0.76179E+07   -0.76179E+07
+SUM OF ALL TERMS                  0.82176E+07   -0.82176E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -11824,10 +12025,13 @@ ALKA  _Seg5                       0.00000E+00    0.00000E+00
 ALKA  _Seg6                       0.00000E+00    0.00000E+00
 ALKA  _Seg7                       0.00000E+00    0.00000E+00
 ALKA  _Seg8                       0.00000E+00    0.00000E+00
-ALKA  _Seg9                       0.68577E+08   -0.68577E+08
+ALKA  _Seg9                       0.68785E+08   -0.68785E+08
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.68577E+08   -0.68577E+08
+ALKA  _dUpNO3M                    0.10682E+02    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.68785E+08   -0.68785E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -12095,7 +12299,7 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+02
+OXY   _Storage                    0.00000E+00   -0.35934E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
 OXY   _Seg1                       0.00000E+00    0.00000E+00
 OXY   _Seg2                       0.00000E+00    0.00000E+00
@@ -12108,9 +12312,11 @@ OXY   _Seg8                       0.00000E+00    0.00000E+00
 OXY   _Seg9                       0.00000E+00    0.00000E+00
 OXY   _Seg10                      0.00000E+00    0.00000E+00
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+02
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+02
+OXY   _dUpNO3M                    0.11207E+01    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+02    0.00000E+00
-SUM OF ALL TERMS                  0.49634E+02   -0.49628E+02
+SUM OF ALL TERMS                  0.50754E+02   -0.50751E+02
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -12150,7 +12356,7 @@ SUM OF ALL TERMS                  0.56801E-03    0.00000E+00
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -12163,12 +12369,13 @@ TIC   _Seg8                       0.00000E+00    0.00000E+00
 TIC   _Seg9                       0.00000E+00    0.00000E+00
 TIC   _Seg10                      0.00000E+00    0.00000E+00
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+01    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+02
-SUM OF ALL TERMS                  0.18606E+02   -0.18589E+02
+SUM OF ALL TERMS                  0.18607E+02   -0.18589E+02
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
 ALKA  _Seg1                       0.00000E+00    0.00000E+00
 ALKA  _Seg2                       0.00000E+00    0.00000E+00
@@ -12181,7 +12388,10 @@ ALKA  _Seg8                       0.00000E+00    0.00000E+00
 ALKA  _Seg9                       0.00000E+00    0.00000E+00
 ALKA  _Seg10                      0.00000E+00    0.00000E+00
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.14539E+00    0.00000E+00
+ALKA  _dUpNO3M                    0.10682E+01    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.10682E+01   -0.92212E+00
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -12449,22 +12659,24 @@ SUM OF ALL TERMS                  0.30871E+06   -0.30871E+06
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.28669E+02
+OXY   _Storage                    0.00000E+00   -0.35934E+01
 OXY   _Other                      0.00000E+00    0.00000E+00
-OXY   _Seg1                       0.30635E+06   -0.30635E+06
-OXY   _Seg2                       0.61270E+06   -0.61270E+06
-OXY   _Seg3                       0.61270E+06   -0.61271E+06
-OXY   _Seg4                       0.61271E+06   -0.61271E+06
-OXY   _Seg5                       0.61273E+06   -0.61273E+06
-OXY   _Seg6                       0.61274E+06   -0.61274E+06
-OXY   _Seg7                       0.61276E+06   -0.61276E+06
-OXY   _Seg8                       0.61278E+06   -0.61278E+06
-OXY   _Seg9                       0.61280E+06   -0.61280E+06
-OXY   _Seg10                      0.30641E+06   -0.30640E+06
+OXY   _Seg1                       0.18107E+06   -0.18109E+06
+OXY   _Seg2                       0.36217E+06   -0.36217E+06
+OXY   _Seg3                       0.36220E+06   -0.36220E+06
+OXY   _Seg4                       0.36223E+06   -0.36223E+06
+OXY   _Seg5                       0.36225E+06   -0.36225E+06
+OXY   _Seg6                       0.36228E+06   -0.36228E+06
+OXY   _Seg7                       0.36231E+06   -0.36231E+06
+OXY   _Seg8                       0.36234E+06   -0.36234E+06
+OXY   _Seg9                       0.36237E+06   -0.36237E+06
+OXY   _Seg10                      0.18120E+06   -0.18118E+06
 OXY   _column                     0.00000E+00    0.00000E+00
+OXY   _dREAROXY                   0.00000E+00   -0.26198E+02
 OXY   _dCnOXYM                    0.00000E+00   -0.20959E+02
+OXY   _dUpNO3M                    0.11207E+01    0.00000E+00
 OXY   _dPrOXYM                    0.49634E+02    0.00000E+00
-SUM OF ALL TERMS                  0.55147E+07   -0.55147E+07
+SUM OF ALL TERMS                  0.32605E+07   -0.32605E+07
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -12504,38 +12716,42 @@ SUM OF ALL TERMS                  0.30862E+06   -0.30862E+06
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.18606E+02    0.00000E+00
+TIC   _Storage                    0.14854E+02    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
-TIC   _Seg1                       0.38093E+06   -0.38093E+06
-TIC   _Seg2                       0.76185E+06   -0.76185E+06
-TIC   _Seg3                       0.76185E+06   -0.76185E+06
-TIC   _Seg4                       0.76184E+06   -0.76184E+06
-TIC   _Seg5                       0.76183E+06   -0.76183E+06
-TIC   _Seg6                       0.76182E+06   -0.76182E+06
-TIC   _Seg7                       0.76181E+06   -0.76181E+06
-TIC   _Seg8                       0.76180E+06   -0.76180E+06
-TIC   _Seg9                       0.76179E+06   -0.76178E+06
-TIC   _Seg10                      0.38088E+06   -0.38089E+06
+TIC   _Seg1                       0.41092E+06   -0.41092E+06
+TIC   _Seg2                       0.82183E+06   -0.82183E+06
+TIC   _Seg3                       0.82183E+06   -0.82183E+06
+TIC   _Seg4                       0.82182E+06   -0.82182E+06
+TIC   _Seg5                       0.82181E+06   -0.82181E+06
+TIC   _Seg6                       0.82180E+06   -0.82180E+06
+TIC   _Seg7                       0.82178E+06   -0.82178E+06
+TIC   _Seg8                       0.82177E+06   -0.82177E+06
+TIC   _Seg9                       0.82175E+06   -0.82175E+06
+TIC   _Seg10                      0.41087E+06   -0.41088E+06
 TIC   _column                     0.00000E+00    0.00000E+00
+TIC   _dREARCO2                   0.37532E+01    0.00000E+00
 TIC   _dMALTIC                    0.00000E+00   -0.18589E+02
-SUM OF ALL TERMS                  0.68564E+07   -0.68564E+07
+SUM OF ALL TERMS                  0.73962E+07   -0.73962E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.14539E+00    0.00000E+00
+ALKA  _Storage                    0.00000E+00   -0.92212E+00
 ALKA  _Other                      0.00000E+00    0.00000E+00
-ALKA  _Seg1                       0.34288E+07   -0.34288E+07
-ALKA  _Seg2                       0.68577E+07   -0.68577E+07
-ALKA  _Seg3                       0.68577E+07   -0.68577E+07
-ALKA  _Seg4                       0.68577E+07   -0.68577E+07
-ALKA  _Seg5                       0.68577E+07   -0.68577E+07
-ALKA  _Seg6                       0.68577E+07   -0.68577E+07
-ALKA  _Seg7                       0.68577E+07   -0.68577E+07
-ALKA  _Seg8                       0.68577E+07   -0.68577E+07
-ALKA  _Seg9                       0.68577E+07   -0.68577E+07
-ALKA  _Seg10                      0.34288E+07   -0.34288E+07
+ALKA  _Seg1                       0.34393E+07   -0.34393E+07
+ALKA  _Seg2                       0.68785E+07   -0.68785E+07
+ALKA  _Seg3                       0.68785E+07   -0.68785E+07
+ALKA  _Seg4                       0.68785E+07   -0.68785E+07
+ALKA  _Seg5                       0.68785E+07   -0.68785E+07
+ALKA  _Seg6                       0.68785E+07   -0.68785E+07
+ALKA  _Seg7                       0.68785E+07   -0.68785E+07
+ALKA  _Seg8                       0.68785E+07   -0.68785E+07
+ALKA  _Seg9                       0.68785E+07   -0.68785E+07
+ALKA  _Seg10                      0.34393E+07   -0.34393E+07
 ALKA  _column                     0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.61719E+08   -0.61719E+08
+ALKA  _dUpNO3M                    0.10682E+01    0.00000E+00
+ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
+ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.61907E+08   -0.61907E+08
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
