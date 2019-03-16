@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/13 20:04:06 
+ Execution start: 2019/03/16 18:19:22 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -962,4 +962,4 @@ Number of periods defined:     0
  total integer   array space:       4438
  total character array space:       8311
  grand total in 4-byte words:      18530 =   0-GB   0-MB  74-KB 120-Byte.
- Execution stop : 2019/03/13 20:04:06 
+ Execution stop : 2019/03/16 18:19:22 

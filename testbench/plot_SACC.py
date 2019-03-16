@@ -9,7 +9,7 @@ import d3d
 import numpy as np
 import matplotlib.pyplot as plt
 plt.close('all')
-file = r'd:\projects\IMPAQT\MALG\testbench\broch\broch_col.his'
+file = r'd:\projects\MALG\testbench\broch\broch_col.his'
 
 his = d3d.DelwaqHisFile(file)
 seg = 'Seg10'
