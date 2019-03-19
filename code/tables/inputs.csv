@@ -14876,8 +14876,8 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALS    ","Temp      ",  13,"Y","x",1
 "FlMALS    ","m1        ",  14,"Y","x",1
 "FlMALS    ","m2        ",  15,"Y","x",1
-"FlMALS    ","HactMAL   ",  16,"N","x",1
-"FlMALS    ","AactMAL   ",  17,"N","x",1
+"FlMALS    ","LengthMAL ",  16,"N","x",1
+"FlMALS    ","AreaMAL   ",  17,"N","x",1
 "FlMALS    ","MALS0     ",  18,"Y","x",1
 "FlMALS    ","a1        ",  19,"Y","x",1
 "FlMALS    ","a2        ",  20,"Y","x",1
@@ -14896,13 +14896,12 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "MALDIS    ","TotalDepth",   3,"N","x",1
 "MALDIS    ","LocalDepth",   4,"N","x",1
 "MALDIS    ","MALS      ",   5,"N","x",1
-"MALDIS    ","MALN      ",   6,"N","x",1
-"MALDIS    ","MALP      ",   7,"N","x",1
-"MALDIS    ","MALC      ",   8,"N","x",1
-"MALDIS    ","HmaxMAL   ",   9,"Y","x",1
-"MALDIS    ","LinDenMAL ",  10,"Y","x",1
-"MALDIS    ","ArDenMAL  ",  11,"Y","x",1
-"MALDIS    ","MBotSeg   ",  12,"N","x",1
+"MALDIS    ","FootDepth ",   6,"Y","x",1
+"MALDIS    ","LmaxMAL   ",   7,"Y","x",1
+"MALDIS    ","SWGroDir  ",   8,"Y","x",1
+"MALDIS    ","LinDenMAL ",   9,"Y","x",1
+"MALDIS    ","ArDenMAL  ",  10,"Y","x",1
+"MALDIS    ","MBotSeg   ",  11,"N","x",1
 "FlMALN    ","MALS      ",   1,"N","x",1
 "FlMALN    ","MALN      ",   2,"N","x",1
 "FlMALN    ","MALP      ",   3,"N","x",1
@@ -14957,3 +14956,11 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALC    ","DELT      ",  27,"N","x",1
 "FlMALC    ","Depth     ",  28,"N","x",1
 "FlMALC    ","LocalDepth",  29,"N","x",1
+"HRVMAL    ","MALS      ",   1,"N","x",1
+"HRVMAL    ","MALN      ",   2,"N","x",1
+"HRVMAL    ","MALP      ",   3,"N","x",1
+"HRVMAL    ","MALC      ",   4,"N","x",1
+"HRVMAL    ","K0HrvMALS ",   5,"Y","x",1
+"HRVMAL    ","K1HrvMALS ",   6,"Y","x",1
+"HRVMAL    ","Depth     ",   7,"N","x",1
+"HRVMAL    ","DELT      ",   8,"N","x",1

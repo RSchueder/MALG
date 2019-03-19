@@ -9,7 +9,7 @@ import d3d
 import numpy as np
 import matplotlib.pyplot as plt
 plt.close('all')
-file = r'd:\projects\MALG\testbench\broch\broch_col.his'
+file = r'd:\projects\IMPAQT\MALG\testbench\broch\broch_col.his'
 
 his = d3d.DelwaqHisFile(file)
 seg = 'Seg10'
@@ -42,7 +42,7 @@ ax[1].grid()
 
 plt.figure(2)
 plt.subplot(221)
-area = his['AactMAL',seg,:]
+area = his['AreaMAL',seg,:]
 plt.plot(his.dates,area*100.0, label = 'Frond Area')
 plt.xlabel('time')
 plt.ylabel('Frond area [dm^2]')

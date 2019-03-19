@@ -56,40 +56,27 @@
       REAL(4) TotalDepth  ! I  total depth water column                       (m)
       REAL(4) LocalDepth  ! I  depth from water surface to bottom of segment  (m)
       REAL(4) MALS        ! I  Macroalgae structural mass                     (gDM/m2)
-      REAL(4) MALN        ! I  Macroalgae nitrogen storage mass               (gN/gDM)
-      REAL(4) MALP        ! I  Macroalgae phosphorous storage mass            (gP/gDM)
-      REAL(4) MALC        ! I  Macroalgae carbon storage mass                 (gC/gDM)
-      REAL(4) HmaxMAL     ! I  Maxmimum Length Macroalgae group               (m)
+      REAL(4) FootDepth   ! I  location of frond attachment in the water col  (m)
+      REAL(4) LmaxMAL     ! I  Maxmimum Length Macroalgae group               (m)
       REAL(4) LinDenMAL   ! I  Linear density of macroalgae group             (g/m3)
       REAL(4) ArDenMAL    ! I  grams per m2 of plant                          (g/m2)
-      ! MBotSeg
+      INTEGER MBotSeg     ! I/O Bottom Segment for Macrophyte      
       REAL(4) FrBmMALS    ! O  Fraction BM per layer macroalgae structural    (-)
       REAL(4) BmLayMALS   ! O  Biomass Layer macroalgae structural            (gDM/m2)
-      REAL(4) HactMAL     ! O  Actual Length Macroalgae                       (m)
-      REAL(4) AactMAL     ! O  Actual Area Macroalgae                         (m2)
+      REAL(4) LenMAL      ! O  Actual Length Macroalgae                       (m)
+      REAL(4) AreMAL      ! O  Actual Area Macroalgae                         (m2)
+      REAL(4) TipDepth    ! O  Distance from frond water surface to frond tip (m)
+      REAL(4) SwGroDir    ! Switch to grow up or down
       
       INTEGER IKMRK1
       INTEGER IKMRK2
       
-      REAL(4) Z2          !    Height Bottom Segment from Bottom              (m)
-      REAL(4) Z1          !    Height Top Segment from Bottom                 (m)
-      REAL(4) Z2a         !    Height Bottom Segment from Bottom              (m)
-      REAL(4) Z1a         !    Height Top Segment from Bottom                 (m)
-      REAL(4) Hact        !    Actual Length Macroalgae - relative to top     (m)
-      REAL(4) Aact        !    Actual Area Macroalgae - relative to top       (m)
-      REAL(4) Hactd       !    Actual Length Macroalgae - relative to top     (m2)
-      REAL(4) Z2ad        !    Height Bottom Segment from Bottom - relative   (-)
-      REAL(4) Z1ad        !    Height Top Segment from Bottom - relative      (-)
-      REAL(4) absHmaxMAL  !    Absolute maxmimum Length Macroalgae            (m)
-      REAL(4) Zm          !    Watersurface to top Macropyte                  (-)
-      REAL(4) A           !    Lineair factor A (Ax + B)                      (-)
-      REAL(4) B           !    Lineair factor B (Ax + B)                      (-)
-      REAL(4) OriginalDepth
-
-c     INTEGER IQ          !    Loop counter
-c     INTEGER Ifrom       !    From Segment
-c     INTEGER Ito         !    From Segment
-c     LOGICAL First
+      REAL(4) Z2          !    Height Bottom of Segment from Top              (m)
+      REAL(4) Z1          !    Height Top of Segment from Top                 (m)
+      REAL(4) Length      !    Actual Length Macroalgae                       (m)
+      REAL(4) Area        !    Actual Area Macroalgae                         (m)
+      REAL(4) Zm          !    referenc point to tip Macropyte                (-)
+      REAL(4) B           !    Linear factor B (Ax + B)                       (-)
 
       INTEGER :: LUNREP
 
@@ -97,8 +84,6 @@ c     LOGICAL First
       INTEGER Ifrom           !        From Segment
       INTEGER Ito             !        From Segment
       LOGICAL First           !        is the first time
-      INTEGER MBotSeg         !        Bottom Segment for Macrophyte      
-      INTEGER chk
 
 !*******************************************************************************
       DATA    FIRST /.TRUE./
@@ -152,82 +137,120 @@ c     LOGICAL First
             Depth       = PMSA( IPNT(  2) )
             TotalDepth  = PMSA( IPNT(  3) )
             LocalDepth  = PMSA( IPNT(  4) )
-            HmaxMAL     = PMSA( IPNT(  9) )
-            LinDenMAL   = PMSA( IPNT(  10) )
-            ArDenMAL    = PMSA( IPNT(  11) )
-            MBotSeg     = NINT(PMSA( IPNT(  12) ))
+            FootDepth   = PMSA( IPNT(  6) )
+            LmaxMAL     = PMSA( IPNT(  7) )
+            SWGroDir    = PMSA( IPNT(  8) )
+            LinDenMAL   = PMSA( IPNT(  9) )
+            ArDenMAL    = PMSA( IPNT(  10) )
+
+            MBotSeg     = NINT(PMSA( IPNT(  11) ))
        
             ! get biomass from bottom segment
             ! gDM/m2
+            
             MALS = PMSA(IPNT(5)+(MBotSeg-ISEG)*INCREM(5))
+            IF (MALS .gt. 0.0) THEN
+                IF (FootDepth .lt. -998.0) Then
+                    ! user prescribed no foot depth, 
+                    ! so root at either surface or bed depending on LmaxMAL
+                    IF (SwGroDir .lt. 0.0) THEN
+                        FootDepth = 0.0
+                    ELSE
+                        FootDepth = TotalDepth
+                    ENDIF
+                    LmaxMAL   = min( abs(LmaxMAL), TotalDepth)
+                ELSE
+                    LmaxMAL   = min( abs(LmaxMAL), TotalDepth-FootDepth)
+                ENDIF
 
-    !       Limit the maximum height of the plants to the water depth
-            absHmaxMAL     = min( abs(HmaxMAL), TotalDepth )
-
-            ! actual height is horizontal density divided by length density
-            ! linear density is dependent on seeding density
-            ! area is the amount of mass in this segment divided by area density
+                ! Limit the maximum height of the plants to the water depth
+                ! Lmax is the maximum length of the plant considering the space in the water column available after removing the FootDepth
+                ! actual height is horizontal density divided by length density
+                ! linear density is dependent on seeding density
+                ! area is the amount of mass in this segment divided by area density
             
-            Hact        = min(MALS/LinDenMAL , TotalDepth - 0.001 )
-            Hact        = max(Hact, 0.01)
-            Aact        = max(MALS * Surf / ArDenMAL, 1.0d-7)
-            IF (ISEG .eq. 86) THEN
-                chk = 1
-            ENDIF
-            
-            Hactd = 1.0 ! Represents the entire length of the plants
-
-            !
-            ! Hmax > 0: the macrophytes grow from the bottom upwards
-            ! Hmax < 0: the macrophytes grow from the surface downwards
-            !
-            OriginalDepth = TotalDepth
-            if ( HmaxMAL < 0.0 ) then
-                TotalDepth = Hact
-            endif
+                LenMAL        = min(MALS/LinDenMAL,abs(LmaxMAL))
+                LenMAL        = max(LenMAL, 0.01)
+                AreMAL        = max(MALS * Surf / ArDenMAL, 1.0d-7)
+               
+                Z1 = LocalDepth - Depth
+                Z2 = LocalDepth
+                
+                ! Zm is the position of tip from reference datum
+                ! for SwGroDir < 0 this is top down
+                ! for SwGroDir > 0 this is bottom up
               
-            Zm = TotalDepth - Hact
-            Z1 = LocalDepth - Depth
-            Z2 = LocalDepth
-            Z1a = TotalDepth - LocalDepth
-            Z2a = TotalDepth - LocalDepth + Depth
-            ! Ffac = 1 for linear, MALG only linear
-            A = (MALS / Hact) * (2 - (2)) / Hact
-            B = (MALS / Hact) * (1 * (Zm + TotalDepth) -2 * Zm) / Hact
-
-            ! Algae is not in segment:
-            If (Zm .GT. Z2) Then
-                BmLayMALS = 0
-            ! Algae is completely in segment:
-            Elseif (Zm . LT. Z1 ) Then
-                BmLayMALS = (A/2)  * (Z2**2 -Z1**2) + B * (Z2 -Z1)
-            ! Algae is partially in segment
-            Else
-                BmlayMALS = (A/2)  * (Z2**2 -Zm**2) + B * (Z2 -Zm)
-            Endif
-
-            If (BmLayMALS .GT. 0) Then
-                FrBmMALS = BmLayMALS / MALS
-            Else
-                If ( iseg .eq. MBotseg ) Then
-                    FrBmMALS = 1.0
+                if ( SwGroDir < 0.0 ) Then
+                    TipDepth = MIN(TotalDepth,LenMAL + FootDepth)
+                    ! position of tip from reference datum
+                    Zm = LenMAL + FootDepth
+                    B = MALS/LenMAL
+                    If (Zm .LT. Z1) Then
+                        ! Algae is not in segment, segment too deep, below tip
+                        BmLayMALS = 0
+                    Elseif (Zm . GT. Z2 ) Then
+                        ! could be completely in this segment, above rooting depth, or rooted in this segment
+                        if (Z1 .GT. FootDepth) Then
+                          BmLayMALS = B * (Z2 -Z1)
+                        elseif (Z2 .lt. FootDepth) Then
+                            BMLayMALS = 0.0
+                        else
+                          BmlayMALS = B * (Z2-FootDepth)
+                        endif    
+                    ! Algae tip is partially in segment
+                    Else
+                        BmlayMALS = B * (Zm-Z1)
+                    Endif                    
+                else
+                    TipDepth = MAX(0.0,FootDepth - LenMAL)
+                    ! position of tip from reference datum
+                    Zm = FootDepth - LenMAL
+                    B = MALS / LenMAL 
+                    ! Algae is not in segment:
+                    If (Zm .GT. Z2) Then
+                        ! algae not in segment, segment too shallow, above tip
+                        BmLayMALS = 0
+                    Elseif (Zm . LT. Z1 ) Then
+                        ! could be completely in this segment, below rooting depth, or rooted in this segment
+                      if (Z2 .lt. FootDepth) Then
+                          BmLayMALS = B * (Z2 -Z1)
+                      elseif (Z1 .gt. FootDepth) Then
+                          BmLayMALS = 0.0
+                      else
+                          BmLayMALS = B * (FootDepth - Z1)
+                      endif                      
+                    ! Algae tip is partially in segment
+                    Else
+                        BmlayMALS = B * (Z2 -Zm)
+                    Endif
+                endif
+              
+                If (BmLayMALS .GT. 0) Then
+                    FrBmMALS = BmLayMALS / MALS
                 Else
+                    ! beware, this used to have a safety net to ensure some segment had an FrBmMALS > 0.0
+                    ! this had to be removed in order to allow segments other than the bottom segment
+                    ! to be the rooteing segment
+                    ! now no initial biomass means no growth ever
                     FrBmMALS = 0.0
                 Endif
-            Endif
 
-            PMSA( IPNT(13) ) = FrBmMALS
-            PMSA( IPNT(14) ) = BmLayMALS / Depth
-        
-            If ( HmaxMAL > 0.0 ) Then
-                PMSA( IPNT(15) ) = Hact
-            Else
-                PMSA( IPNT(15) ) = OriginalDepth
-            Endif
-        
-            PMSA( IPNT(16) ) = Aact
-            PMSA( IPNT(17) ) = MBotSeg
-         ENDIF
+                PMSA( IPNT(12) ) = FrBmMALS
+                PMSA( IPNT(13) ) = BmLayMALS / Depth
+                PMSA( IPNT(14) ) = LenMAL
+                PMSA( IPNT(15) ) = AreMAL
+                PMSA( IPNT(16) ) = -TipDepth ! negative to have it look proper in a graph
+                PMSA( IPNT(17) ) = MBotSeg
+            ELSE
+               ! There is no biomass in the mbotseg
+                PMSA( IPNT(12) ) = 0.0
+                PMSA( IPNT(13) ) = 0.0
+                PMSA( IPNT(14) ) = 0.0
+                PMSA( IPNT(15) ) = 0.0
+                PMSA( IPNT(16) ) = 0.0
+                PMSA( IPNT(17) ) = MBotSeg
+            ENDIF
+        ENDIF
          
         IPNT = IPNT + INCREM
 

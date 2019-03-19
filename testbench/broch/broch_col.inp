@@ -6,19 +6,15 @@
 ; PRINT_OUTPUT_OPTION_4
 
 ; first block: identification
-'Monopile acidification'
-; 'nutrients n:\Projects\1230500\1230751\B. Measurements and calculations\waqmodel\data\GermanBightNIOZdata.xlsx'
-; 'oxygen saturation http://buzzardsbay.org/bbpreports/oxygen-saturation-table.pdf'
-; 'organic material n:\Projects\1230500\1230751\B. Measurements and calculations\waqmodel\data\00108Rev1_DE_revised_COMP2_Report.pdf'
-
-'Hydro incl. waves. 2011'
+'Broch Testbench'
+''
 ''
 'T0: 2019.01.01 00:00:00  (scu=       1s)'
 ;
-; substances file: ../input/sub_ver_2.sub
-; hydrodynamic file: ../../../Small_NEW_v7b_final_inclWaves/overall_for_waq/new_v7b.ddb
+; substances file: 
+; hydrodynamic file: 
 ;
-; areachar.dat: ../../../Small_NEW_v7b_final_inclWaves/overall_for_waq/v7b_final_inclWaves_ddc_vag.srf
+; areachar.dat: 
 ;
   13  4    ; number of active and inactive substances
 
@@ -136,7 +132,7 @@
  
       1                     ; flows in this file
       1                     ; constant, no defaults
-     1      18*0.01           ; scale and value
+     1      18*0.000001           ; scale and value
 
                 
              
@@ -155,7 +151,7 @@
 ; 
 ; seventh block of model input (process parameters)
 ;
-CONSTANTS Nothreads DATA 1.
+CONSTANTS Nothreads DATA 1
 
 CONSTANTS
  'ACTIVE_VERTDISP'
@@ -175,6 +171,7 @@ CONSTANTS
  'ACTIVE_MALDIS'
  'ACTIVE_FLMALN'
  'ACTIVE_FLMALC'
+ 'ACTIVE_HRVMAL'
  
  
  'CLOSE_ERR'
@@ -202,6 +199,7 @@ DATA
  1.0 ;
  1.0 ;
  1.0 ;
+ 1.0 ;
 
  1.00000e+000 ; CLOSE_ERR
  1.00000e+000 ; ScaleVDisp
@@ -210,14 +208,17 @@ DATA
  0.00000e+000 ; Iteration Report
  1.00000e+000 ; ONLY_ACTIVE
 ;
- CONSTANTS 'Latitude' DATA 52
- CONSTANTS 'Vel' DATA 0.06
- CONSTANTS 'ExtVl' DATA 0.000001
- CONSTANTS 'LinDenMAL' DATA 300.0
- CONSTANTS 'MALS0' DATA 0.22
- CONSTANTS SWRear DATA 10.0
- CONSTANTS SWRearCO2 DATA 11.0
-
+ CONSTANTS 'Latitude'  DATA 52
+ CONSTANTS 'Vel'       DATA 0.06
+ CONSTANTS 'ExtVl'     DATA 0.000001
+ CONSTANTS 'LinDenMAL' DATA 10.0
+ CONSTANTS 'MALS0'     DATA 0.22
+ CONSTANTS SWRear      DATA 10.0
+ CONSTANTS SWRearCO2   DATA 11.0
+ CONSTANTS K0HrvMALS   DATA 0.01
+ CONSTANTS 'LmaxMAL'   DATA 10.000   
+ CONSTANTS 'SWGroDir'  DATA  -1.0 
+ CONSTANTS FootDepth   DATA 2.00
  FUNCTIONS
  'Temp'
  LINEAR
@@ -270,13 +271,13 @@ DATA 10.0
 	  1 ;'PO4'
 	  30 ;'TIC'
 	  200 ;'ALKA'
-	  1 ;'POC1'
-	  1 ;'POC2'
-	  1 ;'PON1'
-	  1 ;'PON2'
-	  1 ;'POP1'
-	  1 ;'POP2'
-	  1 ; 'DOC'
+	  1.0 ;'POC1'
+	  1.0 ;'POC2'
+	  1.0 ;'PON1'
+	  1.0 ;'PON2'
+	  1.0 ;'POP1'
+	  1.0 ;'POP2'
+	  1.0 ; 'DOC'
 	  0.0 ;'MALS'
 	  0.0 ;'MALN'
 	  0.0 ;'MALP'
@@ -317,7 +318,7 @@ DATA 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-54 ; number of extra variables
+55 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -327,7 +328,7 @@ DATA 10.0
   'RadSurf' ' '
   'Itip' ' '
   'Itipu' ' '
-  'BrochP' ' '
+  'BrochP' ' '                      ;x gross production as per Broch                          (gC/dm2/h)
   'pH' ' '
   'DisCO2' ' '
   'pCO2water' ' '
@@ -365,8 +366,9 @@ DATA 10.0
   'ExudMALC' ' '                    ;x exudation MALC                                         (gC/m2/d) 
   'FrBmMALS' ' '                    ;x Fraction of bottom layer MALS in this seg              (DM/m2)             
   'BmLayMAL' ' '                    ;x   Biomass of MALS in segment                            (gDM/m2)           
-  'HactMAL' ' '                     ;x length of frond in this column                         (m)                 
-  'AactMAL' ' '                     ;x area of frond in this column                           (m2)          
+  'LengthMAL' ' '                    ;x length of frond in this column                         (m)                 
+  'AreaMAL' ' '                     ;x area of frond in this column                           (m2)                
+  'TipDepth' ' '                    ;x depth of tip of frond in this column                   (m)                 
   'LimVel' ' '                      ;x velocity limitation                                    (-)                 
   'LocUpN' ' '                      ;x Local N storage uptake flux                            (gN/m3/d)           
   'LocUpP' ' '                      ;x Local P storage uptake flux                            (gP/m3/d)   

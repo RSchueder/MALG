@@ -54,6 +54,7 @@
 		<File RelativePath=".\flmalc.f"/>
 		<File RelativePath=".\flmaln.f"/>
 		<File RelativePath=".\flmals.f"/>
+		<File RelativePath=".\hrvmal.f"/>
 		<File RelativePath=".\maldis.f"/>
 		<File RelativePath=".\vervlu.f90"/></Filter></Files>
 	<Globals/></VisualStudioProject>

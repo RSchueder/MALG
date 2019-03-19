@@ -228,11 +228,11 @@ C
                 ! this superfluous because the next 2 lines will be the same for all
                 ! segments in this column
                 ! m2 to dm2
-                ! coeff = exp(mrtMAL*AactMAL*100)
                 ! thinking about this more, it is not the total area that should be limiting
                 ! because a ton of young plants have a lot of area
                 ! it should be the length, which is linearly related to area
                 ! But, you could also just adjust AactMAL accordingly
+                ! in agreement with the planting density
                 coeff = exp(mrtMAL*AactMAL*100)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper

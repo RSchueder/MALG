@@ -2106,3 +2106,7 @@ outfpr,outffl,outfnm,outfdo
 "FlMALC    ","dPrOXYM   ",   3,"x"
 "FlMALC    ","dStrMALC  ",   4,"x"
 "FlMALC    ","dCanMALS  ",   5,"x"
+"HRVMAL    ","dHrvMALS  ",   1,"x"
+"HRVMAL    ","dHrvMALN  ",   2,"x"
+"HRVMAL    ","dHrvMALP  ",   3,"x"
+"HRVMAL    ","dHrvMALC  ",   4,"x"

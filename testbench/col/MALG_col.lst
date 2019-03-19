@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/04 15:01:56 
+ Execution start: 2019/03/19 16:13:39 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -62,64 +62,74 @@
  Dump areas:
  option selected for input :    1
 
- Number of dump areas :   12
+ Number of dump areas :   14
 
- Dump area :    1 : First               
+ Dump area :    1 : First Top           
  Number of segments in area :              1
           number   segment
               1              1
 
- Dump area :    2 : Last                
+ Dump area :    2 : First Bottom        
+ Number of segments in area :              1
+          number   segment
+              1             82
+
+ Dump area :    3 : Last Top            
  Number of segments in area :              1
           number   segment
               1              9
 
- Dump area :    3 : Seg1                
+ Dump area :    4 : Last Bottom         
+ Number of segments in area :              1
+          number   segment
+              1             90
+
+ Dump area :    5 : Seg1                
  Number of segments in area :              1
           number   segment
               1              5
 
- Dump area :    4 : Seg2                
+ Dump area :    6 : Seg2                
  Number of segments in area :              1
           number   segment
               1             14
 
- Dump area :    5 : Seg3                
+ Dump area :    7 : Seg3                
  Number of segments in area :              1
           number   segment
               1             23
 
- Dump area :    6 : Seg4                
+ Dump area :    8 : Seg4                
  Number of segments in area :              1
           number   segment
               1             32
 
- Dump area :    7 : Seg5                
+ Dump area :    9 : Seg5                
  Number of segments in area :              1
           number   segment
               1             41
 
- Dump area :    8 : Seg6                
+ Dump area :   10 : Seg6                
  Number of segments in area :              1
           number   segment
               1             50
 
- Dump area :    9 : Seg7                
+ Dump area :   11 : Seg7                
  Number of segments in area :              1
           number   segment
               1             59
 
- Dump area :   10 : Seg8                
+ Dump area :   12 : Seg8                
  Number of segments in area :              1
           number   segment
               1             68
 
- Dump area :   11 : Seg9                
+ Dump area :   13 : Seg9                
  Number of segments in area :              1
           number   segment
               1             77
 
- Dump area :   12 : Seg10               
+ Dump area :   14 : Seg10               
  Number of segments in area :              1
           number   segment
               1             86
@@ -132,7 +142,7 @@
  Monitoring  timings :
  Start time : 0Y-  0D- 0H- 0M- 0S 
  Stop time  : 1Y-  0D- 0H- 0M- 0S 
- Time step  : 0Y-  0D- 1H- 0M- 0S 
+ Time step  : 0Y-  1D- 0H- 0M- 0S 
 
 
  Output      timings :
@@ -704,51 +714,134 @@
  Input constant   nr:    1 is constant   nr:    1 with ID  : ACTIVE_VERTDISP     
  Input constant   nr:    2 is constant   nr:    2 with ID  : ACTIVE_TOTDEPTH     
  Input constant   nr:    3 is constant   nr:    3 with ID  : ACTIVE_DYNDEPTH     
- Input constant   nr:    4 is constant   nr:    4 with ID  : ACTIVE_FLMALS       
- Input constant   nr:    5 is constant   nr:    5 with ID  : ACTIVE_DAYLP        
- Input constant   nr:    6 is constant   nr:    6 with ID  : ACTIVE_MALDIS       
- Input constant   nr:    7 is constant   nr:    7 with ID  : ACTIVE_FLMALN       
- Input constant   nr:    8 is constant   nr:    8 with ID  : ACTIVE_FLMALC       
- Input constant   nr:    9 is constant   nr:    9 with ID  : CLOSE_ERR           
- Input constant   nr:   10 is constant   nr:   10 with ID  : ScaleVDisp          
- Input constant   nr:   11 is constant   nr:   11 with ID  : MaxIter             
- Input constant   nr:   12 is constant   nr:   12 with ID  : Tolerance           
- Input constant   nr:   13 is constant   nr:   13 with ID  : Iteration Report    
- Input constant   nr:   14 is constant   nr:   14 with ID  : ONLY_ACTIVE         
+ Input constant   nr:    4 is constant   nr:    4 with ID  : ACTIVE_RearOXY      
+ Input constant   nr:    5 is constant   nr:    5 with ID  : ACTIVE_pH_carb      
+ Input constant   nr:    6 is constant   nr:    6 with ID  : ACTIVE_pH_simp      
+ Input constant   nr:    7 is constant   nr:    7 with ID  : ACTIVE_SpecCarb     
+ Input constant   nr:    8 is constant   nr:    8 with ID  : ACTIVE_RearCO2      
+ Input constant   nr:    9 is constant   nr:    9 with ID  : ACTIVE_SaturOXY     
+ Input constant   nr:   10 is constant   nr:   10 with ID  : ACTIVE_SaturCO2     
+ Input constant   nr:   11 is constant   nr:   11 with ID  : ACTIVE_FLMALS       
+ Input constant   nr:   12 is constant   nr:   12 with ID  : ACTIVE_DAYLP        
+ Input constant   nr:   13 is constant   nr:   13 with ID  : ACTIVE_MALDIS       
+ Input constant   nr:   14 is constant   nr:   14 with ID  : ACTIVE_FLMALN       
+ Input constant   nr:   15 is constant   nr:   15 with ID  : ACTIVE_FLMALC       
+ Input constant   nr:   16 is constant   nr:   16 with ID  : ACTIVE_HRVMAL       
+ Input constant   nr:   17 is constant   nr:   17 with ID  : CLOSE_ERR           
+ Input constant   nr:   18 is constant   nr:   18 with ID  : ScaleVDisp          
+ Input constant   nr:   19 is constant   nr:   19 with ID  : MaxIter             
+ Input constant   nr:   20 is constant   nr:   20 with ID  : Tolerance           
+ Input constant   nr:   21 is constant   nr:   21 with ID  : Iteration Report    
+ Input constant   nr:   22 is constant   nr:   22 with ID  : ONLY_ACTIVE         
  constant values in this block.
  values         1           2           3           4           5           6           7           8           9          10
- constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  CLOSE_ERR   ScaleVDisp
+ constants    ACTIVE_VER  ACTIVE_TOT  ACTIVE_DYN  ACTIVE_Rea  ACTIVE_pH_  ACTIVE_pH_  ACTIVE_Spe  ACTIVE_Rea  ACTIVE_Sat  ACTIVE_Sat
          1    0.0000E+00  0.0000E+00  0.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
- values        11          12          13          14
- constants    MaxIter     Tolerance   Iteration   ONLY_ACTIV  
-         1    1.0000E+02  1.0000E-07  0.0000E+00  1.0000E+00
+ values        11          12          13          14          15          16          17          18          19          20
+ constants    ACTIVE_FLM  ACTIVE_DAY  ACTIVE_MAL  ACTIVE_FLM  ACTIVE_FLM  ACTIVE_HRV  CLOSE_ERR   ScaleVDisp  MaxIter     Tolerance 
+         1    1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+02  1.0000E-07
+ values        21          22
+ constants    Iteration   ONLY_ACTIV  
+         1    0.0000E+00  1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   15 with ID  : Latitude            
+ Input constant   nr:    1 is constant   nr:   23 with ID  : Latitude            
  constant values in this block.
- values        15
+ values        23
  constants    Latitude    
          1    5.2000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   16 with ID  : Vel                 
+ Input constant   nr:    1 is constant   nr:   24 with ID  : Vel                 
  constant values in this block.
- values        16
+ values        24
  constants    Vel         
-         1    7.5000E-02
+         1    6.0000E-02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   17 with ID  : ExtVl               
+ Input constant   nr:    1 is constant   nr:   25 with ID  : ExtVl               
  constant values in this block.
- values        17
+ values        25
  constants    ExtVl       
          1    1.0000E-06
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   26 with ID  : LinDenMAL           
+ constant values in this block.
+ values        26
+ constants    LinDenMAL   
+         1    1.0000E+01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   27 with ID  : MALS0               
+ constant values in this block.
+ values        27
+ constants    MALS0       
+         1    2.2000E-01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   28 with ID  : SWRear              
+ constant values in this block.
+ values        28
+ constants    SWRear      
+         1    1.0000E+01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   29 with ID  : SWRearCO2           
+ constant values in this block.
+ values        29
+ constants    SWRearCO2   
+         1    1.1000E+01
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   30 with ID  : K0HrvMALS           
+ constant values in this block.
+ values        30
+ constants    K0HrvMALS   
+         1    0.0000E+00
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   31 with ID  : LmaxMAL             
+ constant values in this block.
+ values        31
+ constants    LmaxMAL     
+         1    2.0000E+00
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   32 with ID  : SWGroDir            
+ constant values in this block.
+ values        32
+ constants    SWGroDir    
+         1   -1.0000E+00
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   33 with ID  : FootDepth           
+ constant values in this block.
+ values        33
+ constants    FootDepth   
+         1    2.0000E+00
 
  ====> input item completed <==== 
 
@@ -35907,7 +36000,7 @@
 
 
 
- Total number of constants        :   17
+ Total number of constants        :   33
 
  Total number of parameters       :    2
 
@@ -35934,8 +36027,11 @@
                 11          12          13          14          15          16          17          18
               1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  Unscaled default values:
-              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  5.0000E+00  6.0000E-02  6.0000E-03  6.0000E-02
- Number of overridings :    0
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+ Number of overridings :    1
+ Number         values
+        86    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00
+              1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01  6.3000E+00
 
  ************************************************************************************************************* B L O C K - 8 *****
 
@@ -35968,7 +36064,7 @@
 
  All substances plus extra output variables
 
- (     37) number of output variables specified
+ (     53) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -35976,38 +36072,54 @@
        3           TotalDepth                                
        4           Depth                                     
        5           Temp                                      
-       6           daylend                                   
-       7           daylenp                                   
-       8           daylenm                                   
-       9           MALSM2                                    
-      10           MALNDM                                    
-      11           MALPDM                                    
-      12           MALCDM                                    
-      13           MALSNC                                    
-      14           MALSPC                                    
-      15           LimBioM                                   
-      16           LimPhoM                                   
-      17           LimTemM                                   
-      18           LimN                                      
-      19           LimP                                      
-      20           LimNutS                                   
-      21           LimMALN                                   
-      22           LimMALP                                   
-      23           LimMALC                                   
-      24           LocGroS                                   
-      25           LocGroN                                   
-      26           LocGroP                                   
-      27           LocGroC                                   
-      28           LocDecS                                   
-      29           FrBmMALS                                  
-      30           BmLayMAL                                  
-      31           HactMAL                                   
-      32           AactMAL                                   
-      33           LimVel                                    
-      34           LocUpN                                    
-      35           LocUpP                                    
-      36           LocUpC                                    
-      37           MBotSeg                                   
+       6           RadSurf                                   
+       7           Itip                                      
+       8           Itipu                                     
+       9           BrochP                                    
+      10           pH                                        
+      11           DisCO2                                    
+      12           pCO2water                                 
+      13           DisHCO3                                   
+      14           CO2                                       
+      15           daylend                                   
+      16           daylenp                                   
+      17           daylenm                                   
+      18           MALNDM                                    
+      19           MALPDM                                    
+      20           MALCDM                                    
+      21           MALSNC                                    
+      22           MALSPC                                    
+      23           MALSCD                                    
+      24           MALSND                                    
+      25           MALSPD                                    
+      26           LimDenS                                   
+      27           LimPhoS                                   
+      28           LimTemS                                   
+      29           LimN                                      
+      30           LimP                                      
+      31           LimNutS                                   
+      32           LimMALN                                   
+      33           LimMALP                                   
+      34           LimMALC                                   
+      35           LocGroPS                                  
+      36           LocNetPS                                  
+      37           LocDecS                                   
+      38           LocGroN                                   
+      39           LocGroP                                   
+      40           LocGroC                                   
+      41           LocDecS                                   
+      42           GrosMALC                                  
+      43           RespMALC                                  
+      44           ExudMALC                                  
+      45           FrBmMALS                                  
+      46           BmLayMAL                                  
+      47           HactMAL                                   
+      48           AactMAL                                   
+      49           LimVel                                    
+      50           LocUpN                                    
+      51           LocUpP                                    
+      52           LocUpC                                    
+      53           MBotSeg                                   
 
  Specification of map output
 
@@ -36038,29 +36150,45 @@
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
         Temp                ; Using function nr           1
+        RadSurf             ; Using function nr           3
+   INFO:Itip                ; NOT FOUND, delwaq will detect variables from process library
+   INFO:Itipu               ; NOT FOUND, delwaq will detect variables from process library
+   INFO:BrochP              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:pH                  ; NOT FOUND, delwaq will detect variables from process library
+   INFO:DisCO2              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:pCO2water           ; NOT FOUND, delwaq will detect variables from process library
+   INFO:DisHCO3             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:CO2                 ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSM2              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LimBioM             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LimPhoM             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LimTemM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSCD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSND              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSPD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimDenS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimPhoS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LimTemS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimN                ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimP                ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimNutS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALN             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALP             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALC             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LocGroS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocGroPS            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocNetPS            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroN             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroP             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroC             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:GrosMALC            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:RespMALC            ; NOT FOUND, delwaq will detect variables from process library
+   INFO:ExudMALC            ; NOT FOUND, delwaq will detect variables from process library
    INFO:FrBmMALS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:BmLayMAL            ; NOT FOUND, delwaq will detect variables from process library
    INFO:HactMAL             ; NOT FOUND, delwaq will detect variables from process library
@@ -36073,7 +36201,7 @@
         SURF                ; Using parameter nr           1
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          37
+  Number off missing variables :          52
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -36094,14 +36222,14 @@ Number of periods defined:     0
 
 
  Messages presented including .lsp file:
- Number of WARNINGS            :     0
+ Number of WARNINGS            :     2
 
  Number of ERRORS during input :     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:      48362
- total integer   array space:       9700
- total character array space:       8087
- grand total in 4-byte words:      66149 =   0-GB   0-MB 264-KB 596-Byte.
- Execution stop : 2019/03/04 15:01:56 
+ total real      array space:      52388
+ total integer   array space:      11150
+ total character array space:      10609
+ grand total in 4-byte words:      74147 =   0-GB   0-MB 296-KB 588-Byte.
+ Execution stop : 2019/03/19 16:13:39 

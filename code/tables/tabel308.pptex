@@ -1234,6 +1234,6 @@ daylend    colsep daylength default definition                       colsep (-) 
 daylenp    colsep daylength of previous day                          colsep (-)                  colsep DaylP      \\
 daylenm    colsep maximum daylength at this latitude                 colsep (-)                  colsep DaylP      \\
 FrBmMALS   colsep Fraction of bottom layer MALS in this seg          colsep (DM/m2)              colsep MALDIS     \\
-HactMAL    colsep length of frond in this column                     colsep (m)                  colsep MALDIS     \\
-AactMAL    colsep area of frond in this column                       colsep (m2)                 colsep MALDIS     \\
+LengthMAL  colsep length of frond in this column                     colsep (m)                  colsep MALDIS     \\
+AreaMAL    colsep area of frond in this column                       colsep (m2)                 colsep MALDIS     \\
 MBotSeg    colsep bottom segment for this segment                    colsep (-)                  colsep MALDIS     \\

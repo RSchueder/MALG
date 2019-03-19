@@ -2850,7 +2850,12 @@ stocfl,stocsu,stocsc
 "dStrMALN  ","MALN      ",   1.00000
 "dStrMALN  ","MALP      ",   1.00000
 "dMALTIC   ","TIC       ",  -1.00000
+"dMALTIC   ","H2O       ",  -1.50000
 "dMALDOC   ","DOC       ",   1.00000
 "dPrOXYM   ","OXY       ",   1.00000
 "dStrMALC  ","MALC      ",   1.00000
 "dCanMALS  ","MALS      ",  -1.00000
+"dHrvMALS  ","MALS      ",  -1.00000
+"dHrvMALN  ","MALN      ",  -1.00000
+"dHrvMALP  ","MALP      ",  -1.00000
+"dHrvMALC  ","MALC      ",  -1.00000

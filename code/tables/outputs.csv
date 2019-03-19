@@ -3993,9 +3993,10 @@ outppr,outpit,outpnm,outpdo,outpsx
 "FlMALS    ","LocGroC   ",  21,"x",1
 "MALDIS    ","FrBmMALS  ",   1,"x",1
 "MALDIS    ","BmLayMAL  ",   2,"x",1
-"MALDIS    ","HactMAL   ",   3,"x",1
-"MALDIS    ","AactMAL   ",   4,"x",1
-"MALDIS    ","MBotSeg   ",   5,"x",1
+"MALDIS    ","LengthMAL ",   3,"x",1
+"MALDIS    ","AreaMAL   ",   4,"x",1
+"MALDIS    ","TipDepth  ",   5,"x",1
+"MALDIS    ","MBotSeg   ",   6,"x",1
 "FlMALN    ","LimVel    ",   1,"x",1
 "FlMALN    ","LimN      ",   2,"x",1
 "FlMALN    ","LimP      ",   3,"x",1
