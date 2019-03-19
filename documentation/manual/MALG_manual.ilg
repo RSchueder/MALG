@@ -1,0 +1,8 @@
+This is makeindex, version 2.15 [MiKTeX 2.9.7000 64-bit] (kpathsea + Thai support).
+Scanning style file C:/ProgramData/MiKTeX/2.9/makeindex/deltares/deltares_nomentbl.ist...............
+** Input style error (file = C:/ProgramData/MiKTeX/2.9/makeindex/deltares/deltares_nomentbl.ist, line = 51):
+   -- Unknown specifier \endinput.
+done (15 attributes redefined, 1 ignored).
+Scanning input file MALG_manual.nlo...done (0 entries accepted, 0 rejected).
+Nothing written in MALG_manual.nls.
+Transcript written in MALG_manual.ilg.
