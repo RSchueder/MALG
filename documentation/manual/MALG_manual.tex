@@ -31,8 +31,9 @@ It is assumed that there is constant relationship between volume and area of a m
 \begin{flushright}
 	\textsc{process: MALDIS}
 \end{flushright}
-The application of Broch in DELWAQ requires that algorithms for distributing the frond mass in space much be developed independently of the physiological formulations. For this a simple approach is taken, whereby fronds will only grow in length and retain a constant length:area ratio. Of course there are non unique combinations, so the user has to prescribe numerous paramters to describe the spatial characteristics of the culture
-based on fixed linear density $LinDenMAL$.  
+The physiological equations described in Broch\textit{et al.,} (2011) do not mention any physical description of the seaweed fronds in space aside from their area. The application of Broch in DELWAQ requires knowledge of the mass per m$^{2}$ and the vertical space occupied by the frond. Thus the algorithms for distributing the frond mass in space have been developed independently of the physiological formulations in Broch. 
+
+A simple approach is taken, whereby fronds typically only grow in length and retain a constant length:area ratio. As the frond increases its mass Of course there are non unique combinations, so the user has to prescribe numerous parameters to describe the spatial characteristics of the culture. One such problem arises in that ...based on fixed linear density $LinDenMAL$.  
 
 \subsection{Flux of Macroalgae structural biomass}
 \begin{flushright}
@@ -83,11 +84,11 @@ $0$                & $T \textgreater 19$ \\
 
 Where:\\
 \begin{tabular}{ll}
-$m_1$ & mortality parameter 1 (-)\\
-$m_2$ & mortality parameter 1 (-)\\
+$m_1$    & mortality parameter 1 (-)\\
+$m_2$    & mortality parameter 1 (-)\\
 $MALS_0$ & critical biomass area (m$^2$)\\
-$a_1$ & photoperiod parameter 1 (-)\\
-$a_2$ & photoperiod parameter 2 (-)\\
+$a_1$    & photoperiod parameter 1 (-)\\
+$a_2$    & photoperiod parameter 2 (-)\\
 \end{tabular}
 The specific mortality rate $mrt$ of the structural biomass is dependent on the total area of the frond in relation to a critical large area and the erosion parameter. The formulation is as follows:
 \[\phi = \frac{10^{-6}exp(\epsilon\times MALS)}{1+10^{-6}exp((\epsilon\times MALS)-1)}\]
@@ -112,8 +113,10 @@ The change in a nutrient storage mass is given by the following equations:
 \[dUptMALP = J_P - mu(k_C \times k_P \times MALS + MALP)\]
 
 This represents the balance between uptake $J$ and utilization for growth of the frond's structural mass. The uptake is dependent on flow velocity, the amount of stores compared to the minimum and maximum possible, and the ambient nutrient concentration. The formulation for both nitrogen and phosphorus is described as follows:
+
 \[J_N = f_{velocity}J_{Nmax}(\frac{NO_3^-}{K_{sn}+NO_3^-})(\frac{MALN_{max}-MALN}{MALN_{max}-MALN_{min}})\]
 \[J_P = f_{velocity}J_{Pmax}(\frac{PO_4^{3-}}{K_{sp}+PO_4^{3-}})(\frac{MALP_{max}-MALP}{MALP_{max}-MALP_{min}})\]
+
 Where the first term pertains to the uptake of nutreitns and the second term to the utilization of stores by the structural mass. Note how the nutrient requirement is dependent on those required to add more structural mass and more storage mass. This is because the total storage in the frond will increase as the frond grows, but the ratio of storage to structural mass is maintained for the growth timestep. The velocity function $f_{velocity}$ is formulated as:
 \[f_{velocity} = 1-exp(-\frac{U}{U_{0.65}})\]
 and where:\\
