@@ -4009,3 +4009,4 @@ outppr,outpit,outpnm,outpdo,outpsx
 "FlMALC    ","GrosMALC  ",   5,"x",1
 "FlMALC    ","RespMALC  ",   6,"x",1
 "FlMALC    ","ExudMALC  ",   7,"x",1
+"FlMALC    ","beta      ",   8,"x",1

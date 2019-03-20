@@ -11499,6 +11499,7 @@ itemid,itemse,itemex,itemde,itemun,itemnm,itemag,itemda,itemwk,itemgr
 "GrosMALC  ","x"," ",   -999.000    ,"(gC/m2/d)           ","gross photosynthesis MALC                         ","volume    ","volume    "," ","                              "
 "RespMALC  ","x"," ",   -999.000    ,"(gC/m2/d)           ","respiration MALC                                  ","volume    ","volume    "," ","                              "
 "ExudMALC  ","x"," ",   -999.000    ,"(gC/m2/d)           ","exudation MALC                                    ","volume    ","volume    "," ","                              "
+"beta      ","x"," ",   -999.000    ,"(-)                 ","photoinhibition parameter                         ","volume    ","volume    "," ","                              "
 "dMALTIC   ","x"," ",   -999.000    ,"(gC/m3/d)           ","TIC uptake by MALS                                ","volume    ","volume    "," ","                              "
 "dMALDOC   ","x"," ",   -999.000    ,"(gC/m3/d)           ","DOC production by MALS                            ","volume    ","volume    "," ","                              "
 "dPrOXYM   ","x"," ",   -999.000    ,"(gC/m3/d)           ","OXY production by MALS                            ","volume    ","volume    "," ","                              "

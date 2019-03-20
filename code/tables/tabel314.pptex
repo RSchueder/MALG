@@ -2254,3 +2254,4 @@ BrochP     colsep gross production as per Broch                      colsep (gC/
 GrosMALC   colsep gross photosynthesis MALC                          colsep (gC/m2/d)            colsep FlMALC     \\
 RespMALC   colsep respiration MALC                                   colsep (gC/m2/d)            colsep FlMALC     \\
 ExudMALC   colsep exudation MALC                                     colsep (gC/m2/d)            colsep FlMALC     \\
+beta       colsep photoinhibition parameter                          colsep (-)                  colsep FlMALC     \\

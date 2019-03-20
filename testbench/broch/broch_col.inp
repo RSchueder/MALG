@@ -215,10 +215,10 @@ DATA
  CONSTANTS 'MALS0'     DATA 0.22
  CONSTANTS SWRear      DATA 10.0
  CONSTANTS SWRearCO2   DATA 11.0
- CONSTANTS K0HrvMALS   DATA 0.01
+ ;CONSTANTS K0HrvMALS   DATA 0.01
  CONSTANTS 'LmaxMAL'   DATA 10.000   
- CONSTANTS 'SWGroDir'  DATA  -1.0 
- CONSTANTS FootDepth   DATA 2.00
+ ;CONSTANTS 'SWGroDir'  DATA  -1.0 
+ ;CONSTANTS FootDepth   DATA 2.00
  FUNCTIONS
  'Temp'
  LINEAR
@@ -318,7 +318,7 @@ DATA 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-55 ; number of extra variables
+56 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -334,6 +334,7 @@ DATA 10.0
   'pCO2water' ' '
   'DisHCO3' ' '
   'CO2' ' '
+  'beta' ' '
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   

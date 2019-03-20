@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/19 19:45:33 
+ Execution start: 2019/03/20 17:02:50 
                                                                                 
  found -p command line switch                                                   
 
@@ -312,7 +312,7 @@ total number of substances with fractions :  0
        [MALC                ] MacroALgae Carbon storage                                             
        Using substance nr  17                                                                       
        [K0HrvMALS           ] zero order harvesting rate Macroalgae                                 
-       Using constant nr 31 with value: 0.100000E-01                                                
+       using default value:  0.00000                                                                
        [K1HrvMALS           ] first order harvesting rate Macroalgae                                
        using default value:  0.00000                                                                
        [Depth               ] depth of segment                                                      
@@ -500,17 +500,17 @@ total number of substances with fractions :  0
        [Depth               ] depth of segment                                                      
        Using parameter nr  2                                                                        
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 35 with value:  10.0000                                                    
+       Using constant nr 32 with value:  10.0000                                                    
        [LocalDepth          ] depth from water surface to bottom of segment                         
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
        Using substance nr  14                                                                       
        [FootDepth           ] location of frond attachment in the water columns                     
-       Using constant nr 34 with value:  2.00000                                                    
+       using default value: -999.999                                                                
        [LmaxMAL             ] Maximum length MALG                                                   
-       Using constant nr 32 with value:  10.0000                                                    
+       Using constant nr 31 with value:  10.0000                                                    
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
-       Using constant nr 33 with value: -1.00000                                                    
+       using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
        Using constant nr 27 with value:  10.0000                                                    
        [ArDenMAL            ] grams/m2 surface area of frond                                        
@@ -552,7 +552,7 @@ total number of substances with fractions :  0
        [Salinity            ] Salinity                                                              
        using default value:  35.0000                                                                
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 35 with value:  10.0000                                                    
+       Using constant nr 32 with value:  10.0000                                                    
        [fcover              ] fraction of water surface covered <0-1>                               
        using default value:  0.00000                                                                
        [KLRearMax           ] maximum KLREAR oxygen for temp. correction                            
@@ -614,7 +614,7 @@ total number of substances with fractions :  0
        [Salinity            ] Salinity                                                              
        using default value:  35.0000                                                                
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 35 with value:  10.0000                                                    
+       Using constant nr 32 with value:  10.0000                                                    
        [fcover              ] fraction of water surface covered <0-1>                               
        using default value:  0.00000                                                                
        [KLRMaxCO2           ] maximum KLREAR CO2 for temperature correction                         
@@ -730,6 +730,7 @@ total number of substances with fractions :  0
  output [pCO2water           ] from proces [pH_carb   ]                                             
  output [DisHCO3             ] from proces [SpecCarb  ]                                             
  output [CO2                 ] from proces [pH_simp   ]                                             
+ output [beta                ] from proces [FlMALC    ]                                             
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             

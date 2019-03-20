@@ -8,7 +8,7 @@
 
 Macroalgae, kelp, or seaweed, are macroscopic multicellular marine algae that cover a large range of taxonomic groups. They are of interest from an ecological point of view as they provide habitat for marine animals, and also from an economic point of view as a product that can be harvested while bio-remediating marine waters. There specifically is interest in the use of macroalgae as a bioremediator in integrated multitrophic aquaculture (IMTA) systems, where they can convert excess farm nutrients into biomass and value added products. 
 
-The macroalgae module (MALG) in DELWAQ is designed to model the the dynamics of kelp\textit{Saccharina} and is based almost entirely on the model described in Broch \textit{et al.} (2011). Note that numerous changes have been made to the equations to allow for compatibility with DELWAQ's mass based systems, and also to allow for the inclusion of MALG in 3D models, whereby the size of the seaweed needs to be modelled in addition to the biomass. The primary motivation for this development is for application in assessment of IMTA systems. The general model organization will be described here, specifically the implementation in the DELWAQ library. For further details of the derivation of the model equations please refer to Broch \textit{et al.} (2011).
+The macroalgae module (MALG) in DELWAQ is designed to model the the dynamics of kelp \textit{Saccharina} and is based almost entirely on the model described in Broch \textit{et al.} (2011). Note that numerous changes have been made to the equations to allow for compatibility with DELWAQ's mass based systems, and also to allow for the inclusion of MALG in 3D models, whereby the size of the seaweed needs to be modelled in addition to the biomass. The primary motivation for this development is for application in assessment of IMTA systems. The general model organization will be described here, specifically the implementation in the DELWAQ library. For further details of the derivation of the model equations please refer to Broch \textit{et al.} (2011).
 
 Macroalgae can be idealized as 4 distinct state variable components:
 \begin{itemize}
@@ -33,7 +33,42 @@ It is assumed that there is constant relationship between volume and area of a m
 \end{flushright}
 The physiological equations described in Broch\textit{et al.,} (2011) do not mention any physical description of the seaweed fronds in space aside from their area. The application of Broch in DELWAQ requires knowledge of the mass per m$^{2}$ and the vertical space occupied by the frond. Thus the algorithms for distributing the frond mass in space have been developed independently of the physiological formulations in Broch. 
 
-A simple approach is taken, whereby fronds typically only grow in length and retain a constant length:area ratio. As the frond increases its mass Of course there are non unique combinations, so the user has to prescribe numerous parameters to describe the spatial characteristics of the culture. One such problem arises in that ...based on fixed linear density $LinDenMAL$.  
+A simple approach is taken, whereby fronds (typically) only grow in length and retain a constant length:area ratio. This is typically the case because a frond may reach the end of the water column while it still has the capcity to grow, in which case only the area and not the length will increase. The case for a single frond per computational cell is simple. However, the code must be able to deal with any seeding density, which cannot be uniquely defined by the mass per m$^{2}$ alone. For example, consider two cases whereby there exists 40g of dry matter per m$^{2}$. In the first example there are 4 fronds in a 1 m$^{2}$ square. They each weigh 10 g, have a combined area of 0.24 m$^{2}$ and are each 0.2 m long. In a second example, consider a single frond in a 1 m$^{2}$ square. It weighs 40 g, has an area of 0.24 m$^{2}$, and is 0.8 m long. In a 3D model with grid cells that are \textless 0.8 m thick, the nutrient uptake will take place in different cells in each of the two cases even though the mass per m$^{2}$ is identical in DELWAQ. To avoid this ambiguity the user must prescribe a set of parameters to describe the spatial characteristics of the culture. These are as follows:
+
+\begin{itemize}
+	\item $FootDepth$ The depth below the water surface that the foot of the frond is attached. The frond begins growing from the segment that intersects this depth, and the segment can change with a variable water level as it is assigned each time step.
+	\item $LmaxMAL$ The maximum length of the frond measured in the z axis from the foot to the tip of the frond.
+	\item $SwGroMAL$ Switch for an upwards (\textgreater 0) or downwards (\textless 0) growing frond.
+	\item $LinDenMal$ The linear density of the culture. This describes the amount of mass it takes a m$^{2}$ of culture to grow 1 m. Four small fronds require more mass to increase their collective length by 1 m compared to a single long frond.
+	\item $ArDenMal$ The area density of the culture. This is the ratio between surface area and dry weight.
+\end{itemize}
+
+Based on these parameterizations the culture can be completely schemetized in 3 dimensions. The process begins by first calculating the length and the area of the culture in this column of segments:
+
+\[LenMAL = MALS/ LinDenMAL\] 
+\[AreMAL = MALS * Surf / ArDenMAL\] 
+
+Where:\\
+\begin{tabular}{ll}
+$LenMAL$ & Length of frond in the column (m)\\
+$Surf$ & Surface area of the bottom segment (m$^{2}$)\\
+$MALS$ & structural mass (gDM m$^{-2}$)\\
+$LinDenMAL$ & The linear density of the culture (g m$^{-3}$)\\
+$ArDenMAL$ & The area density of the culture (g m$^{-2}$)\\
+\end{tabular}
+
+This length is then used to check which segments the frond biomass should be present in, and which fraction of the frond exists in each segment. This fraction is sent to each segment for all other computations involving biomass. The calculation of this depends firstly on whether the frond grows upwards or downwards.
+\[IF SwGroDir < 0: Zm = LenMAL + FootDepth\]
+\[IF SwGroDir < 0: Zm = FootDepth - LenMAL\]
+
+Where:\\
+\begin{tabular}{ll}
+$Zm$ & Distance from water surface to tip of frond (positive down) (m)\\
+$Z1$ & Distance from water surface to top of segment (positive down) (m)\\
+$Z2$ & Distance from water surface to bottom of segment (positive down) (m)\\
+\end{tabular}
+
+The top $Z1$ and bottom $Z2$ depth of the segment are then checked against $Zm$ to see if the frond resides entirely within, entirely outside, or partially within the segment. The fraction of the biomass allocated to the current segment is then the ratio of the segment depth to $LenMAL$ in the column for segments in which the frond completely resides, or the ratio of the difference between $Zm$ and either $Z1$ or $Z2$ to $LenMAL$ for segments in which the tip or foot of the frond is found.
 
 \subsection{Flux of Macroalgae structural biomass}
 \begin{flushright}
@@ -43,9 +78,13 @@ A simple approach is taken, whereby fronds typically only grow in length and ret
 The structural component of the macroalgae is the dry material that gives shape and structure to the macroalgae frond. As it grows it increases the length and area of the entire frond. Growth of other components of the frond do not have any effect on the frond length, volume, density, or surface area. 
 
 The net growth of the structural mass is the resulting rate of structural biomass production and frond erosion (considered to be analagous to mortality used in other DELWAQ processes). This balance can be defined by the following function:
+
 \[dGrowMALS =MALS \times (\mu - \phi)\]
+
 The growth $\mu$ rate of MALS is dependent firstly on the nutrient (N, P, and C) stores available. Its growth rate is defined as follows:
+
 \[\mu = f_{density} f_{photoperiod} f_{temperature}\times min\big\{1-\frac{N_{min}}{MALN},1-\frac{P_{min}}{MALP},1-\frac{C_{min}}{MALC}\big\}\]
+
 Where:\\
 \begin{tabular}{ll}
 $\mu$  & specific growth rate of macroalgae sturctural mass (d$^{-1}$) \\
@@ -53,7 +92,6 @@ $\phi$ & mortality/erosion rate (d$^{-1}$) \\
 $f_{density}$ & biomass density limitation function (-)\\
 $f_{photoperiod}$ & photoperiod limitation function (-)\\
 $f_{temperature}$ & temperature limitation function (-)\\
-$MALS$ & structural mass (gDM m$^{-2}$)\\
 $N_{min}$ & minimum N storage (gN gDM$^{-1}$)\\
 $MALN$ & nitrogen storage (gN/m$^2$)\\
 $P_{min}$ & minimum phosphorous storage (gP gDM$^{-1}$)\\
@@ -62,7 +100,7 @@ $C_{min}$ & minimum carbon storage (gC gDM$^{-1}$)\\
 $MALC$ & carbon storage (gC/m$^2$)\\
 \end{tabular}
 
-Note that in the code the storage terms are temporarily converted to g/gDM using $MALS$ to comply with the formulations outlined in Broch \textit{et al.} (2011). The storage state variable terms are g m$^{-2}$ as per all non-transportable DELWAQ substances, and this is reflected in the fluxes, which are back calculated to g m$^{-2}d^{-1}$. As the substances are non transportable they reside in the bottom segment. However, depending on the user defined variables, there is not necessarily the influence of mass in the bottom segment, such as in the case where the algae grow from the water surface downward. This will be discussed further in MALDIS.
+Note that in the code the storage terms are temporarily converted to g/gDM using $MALS$ to comply with the formulations outlined in Broch \textit{et al.} (2011). The storage state variable terms are g m$^{-2}$ as per all non-transportable DELWAQ substances, and this is reflected in the fluxes, which are back calculated to g m$^{-2}d^{-1}$. As the substances are non transportable they reside in the bottom segment. However, depending on the user defined variables, there is not necessarily the influence of mass in the bottom segment, such as in the case where the algae grow from the water surface downward. This is discussed in MALDIS.
 
 The growth rate of the structural mass is dependent on a density limitation, a photoperiod limitation, and a temperature limitation. These limitations differ from conventional DELWAQ limitations for algae growth in that they do not range strictly between 0 and 1. Instead Broch has tuned them such that their product is equal to the maximum growth rate when at optimal conditions. The density limitation represents the ability of the frond to only grow so big, and the bigger it gets the lower its growth rate will become. The photoperiod limitation is similar to the daylength limitation used in BLOOM and DYNAMO, but instead considers the \textit{change} in daylength compared to the previous day instead of the actual current daylength. This is due to the fact that \textit{Saccharina} is a seasonal anticipator and will grow and store nutrients in accordance with the change in the season as determined by how much longer or shorter the days become. The temperature limitation is a simple piece wise function that identifies an optimal growth between temperatures 10-15$^0$C, no growth above 19$^0$C, and linear growth increasing betwen -1.8 and 10$^0$C.  The limitation functions are formulated as follows:
 
@@ -90,6 +128,7 @@ $MALS_0$ & critical biomass area (m$^2$)\\
 $a_1$    & photoperiod parameter 1 (-)\\
 $a_2$    & photoperiod parameter 2 (-)\\
 \end{tabular}
+
 The specific mortality rate $mrt$ of the structural biomass is dependent on the total area of the frond in relation to a critical large area and the erosion parameter. The formulation is as follows:
 \[\phi = \frac{10^{-6}exp(\epsilon\times MALS)}{1+10^{-6}exp((\epsilon\times MALS)-1)}\]
 
@@ -98,7 +137,7 @@ Where:\\
 $\epsilon$ & erosion parameter (m$^{-2}$)\\
 \end{tabular}
 
-This process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each timestep each segment essentially receives ghost structural and storage mass depending on the biomass allocated to it in MALDIS. The local fluxes are calculated using this mass and the local ambient environment. The fluxes are then locally applied to ambient dissolved parameters, but not algae parameters. Instead the fluxes of algae parameters are communicated to the bottom segment in a cummulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in MALS, MALN, MALP, and MALC resulting from the net growth in the column. Once the bottom segment is reached this gives the new mass of each in the bottom segment and the plant will  become longer or shorter in the next time step to reflect this new state. The consequence of this method is that the local per segment ghost reserves adopt the reserve ratio of the whole column. Another way to say this is that the entire segment has a fixed structural to storage ratio, as in no segment can have a beefier part of the plant than the other.
+This process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step each segment essentially receives 'ghost' structural and storage mass depending on the biomass allocated to it in MALDIS. The local fluxes are calculated using this mass and the local ambient environment. The fluxes are then locally applied to ambient dissolved parameters, but not algae parameters. Instead the fluxes of algae parameters are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in MALS, MALN, MALP, and MALC resulting from the net growth in the column. Once the bottom segment is reached this gives the new mass of each in the bottom segment and the plant will  become longer or shorter in the next time step to reflect this new state. The consequence of this method is that the local per segment ghost reserves adopt the reserve ratio of the whole column. Another way to say this is that the entire segment has a fixed structural to storage ratio, as in no segment can have a beefier part of the plant than the other.
 
 \subsection{Flux of Macroalgae nutrient storage}
 \begin{flushright}
@@ -155,24 +194,23 @@ Where:
 \begin{tabular}{ll}
 $P$ & Gross photosynthetic rate (gCm$^{-3}$ d$^{-1}$)\\
 $E$ & Fraction exudation (-)\\\
-$P$ & Maintenance respiration rate (gCm$^{-3}$ d$^{-1}$)\\
+$R$ & Maintenance respiration rate (gCm$^{-3}$ d$^{-1}$)\\
 \end{tabular}
 
 Where the first term relates to the net of production, respiration and exudation, and the second term pertains to the utilization of carbon stores by the structural mass.
 
 The growth production rate is given by the following equation:
-
 \[P = P_s(1-exp(-\frac{\alpha \times I}{P_s}))exp(-\frac{\beta \times I}{P_s})\]
-
 \[P_s = \frac{\alpha \times I_{sat}}{ln(1+\frac{\alpha}{\beta})}\]
-
 \[P_{max} = (\frac{\alpha \times I_{sat}}{ln(1+\frac{\alpha}{\beta}})(\frac{\alpha}{\alpha+\beta})(\frac{\beta}{\alpha+\beta})^{\frac{\beta}{\alpha}}\]
-
 \[P_{max} = \frac{P_1exp(\frac{T_{AP}}{T_{P1}})}{1+exp(\frac{T_{APL}}{T} - \frac{T_{APL}}{T_{PL}})+exp(\frac{T_{APH}}{T_{PH}}-\frac{T_{APH}}{T})}\]
 
+
+The maximum production rate $P_{max}$ and the saturation production rate $P_{s}$ are both dependent on temperature. $P_{s}$ is non-linear in the photoinhibition parameter $\beta$, and so the root $\beta$ is found using Newton's method in Broch. This involves solving for $\beta$ such that $P_{max}$ equals the $P_{max}$ obtained from the temperature relationship at the current temperature. Newton's method is not used in the DELWAQ code and instead $\beta$ is pre-calculated for all temperatures in the photosynthetic range 1$^{0}$C to 25$^{0}$C at an interval of 0.1$^{0}$C. This is hard coded into the FLMALC subroutine and constitutes a linear approximation of $\beta$. Due to this the model should only be used for temperature ranges $1^{0}C \textless T \textless 25^{0}C$. Currently:
 \begin{itemize}
-\item The equations for $P_{max}$ are non-linear in the parameter $\beta$ and so the equations are solved using Newton's method in the code.
-\end{itemize}
+	\item $\beta \textless 1 ^{0}C = \beta(1 ^{0}C)$ and $\beta > 25 ^{0}C = \beta(25 ^{0}C)$. 
+\end{itemize} 
+
 
 Where:\\
 \begin{tabular}{ll}
