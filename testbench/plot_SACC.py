@@ -15,7 +15,7 @@ his = d3d.DelwaqHisFile(file)
 seg = 'Seg10'
 ###############################################################################
 
-fig, ax = plt.subplots(2,1)
+fig, ax = plt.subplots(1,2)
 ax1 = ax[0]
 
 ax2 = ax1.twinx()
@@ -27,7 +27,7 @@ no3 = his['NO3',seg,:]
 ax2.plot(his.dates,no3*1000.0/14.0,'k-')
 ax1.set_xlabel('time')
 ax1.set_ylabel('Temperature [degC]')
-ax1.set_ylim([0,16])
+ax1.set_ylim([2,16])
 ax2.set_ylabel('mmol N-NO_3')
 ax2.set_ylim([0,8])
 ###############################################################################
@@ -113,17 +113,17 @@ plt.plot(his.dates,photo)
 
 ###############################################################################
 
-plt.figure(6)
-plt.subplot(311)
-ph = his['pH',seg,:]
-plt.plot(his.dates,ph)
-plt.ylabel('pH [-]')
-plt.subplot(312)
-alka = his['ALKA',seg,:]
-plt.plot(his.dates,alka)
-plt.ylabel('Alkalinity [mg HCO3-/l]')
-plt.subplot(313)
-tic = his['TIC',seg,:]
-plt.plot(his.dates,tic)
-plt.ylabel('Total inorganic carbon [mg C/l]')
-plt.xlabel('time')
+#plt.figure(6)
+#plt.subplot(311)
+#ph = his['pH',seg,:]
+#plt.plot(his.dates,ph)
+#plt.ylabel('pH [-]')
+#plt.subplot(312)
+#alka = his['ALKA',seg,:]
+#plt.plot(his.dates,alka)
+#plt.ylabel('Alkalinity [mg HCO3-/l]')
+#plt.subplot(313)
+#tic = his['TIC',seg,:]
+#plt.plot(his.dates,tic)
+#plt.ylabel('Total inorganic carbon [mg C/l]')
+#plt.xlabel('time')

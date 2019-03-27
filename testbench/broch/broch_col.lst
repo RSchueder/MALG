@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/20 17:02:50 
+ Execution start: 2019/03/27 14:54:41 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -405,7 +405,7 @@
  constant values in this block.
  values        25
  constants    Vel         
-         1    6.0000E-02
+         1    1.5000E-01
 
  ====> input item completed <==== 
 
@@ -414,7 +414,7 @@
  constant values in this block.
  values        26
  constants    ExtVl       
-         1    1.0000E-06
+         1    7.0000E-02
 
  ====> input item completed <==== 
 
@@ -423,7 +423,7 @@
  constant values in this block.
  values        27
  constants    LinDenMAL   
-         1    1.0000E+01
+         1    1.0000E+02
 
  ====> input item completed <==== 
 
@@ -809,7 +809,7 @@
  Number of overridings :    1
  Number         values
         10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
-              1.0000E+00  1.0000E+00  1.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01  6.3000E+00
+              1.0000E+00  1.0000E+00  1.0000E+00  1.8000E+01  2.0000E-01  1.0000E-01  6.3000E+00
 
  ************************************************************************************************************* B L O C K - 8 *****
 
@@ -842,7 +842,7 @@
 
  All substances plus extra output variables
 
- (     56) number of output variables specified
+ (     57) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -881,26 +881,27 @@
       34           LimMALN                                   
       35           LimMALP                                   
       36           LimMALC                                   
-      37           LocGroPS                                  
-      38           LocNetPS                                  
-      39           LocDecS                                   
-      40           LocGroN                                   
-      41           LocGroP                                   
-      42           LocGroC                                   
-      43           LocDecS                                   
-      44           GrosMALC                                  
-      45           RespMALC                                  
-      46           ExudMALC                                  
-      47           FrBmMALS                                  
-      48           BmLayMAL                                  
-      49           LengthMAL                                 
-      50           AreaMAL                                   
-      51           TipDepth                                  
-      52           LimVel                                    
-      53           LocUpN                                    
-      54           LocUpP                                    
-      55           LocUpC                                    
-      56           MBotSeg                                   
+      37           muMALS                                    
+      38           LocGroPS                                  
+      39           LocNetPS                                  
+      40           LocDecS                                   
+      41           LocGroN                                   
+      42           LocGroP                                   
+      43           LocGroC                                   
+      44           LocDecS                                   
+      45           GrosMALC                                  
+      46           RespMALC                                  
+      47           ExudMALC                                  
+      48           FrBmMALS                                  
+      49           BmLayMAL                                  
+      50           LengthMAL                                 
+      51           AreaMAL                                   
+      52           TipDepth                                  
+      53           LimVel                                    
+      54           LocUpN                                    
+      55           LocUpP                                    
+      56           LocUpC                                    
+      57           MBotSeg                                   
 
  Specification of map output
 
@@ -962,6 +963,7 @@
    INFO:LimMALN             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALP             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimMALC             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:muMALS              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroPS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocNetPS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
@@ -983,7 +985,7 @@
    INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          49
+  Number off missing variables :          50
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -1010,8 +1012,8 @@ Number of periods defined:     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       6482
- total integer   array space:       5767
- total character array space:       9706
- grand total in 4-byte words:      21955 =   0-GB   0-MB  87-KB 820-Byte.
- Execution stop : 2019/03/20 17:02:50 
+ total real      array space:       6503
+ total integer   array space:       5780
+ total character array space:       9821
+ grand total in 4-byte words:      22104 =   0-GB   0-MB  88-KB 416-Byte.
+ Execution stop : 2019/03/27 14:54:41 

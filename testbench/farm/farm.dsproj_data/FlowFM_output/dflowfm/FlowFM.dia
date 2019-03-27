@@ -1,0 +1,878 @@
+** DEBUG  :            0  0.1000020      NOD(KMAX)
+** DEBUG  :            6  0.7000140      XK (KMAX), YK (KMAX), ZK (KMAX), KC (KMAX), NMK (KMAX), RNOD(KMAX)
+** WARNING: readMDUFile: [numerics] jaorgsethu=1 was in file, but not used. Check possible typo.
+** WARNING: readMDUFile: [physics] effectspiral=0 was in file, but not used. Check possible typo.
+** WARNING: readMDUFile: [output] wrishp_enc=0 was in file, but not used. Check possible typo.
+** INFO   : Network UGRID-File: No 1D-Mesh Present, Skipped 1D
+** INFO   : Initializing flow model geometry...
+** DEBUG  : Opened 'FlowFM_net.nc' as #     65536.
+** WARNING: Could not read net cells from NetCDF file 'FlowFM_net.nc' (is not critical). Details follow:
+** DEBUG  : NetCDF error: NetCDF: Invalid dimension ID or name (nNetElem)
+** DEBUG  :            6  3.9009999E-03  netcell(numpx1)
+** DEBUG  :            6  5.1000002E-03  lnn(numl)
+** DEBUG  :            6  1.0200000E-02  lne(2,numl)
+** DEBUG  :            6  2.4999999E-03  xz(numc)
+** DEBUG  :            6  2.4999999E-03  yz(numc)
+** DEBUG  :            6  2.4999999E-03  xzw(numc)
+** DEBUG  :            6  2.4999999E-03  yzw(numc)
+** DEBUG  :            6  2.4999999E-03  ba(numc)
+** DEBUG  :            6  5.1000002E-03  xe (nx)
+** DEBUG  :            6  5.1000002E-03  ye (nx)
+** DEBUG  :            6  5.1000002E-03  xyen(2, nx)
+** DEBUG  :            7  8.6700000E-02  kce(nx), ke(nx), kez(nx), keu(nx), kes(nx), ketm(nx), kesd(nx), keuxy(nx), ket(nx), ken(nx), ke1d2d(nx), keg(nx), ked(nx), kep(nx), kedb(nx), keklep(nx), kegs(nx), kegen(nx), itpez(nx), itpenz(nx), itpeu(nx) , itpenu(nx) , kew(nx), ftpet(nx)
+** DEBUG  :            7  5.1000002E-03  ketr(nx,1)
+** DEBUG  :            7  5.1000002E-03  kesf(1,nx)
+** INFO   : Opened file : Tidal.pli
+** INFO   : Closed file : Tidal.pli
+** INFO   : boundary: 'Tidal.pli' opened 50 cells.
+** INFO   : waterlevelbnd Tidal.pli      50 nr of open bndcells
+** INFO   : Opened file : Boundary02.pli
+** INFO   : Closed file : Boundary02.pli
+** INFO   : boundary: 'Boundary02.pli' opened 50 cells.
+** INFO   : waterlevelbnd Boundary02.pli      50 nr of open bndcells
+** DEBUG  :            7  2.0800000E-02  nd(ndx), bl(ndx), bai(ndx), kcs(ndx)
+** DEBUG  :            8  9.9999998E-03  ln   (2,lnx)
+** DEBUG  :            8  9.9999998E-03  lncn (2,lnx)
+** DEBUG  :            8  9.9999998E-03  bob  (2,lnx)
+** DEBUG  :            8  4.9999999E-03  dx   (  lnx)
+** DEBUG  :            8  4.9999999E-03  dxi  (  lnx)
+** DEBUG  :            8  4.9999999E-03  wu   (  lnx)
+** DEBUG  :            8  4.9999999E-03  wu_mor (  lnx)
+** DEBUG  :            8  4.9999999E-03  wui  (  lnx)
+** DEBUG  :            8  4.9999999E-03  kcu  (  lnx)
+** DEBUG  :            8  4.9999999E-03  csu  (  lnx)
+** DEBUG  :            8  4.9999999E-03  snu  (  lnx)
+** DEBUG  :            8  4.9999999E-03  acl  (  lnx)
+** DEBUG  :            8  4.9999999E-03  acn  (2,lnx)
+** DEBUG  :            8  4.9999999E-03  iadv   (lnx)
+** DEBUG  :            8  4.9999999E-03  teta   (lnx)
+** DEBUG  :            8  4.9999999E-03  ibot   (lnx)
+** DEBUG  :            8  1.5000000E-02  xu(lnx), yu(lnx) , blu(lnx)
+** DEBUG  :            8  5.1000002E-03  ln2lne (nex)
+** DEBUG  :            8  5.1000002E-03  lne2ln (nex)
+** DEBUG  : addexternalboundarypoints: added 0 bnd points for SOBEK1D-FM2D connections.
+** DEBUG  :            9  2.6010000E-03   cn (numk)
+** DEBUG  :            9  2.6010000E-03  ucnx(numk)
+** DEBUG  :            9  2.6010000E-03  ucny(numk)
+** DEBUG  :            9  2.6010000E-03  ban (numk)
+** INFO   : setbedlevelfromextfile: Using bedlevel as specified in net-file.
+** DEBUG  :            9  4.9999999E-03  wcx1(lnx)
+** DEBUG  :            9  4.9999999E-03  wcy1(lnx)
+** DEBUG  :            9  4.9999999E-03  wcx2(lnx)
+** DEBUG  :            9  4.9999999E-03  wcy2(lnx)
+** DEBUG  :            9  5.2000000E-03  wcxy (2,ndx)
+** DEBUG  :            9  9.9999998E-03  wcL  (2,Lnx)
+** DEBUG  :            9  2.6000000E-03  wc     (ndx)
+** DEBUG  :            9  4.9999999E-03  wcnx3(lnx)
+** DEBUG  :            9  4.9999999E-03  wcny3(lnx)
+** DEBUG  :            9  4.9999999E-03  wcnx4(lnx)
+** DEBUG  :            9  4.9999999E-03  wcny4(lnx)
+** DEBUG  :            9  7.8030000E-03  wcnxy(3,numk)
+** DEBUG  :            9  2.6010000E-03  jacorner(numk)
+** DEBUG  :            9  2.6000000E-03  numlimdt(ndx)
+** DEBUG  :            9  1.7000000E-03  walls(17,nw)
+** DEBUG  :            9  9.9999998E-03  banf(mxban)
+** DEBUG  :            9  9.9999998E-03  nban(4,mxban)
+** DEBUG  :           10  9.9999998E-03  rr(mxban), nr(mxban)
+** DEBUG  :           10  9.9999998E-03  banh (mxban)
+** DEBUG  :           10  9.9999998E-03  nbanh(4,mxban)
+** INFO   : Done initializing flow model geometry.
+** DEBUG  :           10  5.2000000E-03  s0  (ndx) , s1  (ndx)
+** DEBUG  :           10  5.2000000E-03  a0  (ndx) , a1  (ndx)
+** DEBUG  :           10  5.2000000E-03  hs  (ndx) , s00 (ndx)
+** DEBUG  :           10  2.6000000E-03  cfs (ndx)
+** DEBUG  :           10  2.6000000E-03  kbot (ndx)
+** DEBUG  :           10  2.6000000E-03  ktop (ndx)
+** DEBUG  :           10  2.6000000E-03  ktop0(ndx)
+** DEBUG  :           10  2.6000000E-03  kmxn (ndx)
+** DEBUG  :           10  4.9999999E-03  Lbot (Lnx)
+** DEBUG  :           10  4.9999999E-03  Ltop (Lnx)
+** DEBUG  :           10  4.9999999E-03  kmxL (Lnx)
+** DEBUG  :           10  4.9999999E-03  ustb  (lnx)
+** DEBUG  :           10  4.9999999E-03  ustw  (lnx)
+** DEBUG  :           10  2.6000000E-03  laydefnr(ndx)
+** DEBUG  :           10  5.2000000E-03  ucx (ndkx) , ucy (ndkx)
+** DEBUG  :           10  5.2000000E-03  uqcx(ndkx) , uqcy(ndkx)
+** DEBUG  :           10  5.2000000E-03  ucxq(ndkx) , ucyq(ndkx)
+** DEBUG  :           10  5.2000000E-03  qin (ndkx) , vih (ndkx)
+** DEBUG  :           10  5.2000000E-03  dvxc(ndkx) , dvyc(ndkx)
+** DEBUG  :           10  2.6000000E-03  squ (ndkx)
+** DEBUG  :           10  2.6000000E-03  sqi (ndkx)
+** DEBUG  :           10  2.6000000E-03  sq  (ndkx)
+** DEBUG  :           10  2.6000000E-03  sqa (ndkx)
+** DEBUG  :           10  2.6000000E-03  vol0(ndkx)
+** DEBUG  :           10  2.6000000E-03  vol1(ndkx)
+** DEBUG  :           10  2.6000000E-03  vol1_f(ndkx)
+** DEBUG  :           11  2.6000000E-03  volerror(ndkx)
+** DEBUG  :           11  2.6000000E-03  rho (ndkx)
+** DEBUG  :           11  2.6000000E-03  workx (ndkx)
+** DEBUG  :           11  2.6000000E-03  worky (ndkx)
+** DEBUG  :           11  4.9999999E-03  work0 (0:max(kmx,1),max(ndx,lnx))
+** DEBUG  :           11  4.9999999E-03  work1 (max(kmx,1),max(ndx,lnx))
+** DEBUG  :           11  4.9999999E-03  z0ucur(lnx)
+** DEBUG  :           11  4.9999999E-03  z0urou(lnx)
+** DEBUG  :           11  4.9999999E-03  cfuhi(lnx)
+** DEBUG  :           11  2.6000000E-03  frcu (lnx)
+** DEBUG  :           11  2.6000000E-03  frcu_mor (lnx)
+** DEBUG  :           11  2.6000000E-03  ifrcutp(lnx)
+** DEBUG  :           11  4.9999999E-03  wdsu  (lnx)
+** DEBUG  :           11  4.9999999E-03  u0   (lnkx)
+** DEBUG  :           11  4.9999999E-03  u1   (lnkx)
+** DEBUG  :           11  4.9999999E-03  q1   (lnkx)
+** DEBUG  :           11  4.9999999E-03  qa   (lnkx)
+** DEBUG  :           11  4.9999999E-03  v    (lnkx)
+** DEBUG  :           11  4.9999999E-03  ucxu (lnkx)
+** DEBUG  :           11  4.9999999E-03  ucyu (lnkx)
+** DEBUG  :           11  4.9999999E-03  hu   (lnkx)
+** DEBUG  :           11  4.9999999E-03  huvli(lnkx)
+** DEBUG  :           11  4.9999999E-03  au   (lnkx)
+** DEBUG  :           11  4.9999999E-03  viu  (lnkx)
+** DEBUG  :           11  4.9999999E-03  vicLu(lnkx)
+** DEBUG  :           11  4.9999999E-03  suu  (lnkx)
+** DEBUG  :           11  4.9999999E-03  advi (lnkx)
+** DEBUG  :           11  4.9999999E-03  adve (lnkx)
+** DEBUG  :           12  4.9999999E-03  plotlin(max(lnkx,ndkx))
+** DEBUG  :           12  2.6000000E-03  czs(ndx)
+** DEBUG  :           12  2.6000000E-03  bb   (ndx )
+** DEBUG  :           12  2.6000000E-03  dd   (ndx )
+** DEBUG  :           12  2.6000000E-03  fu   (lnkx)
+** DEBUG  :           12  2.6000000E-03  ru   (lnkx)
+** DEBUG  :           12  2.6000000E-03  qinext(ndkx)
+** DEBUG  :           12  2.6000000E-03  qinextreal(ndkx)
+** DEBUG  :           12  2.6000000E-03  vincum(ndkx)
+** INFO   : Start initializing external forcings...
+** INFO   : Done initializing external forcings.
+** DEBUG  :           12  4.9999999E-03  klnup(6,lnx)
+** DEBUG  :           12  4.9999999E-03  slnup(6,lnx)
+** DEBUG  :           12  2.6000000E-03  ij(nodtot)
+** DEBUG  :           12  2.6000000E-03  nodbr2(nodtot)
+** DEBUG  :           12  2.6000000E-03  nbrstk(nodtot)
+** DEBUG  :           12  2.6000000E-03  nodstk(nodtot)
+** DEBUG  :           12  2.6000000E-03  noel(nodtot)
+** DEBUG  :           12  2.6000000E-03  noel0(nodtot)
+** DEBUG  :           12  2.6000000E-03  ia(nodtot)
+** DEBUG  :           12  2.6000000E-03  row(nodtot)
+** DEBUG  :           12  4.9999999E-03  lv2(lintot)
+** DEBUG  :           12  2.6000000E-03  jagauss(nodtot)
+** DEBUG  :           12  1.0016000E-02  ccr(0:ijstck)
+** DEBUG  :           12  1.0016000E-02  bbl(0:ijstck)
+** DEBUG  :           12  5.2000000E-03  bbr(nodtot), ddr(nodtot)
+** DEBUG  :           12  1.3000000E-02  d0(nodtot), zkr(nodtot),pk(0:nodtot), apk(nodtot), rk(nodtot)
+** INFO   : nogauss , nocg :           1345          1255
+** DEBUG  :           13  6.8745002E-02  iao(nn+1)
+** DEBUG  :           13  2.8585000E-02  ao(na)
+** DEBUG  :           14  7.5300001E-02  wk(nwk)
+** INFO   : Modelinit finished   at: 13:17:24, 27-03-2019
+** INFO   : ** Model initialization was successful **
+** INFO   : * Active Model definition:
+# Generated on 13:17:24, 27-03-2019
+# Deltares, D-Flow FM Version 1.2.0.61839M, Sep 13 2018, 15:48:25
+# Source:https://svn.oss.deltares.nl/repos/delft3d/trunk/
+
+[model]
+Program                           = D-Flow FM
+Version                           = 1.2.0.61839M
+MDUFormatVersion                  = 1.06                # File format version (do not edit this)
+AutoStart                         = 0                   # Autostart simulation after loading MDU (0: no, 1: autostart, 2: autostartstop)
+ModelSpecific                     =                                                                 # Optional 'model specific ID', to enable certain custom runtime function calls (instead of via MDU name).
+
+[geometry]
+NetFile                           = flowfm_net.nc       # Unstructured grid file *_net.nc
+GridEnclosureFile                 =                     # Enclosure file to clip outer parts from the grid *.pol
+BedlevelFile                      =                     # Bedlevels points file e.g. *.xyz, only needed for bedlevtype not equal 3
+DryPointsFile                     =                     # Dry points file *.xyz (third column dummy z values), or dry areas polygon file *.pol (third column 1/-1: inside/outside)
+WaterLevIniFile                   =                     # Initial water levels sample file *.xyz
+LandBoundaryFile                  =                     # Land boundaries file *.ldb, used for visualization
+ThinDamFile                       =                     # Polyline file *_thd.pli, containing thin dams
+Cutcelllist                       =                     # File with names of cutcell polygons, e.g. cutcellpolygons.lst
+FixedWeirFile                     =                     # Polyline file *_fxw.pliz, containing fixed weirs with rows x, y, crest level, left ground level, right ground level
+PillarFile                        =                     # Polyline file *_pillar.pliz, containing four colums with x, y, diameter and Cd coefficient
+Gulliesfile                       =                     # Polyline file *_gul.pliz, containing lowest bed level along talweg x, y, z level
+Roofsfile                         =                     # Polyline file *_rof.pliz, containing roofgutter heights x, y, z level
+VertplizFile                      =                     # Vertical layering file *_vlay.pliz with rows x, y, Z, first Z, nr of layers, second Z, layer type
+ProflocFile                       =                     # Channel profile location file *_proflocation.xyz with rows x, y, z, profile number ref
+ProfdefFile                       =                     # Channel profile definition file *_profdefinition.def with definition for all profile numbers
+ProfdefxyzFile                    =                     # Channel profile definition file _profdefinition.def with definition for all profile numbers
+Uniformwidth1D                    = 2.                  # Uniform width for channel profiles not specified by profloc
+Uniformheight1D                   = 3.                  # Uniform height for channel profiles not specified by profloc
+Uniformtyp1Dstreetinlets          = -2                  # Uniform type street inlets
+Uniformtyp1Droofgutterpipes       = -2                  # Uniform type roof gutter pipes
+StructureFile                     =                     # File *.ini containing list of structures (pumps, weirs, gates and general structures)
+ManholeFile                       =                     # File *.ini containing manholes
+PipeFile                          =                     # File *.pliz containing pipe-based 'culverts'
+ShipdefFile                       =                     # File *.shd containing ship definitions
+WaterLevIni                       = 0.                  # Initial water level at missing s0 values
+BedlevUni                         = -5.                 # Uniform bed level used at missing z values if BedlevType > 2
+BedlevType                        = 3                   # Bathymetry specification
+                                                        # 1: at cell centers (from BathymetryFile)
+                                                        # 2: at faces (from BathymetryFile)
+                                                        # 3: at nodes, face levels mean of node values
+                                                        # 4: at nodes, face levels min. of node values
+                                                        # 5: at nodes, face levels max. of node values
+                                                        # 6: at nodes, face levels max. of cell-center values
+Blmeanbelow                       = -999.               # If not -999d0, below this level the cell center bed level is the mean of surrouding net nodes
+Blminabove                        = -999.               # If not -999d0, above this level the cell center bed level is the min. of surrouding net nodes
+Groundlayerthickness              = -999.               # Only in pipes: groundlayer thickness (m)
+PartitionFile                     =                     # Domain partition polygon file *_part.pol for parallel run
+AngLat                            = 52.                 # Angle of latitude S-N (deg), 0: no Coriolis
+AngLon                            = 0.                  # Angle of longitude E-W (deg), 0: Greenwich, used in solar heat flux computation.
+Conveyance2D                      = -1                  # -1: R=HU,0: R=H, 1: R=A/P, 2: K=analytic-1D conv, 3: K=analytic-2D conv
+Slotw2D                           = 0.                  # -
+Sillheightmin                     = 0.                  # Weir treatment only if both sills larger than this value (m)
+Makeorthocenters                  = 0                   # Switch from circumcentres to orthocentres in geominit (i>=1: number of iterations, 0: do not use)
+Dcenterinside                     = 1.                  # Limit cell center (1.0: in cell, 0.0: on c/g)
+Bamin                             = 1.d-6               # Minimum grid cell area, in combination with cut cells
+OpenBoundaryTolerance             = 3.                  # Search tolerance factor between boundary polyline and grid cells, in cell size units
+RenumberFlowNodes                 = 1                   # Renumber the flow nodes (1: yes, 0: no)
+Kmx                               = 0                   # Maximum number of vertical layers
+Layertype                         = 1                   # Vertical layer type (1: all sigma, 2: all z, 3: use VertplizFile)
+Numtopsig                         = 0                   # Number of sigma layers in top of z-layer model
+SigmaGrowthFactor                 = 1.                  # Layer thickness growth factor from bed up
+StretchType                       = -1                  # Type of layer stretching, 0 = uniform, 1 = user defined, 2 = fixed level double exponential
+
+[numerics]
+CFLMax                            = 0.7                 # Maximum Courant number
+Lincontin                         = 0                   # Default 0; Set to 1 for linearizing d(Hu)/dx; link to AdvecType
+AdvecType                         = 33                  # Advection type (0: none, 1: Wenneker, 2: Wenneker q(uio-u), 3: Perot q(uio-u), 4: Perot q(ui-u), 5: Perot q(ui-u) without itself)
+TimeStepType                      = 2                   # Time step handling (0: only transport, 1: transport + velocity update, 2: full implicit step-reduce, 3: step-Jacobi, 4: explicit)
+Icoriolistype                     = 5                   # 0=No, 1=yes, if jsferic then spatially varying, if icoriolistype==6 then constant (anglat)
+Limtyphu                          = 0                   # Limiter type for waterdepth in continuity eqn. (0: none, 1: minmod, 2: van Leer, 3: Kooren, 4: monotone central)
+Limtypmom                         = 4                   # Limiter type for cell center advection velocity (0: none, 1: minmod, 2: van Leer, 3: Kooren, 4: monotone central)
+Limtypsa                          = 4                   # Limiter type for salinity transport (0: none, 1: minmod, 2: van Leer, 3: Kooren, 4: monotone central)
+TransportMethod                   = 1                   # Transport method (0: Herman's method, 1: transport module)
+TransportTimestepping             = 1                   # Timestepping method in Transport module, 0 = global, 1 = local (default)
+Vertadvtypsal                     = 5                   # Vertical advection type for salinity (0: none, 1: upwind explicit, 2: central explicit, 3: upwind implicit, 4: central implicit, 5: central implicit but upwind for neg. stratif., 6: higher order explicit, no Forester)
+Vertadvtyptem                     = 6                   # Vertical advection type for temperature (0: none, 1: upwind explicit, 2: central explicit, 3: upwind implicit, 4: central implicit, 5: central implicit but upwind for neg. stratif., 6: higher order explicit, no Forester)
+Cffacver                          = 0.                  # Factor for including (1-CFL) in HO term vertical   (0d0: no, 1d0: yes)
+Jarhoxu                           = 0                   # Inlcude density gradient in advection term (0: no, 1: yes, 2: Also in barotrop and baroclin pressure term)
+Horadvtypzlayer                   = 0                   # Horizontal advection treatment of z-layers (1: default, 2: sigma-like)
+Zlayercenterbedvel                = 1                   # reconstruction of center velocity at half closed bedcells (0=no, 1: copy bed link velocities)
+Zlayeratubybob                    = 0                   # Lowest connected cells governed by bob instead of by bL L/R
+Icgsolver                         = 4                   # Solver type (1: sobekGS_OMP, 2: sobekGS_OMPthreadsafe, 3: sobekGS, 4: sobekGS + Saadilud, 5: parallel/global Saad, 6: parallel/Petsc, 7: parallel/GS)
+Maxdegree                         = 6                   # Maximum degree in Gauss elimination
+Noderivedtypes                    = 5                   # 0=use der. types. , 1 = less, 2 = lesser, 5 = also dealloc der. types
+FixedWeirScheme                   = 0                   # Fixed weir scheme (0: none, 1: compact stencil, 2: whole tile lifted, full subgrid weir + factor)
+FixedWeirContraction              = 1.                  # Fixed weir flow width contraction factor
+Fixedweirfrictscheme              = 1                   # Fixed weir friction scheme (0: friction based on hu, 1: friction based on subgrid weir friction scheme)
+Fixedweirtopwidth                 = 3.                  # Uniform width of the groyne part of fixed weirs
+Fixedweirtopfrictcoef             = -999.               # Uniform friction coefficient of the groyne part of fixed weirs
+Fixedweirtalud                    = 4.                  # Uniform talud slope of fixed weirs
+Izbndpos                          = 0                   # Position of z boundary (0: D3Dflow, 1: on net boundary, 2: on specified polyline)
+Tlfsmo                            = 3600.               # Fourier smoothing time (s) on water level boundaries
+Logprofatubndin                   = 1                   # ubnds inflow: 0=uniform U1, 1 = log U1, 2 = user3D
+Logprofkepsbndin                  = 0                   # inflow: 0=0 keps, 1 = log keps, 2 = user3D
+Slopedrop2D                       = 0.                  # Apply drop losses only if local bed slope > Slopedrop2D, (<=0: no drop losses)
+Drop3D                            = 1.                  # Apply droplosses in 3D if z upwind below bob + 2/3 hu*drop3D
+Chkadvd                           = 0.1                 # Check advection terms if depth < chkadvdp, => less setbacks
+Trsh_u1Lb                         = 0.                  # 2D bedfriction in 3D below this threshold (m)
+Epshstem                          = 1.d-3               # Only compute heatflx + evap if depth > epshstem
+Zwsbtol                           = 0.                  # tolerance for zws(kb-1) at bed
+Keepzlayeringatbed                = 1                   #  bedlayerthickness = zlayerthickness at bed 0 or 1
+Teta0                             = 0.55                # Theta of time integration (0.5 < theta < 1)
+Qhrelax                           = 1.d-2               # Relaxation on Q-h open boundaries
+Jbasqbnddownwindhs                = 0                   # Water depth scheme at discharge boundaries (0: original hu, 1: downwind hs)
+cstbnd                            = 0                   # Delft-3D type velocity treatment near boundaries for small coastal models (1: yes, 0: no)
+Maxitverticalforestersal          = 0                   # Forester iterations for salinity (0: no vertical filter for salinity, > 0: max nr of iterations)
+Maxitverticalforestertem          = 0                   # Forester iterations for temperature (0: no vertical filter for temperature, > 0: max nr of iterations)
+Turbulencemodel                   = 3                   # Turbulence model (0: none, 1: constant, 2: algebraic, 3: k-epsilon, 4: k-tau)
+Turbulenceadvection               = 3                   # Turbulence advection (0: none, 3: horizontally explicit and vertically implicit)
+Eddyviscositybedfacmax            = 0.                  # Limit eddy viscosity at bed )
+AntiCreep                         = 0                   # Include anti-creep calculation (0: no, 1: yes)
+Barocterm                         = 2                   # (original = 1, current = 2 )
+Maxwaterleveldiff                 = 0.                  # upper bound (in m) on water level changes (<= 0: no bounds). Run will abort when violated.
+Maxvelocitydiff                   = 0.                  # upper bound (in m/s) on velocity changes (<= 0: no bounds). Run will abort when violated.
+MinTimestepBreak                  = 0.                  # smallest allowed timestep (in s), checked on a sliding average of several timesteps. Run will abort when violated.
+Epshu                             = 1.d-4               # Threshold water depth for wet and dry cells
+SobekDFM_umin                     = 0.                  # Minimal velocity treshold for weir losses in Sobek-DFM coupling.
+SobekDFM_umin_method              = 0                   # Method for minimal velocity treshold for weir losses in Sobek-DFM coupling.
+SobekDFM_Minimal_1d2d_Embankment  = 1.d-2               # Minimal crest height of 1D2D SOBEK-DFM embankments.
+sobekDFM_relax                    = 0.1                 # Relaxation factor for SOBEK-DFM coupling algorithm.
+Vertadvtypmom                     = 3                   # vertical advection for u1: 0: No, 3: Upwind implicit, 4: Central implicit, 5: QUICKEST implicit., 6: centerbased upwind expl
+jaupwindsrc                       = 1                   # 1st-order upwind advection at sources/sinks (1) or higher-order (0)
+jasfer3D                          = 0                   # corrections for spherical coordinates
+vicouv_filter                     = 0.                  # artificial viscosity for filtering (m2/s)
+LocSaltLev                        = 1.                  # salinity level for case of lock exchange
+LocSaltMin                        = 5.                  # minimum salinity for case of lock exchange
+LocSaltMax                        = 10.                 # maximum salinity for case of lock exchange
+Numlimdt_baorg                    = 0                   # if previous numlimdt > Numlimdt_baorg keep original cell area ba in cutcell
+Baorgfracmin                      = 0.                  # Cell area = max(orgcellarea*Baorgfracmin, cutcell area)
+
+[physics]
+UnifFrictCoef                     = 2.3d-2              # Uniform friction coefficient (0: no friction)
+UnifFrictType                     = 1                   # Uniform friction type (0: Chezy, 1: Manning, 2: White-Colebrook, 3: idem, WAQUA style)
+UnifFrictCoef1D                   = 2.3d-2              # Uniform friction coefficient in 1D links (0: no friction)
+UnifFrictCoef1D2D                 = 2.3d-2              # Uniform friction coefficient in 1D links (0: no friction)
+UnifFrictCoefLin                  = 0.                  # Uniform linear friction coefficient (0: no friction)
+UnifFrictCoef1DgrLay              = 5.d-2               # Uniform ground layer friction coefficient for ocean models (m/s) (0: no friction)
+Umodlin                           = 0.                  # Linear friction umod, for ifrctyp=4,5,6
+Vicouv                            = 1.                  # Uniform horizontal eddy viscosity (m2/s)
+Dicouv                            = 1.                  # Uniform horizontal eddy diffusivity (m2/s)
+Vicoww                            = 5.d-5               # Uniform vertical eddy viscosity (m2/s)
+Dicoww                            = 5.d-5               # Uniform vertical eddy diffusivity (m2/s)
+Vicwminb                          = 0.                  # Minimum visc in prod and buoyancy term (m2/s)
+Xlozmidov                         = 0.                  # Ozmidov length scale (m), default=0.0, no contribution of internal waves to vertical diffusion
+Smagorinsky                       = 0.                  # Smagorinsky factor in horizontal turbulence, e.g. 0.15
+Elder                             = 0.                  # Elder factor in horizontal turbulence
+irov                              = 0                   # 0=free slip, 1 = partial slip using wall_ks
+wall_ks                           = 0.                  # Wall roughness type (0: free slip, 1: partial slip using wall_ks)
+Rhomean                           = 1000.               # Average water density (kg/m3)
+Idensform                         = 0                   # Density calulation (0: uniform, 1: Eckard, 2: Unesco, 3: baroclinic case)
+Ag                                = 9.813               # Gravitational acceleration
+TidalForcing                      = 0                   # Tidal forcing, if jsferic=1 (0: no, 1: yes)
+SelfAttractionLoading             = 0                   # Self attraction and loading (0=no, 1=yes, 2=only self attraction)
+ITcap                             = 0.                  # Upper limit on internal tides dissipation (W/m^2)
+Doodsonstart                      = 55.565              # TRIWAQ: 55.565, D3D: 57.555
+Doodsonstop                       = 375.575             # TRIWAQ: 375.575, D3D: 275.555
+Doodsoneps                        = 0.                  # TRIWAQ = 0.0  400 cmps , D3D = 0.03   60 cmps
+VillemonteCD1                     = 1.                  # Calibration coefficient for Villemonte. Default = 1.0.  NB. For Bloemberg data set 0.8 is recommended.
+VillemonteCD2                     = 10.                 # Calibration coefficient for Villemonte. Default = 10.0. NB. For Bloemberg data set 0.8 is recommended.
+Salinity                          = 0                   # Include salinity, (0=no, 1=yes)
+InitialSalinity                   = 0.                  # Uniform initial salinity concentration (ppt)
+Sal0abovezlev                     = -999.               # Vertical level (m) above which salinity is set 0
+DeltaSalinity                     = -999.               # for testcases
+Salimax                           = -999.               # Limit the salinity
+Salimin                           = 0.                  # Limit the salinity
+Backgroundsalinity                = 30.                 # Background salinity for eqn. of state (ppt)
+Backgroundwatertemperature        = 6.                  # Background water temperature for eqn. of state (deg C)
+Temperature                       = 0                   # Include temperature (0: no, 1: only transport, 3: excess model of D3D, 5: composite (ocean) model)
+InitialTemperature                = 6.                  # Uniform initial water temperature (degC)
+Secchidepth                       = 2.                  # Water clarity parameter (m)
+Stanton                           = -1.                 # Coefficient for convective heat flux, if negative, Ccon = abs(Stanton)*Cdwind
+Dalton                            = -1.                 # Coefficient for evaporative heat flux, if negative, Ceva = abs(Dalton)*Cdwind
+Tempmax                           = -999.               # Limit the temperature
+Tempmin                           = 0.                  # Limit the temperature
+Surftempsmofac                    = 0.                  # Hor . Smoothing factor for surface water in heatflx comp. (0.0-1.0), 0=no
+Soiltempthick                     = 0.1                 # Use soil temperature buffer if > 0, e.g. 0.2 (m)
+Heat_eachstep                     = 1                   # 1=heat each timestep, 0=heat each usertimestep
+SecondaryFlow                     = 0                   # Secondary flow (0: no, 1: yes)
+BetaSpiral                        = 0.                  # Weight factor of the spiral flow intensity on flow dispersion stresses
+Equili                            = 0                   # Equilibrium spiral flow intensity (0: no, 1: yes)
+
+[sediment]
+Sedimentmodelnr                   = 0                   # Sediment model nr, (0=no, 1=Krone, 2=SvR2007, 3=E-H, 4=MorphologyModule)
+Nr_of_sedfractions                = 0                   # Nr of sediment fractions, (specify the next parameters for each fraction)
+MxgrKrone                         = 0                   # Highest fraction index treated by Krone
+Seddenscoupling                   = 0                   # Sed rho coupling (0=no, 1 =yes
+
+[veg]
+Vegetationmodelnr                 = 0                   # Vegetation model nr, (0=no, 1=Baptist DFM)
+Clveg                             = 0.8                 # Stem distance factor, default 0.8 ()
+Cdveg                             = 0.7                 # Stem Cd coefficient , default 0.7 ()
+Cbveg                             = 0.                  # Stem stiffness coefficient , default 0.7 ()
+Rhoveg                            = 0.                  # Stem Rho, if > 0, -> bouyant stick procedure, default 0.0 ()
+Stemheightstd                     = 0.                  # Stem height standard deviation fraction, e.g. 0.1  ()
+Densvegminbap                     = 0.                  # Minimum vegetation density in Baptist formula  (1/m2)
+
+[wind]
+ICdtyp                            = 2                   # Wind drag coefficient type (1=Const; 2=Smith&Banke (2 pts); 3=S&B (3 pts); 4=Charnock 1955, 5=Hwang 2005, 6=Wuest 2005, 7=Hersbach 2010 (2 pts)
+Cdbreakpoints                     = 6.3d-4 7.23d-3      # Wind drag coefficient break points
+Windspeedbreakpoints              = 0. 100.             # Wind speed break points (m/s)
+Relativewind                      = 0                   # Wind speed relative to top-layer water speed, 1=yes, 0 = no)
+Rhoair                            = 1.205               # Air density (kg/m3)
+PavBnd                            = 0.                  # Average air pressure on open boundaries (N/m2) (only applied if > 0)
+Pavini                            = 0.                  # Average air pressure for initial water level correction (N/m2) (only applied if > 0)
+
+[grw]
+groundwater                       = 0                   # 0=No (horizontal) groundwater flow, 1=With groundwater flow
+Infiltrationmodel                 = 0                   # 0=No infiltration, 1=infiltration=interceptionlayer (with grw), 2=infiltration=Infiltrationcapacity, 3=model unsaturated/saturated (with grw) ( )
+Hinterceptionlayer                = 0.                  # Intercept this amount of rain (m)
+UnifInfiltrationCapacity          = 0.                  # Uniform maximum infiltration capacity (m/s)
+Conductivity                      = 0.                  # non dimensionless K conductivity   saturated (m/s), Q = K*A*i (m3/s)
+h_aquiferuni                      = 20.                 # bgrw = bl - h_aquiferuni (m), if negative, bgrw = bgrwuni
+h_unsatini                        = 0.200000002980232   # initial level groundwater is bedlevel - h_unsatini (m), if negative, sgrw = sgrwini
+
+[waves]
+Wavemodelnr                       = 0                   # Wave model nr. (0: none, 1: fetch/depth limited hurdlestive, 2: Young-Verhagen, 3: SWAN, 4: wave group forcing, 5: uniform
+Wavenikuradse                     = 1.d-2               # Wave friction Nikuradse ks coefficient (m), used in Krone-Swart
+Rouwav                            = FR84                # Friction model for wave induced shear stress: FR84 (default) or: MS90, HT91, GM79, DS88, BK67, CJ85, OY88, VR04
+Gammax                            = 1.                  # Maximum wave height/water depth ratio
+uorbfac                           = 0                   # Orbital velocities: 0=D3D style; 1=Guza style
+jahissigwav                       = 1                   # 1: sign wave height on his output; 0: hrms wave height on his output. Default=1.
+jamapsigwav                       = 0                   # 1: sign wave height on map output; 0: hrms wave height on map output. Default=0 (legacy behaviour).
+hminlw                            = 0.2                 # Cut-off depth for application of wave forces in momentum balance
+
+[time]
+RefDate                           = 20000101            # Reference date (yyyymmdd)
+Tzone                             = 0.                  # Time zone assigned to input time series
+DtUser                            = 300.                # Time interval (s) for external forcing update
+DtNodal                           = 21600.              # Time interval (s) for updating nodal factors in astronomical boundary conditions
+DtMax                             = 30.                 # Maximal computation timestep (s)
+Dtfacmax                          = 1.1                 # Max timestep increase factor ( )
+DtInit                            = 1.                  # Initial computation timestep (s)
+Timestepanalysis                  = 0                   # 0=no, 1=see file *.steps
+Autotimestepdiff                  = 0                   # 0 = no, 1 = yes (Time limitation based on explicit diffusive term)
+Tunit                             = S                   # Time unit for start/stop times (D, H, M or S)
+TStart                            = 568080000.          # Start time w.r.t. RefDate (in TUnit)
+TStop                             = 631152000.          # Stop  time w.r.t. RefDate (in TUnit)
+
+[restart]
+RestartFile                       =                     # Restart netcdf-file, either *_rst.nc or *_map.nc
+RestartDateTime                   = 20190327            # Restart date and time (YYYYMMDDHHMMSS) when restarting from *_map.nc
+
+[external forcing]
+ExtForceFile                      =                     # Old format for external forcings file *.ext, link with tim/cmp-format boundary conditions specification
+ExtForceFileNew                   = FlowFM_bnd.ext      # New format for external forcings file *.ext, link with bc-format boundary conditions specification
+Rainfall                          = 0                   # Include rainfall, (0=no, 1=yes)
+Evaporation                       = 0                   # Include evaporation in water balance, (0=no, 1=yes)
+
+[trachytopes]
+TrtRou                            = N                   # Include alluvial and vegetation roughness (trachytopes) (Y: yes, N: no)
+TrtDef                            =                     # File (*.ttd) including trachytope definitions
+TrtL                              =                     # File (*.arl) including distribution of trachytope definitions
+DtTrt                             = 60.                 # Trachytope roughness update time interval (s)
+
+[calibration]
+UseCalibration                    = 0                   # Activate calibration factor friction multiplier (1 = yes, 0 = no)
+DefinitionFile                    =                     # File (*.cld) including calibration definitions
+AreaFile                          =                     # File (*.cll) including area distribution of calibration definitions
+
+[output]
+OutputDir                         =                     # Output directory of map-, his-, rst-, dat- and timings-files, default: DFM_OUTPUT_<modelname>. Set to . for current dir.
+FlowGeomFile                      =                     # Flow geometry NetCDF *_flowgeom.nc
+ObsFile                           =                     # Points file *.xyn with observation stations with rows x, y, station name
+CrsFile                           =                     # Polyline file *_crs.pli defining observation cross sections
+FouFile                           =                     # Fourier analysis input file *.fou
+HisFile                           =                     # HisFile name *_his.nc
+MapFile                           =                     # MapFile name *_map.nc
+HisInterval                       = 3600. 568080000. 631152000.# History output times, given as "interval" "start period" "end period" (s)
+XLSInterval                       = 0.                  # Interval (s) between XLS history
+MapInterval                       = 43800. 568080000. 631152000.# Map file output, given as "interval" "start period" "end period" (s)
+RstInterval                       = 0. 568080000. 631152000.# Restart file output times, given as "interval" "start period" "end period" (s)
+WaqInterval                       = 3600. 568080000. 631152000.# DELWAQ output times, given as "interval" "start period" "end period" (s)
+ClassMapInterval                  = 0. 568080000. 631152000.# Class map output times, given as "interval" "start period" "end period" (s)
+ClassMapFile                      =                     # ClassMapFile name *_clm.nc
+WaterlevelClasses                 =                     # Class map's list of class values for water levels
+WaterDepthClasses                 =                     # Class map's list of class values for water depths
+StatsInterval                     = -60.                # Screen step output interval in seconds simulation time, if negative in seconds wall clock time
+WriteBalancefile                  = 0                   # Write balance file (1: yes, 0: no)
+TimingsInterval                   = 0.                  # Timings statistics output interval
+TimeSplitInterval                 = 0X                  # Time splitting interval, after which a new output file is started. value+unit, e.g. '1 M', valid units: Y,M,D,h,m,s.
+MapFormat                         = 4                   # Map file format, 1: netCDF, 2: Tecplot, 3: netCFD and Tecplot, 4: NetCDF-UGRID
+Wrihis_balance                    = 0                   # Write mass balance totals to his file (1: yes, 0: no)
+Wrihis_sourcesink                 = 1                   # Write sources-sinks statistics to his file (1=yes, 0=no)
+Wrihis_structure_gen              = 1                   # Write general structure parameters to his file (1: yes, 0: no)
+Wrihis_structure_dam              = 1                   # Write dam parameters to his file (1: yes, 0: no)
+Wrihis_structure_pump             = 1                   # Write pump parameters to his file (1: yes, 0: no)
+Wrihis_structure_gate             = 1                   # Write gate parameters to his file (1: yes, 0: no)
+Wrihis_structure_weir             = 1                   # Write weir parameters to his file (1: yes, 0: no)
+Wrihis_turbulence                 = 1                   # Write k, eps and vicww to his file (1: yes, 0: no)
+Wrihis_wind                       = 1                   # Write wind velocities to his file (1: yes, 0: no)
+Wrihis_rain                       = 1                   # Write precipitation to his file (1: yes, 0: no)
+Wrihis_temperature                = 1                   # Write temperature to his file (1: yes, 0: no)
+Wrihis_waves                      = 1                   # Write wave data to his file (1: yes, 0: no)
+Wrihis_heat_fluxes                = 0                   # Write heat fluxes to his file (1: yes, 0: no)
+Wrihis_salinity                   = 1                   # Write salinity to his file (1: yes, 0: no)
+Wrihis_density                    = 1                   # Write density to his file (1: yes, 0: no)
+Wrihis_waterlevel_s1              = 1                   # Write water level to his file (1: yes, 0: no)
+Wrihis_bedlevel                   = 1                   # Write bed level to his file (1: yes, 0: no)
+Wrihis_waterdepth                 = 0                   # Write waterd epth to his file (1: yes, 0: no)
+Wrihis_velocity_vector            = 1                   # Write velocity vectors to his file (1: yes, 0: no)
+Wrihis_upward_velocity_component  = 0                   # Write upward velocity to his file (1: yes, 0: no)
+Wrihis_sediment                   = 1                   # Write sediment transport to his file (1: yes, 0: no)
+Wrihis_constituents               = 1                   # Write tracers to his file (1: yes, 0: no)
+Wrihis_zcor                       = 1                   # Write vertical coordinates to his file (1: yes, 0: no)
+Wrimap_waterlevel_s0              = 0                   # Write water levels for previous time step to map file (1: yes, 0: no)
+Wrimap_waterlevel_s1              = 1                   # Write water levels to map file (1: yes, 0: no)
+Wrimap_volume1                    = 0                   # Write volumes to map file (1: yes, 0: no)
+Wrimap_velocity_component_u0      = 0                   # Write velocity component for previous time step to map file (1: yes, 0: no)
+Wrimap_velocity_component_u1      = 1                   # Write velocity component to map file (1: yes, 0: no)
+Wrimap_velocity_vector            = 1                   # Write cell-center velocity vectors to map file (1: yes, 0: no)
+Wrimap_velocity_magnitude         = 1                   # Write cell-center velocity vector magnitude to map file (1: yes, 0: no)
+Wrimap_velocity_vectorq           = 0                   # Write cell-center velocity vectors (discharge-based) to map file (1: yes, 0: no)
+Wrimap_upward_velocity_component  = 0                   # Write upward velocity component on cell interfaces (1: yes, 0: no)
+Wrimap_density_rho                = 1                   # Write flow density to map file (1: yes, 0: no)
+Wrimap_horizontal_viscosity_viu   = 1                   # Write horizontal viscosity to map file (1: yes, 0: no)
+Wrimap_horizontal_diffusivity_diu = 1                   # Write horizontal diffusivity to map file (1: yes, 0: no)
+Wrimap_flow_flux_q1               = 1                   # Write flow flux to map file (1: yes, 0: no)
+Wrimap_flow_flux_q1_main          = 0                   # Write flow flux in main channel to map file (1: yes, 0: no)
+Wrimap_numlimdt                   = 1                   # Write the number times a cell was Courant limiting to map file (1: yes, 0: no)
+Wrimap_taucurrent                 = 1                   # Write the shear stress to map file (1: yes, 0: no)
+Wrimap_chezy                      = 1                   # Write the chezy roughness to map file (1: yes, 0: no)
+Wrimap_turbulence                 = 1                   # Write vicww, k and eps to map file (1: yes, 0: no)
+Wrimap_wind                       = 1                   # Write wind velocities to map file (1: yes, 0: no)
+Writek_CdWind                     = 1                   # Write wind friction coeffs to tek file (1: yes, 0: no)
+Wrishp_crs                        = 0                   # Write a shape file for cress sections
+Wrishp_obs                        = 0                   # Write a shape file for observation points
+Wrishp_weir                       = 0                   # Write a shape file for weirs
+Wrishp_thd                        = 0                   # Write a shape file for thin dams
+Wrishp_gate                       = 0                   # Write a shape file for gates
+Wrishp_emb                        = 0                   # Write a shape file for embankments
+Wrishp_fxw                        = 0                   # Write a shape file for fixed weirs
+Wrishp_src                        = 0                   # Write a shape file for sourse-sinks
+Wrishp_pump                       = 0                   # Write a shape file for pumps
+Wrishp_dryarea                    = 0                   # Write a shape file for dry areas
+Writepart_domain                  = 1                   # Write partition domain info. for postprocessing
+Wrishp_crs                        = 0                   # Write grid-snapped cross sections to shapefile (1: yes, 0: no)
+Wrishp_obs                        = 0                   # Write grid-snapped observation stations to shapefile (1: yes, 0: no)
+Wrishp_weir                       = 0                   # Write grid-snapped weirs to shapefile (1: yes, 0: no)
+Wrishp_thd                        = 0                   # Write grid-snapped thin dams to shapefile (1: yes, 0: no)
+Wrishp_gate                       = 0                   # Write grid-snapped gates to shapefile (1: yes, 0: no)
+Wrishp_emb                        = 0                   # Write grid-snapped 1d2d embankments to shapefile (1: yes, 0: no)
+Wrishp_fxw                        = 0                   # Write grid-snapped fixed weirs to shapefile (1: yes, 0: no)
+Wrishp_src                        = 0                   # Write grid-snapped source-sinks to shapefile (1: yes, 0: no)
+Wrishp_pump                       = 0                   # Write grid-snapped pumps to shapefile (1: yes, 0: no)
+WriteDFMinterpretedvalues         = 0                   # Write DFMinterpretedvalues (1: yes, 0: no)
+MapOutputTimeVector               =                     # File (*.mpt) containing fixed map output times (s) w.r.t. RefDate
+FullGridOutput                    = 0                   # Full grid output mode (0: compact, 1: full time-varying grid data)
+EulerVelocities                   = 0                   # Euler velocities output (0: GLM, 1: Euler velocities)
+Wrirst_bnd                        = 1                   # Write waterlevel, bedlevel and coordinates of boundaries to restart files
+
+[particles]
+ParticlesFile                     = 
+AddTracer                         = 0                   # add tracer (1) or not (other)
+StartTime                         = 0.                  # starttime (if >0)
+TimeStep                          = 0.                  # time step (>0) or every computational time step
+3Dtype                            = 0                   # 3D type: depth averaged (0) or free surface (1)
+** INFO   : **
+** INFO   : Writing initial output to file(s)...
+** DEBUG  : Opened NetCDF file 'DFM_OUTPUT_FlowFM\FlowFM_his.nc' as #131072.
+** DEBUG  : Opened NetCDF file 'DFM_OUTPUT_FlowFM\FlowFM_map.nc' as #196608.
+** INFO   : In waq_wri_model_files().
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.hyd
+** INFO   : Closed file : DFM_DELWAQ_FlowFM\FlowFM.hyd
+** DEBUG  : Opened NetCDF file 'DFM_DELWAQ_FlowFM\FlowFM_waqgeom.nc' as #262144.
+** DEBUG  : Closed NetCDF file 'DFM_DELWAQ_FlowFM\FlowFM_waqgeom.nc.
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.bnd
+** INFO   : Closed file : DFM_DELWAQ_FlowFM\FlowFM.bnd
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.poi
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.len
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.srf
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.srfold
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.atr
+** INFO   :  In waq_wri_couple_files: #           0 , time:    568080000.000000
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.vol
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.tau
+** INFO   : Done writing initial output to file(s).
+** INFO   :  In waq_wri_couple_files: #           1 , time:    568083600.000000
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.are
+** INFO   : Opened file : DFM_DELWAQ_FlowFM\FlowFM.flo
+** INFO   :  In waq_wri_couple_files: #           2 , time:    568087200.000000
+** INFO   :  In waq_wri_couple_files: #           3 , time:    568090800.000000
+** INFO   :  In waq_wri_couple_files: #           4 , time:    568094400.000000
+** INFO   :  In waq_wri_couple_files: #           5 , time:    568098000.000000
+** INFO   :  In waq_wri_couple_files: #           6 , time:    568101600.000000
+** INFO   :  In waq_wri_couple_files: #           7 , time:    568105200.000000
+** INFO   :  In waq_wri_couple_files: #           8 , time:    568108800.000000
+** INFO   :  In waq_wri_couple_files: #           9 , time:    568112400.000000
+** INFO   :  In waq_wri_couple_files: #          10 , time:    568116000.000000
+** INFO   :  In waq_wri_couple_files: #          11 , time:    568119600.000000
+** INFO   :  In waq_wri_couple_files: #          12 , time:    568123200.000000
+** INFO   :  In waq_wri_couple_files: #          13 , time:    568126800.000000
+** INFO   :  In waq_wri_couple_files: #          14 , time:    568130400.000000
+** INFO   :  In waq_wri_couple_files: #          15 , time:    568134000.000000
+** INFO   :  In waq_wri_couple_files: #          16 , time:    568137600.000000
+** INFO   :  In waq_wri_couple_files: #          17 , time:    568141200.000000
+** INFO   :  In waq_wri_couple_files: #          18 , time:    568144800.000000
+** INFO   :  In waq_wri_couple_files: #          19 , time:    568148400.000000
+** INFO   :  In waq_wri_couple_files: #          20 , time:    568152000.000000
+** INFO   :  In waq_wri_couple_files: #          21 , time:    568155600.000000
+** INFO   :  In waq_wri_couple_files: #          22 , time:    568159200.000000
+** INFO   :  In waq_wri_couple_files: #          23 , time:    568162800.000000
+** INFO   :  In waq_wri_couple_files: #          24 , time:    568166400.000000
+** INFO   :  In waq_wri_couple_files: #          25 , time:    568170000.000000
+** INFO   :  In waq_wri_couple_files: #          26 , time:    568173600.000000
+** INFO   :  In waq_wri_couple_files: #          27 , time:    568177200.000000
+** INFO   :  In waq_wri_couple_files: #          28 , time:    568180800.000000
+** INFO   :  In waq_wri_couple_files: #          29 , time:    568184400.000000
+** INFO   :  In waq_wri_couple_files: #          30 , time:    568188000.000000
+** INFO   :  In waq_wri_couple_files: #          31 , time:    568191600.000000
+** INFO   :  In waq_wri_couple_files: #          32 , time:    568195200.000000
+** INFO   :  In waq_wri_couple_files: #          33 , time:    568198800.000000
+** INFO   :  In waq_wri_couple_files: #          34 , time:    568202400.000000
+** INFO   :  In waq_wri_couple_files: #          35 , time:    568206000.000000
+** INFO   :  In waq_wri_couple_files: #          36 , time:    568209600.000000
+** INFO   :  In waq_wri_couple_files: #          37 , time:    568213200.000000
+** INFO   :  In waq_wri_couple_files: #          38 , time:    568216800.000000
+** INFO   :  In waq_wri_couple_files: #          39 , time:    568220400.000000
+** INFO   :  In waq_wri_couple_files: #          40 , time:    568224000.000000
+** INFO   :  In waq_wri_couple_files: #          41 , time:    568227600.000000
+** INFO   :  In waq_wri_couple_files: #          42 , time:    568231200.000000
+** INFO   :  In waq_wri_couple_files: #          43 , time:    568234800.000000
+** INFO   :  In waq_wri_couple_files: #          44 , time:    568238400.000000
+** INFO   :  In waq_wri_couple_files: #          45 , time:    568242000.000000
+** INFO   :  In waq_wri_couple_files: #          46 , time:    568245600.000000
+** INFO   :  In waq_wri_couple_files: #          47 , time:    568249200.000000
+** INFO   :  In waq_wri_couple_files: #          48 , time:    568252800.000000
+** INFO   :  In waq_wri_couple_files: #          49 , time:    568256400.000000
+** INFO   :  In waq_wri_couple_files: #          50 , time:    568260000.000000
+** INFO   :  In waq_wri_couple_files: #          51 , time:    568263600.000000
+** INFO   :  In waq_wri_couple_files: #          52 , time:    568267200.000000
+** INFO   :  In waq_wri_couple_files: #          53 , time:    568270800.000000
+** INFO   :  In waq_wri_couple_files: #          54 , time:    568274400.000000
+** INFO   :  In waq_wri_couple_files: #          55 , time:    568278000.000000
+** INFO   :  In waq_wri_couple_files: #          56 , time:    568281600.000000
+** INFO   :  In waq_wri_couple_files: #          57 , time:    568285200.000000
+** INFO   :  In waq_wri_couple_files: #          58 , time:    568288800.000000
+** INFO   :  In waq_wri_couple_files: #          59 , time:    568292400.000000
+** INFO   :  In waq_wri_couple_files: #          60 , time:    568296000.000000
+** INFO   :  In waq_wri_couple_files: #          61 , time:    568299600.000000
+** INFO   :  In waq_wri_couple_files: #          62 , time:    568303200.000000
+** INFO   :  In waq_wri_couple_files: #          63 , time:    568306800.000000
+** INFO   :  In waq_wri_couple_files: #          64 , time:    568310400.000000
+** INFO   :  In waq_wri_couple_files: #          65 , time:    568314000.000000
+** INFO   :  In waq_wri_couple_files: #          66 , time:    568317600.000000
+** INFO   :  In waq_wri_couple_files: #          67 , time:    568321200.000000
+** INFO   :  In waq_wri_couple_files: #          68 , time:    568324800.000000
+** INFO   :  In waq_wri_couple_files: #          69 , time:    568328400.000000
+** INFO   :  In waq_wri_couple_files: #          70 , time:    568332000.000000
+** INFO   :  In waq_wri_couple_files: #          71 , time:    568335600.000000
+** INFO   :  In waq_wri_couple_files: #          72 , time:    568339200.000000
+** INFO   :  In waq_wri_couple_files: #          73 , time:    568342800.000000
+** INFO   :  In waq_wri_couple_files: #          74 , time:    568346400.000000
+** INFO   :  In waq_wri_couple_files: #          75 , time:    568350000.000000
+** INFO   :  In waq_wri_couple_files: #          76 , time:    568353600.000000
+** INFO   :  In waq_wri_couple_files: #          77 , time:    568357200.000000
+** INFO   :  In waq_wri_couple_files: #          78 , time:    568360800.000000
+** INFO   :  In waq_wri_couple_files: #          79 , time:    568364400.000000
+** INFO   :  In waq_wri_couple_files: #          80 , time:    568368000.000000
+** INFO   :  In waq_wri_couple_files: #          81 , time:    568371600.000000
+** INFO   :  In waq_wri_couple_files: #          82 , time:    568375200.000000
+** INFO   :  In waq_wri_couple_files: #          83 , time:    568378800.000000
+** INFO   :  In waq_wri_couple_files: #          84 , time:    568382400.000000
+** INFO   :  In waq_wri_couple_files: #          85 , time:    568386000.000000
+** INFO   :  In waq_wri_couple_files: #          86 , time:    568389600.000000
+** INFO   :  In waq_wri_couple_files: #          87 , time:    568393200.000000
+** INFO   :  In waq_wri_couple_files: #          88 , time:    568396800.000000
+** INFO   :  In waq_wri_couple_files: #          89 , time:    568400400.000000
+** INFO   :  In waq_wri_couple_files: #          90 , time:    568404000.000000
+** INFO   :  In waq_wri_couple_files: #          91 , time:    568407600.000000
+** INFO   :  In waq_wri_couple_files: #          92 , time:    568411200.000000
+** INFO   :  In waq_wri_couple_files: #          93 , time:    568414800.000000
+** INFO   :  In waq_wri_couple_files: #          94 , time:    568418400.000000
+** INFO   :  In waq_wri_couple_files: #          95 , time:    568422000.000000
+** INFO   :  In waq_wri_couple_files: #          96 , time:    568425600.000000
+** INFO   :  In waq_wri_couple_files: #          97 , time:    568429200.000000
+** INFO   :  In waq_wri_couple_files: #          98 , time:    568432800.000000
+** INFO   :  In waq_wri_couple_files: #          99 , time:    568436400.000000
+** INFO   :  In waq_wri_couple_files: #         100 , time:    568440000.000000
+** INFO   :  In waq_wri_couple_files: #         101 , time:    568443600.000000
+** INFO   :  In waq_wri_couple_files: #         102 , time:    568447200.000000
+** INFO   :  In waq_wri_couple_files: #         103 , time:    568450800.000000
+** INFO   :  In waq_wri_couple_files: #         104 , time:    568454400.000000
+** INFO   :  In waq_wri_couple_files: #         105 , time:    568458000.000000
+** INFO   :  In waq_wri_couple_files: #         106 , time:    568461600.000000
+** INFO   :  In waq_wri_couple_files: #         107 , time:    568465200.000000
+** INFO   :  In waq_wri_couple_files: #         108 , time:    568468800.000000
+** INFO   :  In waq_wri_couple_files: #         109 , time:    568472400.000000
+** INFO   :  In waq_wri_couple_files: #         110 , time:    568476000.000000
+** INFO   :  In waq_wri_couple_files: #         111 , time:    568479600.000000
+** INFO   :  In waq_wri_couple_files: #         112 , time:    568483200.000000
+** INFO   :  In waq_wri_couple_files: #         113 , time:    568486800.000000
+** INFO   :  In waq_wri_couple_files: #         114 , time:    568490400.000000
+** INFO   :  In waq_wri_couple_files: #         115 , time:    568494000.000000
+** INFO   :  In waq_wri_couple_files: #         116 , time:    568497600.000000
+** INFO   :  In waq_wri_couple_files: #         117 , time:    568501200.000000
+** INFO   :  In waq_wri_couple_files: #         118 , time:    568504800.000000
+** INFO   :  In waq_wri_couple_files: #         119 , time:    568508400.000000
+** INFO   :  In waq_wri_couple_files: #         120 , time:    568512000.000000
+** INFO   :  In waq_wri_couple_files: #         121 , time:    568515600.000000
+** INFO   :  In waq_wri_couple_files: #         122 , time:    568519200.000000
+** INFO   :  In waq_wri_couple_files: #         123 , time:    568522800.000000
+** INFO   :  In waq_wri_couple_files: #         124 , time:    568526400.000000
+** INFO   :  In waq_wri_couple_files: #         125 , time:    568530000.000000
+** INFO   :  In waq_wri_couple_files: #         126 , time:    568533600.000000
+** INFO   :  In waq_wri_couple_files: #         127 , time:    568537200.000000
+** INFO   :  In waq_wri_couple_files: #         128 , time:    568540800.000000
+** INFO   :  In waq_wri_couple_files: #         129 , time:    568544400.000000
+** INFO   :  In waq_wri_couple_files: #         130 , time:    568548000.000000
+** INFO   :  In waq_wri_couple_files: #         131 , time:    568551600.000000
+** INFO   :  In waq_wri_couple_files: #         132 , time:    568555200.000000
+** INFO   :  In waq_wri_couple_files: #         133 , time:    568558800.000000
+** INFO   :  In waq_wri_couple_files: #         134 , time:    568562400.000000
+** INFO   :  In waq_wri_couple_files: #         135 , time:    568566000.000000
+** INFO   :  In waq_wri_couple_files: #         136 , time:    568569600.000000
+** INFO   :  In waq_wri_couple_files: #         137 , time:    568573200.000000
+** INFO   :  In waq_wri_couple_files: #         138 , time:    568576800.000000
+** INFO   :  In waq_wri_couple_files: #         139 , time:    568580400.000000
+** INFO   :  In waq_wri_couple_files: #         140 , time:    568584000.000000
+** INFO   :  In waq_wri_couple_files: #         141 , time:    568587600.000000
+** INFO   :  In waq_wri_couple_files: #         142 , time:    568591200.000000
+** INFO   :  In waq_wri_couple_files: #         143 , time:    568594800.000000
+** INFO   :  In waq_wri_couple_files: #         144 , time:    568598400.000000
+** INFO   :  In waq_wri_couple_files: #         145 , time:    568602000.000000
+** INFO   :  In waq_wri_couple_files: #         146 , time:    568605600.000000
+** INFO   :  In waq_wri_couple_files: #         147 , time:    568609200.000000
+** INFO   :  In waq_wri_couple_files: #         148 , time:    568612800.000000
+** INFO   :  In waq_wri_couple_files: #         149 , time:    568616400.000000
+** INFO   :  In waq_wri_couple_files: #         150 , time:    568620000.000000
+** INFO   :  In waq_wri_couple_files: #         151 , time:    568623600.000000
+** INFO   :  In waq_wri_couple_files: #         152 , time:    568627200.000000
+** INFO   :  In waq_wri_couple_files: #         153 , time:    568630800.000000
+** INFO   :  In waq_wri_couple_files: #         154 , time:    568634400.000000
+** INFO   :  In waq_wri_couple_files: #         155 , time:    568638000.000000
+** INFO   :  In waq_wri_couple_files: #         156 , time:    568641600.000000
+** INFO   :  In waq_wri_couple_files: #         157 , time:    568645200.000000
+** INFO   :  In waq_wri_couple_files: #         158 , time:    568648800.000000
+** INFO   :  In waq_wri_couple_files: #         159 , time:    568652400.000000
+** INFO   :  In waq_wri_couple_files: #         160 , time:    568656000.000000
+** INFO   :  In waq_wri_couple_files: #         161 , time:    568659600.000000
+** INFO   :  In waq_wri_couple_files: #         162 , time:    568663200.000000
+** INFO   :  In waq_wri_couple_files: #         163 , time:    568666800.000000
+** INFO   :  In waq_wri_couple_files: #         164 , time:    568670400.000000
+** INFO   :  In waq_wri_couple_files: #         165 , time:    568674000.000000
+** INFO   :  In waq_wri_couple_files: #         166 , time:    568677600.000000
+** INFO   :  In waq_wri_couple_files: #         167 , time:    568681200.000000
+** INFO   :  In waq_wri_couple_files: #         168 , time:    568684800.000000
+** INFO   :  In waq_wri_couple_files: #         169 , time:    568688400.000000
+** INFO   :  In waq_wri_couple_files: #         170 , time:    568692000.000000
+** INFO   :  In waq_wri_couple_files: #         171 , time:    568695600.000000
+** INFO   :  In waq_wri_couple_files: #         172 , time:    568699200.000000
+** INFO   :  In waq_wri_couple_files: #         173 , time:    568702800.000000
+** INFO   :  In waq_wri_couple_files: #         174 , time:    568706400.000000
+** INFO   :  In waq_wri_couple_files: #         175 , time:    568710000.000000
+** INFO   :  In waq_wri_couple_files: #         176 , time:    568713600.000000
+** INFO   :  In waq_wri_couple_files: #         177 , time:    568717200.000000
+** INFO   :  In waq_wri_couple_files: #         178 , time:    568720800.000000
+** INFO   :  In waq_wri_couple_files: #         179 , time:    568724400.000000
+** INFO   :  In waq_wri_couple_files: #         180 , time:    568728000.000000
+** INFO   :  In waq_wri_couple_files: #         181 , time:    568731600.000000
+** INFO   :  In waq_wri_couple_files: #         182 , time:    568735200.000000
+** INFO   :  In waq_wri_couple_files: #         183 , time:    568738800.000000
+** INFO   :  In waq_wri_couple_files: #         184 , time:    568742400.000000
+** INFO   :  In waq_wri_couple_files: #         185 , time:    568746000.000000
+** INFO   :  In waq_wri_couple_files: #         186 , time:    568749600.000000
+** INFO   :  In waq_wri_couple_files: #         187 , time:    568753200.000000
+** INFO   :  In waq_wri_couple_files: #         188 , time:    568756800.000000
+** INFO   :  In waq_wri_couple_files: #         189 , time:    568760400.000000
+** INFO   :  In waq_wri_couple_files: #         190 , time:    568764000.000000
+** INFO   :  In waq_wri_couple_files: #         191 , time:    568767600.000000
+** INFO   :  In waq_wri_couple_files: #         192 , time:    568771200.000000
+** INFO   :  In waq_wri_couple_files: #         193 , time:    568774800.000000
+** INFO   :  In waq_wri_couple_files: #         194 , time:    568778400.000000
+** INFO   :  In waq_wri_couple_files: #         195 , time:    568782000.000000
+** INFO   :  In waq_wri_couple_files: #         196 , time:    568785600.000000
+** INFO   :  In waq_wri_couple_files: #         197 , time:    568789200.000000
+** INFO   :  In waq_wri_couple_files: #         198 , time:    568792800.000000
+** INFO   :  In waq_wri_couple_files: #         199 , time:    568796400.000000
+** INFO   :  In waq_wri_couple_files: #         200 , time:    568800000.000000
+** INFO   :  In waq_wri_couple_files: #         201 , time:    568803600.000000
+** INFO   :  In waq_wri_couple_files: #         202 , time:    568807200.000000
+** INFO   :  In waq_wri_couple_files: #         203 , time:    568810800.000000
+** INFO   :  In waq_wri_couple_files: #         204 , time:    568814400.000000
+** INFO   :  In waq_wri_couple_files: #         205 , time:    568818000.000000
+** INFO   :  In waq_wri_couple_files: #         206 , time:    568821600.000000
+** INFO   :  In waq_wri_couple_files: #         207 , time:    568825200.000000
+** INFO   :  In waq_wri_couple_files: #         208 , time:    568828800.000000
+** INFO   :  In waq_wri_couple_files: #         209 , time:    568832400.000000
+** INFO   :  In waq_wri_couple_files: #         210 , time:    568836000.000000
+** INFO   :  In waq_wri_couple_files: #         211 , time:    568839600.000000
+** INFO   :  In waq_wri_couple_files: #         212 , time:    568843200.000000
+** INFO   :  In waq_wri_couple_files: #         213 , time:    568846800.000000
+** INFO   :  In waq_wri_couple_files: #         214 , time:    568850400.000000
+** INFO   :  In waq_wri_couple_files: #         215 , time:    568854000.000000
+** INFO   :  In waq_wri_couple_files: #         216 , time:    568857600.000000
+** INFO   :  In waq_wri_couple_files: #         217 , time:    568861200.000000
+** INFO   :  In waq_wri_couple_files: #         218 , time:    568864800.000000
+** INFO   :  In waq_wri_couple_files: #         219 , time:    568868400.000000
+** INFO   :  In waq_wri_couple_files: #         220 , time:    568872000.000000
+** INFO   :  In waq_wri_couple_files: #         221 , time:    568875600.000000
+** INFO   :  In waq_wri_couple_files: #         222 , time:    568879200.000000
+** INFO   :  In waq_wri_couple_files: #         223 , time:    568882800.000000
+** INFO   :  In waq_wri_couple_files: #         224 , time:    568886400.000000
+** INFO   :  In waq_wri_couple_files: #         225 , time:    568890000.000000
+** INFO   :  In waq_wri_couple_files: #         226 , time:    568893600.000000
+** INFO   :  In waq_wri_couple_files: #         227 , time:    568897200.000000
+** INFO   :  In waq_wri_couple_files: #         228 , time:    568900800.000000
+** INFO   :  In waq_wri_couple_files: #         229 , time:    568904400.000000
+** INFO   :  In waq_wri_couple_files: #         230 , time:    568908000.000000
+** INFO   :  In waq_wri_couple_files: #         231 , time:    568911600.000000
+** INFO   :  In waq_wri_couple_files: #         232 , time:    568915200.000000
+** INFO   :  In waq_wri_couple_files: #         233 , time:    568918800.000000
+** INFO   :  In waq_wri_couple_files: #         234 , time:    568922400.000000
+** INFO   :  In waq_wri_couple_files: #         235 , time:    568926000.000000
+** INFO   :  In waq_wri_couple_files: #         236 , time:    568929600.000000
+** INFO   :  In waq_wri_couple_files: #         237 , time:    568933200.000000
+** INFO   :  In waq_wri_couple_files: #         238 , time:    568936800.000000
+** INFO   :  In waq_wri_couple_files: #         239 , time:    568940400.000000
+** INFO   :  In waq_wri_couple_files: #         240 , time:    568944000.000000
+** INFO   :  In waq_wri_couple_files: #         241 , time:    568947600.000000
+** INFO   :  In waq_wri_couple_files: #         242 , time:    568951200.000000
+** INFO   :  In waq_wri_couple_files: #         243 , time:    568954800.000000
+** INFO   :  In waq_wri_couple_files: #         244 , time:    568958400.000000
+** INFO   :  In waq_wri_couple_files: #         245 , time:    568962000.000000
+** INFO   :  In waq_wri_couple_files: #         246 , time:    568965600.000000
+** INFO   :  In waq_wri_couple_files: #         247 , time:    568969200.000000
+** INFO   :  In waq_wri_couple_files: #         248 , time:    568972800.000000
+** INFO   :  In waq_wri_couple_files: #         249 , time:    568976400.000000
+** INFO   :  In waq_wri_couple_files: #         250 , time:    568980000.000000
+** INFO   :  In waq_wri_couple_files: #         251 , time:    568983600.000000
+** INFO   :  In waq_wri_couple_files: #         252 , time:    568987200.000000
+** INFO   :  In waq_wri_couple_files: #         253 , time:    568990800.000000
+** INFO   :  In waq_wri_couple_files: #         254 , time:    568994400.000000
+** INFO   :  In waq_wri_couple_files: #         255 , time:    568998000.000000
+** INFO   :  In waq_wri_couple_files: #         256 , time:    569001600.000000
+** INFO   :  In waq_wri_couple_files: #         257 , time:    569005200.000000
+** INFO   :  In waq_wri_couple_files: #         258 , time:    569008800.000000
+** INFO   :  In waq_wri_couple_files: #         259 , time:    569012400.000000
+** INFO   :  In waq_wri_couple_files: #         260 , time:    569016000.000000
+** INFO   :  In waq_wri_couple_files: #         261 , time:    569019600.000000
+** INFO   :  In waq_wri_couple_files: #         262 , time:    569023200.000000
+** INFO   :  In waq_wri_couple_files: #         263 , time:    569026800.000000
+** INFO   :  In waq_wri_couple_files: #         264 , time:    569030400.000000
+** INFO   :  In waq_wri_couple_files: #         265 , time:    569034000.000000
+** INFO   :  In waq_wri_couple_files: #         266 , time:    569037600.000000
+** INFO   :  In waq_wri_couple_files: #         267 , time:    569041200.000000
+** INFO   :  In waq_wri_couple_files: #         268 , time:    569044800.000000
+** INFO   :  In waq_wri_couple_files: #         269 , time:    569048400.000000
+** INFO   :  In waq_wri_couple_files: #         270 , time:    569052000.000000
+** INFO   :  In waq_wri_couple_files: #         271 , time:    569055600.000000
+** INFO   :  In waq_wri_couple_files: #         272 , time:    569059200.000000
+** INFO   :  In waq_wri_couple_files: #         273 , time:    569062800.000000
+** INFO   :  In waq_wri_couple_files: #         274 , time:    569066400.000000
+** INFO   :  In waq_wri_couple_files: #         275 , time:    569070000.000000
+** INFO   :  In waq_wri_couple_files: #         276 , time:    569073600.000000
+** INFO   :  In waq_wri_couple_files: #         277 , time:    569077200.000000
+** INFO   :  In waq_wri_couple_files: #         278 , time:    569080800.000000
+** INFO   :  In waq_wri_couple_files: #         279 , time:    569084400.000000
+** INFO   :  In waq_wri_couple_files: #         280 , time:    569088000.000000
+** INFO   :  In waq_wri_couple_files: #         281 , time:    569091600.000000
+** INFO   :  In waq_wri_couple_files: #         282 , time:    569095200.000000
+** INFO   :  In waq_wri_couple_files: #         283 , time:    569098800.000000
+** INFO   :  In waq_wri_couple_files: #         284 , time:    569102400.000000
+** INFO   :  In waq_wri_couple_files: #         285 , time:    569106000.000000
+** INFO   :  In waq_wri_couple_files: #         286 , time:    569109600.000000
+** INFO   :  In waq_wri_couple_files: #         287 , time:    569113200.000000
+** INFO   :  In waq_wri_couple_files: #         288 , time:    569116800.000000
+** INFO   :  In waq_wri_couple_files: #         289 , time:    569120400.000000
+** INFO   :  In waq_wri_couple_files: #         290 , time:    569124000.000000
+** INFO   :  In waq_wri_couple_files: #         291 , time:    569127600.000000
+** INFO   :  In waq_wri_couple_files: #         292 , time:    569131200.000000
+** INFO   :  In waq_wri_couple_files: #         293 , time:    569134800.000000
+** INFO   :  In waq_wri_couple_files: #         294 , time:    569138400.000000
+** INFO   :  In waq_wri_couple_files: #         295 , time:    569142000.000000
+** INFO   :  In waq_wri_couple_files: #         296 , time:    569145600.000000
+** INFO   :  In waq_wri_couple_files: #         297 , time:    569149200.000000
+** INFO   :  In waq_wri_couple_files: #         298 , time:    569152800.000000
+** INFO   :  In waq_wri_couple_files: #         299 , time:    569156400.000000
+** INFO   :  In waq_wri_couple_files: #         300 , time:    569160000.000000
+** INFO   :  In waq_wri_couple_files: #         301 , time:    569163600.000000
+** INFO   :  In waq_wri_couple_files: #         302 , time:    569167200.000000
+** INFO   :  In waq_wri_couple_files: #         303 , time:    569170800.000000
+** INFO   :  In waq_wri_couple_files: #         304 , time:    569174400.000000
+** INFO   :  In waq_wri_couple_files: #         305 , time:    569178000.000000
+** INFO   :  In waq_wri_couple_files: #         306 , time:    569181600.000000
+** INFO   :  In waq_wri_couple_files: #         307 , time:    569185200.000000
+** INFO   :  In waq_wri_couple_files: #         308 , time:    569188800.000000
+** INFO   :  In waq_wri_couple_files: #         309 , time:    569192400.000000
+** INFO   :  In waq_wri_couple_files: #         310 , time:    569196000.000000
+** INFO   :  In waq_wri_couple_files: #         311 , time:    569199600.000000
+** INFO   :  In waq_wri_couple_files: #         312 , time:    569203200.000000
+** INFO   :  In waq_wri_couple_files: #         313 , time:    569206800.000000
+** INFO   :  In waq_wri_couple_files: #         314 , time:    569210400.000000
+** INFO   :  In waq_wri_couple_files: #         315 , time:    569214000.000000
+** INFO   :  In waq_wri_couple_files: #         316 , time:    569217600.000000
+** INFO   :  In waq_wri_couple_files: #         317 , time:    569221200.000000
+** INFO   :  In waq_wri_couple_files: #         318 , time:    569224800.000000
+** INFO   :  In waq_wri_couple_files: #         319 , time:    569228400.000000
+** INFO   :  In waq_wri_couple_files: #         320 , time:    569232000.000000
+** INFO   :  In waq_wri_couple_files: #         321 , time:    569235600.000000
+** INFO   :  In waq_wri_couple_files: #         322 , time:    569239200.000000
+** INFO   :  In waq_wri_couple_files: #         323 , time:    569242800.000000
+** INFO   :  In waq_wri_couple_files: #         324 , time:    569246400.000000
+** INFO   :  In waq_wri_couple_files: #         325 , time:    569250000.000000
+** INFO   :  In waq_wri_couple_files: #         326 , time:    569253600.000000
+** INFO   :  In waq_wri_couple_files: #         327 , time:    569257200.000000
+** INFO   :  In waq_wri_couple_files: #         328 , time:    569260800.000000
+** INFO   :  In waq_wri_couple_files: #         329 , time:    569264400.000000
+** INFO   :  In waq_wri_couple_files: #         330 , time:    569268000.000000
+** INFO   :  In waq_wri_couple_files: #         331 , time:    569271600.000000

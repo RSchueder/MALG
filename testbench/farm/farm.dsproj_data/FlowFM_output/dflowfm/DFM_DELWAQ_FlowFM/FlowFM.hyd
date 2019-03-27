@@ -1,0 +1,45 @@
+file-created-by  Deltares, D-Flow FM Version 1.2.0.61839M, Sep 13 2018, 15:48:25
+file-creation-date  2019-03-27, 13:17:24                                        
+task      full-coupling
+geometry  unstructured
+horizontal-aggregation no
+reference-time              '20000101000000'
+hydrodynamic-start-time     '20180101000000'
+hydrodynamic-stop-time      '20200101000000'
+hydrodynamic-timestep       '00000000010000'
+conversion-ref-time         '20000101000000'
+conversion-start-time       '20180101000000'
+conversion-stop-time        '20200101000000'
+conversion-timestep         '00000000010000'
+grid-cells-first-direction                    2500
+grid-cells-second-direction                      1
+number-hydrodynamic-segments-per-layer        2500
+number-hydrodynamic-layers                       1
+number-water-quality-segments-per-layer       2500
+number-water-quality-layers                      1
+number-horizontal-exchanges                   5000
+number-vertical-exchanges                        0
+hydrodynamic-file           'FlowFM'
+aggregation-file            none
+boundaries-file             'FlowFM.bnd'
+waqgeom-file                'FlowFM_waqgeom.nc'
+grid-indices-file           'FlowFM.bnd'
+grid-coordinates-file       'FlowFM_waqgeom.nc'
+volumes-file                'FlowFM.vol'
+areas-file                  'FlowFM.are'
+flows-file                  'FlowFM.flo'
+pointers-file               'FlowFM.poi'
+lengths-file                'FlowFM.len'
+salinity-file               none
+temperature-file            none
+vert-diffusion-file         none
+horizontal-surfaces-file    'FlowFM.srf'
+surfaces-file               'FlowFM.srfold'
+shear-stresses-file         'FlowFM.tau'
+attributes-file             'FlowFM.atr'
+hydrodynamic-layers
+       1.000000
+end-hydrodynamic-layers
+water-quality-layers   
+       1.000000
+end-water-quality-layers

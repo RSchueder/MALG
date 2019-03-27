@@ -209,16 +209,19 @@ DATA
  1.00000e+000 ; ONLY_ACTIVE
 ;
  CONSTANTS 'Latitude'  DATA 52
- CONSTANTS 'Vel'       DATA 0.06
- CONSTANTS 'ExtVl'     DATA 0.000001
- CONSTANTS 'LinDenMAL' DATA 10.0
+ CONSTANTS 'Vel'       DATA 0.15
+ CONSTANTS 'ExtVl'     DATA 0.07
+ CONSTANTS 'LinDenMAL' DATA 100.0
  CONSTANTS 'MALS0'     DATA 0.22
- CONSTANTS SWRear      DATA 10.0
- CONSTANTS SWRearCO2   DATA 11.0
+ CONSTANTS 'SWRear'      DATA 10.0
+ CONSTANTS 'SWRearCO2'   DATA 11.0
+ ;CONSTANTS Ksn         DATA 0.248
+ ;CONSTANTS JNmax DATA  0.0336
  ;CONSTANTS K0HrvMALS   DATA 0.01
  CONSTANTS 'LmaxMAL'   DATA 10.000   
  ;CONSTANTS 'SWGroDir'  DATA  -1.0 
  ;CONSTANTS FootDepth   DATA 2.00
+ 
  FUNCTIONS
  'Temp'
  LINEAR
@@ -300,7 +303,7 @@ DATA 10.0
 	  1.0 ;'POP2'
 	  1.0 ; 'DOC'
 	  18.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
-	  0.18 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal
+	  0.2 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
 	  0.1 ;'MALP'
 	  6.3 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
 ;
@@ -318,7 +321,7 @@ DATA 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-56 ; number of extra variables
+57 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -355,6 +358,7 @@ DATA 10.0
   'LimMALN' ' '                     ;x nitrogen storage limitation MALS                       (-)
   'LimMALP' ' '                     ;x phosphorous storage limitation MALS                    (-)
   'LimMALC' ' '                     ;x carbon storage limitation MALS                         (-)
+  'muMALS' ' '
   'LocGroPS' ' '                    ;x local gross production of MALS                         (DM/m2/d)           
   'LocNetPS' ' '                    ;x local net production of MALS                           (DM/m2/d)           
   'LocDecS' ' '                     ;x local decay of MALS                                    (DM/m2/d)           

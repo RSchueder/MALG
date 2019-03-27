@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/20 17:02:50 
+ Execution start: 2019/03/27 14:54:41 
                                                                                 
  found -p command line switch                                                   
 
@@ -362,7 +362,7 @@ total number of substances with fractions :  0
        [RadSurf             ] irradiation at the water surface                                      
        Using function nr  3                                                                         
        [ExtVl               ] total extinction coefficient visible light                            
-       Using constant nr 26 with value: 0.100000E-05                                                
+       Using constant nr 26 with value: 0.700000E-01                                                
        [alpha               ] salpha for density distribution Rayleigh                              
        using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
@@ -412,15 +412,15 @@ total number of substances with fractions :  0
        [PCRatMALS           ] P:C ratio in MALS                                                     
        using default value: 0.500000E-02                                                            
        [Ksn                 ] half saturation MALN N uptake                                         
-       using default value: 0.560000E-01                                                            
+       using default value: 0.126000E-01                                                            
        [Ksp                 ] half saturation MALN P uptake                                         
-       using default value: 0.123000                                                                
+       using default value: 0.126000E-01                                                            
        [JNmax               ] maximum MALN N uptake rate                                            
        using default value: 0.336000                                                                
        [JPmax               ] maximum MALP P uptake rate                                            
-       using default value: 0.743280                                                                
+       using default value: 0.336000                                                                
        [Vel                 ] velocity                                                              
-       Using constant nr 25 with value: 0.600000E-01                                                
+       Using constant nr 25 with value: 0.150000                                                    
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -512,7 +512,7 @@ total number of substances with fractions :  0
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
        using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
-       Using constant nr 27 with value:  10.0000                                                    
+       Using constant nr 27 with value:  100.000                                                    
        [ArDenMAL            ] grams/m2 surface area of frond                                        
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -751,6 +751,7 @@ total number of substances with fractions :  0
  output [LimMALN             ] from proces [FlMALS    ]                                             
  output [LimMALP             ] from proces [FlMALS    ]                                             
  output [LimMALC             ] from proces [FlMALS    ]                                             
+ output [muMALS              ] from proces [FlMALS    ]                                             
  output [LocGroPS            ] from proces [FlMALS    ]                                             
  output [LocNetPS            ] from proces [FlMALS    ]                                             
  output [LocDecS             ] from proces [FlMALS    ]                                             

@@ -34,13 +34,13 @@
   30                                0
   31                                0
   32 ASMASS                      1122
-  33 LOCAL                        530
+  33 LOCAL                        540
   34 DEFAUL                       141
   35 FLUX                         300
   36 STOCHI                       510
   37 FLXDMP                       300
   38 FLXINT                       330
-  39 RIOBUF                       803
+  39 RIOBUF                       814
   40 DISPX                          0
   41 VELX                           0
   42 VLOCX                          0
@@ -94,7 +94,7 @@
   90 flowtot                       18
   91 disptot                       18
 
-     Total (4 byte words)        6482
+     Total (4 byte words)        6503
 
   ==> INTEGER arrays 4-byte words <==
   nr array name            array size
@@ -123,11 +123,11 @@
   22 LGRID                          0
   23 NSVAR                         15
   24 IFLUX                         15
-  25 IPMSA                        290
-  26 IPSSA                        290
+  25 IPMSA                        291
+  26 IPSSA                        291
   27 IMODU                         15
   28 IOUTPS                        63
-  29 IOPOIN                       146
+  29 IOPOIN                       148
   30 IKNMRK                        10
   31 IKTIM                          0
   32 IQDMP                         18
@@ -152,15 +152,15 @@
   51                                0
   52 PROGRD                        15
   53 PRONDT                        15
-  54 PRVVAR                       290
-  55 PRVTYP                       290
-  56 VARARR                       319
-  57 VARIDX                       319
-  58 VARTDA                       319
-  59 VARDAG                       319
-  60 VARTAG                       319
-  61 VARAGG                       319
-  62 VGRSET                       319
+  54 PRVVAR                       291
+  55 PRVTYP                       291
+  56 VARARR                       320
+  57 VARIDX                       320
+  58 VARTDA                       320
+  59 VARDAG                       320
+  60 VARTAG                       320
+  61 VARAGG                       320
+  62 VGRSET                       320
   63 GRDNOS                         1
   64 GRDREF                         1
   65 GRDSEG                        10
@@ -178,7 +178,7 @@
   77 iexseg                        10
   78 isegcol                       10
 
-     Total (4 byte words)        5767
+     Total (4 byte words)        5780
 
   => CHARACTER arrays 4-byte words <=
   nr array name            array size
@@ -199,18 +199,18 @@
   14 SFNAM                          0
   15 CGRID                          0
   16 PRNAM                         75
-  17 OUNAM                        730
+  17 OUNAM                        740
   18 DINAM                          0
   19 VENAM                          0
   20 DANAM                         55
   21 RANAM                          0
-  22 CBUFF                        365
+  22 CBUFF                        370
   23 LUNT                           0
-  24 OUSNM                       3650
-  25 OUUNI                       1460
-  26 OUDSC                       2190
+  24 OUSNM                       3700
+  25 OUUNI                       1480
+  26 OUDSC                       2220
   27 OSSNM                        425
   28 OSUNI                        170
   29 OSDSC                        255
 
-     Total (4 byte words)        9695
+     Total (4 byte words)        9810

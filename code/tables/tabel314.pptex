@@ -2234,6 +2234,7 @@ LimMALN    colsep nitrogen storage limitation MALS                   colsep (-) 
 LimMALP    colsep phosphorous storage limitation MALS                colsep (-)                  colsep FlMALS     \\
 LimMALC    colsep carbon storage limitation MALS                     colsep (-)                  colsep FlMALS     \\
 LimNutS    colsep net nutrient storage limitation MALS               colsep (-)                  colsep FlMALS     \\
+muMALS     colsep unit growth rate MALS                              colsep (1/d)                colsep FlMALS     \\
 LocGroPS   colsep local gross production of MALS                     colsep (DM/m2/d)            colsep FlMALS     \\
 LocNetPS   colsep local net production of MALS                       colsep (DM/m2/d)            colsep FlMALS     \\
 LocDecS    colsep local decay of MALS                                colsep (DM/m2/d)            colsep FlMALS     \\

@@ -1,0 +1,96 @@
+[forcing]
+Name                            = Tidal_0001
+Function                        = astronomic
+Quantity                        = astronomic component
+Unit                            = -
+Quantity                        = waterlevelbnd amplitude
+Unit                            = m
+Quantity                        = waterlevelbnd phase
+Unit                            = deg
+A0  1  0
+M2  1  0
+
+[forcing]
+Name                            = Tidal_0002
+Function                        = astronomic
+Quantity                        = astronomic component
+Unit                            = -
+Quantity                        = waterlevelbnd amplitude
+Unit                            = m
+Quantity                        = waterlevelbnd phase
+Unit                            = deg
+A0  1  0
+M2  1  0
+
+[forcing]
+Name                            = Tidal_0003
+Function                        = astronomic
+Quantity                        = astronomic component
+Unit                            = -
+Quantity                        = waterlevelbnd amplitude
+Unit                            = m
+Quantity                        = waterlevelbnd phase
+Unit                            = deg
+A0  1  0
+M2  1  0
+
+[forcing]
+Name                            = Outlet_0001
+Function                        = timeseries
+Time-interpolation              = linear
+Quantity                        = time
+Unit                            = seconds since 2000-01-01 00:00:00
+Quantity                        = waterlevelbnd
+Unit                            = m
+568080000  0
+576720300  0
+585360600  0
+594000900  0
+602641200  0
+611281500  0
+619921800  0
+628562100  0
+637202400  0
+645842700  0
+654483000  0
+
+[forcing]
+Name                            = Outlet_0002
+Function                        = timeseries
+Time-interpolation              = linear
+Quantity                        = time
+Unit                            = seconds since 2000-01-01 00:00:00
+Quantity                        = waterlevelbnd
+Unit                            = m
+568080000  0
+576720300  0
+585360600  0
+594000900  0
+602641200  0
+611281500  0
+619921800  0
+628562100  0
+637202400  0
+645842700  0
+654483000  0
+
+[forcing]
+Name                            = Outlet_0003
+Function                        = timeseries
+Time-interpolation              = linear
+Quantity                        = time
+Unit                            = seconds since 2000-01-01 00:00:00
+Quantity                        = waterlevelbnd
+Unit                            = m
+568080000  0
+576720300  0
+585360600  0
+594000900  0
+602641200  0
+611281500  0
+619921800  0
+628562100  0
+637202400  0
+645842700  0
+654483000  0
+

@@ -80,6 +80,7 @@ C
       
       REAL(4) LimN
       REAL(4) LimP
+      REAL(4) areaLoc
 C
 C*******************************************************************************
 C
@@ -155,7 +156,8 @@ C
                 !IF (MALP .gt. MALPmax) THEN
                 !    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
                 !ENDIF                
-                
+                areaLoc = MALS * Surf / ArDenMAL
+
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
                 IF (LimN .lt. 0.0) THEN
                     LimN = 0.0
@@ -173,23 +175,23 @@ C
                 ! we multimply this by MALS * area density (g/m2)
                                 
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
-                  LocUpN = (MALS/ArDenMAL) * LimVel * JNmax * 
+                  LocUpN = (areaLoc) * LimVel * JNmax * 
      &             (NO3/(Ksn + NO3)) * LimN
                 ELSE
                     LocUpN = 0.0
                 ENDIF
                 
                 IF (LimP .gt. 0.0 .AND. MALP .lt. MALPmax) THEN
-                  LocUpP = (MALS/ArDenMAL) * LimVel * JPmax * 
+                  LocUpP = (areaLoc) * LimVel * JPmax * 
      &             (PO4/(Ksp + PO4)) * LimP
                 ELSE
                     LocUpP = 0.0
                 ENDIF
                 
-                dUpMALNO3 = LocUpN/Depth 
+                dUpMALNO3 = LocUpN/(Depth*Surf) 
                 ! can not take up NH4 at the moment, Broch ignores NH4
                 dUpMALNH4 = 0.0
-                dUpMALPO4 = LocUpP/Depth
+                dUpMALPO4 = LocUpP/(Depth*Surf)
                 
                 ! need ALKA!
 

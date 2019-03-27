@@ -700,10 +700,7 @@ C
 
                 dMALTIC = areaLoc * (P - R) / (Surf*Depth) 
                 
-                ! NEED ALKA HERE!
-
-                ! exudate is produced as DOC, E is a fraction of production
-              
+                ! exudate is produced as DOC, E is a fraction of production              
                 ! exudation (leakage) gC/(m3 d)
                 dMALDOC = areaLoc * P * E / (Surf*Depth) 
                 

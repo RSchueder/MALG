@@ -5593,10 +5593,10 @@ MALPmax    colsep maximum P in MALP                                  colsep (gP/
 CDRatMALS  colsep C to dry mass ratio in MALS                        colsep (gC/gDM)             colsep           0.200 \\
 NCRatMALS  colsep N:C ratio in MALS                                  colsep (gN/gC)              colsep           0.050 \\
 PCRatMALS  colsep P:C ratio in MALS                                  colsep (gP/gC)              colsep           0.005 \\
-Ksn        colsep half saturation MALN N uptake                      colsep (gN/m3)              colsep           0.056 \\
-Ksp        colsep half saturation MALN P uptake                      colsep (gP/m3)              colsep           0.123 \\
+Ksn        colsep half saturation MALN N uptake                      colsep (gN/m3)              colsep           0.013 \\
+Ksp        colsep half saturation MALN P uptake                      colsep (gP/m3)              colsep           0.013 \\
 JNmax      colsep maximum MALN N uptake rate                         colsep (gN/m2/d)            colsep           0.336 \\
-JPmax      colsep maximum MALP P uptake rate                         colsep (gP/m2/d)            colsep           0.743 \\
+JPmax      colsep maximum MALP P uptake rate                         colsep (gP/m2/d)            colsep           0.336 \\
 Vel65      colsep current speed at which J = 0.65Jmax                colsep (m/s)                colsep           0.030 \\
 ArDenMALS  colsep grams/m2 surface area of frond                     colsep (gDM/m2)             colsep          60.000 \\
 R1         colsep Reference respiration rate at T1                   colsep (gC/dm2/h)           colsep           0.000 \\
