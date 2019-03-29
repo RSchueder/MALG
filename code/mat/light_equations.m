@@ -1,36 +1,36 @@
 close all
-Tr1     =        285.000   ;  %reference temperature 1 for respiration                (degK)
-Tr2     =        290.000   ;   %reference temperature 2 for respiration                (degK)
-P1      =        1.22e-3     ;   %Reference photosynthetic rate at T1                    (gC/m2/d)
-P2      =        1.44e-3     ;   %Reference photosynthetic rate at T2                    (gC/m2/d)
-Tp1     =        283.000   ;   %temp for reference photosynthetic rate 1               (degK)
+clear all
+%% BROCH
+P1      =        0.00122     ;   %Reference photosynthetic rate at T1                    (gC/m2/d)
+P2      =        0.0013     ;   %Reference photosynthetic rate at T2                    (gC/m2/d)
+Tp1     =        285.000   ;   %temp for reference photosynthetic rate 1               (degK)
 Tp2     =        288.000   ;   %temp for reference photosynthetic rate 2               (degK)
-Tap     =        1694.000  ;   %Arrhenius temperature for photosynthesis               (degK)
 Taph    =        25924.000 ;   %Arrhenius temp for photosynthesis high end             (degK)
 Tapl    =        27774.000 ;  %Arrhenius temp for photosynthesis low end              (degK)
-Tar     =        11033.000 ;   %Arrhenius temp for respiration                         (degK)
-fact = 0.5;
-Isat = 44 * 4.57; % umol/m2s
-I = Isat * fact;
-% P1 = P1 / 2400.0
-
+R1     = 2.785e-4;
+R2     = 5.429e-4;
+Tr1    = 285;
+Tr2    = 290;
+Isat = 200.0;
 % extremely important parameter!
-Tpl = 274.0;
-Tph = 298.0;
+Tpl = 271.0;
+Tph = 296.0;
 % this is the alpha for gC/dm2 plant/hr
-alpha0 = 3.75e-5;
+alpha0 = 0.0000375;
 % gC/(dm2 hr)
+Tap = log(P2/P1)/((1/Tp1)-(1/Tp2)); 
+Tar = log(R2/R1)/((1/Tr1)-(1/Tr2));
 
-%beta = logspace(-12,-6,1000);
+%% CALCULATION
+beta = logspace(-12,-6,1000);
 interval = 0.1;
 Temp = [Tpl:interval:Tph];
-beta = logspace(-12,-6,1000);
 
-PmaxT = P1 .* exp((Tap/Tp1) - (Tap./Temp)) ./ (1 + exp((Tapl./Temp) - (Tapl/Tpl)) + exp((Taph/Tph) - (Taph./Temp)));
+PmaxT = (P1 .* exp((Tap/Tp1) - (Tap./Temp))) ./ (1 + exp((Tapl./Temp) - (Tapl/Tpl)) + exp((Taph/Tph) - (Taph./Temp)));
 
 PmaxB = ((alpha0*Isat./log(1+(alpha0./beta))) .*(alpha0./(alpha0+beta)) .* (beta./(alpha0+beta)).^(beta./alpha0));
 
-Ps = alpha0*Isat./log(1+(alpha0./beta)); 
+Ps = alpha0*Isat./(log(1+(alpha0./beta))); 
 
 figure(1)
 
@@ -53,7 +53,7 @@ set(gca,'FontSize',14)
 subplot(1,3,3)
 title('Gross rate')
 ii = 1;
-for fact = 0.1:0.1:1
+for fact = 0.05:0.05:1
     I = Isat * fact;
     lnd{ii} = strcat('I = ',num2str(I),' ',' umol m^-^2 s^-1');
     P = Ps .* (1-exp(-alpha0*I./Ps)).*exp(-beta.*I./Ps);
@@ -107,10 +107,31 @@ title('Pmax via beta')
 
 subplot(1,3,3)
 title('Gross rate as function of Radiation')
+clear beta
+beta = logspace(-12,-6,1000);
 
+pm = max(PmaxT);
+[~,ind] = min(abs(PmaxB-pm));
+plot([min(beta) beta(ind)],[pm pm],'k--'); hold on
+plot([beta(ind) beta(ind)],[0 pm],'k--'); hold on
 set(gcf,'Units','Normalized','OuterPosition',[0 0 1 1])
 set(gcf,'PaperPositionMode','auto');
 saveas(gcf,['../../documentation/manual/figures/light_equations.png'])
+
+% check 12 degC value from paper
+I = 200;
+TempI = 273 + 12;
+TempI = 271
+tind = find(Temp == TempI);
+[~,ind] = min(abs(PmaxB-PmaxT(tind)));
+beta = beta(ind);
+Temp = TempI;
+PmaxT = (P1 .* exp((Tap/Tp1) - (Tap./Temp))) ./ (1 + exp((Tapl./Temp) - (Tapl/Tpl)) + exp((Taph/Tph) - (Taph./Temp)));
+Ps = alpha0*Isat./(log(1+(alpha0./beta))); 
+P = Ps .* (1-exp(-alpha0*I./Ps)).*exp(-beta.*I./Ps);
+
+
+
 
     
     
