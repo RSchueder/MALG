@@ -2241,6 +2241,8 @@ LocDecS    colsep local decay of MALS                                colsep (DM/
 LocGroN    colsep local utilization of MALN                          colsep (gN/m2/d)            colsep FlMALS     \\
 LocGroP    colsep local utilization of MALP                          colsep (gP/m2/d)            colsep FlMALS     \\
 LocGroC    colsep local utilization of MALC                          colsep (gC/m2/d)            colsep FlMALS     \\
+Wdry       colsep dry weight of frond                                colsep (g/m2)               colsep FlMALS     \\
+Wwet       colsep wet weight of frond                                colsep (g/m2)               colsep FlMALS     \\
 BmLayMAL   colsep Biomass of MALS in segment                         colsep (gDM/m3)             colsep MALDIS     \\
 TipDepth   colsep depth of tip of frond in this column               colsep (m)                  colsep MALDIS     \\
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\

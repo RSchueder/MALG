@@ -175,8 +175,8 @@ C
                 ! we multimply this by MALS * area density (g/m2)
                                 
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
-                  LocUpN = (areaLoc) * LimVel * JNmax * 
-     &             (NO3/(Ksn + NO3)) * LimN
+                  LocUpN = (areaLoc) * JNmax * (NO3/(Ksn + NO3))
+     &              * LimN * LimVel 
                 ELSE
                     LocUpN = 0.0
                 ENDIF
@@ -193,8 +193,6 @@ C
                 dUpMALNH4 = 0.0
                 dUpMALPO4 = LocUpP/(Depth*Surf)
                 
-                ! need ALKA!
-
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4
                 FL ( IdUpMALPO4 ) = dUpMALPO4 

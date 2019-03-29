@@ -14885,12 +14885,15 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALS    ","CDRatMAL  ",  22,"Y","x",1
 "FlMALS    ","NCRatMAL  ",  23,"Y","x",1
 "FlMALS    ","PCRatMAL  ",  24,"Y","x",1
-"FlMALS    ","FrPO1MAL  ",  25,"Y","x",1
-"FlMALS    ","FrPO2MAL  ",  26,"Y","x",1
-"FlMALS    ","MBotSeg   ",  27,"N","x",1
-"FlMALS    ","Surf      ",  28,"N","x",1
-"FlMALS    ","DELT      ",  29,"N","x",1
-"FlMALS    ","Depth     ",  30,"N","x",1
+"FlMALS    ","Kn        ",  25,"Y","x",1
+"FlMALS    ","Kc        ",  26,"Y","x",1
+"FlMALS    ","Kdw       ",  27,"Y","x",1
+"FlMALS    ","FrPO1MAL  ",  28,"Y","x",1
+"FlMALS    ","FrPO2MAL  ",  29,"Y","x",1
+"FlMALS    ","MBotSeg   ",  30,"N","x",1
+"FlMALS    ","Surf      ",  31,"N","x",1
+"FlMALS    ","DELT      ",  32,"N","x",1
+"FlMALS    ","Depth     ",  33,"N","x",1
 "MALDIS    ","Surf      ",   1,"N","x",1
 "MALDIS    ","Depth     ",   2,"N","x",1
 "MALDIS    ","TotalDepth",   3,"N","x",1

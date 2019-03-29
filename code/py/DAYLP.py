@@ -9,6 +9,8 @@ Created on Fri Feb 22 15:33:05 2019
 
 import numpy as np
 
+import matplotlib.pyplot as plt
+plt.close('all')
 sin50m = -1.454389765e-2 
 e  = 1.721420632e-2
 #     Conversion Latitude to rads
@@ -96,4 +98,9 @@ daylenda = np.array(daylenda)
 daylenpa = np.array(daylenpa)
 
 tau = (daylenda - daylenpa) / np.max(daylenda - daylenpa)
-plt.plot(tau)
+a1 = 1.02
+a2 = 0.13
+photo = a1 * (1+np.sin(tau)*np.abs(tau)**0.5)+a2
+plt.plot(photo)
+plt.ylim([0.2,2.1])
+plt.title(str(np.max(photo) - np.min(photo)))

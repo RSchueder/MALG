@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Wed Mar 27 14:42:39 2019
+        !COMPILER-GENERATED INTERFACE MODULE: Fri Mar 29 17:49:11 2019
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE FLMALC__genmod

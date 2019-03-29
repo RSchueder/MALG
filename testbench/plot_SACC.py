@@ -9,7 +9,8 @@ import d3d
 import numpy as np
 import matplotlib.pyplot as plt
 plt.close('all')
-file = r'd:\projects\IMPAQT\MALG\testbench\broch\broch_col.his'
+# file = r'd:\projects\IMPAQT\MALG\testbench\broch\broch_col.his'
+file = r'd:\projects\MALG\testbench\broch\broch_col.his'
 
 his = d3d.DelwaqHisFile(file)
 seg = 'Seg10'
@@ -47,6 +48,7 @@ plt.plot(his.dates,area*100.0, label = 'Frond Area')
 plt.xlabel('time')
 plt.ylabel('Frond area [dm^2]')
 plt.grid()
+plt.ylim([0,140])
 
 plt.subplot(222)
 
@@ -54,76 +56,65 @@ gross = his['LocGroPS',seg,:] * his['SURF',seg,:]*100/ (60.0000)
 plt.ylabel('Gross daily production [dm^2 d^-1]')
 plt.plot(his.dates,gross)
 plt.grid()
-
+plt.ylim([0,0.8])
 plt.legend()
 
 plt.subplot(223)
-MALC = his['MALCDM',seg,:]
+MALC = his['MALSCD',seg,:]
 plt.plot(his.dates,MALC)
 plt.xlabel('time')
-plt.ylabel('carbon content [gC/gDM]')
+plt.ylabel('carbon content [gC/gDW]')
 plt.legend()
 plt.grid()
+plt.ylim([0.18,0.38])
 
 plt.subplot(224)
-MALN = his['MALNDM',seg,:]
+MALN = his['MALSND',seg,:]
 plt.plot(his.dates,MALN)
 plt.xlabel('time')
-plt.ylabel('nitrogen content [gN/gDM]')
+plt.ylabel('nitrogen content [gN/gDW]')
 plt.legend()
 plt.grid()
+plt.ylim([0.005,0.03])
 
 ###############################################################################
 
 plt.figure(3)
 surf = his['SURF',seg,:]
 gross = his['GrosMALC',seg,:] / surf
-resp = his['RespMALC',seg,:] / surf
 exud = his['ExudMALC',seg,:] / surf
+resp = his['RespMALC',seg,:] / surf
 
 plt.plot(his.dates,gross, 'g', label = 'gross')
-plt.plot(his.dates,resp, 'b', label = 'respiration')
 plt.plot(his.dates,exud, 'k', label = 'exudation')
+plt.plot(his.dates,resp, 'b', label = 'respiration')
 plt.grid()
 plt.legend()
 plt.ylabel('gC/d')
 
 ###############################################################################
-plt.figure(4)
-lims = ['LimDenS','LimMALC','LimMALN','LimMALP','LimN','LimNutS','LimP','LimPhoS','LimTemS','LimVel']
-#lims = ['LimN','LimMALN','LimMALP','LimMALC']
-
+fig ,ax1 = plt.subplots(1,1)
+ax2 = ax1.twinx()
+# lims = ['LimDenS','LimMALC','LimMALN','LimN','LimP','LimTemS']
+lims = ['LimDenS','LimMALN','LimMALC','LimTemS','LimPhoS']
+dat = {}
 for ll in lims:
     val = his[ll,seg,:]
-    plt.plot(his.dates,val,label = ll)
-plt.grid()
+    dat[ll] = val
+    ax1.plot(his.dates,val,label = ll)
+ax1.grid()
 plt.xlabel('time')
 plt.ylabel('limitation factor [-]')
 #plt.plot(his.dates,his['LimNutS',seg,:], 'o', label = 'LimNutS')
-plt.legend()
+ax1.grid()
+ax1.legend()
 
-daylend = his['daylend',seg,:]
-daylenp = his['daylenp',seg,:]
-daylenm = his['daylenm',seg,:]
-tau = (daylend-daylenp)/daylenm
-plt.figure(5)
-# plt.plot(his.dates,tau)
-photo = 0.85 *(1 + np.sin(tau) * (np.abs(tau))**0.5) + 0.3
-plt.plot(his.dates,photo)
+LimNut = np.array([np.min([dat['LimMALC'][ind],dat['LimMALN'][ind]]) for ind,val in enumerate(dat['LimMALC'])])
+ax2.plot(his.dates, dat['LimDenS'] * dat['LimTemS'] * dat['LimPhoS'] * LimNut, label = 'recalculated growth rate')
+mu = his['muMALS',seg,:]
+ax2.plot(his.dates,mu,'k--',label = 'specific growth rate')
 
-###############################################################################
-
-#plt.figure(6)
-#plt.subplot(311)
-#ph = his['pH',seg,:]
-#plt.plot(his.dates,ph)
-#plt.ylabel('pH [-]')
-#plt.subplot(312)
-#alka = his['ALKA',seg,:]
-#plt.plot(his.dates,alka)
-#plt.ylabel('Alkalinity [mg HCO3-/l]')
-#plt.subplot(313)
-#tic = his['TIC',seg,:]
-#plt.plot(his.dates,tic)
-#plt.ylabel('Total inorganic carbon [mg C/l]')
-#plt.xlabel('time')
+ax1.set_xlabel('time')
+ax1.set_ylabel('growth rate contribution [1/d]')
+ax2.set_ylabel('growth rate [1/d]')
+ax2.legend()

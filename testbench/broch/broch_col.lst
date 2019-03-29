@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/27 14:54:41 
+ Execution start: 2019/03/29 17:58:53 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -58,7 +58,7 @@
  Start of simulation : 0Y-212D- 0H- 0M- 0S.
  End of simulation   : 1Y-244D- 0H- 0M- 0S.
  Selected option for time step size :  0
- Integration time stepsize is : 0Y-  0D- 1H- 0M- 0S.
+ Integration time stepsize is : 0Y-  0D- 0H-30M- 0S.
 
  Dump areas:
  option selected for input :    1
@@ -432,32 +432,41 @@
  constant values in this block.
  values        28
  constants    MALS0       
+         1    6.0000E-02
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   29 with ID  : mrtMAL              
+ constant values in this block.
+ values        29
+ constants    mrtMAL      
          1    2.2000E-01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   29 with ID  : SWRear              
+ Input constant   nr:    1 is constant   nr:   30 with ID  : SWRear              
  constant values in this block.
- values        29
+ values        30
  constants    SWRear      
          1    1.0000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   30 with ID  : SWRearCO2           
+ Input constant   nr:    1 is constant   nr:   31 with ID  : SWRearCO2           
  constant values in this block.
- values        30
+ values        31
  constants    SWRearCO2   
          1    1.1000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   31 with ID  : LmaxMAL             
+ Input constant   nr:    1 is constant   nr:   32 with ID  : LmaxMAL             
  constant values in this block.
- values        31
+ values        32
  constants    LmaxMAL     
          1    1.0000E+01
 
@@ -768,9 +777,9 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   32 with ID  : TotalDepth          
+ Input constant   nr:    1 is constant   nr:   33 with ID  : TotalDepth          
  constant values in this block.
- values        32
+ values        33
  constants    TotalDepth  
          1    1.0000E+01
 
@@ -778,7 +787,7 @@
 
 
 
- Total number of constants        :   32
+ Total number of constants        :   33
 
  Total number of parameters       :    4
 
@@ -800,16 +809,16 @@
                  1           2           3           4           5           6           7           8           9          10
               1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  Unscaled default values:
-              1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
+              1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
  Scale factors:
                 11          12          13          14          15          16          17
               1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
  Unscaled default values:
-              1.0000E+00  1.0000E+00  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+              0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
  Number of overridings :    1
  Number         values
-        10    1.0000E+00  7.0000E+00  1.0000E+00  1.0000E+00  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  1.0000E+00  1.0000E+00
-              1.0000E+00  1.0000E+00  1.0000E+00  1.8000E+01  2.0000E-01  1.0000E-01  6.3000E+00
+        10    1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+              0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01  1.0800E+01
 
  ************************************************************************************************************* B L O C K - 8 *****
 
@@ -842,7 +851,7 @@
 
  All substances plus extra output variables
 
- (     57) number of output variables specified
+ (     58) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -888,20 +897,21 @@
       41           LocGroN                                   
       42           LocGroP                                   
       43           LocGroC                                   
-      44           LocDecS                                   
-      45           GrosMALC                                  
-      46           RespMALC                                  
-      47           ExudMALC                                  
-      48           FrBmMALS                                  
-      49           BmLayMAL                                  
-      50           LengthMAL                                 
-      51           AreaMAL                                   
-      52           TipDepth                                  
-      53           LimVel                                    
-      54           LocUpN                                    
-      55           LocUpP                                    
-      56           LocUpC                                    
-      57           MBotSeg                                   
+      44           GrosMALC                                  
+      45           RespMALC                                  
+      46           ExudMALC                                  
+      47           FrBmMALS                                  
+      48           BmLayMAL                                  
+      49           LengthMAL                                 
+      50           AreaMAL                                   
+      51           TipDepth                                  
+      52           LimVel                                    
+      53           LocUpN                                    
+      54           LocUpP                                    
+      55           LocUpC                                    
+      56           Wdry                                      
+      57           Wwet                                      
+      58           MBotSeg                                   
 
  Specification of map output
 
@@ -929,7 +939,7 @@
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
-        TotalDepth          ; Using constant nr          32
+        TotalDepth          ; Using constant nr          33
         Depth               ; Using parameter nr           2
         Temp                ; Using function nr           1
         NO3                 ; Using function nr           2
@@ -970,7 +980,6 @@
    INFO:LocGroN             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroP             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocGroC             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:LocDecS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:GrosMALC            ; NOT FOUND, delwaq will detect variables from process library
    INFO:RespMALC            ; NOT FOUND, delwaq will detect variables from process library
    INFO:ExudMALC            ; NOT FOUND, delwaq will detect variables from process library
@@ -983,9 +992,11 @@
    INFO:LocUpN              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpP              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpC              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:Wdry                ; NOT FOUND, delwaq will detect variables from process library
+   INFO:Wwet                ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          50
+  Number off missing variables :          51
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -1012,8 +1023,8 @@ Number of periods defined:     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       6503
- total integer   array space:       5780
- total character array space:       9821
- grand total in 4-byte words:      22104 =   0-GB   0-MB  88-KB 416-Byte.
- Execution stop : 2019/03/27 14:54:41 
+ total real      array space:       6537
+ total integer   array space:       5837
+ total character array space:       9941
+ grand total in 4-byte words:      22315 =   0-GB   0-MB  89-KB 260-Byte.
+ Execution stop : 2019/03/29 17:58:53 

@@ -55,7 +55,7 @@
  2019/08/01-00:00:00      ; start time 
  2020/09/01-00:00:00      ; stop time 
  0                  ; constant timestep 
- 0010000      ; time step
+ 0003000      ; time step
 ;
  1                                           ; Monitoring areas in this file
  11
@@ -212,11 +212,11 @@ DATA
  CONSTANTS 'Vel'       DATA 0.15
  CONSTANTS 'ExtVl'     DATA 0.07
  CONSTANTS 'LinDenMAL' DATA 100.0
- CONSTANTS 'MALS0'     DATA 0.22
- CONSTANTS 'SWRear'      DATA 10.0
+ CONSTANTS 'MALS0'     DATA 0.06
+ CONSTANTS 'mrtMAL'    DATA 0.22
+ CONSTANTS 'SWRear'    DATA 10.0
+ ;CONSTANTS 'm2'        DATA 0.03575
  CONSTANTS 'SWRearCO2'   DATA 11.0
- ;CONSTANTS Ksn         DATA 0.248
- ;CONSTANTS JNmax DATA  0.0336
  ;CONSTANTS K0HrvMALS   DATA 0.01
  CONSTANTS 'LmaxMAL'   DATA 10.000   
  ;CONSTANTS 'SWGroDir'  DATA  -1.0 
@@ -268,19 +268,19 @@ DATA 10.0
  2 ; all values with default
  17*1.0 ; scale factors
       1 ;'Continuity'
-	  7 ;'OXY'
-	  1 ;'NH4'
+	  0 ;'OXY'
+	  0 ;'NH4'
 	  ;1 ;'NO3'
-	  1 ;'PO4'
-	  30 ;'TIC'
-	  200 ;'ALKA'
-	  1.0 ;'POC1'
-	  1.0 ;'POC2'
-	  1.0 ;'PON1'
-	  1.0 ;'PON2'
-	  1.0 ;'POP1'
-	  1.0 ;'POP2'
-	  1.0 ; 'DOC'
+	  0 ;'PO4'
+	  0 ;'TIC'
+	  0 ;'ALKA'
+	  0 ;'POC1'
+	  0 ;'POC2'
+	  0 ;'PON1'
+	  0 ;'PON2'
+	  0 ;'POP1'
+	  0 ;'POP2'
+	  0 ; 'DOC'
 	  0.0 ;'MALS'
 	  0.0 ;'MALN'
 	  0.0 ;'MALP'
@@ -289,23 +289,23 @@ DATA 10.0
  1  ; number of overridings
  10 ; first overriding
       1.0 ;'Continuity'
-	  7.0 ;'OXY'
-	  1.0 ;'NH4'
+	  0 ;'OXY'
+	  0 ;'NH4'
 	  ;1.0 ;'NO3'
-	  1.0 ;'PO4'
-	  30.0 ;'TIC'
-	  200.0 ;'ALKA'
-	  1.0 ;'POC1'
-	  1.0 ;'POC2'
-	  1.0 ;'PON1'
-	  1.0 ;'PON2'
-	  1.0 ;'POP1'
-	  1.0 ;'POP2'
-	  1.0 ; 'DOC'
+	  0 ;'PO4'
+	  0 ;'TIC'
+	  0 ;'ALKA'
+	  0 ;'POC1'
+	  0 ;'POC2'
+	  0 ;'PON1'
+	  0 ;'PON2'
+	  0 ;'POP1'
+	  0 ;'POP2'
+	  0 ; 'DOC'
 	  18.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
-	  0.2 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
+	  0.18 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
 	  0.1 ;'MALP'
-	  6.3 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
+	  10.8 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
 ;
 ;
   #8 ; delimiter for the eighth block
@@ -321,7 +321,7 @@ DATA 10.0
   'SURF'    
   'LocalDepth'    
   2 ; all substances and extra output
-57 ; number of extra variables
+58 ; number of extra variables
   'SURF' ' '
   'LocalDepth' ' '
   'TotalDepth' ' '
@@ -365,7 +365,6 @@ DATA 10.0
   'LocGroN' ' '                     ;x local growth of MALN                                   (gN/m3/d)           
   'LocGroP' ' '                     ;x local growth of MALP                                   (gP/m3/d)           
   'LocGroC' ' '                     ;x local growth of MALC                                   (gC/m3/d)     
-  'LocDecS' ' '                     ;x local decay  of MALS                                   (DM/m3/d)           
   'GrosMALC' ' '                    ;x gross photosynthesis MALC                              (gC/m2/d) 
   'RespMALC' ' '                    ;x respiration MALC                                       (gC/m2/d)             
   'ExudMALC' ' '                    ;x exudation MALC                                         (gC/m2/d) 
@@ -377,7 +376,9 @@ DATA 10.0
   'LimVel' ' '                      ;x velocity limitation                                    (-)                 
   'LocUpN' ' '                      ;x Local N storage uptake flux                            (gN/m3/d)           
   'LocUpP' ' '                      ;x Local P storage uptake flux                            (gP/m3/d)   
-  'LocUpC' ' '                      ;x Local C uptake flux                                    (gC/m3/d)       
+  'LocUpC' ' '                      ;x Local C uptake flux                                    (gC/m3/d)   
+  'Wdry' ' '  
+  'Wwet' ' '
   'MBotSeg' ' '                     ;x bottom segment for this segment                        (-)          
       
   2 ; all substances and extra output

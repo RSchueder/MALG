@@ -3992,6 +3992,8 @@ outppr,outpit,outpnm,outpdo,outpsx
 "FlMALS    ","LocGroN   ",  20,"x",1
 "FlMALS    ","LocGroP   ",  21,"x",1
 "FlMALS    ","LocGroC   ",  22,"x",1
+"FlMALS    ","Wdry      ",  23,"x",1
+"FlMALS    ","Wwet      ",  24,"x",1
 "MALDIS    ","FrBmMALS  ",   1,"x",1
 "MALDIS    ","BmLayMAL  ",   2,"x",1
 "MALDIS    ","LengthMAL ",   3,"x",1

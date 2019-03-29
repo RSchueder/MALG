@@ -36,11 +36,11 @@ The physiological equations described in Broch\textit{et al.,} (2011) do not men
 A simple approach is taken, whereby fronds (typically) only grow in length and retain a constant length:area ratio. This is typically the case because a frond may reach the end of the water column while it still has the capcity to grow, in which case only the area and not the length will increase. The case for a single frond per computational cell is simple. However, the code must be able to deal with any seeding density, which cannot be uniquely defined by the mass per m$^{2}$ alone. For example, consider two cases whereby there exists 40g of dry matter per m$^{2}$. In the first example there are 4 fronds in a 1 m$^{2}$ square. They each weigh 10 g, have a combined area of 0.24 m$^{2}$ and are each 0.2 m long. In a second example, consider a single frond in a 1 m$^{2}$ square. It weighs 40 g, has an area of 0.24 m$^{2}$, and is 0.8 m long. In a 3D model with grid cells that are \textless 0.8 m thick, the nutrient uptake will take place in different cells in each of the two cases even though the mass per m$^{2}$ is identical in DELWAQ. To avoid this ambiguity the user must prescribe a set of parameters to describe the spatial characteristics of the culture. These are as follows:
 
 \begin{itemize}
-	\item $FootDepth$ The depth below the water surface that the foot of the frond is attached. The frond begins growing from the segment that intersects this depth, and the segment can change with a variable water level as it is assigned each time step.
-	\item $LmaxMAL$ The maximum length of the frond measured in the z axis from the foot to the tip of the frond.
-	\item $SwGroMAL$ Switch for an upwards (\textgreater 0) or downwards (\textless 0) growing frond.
-	\item $LinDenMal$ The linear density of the culture. This describes the amount of mass it takes a m$^{2}$ of culture to grow 1 m. Four small fronds require more mass to increase their collective length by 1 m compared to a single long frond.
-	\item $ArDenMal$ The area density of the culture. This is the ratio between surface area and dry weight.
+\item $FootDepth$ The depth below the water surface that the foot of the frond is attached. The frond begins growing from the segment that intersects this depth, and the segment can change with a variable water level as it is assigned each time step.
+\item $LmaxMAL$ The maximum length of the frond measured in the z axis from the foot to the tip of the frond.
+\item $SwGroMAL$ Switch for an upwards (\textgreater 0) or downwards (\textless 0) growing frond.
+\item $LinDenMal$ The linear density of the culture. This describes the amount of mass it takes a m$^{2}$ of culture to grow 1 m. Four small fronds require more mass to increase their collective length by 1 m compared to a single long frond.
+\item $ArDenMal$ The area density of the culture. This is the ratio between surface area and dry weight.
 \end{itemize}
 
 Based on these parameterizations the culture can be completely schemetized in 3 dimensions. The process begins by first calculating the length and the area of the culture in this column of segments:
@@ -68,7 +68,7 @@ $Z1$ & Distance from water surface to top of segment (positive down) (m)\\
 $Z2$ & Distance from water surface to bottom of segment (positive down) (m)\\
 \end{tabular}
 
-The top $Z1$ and bottom $Z2$ depth of the segment are then checked against $Zm$ to see if the frond resides entirely within, entirely outside, or partially within the segment. The fraction of the biomass allocated to the current segment is then the ratio of the segment depth to $LenMAL$ in the column for segments in which the frond completely resides, or the ratio of the difference between $Zm$ and either $Z1$ or $Z2$ to $LenMAL$ for segments in which the tip or foot of the frond is found.
+The segment top depth $Z1$ and segment bottom depth $Z2$ are then checked against $Zm$ to see if the frond resides entirely within, entirely outside, or partially within the segment. The fraction of the biomass allocated to the current segment is then the ratio of the segment depth to $LenMAL$ in the column for segments in which the frond completely resides, or the ratio of the difference between $Zm$ and either $Z1$ or $Z2$ to $LenMAL$ for segments in which the tip or foot of the frond is found.
 
 \subsection{Flux of Macroalgae structural biomass}
 \begin{flushright}
@@ -156,7 +156,7 @@ This represents the balance between uptake $J$ and utilization for growth of the
 \[J_N = f_{velocity}J_{Nmax}(\frac{NO_3^-}{K_{sn}+NO_3^-})(\frac{MALN_{max}-MALN}{MALN_{max}-MALN_{min}})\]
 \[J_P = f_{velocity}J_{Pmax}(\frac{PO_4^{3-}}{K_{sp}+PO_4^{3-}})(\frac{MALP_{max}-MALP}{MALP_{max}-MALP_{min}})\]
 
-Where the first term pertains to the uptake of nutreitns and the second term to the utilization of stores by the structural mass. Note how the nutrient requirement is dependent on those required to add more structural mass and more storage mass. This is because the total storage in the frond will increase as the frond grows, but the ratio of storage to structural mass is maintained for the growth timestep. The velocity function $f_{velocity}$ is formulated as:
+Where the first term pertains to the uptake of nutrients and the second term to the utilization of stores by the structural mass. Note how the nutrient requirement is dependent on those required to add more structural mass and more storage mass. This is because the total storage in the frond will increase as the frond grows, but the ratio of storage to structural mass is maintained for the growth timestep. The velocity function $f_{velocity}$ is formulated as:
 \[f_{velocity} = 1-exp(-\frac{U}{U_{0.65}})\]
 and where:\\
 \begin{tabular}{ll}
@@ -184,9 +184,7 @@ The uptake of nutrients is dependent on the ambient concentration according to M
 \textsc{process: FLMALC}
 \end{flushright}
 
-The carbon storage component(s) of the macroalgae are those that the structural mass grows upon. The carbon storage (MALC)is also responsible for photosynthesis, maintenance respiration and exudation. 
-
-The change in a carbon storage mass is given by the following equations:
+The carbon storage component(s) of the macroalgae are those that the structural mass grows upon. The carbon storage (MALC)is also responsible for photosynthesis, maintenance respiration and exudation. The change in a carbon storage mass is given by the following equations:
 
 \[dUptMALC = P(1-E)-R - \mu(k_C \times MALS + MALC)\]
 
@@ -205,13 +203,6 @@ The growth production rate is given by the following equation:
 \[P_{max} = (\frac{\alpha \times I_{sat}}{ln(1+\frac{\alpha}{\beta}})(\frac{\alpha}{\alpha+\beta})(\frac{\beta}{\alpha+\beta})^{\frac{\beta}{\alpha}}\]
 \[P_{max} = \frac{P_1exp(\frac{T_{AP}}{T_{P1}})}{1+exp(\frac{T_{APL}}{T} - \frac{T_{APL}}{T_{PL}})+exp(\frac{T_{APH}}{T_{PH}}-\frac{T_{APH}}{T})}\]
 
-
-The maximum production rate $P_{max}$ and the saturation production rate $P_{s}$ are both dependent on temperature. $P_{s}$ is non-linear in the photoinhibition parameter $\beta$, and so the root $\beta$ is found using Newton's method in Broch. This involves solving for $\beta$ such that $P_{max}$ equals the $P_{max}$ obtained from the temperature relationship at the current temperature. Newton's method is not used in the DELWAQ code and instead $\beta$ is pre-calculated for all temperatures in the photosynthetic range 1$^{0}$C to 25$^{0}$C at an interval of 0.1$^{0}$C. This is hard coded into the FLMALC subroutine and constitutes a linear approximation of $\beta$. Due to this the model should only be used for temperature ranges $1^{0}C \textless T \textless 25^{0}C$. Currently:
-\begin{itemize}
-	\item $\beta \textless 1 ^{0}C = \beta(1 ^{0}C)$ and $\beta > 25 ^{0}C = \beta(25 ^{0}C)$. 
-\end{itemize} 
-
-
 Where:\\
 \begin{tabular}{ll}
 $P_s$ & Saturation photosynthetic rate (gC m$^{-3}$ d$^{-1}$)\\
@@ -228,5 +219,12 @@ $T_{AP}$ & Arrhenius temperature for photosynthesis               (degK)\\
 $T_{APH}$ & Arrhenius temp for photosynthesis high end             (degK)\\
 $T_{APL}$ & Arrhenius temp for photosynthesis low end             (degK)\\
 \end{tabular}
+
+The equations describe a photo inhibitory effect for $I\textgreater I_{sat}$ in addition to a temperature growth inhibition effect for $Temp \textgreater T_{P2}$. The later describes an inability of \textit{Saccharina} to photosynthesize in warm waters. The structural mass is unable to grow above $Temp \textgreater 19^{0}$ This is something that has been fixed for the species as the user cannot felxibly change this unless the code is edited. Although the structural mass cannot grow, photosyntehtic production can still occur in the range $T_{P1}:T_{P2}$. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, these parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
+
+The maximum production rate $P_{max}$ and the saturation production rate $P_{s}$ are both dependent on temperature. $P_{s}$ is non-linear in the photoinhibition parameter $\beta$, and so the root $\beta$ is found using Newton's method in Broch. This involves solving for $\beta$ such that $P_{max}$ equals the $P_{max}$ obtained from the temperature relationship at the current temperature. Newton's method is not used in the DELWAQ code and instead $\beta$ is pre-calculated for all temperatures in the photosynthetic range 1$^{0}$C to 25$^{0}$C at an interval of 0.1$^{0}$C. This is hard coded into the FLMALC subroutine and constitutes a linear approximation of $\beta$. Due to this the model should only be used for temperature ranges $1^{0}C \textless T \textless 25^{0}C$. Currently:
+\begin{itemize}
+	\item $\beta \textless 1 ^{0}C = \beta(1 ^{0}C)$ and $\beta > 25 ^{0}C = \beta(25 ^{0}C)$. 
+\end{itemize} 
 
 \end{document}

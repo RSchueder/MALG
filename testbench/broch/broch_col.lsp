@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/27 14:54:41 
+ Execution start: 2019/03/29 17:58:53 
                                                                                 
  found -p command line switch                                                   
 
@@ -348,7 +348,7 @@ total number of substances with fractions :  0
        [P2                  ] Reference photosynthetic rate at T2                                   
        using default value: 0.144000E-02                                                            
        [Tp1                 ] temp for reference photosynthetic rate 1                              
-       using default value:  283.000                                                                
+       using default value:  285.000                                                                
        [Tp2                 ] temp for reference photosynthetic rate 2                              
        using default value:  288.000                                                                
        [Tap                 ] Arrhenius temperature for photosynthesis                              
@@ -366,7 +366,7 @@ total number of substances with fractions :  0
        [alpha               ] salpha for density distribution Rayleigh                              
        using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
-       using default value:  44.0000                                                                
+       using default value:  43.7630                                                                
        [exuMALC             ] exudation parameter                                                   
        using default value: 0.500000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -412,7 +412,7 @@ total number of substances with fractions :  0
        [PCRatMALS           ] P:C ratio in MALS                                                     
        using default value: 0.500000E-02                                                            
        [Ksn                 ] half saturation MALN N uptake                                         
-       using default value: 0.126000E-01                                                            
+       using default value: 0.560000E-01                                                            
        [Ksp                 ] half saturation MALN P uptake                                         
        using default value: 0.126000E-01                                                            
        [JNmax               ] maximum MALN N uptake rate                                            
@@ -468,19 +468,25 @@ total number of substances with fractions :  0
        [AreaMAL             ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
        [MALS0               ] growth rate parameter 3                                               
-       Using constant nr 28 with value: 0.220000                                                    
+       Using constant nr 28 with value: 0.600000E-01                                                
        [a1                  ] photoperiod parameter 1                                               
-       using default value: 0.850000                                                                
+       using default value:  1.02000                                                                
        [a2                  ] photoperiod parameter 2                                               
-       using default value: 0.300000                                                                
+       using default value: 0.120000                                                                
        [mrtMAL              ] epsilon erosion/mortality parameter macro                             
-       using default value: 0.220000                                                                
+       Using constant nr 29 with value: 0.220000                                                    
        [CDRatMAL            ] C:DM ratio in MALS                                                    
        using default value: 0.200000                                                                
        [NCRatMAL            ] N:C ratio in MALS                                                     
        using default value: 0.500000E-01                                                            
        [PCRatMAL            ] P:C ratio in MALS                                                     
        using default value: 0.500000E-02                                                            
+       [Kn                  ] mass of nitrogen reserves per gram nitrogen                           
+       using default value:  2.72000                                                                
+       [Kc                  ] mass of carbon reserves per gram carbon                               
+       using default value:  2.12130                                                                
+       [Kdw                 ] structural dry weight per unit frond area                             
+       using default value: 0.785000E-01                                                            
        [FrPO1MAL            ] fraction of MALS that goes to POC1 in decay                           
        using default value: 0.750000                                                                
        [FrPO2MAL            ] fraction of MALS that goes to POC2 in decay                           
@@ -500,7 +506,7 @@ total number of substances with fractions :  0
        [Depth               ] depth of segment                                                      
        Using parameter nr  2                                                                        
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 32 with value:  10.0000                                                    
+       Using constant nr 33 with value:  10.0000                                                    
        [LocalDepth          ] depth from water surface to bottom of segment                         
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
@@ -508,7 +514,7 @@ total number of substances with fractions :  0
        [FootDepth           ] location of frond attachment in the water columns                     
        using default value: -999.999                                                                
        [LmaxMAL             ] Maximum length MALG                                                   
-       Using constant nr 31 with value:  10.0000                                                    
+       Using constant nr 32 with value:  10.0000                                                    
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
        using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
@@ -540,7 +546,7 @@ total number of substances with fractions :  0
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRear              ] switch for oxygen reaeration formulation (1-13)                       
-       Using constant nr 29 with value:  10.0000                                                    
+       Using constant nr 30 with value:  10.0000                                                    
        [KLRear              ] reaeration transfer coefficient                                       
        using default value:  1.00000                                                                
        [TCRear              ] temperature coefficient for rearation                                 
@@ -552,7 +558,7 @@ total number of substances with fractions :  0
        [Salinity            ] Salinity                                                              
        using default value:  35.0000                                                                
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 32 with value:  10.0000                                                    
+       Using constant nr 33 with value:  10.0000                                                    
        [fcover              ] fraction of water surface covered <0-1>                               
        using default value:  0.00000                                                                
        [KLRearMax           ] maximum KLREAR oxygen for temp. correction                            
@@ -602,7 +608,7 @@ total number of substances with fractions :  0
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRearCO2           ] switch for CO2 reaeration formulation (11,13)                         
-       Using constant nr 30 with value:  11.0000                                                    
+       Using constant nr 31 with value:  11.0000                                                    
        [KLRearCO2           ] CO2 reaeration transfer coefficient                                   
        using default value:  1.00000                                                                
        [TCRearCO2           ] temperature coefficient for rearation CO2                             
@@ -614,7 +620,7 @@ total number of substances with fractions :  0
        [Salinity            ] Salinity                                                              
        using default value:  35.0000                                                                
        [TotalDepth          ] total depth water column                                              
-       Using constant nr 32 with value:  10.0000                                                    
+       Using constant nr 33 with value:  10.0000                                                    
        [fcover              ] fraction of water surface covered <0-1>                               
        using default value:  0.00000                                                                
        [KLRMaxCO2           ] maximum KLREAR CO2 for temperature correction                         
@@ -770,5 +776,7 @@ total number of substances with fractions :  0
  output [LocUpN              ] from proces [FlMALN    ]                                             
  output [LocUpP              ] from proces [FlMALN    ]                                             
  output [LocUpC              ] from proces [FlMALC    ]                                             
+ output [Wdry                ] from proces [FlMALS    ]                                             
+ output [Wwet                ] from proces [FlMALS    ]                                             
  output [MBotSeg             ] from proces [MALDIS    ]                                             
                                                                                                     
