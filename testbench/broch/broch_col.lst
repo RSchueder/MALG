@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/29 17:58:53 
+ Execution start: 2019/03/30 16:14:17 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -414,59 +414,68 @@
  constant values in this block.
  values        26
  constants    ExtVl       
-         1    7.0000E-02
+         1    1.5000E-01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   27 with ID  : LinDenMAL           
+ Input constant   nr:    1 is constant   nr:   27 with ID  : MALNmax             
  constant values in this block.
  values        27
+ constants    MALNmax     
+         1    2.8500E-02
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   28 with ID  : LinDenMAL           
+ constant values in this block.
+ values        28
  constants    LinDenMAL   
          1    1.0000E+02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   28 with ID  : MALS0               
+ Input constant   nr:    1 is constant   nr:   29 with ID  : MALS0               
  constant values in this block.
- values        28
+ values        29
  constants    MALS0       
          1    6.0000E-02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   29 with ID  : mrtMAL              
+ Input constant   nr:    1 is constant   nr:   30 with ID  : mrtMAL              
  constant values in this block.
- values        29
+ values        30
  constants    mrtMAL      
-         1    2.2000E-01
+         1    1.8000E-01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   30 with ID  : SWRear              
+ Input constant   nr:    1 is constant   nr:   31 with ID  : SWRear              
  constant values in this block.
- values        30
+ values        31
  constants    SWRear      
          1    1.0000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   31 with ID  : SWRearCO2           
+ Input constant   nr:    1 is constant   nr:   32 with ID  : SWRearCO2           
  constant values in this block.
- values        31
+ values        32
  constants    SWRearCO2   
          1    1.1000E+01
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   32 with ID  : LmaxMAL             
+ Input constant   nr:    1 is constant   nr:   33 with ID  : LmaxMAL             
  constant values in this block.
- values        32
+ values        33
  constants    LmaxMAL     
          1    1.0000E+01
 
@@ -777,9 +786,9 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   33 with ID  : TotalDepth          
+ Input constant   nr:    1 is constant   nr:   34 with ID  : TotalDepth          
  constant values in this block.
- values        33
+ values        34
  constants    TotalDepth  
          1    1.0000E+01
 
@@ -787,7 +796,7 @@
 
 
 
- Total number of constants        :   33
+ Total number of constants        :   34
 
  Total number of parameters       :    4
 
@@ -939,7 +948,7 @@
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
-        TotalDepth          ; Using constant nr          33
+        TotalDepth          ; Using constant nr          34
         Depth               ; Using parameter nr           2
         Temp                ; Using function nr           1
         NO3                 ; Using function nr           2
@@ -1025,6 +1034,6 @@ Number of periods defined:     0
 
  total real      array space:       6537
  total integer   array space:       5837
- total character array space:       9941
- grand total in 4-byte words:      22315 =   0-GB   0-MB  89-KB 260-Byte.
- Execution stop : 2019/03/29 17:58:53 
+ total character array space:       9946
+ grand total in 4-byte words:      22320 =   0-GB   0-MB  89-KB 280-Byte.
+ Execution stop : 2019/03/30 16:14:17 

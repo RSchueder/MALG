@@ -292,7 +292,7 @@ C
                 
                 LimNut = MIN(LimN,LimC)
                 
-                mu = LimDen * LimPho * LimTemp * LimNut + 0.006273
+                mu = LimDen * LimPho * LimTemp * LimNut
                 
                 
                 IF (mu .gt. 0.0) THEN
