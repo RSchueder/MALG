@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/30 16:14:17 
+ Execution start: 2019/04/01 18:30:53 
                                                                                 
  found -p command line switch                                                   
 
@@ -362,7 +362,7 @@ total number of substances with fractions :  0
        [RadSurf             ] irradiation at the water surface                                      
        Using function nr  3                                                                         
        [ExtVl               ] total extinction coefficient visible light                            
-       Using constant nr 26 with value: 0.150000                                                    
+       Using constant nr 26 with value: 0.200000                                                    
        [alpha               ] salpha for density distribution Rayleigh                              
        using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
@@ -400,7 +400,7 @@ total number of substances with fractions :  0
        [MALNmin             ] minimum N in storage                                                  
        using default value: 0.100000E-01                                                            
        [MALNmax             ] maximum N in MALN                                                     
-       Using constant nr 27 with value: 0.285000E-01                                                
+       Using constant nr 27 with value: 0.220000E-01                                                
        [MALPmin             ] minimum P in storage                                                  
        using default value: 0.100000E-02                                                            
        [MALPmax             ] maximum P in MALP                                                     

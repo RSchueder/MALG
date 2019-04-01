@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/03/30 16:14:17 
+ Execution start: 2019/04/01 18:30:53 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -414,7 +414,7 @@
  constant values in this block.
  values        26
  constants    ExtVl       
-         1    1.5000E-01
+         1    2.0000E-01
 
  ====> input item completed <==== 
 
@@ -423,7 +423,7 @@
  constant values in this block.
  values        27
  constants    MALNmax     
-         1    2.8500E-02
+         1    2.2000E-02
 
  ====> input item completed <==== 
 
@@ -1036,4 +1036,4 @@ Number of periods defined:     0
  total integer   array space:       5837
  total character array space:       9946
  grand total in 4-byte words:      22320 =   0-GB   0-MB  89-KB 280-Byte.
- Execution stop : 2019/03/30 16:14:17 
+ Execution stop : 2019/04/01 18:30:53 

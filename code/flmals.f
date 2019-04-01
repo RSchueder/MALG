@@ -294,7 +294,6 @@ C
                 
                 mu = LimDen * LimPho * LimTemp * LimNut
                 
-                
                 IF (mu .gt. 0.0) THEN
                     ! gDM/(m2 d)
                     dGrowMALS = mu * MALS

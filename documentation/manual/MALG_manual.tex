@@ -6,44 +6,44 @@
 
 \subsection{General description}
 
-Macroalgae, kelp, or seaweed, are macroscopic multicellular marine algae that cover a large range of taxonomic groups. They are of interest from an ecological point of view as they provide habitat for marine animals, and also from an economic point of view as a product that can be harvested while bio-remediating marine waters. There specifically is interest in the use of macroalgae as a bioremediator in integrated multitrophic aquaculture (IMTA) systems, where they can convert excess farm nutrients into biomass and value added products. 
+Macroalgae, kelp, or seaweed, are macroscopic multicellular marine algae that cover a large range of taxonomic groups. They are of interest from an ecological point of view as they provide habitat for marine animals, and also from an economic point of view as they can be cultivated and harvested while offering a bio-remediating service to marine waters. There specifically is interest in the use of macroalgae as a bioremediator in integrated multitrophic aquaculture (IMTA) systems, where they can convert excess farm nutrients into biomass and value added products. 
 
-The macroalgae module (MALG) in DELWAQ is designed to model the the dynamics of kelp \textit{Saccharina} and is based almost entirely on the model described in Broch \textit{et al.} (2011). Note that numerous changes have been made to the equations to allow for compatibility with DELWAQ's mass based systems, and also to allow for the inclusion of MALG in 3D models, whereby the size of the seaweed needs to be modelled in addition to the biomass. The primary motivation for this development is for application in assessment of IMTA systems. The general model organization will be described here, specifically the implementation in the DELWAQ library. For further details of the derivation of the model equations please refer to Broch \textit{et al.} (2011).
+The macroalgae module (MALG) in DELWAQ models the the dynamics of the kelp \textit{Saccharina latissima} and is based almost entirely on the model described in Broch \textit{et al.} (2011). Its applicability to seaweed in general is not known and up to the user to determine. Note that numerous changes have been made to the equations to allow for compatibility with DELWAQ's mass based systems, and also to allow for the inclusion of MALG in 3D models, whereby the size of the seaweed needs to be modelled in addition to the biomass. The primary motivation for this development is for application in assessment of IMTA systems. The general model organization will be described here, specifically the implementation in the DELWAQ library. For further details of the derivation of the model equations please refer to Broch \textit{et al.} (2011).
 
 Macroalgae can be idealized as 4 distinct state variable components:
 \begin{itemize}
-\item MacroALgae Structural mass (MALS)
-\item MacroALgae Nitrogen storage mass (MALN)
-\item MacroALgae Phosphorous storage mass (MALP)
-\item MacroALgae Carbon storage mass (MALC)
+\item MacroALgae Structural mass (MALS, gDM m$^{2}$)
+\item MacroALgae Nitrogen storage mass (MALN, gN m$^{2}$)
+\item MacroALgae Phosphorous storage mass (MALP, gP m$^{2}$)
+\item MacroALgae Carbon storage mass (MALC, gC m$^{2}$)
 \end{itemize}
 Collectively these components represent the entire macroalgae frond, where frond is the term used to describe the macro structure of the algae visible to the naked eye, including the foot (attachment organ). Each component exhibits its own growth dynamics and interacts with the surrounding water independently. 
 
-For instance, the structural mass represents the part of the macroalgae that increases the area and length of the total front when it grows. It does not take nutrients from the water, does not photosynthesize, and loses mass when it decays, producing detritus. It grows by taking nutrients (N/P/C) from its storage, and is thus responsible for growth respiration. The structural mass has units of dry matter (DM) is analogous to the common notion of 'dry matter'. It represents the dry weight of the plant minus the weight of water, nutrient stores, and carbon stores.
+For instance, the structural mass represents the part of the macroalgae that increases the area and length of the total front when it grows. It does not take nutrients from the water, does not photosynthesize, and loses mass when it decays, producing detritus. It grows by taking nutrients (N/P/C) from its storage and has its own fixed carbon, nitrogen, and phosphorous ratios. The structural mass has units of dry matter (DM m$^{2}$) and is analogous to the common notion of 'dry matter'. However, it is lower than the true dry matter of the frond in that it represents the dry weight of the plant minus the weight of water, nutrient stores, and carbon stores. The model does also compute dry weight (DW), which is the structural weight including the mass of nutrient stores, and wet weight (WW), which is the structural weight including the mass of nutrient stores with water.
  
 The nitrogen and phosphorous storage uptake nutrients (NH4, NO3, PO4) from the ambient water and store them for the structural mass during growth periods. In this model it is assumed the phosphorous storage dynamics are analagous to the nitrogen, but in reality the behaviour of phosphorous storage is not well known.
 
-The carbon storage is the part of the plant responsible for photosynthesizing, producing exudate, and maintenence respiration. It produces carbon by taking up inorganic carbon and producing oxygen via photosynthesis. It provides carbon to the structural mass during growth periods. 
+The carbon storage is the part of the plant responsible for photosynthesizing, producing exudate, and respiration. It produces carbon stores (carbohydrates) by taking up dissolved inorganic carbon and producing oxygen via photosynthesis. It provides carbon to the structural mass during growth periods. 
 
-It is assumed that there is constant relationship between volume and area of a macroalgae frond. This means that the density of the macroalgae does not change, even if the ratio of structural mass to stored material changes. Additionally, the C:N and C:P ratios of each component are fixed, but because the ratio of stored mass to structural mass changes, the C:N and C:P ratios of the entire frond changes in due to changes in ambient conditions.
+It is assumed that there is constant relationship between volume and area of a macroalgae frond. This means that the density of the macroalgae does not change, even if the ratio of structural mass to stored material changes. Additionally, the C:N and C:P ratios of each component are fixed, but because the ratio of stored mass to structural mass changes, the C:N and C:P ratios of the entire frond changes in due to changes in ambient conditions and thus nutrient reserves.
 
 \subsection{Distribution of macroalgae biomass in the water column}
 \begin{flushright}
 	\textsc{process: MALDIS}
 \end{flushright}
-The physiological equations described in Broch\textit{et al.,} (2011) do not mention any physical description of the seaweed fronds in space aside from their area. The application of Broch in DELWAQ requires knowledge of the mass per m$^{2}$ and the vertical space occupied by the frond. Thus the algorithms for distributing the frond mass in space have been developed independently of the physiological formulations in Broch. 
+The physiological equations described in Broch\textit{et al.,} (2011) do not mention any physical description of the seaweed fronds in space aside from their area. The application of Broch in DELWAQ requires knowledge of the mass per m$^{2}$ and the vertical space occupied by the frond. Thus, the algorithms for distributing the frond mass in space have been developed independently of the physiological formulations in Broch. 
 
-A simple approach is taken, whereby fronds (typically) only grow in length and retain a constant length:area ratio. This is typically the case because a frond may reach the end of the water column while it still has the capcity to grow, in which case only the area and not the length will increase. The case for a single frond per computational cell is simple. However, the code must be able to deal with any seeding density, which cannot be uniquely defined by the mass per m$^{2}$ alone. For example, consider two cases whereby there exists 40g of dry matter per m$^{2}$. In the first example there are 4 fronds in a 1 m$^{2}$ square. They each weigh 10 g, have a combined area of 0.24 m$^{2}$ and are each 0.2 m long. In a second example, consider a single frond in a 1 m$^{2}$ square. It weighs 40 g, has an area of 0.24 m$^{2}$, and is 0.8 m long. In a 3D model with grid cells that are \textless 0.8 m thick, the nutrient uptake will take place in different cells in each of the two cases even though the mass per m$^{2}$ is identical in DELWAQ. To avoid this ambiguity the user must prescribe a set of parameters to describe the spatial characteristics of the culture. These are as follows:
+A simple approach is taken, whereby fronds (typically) only grow in length and retain a constant length:area ratio. The exception to this rule is when a frond is able to reach the end of the water column while it still has the capacity to grow, in which case only the area and not the length will increase. The case for a single frond per computational cell is simple. However, the code must be able to deal with any seeding density, which cannot be uniquely defined by the mass per m$^{2}$ alone. For example, consider two cases whereby there exists 40g of dry matter per m$^{2}$. In the first example there are 4 fronds in a 1 m$^{2}$ square. They each weigh 10 g, have a combined area of 0.24 m$^{2}$ and are each 0.2 m long. In a second example, consider a single frond in a 1 m$^{2}$ square. It weighs 40 g, has an area of 0.24 m$^{2}$, and is 0.8 m long. In a 3D model with grid cells that are \textless 0.8 m thick, the nutrient uptake will take place in different cells in each of the two cases even though the mass per m$^{2}$ is identical in DELWAQ. To avoid this ambiguity the user must prescribe a set of parameters to describe the spatial characteristics of the culture. These are as follows:
 
 \begin{itemize}
-\item $FootDepth$ The depth below the water surface that the foot of the frond is attached. The frond begins growing from the segment that intersects this depth, and the segment can change with a variable water level as it is assigned each time step.
-\item $LmaxMAL$ The maximum length of the frond measured in the z axis from the foot to the tip of the frond.
+\item $FootDepth$ The depth below the water surface that the foot of the frond is attached. The frond begins growing from the segment that intersects this depth, and the segment it resides in within a sigma layer model can change with a variable water level as it is assigned each time step.
+\item $LmaxMAL$ The maximum length of the frond measured in the vertical (z) axis from the foot to the tip of the frond.
 \item $SwGroMAL$ Switch for an upwards (\textgreater 0) or downwards (\textless 0) growing frond.
 \item $LinDenMal$ The linear density of the culture. This describes the amount of mass it takes a m$^{2}$ of culture to grow 1 m. Four small fronds require more mass to increase their collective length by 1 m compared to a single long frond.
 \item $ArDenMal$ The area density of the culture. This is the ratio between surface area and dry weight.
 \end{itemize}
 
-Based on these parameterizations the culture can be completely schemetized in 3 dimensions. The process begins by first calculating the length and the area of the culture in this column of segments:
+Based on these parameters the culture can be completely described in 3 dimensions. The process begins by first calculating the length and the area of the culture in this column of segments:
 
 \[LenMAL = MALS/ LinDenMAL\] 
 \[AreMAL = MALS * Surf / ArDenMAL\] 
@@ -75,7 +75,7 @@ The segment top depth $Z1$ and segment bottom depth $Z2$ are then checked agains
 \textsc{process: FLMALS}
 \end{flushright}
 
-The structural component of the macroalgae is the dry material that gives shape and structure to the macroalgae frond. As it grows it increases the length and area of the entire frond. Growth of other components of the frond do not have any effect on the frond length, volume, density, or surface area. 
+The structural component of the macroalgae is the dry material that gives shape and structure to the macroalgae frond. It does not include N, P, or C stores, but has a fixed N, P, and C component, meaning that these nutrients are required for growth of the structural mass and there is a minimum amount of N,P and C in the structural mass regardless of the reserve nutrient level. As the structural mass grows it increases the length and area of the entire frond. Growth of other components of the frond (nutrient reserves) do not have any effect on the frond length, volume, density, or surface area. 
 
 The net growth of the structural mass is the resulting rate of structural biomass production and frond erosion (considered to be analagous to mortality used in other DELWAQ processes). This balance can be defined by the following function:
 
@@ -100,15 +100,28 @@ $C_{min}$ & minimum carbon storage (gC gDM$^{-1}$)\\
 $MALC$ & carbon storage (gC/m$^2$)\\
 \end{tabular}
 
-Note that in the code the storage terms are temporarily converted to g/gDM using $MALS$ to comply with the formulations outlined in Broch \textit{et al.} (2011). The storage state variable terms are g m$^{-2}$ as per all non-transportable DELWAQ substances, and this is reflected in the fluxes, which are back calculated to g m$^{-2}d^{-1}$. As the substances are non transportable they reside in the bottom segment. However, depending on the user defined variables, there is not necessarily the influence of mass in the bottom segment, such as in the case where the algae grow from the water surface downward. This is discussed in MALDIS.
+Note that in the code the storage terms are temporarily converted to g/gDM using $MALS$ to comply with the formulations outlined in Broch \textit{et al.} (2011). The storage state variable terms are g m$^{-2}$ as per all non-transportable DELWAQ substances, and this is reflected in the fluxes, which are back calculated to g m$^{-2}d^{-1}$. As the substances are non transportable they reside in the bottom segment. However, depending on the user defined variables, it is possible for the mass and associated fluxes to have no effect in the bottom segment, such as in the case where the algae grow from the water surface downward. This is discussed in MALDIS.
 
-The growth rate of the structural mass is dependent on a density limitation, a photoperiod limitation, and a temperature limitation. These limitations differ from conventional DELWAQ limitations for algae growth in that they do not range strictly between 0 and 1. Instead Broch has tuned them such that their product is equal to the maximum growth rate when at optimal conditions. The density limitation represents the ability of the frond to only grow so big, and the bigger it gets the lower its growth rate will become. The photoperiod limitation is similar to the daylength limitation used in BLOOM and DYNAMO, but instead considers the \textit{change} in daylength compared to the previous day instead of the actual current daylength. This is due to the fact that \textit{Saccharina} is a seasonal anticipator and will grow and store nutrients in accordance with the change in the season as determined by how much longer or shorter the days become. The temperature limitation is a simple piece wise function that identifies an optimal growth between temperatures 10-15$^0$C, no growth above 19$^0$C, and linear growth increasing betwen -1.8 and 10$^0$C.  The limitation functions are formulated as follows:
-
-\[f_{density} = m_1 exp\big\{-(\frac{MALS}{MALS_0})^2 \big\}+m_2\]
+The growth rate of the structural mass is dependent on a density limitation, a photoperiod limitation, and a temperature limitation. These limitations differ from conventional DELWAQ limitations for algae growth in that they do not range strictly between 0 and 1. Instead Broch has tuned them such that their product is equal to the maximum growth rate when at optimal conditions (0.18 d$^{-1}$). The density limitation represents the ability of the frond to only grow so big, and the bigger it gets the lower its growth rate will become. The formulation is as follows:
+\[f_{density} = m_1 exp\big\{-(\frac{AreaLoc}{MALS_0})^2 \big\}+m_2\] 
+Where:\\
+\begin{tabular}{ll}
+	$m_1$    & growth rate parameter 1 (-)\\
+	$m_2$    & growth rate parameter 2 (-)\\
+	$AreaLoc$ & locaal frond area in this segment (m$^2$)\\
+	$MALS_0$ & critical biomass area (m$^2$)\\
+\end{tabular}
+This formulation is designed to allow small fronds to grow faster than bigger fronds. This has large implications for the DELWAQ model in contrast to the Broch model which is 'individual based' and thus can integrate this formulation seamlessly. The reason for the complications in DELWAQ arising from this relates back to the MALDIS section. Considering the two setups previously described, it is possible to ascertain that the erosion rate within a given segment should be higher for those containing a single large frond than for those containing a collection of smaller fronds of equivalent mass. This idea is logical if one assumes that the size of the neighbouring frond does not affect the growth of another frond (ignoring light and nutrient competition effects). Thus, decisions made in MALDIS about how to schematize the culture need to also play a role in defining the $MALS_0$ value. The current idea is that: 
+\[MALS_0 = N_{fronds}/0.06\]
+The photoperiod limitation is similar to the daylength limitation used in BLOOM and DYNAMO, but instead considers the \textit{change} in daylength compared to the previous day instead of the actual current daylength. This is due to the fact that \textit{Saccharina latissima} is a seasonal anticipator and will grow and store nutrients in accordance with the change in the season as determined by how much longer or shorter the days become. This formulation is given by: 
 \[f_{photoperiod} = a_1 (1+sin(\tau (n) | \tau (n)| ^{\frac{1}{2}})) + a_2\]
-
-where $\tau$ is a function describing the normalized difference in day length between current day and previous day.
-
+Where:\\
+\begin{tabular}{ll}
+	$a_1$    & photoperiod parameter 1 (-)\\
+	$a_2$    & photoperiod parameter 2 (-)\\
+\end{tabular}
+and $\tau$ is a function describing the normalized difference in day length between current day and previous day. The parameters $a_1$ and $a_2$ are chosen such that $0.3 \textgreater f_{photoperiod} \textless 2$. In future implementations it is hoped that the code will calculate this for the user, but it currently requires and iterative approach before simulation to define the correct values. 
+The temperature limitation is a simple piece wise function that identifies an optimal growth between temperatures 10-15$^0$C, no growth above 19$^0$C, and linear growth increasing between -1.8 and 10$^0$C.  The temperature limitation is therefore:
 \[f_{temperature} =  
 \left 
 .\begin{tabular}{cc}
@@ -120,38 +133,29 @@ $0$                & $T \textgreater 19$ \\
 \right 
 .\]
 
-Where:\\
-\begin{tabular}{ll}
-$m_1$    & mortality parameter 1 (-)\\
-$m_2$    & mortality parameter 1 (-)\\
-$MALS_0$ & critical biomass area (m$^2$)\\
-$a_1$    & photoperiod parameter 1 (-)\\
-$a_2$    & photoperiod parameter 2 (-)\\
-\end{tabular}
-
-The specific mortality rate $mrt$ of the structural biomass is dependent on the total area of the frond in relation to a critical large area and the erosion parameter. The formulation is as follows:
-\[\phi = \frac{10^{-6}exp(\epsilon\times MALS)}{1+10^{-6}exp((\epsilon\times MALS)-1)}\]
+The specific erosion (mortality) rate $mrt$ of the structural biomass is proportional to the total area of the frond and the erosion parameter. The formulation is as follows:
+\[\phi = \frac{10^{-6}exp(\epsilon\times LocArea)}{1+10^{-6}exp((\epsilon\times MALS)-1)}\]
 
 Where:\\
 \begin{tabular}{ll}
 $\epsilon$ & erosion parameter (m$^{-2}$)\\
 \end{tabular}
 
-This process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step each segment essentially receives 'ghost' structural and storage mass depending on the biomass allocated to it in MALDIS. The local fluxes are calculated using this mass and the local ambient environment. The fluxes are then locally applied to ambient dissolved parameters, but not algae parameters. Instead the fluxes of algae parameters are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in MALS, MALN, MALP, and MALC resulting from the net growth in the column. Once the bottom segment is reached this gives the new mass of each in the bottom segment and the plant will  become longer or shorter in the next time step to reflect this new state. The consequence of this method is that the local per segment ghost reserves adopt the reserve ratio of the whole column. Another way to say this is that the entire segment has a fixed structural to storage ratio, as in no segment can have a beefier part of the plant than the other.
+The structural growth process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step, all segments with a non-zero biomass fraction receive 'ghost' structural and storage mass according to the biomass allocated to it in MALDIS. The local inorganic nutrient, gas, and particulate fluxes are calculated using this mass and the local ambient conditions. The fluxes are then locally applied to ambient state variables exogenous to MALG, but not the MALG parameters (MALS, MALN, MALP, MALC). Instead, the fluxes of MALG state variables are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in MALS, MALN, MALP, and MALC resulting from the net growth in the column. Once the bottom segment is reached in the segment loop, the fluxes for each column of segments have been accumulated and the net change in mass of each administrative bottom segment is known. The culture will then become longer or shorter in the next time step to reflect this new state, which again is kept track of by the bottom segment in the column. The consequence of applying this techniqye is that the local per segment ghost reserves adopt the reserve ratio of the whole column. Another way to say this is that all child segments of a given water column have a fixed structural mass to storage mass ratio, as in no segment can have a beefier part of the plant than another.
 
 \subsection{Flux of Macroalgae nutrient storage}
 \begin{flushright}
 \textsc{process: FLMALN}
 \end{flushright}
 
-The nutrient storage component(s) of the macroalgae are those that the structural mass grows upon. The storage is also responsible for taking up nutrients from the ambient water. They consist of a nitrogen (MALN) and a phosphorous (MALP) storage component, which are both dealt with in the same nutrient storage subroutine. Note that Broch \textit{et al.} (2011) does not include a phosphorous component to the nutrient storage, but it is included in this model for flexibility should new information about phosphorous storage become available.
+The nutrient storage component(s) of the macroalgae (also reffered to as reserves) are those that the structural mass grows upon. The storage is also responsible for taking up nutrients from the ambient water. They consist of a nitrogen (MALN) and a phosphorous (MALP) storage component, which are both dealt with in the same nutrient storage subroutine. Note that Broch \textit{et al.} (2011) does not include a phosphorous component to the nutrient storage, but it is included in this model for flexibility should new information about phosphorous storage become available. Currently the model is written such that the frond cannot be P limited and no P flux will occur.
 
 The change in a nutrient storage mass is given by the following equations:
 
 \[dUptMALN = J_N - mu(K_c \times k_N \times MALS + MALN)\]
 \[dUptMALP = J_P - mu(k_C \times k_P \times MALS + MALP)\]
 
-This represents the balance between uptake $J$ and utilization for growth of the frond's structural mass. The uptake is dependent on flow velocity, the amount of stores compared to the minimum and maximum possible, and the ambient nutrient concentration. The formulation for both nitrogen and phosphorus is described as follows:
+This represents the balance between uptake $J$ and utilization for growth of the frond's structural mass $\mu$. The uptake is dependent on flow velocity, the amount of stores compared to the minimum and maximum possible, and the ambient nutrient concentration. The formulation for both nitrogen and phosphorus is described as follows:
 
 \[J_N = f_{velocity}J_{Nmax}(\frac{NO_3^-}{K_{sn}+NO_3^-})(\frac{MALN_{max}-MALN}{MALN_{max}-MALN_{min}})\]
 \[J_P = f_{velocity}J_{Pmax}(\frac{PO_4^{3-}}{K_{sp}+PO_4^{3-}})(\frac{MALP_{max}-MALP}{MALP_{max}-MALP_{min}})\]
@@ -184,7 +188,7 @@ The uptake of nutrients is dependent on the ambient concentration according to M
 \textsc{process: FLMALC}
 \end{flushright}
 
-The carbon storage component(s) of the macroalgae are those that the structural mass grows upon. The carbon storage (MALC)is also responsible for photosynthesis, maintenance respiration and exudation. The change in a carbon storage mass is given by the following equations:
+The carbon storage component(s) of the macroalgae are those that the structural mass grows upon. The carbon storage (MALC) is also responsible for photosynthesis, respiration and exudation. The change in a carbon storage mass is given by the following equations:
 
 \[dUptMALC = P(1-E)-R - \mu(k_C \times MALS + MALC)\]
 
@@ -197,7 +201,7 @@ $R$ & Maintenance respiration rate (gCm$^{-3}$ d$^{-1}$)\\
 
 Where the first term relates to the net of production, respiration and exudation, and the second term pertains to the utilization of carbon stores by the structural mass.
 
-The growth production rate is given by the following equation:
+The carbon production rate is given by the following set of equations:
 \[P = P_s(1-exp(-\frac{\alpha \times I}{P_s}))exp(-\frac{\beta \times I}{P_s})\]
 \[P_s = \frac{\alpha \times I_{sat}}{ln(1+\frac{\alpha}{\beta})}\]
 \[P_{max} = (\frac{\alpha \times I_{sat}}{ln(1+\frac{\alpha}{\beta}})(\frac{\alpha}{\alpha+\beta})(\frac{\beta}{\alpha+\beta})^{\frac{\beta}{\alpha}}\]
@@ -205,11 +209,12 @@ The growth production rate is given by the following equation:
 
 Where:\\
 \begin{tabular}{ll}
-$P_s$ & Saturation photosynthetic rate (gC m$^{-3}$ d$^{-1}$)\\
+$P$ & Photosynthetic rate (gC m$^{-3}$ d$^{-1}$)\\
+$P_s(T)$ & Saturation photosynthetic rate (gC m$^{-3}$ d$^{-1}$)\\
 $I$ & Incident radiation (W m$^{-2}$)\\
 $I_{sat}$ & Saturation radiation (W m$^{-2}$)\\
 $\alpha$ & Photosynthetic efficiency (gC d$^{-1}$W$^{-1}$) \\
-$\beta$ & Photosynthetic light inhibition (gC d$^{-1}$W$^{-1}$) \\
+$\beta(T)$ & Photosynthetic light inhibition (gC d$^{-1}$W$^{-1}$) \\
 $P_1$ & Reference photosynthetic rate at T$_1$\\
 $P_2$ & Reference photosynthetic rate at T$_2$\\
 $T$ & Water temperature (K)\\
@@ -220,11 +225,15 @@ $T_{APH}$ & Arrhenius temp for photosynthesis high end             (degK)\\
 $T_{APL}$ & Arrhenius temp for photosynthesis low end             (degK)\\
 \end{tabular}
 
-The equations describe a photo inhibitory effect for $I\textgreater I_{sat}$ in addition to a temperature growth inhibition effect for $Temp \textgreater T_{P2}$. The later describes an inability of \textit{Saccharina} to photosynthesize in warm waters. The structural mass is unable to grow above $Temp \textgreater 19^{0}$ This is something that has been fixed for the species as the user cannot felxibly change this unless the code is edited. Although the structural mass cannot grow, photosyntehtic production can still occur in the range $T_{P1}:T_{P2}$. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, these parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
+The set of equations describe a photo inhibitory effect for $I\textgreater I_{sat}$. The structural mass is strictly unable to grow above $Temp \textgreater 19^{0}$. Although the structural mass cannot grow, photosynthesis production can still occur in the range $\textgreater -1^{0}C Temp \textless 23^{0}C$. These two temperature controls are fixed for the species and the user cannot flexibly change this unless the code is edited. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, both the temperature function and the photosynthetic range parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
 
-The maximum production rate $P_{max}$ and the saturation production rate $P_{s}$ are both dependent on temperature. $P_{s}$ is non-linear in the photoinhibition parameter $\beta$, and so the root $\beta$ is found using Newton's method in Broch. This involves solving for $\beta$ such that $P_{max}$ equals the $P_{max}$ obtained from the temperature relationship at the current temperature. Newton's method is not used in the DELWAQ code and instead $\beta$ is pre-calculated for all temperatures in the photosynthetic range 1$^{0}$C to 25$^{0}$C at an interval of 0.1$^{0}$C. This is hard coded into the FLMALC subroutine and constitutes a linear approximation of $\beta$. Due to this the model should only be used for temperature ranges $1^{0}C \textless T \textless 25^{0}C$. Currently:
+The maximum production rate $P_{max}$ can be formulated in two ways. The first is only a function of temperature and describes photosynthesis at $I = I_{sat}$. The second production rate $P_{max}$ is the actual maximum production rate taking into account the effect of temperature on the response of growth to light. This means that growth is non-linear in temperature, as it effects both growth directly and also the way in which growth is affected by light. $\beta$ is solved for using Newton's method in Broch. This involves solving for the value $\beta$ such that $P_{max}$ equals the $P_{max}$ obtained from the temperature relationship at the current temperature and at $I = I_{sat}$. Newton's method is not used in the DELWAQ code and instead $\beta$ is pre-calculated for all temperatures in the photosynthetic range 1$^{0}$C to 25$^{0}$C at an interval of 0.1$^{0}$C. This is hard coded into the FLMALC subroutine and constitutes a linear approximation of $\beta$. Due to this the model should only be used for temperature ranges $1^{-1}C \textless T \textless 23^{0}C$. Currently:
 \begin{itemize}
-	\item $\beta \textless 1 ^{0}C = \beta(1 ^{0}C)$ and $\beta > 25 ^{0}C = \beta(25 ^{0}C)$. 
+	\item $\beta \textless 1 ^{0}C = \beta(1 ^{-1}C)$ and $\beta > 23 ^{0}C = \beta(25 ^{0}C)$. 
 \end{itemize} 
+
+And thus temperatures above or below the photosynthetic temperature range will result in a $ceil$ or $floor$ production value.
+
+
 
 \end{document}

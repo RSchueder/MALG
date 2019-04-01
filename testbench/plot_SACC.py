@@ -14,8 +14,8 @@ def MakeTS(var):
     return pd.Timestamp(var)
 plt.close('all')
 
-# file = r'd:\projects\IMPAQT\MALG\testbench\broch\broch_col.his'
-file = r'd:\projects\MALG\testbench\broch\broch_col.his'
+file = r'd:\projects\IMPAQT\MALG\testbench\broch\broch_col.his'
+# file = r'd:\projects\MALG\testbench\broch\broch_col.his'
 
 his = d3d.DelwaqHisFile(file)
 seg = 'Seg10'
@@ -62,9 +62,9 @@ plt.ylabel('Gross daily production [dm^2 d^-1]')
 plt.plot(his.dates,gross, 'k', label = 'Model')
 plt.grid()
 plt.ylim([0,0.8])
-dat = pd.read_csv(r'd:\projects\MALG\documentation\manual\figures\validation_data\production_circle.csv')
+dat = pd.read_csv(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\validation_data\production_circle.csv')
 plt.plot(dat['time'].apply(MakeTS),dat['val'],'ok',label = 'Sjotun, 1993')
-dat = pd.read_csv(r'd:\projects\MALG\documentation\manual\figures\validation_data\production_plus.csv')
+dat = pd.read_csv(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\validation_data\production_plus.csv')
 plt.plot(dat['time'].apply(MakeTS),dat['val'],'+k',label = 'Sjotun, 1993')
 plt.legend()
 
@@ -73,9 +73,9 @@ MALC = his['MALSCD',seg,:]
 plt.plot(his.dates,MALC, 'k', label = 'Model')
 plt.xlabel('time')
 plt.ylabel('carbon content [gC/gDW]')
-dat = pd.read_csv(r'd:\projects\MALG\documentation\manual\figures\validation_data\carbon_circle.csv')
+dat = pd.read_csv(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\validation_data\carbon_circle.csv')
 plt.plot(dat['time'].apply(MakeTS),dat['val'],'ok',label = 'Sjotun, 1993')
-dat = pd.read_csv(r'd:\projects\MALG\documentation\manual\figures\validation_data\carbon_plus.csv')
+dat = pd.read_csv(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\validation_data\carbon_plus.csv')
 plt.plot(dat['time'].apply(MakeTS),dat['val'],'+k',label = 'Sjotun, 1993')
 plt.legend()
 plt.grid()
@@ -86,9 +86,9 @@ MALN = his['MALSND',seg,:]
 plt.plot(his.dates,MALN, 'k', label = 'Model')
 plt.xlabel('time')
 plt.ylabel('nitrogen content [gN/gDW]')
-dat = pd.read_csv(r'd:\projects\MALG\documentation\manual\figures\validation_data\nitrogen_circle.csv')
+dat = pd.read_csv(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\validation_data\nitrogen_circle.csv')
 plt.plot(dat['time'].apply(MakeTS),dat['val'],'ok',label = 'Sjotun, 1993')
-dat = pd.read_csv(r'd:\projects\MALG\documentation\manual\figures\validation_data\nitrogen_plus.csv')
+dat = pd.read_csv(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\validation_data\nitrogen_plus.csv')
 plt.plot(dat['time'].apply(MakeTS),dat['val'],'+k',label = 'Sjotun, 1993')
 plt.legend()
 plt.grid()
