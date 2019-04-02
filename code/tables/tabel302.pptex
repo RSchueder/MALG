@@ -212,7 +212,7 @@ OXY        colsep respiration flux DEB Zooplankton                   colsep (gC/
 OXY        colsep respiration flux of DEB Grazer3                    colsep (gC/m3/d)            colsep DEBGRZ_G3  \\
 OXY        colsep respiration flux of DEB Grazer4                    colsep (gC/m3/d)            colsep DEBGRZ_G4  \\
 OXY        colsep respiration flux of DEB Grazer5                    colsep (gC/m3/d)            colsep DEBGRZ_G5  \\
-OXY        colsep oxygen consumption MALS                            colsep (gO/m3/d)            colsep FlMALS     \\
+OXY        colsep Oxygen consumption MALS                            colsep (gO/m3/d)            colsep FlMALS     \\
 OXY        colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
 OXY        colsep OXY production by MALS                             colsep (gC/m3/d)            colsep FlMALC     \\
 dTR1       colsep decay tracer from source 1                         colsep (g/m3/d)             colsep Age1       \\
@@ -2850,10 +2850,10 @@ MALS       colsep Growth of MALS on storage                          colsep (DM/
 MALS       colsep cannibalization of structural mass in respiration  colsep (gC/m2/d)            colsep FlMALC     \\
 MALS       colsep harvesting flux MALS                               colsep (gDM/m2/d)           colsep HRVMAL     \\
 MALN       colsep Utilization of MALN in growth                      colsep (gN/m2/d)            colsep FlMALS     \\
-MALN       colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
+MALN       colsep Storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
 MALN       colsep harvesting flux MALN                               colsep (gN/m2/d)            colsep HRVMAL     \\
 MALP       colsep Utilization of MALP in growth                      colsep (gP/m2/d)            colsep FlMALS     \\
-MALP       colsep storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
+MALP       colsep Storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
 MALP       colsep harvesting flux MALP                               colsep (gP/m2/d)            colsep HRVMAL     \\
 MALC       colsep Utilization of MALC in growth                      colsep (gC/m2/d)            colsep FlMALS     \\
 MALC       colsep storage of carbon by macroalgae                    colsep (gC/m2/d)            colsep FlMALC     \\

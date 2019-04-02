@@ -14935,7 +14935,7 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALC    ","FrBmMALS  ",   3,"N","x",1
 "FlMALC    ","MALCmin   ",   4,"Y","x",1
 "FlMALC    ","CDRatMALS ",   5,"Y","x",1
-"FlMALC    ","ArDenMALS ",   6,"Y","x",1
+"FlMALC    ","ArDenMAL  ",   6,"Y","x",1
 "FlMALC    ","Temp      ",   7,"Y","x",1
 "FlMALC    ","R1        ",   8,"Y","x",1
 "FlMALC    ","R2        ",   9,"Y","x",1
@@ -14951,7 +14951,7 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALC    ","Tar       ",  19,"Y","x",1
 "FlMALC    ","RadSurf   ",  20,"N","x",1
 "FlMALC    ","ExtVl     ",  21,"N","x",1
-"FlMALC    ","alpha     ",  22,"Y","x",1
+"FlMALC    ","alpha0    ",  22,"Y","x",1
 "FlMALC    ","Isat      ",  23,"Y","x",1
 "FlMALC    ","exuMALC   ",  24,"Y","x",1
 "FlMALC    ","MBotSeg   ",  25,"N","x",1

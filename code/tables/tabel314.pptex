@@ -2219,9 +2219,9 @@ G5_Nbal    colsep N balance DEB Grazer5(should be zero)              colsep (gN 
 G5_Pbal    colsep P balance DEB Grazer5(should be zero)              colsep (gP m-3 d-1)         colsep DEBGRZ_G5  \\
 SPMratioem colsep Flocculation ratio macro:micro empirical model     colsep (-)                  colsep IM_Floceq  \\
 Attribute  colsep value of the attribute                             colsep (-)                  colsep AttribOut  \\
-MALNDM     colsep macroalgae N storage in segment                    colsep (gN/gDM)             colsep FlMALS     \\
-MALPDM     colsep macroalgae P storage in segment                    colsep (gP/gDM)             colsep FlMALS     \\
-MALCDM     colsep macroalgae C storage in segment                    colsep (gC/gDM)             colsep FlMALS     \\
+MALNDM     colsep macroalgae N storage in column w.r.t structural    colsep (gN/gDM)             colsep FlMALS     \\
+MALPDM     colsep macroalgae P storage in column w.r.t structural    colsep (gP/gDM)             colsep FlMALS     \\
+MALCDM     colsep macroalgae C storage in column w.r.t structural    colsep (gC/gDM)             colsep FlMALS     \\
 MALSNC     colsep ratio N:C in whole frond                           colsep (gN/gC)              colsep FlMALS     \\
 MALSPC     colsep ratio P:C in whole frond                           colsep (gP/gC)              colsep FlMALS     \\
 MALSCD     colsep ratio C:DM in whole frond                          colsep (gC/gDM)             colsep FlMALS     \\
@@ -2238,9 +2238,9 @@ muMALS     colsep unit growth rate MALS                              colsep (1/d
 LocGroPS   colsep local gross production of MALS                     colsep (DM/m2/d)            colsep FlMALS     \\
 LocNetPS   colsep local net production of MALS                       colsep (DM/m2/d)            colsep FlMALS     \\
 LocDecS    colsep local decay of MALS                                colsep (DM/m2/d)            colsep FlMALS     \\
-LocGroN    colsep local utilization of MALN                          colsep (gN/m2/d)            colsep FlMALS     \\
-LocGroP    colsep local utilization of MALP                          colsep (gP/m2/d)            colsep FlMALS     \\
-LocGroC    colsep local utilization of MALC                          colsep (gC/m2/d)            colsep FlMALS     \\
+LocGroN    colsep local utilization of MALN by MALS                  colsep (gN/m2/d)            colsep FlMALS     \\
+LocGroP    colsep local utilization of MALP by MALS                  colsep (gP/m2/d)            colsep FlMALS     \\
+LocGroC    colsep local utilization of MALC by MALS                  colsep (gC/m2/d)            colsep FlMALS     \\
 Wdry       colsep dry weight of frond                                colsep (g/m2)               colsep FlMALS     \\
 Wwet       colsep wet weight of frond                                colsep (g/m2)               colsep FlMALS     \\
 BmLayMAL   colsep Biomass of MALS in segment                         colsep (gDM/m3)             colsep MALDIS     \\
@@ -2248,11 +2248,11 @@ TipDepth   colsep depth of tip of frond in this column               colsep (m) 
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\
 LimN       colsep ambient nitrogen limitation for storage            colsep (-)                  colsep FlMALN     \\
 LimP       colsep ambient phosphorous limitation for storage         colsep (-)                  colsep FlMALN     \\
-LocUpN     colsep Local N storage uptake flux                        colsep (gN/m2/d)            colsep FlMALN     \\
-LocUpP     colsep Local P storage uptake flux                        colsep (gP/m2/d)            colsep FlMALN     \\
+LocUpN     colsep Local N storage uptake flux in this segment        colsep (gN/m2/d)            colsep FlMALN     \\
+LocUpP     colsep Local P storage uptake flux in this segment        colsep (gP/m2/d)            colsep FlMALN     \\
 LocUpC     colsep Local C uptake flux                                colsep (gC/m3/d)            colsep FlMALC     \\
 Itip       colsep Radiation experienced by frond in current layer    colsep (W/m2)               colsep FlMALC     \\
-Itipu      colsep mol radiation experienced by frond in current laye colsep (uml/m2s)            colsep FlMALC     \\
+Itipu      colsep photon radiation experienced by frond in current l colsep (umol/m2/s)          colsep FlMALC     \\
 BrochP     colsep gross production as per Broch                      colsep (gC/dm2/h)           colsep FlMALC     \\
 GrosMALC   colsep gross photosynthesis MALC                          colsep (gC/m2/d)            colsep FlMALC     \\
 RespMALC   colsep respiration MALC                                   colsep (gC/m2/d)            colsep FlMALC     \\

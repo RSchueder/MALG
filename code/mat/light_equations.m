@@ -1,5 +1,11 @@
 close all
 clear all
+run('N:\Deltabox\Bulletin\jacobsen\OpenFoamTools\matlabUtilities\matlabUtilitiesSettings.m');
+C_del = load('n:\Deltabox\Bulletin\bruinsma\Matlab\plotSetup\deltaresColor.txt');
+G_del = load('n:\Deltabox\Bulletin\bruinsma\Matlab\plotSetup\deltaresGray.txt'); 
+set(groot,'defaulttextinterpreter','latex');  
+set(groot, 'defaultAxesTickLabelInterpreter','latex');  
+set(groot, 'defaultLegendInterpreter','latex');
 %% BROCH
 P1      =        1.22e-3   ;   %Reference photosynthetic rate at T1                    (gC/m2/d)
 P2      =        1.30e-3   ;   %Reference photosynthetic rate at T2                    (gC/m2/d)
@@ -39,33 +45,30 @@ PmaxB = ((alpha0*Isat./(log(1+(alpha0./beta)))) .*(alpha0./(alpha0+beta)) .* (be
 Ps = (alpha0*Isat)./(log(1+(alpha0./beta))); 
 
 figure(1)
-
 subplot(1,3,1)
-title('Pmax via Temp')
 plot(T-273,PmaxT,'o-');hold on
 ylim([0 0.002])
-xlabel('Temperature [^0C]')
-ylabel('gross production [gC/dm^2 h^-^1]')
+xlabel('temperature [$^0C$]','interpreter','latex')
+ylabel('gross production rate [gC dm$^{-2}$ h$^{-1}$]','interpreter','latex')
 xlim([min(T)-273,max(T)-273])
-set(gca,'FontSize',14)
+set(gca,'FontSize',18)
+legend('P$_{max}$','AutoUpdate','off','interpreter','latex')
 
 subplot(1,3,2)
-title('Pmax via beta')
 plot(beta,PmaxB,'o-') ; hold on
-plot(beta,Ps,'x-'); hold on
+%plot(beta,Ps,'x-'); hold on
 ylim([0 0.002])
 set(gca, 'XScale', 'log')
-ylabel('gross production [gC/dm^2 h^-^1]')
-xlabel('beta')
-set(gca,'FontSize',14)
-%legend('P_m_a_x','P_s')
+ylabel('gross production rate [gC dm$^{-2}$ h$^{-1}$]','interpreter','latex')
+xlabel('$\beta$ [gC dm$^{-2}$ h$^{-1}$ (umol$_{p}$ m$^{-2}$ s$^{-1}$)$^{-1}]$','interpreter','latex')
+set(gca,'FontSize',18)
+legend('P$_{max}$','AutoUpdate','off','interpreter','latex')
 
 subplot(1,3,3)
-title('Gross rate')
 ii = 1;
-for fact = 0.05:0.05:1
+for fact = 0.05:0.1:1.05
     I = Isat * fact;
-    lnd{ii} = strcat('I = ',num2str(I),' ',' umol m^-^2 s^-1');
+    lnd{ii} = strcat('I = ',num2str(I),' ',' umol$_{p}$ m$^{-2}$ s$^{-1}$');
     P = Ps .* (1-exp(-alpha0*I./Ps)).*exp(-beta.*I./Ps);
     
     plot(beta,P); hold on
@@ -73,10 +76,11 @@ for fact = 0.05:0.05:1
     set(gca, 'XScale', 'log')
     ii = ii + 1;
 end
-xlabel('beta')
-ylabel('gross production [gC/dm^2 h^-^1]')
-legend(lnd,'Location','northwest')
-set(gca,'FontSize',14)
+xlabel('$\beta$ [gC dm$^{-2}$ h$^{-1}$ (umol$_{p}$ m$^{-2}$ s$^{-1}$)$^{-1}]$','interpreter','latex')
+ylabel('gross production rate [gC dm$^{-2}$ h$^{-1}$]','interpreter','latex')
+leg1 = legend(lnd,'Location','northwest');
+set(leg1,'interpreter','latex','AutoUpdate','off')
+set(gca,'FontSize',20)
 
 fid = fopen('d:\projects\IMPAQT\MALG\code\beta_condition.f','w');
 for tt = 1:length(T)
@@ -110,14 +114,15 @@ fprintf(fid,'                ENDIF\n')
 fclose(fid)
 
 subplot(1,3,1)
-title('Pmax via Temp')
+title('P$_{max}$(T)','interpreter','latex')
 
 subplot(1,3,2)
-title('Pmax via beta')
+title('P$_{max}$($\beta$)','interpreter','latex')
 
 subplot(1,3,3)
-title('Gross rate as function of Radiation')
+title('P(T,I)','interpreter','latex')
 clear beta
+set(gca,'FontSize',18)
 beta = logspace(-12,-6,1000);
 
 pm = max(PmaxT);
@@ -126,12 +131,12 @@ plot([min(beta) beta(ind)],[pm pm],'k--'); hold on
 plot([beta(ind) beta(ind)],[0 pm],'k--'); hold on
 set(gcf,'Units','Normalized','OuterPosition',[0 0 1 1])
 set(gcf,'PaperPositionMode','auto');
-% saveas(gcf,['../../documentation/manual/figures/light_equations.png'])
+print('-dpng','-r300',['../../documentation/manual/figures/light_equations.png'])
 
 % check 12 degC value from paper
 I = 200;
 TempI = 273 + 12;
-TempI = 271
+TempI = 271;
 tind = find(T == TempI);
 [~,ind] = min(abs(PmaxB-PmaxT(tind)));
 beta = beta(ind);

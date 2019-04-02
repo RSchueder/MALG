@@ -172,7 +172,7 @@ C
                 Itip = I
                 I = I * 4.57 ! umol/m2s
                 Itipu = I
-
+                !Temp = 12.0
                 Isat = Isat * 4.57 ! umol/m2s
                 Temp = Temp + 273.0
                 !Temp = 273.0 + 12.0
@@ -697,7 +697,7 @@ C
                 beta = 2.096e-09 
             ENDIF
 
-
+                !I = 10.0
                 ! gC/(dm2 hr)
                 Ps = alpha0*Isat/LOG(1+alpha0/beta)  
                 P = Ps * (1-exp(-alpha0*I/Ps))*exp(-beta*I/Ps)

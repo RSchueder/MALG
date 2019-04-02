@@ -1,0 +1,99 @@
+\egin{longtable}{|l|l|l|l|}
+	extbf{parameter} & 	extbf{value} & 	extbf{unit} & 	extbf{description} & \\ 
+K0HrvMALS & 0.00000 & (gDM/m2/d) & zero order harvesting rate Macroalgae\\ 
+K1HrvMALS & 0.00000 & (1/d) & first order harvesting rate Macroalgae\\ 
+MALCmin & 0.100000E-01 & (gC/gDM) & minimum C in storage\\ 
+CDRatMALS & 0.200000 & (gC/gDM) & C to structural dry mass ratio in MALS\\ 
+ArDenMAL & 60.0000 & (gDM/m2) & Area density frond (grams/m2 surface area)\\ 
+R1 & 0.278500E-03 & (gC/dm2/h) & Reference respiration rate at T1\\ 
+R2 & 0.542900E-03 & (gC/dm2/h) & Reference respiration rate at T2\\ 
+Tr1 & 285.000 & (degK) & reference temperature 1 for respiration\\ 
+Tr2 & 290.000 & (degK) & reference temperature 2 for respiration\\ 
+P1 & 0.122000E-02 & (gC/dm2/h) & Reference photosynthetic rate at T1\\ 
+P2 & 0.144000E-02 & (gC/dm2/h) & Reference photosynthetic rate at T2\\ 
+Tp1 & 285.000 & (degK) & temp for reference photosynthetic rate 1\\ 
+Tp2 & 288.000 & (degK) & temp for reference photosynthetic rate 2\\ 
+Tap & 1694.00 & (degK) & Arrhenius temperature for photosynthesis\\ 
+Taph & 25924.0 & (degK) & Arrhenius temp for photosynthesis high end\\ 
+Tapl & 27774.0 & (degK) & Arrhenius temp for photosynthesis low end\\ 
+Tar & 11033.0 & (degK) & Arrhenius temp for respiration\\ 
+ExtVl & 0.180000 & (1/m) & total extinction coefficient visible light\\ 
+alpha0 & 0.375000E-04 & ((gC/dm2/h)/(umol/m2 & photosynthetic efficiency MALC\\ 
+Isat & 43.7630 & (W/m2) & light intensity where photosynthesis is max\\ 
+exuMALC & 0.500000 & (gC/gC) & exudation parameter\\ 
+MALNmin & 0.100000E-01 & (-) & minimum N in storage\\ 
+MALNmax & 0.220000E-01 & (gN/gDM) & maximum N in MALN\\ 
+MALPmin & 0.100000E-02 & (gP/gDM) & minimum P in storage\\ 
+MALPmax & 0.220000E-02 & (gP/gDM) & maximum P in MALP\\ 
+NCRatMALS & 0.500000E-01 & (gN/gC) & N:C ratio in MALS\\ 
+PCRatMALS & 0.500000E-02 & (gP/gC) & P:C ratio in MALS\\ 
+Ksn & 0.560000E-01 & (gN/m3) & half saturation MALN N uptake\\ 
+Ksp & 0.126000E-01 & (gP/m3) & half saturation MALN P uptake\\ 
+JNmax & 0.336000 & (gN/m2/d) & maximum MALN N uptake rate (per area frond)\\ 
+JPmax & 0.336000 & (gP/m2/d) & maximum MALP P uptake rate (per area frond)\\ 
+Vel & 0.150000 & (m/s) & velocity\\ 
+Vel65 & 0.300000E-01 & (m/s) & current speed at which J = 0.65Jmax\\ 
+Latitude & 52.0000 & (degrees) & latitude of study area\\ 
+m1 & 0.108500 & (-) & growth rate parameter 1\\ 
+m2 & 0.300000E-01 & (1/d) & growth rate parameter 2\\ 
+MALS0 & 0.600000E-01 & (m2) & growth rate parameter 3\\ 
+a1 & 1.02000 & (-) & photoperiod parameter 1\\ 
+a2 & 0.120000 & (-) & photoperiod parameter 2\\ 
+mrtMAL & 0.180000 & (1/dm2) & epsilon erosion/mortality parameter macro\\ 
+CDRatMAL & 0.200000 & (-) & C:DM ratio in MALS\\ 
+NCRatMAL & 0.500000E-01 & (-) & N:C ratio in MALS\\ 
+PCRatMAL & 0.500000E-02 & (-) & P:C ratio in MALS\\ 
+Kn & 2.72000 & (gN/gN) & mass of nitrogen reserves per gram nitrogen\\ 
+Kc & 2.12130 & (gC/gC) & mass of carbon reserves per gram carbon\\ 
+Kdw & 0.785000E-01 & (-) & structural dry weight per unit frond area\\ 
+FrPO1MAL & 0.750000 & (-) & fraction of MALS that goes to POC1 in decay\\ 
+FrPO2MAL & 0.250000 & (-) & fraction of MALS that goes to POC2 in decay\\ 
+TotalDepth & 10.0000 & (m) & total depth water column\\ 
+FootDepth & -999.999 & (m) & location of frond attachment in the water columns\\ 
+LmaxMAL & 10.0000 & (m) & Maximum length MALG\\ 
+SWGroDir & 1.00000 & (-) & grow direction MALG(1 = up -1 = down )\\ 
+LinDenMAL & 100.000 & (g/m3) & linear density of macroalgae\\ 
+RefDay & 0.00000 & (d) & daynumber of reference day simulation\\ 
+AuxSys & 86400.0 & (scu/d) & ratio between days and system clock\\ 
+Velocity & 0.500000 & (m/s) & horizontal flow velocity\\ 
+VWind & 3.00000 & (m/s) & wind speed\\ 
+SWRear & 10.0000 & (-) & switch for oxygen reaeration formulation (1-13)\\ 
+KLRear & 1.00000 & (m/d) & reaeration transfer coefficient\\ 
+TCRear & 1.01600 & (-) & temperature coefficient for rearation\\ 
+Salinity & 35.0000 & (g/kg) & Salinity\\ 
+fcover & 0.00000 & (-) & fraction of water surface covered <0-1>\\ 
+KLRearMax & 1000.00 & (m/d) & maximum KLREAR oxygen for temp. correction\\ 
+KLRearMin & 0.200000 & (m/d) & minimum rearation transfer coefficient oxygen\\ 
+Rain & 0.00000 & (mm/h) & rainfall rate\\ 
+coefAOxy & 1.66000 & (m/d) & gas transfer Oxy coefficient transmission\\ 
+coefB1Oxy & 0.260000 & {no unit} & gas transfer O2 coefficient wind scale 1\\ 
+coefB2Oxy & 1.00000 & {no unit} & gas transfer O2 coefficient wind scale 2\\ 
+coefC1Oxy & 0.660000 & {no unit} & gas transfer O2 coefficient rain scale 1\\ 
+coefC2Oxy & 1.00000 & {no unit} & gas transfer O2 coefficient rain scale 2\\ 
+coefD1Oxy & 1800.06 & {no unit} & fresh water coefficient1 for Schmidt nr Oxy\\ 
+coefD2Oxy & 120.100 & {no unit} & fresh water coefficient2 for Schmidt nr Oxy\\ 
+coefD3Oxy & 3.78180 & {no unit} & fresh water coefficient3 for Schmidt nr Oxy\\ 
+coefD4Oxy & 0.476080E-01 & {no unit} & fresh water coefficient4 for Schmidt nr Oxy\\ 
+Cl & 20000.0 & (g/m3) & Chloride\\ 
+SWSatOXY & 1.00000 & (-) & switch for oxygen saturation formulation (1 2)\\ 
+SWRearCO2 & 11.0000 & (-) & switch for CO2 reaeration formulation (1113)\\ 
+KLRearCO2 & 1.00000 & (m/d) & CO2 reaeration transfer coefficient\\ 
+TCRearCO2 & 1.01600 & (-) & temperature coefficient for rearation CO2\\ 
+KLRMaxCO2 & 1000.00 & (m/d) & maximum KLREAR CO2 for temperature correction\\ 
+KLRMinCO2 & 0.200000 & (m/d) & minimum rearation transfer coefficient CO2\\ 
+coefACO2 & 1.66000 & (m/d) & gas transfer CO2 coefficient transmission\\ 
+coefB1CO2 & 0.260000 & {no unit} & gas transfer CO2 coefficient wind scale 1\\ 
+coefB2CO2 & 1.00000 & {no unit} & gas transfer CO2 coefficient wind scale 2\\ 
+coefC1CO2 & 0.660000 & {no unit} & gas transfer CO2 coefficient rain scale 1\\ 
+coefC2CO2 & 1.00000 & {no unit} & gas transfer CO2 coefficient rain scale 2\\ 
+coefD1CO2 & 1800.06 & {no unit} & fresh water coefficient1 for Schmidt nr CO2\\ 
+coefD2CO2 & 120.100 & {no unit} & fresh water coefficient2 for Schmidt nr CO2\\ 
+coefD3CO2 & 3.78180 & {no unit} & fresh water coefficient3 for Schmidt nr CO2\\ 
+coefD4CO2 & 0.476080E-01 & {no unit} & fresh water coefficient4 for Schmidt nr CO2\\ 
+SWSatCO2 & 1.00000 & (-) & switch for CO2 saturation formulation (1 2)\\ 
+PCO2 & 0.316000E-03 & (atm) & partial atmospheric CO2 pressure\\ 
+SWTICdummy & 0.00000 & (-) & dummy option for TIC do not change value\\ 
+Poros & 1.00000 & (-) & volumetric porosity\\ 
+pHmin & 1.00000 & (-) & minimum allowed calculated pH\\ 
+pHmax & 14.0000 & (-) & maximum allowed calculated pH\\ 
+\end{longtable}

@@ -1954,7 +1954,7 @@ MaxTh      colsep maximum sediment thickness                         colsep (m) 
 Porinp     colsep target volumetric porosity                         colsep (m3pores/m3 bulk)    colsep           0.000 \\
 VSeep      colsep seepage/infltration                                colsep (m/d)                colsep           0.000 \\
 SwErosion  colsep switch erosion 0=Partheniades, 1=de Boer           colsep (-)                  colsep           0.000 \\
-alpha      colsep salpha for density distribution Rayleigh           colsep (?)                  colsep           0.000 \\
+alpha      colsep salpha for density distribution Rayleigh           colsep (?)                  colsep           2.000 \\
 fResCommun colsep communicate fResTDM between ADVTRA-CONSOL          colsep (g/m2/d)             colsep           0.000 \\
 Diflen     colsep thickness of laminar layer                         colsep (m)                  colsep           0.002 \\
 ALK        colsep alkalinity concentration                           colsep (mole HCO3-/m3)      colsep           5.000 \\
@@ -5570,11 +5570,11 @@ dDecdTR2   colsep Decay rate tracer1                                 colsep (1/d
 dDecdTR3   colsep Decay rate tracer3                                 colsep (1/d)                colsep           0.010 \\
 dDecdTR4   colsep Decay rate tracer4                                 colsep (1/d)                colsep           0.010 \\
 dDecdTR5   colsep Decay rate tracer5                                 colsep (1/d)                colsep           0.010 \\
-MALNmin    colsep minimum N in storage                               colsep (gN/gDM)             colsep           0.010 \\
+MALNmin    colsep minimum N in storage                               colsep (-)                  colsep           0.010 \\
 MALPmin    colsep minimum P in storage                               colsep (gP/gDM)             colsep           0.001 \\
 MALCmin    colsep minimum C in storage                               colsep (gC/gDM)             colsep           0.010 \\
 m1         colsep growth rate parameter 1                            colsep (-)                  colsep           0.108 \\
-m2         colsep growth rate parameter 2                            colsep (-)                  colsep           0.030 \\
+m2         colsep growth rate parameter 2                            colsep (1/d)                colsep           0.030 \\
 MALS0      colsep growth rate parameter 3                            colsep (m2)                 colsep           0.060 \\
 a1         colsep photoperiod parameter 1                            colsep (-)                  colsep           1.020 \\
 a2         colsep photoperiod parameter 2                            colsep (-)                  colsep           0.120 \\
@@ -5588,20 +5588,19 @@ Kdw        colsep structural dry weight per unit frond area          colsep (-) 
 FrPO1MAL   colsep fraction of MALS that goes to POC1 in decay        colsep (-)                  colsep           0.750 \\
 FrPO2MAL   colsep fraction of MALS that goes to POC2 in decay        colsep (-)                  colsep           0.250 \\
 LmaxMAL    colsep Maximum length MALG                                colsep (m)                  colsep          10.000 \\
-SWGroDir   colsep grow direction MALG(1 = up, -1 = down )            colsep -)                   colsep           1.000 \\
+SWGroDir   colsep grow direction MALG(1 = up, -1 = down )            colsep (-)                  colsep           1.000 \\
 LinDenMAL  colsep linear density of macroalgae                       colsep (g/m3)               colsep         300.000 \\
-ArDenMAL   colsep grams/m2 surface area of frond                     colsep (gDM/m2)             colsep          60.000 \\
+ArDenMAL   colsep Area density frond (grams/m2 surface area)         colsep (gDM/m2)             colsep          60.000 \\
 MALNmax    colsep maximum N in MALN                                  colsep (gN/gDM)             colsep           0.022 \\
 MALPmax    colsep maximum P in MALP                                  colsep (gP/gDM)             colsep           0.002 \\
-CDRatMALS  colsep C to dry mass ratio in MALS                        colsep (gC/gDM)             colsep           0.200 \\
+CDRatMALS  colsep C to structural dry mass ratio in MALS             colsep (gC/gDM)             colsep           0.200 \\
 NCRatMALS  colsep N:C ratio in MALS                                  colsep (gN/gC)              colsep           0.050 \\
 PCRatMALS  colsep P:C ratio in MALS                                  colsep (gP/gC)              colsep           0.005 \\
 Ksn        colsep half saturation MALN N uptake                      colsep (gN/m3)              colsep           0.056 \\
 Ksp        colsep half saturation MALN P uptake                      colsep (gP/m3)              colsep           0.013 \\
-JNmax      colsep maximum MALN N uptake rate                         colsep (gN/m2/d)            colsep           0.336 \\
-JPmax      colsep maximum MALP P uptake rate                         colsep (gP/m2/d)            colsep           0.336 \\
+JNmax      colsep maximum MALN N uptake rate (per area frond)        colsep (gN/m2/d)            colsep           0.336 \\
+JPmax      colsep maximum MALP P uptake rate (per area frond)        colsep (gP/m2/d)            colsep           0.336 \\
 Vel65      colsep current speed at which J = 0.65Jmax                colsep (m/s)                colsep           0.030 \\
-ArDenMALS  colsep grams/m2 surface area of frond                     colsep (gDM/m2)             colsep          60.000 \\
 R1         colsep Reference respiration rate at T1                   colsep (gC/dm2/h)           colsep           0.000 \\
 R2         colsep Reference respiration rate at T2                   colsep (gC/dm2/h)           colsep           0.001 \\
 Tr1        colsep reference temperature 1 for respiration            colsep (degK)               colsep         285.000 \\
@@ -5614,7 +5613,8 @@ Tap        colsep Arrhenius temperature for photosynthesis           colsep (deg
 Taph       colsep Arrhenius temp for photosynthesis high end         colsep (degK)               colsep       25924.000 \\
 Tapl       colsep Arrhenius temp for photosynthesis low end          colsep (degK)               colsep       27774.000 \\
 Tar        colsep Arrhenius temp for respiration                     colsep (degK)               colsep       11033.000 \\
+alpha0     colsep photosynthetic efficiency MALC                     colsep ((gC/dm2/h)/(umol/m2 colsep           0.000 \\
 Isat       colsep light intensity where photosynthesis is max        colsep (W/m2)               colsep          43.763 \\
-exuMALC    colsep exudation parameter                                colsep (gC/g)               colsep           0.500 \\
+exuMALC    colsep exudation parameter                                colsep (gC/gC)              colsep           0.500 \\
 K0HrvMALS  colsep zero order harvesting rate Macroalgae              colsep (gDM/m2/d)           colsep           0.000 \\
 K1HrvMALS  colsep first order harvesting rate Macroalgae             colsep (1/d)                colsep           0.000 \\

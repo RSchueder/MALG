@@ -1,5 +1,8 @@
 close all
 clear all
+run('N:\Deltabox\Bulletin\jacobsen\OpenFoamTools\matlabUtilities\matlabUtilitiesSettings.m');
+C_del = load('n:\Deltabox\Bulletin\bruinsma\Matlab\plotSetup\deltaresColor.txt');
+G_del = load('n:\Deltabox\Bulletin\bruinsma\Matlab\plotSetup\deltaresGray.txt'); 
 %% BROCH
 P1      =        1.22e-3   ;   %Reference photosynthetic rate at T1                    (gC/m2/d)
 P2      =        1.30e-3   ;   %Reference photosynthetic rate at T2                    (gC/m2/d)
@@ -23,47 +26,44 @@ alpha0  = 0.0000375;
 
 Tap     = log(P2/P1)/((1/Tp1)-(1/Tp2)); 
 Tar     = log(R2/R1)/((1/Tr1)-(1/Tr2));
-TapL    = log(P1/PL)/((1/TpL)-(1/Tp1));
-TapH    = log(P2/PH)/((1/Tp2)-(1/TpH));
+%TapL    = log(P1/PL)/((1/TpL)-(1/Tp1));
+%TapH    = log(P2/PH)/((1/Tp2)-(1/TpH));
 
 Isat    =        200.0;
 %% CALCULATION
 beta = logspace(-12,-6,1000);
 interval = 0.1;
-Temp = [TpL:interval:TpH];
+T = [TpL:interval:TpH];
 
-PmaxT = (P1 .* exp((Tap/Tp1) - (Tap./Temp))) ./ (1 + exp((TapL./Temp) - (TapL/TpL)) + exp((TapH/TpH) - (TapH./Temp)));
+PmaxT = (P1 .* exp((Tap/Tp1) - (Tap./T))) ./ (1 + exp((TapL./T) - (TapL/TpL)) + exp((TapH/TpH) - (TapH./T)));
 
 PmaxB = ((alpha0*Isat./(log(1+(alpha0./beta)))) .*(alpha0./(alpha0+beta)) .* (beta./(alpha0+beta)).^(beta./alpha0));
 
 Ps = (alpha0*Isat)./(log(1+(alpha0./beta))); 
 
 figure(1)
-
 subplot(1,3,1)
-title('Pmax via Temp')
-plot(Temp-273,PmaxT,'o-');hold on
+plot(T-273,PmaxT,'o-');hold on
 ylim([0 0.002])
-xlabel('Temperature [^0C]')
-ylabel('gross production [gC/dm^2 h^-^1]')
-xlim([min(Temp)-273,max(Temp)-273])
-set(gca,'FontSize',14)
+xlabel('temperature $[^0C]$','interpreter','latex')
+ylabel('gross production rate $[gC dm^{-2} h^{-1}]$','interpreter','latex')
+xlim([min(T)-273,max(T)-273])
+set(gca,'FontSize',16)
+legend('$P_{max}$','AutoUpdate','off','interpreter','latex')
 
 subplot(1,3,2)
-title('Pmax via beta')
 plot(beta,PmaxB,'o-') ; hold on
-plot(beta,Ps,'x-'); hold on
+%plot(beta,Ps,'x-'); hold on
 ylim([0 0.002])
 set(gca, 'XScale', 'log')
-ylabel('gross production [gC/dm^2 h^-^1]')
-xlabel('beta')
-set(gca,'FontSize',14)
-%legend('P_m_a_x','P_s')
+ylabel('gross production rate $[gC dm^{-2} h^{-1}]$','interpreter','latex')
+xlabel('beta $[gC dm^{-2} h^{-1} (umol_p m^{-2} s^{-1})^{-1}]$','interpreter','latex')
+set(gca,'FontSize',16)
+legend('$P_{max}$','AutoUpdate','off','interpreter','latex')
 
 subplot(1,3,3)
-title('Gross rate')
 ii = 1;
-for fact = 0.05:0.05:1
+for fact = 0.05:0.1:1.05
     I = Isat * fact;
     lnd{ii} = strcat('I = ',num2str(I),' ',' umol m^-^2 s^-1');
     P = Ps .* (1-exp(-alpha0*I./Ps)).*exp(-beta.*I./Ps);
@@ -73,25 +73,25 @@ for fact = 0.05:0.05:1
     set(gca, 'XScale', 'log')
     ii = ii + 1;
 end
-xlabel('beta')
-ylabel('gross production [gC/dm^2 h^-^1]')
-legend(lnd,'Location','northwest')
+xlabel('beta $[gC dm^{-2} h^{-1} (umol_p m^{-2} s^{-1})^{-1}]$','interpreter','latex')
+ylabel('gross production rate $[gC dm^{-2} h^{-1}]$','interpreter','latex')
+legend(lnd,'Location','northwest','AutoUpdate','off','interpreter','latex')
 set(gca,'FontSize',14)
 
 fid = fopen('d:\projects\IMPAQT\MALG\code\beta_condition.f','w');
-for tt = 1:length(Temp)
+for tt = 1:length(T)
     [~,ind] = min(abs(PmaxB-PmaxT(tt)));
 
     if tt == 1
-        fprintf(fid,'                IF (Temp .lt. %.1f) THEN \n', Temp(tt))
+        fprintf(fid,'                IF (Temp .lt. %.1f) THEN \n', T(tt))
         fprintf(fid,'                    beta = %.3e \n', beta(ind));
-    elseif tt == length(Temp)
-        fprintf(fid,'                ELSE IF (Temp .gt. %.1f) THEN \n', Temp(tt))
+    elseif tt == length(T)
+        fprintf(fid,'                ELSE IF (Temp .gt. %.1f) THEN \n', T(tt))
         fprintf(fid,'                    beta = %.3e \n', beta(ind));  
     else
         [~,nind] = min(abs(PmaxB-PmaxT(tt+1)));
-        fprintf(fid,'                ELSE IF (Temp .ge. %.1f .AND. Temp .lt. %.1f) THEN \n', Temp(tt-1), Temp(tt))
-        fprintf(fid,'                    beta = %.3e + (1.0 - %.1f*(%.1f-Temp))*%.3e \n', beta(ind),1/interval,Temp(tt),beta(nind)-beta(ind));
+        fprintf(fid,'                ELSE IF (Temp .ge. %.1f .AND. Temp .lt. %.1f) THEN \n', T(tt-1), T(tt))
+        fprintf(fid,'                    beta = %.3e + (1.0 - %.1f*(%.1f-Temp))*%.3e \n', beta(ind),1/interval,T(tt),beta(nind)-beta(ind));
     end
     subplot(1,3,2)
     if mod(tt,10) == 0
@@ -99,8 +99,8 @@ for tt = 1:length(Temp)
         plot([beta(ind) beta(ind)],[0 PmaxB(ind)],'k'); hold on
         subplot(1,3,1)
         if PmaxT(tt) >= min(PmaxB)
-            plot([Temp(tt)-273 max(Temp)-273],[PmaxT(tt) PmaxT(tt)],'k');hold on
-            plot([Temp(tt)-273 Temp(tt)-273], [0 PmaxT(tt)],'k'); hold on
+            plot([T(tt)-273 max(T)-273],[PmaxT(tt) PmaxT(tt)],'k');hold on
+            plot([T(tt)-273 T(tt)-273], [0 PmaxT(tt)],'k'); hold on
         end
     end
     
@@ -110,14 +110,15 @@ fprintf(fid,'                ENDIF\n')
 fclose(fid)
 
 subplot(1,3,1)
-title('Pmax via Temp')
+title('Pmax(T)','interpreter','latex')
 
 subplot(1,3,2)
-title('Pmax via beta')
+title('Pmax(beta)','interpreter','latex')
 
 subplot(1,3,3)
-title('Gross rate as function of Radiation')
+title('P(T,I)','interpreter','latex')
 clear beta
+set(gca,'FontSize',16)
 beta = logspace(-12,-6,1000);
 
 pm = max(PmaxT);
@@ -126,17 +127,17 @@ plot([min(beta) beta(ind)],[pm pm],'k--'); hold on
 plot([beta(ind) beta(ind)],[0 pm],'k--'); hold on
 set(gcf,'Units','Normalized','OuterPosition',[0 0 1 1])
 set(gcf,'PaperPositionMode','auto');
-% saveas(gcf,['../../documentation/manual/figures/light_equations.png'])
+print('-dpng','-r700',['../../documentation/manual/figures/light_equations.png'])
 
 % check 12 degC value from paper
 I = 200;
 TempI = 273 + 12;
-TempI = 271
-tind = find(Temp == TempI);
+TempI = 271;
+tind = find(T == TempI);
 [~,ind] = min(abs(PmaxB-PmaxT(tind)));
 beta = beta(ind);
-Temp = TempI;
-PmaxT = (P1 .* exp((Tap/Tp1) - (Tap./Temp))) ./ (1 + exp((TapL./Temp) - (TapL/TpL)) + exp((TapH/TpH) - (TapH./Temp)));
+T = TempI;
+PmaxT = (P1 .* exp((Tap/Tp1) - (Tap./T))) ./ (1 + exp((TapL./T) - (TapL/TpL)) + exp((TapH/TpH) - (TapH./T)));
 Ps = alpha0*Isat./(log(1+(alpha0./beta))); 
 P = Ps .* (1-exp(-alpha0*I./Ps)).*exp(-beta.*I./Ps);
 
