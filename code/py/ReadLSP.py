@@ -79,9 +79,9 @@ with open(r'd:\projects\IMPAQT\MALG\documentation\manual\figures\process_paramet
     ltx.write('}\n')
     for ii,cc in enumerate(dat.columns):
         if cc not in bc and ii != len(dat.columns):
-            ltx.write('\textbf{' + cc + '} & ')
+            ltx.write('\\\textbf{' + cc + '} & ')
         elif cc not in bc:
-            ltx.write('\textbf{' + cc + '} ')
+            ltx.write('\\\textbf{' + cc + '} ')
             
     ltx.write("\\\\ \n")
     subs = {}

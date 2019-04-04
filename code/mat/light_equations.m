@@ -6,6 +6,7 @@ G_del = load('n:\Deltabox\Bulletin\bruinsma\Matlab\plotSetup\deltaresGray.txt');
 set(groot,'defaulttextinterpreter','latex');  
 set(groot, 'defaultAxesTickLabelInterpreter','latex');  
 set(groot, 'defaultLegendInterpreter','latex');
+fs = 20
 %% BROCH
 P1      =        1.22e-3   ;   %Reference photosynthetic rate at T1                    (gC/m2/d)
 P2      =        1.30e-3   ;   %Reference photosynthetic rate at T2                    (gC/m2/d)
@@ -35,6 +36,8 @@ Tar     = log(R2/R1)/((1/Tr1)-(1/Tr2));
 Isat    =        200.0;
 %% CALCULATION
 beta = logspace(-12,-6,1000);
+beta0 = logspace(-12,-6,100);
+
 interval = 0.1;
 T = [TpL:interval:TpH];
 
@@ -46,23 +49,23 @@ Ps = (alpha0*Isat)./(log(1+(alpha0./beta)));
 
 figure(1)
 subplot(1,3,1)
-plot(T-273,PmaxT,'o-');hold on
+plot(T-273,PmaxT,'-','LineWidth',2);hold on
 ylim([0 0.002])
 xlabel('temperature [$^0C$]','interpreter','latex')
 ylabel('gross production rate [gC dm$^{-2}$ h$^{-1}$]','interpreter','latex')
 xlim([min(T)-273,max(T)-273])
-set(gca,'FontSize',18)
+set(gca,'FontSize',fs)
 legend('P$_{max}$','AutoUpdate','off','interpreter','latex')
-
 subplot(1,3,2)
-plot(beta,PmaxB,'o-') ; hold on
+plot(beta,PmaxB,'-','LineWidth',2) ; hold on
 %plot(beta,Ps,'x-'); hold on
 ylim([0 0.002])
 set(gca, 'XScale', 'log')
 ylabel('gross production rate [gC dm$^{-2}$ h$^{-1}$]','interpreter','latex')
 xlabel('$\beta$ [gC dm$^{-2}$ h$^{-1}$ (umol$_{p}$ m$^{-2}$ s$^{-1}$)$^{-1}]$','interpreter','latex')
-set(gca,'FontSize',18)
+set(gca,'FontSize',fs)
 legend('P$_{max}$','AutoUpdate','off','interpreter','latex')
+xlim([1e-12 1e-6])
 
 subplot(1,3,3)
 ii = 1;
@@ -80,7 +83,9 @@ xlabel('$\beta$ [gC dm$^{-2}$ h$^{-1}$ (umol$_{p}$ m$^{-2}$ s$^{-1}$)$^{-1}]$','
 ylabel('gross production rate [gC dm$^{-2}$ h$^{-1}$]','interpreter','latex')
 leg1 = legend(lnd,'Location','northwest');
 set(leg1,'interpreter','latex','AutoUpdate','off')
-set(gca,'FontSize',20)
+set(gca,'FontSize',fs)
+xlim([1e-12 1e-6])
+
 
 fid = fopen('d:\projects\IMPAQT\MALG\code\beta_condition.f','w');
 for tt = 1:length(T)
@@ -122,7 +127,7 @@ title('P$_{max}$($\beta$)','interpreter','latex')
 subplot(1,3,3)
 title('P(T,I)','interpreter','latex')
 clear beta
-set(gca,'FontSize',18)
+set(gca,'FontSize',fs)
 beta = logspace(-12,-6,1000);
 
 pm = max(PmaxT);
@@ -132,6 +137,23 @@ plot([beta(ind) beta(ind)],[0 pm],'k--'); hold on
 set(gcf,'Units','Normalized','OuterPosition',[0 0 1 1])
 set(gcf,'PaperPositionMode','auto');
 print('-dpng','-r300',['../../documentation/manual/figures/light_equations.png'])
+
+subplot(1,3,1)
+plot(T,PmaxT,'ro-')
+%xlim([4e-9 8e-9])
+ylim([8.45e-4 8.8e-4])
+
+subplot(1,3,2)
+%beta = beta0;
+PmaxB = ((alpha0*Isat./(log(1+(alpha0./beta)))) .*(alpha0./(alpha0+beta)) .* (beta./(alpha0+beta)).^(beta./alpha0));
+plot(beta,PmaxB,'ro-')
+xlim([4e-9 8e-9])
+ylim([8.45e-4 8.8e-4])
+
+subplot(1,3,3)
+xlim([4e-9 8e-9])
+ylim([8.45e-4 8.8e-4])
+print('-dpng','-r300',['../../documentation/manual/figures/light_equations_zoom.png'])
 
 % check 12 degC value from paper
 I = 200;
