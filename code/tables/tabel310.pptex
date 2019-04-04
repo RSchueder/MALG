@@ -5575,6 +5575,7 @@ MALPmin    colsep minimum P in storage                               colsep (gP/
 MALCmin    colsep minimum C in storage                               colsep (gC/gDM)             colsep           0.010 \\
 m1         colsep growth rate parameter 1                            colsep (-)                  colsep           0.108 \\
 m2         colsep growth rate parameter 2                            colsep (1/d)                colsep           0.030 \\
+nFrond     colsep number of fronds per m2                            colsep (1/m2)               colsep           1.000 \\
 MALS0      colsep growth rate parameter 3                            colsep (m2)                 colsep           0.060 \\
 a1         colsep photoperiod parameter 1                            colsep (-)                  colsep           1.020 \\
 a2         colsep photoperiod parameter 2                            colsep (-)                  colsep           0.120 \\

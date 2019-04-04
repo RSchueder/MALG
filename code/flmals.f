@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(57)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(57)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(58)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(58)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 57)   !    Local work array for the pointering
+      INTEGER IPNT( 58)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -45,6 +45,7 @@ C
       REAL(4) m_2         ! I  MALS growth rate parameter 2                        (-)
       REAL(4) HactMAL     ! I  Length of frond in this column                      (m)
       REAL(4) AactMAL     ! I  area of frond in this column                        (m2)
+      REAL(4) nFrond      ! I  number of fronds per m2                             (1/m2)
       REAL(4) MALS0       ! I  MALS growth rate parameter 3                        (gDM/m2)
       REAL(4) a_1         ! I  MALS photoperiod parameter 1                        (-)
       REAL(4) a_2         ! I  MALS photoperiod parameter 2                        (-)
@@ -172,22 +173,23 @@ C
                 m_2        = PMSA( IPNT(15) )
                 HactMAL    = PMSA( IPNT(16) )
                 AactMAL    = PMSA( IPNT(17) )
-                MALS0      = PMSA( IPNT(18) )
-                a_1        = PMSA( IPNT(19) )
-                a_2        = PMSA( IPNT(20) )
-                mrtMAL     = PMSA( IPNT(21) )
-                CDRatMALS  = PMSA( IPNT(22) )
-                NCRatMALS  = PMSA( IPNT(23) )
-                PCRatMALS  = PMSA( IPNT(24) )
-                Kn         = PMSA( IPNT(25) )
-                Kc         = PMSA( IPNT(26) )
-                Kdw        = PMSA( IPNT(27) )
-                FrPOC1MALS = PMSA( IPNT(28) )
-                FrPOC2MALS = PMSA( IPNT(29) )
-                MBotSeg    = nint(PMSA( IPNT( 30) ))
-                Surf       = PMSA( IPNT(31) )     
-                DELT       = PMSA( IPNT(32) )      
-                Depth      = PMSA( IPNT(33) )   
+                nFrond     = PMSA( IPNT(18) )
+                MALS0      = PMSA( IPNT(19) )
+                a_1        = PMSA( IPNT(20) )
+                a_2        = PMSA( IPNT(21) )
+                mrtMAL     = PMSA( IPNT(22) )
+                CDRatMALS  = PMSA( IPNT(23) )
+                NCRatMALS  = PMSA( IPNT(24) )
+                PCRatMALS  = PMSA( IPNT(25) )
+                Kn         = PMSA( IPNT(26) )
+                Kc         = PMSA( IPNT(27) )
+                Kdw        = PMSA( IPNT(28) )
+                FrPOC1MALS = PMSA( IPNT(29) )
+                FrPOC2MALS = PMSA( IPNT(30) )
+                MBotSeg    = nint(PMSA( IPNT( 31) ))
+                Surf       = PMSA( IPNT(32) )     
+                DELT       = PMSA( IPNT(33) )      
+                Depth      = PMSA( IPNT(34) )   
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
@@ -218,7 +220,7 @@ C
                 ! if the plant is too big overall then all segments suffer
                 ! area is in m2 and MALS0 is in m2 as well
                 
-                LimDen=m_1 * exp(-1*((AactMAL/MALS0)**2)) + m_2
+               LimDen=m_1*exp(-1*((AactMAL/(MALS0*nFrond*Surf))**2))+m_2
                 
                 ! temperature limitation
 
@@ -247,7 +249,7 @@ C
                 ! it should be the length, which is linearly related to area
                 ! But, you could also just adjust AactMAL accordingly
                 ! in agreement with the planting density
-                coeff = exp(mrtMAL*AactMAL*100)
+                coeff = exp(mrtMAL*AactMAL*100/Surf)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + (10e-6)*(coeff - 1 ))
@@ -362,30 +364,30 @@ C
                 FL(IdGrMALP + FLCREM) = FL(IdGrMALP + FLCREM)  + LocGroP
                 FL(IdGrMALC + FLCREM) = FL(IdGrMALC + FLCREM)  + LocGroC
                                   
-                PMSA( IPNT( 34)   ) =  MALNDM		
-                PMSA( IPNT( 35)   ) =  MALPDM		
-                PMSA( IPNT( 36)   ) =  MALCDM		
-                PMSA( IPNT( 37)   ) =  MALSNC		
-                PMSA( IPNT( 38)   ) =  MALSPC	
-                PMSA( IPNT( 39)   ) =  MALSCD
-                PMSA( IPNT( 40)   ) =  MALSND
-                PMSA( IPNT( 41)   ) =  MALSPD
-                PMSA( IPNT( 42)   ) =  LimDen
-                PMSA( IPNT( 43)   ) =  LimPho  
-                PMSA( IPNT( 44)   ) =  LimTemp 
-                PMSA( IPNT( 45)   ) =  LimN  
-                PMSA( IPNT( 46)   ) =  LimP  
-                PMSA( IPNT( 47)   ) =  LimC   
-                PMSA( IPNT( 48)   ) =  LimNut  
-                PMSA( IPNT( 49)   ) =  mu    
-                PMSA( IPNT( 50)   ) =  dGrowMALS     
-                PMSA( IPNT( 51)   ) =  LocGroS
-                PMSA( IPNT( 52)   ) =  dDecayMALS
-                PMSA( IPNT( 53)   ) =  LocGroN    
-                PMSA( IPNT( 54)   ) =  LocGroP    
-                PMSA( IPNT( 55)   ) =  LocGroC 
-                PMSA( IPNT( 56)   ) =  Wdry  
-                PMSA( IPNT( 57)   ) =  Wwet             
+                PMSA( IPNT( 35)   ) =  MALNDM		
+                PMSA( IPNT( 36)   ) =  MALPDM		
+                PMSA( IPNT( 37)   ) =  MALCDM		
+                PMSA( IPNT( 38)   ) =  MALSNC		
+                PMSA( IPNT( 39)   ) =  MALSPC	
+                PMSA( IPNT( 40)   ) =  MALSCD
+                PMSA( IPNT( 41)   ) =  MALSND
+                PMSA( IPNT( 42)   ) =  MALSPD
+                PMSA( IPNT( 43)   ) =  LimDen
+                PMSA( IPNT( 44)   ) =  LimPho  
+                PMSA( IPNT( 45)   ) =  LimTemp 
+                PMSA( IPNT( 46)   ) =  LimN  
+                PMSA( IPNT( 47)   ) =  LimP  
+                PMSA( IPNT( 48)   ) =  LimC   
+                PMSA( IPNT( 49)   ) =  LimNut  
+                PMSA( IPNT( 50)   ) =  mu    
+                PMSA( IPNT( 51)   ) =  dGrowMALS     
+                PMSA( IPNT( 52)   ) =  LocGroS
+                PMSA( IPNT( 53)   ) =  dDecayMALS
+                PMSA( IPNT( 54)   ) =  LocGroN    
+                PMSA( IPNT( 55)   ) =  LocGroP    
+                PMSA( IPNT( 56)   ) =  LocGroC 
+                PMSA( IPNT( 57)   ) =  Wdry  
+                PMSA( IPNT( 58)   ) =  Wwet             
 
             ENDIF
           ENDIF

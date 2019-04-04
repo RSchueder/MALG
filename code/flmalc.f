@@ -756,11 +756,12 @@ C
                 FLCREM = (MBotSeg-ISEG)*NOFLUX
                 ! storage goes to storage
                 ! if no storage, respiration is taken from structural mass.
+                ! fluxes were for whole segment, so convert to /m2
                 IF (LocUpC .ge. 0.0) THEN
-                  FL(IdStrMALC+FLCREM) = FL(IdStrMALC + FLCREM) + LocUpC
+          FL(IdStrMALC+FLCREM) = FL(IdStrMALC + FLCREM) + LocUpC/Surf
                 ELSE
                   !areaLoc * ArDenMALS * (MALCmin - MALC)/(MALS*CDRatMALS)
-                  FL(IdCanMALS+FLCREM) = FL(IdCanMALS + FLCREM) + LocUpC
+          FL(IdCanMALS+FLCREM) = FL(IdCanMALS + FLCREM) + LocUpC/Surf
      &                  / CDRatMALS
                 ENDIF
                 

@@ -35,8 +35,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(17)  ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(17)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(18)  ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(18)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -45,7 +45,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT(17)    !    Local work array for the pointering
+      INTEGER IPNT(18)    !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 !*******************************************************************************
 !
@@ -58,6 +58,7 @@
       REAL(4) MALS        ! I  Macroalgae structural mass                     (gDM/m2)
       REAL(4) FootDepth   ! I  location of frond attachment in the water col  (m)
       REAL(4) LmaxMAL     ! I  Maxmimum Length Macroalgae group               (m)
+      REAL(4) nFrond      ! I  number of fronds per m2                        (1/m2)
       REAL(4) LinDenMAL   ! I  Linear density of macroalgae group             (g/m3)
       REAL(4) ArDenMAL    ! I  grams per m2 of plant                          (g/m2)
       INTEGER MBotSeg     ! I/O Bottom Segment for Macrophyte      
@@ -91,17 +92,17 @@
 !
 !*******************************************************************************
       IF (FIRST) THEN 
-          IPNT(17) = IPOINT(17)
+          IPNT(18) = IPOINT(18)
           ! for all segs
           DO 9001 ISEG = 1,NOSEG
              ! assign MbotSeg output for all segs = -1, therefore initially invalid
-             PMSA( IPNT(17) ) = -1
+             PMSA( IPNT(18) ) = -1
              CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
              ! if it is a bottom seg, its mbot seg is itself
              IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
-                PMSA( IPNT( 17) ) = ISEG
+                PMSA( IPNT( 18) ) = ISEG
              ENDIF
-             IPNT(17) = IPNT(17) + INCREM(17)
+             IPNT(18) = IPNT(18) + INCREM(18)
 9001      CONTINUE
               
           ! Now all bottom segs have identified themselves as the Mbotseg
@@ -111,9 +112,9 @@
              Ifrom  = IEXPNT(1,IQ)
              Ito    = IEXPNT(2,IQ)
              if (ifrom.gt.0.and.ito.gt.0) then
-                MBotSeg = nint(PMSA(IPOINT(17)+(ITO-1)*INCREM(17)))
+                MBotSeg = nint(PMSA(IPOINT(18)+(ITO-1)*INCREM(18)))
                 IF ( MBotSeg .GT.0 ) THEN
-                   PMSA(IPOINT(17)+(IFROM-1)*INCREM(17)) = real(MBotSeg)
+                   PMSA(IPOINT(18)+(IFROM-1)*INCREM(18)) = real(MBotSeg)
                 ENDIF
              ENDIF
 9005      CONTINUE  
@@ -140,10 +141,11 @@
             FootDepth   = PMSA( IPNT(  6) )
             LmaxMAL     = PMSA( IPNT(  7) )
             SWGroDir    = PMSA( IPNT(  8) )
-            LinDenMAL   = PMSA( IPNT(  9) )
-            ArDenMAL    = PMSA( IPNT(  10) )
+            nFrond      = PMSA( IPNT(  9) )
+            LinDenMAL   = PMSA( IPNT(  10) )
+            ArDenMAL    = PMSA( IPNT(  11) )
 
-            MBotSeg     = NINT(PMSA( IPNT(  11) ))
+            MBotSeg     = NINT(PMSA( IPNT(  12) ))
        
             ! get biomass from bottom segment
             ! gDM/m2
@@ -169,9 +171,9 @@
                 ! linear density is dependent on seeding density
                 ! area is the amount of mass in this segment divided by area density
             
-                LenMAL        = min(MALS/LinDenMAL,abs(LmaxMAL))
-                LenMAL        = max(LenMAL, 0.01)
-                AreMAL        = max(MALS * Surf / ArDenMAL, 1.0d-7)
+                LenMAL = min(MALS/(LinDenMAL*nFrond),abs(LmaxMAL))
+                LenMAL = max(LenMAL, 0.01)
+                AreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
                
                 Z1 = LocalDepth - Depth
                 Z2 = LocalDepth
@@ -231,24 +233,24 @@
                     ! beware, this used to have a safety net to ensure some segment had an FrBmMALS > 0.0
                     ! this had to be removed in order to allow segments other than the bottom segment
                     ! to be the rooteing segment
-                    ! now no initial biomass means no growth ever
+                    ! now no initial biomass means no growth ever, valid for farms
                     FrBmMALS = 0.0
                 Endif
 
-                PMSA( IPNT(12) ) = FrBmMALS
-                PMSA( IPNT(13) ) = BmLayMALS / Depth
-                PMSA( IPNT(14) ) = LenMAL
-                PMSA( IPNT(15) ) = AreMAL
-                PMSA( IPNT(16) ) = -TipDepth ! negative to have it look proper in a graph
-                PMSA( IPNT(17) ) = MBotSeg
+                PMSA( IPNT(13) ) = FrBmMALS
+                PMSA( IPNT(14) ) = BmLayMALS / Depth
+                PMSA( IPNT(15) ) = LenMAL
+                PMSA( IPNT(16) ) = AreMAL
+                PMSA( IPNT(17) ) = -TipDepth ! negative to have it look proper in a graph
+                PMSA( IPNT(18) ) = MBotSeg
             ELSE
                ! There is no biomass in the mbotseg
-                PMSA( IPNT(12) ) = 0.0
                 PMSA( IPNT(13) ) = 0.0
                 PMSA( IPNT(14) ) = 0.0
                 PMSA( IPNT(15) ) = 0.0
                 PMSA( IPNT(16) ) = 0.0
-                PMSA( IPNT(17) ) = MBotSeg
+                PMSA( IPNT(17) ) = 0.0
+                PMSA( IPNT(18) ) = MBotSeg
             ENDIF
         ENDIF
          

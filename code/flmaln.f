@@ -155,7 +155,8 @@ C
                 !ENDIF
                 !IF (MALP .gt. MALPmax) THEN
                 !    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
-                !ENDIF                
+                !ENDIF            
+                ! total area in this segment
                 areaLoc = MALS * Surf / ArDenMAL
 
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
@@ -199,15 +200,15 @@ C
                 
                  ! allocate to bottom segment flux address
                 FLCREM = (MBotSeg-ISEG)*NOFLUX
-
-                FL(IdStrMALN + FLCREM) = FL(IdStrMALN + FLCREM) + LocUpN
-                FL(IdStrMALP + FLCREM) = FL(IdStrMALP + FLCREM) + LocUpP
+                 ! fluxes were for whole segment, so convert to /m2
+                FL(IdStrMALN + FLCREM) =FL(IdStrMALN+FLCREM)+LocUpN/Surf
+                FL(IdStrMALP + FLCREM) =FL(IdStrMALP+FLCREM)+LocUpP/Surf
                
                 PMSA( IPNT( 26)   ) =  LimVel		
                 PMSA( IPNT( 27)   ) =  LimN		
                 PMSA( IPNT( 28)   ) =  LimP		
-                PMSA( IPNT( 29)   ) =  LocUpN	
-                PMSA( IPNT( 30)   ) =  LocUpP	
+                PMSA( IPNT( 29)   ) =  LocUpN/Surf	
+                PMSA( IPNT( 30)   ) =  LocUpP/Surf	
                 
             ENDIF
          ENDIF

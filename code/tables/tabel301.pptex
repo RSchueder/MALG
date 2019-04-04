@@ -688,7 +688,7 @@ Decay2     colsep Decay of decayable tracer 2                        colsep DECT
 Decay3     colsep Decay of decayable tracer 3                        colsep DECTRA     \\
 Decay4     colsep Decay of decayable tracer 4                        colsep DECTRA     \\
 Decay5     colsep Decay of decayable tracer 5                        colsep DECTRA     \\
-DaylP      colsep ent, previous, and max daylength                   colsep DAYLP      \\
+DaylP      colsep alculation of current, previous, and max daylength colsep DAYLP      \\
 FlMALS     colsep Flux calculation for Macroalgae Structural Mass    colsep FLMALS     \\
 MALDIS     colsep Distribution of macroalgae mass in water column    colsep MALDIS     \\
 FlMALN     colsep Flux for Macroalgae nutrient storage (N/P)         colsep FLMALN     \\

@@ -6,7 +6,7 @@ Using NEW format
     1 lines read from CONFIG.CSV
       processing file CON_PRO.CSV ...
   465 lines read from CON_SUB.CSV
-14968 lines read from INPUTS.CSV
+14970 lines read from INPUTS.CSV
  INPUTS.CSV sorted
  4014 lines read from OUTPUTS.CSV
  OUTPUTS.CSV sorted

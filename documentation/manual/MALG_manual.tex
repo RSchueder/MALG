@@ -38,7 +38,7 @@ It is assumed that there is constant relationship between volume and area of a m
 \begin{flushright}
 	\textsc{process: MALDIS}
 \end{flushright}
-The physiological equations described in \cite{broch2012} do not mention any physical description of the seaweed fronds in space aside from their area. Area (m$^{2}$) is actually the main state variable in the Broch model. The translation from an area based model to a mass based model is straightforward because Broch uses a constant conversion factor between area and mass (called $ArDenMAL$ in MALG), and employs this factor in many of the model equations where mass rates concerning the structual mass are involved. Therefore application of Broch's area based equations to DELWAQ's mass based system is not trivial but possible given Broch's fixed mass to surface area frond ratio and a DELWAQ segment surface area. In most cases the equations involving $MALS$ are simply not multiplied by $ArDenMAL$ in MALG as the units are already in mass and not area. The largest implications of the difference between Broch and MALG relate to photosynthesis, which is proportional to the frond area in both model. During these calculations, the $MALS$ mass is simply multiplied by the segment surface area and divided by the $ArDenMAL$ to obtain the frond area in the segment.  
+The physiological equations described in \cite{broch2012} do not mention any physical description of the seaweed fronds in space aside from their area. Area (m$^{2}$) is actually the main state variable in the Broch model. The translation from an area based model to a mass based model is straightforward because Broch uses a constant conversion factor between area and mass (called $ArDenMAL$ in MALG), and employs this factor in many of the model equations where mass rates concerning the structual mass are involved. Therefore application of Broch's area based equations to DELWAQ's mass based system is not trivial but possible given Broch's fixed mass to surface area frond ratio and a DELWAQ segment surface area. In most cases the equations involving $MALS$ in MALG are simply not multiplied by $ArDenMAL$ as the units are already in mass and not area. The largest implications of the difference between Broch and MALG relate to photosynthesis, which is proportional to the frond area in both model implementations. For these calculations, the $MALS$ mass is simply multiplied by the segment surface area and divided by the $ArDenMAL$ to obtain the frond area in the segment. For fluxes a conversion is made to obtain the units of g m$^{-2}$ or g m$^{-3}$.  
 
 However, implementation in DELWAQ also requires knowledge of the vertical space occupied by the frond, which is not given by Broch. Thus, the algorithms for distributing the frond mass in space have been developed independently of the physiological formulations in Broch. 
 
@@ -54,14 +54,14 @@ In the first example there are 4 fronds in a 1 m$^{2}$ square. They each weigh 1
 \item $FootDepth$ The depth below the water surface that the foot of the frond is attached. The frond begins growing from the segment that intersects this depth, and the segment it resides in within a sigma layer model can change with a variable water level as it is assigned each time step.
 \item $LmaxMAL$ The maximum length of the frond measured in the vertical (z) axis from the foot to the tip of the frond.
 \item $SwGroMAL$ Switch for an upwards (\textgreater 0) or downwards (\textless 0) growing frond.
-\item $LinDenMal$ The linear density of the culture. This describes the amount of mass it takes a m$^{2}$ of culture to grow 1 m. Four small fronds require more mass to increase their collective length by 1 m compared to a single long frond. All fronds in a signle segment change length at the same rate.
+\item $LinDenMal$ The linear density of the culture. This describes the amount of mass it takes a m$^{2}$ of culture to grow 1 m. Four small fronds require more mass to increase their collective length by 1 m compared to a single long frond. All fronds in a single segment change length at the same rate.
 \item $ArDenMal$ The area density of the culture. This is the ratio between surface area and dry weight.
 \end{itemize}
-The model does not explicitly know how many individual plants there are in a given segment, and so the collective mass per segment is generally referred to as a \textit{culture} in this model. However, for most purposes the model can be understood by idealizing the culture as a single frond. Thus, the word 'frond' pertains to the physical structure of the culture (length, area), and may represent one or more individual plants depending on the settings of the parameters just described. 
+The model does not explicitly know how many individual plants there are in a given segment, and so the collective mass per segment is generally referred to as a \textit{culture} in this model. However, for most purposes the model can be understood by idealizing the culture as a single frond with variable girth. Thus, the word 'frond' pertains to the physical structure of the culture (length, area), and may represent one or more individual plants depending on the settings of the parameters just described. 
 
 Using these parameters the culture's position can be completely described in 3 dimensions. To determine the position of the frond in the water column each time step, the process first calculates the length and the area of the culture in this column of segments:
 \begin{equation}
-	LenMAL = \frac{MALS}{LinDenMAL}
+	LenMAL = \frac{MALS}{LinDenMAL \times N_{frond}}
 \end{equation}
 \begin{equation}
 	AreMAL = MALS \times \frac{Surf}{ArDenMAL}
@@ -71,14 +71,16 @@ Using these parameters the culture's position can be completely described in 3 d
 Where:\\
 
 \begin{tabular}{ll}
-$LenMAL$ & Length of frond in the column (m)\\
+$LenMAL$ & Length of culture in the column (m)\\
 $Surf$ & Surface area of the bottom segment (m$^{2}$)\\
 $MALS$ & structural mass (gDM m$^{-2}$)\\
-$LinDenMAL$ & The linear density of the culture (g m$^{-3}$)\\
+$LinDenMAL$ & The linear density of a single frond (g m$^{-3}$)\\
 $ArDenMAL$ & The area density of the culture (g m$^{-2}$)\\
 \end{tabular}
 
-This length is then used to check which segments the frond biomass should be present in, and which fraction of the frond exists in each segment. This fraction is sent to each segment for all other computations involving biomass and fluxes. The calculation of this biomass fraction depends firstly on whether the frond grows upwards or downwards.
+This length is then used to check which segments the frond biomass should be present in, and which fraction of the frond exists in each segment. This fraction is communicated to each segment for all other computations involving biomass and fluxes. As all MALG parameters are non-transportable (g m$^{-2}$), only the bottom segment can truly contain any MALG mass. However, depending on the ratio of segment depths to frond length, the culture can exhibit fluxes affecting segments other than the bottom segment. To achieve this effect without actually storing any mass in segments above the bottom segment, MALDIS tells each segment what fraction of the biomass in the water column resides in any particular segment ($FrBmLay$), and also the mass of this biomass as the parameter $BmLayMAL$. All mass actually administratively resides in the bottom segment however.
+
+The calculation of this biomass fraction depends firstly on whether the frond grows upwards or downwards.
 
 \begin{equation}
 Zm =  
@@ -113,7 +115,13 @@ The net growth of the structural mass is the resulting rate of structural biomas
 	dGrowMALS =MALS \times (\mu - \phi)
 \end{equation}
 
-The growth rate $\mu$ of $MALS$ is dependent firstly on the nutrient ($MALN$, $MALP$, and $MALC$) stores available. The growth rate is defined as follows:
+Where:\\
+\begin{tabular}{cc}
+	$\mu$  & specific growth rate of macroalgae sturctural mass (d$^{-1}$) \\
+	$\phi$ & mortality/erosion rate (d$^{-1}$) \\
+\end{tabular}
+
+The growth rate $\mu$ of $MALS$ is dependent firstly on the available nutrient stores ($MALN$, $MALP$, and $MALC$). The growth rate is defined as follows:
 \begin{equation}
 	\mu = f_{density} f_{photoperiod} f_{temperature}\times min\big\{1-\frac{N_{min}}{MALN},1-\frac{P_{min}}{MALP},1-\frac{C_{min}}{MALC}\big\}
 \end{equation}
@@ -121,8 +129,6 @@ The growth rate $\mu$ of $MALS$ is dependent firstly on the nutrient ($MALN$, $M
 Where:\\
 
 \begin{tabular}{ll}
-$\mu$  & specific growth rate of macroalgae sturctural mass (d$^{-1}$) \\
-$\phi$ & mortality/erosion rate (d$^{-1}$) \\
 $f_{density}$ & biomass density limitation function (-)\\
 $f_{photoperiod}$ & photoperiod limitation function (-)\\
 $f_{temperature}$ & temperature limitation function (-)\\
@@ -134,7 +140,7 @@ $C_{min}$ & minimum carbon storage (gC gDM$^{-1}$)\\
 $MALC$ & carbon storage (gC/m$^2$)\\
 \end{tabular}
 
-Note that in the code the storage terms are temporarily converted to gX/gDM by dividing by $MALS$ to comply with the formulations and units outlined in \cite{broch2012} where they have units of $gX/gDM_{structural}$. In MALG formulations the storage state variable terms are (must be) g m$^{-2}$ as per all non-transportable DELWAQ substances, and this is reflected in the fluxes, which are back calculated to g m$^{-2}d^{-1}$. As the substances are non transportable they reside in the bottom segment. However, depending on the user defined variables, it is possible for the mass and associated fluxes to have no effect in the bottom segment, such as in the case where the algae grow from the water surface downward. This is discussed in MALDIS.
+Note that in the code the storage terms are temporarily converted to gX/gDM by dividing by $MALS$ to comply with the formulations and units outlined in \cite{broch2012} where they have units of $gX/gDM_{structural}$. In MALG formulations, the storage state variable terms are (must be) g m$^{-2}$ as per all non-transportable DELWAQ substances, and this is reflected in the fluxes, which are back calculated to g m$^{-2}d^{-1}$. As the substances are non transportable they reside in the bottom segment. However, depending on the user defined variables, it is possible for the mass and associated fluxes to have no effect in the bottom segment, such as in the case where the algae grow from the water surface downward. This is discussed in MALDIS.
 
 The growth rate of the structural mass is dependent on a density limitation, a photoperiod limitation, and a temperature limitation. These limitations differ from conventional DELWAQ limitations for algae growth in that they do not range strictly between 0 and 1 and alter a pre-defined growth rate. Instead Broch has tuned them such that their product is equal to the maximum growth rate when conditions are optimal (0.18 d$^{-1}$). 
 
@@ -152,12 +158,17 @@ Where:\\
 	$MALS_0$ & critical biomass area (m$^2$)\\
 \end{tabular}
 
-This formulation is designed to allow small fronds to grow faster than bigger fronds. This has large implications for the DELWAQ model in contrast to the Broch model which is 'individual based' and thus can integrate this formulation seamlessly. The reason that this complicates the DELWAQ implementation relates back to the MALDIS section. Considering the two setups previously described in Figure \ref{fig:ambiguoussituation}. It is possible to ascertain that the gross erosion rate within a given segment should be higher for segments containing a single large frond than for those containing a collection of smaller fronds of equivalent mass. This idea is logical if one assumes that the size of the neighbouring frond does not affect the growth of another frond (ignoring light and nutrient competition effects). Thus, decisions made in MALDIS about how to schematize the culture need to also play a role in defining the $MALS_0$ value, which for a single frond (i.e. \cite{broch2012}) = 0.06 m$^{2}$. The current recommendation is: 
+This formulation is designed to allow small fronds to grow faster than bigger fronds, and as such the value in broch describes the area above which a frond will stuggle to grow. This has large implications for the DELWAQ model in contrast to the Broch model which is 'individual based' and thus can integrate this formulation seamlessly. The frond area $LocArea$ in a DELWAQ segment does not represent a single frond, but the sum of all frond areas in a segment. This means that the default value for $MALS_{0}$ cannot be used in the case where the DELWAQ user expects more than one frond per segment. It could be possible to require that the user specify $LinDenMAL$ and $MALS_{0}$ based on their knowledge of how many fronds they expect there to be in a segment. However, it is thought that knowledge of the number of fronds per m$^{2}$ is a better confined value. Thus, the following formulations are used in the code.
+ 
 \begin{equation}
-MALS_0 = \frac{0.06}{N_{frond}}
+LinDenMAL = 100 \times N_{frondm2} \times Surf
+\end{equation}
+and
+\begin{equation}
+MALS_0 = 0.06 \times N_{frondm2} \times Surf
 \end{equation}
 
-Which corrects for the fact that a given individual plant will grow to a certain length regardless of how many neighbours it has.
+Where 100 g m$^{-3}$ is derived from the relationship between mass gain and length increase seen in \cite{sjotun1993}, and 0.06 m$^{-1}$ is taken from \cite{broch2012}. These formulations describe how as the number of fronds m$^{-2}$ increases, the area limit within the segment increases and the amount of carbon required to increase the length of the culture in the segment increases, and both are proportional to what is known about the behaviour of a single frond.
 
 The photoperiod limitation is similar to the daylength limitation used in BLOOM and DYNAMO, but instead considers the \textit{normalized change} in daylength compared to the previous day instead of the actual current daylength. In this context, 'normalized' means that the change in daylength is relative to the maximum change in daylength (i.e. the daylength change at the equinoxes). This response to normalized daylength change is due to the fact that \textit{Saccharina latissima} is a seasonal anticipator and will grow and store nutrients in accordance with the change in the season as determined by how much longer or shorter the days become. This formulation is given by: 
 \begin{equation}
@@ -186,9 +197,9 @@ $0$                & $T \textgreater 19$ \\
 \right
 .\end{equation}
 
-The specific erosion (mortality) rate $\phi$ of the structural biomass is proportional to the total area of the frond and the erosion parameter. The formulation is as follows:
+The specific erosion (mortality) rate $\phi$ of the structural biomass is proportional to the area of the frond and the erosion parameter. The formulation is as follows:
 \begin{equation}
-\phi = \frac{10^{-6}exp(\epsilon\times LocArea)}{1+10^{-6}exp((\epsilon\times MALS)-1)}
+\phi = \frac{10^{-6}exp(\epsilon\times \frac{LocArea}{Surf})}{1+10^{-6}exp((\epsilon\times \frac{LocArea}{Surf})-1)}
 \end{equation}
 
 Where:\\
@@ -437,7 +448,7 @@ Figure \ref{fig:biomass} and Figure \ref{fig:storage} demonstrate the performanc
 \subsection{Testcase: Tidal flume farm}
 The tidal flume farm test case is a synthetic case used to test the 3D performance of the model in Delft3D flexible mesh with sigma layers. It is designed to demonstrate that the biomass allocation works with variable sigma layer thickness in time due to tidal variation.
 
-The test case consists of a 10x30 cell grid with 100 m resolution containing a factor 2 refinement  in the center to obtain a 50m resolution. The model is thus 1km x 3km. It has a uniform depth of 10 m and 20 sigma layers, meaning each layer is 0.5 m deep. The tidal amplitude applied is 2 m and velocities vary between 0.1-1.2 m/s. The flow switches direction approximately every 6 hours. The oscillation of the layer thickness means each layer will be between 0.4 m (low water) and 0.6 m (high water). Thus as long as the plant is at least 0.4 m long and grows a minimum of 0.4 m, the segments within which it resides will vary within a single tidal period due to water level variations alone. Multiple farms are located within this higher resolution area. The layout is shown in Figure \ref{fig:tidalflumefarm}
+The test case consists of a 10x30 cell grid with 100 m resolution containing a factor 2 refinement  in the center to obtain a 50m resolution. The model is thus 1km x 3km. It has a uniform depth of 10 m and 20 sigma layers, meaning each layer is 0.5 m deep. The tidal amplitude applied is 2 m and velocities vary between 0.0-0.1 m/s. The flow switches direction approximately every 6 hours. The oscillation of the layer thickness means each layer will be between 0.4 m (low water) and 0.6 m (high water). Thus as long as the plant is at least 0.4 m long and grows a minimum of 0.4 m, the segments within which it resides will vary within a single tidal period due to water level variations alone. Multiple farms are located within this higher resolution area. The layout is shown in Figure \ref{fig:tidalflumefarm}
 
 \begin{figure}[H]
 	\centering

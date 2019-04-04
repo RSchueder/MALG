@@ -123,8 +123,8 @@
   22 LGRID                          0
   23 NSVAR                         15
   24 IFLUX                         15
-  25 IPMSA                        296
-  26 IPSSA                        296
+  25 IPMSA                        298
+  26 IPSSA                        298
   27 IMODU                         15
   28 IOUTPS                        63
   29 IOPOIN                       150
@@ -152,8 +152,8 @@
   51                                0
   52 PROGRD                        15
   53 PRONDT                        15
-  54 PRVVAR                       296
-  55 PRVTYP                       296
+  54 PRVVAR                       298
+  55 PRVTYP                       298
   56 VARARR                       325
   57 VARIDX                       325
   58 VARTDA                       325
@@ -178,7 +178,7 @@
   77 iexseg                        10
   78 isegcol                       10
 
-     Total (4 byte words)        5837
+     Total (4 byte words)        5845
 
   => CHARACTER arrays 4-byte words <=
   nr array name            array size
