@@ -2848,7 +2848,7 @@ stocfl,stocsu,stocsc
 "dUpPO4M   ","H+        ",  -0.03200
 "dUpPO4M   ","ALKA      ",   1.96800
 "dStrMALN  ","MALN      ",   1.00000
-"dStrMALN  ","MALP      ",   1.00000
+"dStrMALP  ","MALP      ",   1.00000
 "dMALTIC   ","TIC       ",  -1.00000
 "dMALTIC   ","H2O       ",  -1.50000
 "dMALDOC   ","DOC       ",   1.00000

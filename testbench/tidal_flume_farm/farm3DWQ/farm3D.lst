@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/04 18:46:48 
+ Execution start: 2019/04/08 18:16:03 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -67,9 +67,9 @@
 
  Integration option :               15.73
  Keyword ( 9) detected: BAL_NOLUMPPROCESSES                     
- Keyword (10) detected: BAL_NOLUMPLOADS                         
- Keyword (11) detected: BAL_NOLUMPTRANSPORT                     
- Keyword (14) detected: BAL_NOSUPPRESSSPACE                     
+ Keyword (10) detected: BAL_LUMPLOADS                           
+ Keyword (11) detected: BAL_LUMPTRANSPORT                       
+ Keyword (14) detected: BAL_SUPPRESSSPACE                       
  Keyword (15) detected: BAL_NOSUPPRESSTIME                      
  Keyword ( 1) detected: DISP-AT-NOFLOW                          
  Keyword ( 2) detected: NODISP-AT-BOUND                         
@@ -93,34 +93,304 @@
  Dump areas:
  option selected for input :    1
 
- Number of dump areas :    6
+ Number of dump areas :   60
 
- Dump area :    1 : Farm1 top           
+ Dump area :    1 : Farm1(1)            
  Number of segments in area :              1
           number   segment
               1            393
 
- Dump area :    2 : Farm2 top           
+ Dump area :    2 : Farm2(1)            
  Number of segments in area :              1
           number   segment
               1            402
 
- Dump area :    3 : Farm3 top           
+ Dump area :    3 : Farm3(1)            
  Number of segments in area :              1
           number   segment
               1            423
 
- Dump area :    4 : Farm1 bottom        
+ Dump area :    4 : Farm1(2)            
+ Number of segments in area :              1
+          number   segment
+              1            890
+
+ Dump area :    5 : Farm2(2)            
+ Number of segments in area :              1
+          number   segment
+              1            899
+
+ Dump area :    6 : Farm3(2)            
+ Number of segments in area :              1
+          number   segment
+              1            920
+
+ Dump area :    7 : Farm1(3)            
+ Number of segments in area :              1
+          number   segment
+              1           1387
+
+ Dump area :    8 : Farm2(3)            
+ Number of segments in area :              1
+          number   segment
+              1           1396
+
+ Dump area :    9 : Farm3(3)            
+ Number of segments in area :              1
+          number   segment
+              1           1417
+
+ Dump area :   10 : Farm1(4)            
+ Number of segments in area :              1
+          number   segment
+              1           1884
+
+ Dump area :   11 : Farm2(4)            
+ Number of segments in area :              1
+          number   segment
+              1           1893
+
+ Dump area :   12 : Farm3(4)            
+ Number of segments in area :              1
+          number   segment
+              1           1914
+
+ Dump area :   13 : Farm1(5)            
+ Number of segments in area :              1
+          number   segment
+              1           2381
+
+ Dump area :   14 : Farm2(5)            
+ Number of segments in area :              1
+          number   segment
+              1           2390
+
+ Dump area :   15 : Farm3(5)            
+ Number of segments in area :              1
+          number   segment
+              1           2411
+
+ Dump area :   16 : Farm1(6)            
+ Number of segments in area :              1
+          number   segment
+              1           2878
+
+ Dump area :   17 : Farm2(6)            
+ Number of segments in area :              1
+          number   segment
+              1           2887
+
+ Dump area :   18 : Farm3(6)            
+ Number of segments in area :              1
+          number   segment
+              1           2908
+
+ Dump area :   19 : Farm1(7)            
+ Number of segments in area :              1
+          number   segment
+              1           3375
+
+ Dump area :   20 : Farm2(7)            
+ Number of segments in area :              1
+          number   segment
+              1           3384
+
+ Dump area :   21 : Farm3(7)            
+ Number of segments in area :              1
+          number   segment
+              1           3405
+
+ Dump area :   22 : Farm1(8)            
+ Number of segments in area :              1
+          number   segment
+              1           3872
+
+ Dump area :   23 : Farm2(8)            
+ Number of segments in area :              1
+          number   segment
+              1           3881
+
+ Dump area :   24 : Farm3(8)            
+ Number of segments in area :              1
+          number   segment
+              1           3902
+
+ Dump area :   25 : Farm1(9)            
+ Number of segments in area :              1
+          number   segment
+              1           4369
+
+ Dump area :   26 : Farm2(9)            
+ Number of segments in area :              1
+          number   segment
+              1           4378
+
+ Dump area :   27 : Farm3(9)            
+ Number of segments in area :              1
+          number   segment
+              1           4399
+
+ Dump area :   28 : Farm1(10)           
+ Number of segments in area :              1
+          number   segment
+              1           4866
+
+ Dump area :   29 : Farm2(10)           
+ Number of segments in area :              1
+          number   segment
+              1           4875
+
+ Dump area :   30 : Farm3(10)           
+ Number of segments in area :              1
+          number   segment
+              1           4896
+
+ Dump area :   31 : Farm1(11)           
+ Number of segments in area :              1
+          number   segment
+              1           5363
+
+ Dump area :   32 : Farm2(11)           
+ Number of segments in area :              1
+          number   segment
+              1           5372
+
+ Dump area :   33 : Farm3(11)           
+ Number of segments in area :              1
+          number   segment
+              1           5393
+
+ Dump area :   34 : Farm1(12)           
+ Number of segments in area :              1
+          number   segment
+              1           5860
+
+ Dump area :   35 : Farm2(12)           
+ Number of segments in area :              1
+          number   segment
+              1           5869
+
+ Dump area :   36 : Farm3(12)           
+ Number of segments in area :              1
+          number   segment
+              1           5890
+
+ Dump area :   37 : Farm1(13)           
+ Number of segments in area :              1
+          number   segment
+              1           6357
+
+ Dump area :   38 : Farm2(13)           
+ Number of segments in area :              1
+          number   segment
+              1           6366
+
+ Dump area :   39 : Farm3(13)           
+ Number of segments in area :              1
+          number   segment
+              1           6387
+
+ Dump area :   40 : Farm1(14)           
+ Number of segments in area :              1
+          number   segment
+              1           6854
+
+ Dump area :   41 : Farm2(14)           
+ Number of segments in area :              1
+          number   segment
+              1           6863
+
+ Dump area :   42 : Farm3(14)           
+ Number of segments in area :              1
+          number   segment
+              1           6884
+
+ Dump area :   43 : Farm1(15)           
+ Number of segments in area :              1
+          number   segment
+              1           7351
+
+ Dump area :   44 : Farm2(15)           
+ Number of segments in area :              1
+          number   segment
+              1           7360
+
+ Dump area :   45 : Farm3(15)           
+ Number of segments in area :              1
+          number   segment
+              1           7381
+
+ Dump area :   46 : Farm1(16)           
+ Number of segments in area :              1
+          number   segment
+              1           7848
+
+ Dump area :   47 : Farm2(16)           
+ Number of segments in area :              1
+          number   segment
+              1           7857
+
+ Dump area :   48 : Farm3(16)           
+ Number of segments in area :              1
+          number   segment
+              1           7878
+
+ Dump area :   49 : Farm1(17)           
+ Number of segments in area :              1
+          number   segment
+              1           8345
+
+ Dump area :   50 : Farm2(17)           
+ Number of segments in area :              1
+          number   segment
+              1           8354
+
+ Dump area :   51 : Farm3(17)           
+ Number of segments in area :              1
+          number   segment
+              1           8375
+
+ Dump area :   52 : Farm1(18)           
+ Number of segments in area :              1
+          number   segment
+              1           8842
+
+ Dump area :   53 : Farm2(18)           
+ Number of segments in area :              1
+          number   segment
+              1           8851
+
+ Dump area :   54 : Farm3(18)           
+ Number of segments in area :              1
+          number   segment
+              1           8872
+
+ Dump area :   55 : Farm1(19)           
+ Number of segments in area :              1
+          number   segment
+              1           9339
+
+ Dump area :   56 : Farm2(19)           
+ Number of segments in area :              1
+          number   segment
+              1           9348
+
+ Dump area :   57 : Farm3(19)           
+ Number of segments in area :              1
+          number   segment
+              1           9369
+
+ Dump area :   58 : Farm1(20)           
  Number of segments in area :              1
           number   segment
               1           9836
 
- Dump area :    5 : Farm2 bottom        
+ Dump area :   59 : Farm2(20)           
  Number of segments in area :              1
           number   segment
               1           9845
 
- Dump area :    6 : Farm3 bottom        
+ Dump area :   60 : Farm3(20)           
  Number of segments in area :              1
           number   segment
               1           9866
@@ -1201,7 +1471,7 @@
  breakpoint       1 : 567993600
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         1    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  5.0000E-02
+         1    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
          1    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
@@ -1211,7 +1481,7 @@
  breakpoint       2 : 631152000
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         1    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  5.0000E-02
+         1    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
          1    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
@@ -1269,7 +1539,7 @@
  breakpoint       1 : 567993600
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         2    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  5.0000E-02
+         2    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
          2    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
@@ -1279,7 +1549,7 @@
  breakpoint       2 : 631152000
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         2    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  5.0000E-02
+         2    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
          2    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
@@ -1345,7 +1615,7 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:    4 with ID  : ACTIVE_DecMed       
+ Input constant   nr:    1 is constant   nr:    4 with ID  : ACTIVE_DecMedium    
  constant values in this block.
  values         4
  constants    ACTIVE_Dec  
@@ -1582,18 +1852,36 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   41 with ID  : nothreads           
+ Input constant   nr:    1 is constant   nr:   41 with ID  : nFrond              
  constant values in this block.
  values        41
+ constants    nFrond      
+         1    1.0000E+00
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   42 with ID  : nothreads           
+ constant values in this block.
+ values        42
  constants    nothreads   
-         1    2.0000E+00
+         1    1.0000E+00
 
  ====> input item completed <==== 
 
 
 
  NOTHREADS Keyword found
- Number of threads for parallel processing set to :     2
+ Number of threads for parallel processing set to :     1
+ Input constant   nr:    1 is constant   nr:   43 with ID  : Velocity            
+ constant values in this block.
+ values        43
+ constants    Velocity    
+         1    1.5000E-01
+
+ ====> input item completed <==== 
+
+
 
  Closing file: includes_deltashell/B7_constants.inc                                          
 
@@ -40155,18 +40443,18 @@
  Continuing on file: farm3D.inp                                                                    
 
  Including file: includes_deltashell/B7_numerical_options.inc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
- Input constant   nr:    1 is constant   nr:   42 with ID  : CLOSE_ERR           
+ Input constant   nr:    1 is constant   nr:   44 with ID  : CLOSE_ERR           
  constant values in this block.
- values        42
+ values        44
  constants    CLOSE_ERR   
          1    1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   41 with ID  : nothreads           
+ Input constant   nr:    1 is constant   nr:   42 with ID  : nothreads           
  constant values in this block.
- values        41
+ values        42
  constants    NOTHREADS   
          1    0.0000E+00
 
@@ -40176,36 +40464,36 @@
 
  NOTHREADS Keyword found
  Number of threads for parallel processing set to :     0
- Input constant   nr:    1 is constant   nr:   43 with ID  : DRY_THRESH          
+ Input constant   nr:    1 is constant   nr:   45 with ID  : DRY_THRESH          
  constant values in this block.
- values        43
+ values        45
  constants    DRY_THRESH  
          1    1.0000E-03
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   44 with ID  : maxiter             
+ Input constant   nr:    1 is constant   nr:   46 with ID  : maxiter             
  constant values in this block.
- values        44
+ values        46
  constants    maxiter     
          1    1.0000E+02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   45 with ID  : tolerance           
+ Input constant   nr:    1 is constant   nr:   47 with ID  : tolerance           
  constant values in this block.
- values        45
+ values        47
  constants    tolerance   
          1    1.0000E-07
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   46 with ID  : iteration report    
+ Input constant   nr:    1 is constant   nr:   48 with ID  : iteration report    
  constant values in this block.
- values        46
+ values        48
  constants    iteration   
          1    0.0000E+00
 
@@ -40217,7 +40505,7 @@
 
  Continuing on file: farm3D.inp                                                                    
 
- Total number of constants        :   46
+ Total number of constants        :   48
 
  Total number of parameters       :    1
 
@@ -40265,13 +40553,13 @@
  Number of overridings :    3
  Number         values
       9836    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  1.0000E-02  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
-              2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01
+              2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.8000E-02
               1.0800E+01
       9845    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  1.0000E-02  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
-              2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01
+              2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.8000E-02
               1.0800E+01
       9866    1.0000E+00  7.0000E+00  5.0000E-02  1.0000E-01  1.0000E-02  3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
-              2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01
+              2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.8000E-02
               1.0800E+01
 
  Closing file: includes_deltashell/B8_initials.inc                                           
@@ -40299,66 +40587,69 @@
 
  All substances plus extra output variables
 
- (     57) number of output variables specified
+ (     60) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
-       2           LocalDepth                                
-       3           TotalDepth                                
-       4           Depth                                     
-       5           Temp                                      
-       6           RadSurf                                   
-       7           Itip                                      
-       8           Itipu                                     
-       9           BrochP                                    
-      10           pH                                        
-      11           DisCO2                                    
-      12           pCO2water                                 
-      13           DisHCO3                                   
-      14           CO2                                       
-      15           beta                                      
-      16           daylend                                   
-      17           daylenp                                   
-      18           daylenm                                   
-      19           MALNDM                                    
-      20           MALPDM                                    
-      21           MALCDM                                    
-      22           MALSNC                                    
-      23           MALSPC                                    
-      24           MALSCD                                    
-      25           MALSND                                    
-      26           MALSPD                                    
-      27           LimDenS                                   
-      28           LimPhoS                                   
-      29           LimTemS                                   
-      30           LimN                                      
-      31           LimP                                      
-      32           LimNutS                                   
-      33           LimMALN                                   
-      34           LimMALP                                   
-      35           LimMALC                                   
-      36           muMALS                                    
-      37           LocGroPS                                  
-      38           LocNetPS                                  
-      39           LocDecS                                   
-      40           LocGroN                                   
-      41           LocGroP                                   
-      42           LocGroC                                   
-      43           GrosMALC                                  
-      44           RespMALC                                  
-      45           ExudMALC                                  
-      46           FrBmMALS                                  
-      47           BmLayMAL                                  
-      48           LengthMAL                                 
-      49           AreaMAL                                   
-      50           TipDepth                                  
-      51           LimVel                                    
-      52           LocUpN                                    
-      53           LocUpP                                    
-      54           LocUpC                                    
-      55           Wdry                                      
-      56           Wwet                                      
-      57           MBotSeg                                   
+       2           Velocity                                  
+       3           LocalDepth                                
+       4           TotalDepth                                
+       5           Depth                                     
+       6           Temp                                      
+       7           RadSurf                                   
+       8           Itip                                      
+       9           Itipu                                     
+      10           BrochP                                    
+      11           pH                                        
+      12           DisCO2                                    
+      13           pCO2water                                 
+      14           DisHCO3                                   
+      15           CO2                                       
+      16           beta                                      
+      17           daylend                                   
+      18           daylenp                                   
+      19           daylenm                                   
+      20           MALNDMS                                   
+      21           MALPDMS                                   
+      22           MALCDMS                                   
+      23           MALSNC                                    
+      24           MALSPC                                    
+      25           MALSCDM                                   
+      26           MALSNDM                                   
+      27           MALSPDM                                   
+      28           LimDenS                                   
+      29           LimPhoS                                   
+      30           LimTemS                                   
+      31           LimN                                      
+      32           LimP                                      
+      33           LimNutS                                   
+      34           LimMALN                                   
+      35           LimMALP                                   
+      36           LimMALC                                   
+      37           muMALS                                    
+      38           LocGroPS                                  
+      39           LocNetPS                                  
+      40           LocDecS                                   
+      41           LocGroN                                   
+      42           LocGroP                                   
+      43           LocGroC                                   
+      44           GrosMALC                                  
+      45           RespMALC                                  
+      46           ExudMALC                                  
+      47           FrBmMALS                                  
+      48           BmLayMAL                                  
+      49           LengthMAL                                 
+      50           TotAreaMAL                                
+      51           LocAreaMAL                                
+      52           TipDepth                                  
+      53           LimVel                                    
+      54           LocUpN                                    
+      55           LocUpP                                    
+      56           LocUpC                                    
+      57           Wdry                                      
+      58           Wwet                                      
+      59           MBotSeg                                   
+      60           FootDepth                                 
 
  Specification of map output
 
@@ -40370,15 +40661,15 @@
 
  All substances plus extra output variables
 
- (     58) number of output variables specified
+ (     59) number of output variables specified
 
  Number           Identification 
        1           SURF                
-       2           LocalDepth          
-       3           TotalDepth          
-       4           Depth               
-       5           Temp                
-       6           NO3                 
+       2           Velocity            
+       3           LocalDepth          
+       4           TotalDepth          
+       5           Depth               
+       6           Temp                
        7           RadSurf             
        8           Itip                
        9           Itipu               
@@ -40392,14 +40683,14 @@
       17           daylend             
       18           daylenp             
       19           daylenm             
-      20           MALNDM              
-      21           MALPDM              
-      22           MALCDM              
+      20           MALNDMS             
+      21           MALPDMS             
+      22           MALCDMS             
       23           MALSNC              
       24           MALSPC              
-      25           MALSCD              
-      26           MALSND              
-      27           MALSPD              
+      25           MALSCDM             
+      26           MALSNDM             
+      27           MALSPDM             
       28           LimDenS             
       29           LimPhoS             
       30           LimTemS             
@@ -40422,15 +40713,16 @@
       47           FrBmMALS            
       48           BmLayMAL            
       49           LengthMAL           
-      50           AreaMAL             
-      51           TipDepth            
-      52           LimVel              
-      53           LocUpN              
-      54           LocUpP              
-      55           LocUpC              
-      56           Wdry                
-      57           Wwet                
-      58           MBotSeg             
+      50           TotAreaMAL          
+      51           LocAreaMAL          
+      52           TipDepth            
+      53           LimVel              
+      54           LocUpN              
+      55           LocUpP              
+      56           LocUpC              
+      57           Wdry                
+      58           Wwet                
+      59           MBotSeg             
 
  Closing file: includes_deltashell/B9_Mapvar.inc                                             
 
@@ -40447,6 +40739,7 @@
   Determining the place of the output variables
  
         SURF                ; Using parameter nr           1
+        Velocity            ; Using constant nr          43
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
@@ -40464,14 +40757,14 @@
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALNDMS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALPDMS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALCDMS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSCD              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSND              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSPD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSCDM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSNDM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSPDM             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimDenS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimPhoS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimTemS             ; NOT FOUND, delwaq will detect variables from process library
@@ -40494,7 +40787,8 @@
    INFO:FrBmMALS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:BmLayMAL            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LengthMAL           ; NOT FOUND, delwaq will detect variables from process library
-   INFO:AreaMAL             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:TotAreaMAL          ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocAreaMAL          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TipDepth            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimVel              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpN              ; NOT FOUND, delwaq will detect variables from process library
@@ -40503,12 +40797,13 @@
    INFO:Wdry                ; NOT FOUND, delwaq will detect variables from process library
    INFO:Wwet                ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:FootDepth           ; NOT FOUND, delwaq will detect variables from process library
         SURF                ; Using parameter nr           1
+        Velocity            ; Using constant nr          43
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
         Temp                ; Using function nr           1
-        NO3                 ; Using substance nr           4
         RadSurf             ; Using function nr           2
    INFO:Itip                ; NOT FOUND, delwaq will detect variables from process library
    INFO:Itipu               ; NOT FOUND, delwaq will detect variables from process library
@@ -40522,14 +40817,14 @@
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALNDMS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALPDMS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALCDMS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSCD              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSND              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSPD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSCDM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSNDM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSPDM             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimDenS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimPhoS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimTemS             ; NOT FOUND, delwaq will detect variables from process library
@@ -40552,7 +40847,8 @@
    INFO:FrBmMALS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:BmLayMAL            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LengthMAL           ; NOT FOUND, delwaq will detect variables from process library
-   INFO:AreaMAL             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:TotAreaMAL          ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocAreaMAL          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TipDepth            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimVel              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpN              ; NOT FOUND, delwaq will detect variables from process library
@@ -40562,7 +40858,7 @@
    INFO:Wwet                ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :         108
+  Number off missing variables :         111
 
  *********************************************************** B L O C K - 9 *****
 
@@ -40583,14 +40879,14 @@ Number of periods defined:     0
 
 
  Messages presented including .lsp file:
- Number of WARNINGS            :     1
+ Number of WARNINGS            :     0
 
  Number of ERRORS during input :     0
 
- Parallel processing with   2 processor(s)
+ Parallel processing with   1 processor(s)
 
- total real      array space:    5569535
- total integer   array space:     477874
- total character array space:      19866
- grand total in 4-byte words:    6067275 =   0-GB  24-MB 269-KB 100-Byte.
- Execution stop : 2019/04/04 18:46:49 
+ total real      array space:    4325633
+ total integer   array space:     468550
+ total character array space:      21265
+ grand total in 4-byte words:    4815448 =   0-GB  19-MB 261-KB 792-Byte.
+ Execution stop : 2019/04/08 18:16:04 

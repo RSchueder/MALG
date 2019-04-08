@@ -3970,14 +3970,14 @@ outppr,outpit,outpnm,outpdo,outpsx
 "DaylP     ","daylend   ",   1,"x",1
 "DaylP     ","daylenp   ",   2,"x",1
 "DaylP     ","daylenm   ",   3,"x",1
-"FlMALS    ","MALNDM    ",   1,"x",1
-"FlMALS    ","MALPDM    ",   2,"x",1
-"FlMALS    ","MALCDM    ",   3,"x",1
+"FlMALS    ","MALNDMS   ",   1,"x",1
+"FlMALS    ","MALPDMS   ",   2,"x",1
+"FlMALS    ","MALCDMS   ",   3,"x",1
 "FlMALS    ","MALSNC    ",   4,"x",1
 "FlMALS    ","MALSPC    ",   5,"x",1
-"FlMALS    ","MALSCD    ",   6,"x",1
-"FlMALS    ","MALSND    ",   7,"x",1
-"FlMALS    ","MALSPD    ",   8,"x",1
+"FlMALS    ","MALSCDM   ",   6,"x",1
+"FlMALS    ","MALSNDM   ",   7,"x",1
+"FlMALS    ","MALSPDM   ",   8,"x",1
 "FlMALS    ","LimDenS   ",   9,"x",1
 "FlMALS    ","LimPhoS   ",  10,"x",1
 "FlMALS    ","LimTemS   ",  11,"x",1
@@ -3994,12 +3994,15 @@ outppr,outpit,outpnm,outpdo,outpsx
 "FlMALS    ","LocGroC   ",  22,"x",1
 "FlMALS    ","Wdry      ",  23,"x",1
 "FlMALS    ","Wwet      ",  24,"x",1
+"FlMALS    ","WdryTot   ",  25,"x",1
+"FlMALS    ","WwetTot   ",  26,"x",1
 "MALDIS    ","FrBmMALS  ",   1,"x",1
 "MALDIS    ","BmLayMAL  ",   2,"x",1
 "MALDIS    ","LengthMAL ",   3,"x",1
-"MALDIS    ","AreaMAL   ",   4,"x",1
-"MALDIS    ","TipDepth  ",   5,"x",1
-"MALDIS    ","MBotSeg   ",   6,"x",1
+"MALDIS    ","TotAreaMAL",   4,"x",1
+"MALDIS    ","LocAreaMAL",   5,"x",1
+"MALDIS    ","TipDepth  ",   6,"x",1
+"MALDIS    ","MBotSeg   ",   7,"x",1
 "FlMALN    ","LimVel    ",   1,"x",1
 "FlMALN    ","LimN      ",   2,"x",1
 "FlMALN    ","LimP      ",   3,"x",1

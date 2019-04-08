@@ -161,14 +161,17 @@ Where:\\
 This formulation is designed to allow small fronds to grow faster than bigger fronds, and as such the value in broch describes the area above which a frond will stuggle to grow. This has large implications for the DELWAQ model in contrast to the Broch model which is 'individual based' and thus can integrate this formulation seamlessly. The frond area $LocArea$ in a DELWAQ segment does not represent a single frond, but the sum of all frond areas in a segment. This means that the default value for $MALS_{0}$ cannot be used in the case where the DELWAQ user expects more than one frond per segment. It could be possible to require that the user specify $LinDenMAL$ and $MALS_{0}$ based on their knowledge of how many fronds they expect there to be in a segment. However, it is thought that knowledge of the number of fronds per m$^{2}$ is a better confined value. Thus, the following formulations are used in the code.
  
 \begin{equation}
-LinDenMAL = 100 \times N_{frondm2} \times Surf
+LinDenMAL = 100 \times N_{frondm2}
 \end{equation}
 and
 \begin{equation}
-MALS_0 = 0.06 \times N_{frondm2} \times Surf
+MALS_0 = 0.06 \times N_{frondm2}
 \end{equation}
 
 Where 100 g m$^{-3}$ is derived from the relationship between mass gain and length increase seen in \cite{sjotun1993}, and 0.06 m$^{-1}$ is taken from \cite{broch2012}. These formulations describe how as the number of fronds m$^{-2}$ increases, the area limit within the segment increases and the amount of carbon required to increase the length of the culture in the segment increases, and both are proportional to what is known about the behaviour of a single frond.
+
+Some examples are shown below:
+
 
 The photoperiod limitation is similar to the daylength limitation used in BLOOM and DYNAMO, but instead considers the \textit{normalized change} in daylength compared to the previous day instead of the actual current daylength. In this context, 'normalized' means that the change in daylength is relative to the maximum change in daylength (i.e. the daylength change at the equinoxes). This response to normalized daylength change is due to the fact that \textit{Saccharina latissima} is a seasonal anticipator and will grow and store nutrients in accordance with the change in the season as determined by how much longer or shorter the days become. This formulation is given by: 
 \begin{equation}
@@ -199,7 +202,7 @@ $0$                & $T \textgreater 19$ \\
 
 The specific erosion (mortality) rate $\phi$ of the structural biomass is proportional to the area of the frond and the erosion parameter. The formulation is as follows:
 \begin{equation}
-\phi = \frac{10^{-6}exp(\epsilon\times \frac{LocArea}{Surf})}{1+10^{-6}exp((\epsilon\times \frac{LocArea}{Surf})-1)}
+\phi = \frac{10^{-6}exp(\epsilon\times LocArea)}{1+10^{-6}exp((\epsilon\times LocArea)-1)}
 \end{equation}
 
 Where:\\
@@ -313,6 +316,22 @@ $T_{APL}$ & Arrhenius temp for photosynthesis low end ($^{0}$K)\\
 \end{tabular}
 
 Note the use of unconventional DELWAQ units dm$^{2}$, $\mu$mol (photons), and hours. These have been maintained to allow easy comparisons to Broch and to emphasize the fact that photosynthesis is proportional to frond \textit{surface area} and not segment surface area in MALG. There is an internal conversion in the code from $W$, the unit of DELWAQ radiation, to $\mu$mol s$^{-1}$, the unit of irradiance in the formulations, which is 4.57 $\frac{\mu mol s^{-1}}{W}$. After production, respiration and exudation have been calculated, all rates are converted to gC m$^{-2}$ d$^{-1}$ by multiplying by 2400.
+
+The irradiance is integrated over the current segment using the following equation:
+
+\begin{equation}
+I = \frac{-I_{0}}{ExtVl \times Depth} e^{-ExtVl \times LocalDepth} - e^{-ExtVl \times ()LocalDepth - Depth)}
+\end{equation}
+
+Where:\\
+\begin{tabular}{ll}
+$I_{0}$ & Irradiance at the surface (W m$^{-2}$)\\
+$ExtVl$ & Extinction of visible light (m$^{-1})$\\
+$Depth$ & Thickness of segment (m)\\
+$LocalDepth$ & Depth of bottom of segment below water surface (m)\\
+\end{tabular}
+
+Currently the algae do not attenuate light in the water column.
 
 This set of equations describes a photo inhibitory effect for $I\textgreater I_{sat}$. The structural mass is strictly unable to grow above $T \textgreater 19^{0}$. Although the structural mass cannot grow, photosynthesis production can still occur in the range $\textgreater -1^{0}C Temp \textless 23^{0}C$. These two temperature controls are fixed for the species and the user cannot flexibly change this unless the code is edited. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, both the temperature function and the photosynthetic range parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
 

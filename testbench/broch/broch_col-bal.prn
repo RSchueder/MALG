@@ -327,7 +327,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -691,7 +691,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -1055,7 +1055,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -1200,7 +1200,7 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.47255E+01    0.00000E+00
+TIC   _Storage                    0.47254E+01    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -1419,7 +1419,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -1451,7 +1451,7 @@ TotN  _Seg1                       0.00000E+00    0.00000E+00
 TotN  _Seg2                       0.00000E+00    0.00000E+00
 TotN  _Seg3                       0.74686E+00   -0.96091E+00
 TotN  _Seg4                       0.00000E+00    0.00000E+00
-TotN  _Seg5                       0.10820E+01   -0.79335E+00
+TotN  _Seg5                       0.10820E+01   -0.79336E+00
 TotN  _Seg6                       0.00000E+00    0.00000E+00
 TotN  _Seg7                       0.00000E+00    0.00000E+00
 TotN  _Seg8                       0.00000E+00    0.00000E+00
@@ -1783,7 +1783,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -1814,7 +1814,7 @@ TotN  _Other                      0.00000E+00    0.00000E+00
 TotN  _Seg1                       0.00000E+00    0.00000E+00
 TotN  _Seg2                       0.00000E+00    0.00000E+00
 TotN  _Seg3                       0.00000E+00    0.00000E+00
-TotN  _Seg4                       0.79335E+00   -0.10820E+01
+TotN  _Seg4                       0.79336E+00   -0.10820E+01
 TotN  _Seg5                       0.00000E+00    0.00000E+00
 TotN  _Seg6                       0.12297E+01   -0.86385E+00
 TotN  _Seg7                       0.00000E+00    0.00000E+00
@@ -2083,7 +2083,7 @@ DOC   _Seg3                       0.00000E+00    0.00000E+00
 DOC   _Seg4                       0.00000E+00    0.00000E+00
 DOC   _Seg5                       0.21173E+02   -0.33855E+02
 DOC   _Seg6                       0.00000E+00    0.00000E+00
-DOC   _Seg7                       0.40346E+02   -0.24274E+02
+DOC   _Seg7                       0.40346E+02   -0.24273E+02
 DOC   _Seg8                       0.00000E+00    0.00000E+00
 DOC   _Seg9                       0.00000E+00    0.00000E+00
 DOC   _Seg10                      0.00000E+00    0.00000E+00
@@ -2147,7 +2147,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -2394,7 +2394,7 @@ PON2  _Seg4                       0.00000E+00    0.00000E+00
 PON2  _Seg5                       0.00000E+00    0.00000E+00
 PON2  _Seg6                       0.23977E+00   -0.35126E+00
 PON2  _Seg7                       0.00000E+00    0.00000E+00
-PON2  _Seg8                       0.40233E+00   -0.26999E+00
+PON2  _Seg8                       0.40234E+00   -0.26999E+00
 PON2  _Seg9                       0.00000E+00    0.00000E+00
 PON2  _Seg10                      0.00000E+00    0.00000E+00
 PON2  _column                     0.00000E+00    0.00000E+00
@@ -2446,7 +2446,7 @@ DOC   _Seg2                       0.00000E+00    0.00000E+00
 DOC   _Seg3                       0.00000E+00    0.00000E+00
 DOC   _Seg4                       0.00000E+00    0.00000E+00
 DOC   _Seg5                       0.00000E+00    0.00000E+00
-DOC   _Seg6                       0.24274E+02   -0.40346E+02
+DOC   _Seg6                       0.24273E+02   -0.40346E+02
 DOC   _Seg7                       0.00000E+00    0.00000E+00
 DOC   _Seg8                       0.48253E+02   -0.28365E+02
 DOC   _Seg9                       0.00000E+00    0.00000E+00
@@ -2511,7 +2511,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -2757,7 +2757,7 @@ PON2  _Seg3                       0.00000E+00    0.00000E+00
 PON2  _Seg4                       0.00000E+00    0.00000E+00
 PON2  _Seg5                       0.00000E+00    0.00000E+00
 PON2  _Seg6                       0.00000E+00    0.00000E+00
-PON2  _Seg7                       0.26999E+00   -0.40233E+00
+PON2  _Seg7                       0.26999E+00   -0.40234E+00
 PON2  _Seg8                       0.00000E+00    0.00000E+00
 PON2  _Seg9                       0.46092E+00   -0.30689E+00
 PON2  _Seg10                      0.00000E+00    0.00000E+00
@@ -2875,7 +2875,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -3239,7 +3239,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -3589,7 +3589,7 @@ SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E+00
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -3602,10 +3602,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+01
-MALP  _dStrMALN                   0.23540E+01    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -3953,7 +3953,7 @@ SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E+00
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -3966,10 +3966,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+01
-MALP  _dStrMALN                   0.23540E+01    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4317,7 +4317,7 @@ SUM OF ALL TERMS                  0.47080E+01   -0.47080E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.66702E+00
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -4330,10 +4330,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.40410E+01
-MALP  _dStrMALN                   0.47080E+01    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.47080E+01   -0.47080E+01
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -4699,7 +4699,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -5063,7 +5063,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -5427,7 +5427,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -5572,7 +5572,7 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.47255E+01    0.00000E+00
+TIC   _Storage                    0.47254E+01    0.00000E+00
 TIC   _Other                      0.00000E+00    0.00000E+00
 TIC   _Seg1                       0.00000E+00    0.00000E+00
 TIC   _Seg2                       0.00000E+00    0.00000E+00
@@ -5791,7 +5791,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -5823,7 +5823,7 @@ TotN  _Seg1                       0.00000E+00    0.00000E+00
 TotN  _Seg2                       0.00000E+00    0.00000E+00
 TotN  _Seg3                       0.74686E+00   -0.96091E+00
 TotN  _Seg4                       0.00000E+00    0.00000E+00
-TotN  _Seg5                       0.10820E+01   -0.79335E+00
+TotN  _Seg5                       0.10820E+01   -0.79336E+00
 TotN  _Seg6                       0.00000E+00    0.00000E+00
 TotN  _Seg7                       0.00000E+00    0.00000E+00
 TotN  _Seg8                       0.00000E+00    0.00000E+00
@@ -6155,7 +6155,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -6186,7 +6186,7 @@ TotN  _Other                      0.00000E+00    0.00000E+00
 TotN  _Seg1                       0.00000E+00    0.00000E+00
 TotN  _Seg2                       0.00000E+00    0.00000E+00
 TotN  _Seg3                       0.00000E+00    0.00000E+00
-TotN  _Seg4                       0.79335E+00   -0.10820E+01
+TotN  _Seg4                       0.79336E+00   -0.10820E+01
 TotN  _Seg5                       0.00000E+00    0.00000E+00
 TotN  _Seg6                       0.12297E+01   -0.86385E+00
 TotN  _Seg7                       0.00000E+00    0.00000E+00
@@ -6455,7 +6455,7 @@ DOC   _Seg3                       0.00000E+00    0.00000E+00
 DOC   _Seg4                       0.00000E+00    0.00000E+00
 DOC   _Seg5                       0.21173E+02   -0.33855E+02
 DOC   _Seg6                       0.00000E+00    0.00000E+00
-DOC   _Seg7                       0.40346E+02   -0.24274E+02
+DOC   _Seg7                       0.40346E+02   -0.24273E+02
 DOC   _Seg8                       0.00000E+00    0.00000E+00
 DOC   _Seg9                       0.00000E+00    0.00000E+00
 DOC   _Seg10                      0.00000E+00    0.00000E+00
@@ -6519,7 +6519,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -6766,7 +6766,7 @@ PON2  _Seg4                       0.00000E+00    0.00000E+00
 PON2  _Seg5                       0.00000E+00    0.00000E+00
 PON2  _Seg6                       0.23977E+00   -0.35126E+00
 PON2  _Seg7                       0.00000E+00    0.00000E+00
-PON2  _Seg8                       0.40233E+00   -0.26999E+00
+PON2  _Seg8                       0.40234E+00   -0.26999E+00
 PON2  _Seg9                       0.00000E+00    0.00000E+00
 PON2  _Seg10                      0.00000E+00    0.00000E+00
 PON2  _column                     0.00000E+00    0.00000E+00
@@ -6818,7 +6818,7 @@ DOC   _Seg2                       0.00000E+00    0.00000E+00
 DOC   _Seg3                       0.00000E+00    0.00000E+00
 DOC   _Seg4                       0.00000E+00    0.00000E+00
 DOC   _Seg5                       0.00000E+00    0.00000E+00
-DOC   _Seg6                       0.24274E+02   -0.40346E+02
+DOC   _Seg6                       0.24273E+02   -0.40346E+02
 DOC   _Seg7                       0.00000E+00    0.00000E+00
 DOC   _Seg8                       0.48253E+02   -0.28365E+02
 DOC   _Seg9                       0.00000E+00    0.00000E+00
@@ -6883,7 +6883,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -7129,7 +7129,7 @@ PON2  _Seg3                       0.00000E+00    0.00000E+00
 PON2  _Seg4                       0.00000E+00    0.00000E+00
 PON2  _Seg5                       0.00000E+00    0.00000E+00
 PON2  _Seg6                       0.00000E+00    0.00000E+00
-PON2  _Seg7                       0.26999E+00   -0.40233E+00
+PON2  _Seg7                       0.26999E+00   -0.40234E+00
 PON2  _Seg8                       0.00000E+00    0.00000E+00
 PON2  _Seg9                       0.46092E+00   -0.30689E+00
 PON2  _Seg10                      0.00000E+00    0.00000E+00
@@ -7247,7 +7247,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -7611,7 +7611,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -7961,7 +7961,7 @@ SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E+00
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -7974,10 +7974,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+01
-MALP  _dStrMALN                   0.23540E+01    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8325,7 +8325,7 @@ SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E+00
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -8338,10 +8338,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+01
-MALP  _dStrMALN                   0.23540E+01    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8689,7 +8689,7 @@ SUM OF ALL TERMS                  0.42800E+00   -0.42800E+00
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.60638E-01
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -8702,10 +8702,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.36737E+00
-MALP  _dStrMALN                   0.42800E+00    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.42800E+00   -0.42800E+00
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -8735,7 +8735,7 @@ TotN  _Seg1                       0.65828E-01   -0.72227E-01
 TotN  _Seg2                       0.13803E+00   -0.14450E+00
 TotN  _Seg3                       0.14657E+00   -0.15316E+00
 TotN  _Seg4                       0.15948E+00   -0.16626E+00
-TotN  _Seg5                       0.17689E+00   -0.18391E+00
+TotN  _Seg5                       0.17690E+00   -0.18391E+00
 TotN  _Seg6                       0.19898E+00   -0.20626E+00
 TotN  _Seg7                       0.22591E+00   -0.23349E+00
 TotN  _Seg8                       0.25790E+00   -0.26578E+00
@@ -9071,7 +9071,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -9435,7 +9435,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -9799,7 +9799,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -10015,7 +10015,7 @@ POC2  _Seg9                       0.00000E+00    0.00000E+00
 POC2  _Seg10                      0.00000E+00    0.00000E+00
 POC2  _column                     0.00000E+00    0.00000E+00
 POC2  _dPrPOC2M                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.91443E+01   -0.91440E+01
+SUM OF ALL TERMS                  0.91443E+01   -0.91441E+01
 
 Substance PON1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -10163,7 +10163,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -10195,7 +10195,7 @@ TotN  _Seg1                       0.00000E+00    0.00000E+00
 TotN  _Seg2                       0.00000E+00    0.00000E+00
 TotN  _Seg3                       0.74686E+00   -0.96091E+00
 TotN  _Seg4                       0.00000E+00    0.00000E+00
-TotN  _Seg5                       0.10820E+01   -0.79335E+00
+TotN  _Seg5                       0.10820E+01   -0.79336E+00
 TotN  _Seg6                       0.00000E+00    0.00000E+00
 TotN  _Seg7                       0.00000E+00    0.00000E+00
 TotN  _Seg8                       0.00000E+00    0.00000E+00
@@ -10372,7 +10372,7 @@ POC2  _Seg2                       0.00000E+00    0.00000E+00
 POC2  _Seg3                       0.00000E+00    0.00000E+00
 POC2  _Seg4                       0.39668E+01   -0.54100E+01
 POC2  _Seg5                       0.00000E+00    0.00000E+00
-POC2  _Seg6                       0.61483E+01   -0.43192E+01
+POC2  _Seg6                       0.61483E+01   -0.43193E+01
 POC2  _Seg7                       0.00000E+00    0.00000E+00
 POC2  _Seg8                       0.00000E+00    0.00000E+00
 POC2  _Seg9                       0.00000E+00    0.00000E+00
@@ -10527,7 +10527,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -10558,7 +10558,7 @@ TotN  _Other                      0.00000E+00    0.00000E+00
 TotN  _Seg1                       0.00000E+00    0.00000E+00
 TotN  _Seg2                       0.00000E+00    0.00000E+00
 TotN  _Seg3                       0.00000E+00    0.00000E+00
-TotN  _Seg4                       0.79335E+00   -0.10820E+01
+TotN  _Seg4                       0.79336E+00   -0.10820E+01
 TotN  _Seg5                       0.00000E+00    0.00000E+00
 TotN  _Seg6                       0.12297E+01   -0.86385E+00
 TotN  _Seg7                       0.00000E+00    0.00000E+00
@@ -10735,7 +10735,7 @@ POC2  _Seg1                       0.00000E+00    0.00000E+00
 POC2  _Seg2                       0.00000E+00    0.00000E+00
 POC2  _Seg3                       0.00000E+00    0.00000E+00
 POC2  _Seg4                       0.00000E+00    0.00000E+00
-POC2  _Seg5                       0.43192E+01   -0.61483E+01
+POC2  _Seg5                       0.43193E+01   -0.61483E+01
 POC2  _Seg6                       0.00000E+00    0.00000E+00
 POC2  _Seg7                       0.70253E+01   -0.47954E+01
 POC2  _Seg8                       0.00000E+00    0.00000E+00
@@ -10891,7 +10891,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -11138,7 +11138,7 @@ PON2  _Seg4                       0.00000E+00    0.00000E+00
 PON2  _Seg5                       0.00000E+00    0.00000E+00
 PON2  _Seg6                       0.23977E+00   -0.35126E+00
 PON2  _Seg7                       0.00000E+00    0.00000E+00
-PON2  _Seg8                       0.40233E+00   -0.26999E+00
+PON2  _Seg8                       0.40234E+00   -0.26999E+00
 PON2  _Seg9                       0.00000E+00    0.00000E+00
 PON2  _Seg10                      0.00000E+00    0.00000E+00
 PON2  _column                     0.00000E+00    0.00000E+00
@@ -11255,7 +11255,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -11501,7 +11501,7 @@ PON2  _Seg3                       0.00000E+00    0.00000E+00
 PON2  _Seg4                       0.00000E+00    0.00000E+00
 PON2  _Seg5                       0.00000E+00    0.00000E+00
 PON2  _Seg6                       0.00000E+00    0.00000E+00
-PON2  _Seg7                       0.26999E+00   -0.40233E+00
+PON2  _Seg7                       0.26999E+00   -0.40234E+00
 PON2  _Seg8                       0.00000E+00    0.00000E+00
 PON2  _Seg9                       0.46092E+00   -0.30689E+00
 PON2  _Seg10                      0.00000E+00    0.00000E+00
@@ -11619,7 +11619,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -11983,7 +11983,7 @@ MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
 MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALN                   0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
 SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
@@ -12333,7 +12333,7 @@ SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E+00
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -12346,10 +12346,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+01
-MALP  _dStrMALN                   0.23540E+01    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+01   -0.23540E+01
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -12697,7 +12697,7 @@ SUM OF ALL TERMS                  0.23540E+00   -0.23540E+00
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E-01
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -12710,10 +12710,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+00
-MALP  _dStrMALN                   0.23540E+00    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+00   -0.23540E+00
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -12805,7 +12805,7 @@ OXY   _Seg1                       0.16353E+02   -0.12998E+02
 OXY   _Seg2                       0.28033E+02   -0.28577E+02
 OXY   _Seg3                       0.26102E+02   -0.26732E+02
 OXY   _Seg4                       0.24603E+02   -0.25318E+02
-OXY   _Seg5                       0.23586E+02   -0.24385E+02
+OXY   _Seg5                       0.23587E+02   -0.24385E+02
 OXY   _Seg6                       0.23299E+02   -0.24177E+02
 OXY   _Seg7                       0.24228E+02   -0.25179E+02
 OXY   _Seg8                       0.26332E+02   -0.27346E+02
@@ -12989,7 +12989,7 @@ POP2  _Storage                    0.00000E+00   -0.19970E-02
 POP2  _Other                      0.00000E+00    0.00000E+00
 POP2  _Seg1                       0.90547E-03   -0.99346E-03
 POP2  _Seg2                       0.18986E-02   -0.19875E-02
-POP2  _Seg3                       0.20159E-02   -0.21067E-02
+POP2  _Seg3                       0.20160E-02   -0.21067E-02
 POP2  _Seg4                       0.21935E-02   -0.22868E-02
 POP2  _Seg5                       0.24330E-02   -0.25295E-02
 POP2  _Seg6                       0.27367E-02   -0.28369E-02
@@ -13061,7 +13061,7 @@ SUM OF ALL TERMS                  0.23540E+00   -0.23540E+00
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.33351E-01
+MALP  _Storage                    0.00000E+00    0.00000E+00
 MALP  _Other                      0.00000E+00    0.00000E+00
 MALP  _Seg1                       0.00000E+00    0.00000E+00
 MALP  _Seg2                       0.00000E+00    0.00000E+00
@@ -13074,10 +13074,10 @@ MALP  _Seg8                       0.00000E+00    0.00000E+00
 MALP  _Seg9                       0.00000E+00    0.00000E+00
 MALP  _Seg10                      0.00000E+00    0.00000E+00
 MALP  _column                     0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00   -0.20205E+00
-MALP  _dStrMALN                   0.23540E+00    0.00000E+00
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.00000E+00    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.23540E+00   -0.23540E+00
+SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------

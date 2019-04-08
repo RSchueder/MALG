@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/02 17:39:05 
+ Execution start: 2019/04/08 18:15:21 
                                                                                 
  found -p command line switch                                                   
 
@@ -58,7 +58,7 @@ total number of substances with fractions :  0
  Input for [RearOXY             ] Reaeration of oxygen                                              
    Process is activated                                                                             
                                                                                                     
- Input for [DaylP               ] ent, previous, and max daylength                                  
+ Input for [DaylP               ] alculation of current, previous, and max daylength                
    Process is activated                                                                             
                                                                                                     
  Input for [MALDIS              ] Distribution of macroalgae mass in water column                   
@@ -272,7 +272,7 @@ total number of substances with fractions :  0
  found flux  [dGrMALP             ] Utilization of MALP in growth                                   
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
    process is switched on.                                                                          
- found flux  [dStrMALN            ] Storage of nitrogen by macroalgae                               
+ found flux  [dStrMALP            ] Storage of phosphorous by macroalgae                            
    from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
  found flux  [dHrvMALP            ] harvesting flux MALP                                            
@@ -331,6 +331,8 @@ total number of substances with fractions :  0
        using default value: 0.100000E-01                                                            
        [CDRatMALS           ] C to structural dry mass ratio in MALS                                
        using default value: 0.200000                                                                
+       [TotAreaMAL          ] area of frond in this column                                          
+       Using output from proces [MALDIS              ]                                              
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [Temp                ] ambient water temperature                                             
@@ -395,15 +397,17 @@ total number of substances with fractions :  0
        Using substance nr   4                                                                       
        [FrBmMALS            ] Fraction of bottom layer MALS in this seg                             
        Using output from proces [MALDIS              ]                                              
+       [TotAreaMAL          ] area of frond in this column                                          
+       Using output from proces [MALDIS              ]                                              
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MALNmin             ] minimum N in storage                                                  
        using default value: 0.100000E-01                                                            
-       [MALNmax             ] maximum N in MALN                                                     
+       [MALNmax             ] maximum N in MALN w.r.t. MALS                                         
        using default value: 0.220000E-01                                                            
        [MALPmin             ] minimum P in storage                                                  
        using default value: 0.100000E-02                                                            
-       [MALPmax             ] maximum P in MALP                                                     
+       [MALPmax             ] maximum P in MALP w.r.t. MALS                                         
        using default value: 0.220000E-02                                                            
        [CDRatMALS           ] C to structural dry mass ratio in MALS                                
        using default value: 0.200000                                                                
@@ -419,7 +423,7 @@ total number of substances with fractions :  0
        using default value: 0.336000                                                                
        [JPmax               ] maximum MALP P uptake rate (per area frond)                           
        using default value: 0.336000                                                                
-       [Vel                 ] velocity                                                              
+       [Velocity            ] horizontal flow velocity                                              
        Using constant nr 25 with value: 0.150000                                                    
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
@@ -465,8 +469,10 @@ total number of substances with fractions :  0
        using default value: 0.300000E-01                                                            
        [LengthMAL           ] length of frond in this column                                        
        Using output from proces [MALDIS              ]                                              
-       [AreaMAL             ] area of frond in this column                                          
+       [TotAreaMAL          ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
+       [nFrond              ] number of fronds per m2                                               
+       using default value:  1.00000                                                                
        [MALS0               ] growth rate parameter 3                                               
        using default value: 0.600000E-01                                                            
        [a1                  ] photoperiod parameter 1                                               
@@ -517,6 +523,8 @@ total number of substances with fractions :  0
        Using constant nr 31 with value:  10.0000                                                    
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
        using default value:  1.00000                                                                
+       [nFrond              ] number of fronds per m2                                               
+       using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
        Using constant nr 27 with value:  100.000                                                    
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
@@ -524,7 +532,7 @@ total number of substances with fractions :  0
        [MBotSeg             ] bottom segment for this segment                                       
        Using output from proces [MALDIS              ]                                              
                                                                                                     
- Input for [DaylP               ] ent, previous, and max daylength                                  
+ Input for [DaylP               ] alculation of current, previous, and max daylength                
        [ITIME               ] DELWAQ time                                                           
        Using DELWAQ time                                                                            
        [Latitude            ] latitude of study area                                                
@@ -542,7 +550,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       using default value: 0.500000                                                                
+       Using constant nr 25 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRear              ] switch for oxygen reaeration formulation (1-13)                       
@@ -604,7 +612,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       using default value: 0.500000                                                                
+       Using constant nr 25 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRearCO2           ] switch for CO2 reaeration formulation (11,13)                         
@@ -740,14 +748,14 @@ total number of substances with fractions :  0
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             
- output [MALNDM              ] from proces [FlMALS    ]                                             
- output [MALPDM              ] from proces [FlMALS    ]                                             
- output [MALCDM              ] from proces [FlMALS    ]                                             
+ output [MALNDMS             ] from proces [FlMALS    ]                                             
+ output [MALPDMS             ] from proces [FlMALS    ]                                             
+ output [MALCDMS             ] from proces [FlMALS    ]                                             
  output [MALSNC              ] from proces [FlMALS    ]                                             
  output [MALSPC              ] from proces [FlMALS    ]                                             
- output [MALSCD              ] from proces [FlMALS    ]                                             
- output [MALSND              ] from proces [FlMALS    ]                                             
- output [MALSPD              ] from proces [FlMALS    ]                                             
+ output [MALSCDM             ] from proces [FlMALS    ]                                             
+ output [MALSNDM             ] from proces [FlMALS    ]                                             
+ output [MALSPDM             ] from proces [FlMALS    ]                                             
  output [LimDenS             ] from proces [FlMALS    ]                                             
  output [LimPhoS             ] from proces [FlMALS    ]                                             
  output [LimTemS             ] from proces [FlMALS    ]                                             
@@ -770,7 +778,8 @@ total number of substances with fractions :  0
  output [FrBmMALS            ] from proces [MALDIS    ]                                             
  output [BmLayMAL            ] from proces [MALDIS    ]                                             
  output [LengthMAL           ] from proces [MALDIS    ]                                             
- output [AreaMAL             ] from proces [MALDIS    ]                                             
+ output [TotAreaMAL          ] from proces [MALDIS    ]                                             
+ output [LocAreaMAL          ] from proces [MALDIS    ]                                             
  output [TipDepth            ] from proces [MALDIS    ]                                             
  output [LimVel              ] from proces [FlMALN    ]                                             
  output [LocUpN              ] from proces [FlMALN    ]                                             

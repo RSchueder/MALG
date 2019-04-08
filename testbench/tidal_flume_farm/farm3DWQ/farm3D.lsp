@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/04 18:46:48 
+ Execution start: 2019/04/08 18:16:04 
                                                                                 
  found -p command line switch                                                   
 
@@ -23,8 +23,6 @@
 # scanning input for old process definitions
  found only_active constant                                                     
  only activated processes are switched on                                       
-  WARNING: activated process not found in process definition file
-  process ID: DecMed              
  
 total number of substances with fractions :  0
 # Determining which processes can be switched on                                                    
@@ -72,6 +70,9 @@ total number of substances with fractions :  0
    Process is activated                                                                             
                                                                                                     
  Input for [DecFast             ] Mineralization fast decomp. detritus POC1                         
+   Process is activated                                                                             
+                                                                                                    
+ Input for [DecMedium           ] Mineralization medium decomp. detritus POC2                       
    Process is activated                                                                             
                                                                                                     
  Input for [DaylP               ] alculation of current, previous, and max daylength                
@@ -128,6 +129,9 @@ total number of substances with fractions :  0
  found flux  [dMinPON1            ] mineralization flux PON1 to NH4                                 
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
    process is switched on.                                                                          
+ found flux  [dMinPON2            ] mineralization flux PON2 to NH4                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
  found flux  [dUpNH4M             ] NH4 uptake by Macroalgae nitrogen storage                       
    from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
@@ -152,6 +156,9 @@ total number of substances with fractions :  0
 -fluxes for [PO4                 ]                                                                  
  found flux  [dMinPOP1            ] mineralization flux POP1 to PO4                                 
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
+   process is switched on.                                                                          
+ found flux  [dMinPOP2            ] mineralization flux POP2 to PO4                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
    process is switched on.                                                                          
  found flux  [dUpPO4M             ] PO4 uptake by Macroalgae nitrogen storage                       
    from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
@@ -183,6 +190,12 @@ total number of substances with fractions :  0
    process is switched on.                                                                          
  found flux  [dMinPOP1            ] mineralization flux POP1 to PO4                                 
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
+   process is switched on.                                                                          
+ found flux  [dMinPON2            ] mineralization flux PON2 to NH4                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dMinPOP2            ] mineralization flux POP2 to PO4                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
    process is switched on.                                                                          
  found flux  [dUpNO3M             ] NO3 uptake by Macroalgae nitrogen storage                       
    from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
@@ -224,6 +237,15 @@ total number of substances with fractions :  0
  found flux  [dCnvPPOC1           ] conversion flux POC1 to POC2                                    
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
    process is switched on.                                                                          
+ found flux  [dCnvPPOC2           ] conversion flux POC2 to POC3                                    
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dCnvDPOC2           ] conversion flux POC2 to DOC                                     
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dMinPOC2G           ] mineralization flux POC2 to CO2                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
  found flux  [dPrPOC2M            ] POC2 production MALS                                            
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
    process is switched on.                                                                          
@@ -257,6 +279,15 @@ total number of substances with fractions :  0
 -fluxes for [PON2                ]                                                                  
  found flux  [dCnvPPON1           ] conversion flux PON1 to PON2                                    
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
+   process is switched on.                                                                          
+ found flux  [dCnvPPON2           ] conversion flux PON2 to PON3                                    
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dCnvDPON2           ] conversion flux PON2 to DON                                     
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dMinPON2            ] mineralization flux PON2 to NH4                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
    process is switched on.                                                                          
  found flux  [dPrPON2M            ] PON2 production MALS                                            
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
@@ -292,6 +323,15 @@ total number of substances with fractions :  0
  found flux  [dCnvPPOP1           ] conversion flux POP1 to POP2                                    
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
    process is switched on.                                                                          
+ found flux  [dCnvPPOP2           ] conversion flux POP2 to POP3                                    
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dCnvDPOP2           ] conversion flux POP2 to DOP                                     
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
+ found flux  [dMinPOP2            ] mineralization flux POP2 to PO4                                 
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
+   process is switched on.                                                                          
  found flux  [dPrPOP2M            ] POP2 production MALS                                            
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
    process is switched on.                                                                          
@@ -305,6 +345,9 @@ total number of substances with fractions :  0
 -fluxes for [DOC                 ]                                                                  
  found flux  [dCnvDPOC1           ] conversion flux POC1 to DOC                                     
    from proces [DecFast             ] Mineralization fast decomp. detritus POC1                     
+   process is switched on.                                                                          
+ found flux  [dCnvDPOC2           ] conversion flux POC2 to DOC                                     
+   from proces [DecMedium           ] Mineralization medium decomp. detritus POC2                   
    process is switched on.                                                                          
  found flux  [dMALDOC             ] DOC production by MALS                                          
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
@@ -371,7 +414,7 @@ total number of substances with fractions :  0
  found flux  [dGrMALP             ] Utilization of MALP in growth                                   
    from proces [FlMALS              ] Flux calculation for Macroalgae Structural Mass               
    process is switched on.                                                                          
- found flux  [dStrMALN            ] Storage of nitrogen by macroalgae                               
+ found flux  [dStrMALP            ] Storage of phosphorous by macroalgae                            
    from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
  found flux  [dHrvMALP            ] harvesting flux MALP                                            
@@ -430,6 +473,8 @@ total number of substances with fractions :  0
        using default value: 0.100000E-01                                                            
        [CDRatMALS           ] C to structural dry mass ratio in MALS                                
        using default value: 0.200000                                                                
+       [TotAreaMAL          ] area of frond in this column                                          
+       Using output from proces [MALDIS              ]                                              
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [Temp                ] ambient water temperature                                             
@@ -494,15 +539,17 @@ total number of substances with fractions :  0
        Using substance nr   5                                                                       
        [FrBmMALS            ] Fraction of bottom layer MALS in this seg                             
        Using output from proces [MALDIS              ]                                              
+       [TotAreaMAL          ] area of frond in this column                                          
+       Using output from proces [MALDIS              ]                                              
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MALNmin             ] minimum N in storage                                                  
        using default value: 0.100000E-01                                                            
-       [MALNmax             ] maximum N in MALN                                                     
+       [MALNmax             ] maximum N in MALN w.r.t. MALS                                         
        using default value: 0.220000E-01                                                            
        [MALPmin             ] minimum P in storage                                                  
        using default value: 0.100000E-02                                                            
-       [MALPmax             ] maximum P in MALP                                                     
+       [MALPmax             ] maximum P in MALP w.r.t. MALS                                         
        using default value: 0.220000E-02                                                            
        [CDRatMALS           ] C to structural dry mass ratio in MALS                                
        using default value: 0.200000                                                                
@@ -519,7 +566,7 @@ total number of substances with fractions :  0
        [JPmax               ] maximum MALP P uptake rate (per area frond)                           
        using default value: 0.336000                                                                
        [Velocity            ] horizontal flow velocity                                              
-       Using output from proces [Veloc               ]                                              
+       Using constant nr 43 with value: 0.150000                                                    
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -564,10 +611,10 @@ total number of substances with fractions :  0
        using default value: 0.300000E-01                                                            
        [LengthMAL           ] length of frond in this column                                        
        Using output from proces [MALDIS              ]                                              
-       [AreaMAL             ] area of frond in this column                                          
+       [TotAreaMAL          ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
        [nFrond              ] number of fronds per m2                                               
-       using default value:  1.00000                                                                
+       Using constant nr 41 with value:  1.00000                                                    
        [MALS0               ] growth rate parameter 3                                               
        Using constant nr 36 with value: 0.600000E-01                                                
        [a1                  ] photoperiod parameter 1                                               
@@ -619,9 +666,9 @@ total number of substances with fractions :  0
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
        using default value:  1.00000                                                                
        [nFrond              ] number of fronds per m2                                               
-       using default value:  1.00000                                                                
+       Using constant nr 41 with value:  1.00000                                                    
        [LinDenMAL           ] linear density of macroalgae                                          
-       using default value:  300.000                                                                
+       using default value:  100.000                                                                
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -636,6 +683,62 @@ total number of substances with fractions :  0
        using default value:  0.00000                                                                
        [AuxSys              ] ratio between days and system clock                                   
        using default value:  86400.0                                                                
+                                                                                                    
+ Input for [DecMedium           ] Mineralization medium decomp. detritus POC2                       
+       [POC2                ] POC2 (medium decomposing fraction)                                    
+       Using substance nr   9                                                                       
+       [PON2                ] PON2 (medium decomposing fraction)                                    
+       Using substance nr  11                                                                       
+       [POP2                ] POP2 (medium decomposing fraction)                                    
+       Using substance nr  13                                                                       
+       [POS2                ] POS2 (medium decomposing fraction)                                    
+       using default value:  0.00000                                                                
+       [IdDet1              ] identifier for detritus group POC1, POC2, POC3                        
+       using default value:  1.00000                                                                
+       [ku_dMdcC20          ] upper limit mineralization rate medium detr-C                         
+       using default value: 0.150000E-01                                                            
+       [kl_dMdcC20          ] lower limit mineralization rate medium detr-C                         
+       using default value: 0.150000E-01                                                            
+       [ku_dMdcN20          ] upper limit mineralization rate medium detr-N                         
+       using default value: 0.150000E-01                                                            
+       [kl_dMdcN20          ] lower limit mineralization rate medium detr-N                         
+       using default value: 0.150000E-01                                                            
+       [ku_dMdcP20          ] upper limit mineralization rate medium detr-P                         
+       using default value: 0.150000E-01                                                            
+       [kl_dMdcP20          ] lower limit mineralization rate medium detr-P                         
+       using default value: 0.150000E-01                                                            
+       [kT_dec              ] temperature coefficient for decomposition                             
+       Using constant nr 31 with value:  1.04700                                                    
+       [Temp                ] ambient water temperature                                             
+       Using function nr  1                                                                         
+       [a_dNpr              ] target N:C ratio in refractory detritus                               
+       using default value: 0.500000E-01                                                            
+       [a_dPpr              ] target P:C ratio in refractory detritus                               
+       using default value: 0.500000E-02                                                            
+       [a_dSpr              ] target S:C ratio in refractory detritus                               
+       using default value: 0.500000E-02                                                            
+       [al_dNm              ] lower limit N:C ratio in med. decomp. detr                            
+       using default value: 0.600000E-01                                                            
+       [al_dPm              ] lower limit P:C ratio in med. decomp. detr                            
+       using default value: 0.600000E-02                                                            
+       [au_dNm              ] upper limit N:C ratio in med. decomp. detr                            
+       using default value: 0.120000                                                                
+       [au_dPm              ] upper limit P:C ratio in med. decomp. detr                            
+       using default value: 0.120000E-01                                                            
+       [OXY                 ] Dissolved Oxygen                                                      
+       Using substance nr   2                                                                       
+       [NO3                 ] external NO3 concentration                                            
+       Using substance nr   4                                                                       
+       [b_ni                ] attenuation factor decomp. in denitrifying zone                       
+       using default value:  1.00000                                                                
+       [b_su                ] attenuation factor decomp. in sulphate red.zone                       
+       using default value:  1.00000                                                                
+       [b_poc2poc3          ] fraction POC2 converted to POC3                                       
+       using default value:  0.00000                                                                
+       [b_poc2doc           ] fraction POC2 converted to DOC                                        
+       using default value:  0.00000                                                                
+       [SWOMDec             ] option: 0.0 for stripping, 1.0 for different rates                    
+       using default value:  0.00000                                                                
                                                                                                     
  Input for [DecFast             ] Mineralization fast decomp. detritus POC1                         
        [POC1                ] POC1 (fast decomposing fraction)                                      
@@ -701,7 +804,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       Using output from proces [Veloc               ]                                              
+       Using constant nr 43 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRear              ] switch for oxygen reaeration formulation (1-13)                       
@@ -763,7 +866,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       Using output from proces [Veloc               ]                                              
+       Using constant nr 43 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRearCO2           ] switch for CO2 reaeration formulation (11,13)                         
@@ -1105,14 +1208,14 @@ total number of substances with fractions :  0
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             
- output [MALNDM              ] from proces [FlMALS    ]                                             
- output [MALPDM              ] from proces [FlMALS    ]                                             
- output [MALCDM              ] from proces [FlMALS    ]                                             
+ output [MALNDMS             ] from proces [FlMALS    ]                                             
+ output [MALPDMS             ] from proces [FlMALS    ]                                             
+ output [MALCDMS             ] from proces [FlMALS    ]                                             
  output [MALSNC              ] from proces [FlMALS    ]                                             
  output [MALSPC              ] from proces [FlMALS    ]                                             
- output [MALSCD              ] from proces [FlMALS    ]                                             
- output [MALSND              ] from proces [FlMALS    ]                                             
- output [MALSPD              ] from proces [FlMALS    ]                                             
+ output [MALSCDM             ] from proces [FlMALS    ]                                             
+ output [MALSNDM             ] from proces [FlMALS    ]                                             
+ output [MALSPDM             ] from proces [FlMALS    ]                                             
  output [LimDenS             ] from proces [FlMALS    ]                                             
  output [LimPhoS             ] from proces [FlMALS    ]                                             
  output [LimTemS             ] from proces [FlMALS    ]                                             
@@ -1135,7 +1238,8 @@ total number of substances with fractions :  0
  output [FrBmMALS            ] from proces [MALDIS    ]                                             
  output [BmLayMAL            ] from proces [MALDIS    ]                                             
  output [LengthMAL           ] from proces [MALDIS    ]                                             
- output [AreaMAL             ] from proces [MALDIS    ]                                             
+ output [TotAreaMAL          ] from proces [MALDIS    ]                                             
+ output [LocAreaMAL          ] from proces [MALDIS    ]                                             
  output [TipDepth            ] from proces [MALDIS    ]                                             
  output [LimVel              ] from proces [FlMALN    ]                                             
  output [LocUpN              ] from proces [FlMALN    ]                                             
@@ -1144,4 +1248,5 @@ total number of substances with fractions :  0
  output [Wdry                ] from proces [FlMALS    ]                                             
  output [Wwet                ] from proces [FlMALS    ]                                             
  output [MBotSeg             ] from proces [MALDIS    ]                                             
+ output [FootDepth           ] default from [MALDIS              ]                                  
                                                                                                     

@@ -12,8 +12,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(30)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(30)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(31)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(31)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -22,7 +22,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 30)   !    Local work array for the pointering
+      INTEGER IPNT( 31)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -36,6 +36,7 @@ C
       REAL(4) NH4         ! I  Ammonium                                            (gN/m3)
       REAL(4) PO4         ! I  Phosphate                                           (gP/m3)
       REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                    (-)
+      REAL(4) TotAreMAL   ! I  Total area frond in this segment                    (m2)
       REAL(4) ArDenMAL    ! I grams per m2 surface area of plant (Broch)           (gDM/m2)
       REAL(4) MALNmin     ! I  minimal N in nitrogen storage                       (gN/gDM)
       REAL(4) MALNmax     ! I  maximum N in nitrogen storage                       (gN/gDM)
@@ -80,7 +81,6 @@ C
       
       REAL(4) LimN
       REAL(4) LimP
-      REAL(4) areaLoc
 C
 C*******************************************************************************
 C
@@ -109,25 +109,26 @@ C
                 NO3	    =	PMSA( IPNT(4) )
                 NH4	    =	PMSA( IPNT(5) )
                 PO4       =   PMSA( IPNT(6) )
-                ArDenMAL	=	PMSA( IPNT(8) )
-                MALNmin	=	PMSA( IPNT(9) )
-                MALNmax	=	PMSA( IPNT(10) )
-                MALPmin	=	PMSA( IPNT(11) )
-                MALPmax	=	PMSA( IPNT(12) )
-                CDRatMALS	=	PMSA( IPNT(13) )
-                NCRatMALS	=	PMSA( IPNT(14) )
-                PCRatMALS	=	PMSA( IPNT(15) )
-                Ksn	    =	PMSA( IPNT(16) )
-                Ksp	    =	PMSA( IPNT(17) )
-                JNmax	    =	PMSA( IPNT(18) )
-                JPmax	    =	PMSA( IPNT(19) )
-                Vel	    =	PMSA( IPNT(20) )
-                Vel65	    =	PMSA( IPNT(21) )
-                Surf	    =	PMSA( IPNT(23) )
-                DELT	    =	PMSA( IPNT(24) )
-                Depth	    =	PMSA( IPNT(25) )
+                TotAreMAL =   PMSA( IPNT(8) )
+                ArDenMAL	=	PMSA( IPNT(9) )
+                MALNmin	=	PMSA( IPNT(10) )
+                MALNmax	=	PMSA( IPNT(11) )
+                MALPmin	=	PMSA( IPNT(12) )
+                MALPmax	=	PMSA( IPNT(13) )
+                CDRatMALS	=	PMSA( IPNT(14) )
+                NCRatMALS	=	PMSA( IPNT(15) )
+                PCRatMALS	=	PMSA( IPNT(16) )
+                Ksn	    =	PMSA( IPNT(17) )
+                Ksp	    =	PMSA( IPNT(18) )
+                JNmax	    =	PMSA( IPNT(19) )
+                JPmax	    =	PMSA( IPNT(20) )
+                Vel	    =	PMSA( IPNT(21) )
+                Vel65	    =	PMSA( IPNT(22) )
+                Surf	    =	PMSA( IPNT(24) )
+                DELT	    =	PMSA( IPNT(25) )
+                Depth	    =	PMSA( IPNT(26) )
 
-                MBotSeg    = nint(PMSA( IPNT( 22) ))
+                MBotSeg    = nint(PMSA( IPNT( 23) ))
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
@@ -150,14 +151,13 @@ C
                 ! nitrogen hunger will be the same along length
                 ! nutrient abundance will not be
                 
-                !IF (MALN .gt. MALNmax) THEN
-                !    write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
-                !ENDIF
+                IF (MALN .gt. MALNmax) THEN
+                    write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
+                ENDIF
                 !IF (MALP .gt. MALPmax) THEN
                 !    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
                 !ENDIF            
                 ! total area in this segment
-                areaLoc = MALS * Surf / ArDenMAL
 
                 LimN = (MALNmax - MALN)/(MALNmax - MALNmin)
                 IF (LimN .lt. 0.0) THEN
@@ -167,7 +167,6 @@ C
                 IF (LimP .lt. 0.0) THEN
                     LimP = 0.0
                 ENDIF
-                LimP = 1.0
                 
                 ! max rate is gN/m2 plant day, but m2 is m2 of plant,
                 ! not segment (SURF)
@@ -176,15 +175,15 @@ C
                 ! we multimply this by MALS * area density (g/m2)
                                 
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
-                  LocUpN = (areaLoc) * JNmax * (NO3/(Ksn + NO3))
+                  LocUpN = (TotAreMAL) * JNmax * (NO3/(Ksn + NO3))
      &              * LimN * LimVel 
                 ELSE
                     LocUpN = 0.0
                 ENDIF
                 
                 IF (LimP .gt. 0.0 .AND. MALP .lt. MALPmax) THEN
-                  LocUpP = (areaLoc) * LimVel * JPmax * 
-     &             (PO4/(Ksp + PO4)) * LimP
+                  LocUpP = (TotAreMAL) * JPmax * (PO4/(Ksp + PO4))
+     &              * LimP * LimVel
                 ELSE
                     LocUpP = 0.0
                 ENDIF
@@ -193,7 +192,7 @@ C
                 ! can not take up NH4 at the moment, Broch ignores NH4
                 dUpMALNH4 = 0.0
                 dUpMALPO4 = LocUpP/(Depth*Surf)
-                
+                dUpMALPO4 = 0.0
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4
                 FL ( IdUpMALPO4 ) = dUpMALPO4 
@@ -204,11 +203,11 @@ C
                 FL(IdStrMALN + FLCREM) =FL(IdStrMALN+FLCREM)+LocUpN/Surf
                 FL(IdStrMALP + FLCREM) =FL(IdStrMALP+FLCREM)+LocUpP/Surf
                
-                PMSA( IPNT( 26)   ) =  LimVel		
-                PMSA( IPNT( 27)   ) =  LimN		
-                PMSA( IPNT( 28)   ) =  LimP		
-                PMSA( IPNT( 29)   ) =  LocUpN/Surf	
-                PMSA( IPNT( 30)   ) =  LocUpP/Surf	
+                PMSA( IPNT( 27)   ) =  LimVel		
+                PMSA( IPNT( 28)   ) =  LimN		
+                PMSA( IPNT( 29)   ) =  LimP		
+                PMSA( IPNT( 30)   ) =  LocUpN/Surf	
+                PMSA( IPNT( 31)   ) =  LocUpP/Surf	
                 
             ENDIF
          ENDIF

@@ -2847,7 +2847,7 @@ dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/
 dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep    -0.03 colsep H+         colsep FlMALN     \\
 dUpPO4M    colsep PO4 uptake by Macroalgae nitrogen storage          colsep (gP/m3/d)            colsep     1.97 colsep ALKA       colsep FlMALN     \\
 dStrMALN   colsep Storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep     1.00 colsep MALN       colsep FlMALN     \\
-dStrMALN   colsep Storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep     1.00 colsep MALP       colsep FlMALN     \\
+dStrMALP   colsep Storage of phosphorous by macroalgae               colsep (gP/m2/d)            colsep     1.00 colsep MALP       colsep FlMALN     \\
 dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/m3/d)            colsep    -1.00 colsep TIC        colsep FlMALC     \\
 dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/m3/d)            colsep    -1.50 colsep H2O        colsep FlMALC     \\
 dMALDOC    colsep DOC production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep DOC        colsep FlMALC     \\

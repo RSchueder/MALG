@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(37)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(37)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(38)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(38)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 37)   !    Local work array for the pointering
+      INTEGER IPNT( 38)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -33,6 +33,7 @@ C
       REAL(4) FrBmMALS    ! I  Fraction of MALS in this segment                     (-)
       REAL(4) MALCmin     ! I  minimal C in carbon storage                          (gC/gDM)
       REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                   (gC/gDM)
+      REAL(4) TotAreMAL   ! I  Total Frond area in this segment                     (gC/gDM)
       REAL(4) ArDenMAL    ! I grams per m2 surface area of plant (Broch)            (gDM/m2)
       REAL(4) Temp	    ! I  Water temperature                                    (degC)
       REAL(4) R1          ! I  Reference respiration rate at T1                     (gC/m2 d)
@@ -119,31 +120,32 @@ C
                 ! take from current segment
                 MALCmin    = PMSA( IPNT(  4) )
                 CDRatMALS  = PMSA( IPNT(  5) ) 
-                ArDenMAL   = PMSA( IPNT(  6) )
-                Temp	     = PMSA( IPNT(  7) )
-                R1         = PMSA( IPNT(  8) )
-                R2         = PMSA( IPNT(  9) )
-                Tr1        = PMSA( IPNT(  10) )
-                Tr2	     = PMSA( IPNT(  11) )
-                P1         = PMSA( IPNT(  12) )
-                P2         = PMSA( IPNT(  13) )
-                Tp1        = PMSA( IPNT(  14) )
-                Tp2        = PMSA( IPNT(  15) )
-                Tap	     = PMSA( IPNT(  16) )
-                Taph       = PMSA( IPNT(  17) )
-                Tapl       = PMSA( IPNT(  18) )
-                Tar        = PMSA( IPNT(  19) )
-                RadSurf  	 = PMSA( IPNT(  20) )
-                ExtVl	     = PMSA( IPNT(  21) )
-                alpha      = PMSA( IPNT(  22) )
-                Isat       = PMSA( IPNT(  23) )
-                exuMALC    = PMSA( IPNT(  24) )
-                Surf       = PMSA( IPNT(  26) )
-                DELT       = PMSA( IPNT(  27) )
-                Depth      = PMSA( IPNT(  28) )
-                LocalDepth = PMSA( IPNT(  29) )
+                TotAreMAL  = PMSA( IPNT(  6) )
+                ArDenMAL   = PMSA( IPNT(  7) )
+                Temp	     = PMSA( IPNT(  8) )
+                R1         = PMSA( IPNT(  9) )
+                R2         = PMSA( IPNT(  10) )
+                Tr1        = PMSA( IPNT(  11) )
+                Tr2	     = PMSA( IPNT(  12) )
+                P1         = PMSA( IPNT(  13) )
+                P2         = PMSA( IPNT(  14) )
+                Tp1        = PMSA( IPNT(  15) )
+                Tp2        = PMSA( IPNT(  16) )
+                Tap	     = PMSA( IPNT(  17) )
+                Taph       = PMSA( IPNT(  18) )
+                Tapl       = PMSA( IPNT(  19) )
+                Tar        = PMSA( IPNT(  20) )
+                RadSurf  	 = PMSA( IPNT(  21) )
+                ExtVl	     = PMSA( IPNT(  22) )
+                alpha      = PMSA( IPNT(  23) )
+                Isat       = PMSA( IPNT(  24) )
+                exuMALC    = PMSA( IPNT(  25) )
+                Surf       = PMSA( IPNT(  27) )
+                DELT       = PMSA( IPNT(  28) )
+                Depth      = PMSA( IPNT(  29) )
+                LocalDepth = PMSA( IPNT(  30) )
               
-                MBotSeg    = nint(PMSA( IPNT( 25) ))
+                MBotSeg    = nint(PMSA( IPNT( 26) ))
          
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
@@ -709,9 +711,7 @@ C
                
                 ! exudation (-)
                 E = 1-exp(exuMALC*(MALCmin - MALC))
-                ! need the area of the frond in this segment
-                ! already in this segment by virtue of the FrBmMALS
-                areaLoc = MALS * Surf / ArDenMAL
+                
                 ! convert from gC/dm2 h to gC/m2 d for state variable
                 BrochP = P
                 P = P * 24 * 100
@@ -721,14 +721,14 @@ C
                 ! growth respiration is included in FLMALS
                 ! TIC gets converted (lost) to DOC in exudate
 
-                dMALTIC = areaLoc * (P - R) / (Surf*Depth) 
+                dMALTIC = TotAreMAL * (P - R) / (Surf*Depth) 
                 
                 ! exudate is produced as DOC, E is a fraction of production              
                 ! exudation (leakage) gC/(m3 d)
-                dMALDOC = areaLoc * P * E / (Surf*Depth) 
+                dMALDOC = TotAreMAL * P * E / (Surf*Depth) 
                 
                 ! uptake into storage gC/(m2 d)
-                LocUpC  = areaLoc * ( P * (1.0-E) - R ) / Surf
+                LocUpC  = TotAreMAL * ( P * (1.0-E) - R ) / Surf
                 ! oxygen 
                 ! photosynthesis produces oxygen, respiration consumes
                 ! look to TIC to see what the balance is
@@ -736,17 +736,17 @@ C
                 dPrMALOXY   = 2.67 * dMALTIC
                 ! need ALKA!
                 
-                GrosMALC            = areaLoc * P 
-                RespMALC            = areaLoc * R 
-                ExudMALC            = areaLoc * P * E 
-                PMSA( IPNT( 30)   ) = LocUpC
-                PMSA( IPNT( 31)   ) = Itip
-                PMSA( IPNT( 32)   ) = Itipu
-                PMSA( IPNT( 33)   ) = BrochP
-                PMSA( IPNT( 34)   ) = GrosMALC
-                PMSA( IPNT( 35)   ) = RespMALC
-                PMSA( IPNT( 36)   ) = ExudMALC
-                PMSA( IPNT( 37)   ) = beta
+                GrosMALC            = TotAreMAL * P 
+                RespMALC            = TotAreMAL * R 
+                ExudMALC            = TotAreMAL * P * E 
+                PMSA( IPNT( 31)   ) = LocUpC
+                PMSA( IPNT( 32)   ) = Itip
+                PMSA( IPNT( 33)   ) = Itipu
+                PMSA( IPNT( 34)   ) = BrochP
+                PMSA( IPNT( 35)   ) = GrosMALC
+                PMSA( IPNT( 36)   ) = RespMALC
+                PMSA( IPNT( 37)   ) = ExudMALC
+                PMSA( IPNT( 38)   ) = beta
 
                 FL ( IdUpMALTIC   ) = dMALTIC
                 FL ( IdPrMALDOC   ) = dMALDOC
@@ -758,15 +758,12 @@ C
                 ! if no storage, respiration is taken from structural mass.
                 ! fluxes were for whole segment, so convert to /m2
                 IF (LocUpC .ge. 0.0) THEN
-          FL(IdStrMALC+FLCREM) = FL(IdStrMALC + FLCREM) + LocUpC/Surf
+          FL(IdStrMALC+FLCREM)= FL(IdStrMALC + FLCREM) + LocUpC
                 ELSE
                   !areaLoc * ArDenMALS * (MALCmin - MALC)/(MALS*CDRatMALS)
-          FL(IdCanMALS+FLCREM) = FL(IdCanMALS + FLCREM) + LocUpC/Surf
-     &                  / CDRatMALS
+          FL(IdCanMALS+FLCREM)= FL(IdCanMALS + FLCREM)+LocUpC/CDRatMALS
                 ENDIF
-                
-                    
-   
+
             ENDIF
             ENDIF
 

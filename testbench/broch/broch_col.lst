@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/04 18:09:52 
+ Execution start: 2019/04/08 18:15:21 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -813,7 +813,7 @@
  Number of overridings :    1
  Number         values
         10    1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
-              0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  1.0000E-01  1.0800E+01
+              0.0000E+00  0.0000E+00  0.0000E+00  1.8000E+01  1.8000E-01  2.0000E-02  1.0800E+01
 
  ************************************************************************************************************* B L O C K - 8 *****
 
@@ -846,67 +846,69 @@
 
  All substances plus extra output variables
 
- (     58) number of output variables specified
+ (     60) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
-       2           LocalDepth                                
-       3           TotalDepth                                
-       4           Depth                                     
-       5           Temp                                      
-       6           NO3                                       
-       7           RadSurf                                   
-       8           Itip                                      
-       9           Itipu                                     
-      10           BrochP                                    
-      11           pH                                        
-      12           DisCO2                                    
-      13           pCO2water                                 
-      14           DisHCO3                                   
-      15           CO2                                       
-      16           beta                                      
-      17           daylend                                   
-      18           daylenp                                   
-      19           daylenm                                   
-      20           MALNDM                                    
-      21           MALPDM                                    
-      22           MALCDM                                    
-      23           MALSNC                                    
-      24           MALSPC                                    
-      25           MALSCD                                    
-      26           MALSND                                    
-      27           MALSPD                                    
-      28           LimDenS                                   
-      29           LimPhoS                                   
-      30           LimTemS                                   
-      31           LimN                                      
-      32           LimP                                      
-      33           LimNutS                                   
-      34           LimMALN                                   
-      35           LimMALP                                   
-      36           LimMALC                                   
-      37           muMALS                                    
-      38           LocGroPS                                  
-      39           LocNetPS                                  
-      40           LocDecS                                   
-      41           LocGroN                                   
-      42           LocGroP                                   
-      43           LocGroC                                   
-      44           GrosMALC                                  
-      45           RespMALC                                  
-      46           ExudMALC                                  
-      47           FrBmMALS                                  
-      48           BmLayMAL                                  
-      49           LengthMAL                                 
-      50           AreaMAL                                   
-      51           TipDepth                                  
-      52           LimVel                                    
-      53           LocUpN                                    
-      54           LocUpP                                    
-      55           LocUpC                                    
-      56           Wdry                                      
-      57           Wwet                                      
-      58           MBotSeg                                   
+       2           Velocity                                  
+       3           LocalDepth                                
+       4           TotalDepth                                
+       5           Depth                                     
+       6           Temp                                      
+       7           NO3                                       
+       8           RadSurf                                   
+       9           Itip                                      
+      10           Itipu                                     
+      11           BrochP                                    
+      12           pH                                        
+      13           DisCO2                                    
+      14           pCO2water                                 
+      15           DisHCO3                                   
+      16           CO2                                       
+      17           beta                                      
+      18           daylend                                   
+      19           daylenp                                   
+      20           daylenm                                   
+      21           MALNDMS                                   
+      22           MALPDMS                                   
+      23           MALCDMS                                   
+      24           MALSNC                                    
+      25           MALSPC                                    
+      26           MALSCDM                                   
+      27           MALSNDM                                   
+      28           MALSPDM                                   
+      29           LimDenS                                   
+      30           LimPhoS                                   
+      31           LimTemS                                   
+      32           LimN                                      
+      33           LimP                                      
+      34           LimNutS                                   
+      35           LimMALN                                   
+      36           LimMALP                                   
+      37           LimMALC                                   
+      38           muMALS                                    
+      39           LocGroPS                                  
+      40           LocNetPS                                  
+      41           LocDecS                                   
+      42           LocGroN                                   
+      43           LocGroP                                   
+      44           LocGroC                                   
+      45           GrosMALC                                  
+      46           RespMALC                                  
+      47           ExudMALC                                  
+      48           FrBmMALS                                  
+      49           BmLayMAL                                  
+      50           LengthMAL                                 
+      51           TotAreaMAL                                
+      52           LocAreaMAL                                
+      53           TipDepth                                  
+      54           LimVel                                    
+      55           LocUpN                                    
+      56           LocUpP                                    
+      57           LocUpC                                    
+      58           Wdry                                      
+      59           Wwet                                      
+      60           MBotSeg                                   
 
  Specification of map output
 
@@ -933,6 +935,7 @@
         SURF                ; Using parameter nr           1
         LocalDepth          ; Using parameter nr           4
         SURF                ; Using parameter nr           1
+        Velocity            ; Using constant nr          25
         LocalDepth          ; Using parameter nr           4
         TotalDepth          ; Using constant nr          32
         Depth               ; Using parameter nr           2
@@ -951,14 +954,14 @@
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALNDM              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALPDM              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALCDM              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALNDMS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALPDMS             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALCDMS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSNC              ; NOT FOUND, delwaq will detect variables from process library
    INFO:MALSPC              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSCD              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSND              ; NOT FOUND, delwaq will detect variables from process library
-   INFO:MALSPD              ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSCDM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSNDM             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:MALSPDM             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimDenS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimPhoS             ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimTemS             ; NOT FOUND, delwaq will detect variables from process library
@@ -981,7 +984,8 @@
    INFO:FrBmMALS            ; NOT FOUND, delwaq will detect variables from process library
    INFO:BmLayMAL            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LengthMAL           ; NOT FOUND, delwaq will detect variables from process library
-   INFO:AreaMAL             ; NOT FOUND, delwaq will detect variables from process library
+   INFO:TotAreaMAL          ; NOT FOUND, delwaq will detect variables from process library
+   INFO:LocAreaMAL          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TipDepth            ; NOT FOUND, delwaq will detect variables from process library
    INFO:LimVel              ; NOT FOUND, delwaq will detect variables from process library
    INFO:LocUpN              ; NOT FOUND, delwaq will detect variables from process library
@@ -991,7 +995,7 @@
    INFO:Wwet                ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :          51
+  Number off missing variables :          52
 
  ************************************************************************************************************* B L O C K - 9 *****
 
@@ -1018,8 +1022,8 @@ Number of periods defined:     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:       6537
- total integer   array space:       5845
- total character array space:       9936
- grand total in 4-byte words:      22318 =   0-GB   0-MB  89-KB 272-Byte.
- Execution stop : 2019/04/04 18:09:53 
+ total real      array space:       6569
+ total integer   array space:       5876
+ total character array space:      10166
+ grand total in 4-byte words:      22611 =   0-GB   0-MB  90-KB 444-Byte.
+ Execution stop : 2019/04/08 18:15:21 

@@ -1,13 +1,61 @@
-6 ; nr of monitor locations
-'Farm1 top' 1
-393
-'Farm2 top' 1
-402
-'Farm3 top' 1
-423
-'Farm1 bottom' 1
-9836
-'Farm2 bottom' 1
-9845
-'Farm3 bottom' 1
-9866
+60
+Farm1(1)   1   393
+Farm2(1)   1   402
+Farm3(1)   1   423
+Farm1(2)   1   890
+Farm2(2)   1   899
+Farm3(2)   1   920
+Farm1(3)   1   1387
+Farm2(3)   1   1396
+Farm3(3)   1   1417
+Farm1(4)   1   1884
+Farm2(4)   1   1893
+Farm3(4)   1   1914
+Farm1(5)   1   2381
+Farm2(5)   1   2390
+Farm3(5)   1   2411
+Farm1(6)   1   2878
+Farm2(6)   1   2887
+Farm3(6)   1   2908
+Farm1(7)   1   3375
+Farm2(7)   1   3384
+Farm3(7)   1   3405
+Farm1(8)   1   3872
+Farm2(8)   1   3881
+Farm3(8)   1   3902
+Farm1(9)   1   4369
+Farm2(9)   1   4378
+Farm3(9)   1   4399
+Farm1(10)   1   4866
+Farm2(10)   1   4875
+Farm3(10)   1   4896
+Farm1(11)   1   5363
+Farm2(11)   1   5372
+Farm3(11)   1   5393
+Farm1(12)   1   5860
+Farm2(12)   1   5869
+Farm3(12)   1   5890
+Farm1(13)   1   6357
+Farm2(13)   1   6366
+Farm3(13)   1   6387
+Farm1(14)   1   6854
+Farm2(14)   1   6863
+Farm3(14)   1   6884
+Farm1(15)   1   7351
+Farm2(15)   1   7360
+Farm3(15)   1   7381
+Farm1(16)   1   7848
+Farm2(16)   1   7857
+Farm3(16)   1   7878
+Farm1(17)   1   8345
+Farm2(17)   1   8354
+Farm3(17)   1   8375
+Farm1(18)   1   8842
+Farm2(18)   1   8851
+Farm3(18)   1   8872
+Farm1(19)   1   9339
+Farm2(19)   1   9348
+Farm3(19)   1   9369
+Farm1(20)   1   9836
+Farm2(20)   1   9845
+Farm3(20)   1   9866

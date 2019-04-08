@@ -2853,7 +2853,7 @@ MALN       colsep Utilization of MALN in growth                      colsep (gN/
 MALN       colsep Storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
 MALN       colsep harvesting flux MALN                               colsep (gN/m2/d)            colsep HRVMAL     \\
 MALP       colsep Utilization of MALP in growth                      colsep (gP/m2/d)            colsep FlMALS     \\
-MALP       colsep Storage of nitrogen by macroalgae                  colsep (gN/m2/d)            colsep FlMALN     \\
+MALP       colsep Storage of phosphorous by macroalgae               colsep (gP/m2/d)            colsep FlMALN     \\
 MALP       colsep harvesting flux MALP                               colsep (gP/m2/d)            colsep HRVMAL     \\
 MALC       colsep Utilization of MALC in growth                      colsep (gC/m2/d)            colsep FlMALS     \\
 MALC       colsep storage of carbon by macroalgae                    colsep (gC/m2/d)            colsep FlMALC     \\

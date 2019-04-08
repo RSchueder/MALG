@@ -75,7 +75,7 @@ for ii in range(0,2):
     else:
         fign = plt.figure(4)
         ax = fign.add_axes([0.1,0.1,0.8,0.8])               
-    area = his['AreaMAL',seg,:]
+    area = his['LocAreaMAL',seg,:]
     ax.plot(his.dates,area*100.0, 'k', label = 'Model')
     ax.set_xlabel('(A)')
     ax.set_ylabel('Frond area [dm$^{2}$]')
@@ -111,7 +111,7 @@ for ii in range(0,2):
     else:
         fign = plt.figure(6)
         ax = fign.add_axes([0.1,0.1,0.8,0.8])       
-    MALC = his['MALSCD',seg,:]
+    MALC = his['MALSCDM',seg,:]
     ax.plot(his.dates,MALC, 'k', label = 'Model')
     ax.set_xlabel('(A)')
     ax.set_ylabel('carbon content [gC gDW$^{-1}$]')
@@ -131,7 +131,7 @@ for ii in range(0,2):
     else:
         fign = plt.figure(7)
         ax = fign.add_axes([0.1,0.1,0.8,0.8])             
-    MALN = his['MALSND',seg,:]
+    MALN = his['MALSNDM',seg,:]
     ax.plot(his.dates,MALN, 'k', label = 'Model')
     ax.set_xlabel('(B)')
     ax.set_ylabel('nitrogen content [gN gDW$^{-1}$]')
@@ -168,28 +168,28 @@ ax.xaxis.set_major_formatter(xfmt)
 pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\carbon_budget.png') ,dpi = 700)
 
 ################################################################################
-#fig ,ax1 = plt.subplots(1,1)
-#ax2 = ax1.twinx()
-## lims = ['LimDenS','LimMALC','LimMALN','LimN','LimP','LimTemS']
-#lims = ['LimDenS','LimMALN','LimMALC','LimTemS','LimPhoS']
-#dat = {}
-#for ll in lims:
-#    val = his[ll,seg,:]
-#    dat[ll] = val
-#    ax1.plot(his.dates,val,label = ll)
-#ax1.grid()
-#plt.xlabel('time')
-#plt.ylabel('limitation factor [-]')
-##plt.plot(his.dates,his['LimNutS',seg,:], 'o', label = 'LimNutS')
-#ax1.grid()
-#ax1.legend()
-#
-#LimNut = np.array([np.min([dat['LimMALC'][ind],dat['LimMALN'][ind]]) for ind,val in enumerate(dat['LimMALC'])])
-#ax2.plot(his.dates, dat['LimDenS'] * dat['LimTemS'] * dat['LimPhoS'] * LimNut, label = 'recalculated growth rate')
-#mu = his['muMALS',seg,:]
-#ax2.plot(his.dates,mu,'k--',label = 'specific growth rate')
-#
-#ax1.set_xlabel('time')
-#ax1.set_ylabel('growth rate contribution [1/d]')
-#ax2.set_ylabel('growth rate [1/d]')
-#ax2.legend()
+fig ,ax1 = plt.subplots(1,1)
+ax2 = ax1.twinx()
+# lims = ['LimDenS','LimMALC','LimMALN','LimN','LimP','LimTemS']
+lims = ['LimDenS','LimMALN','LimMALC','LimMALP','LimTemS','LimPhoS']
+dat = {}
+for ll in lims:
+    val = his[ll,seg,:]
+    dat[ll] = val
+    ax1.plot(his.dates,val,label = ll)
+ax1.grid()
+plt.xlabel('time')
+plt.ylabel('limitation factor [-]')
+#plt.plot(his.dates,his['LimNutS',seg,:], 'o', label = 'LimNutS')
+ax1.grid()
+ax1.legend()
+
+LimNut = np.array([np.min([dat['LimMALC'][ind],dat['LimMALN'][ind]]) for ind,val in enumerate(dat['LimMALC'])])
+ax2.plot(his.dates, dat['LimDenS'] * dat['LimTemS'] * dat['LimPhoS'] * LimNut, label = 'recalculated growth rate')
+mu = his['muMALS',seg,:]
+ax2.plot(his.dates,mu,'k--',label = 'specific growth rate')
+
+ax1.set_xlabel('time')
+ax1.set_ylabel('growth rate contribution [1/d]')
+ax2.set_ylabel('growth rate [1/d]')
+ax2.legend()

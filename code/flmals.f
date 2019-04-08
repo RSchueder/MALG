@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(58)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(58)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(60)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(60)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 58)   !    Local work array for the pointering
+      INTEGER IPNT( 60)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -44,7 +44,7 @@ C
       REAL(4) m_1         ! I  MALS growth rate parameter 1                        (-)
       REAL(4) m_2         ! I  MALS growth rate parameter 2                        (-)
       REAL(4) HactMAL     ! I  Length of frond in this column                      (m)
-      REAL(4) AactMAL     ! I  area of frond in this column                        (m2)
+      REAL(4) TotAreMAL   ! I  area of frond in this column                        (m2)
       REAL(4) nFrond      ! I  number of fronds per m2                             (1/m2)
       REAL(4) MALS0       ! I  MALS growth rate parameter 3                        (gDM/m2)
       REAL(4) a_1         ! I  MALS photoperiod parameter 1                        (-)
@@ -63,14 +63,14 @@ C
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
       
-      REAL(4) MALNDM		! O	 macroalgae N storage in segment                     (gN/gDM)
-      REAL(4) MALPDM		! O	 macroalgae P storage in segment                     (gP/gDM)
-      REAL(4) MALCDM		! O	 macroalgae C storage in segment                 	 (gC/gDM)
+      REAL(4) MALNDMS		! O	 macroalgae N storage in segment                     (gN/gDM)
+      REAL(4) MALPDMS		! O	 macroalgae P storage in segment                     (gP/gDM)
+      REAL(4) MALCDMS		! O	 macroalgae C storage in segment                 	 (gC/gDM)
       REAL(4) MALSNC		! O	 ratio N:C in whole plant                            (-)
       REAL(4) MALSPC		! O	 ratio P:C in whole plant                            (-)
-      REAL(4) MALSCD		! O	 ratio C:DM in whole plant                           (-)
-      REAL(4) MALSND		! O	 ratio N:DM in whole plant                           (-)
-      REAL(4) MALSPD		! O	 ratio P:DM in whole plant                           (-)      
+      REAL(4) MALSCDM		! O	 ratio C:DM in whole plant                           (-)
+      REAL(4) MALSNDM		! O	 ratio N:DM in whole plant                           (-)
+      REAL(4) MALSPDM		! O	 ratio P:DM in whole plant                           (-)      
       REAL(4) LimBioMALS  ! O  density limitation function                         (-)
       REAL(4) LimPhoMALS  ! O  photoperiod limitation function                     (-)
       REAL(4) LimTemMALS  ! O  temperature limitation function                     (-)
@@ -104,7 +104,7 @@ C
       INTEGER IKMRK2
       
       REAL(4) lengthLoc
-      REAL(4) areaLoc
+      REAL(4) LocAreMAL
       REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
       REAL(4) dDecayMALS  !    decay of MALS                                      (gDM/m3/d)
       REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
@@ -126,7 +126,6 @@ C
       REAL(4) TotC
       REAL(4) Wdry
       REAL(4) Wwet
-      REAL(4) mu0
 
 C
 C*******************************************************************************
@@ -172,7 +171,7 @@ C
                 m_1        = PMSA( IPNT(14) )
                 m_2        = PMSA( IPNT(15) )
                 HactMAL    = PMSA( IPNT(16) )
-                AactMAL    = PMSA( IPNT(17) )
+                TotAreMAL  = PMSA( IPNT(17) )
                 nFrond     = PMSA( IPNT(18) )
                 MALS0      = PMSA( IPNT(19) )
                 a_1        = PMSA( IPNT(20) )
@@ -205,22 +204,22 @@ C
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
                 
-                MALNDM = MALN
-                MALPDM = MALP
-                MALCDM = MALC
+                MALNDMS = MALN
+                MALPDMS = MALP
+                MALCDMS = MALC
                 ! valid with assumption that storage content is homogeneous
                             
                 ! find amount of mass in this segment (gDM/m2)
    
                 MALS = MALS * FrBmMALS 
                 lengthLoc = HactMAL * FrBmMALS
-                areaLoc = AactMAL * FrBmMALS   
+                LocAreMAL = TotAreMAL * FrBmMALS / Surf  
                 
                 ! density limitation
                 ! if the plant is too big overall then all segments suffer
                 ! area is in m2 and MALS0 is in m2 as well
                 
-               LimDen=m_1*exp(-1*((AactMAL/(MALS0*nFrond*Surf))**2))+m_2
+               LimDen=m_1*exp(-1*((LocAreMAL/(MALS0*nFrond))**2))+m_2
                 
                 ! temperature limitation
 
@@ -244,12 +243,8 @@ C
                 ! this superfluous because the next 2 lines will be the same for all
                 ! segments in this column
                 ! m2 to dm2
-                ! thinking about this more, it is not the total area that should be limiting
-                ! because a ton of young plants have a lot of area
-                ! it should be the length, which is linearly related to area
-                ! But, you could also just adjust AactMAL accordingly
-                ! in agreement with the planting density
-                coeff = exp(mrtMAL*AactMAL*100/Surf)
+
+                coeff = exp(mrtMAL*LocAreMAL*100/FrBmMALS)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + (10e-6)*(coeff - 1 ))
@@ -278,9 +273,9 @@ C
                 IF (MALN .lt. MALNmin) THEN
                     write(*,*) 'ERROR: MALN (gN/gDM) LESS THAN MALNmin'
                 ENDIF
-                IF (MALP .lt. MALPmin) THEN
-                    write(*,*) 'ERROR: MALP (gP/gDM) LESS THAN MALPmin'
-                ENDIF
+                !IF (MALP .lt. MALPmin) THEN
+                !    write(*,*) 'ERROR: MALP (gP/gDM) LESS THAN MALPmin'
+                !ENDIF
                 IF (MALC .lt. MALCmin) THEN
                     write(*,*) 'ERROR: MALC (gC/gDM) LESS THAN MALCmin'
                 ENDIF           
@@ -319,6 +314,8 @@ C
                     dPtrMALS=0.0
                     dCtrMALS=0.0
                 ENDIF
+                dPtrMALS=0.0
+
                 ! gDM/(m2 d), sent to bottom
                 LocGroS = dGrowMALS - dDecayMALS
                 LocGroN = MIN(dNtrMALS,MALN)
@@ -335,11 +332,11 @@ C
                 ! P:C ratio
                 MALSPC = TotP/TotC
                 ! C:DM ratio
-                MALSCD = TotC/Wdry
+                MALSCDM = TotC/Wdry
                 ! N:DM ratio
-                MALSND = TotN/Wdry		
+                MALSNDM = TotN/Wdry		
                 ! P:DM ratio
-                MALSPD = TotP/Wdry	
+                MALSPDM = TotP/Wdry	
                 
                 ! oxygen 
                 ! mineralization of stored carbon consumes oxygen
@@ -364,14 +361,14 @@ C
                 FL(IdGrMALP + FLCREM) = FL(IdGrMALP + FLCREM)  + LocGroP
                 FL(IdGrMALC + FLCREM) = FL(IdGrMALC + FLCREM)  + LocGroC
                                   
-                PMSA( IPNT( 35)   ) =  MALNDM		
-                PMSA( IPNT( 36)   ) =  MALPDM		
-                PMSA( IPNT( 37)   ) =  MALCDM		
+                PMSA( IPNT( 35)   ) =  MALNDMS		
+                PMSA( IPNT( 36)   ) =  MALPDMS		
+                PMSA( IPNT( 37)   ) =  MALCDMS		
                 PMSA( IPNT( 38)   ) =  MALSNC		
                 PMSA( IPNT( 39)   ) =  MALSPC	
-                PMSA( IPNT( 40)   ) =  MALSCD
-                PMSA( IPNT( 41)   ) =  MALSND
-                PMSA( IPNT( 42)   ) =  MALSPD
+                PMSA( IPNT( 40)   ) =  MALSCDM
+                PMSA( IPNT( 41)   ) =  MALSNDM
+                PMSA( IPNT( 42)   ) =  MALSPDM
                 PMSA( IPNT( 43)   ) =  LimDen
                 PMSA( IPNT( 44)   ) =  LimPho  
                 PMSA( IPNT( 45)   ) =  LimTemp 
@@ -387,7 +384,9 @@ C
                 PMSA( IPNT( 55)   ) =  LocGroP    
                 PMSA( IPNT( 56)   ) =  LocGroC 
                 PMSA( IPNT( 57)   ) =  Wdry  
-                PMSA( IPNT( 58)   ) =  Wwet             
+                PMSA( IPNT( 58)   ) =  Wwet    
+                PMSA( IPNT( 59)   ) =  Wdry*Surf  
+                PMSA( IPNT( 60)   ) =  Wwet*Surf                     
 
             ENDIF
           ENDIF

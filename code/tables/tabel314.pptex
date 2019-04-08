@@ -2219,14 +2219,14 @@ G5_Nbal    colsep N balance DEB Grazer5(should be zero)              colsep (gN 
 G5_Pbal    colsep P balance DEB Grazer5(should be zero)              colsep (gP m-3 d-1)         colsep DEBGRZ_G5  \\
 SPMratioem colsep Flocculation ratio macro:micro empirical model     colsep (-)                  colsep IM_Floceq  \\
 Attribute  colsep value of the attribute                             colsep (-)                  colsep AttribOut  \\
-MALNDM     colsep macroalgae N storage in column w.r.t structural    colsep (gN/gDM)             colsep FlMALS     \\
-MALPDM     colsep macroalgae P storage in column w.r.t structural    colsep (gP/gDM)             colsep FlMALS     \\
-MALCDM     colsep macroalgae C storage in column w.r.t structural    colsep (gC/gDM)             colsep FlMALS     \\
+MALNDMS    colsep macroalgae N storage in column w.r.t structural    colsep (gN/gDM)             colsep FlMALS     \\
+MALPDMS    colsep macroalgae P storage in column w.r.t structural    colsep (gP/gDM)             colsep FlMALS     \\
+MALCDMS    colsep macroalgae C storage in column w.r.t structural    colsep (gC/gDM)             colsep FlMALS     \\
 MALSNC     colsep ratio N:C in whole frond                           colsep (gN/gC)              colsep FlMALS     \\
 MALSPC     colsep ratio P:C in whole frond                           colsep (gP/gC)              colsep FlMALS     \\
-MALSCD     colsep ratio C:DM in whole frond                          colsep (gC/gDM)             colsep FlMALS     \\
-MALSND     colsep ratio N:DM in whole frond                          colsep (gN/gDM)             colsep FlMALS     \\
-MALSPD     colsep ratio P:DM in whole frond                          colsep (gP/gDM)             colsep FlMALS     \\
+MALSCDM    colsep ratio C:DM in whole frond                          colsep (gC/gDM)             colsep FlMALS     \\
+MALSNDM    colsep ratio N:DM in whole frond                          colsep (gN/gDM)             colsep FlMALS     \\
+MALSPDM    colsep ratio P:DM in whole frond                          colsep (gP/gDM)             colsep FlMALS     \\
 LimDenS    colsep biomass density limitation MALS                    colsep (-)                  colsep FlMALS     \\
 LimPhoS    colsep photoperiod limitation MALS                        colsep (-)                  colsep FlMALS     \\
 LimTemS    colsep temperature limitation MALS                        colsep (-)                  colsep FlMALS     \\
@@ -2243,7 +2243,10 @@ LocGroP    colsep local utilization of MALP by MALS                  colsep (gP/
 LocGroC    colsep local utilization of MALC by MALS                  colsep (gC/m2/d)            colsep FlMALS     \\
 Wdry       colsep dry weight of frond                                colsep (g/m2)               colsep FlMALS     \\
 Wwet       colsep wet weight of frond                                colsep (g/m2)               colsep FlMALS     \\
+WdryTot    colsep dry weight of culture in segment                   colsep (g)                  colsep FlMALS     \\
+WwetTot    colsep wet weight of culture in segment                   colsep (g)                  colsep FlMALS     \\
 BmLayMAL   colsep Biomass of MALS in segment                         colsep (gDM/m3)             colsep MALDIS     \\
+LocAreaMAL colsep area of frond per m2 of column                     colsep (m2/m2)              colsep MALDIS     \\
 TipDepth   colsep depth of tip of frond in this column               colsep (m)                  colsep MALDIS     \\
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\
 LimN       colsep ambient nitrogen limitation for storage            colsep (-)                  colsep FlMALN     \\

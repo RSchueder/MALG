@@ -35,8 +35,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(18)  ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(18)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(19)  ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(19)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -45,7 +45,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT(18)    !    Local work array for the pointering
+      INTEGER IPNT(19)    !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 !*******************************************************************************
 !
@@ -65,7 +65,8 @@
       REAL(4) FrBmMALS    ! O  Fraction BM per layer macroalgae structural    (-)
       REAL(4) BmLayMALS   ! O  Biomass Layer macroalgae structural            (gDM/m2)
       REAL(4) LenMAL      ! O  Actual Length Macroalgae                       (m)
-      REAL(4) AreMAL      ! O  Actual Area Macroalgae                         (m2)
+      REAL(4) TotAreMAL   ! O  Actual Area Macroalgae                         (m2)
+      REAL(4) LocAreMAL   ! O  Local  Area Macroalgae                         (m2/m2)
       REAL(4) TipDepth    ! O  Distance from frond water surface to frond tip (m)
       REAL(4) SwGroDir    ! Switch to grow up or down
       
@@ -92,17 +93,17 @@
 !
 !*******************************************************************************
       IF (FIRST) THEN 
-          IPNT(18) = IPOINT(18)
+          IPNT(19) = IPOINT(19)
           ! for all segs
           DO 9001 ISEG = 1,NOSEG
              ! assign MbotSeg output for all segs = -1, therefore initially invalid
-             PMSA( IPNT(18) ) = -1
+             PMSA( IPNT(19) ) = -1
              CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
              ! if it is a bottom seg, its mbot seg is itself
              IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
-                PMSA( IPNT( 18) ) = ISEG
+                PMSA( IPNT( 19) ) = ISEG
              ENDIF
-             IPNT(18) = IPNT(18) + INCREM(18)
+             IPNT(19) = IPNT(19) + INCREM(19)
 9001      CONTINUE
               
           ! Now all bottom segs have identified themselves as the Mbotseg
@@ -112,9 +113,9 @@
              Ifrom  = IEXPNT(1,IQ)
              Ito    = IEXPNT(2,IQ)
              if (ifrom.gt.0.and.ito.gt.0) then
-                MBotSeg = nint(PMSA(IPOINT(18)+(ITO-1)*INCREM(18)))
+                MBotSeg = nint(PMSA(IPOINT(19)+(ITO-1)*INCREM(19)))
                 IF ( MBotSeg .GT.0 ) THEN
-                   PMSA(IPOINT(18)+(IFROM-1)*INCREM(18)) = real(MBotSeg)
+                   PMSA(IPOINT(19)+(IFROM-1)*INCREM(19)) = real(MBotSeg)
                 ENDIF
              ENDIF
 9005      CONTINUE  
@@ -173,7 +174,8 @@
             
                 LenMAL = min(MALS/(LinDenMAL*nFrond),abs(LmaxMAL))
                 LenMAL = max(LenMAL, 0.01)
-                AreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
+                TotAreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
+                LocAreMAL = max(TotAreMAL / Surf, 1.0d-7)
                
                 Z1 = LocalDepth - Depth
                 Z2 = LocalDepth
@@ -240,9 +242,10 @@
                 PMSA( IPNT(13) ) = FrBmMALS
                 PMSA( IPNT(14) ) = BmLayMALS / Depth
                 PMSA( IPNT(15) ) = LenMAL
-                PMSA( IPNT(16) ) = AreMAL
-                PMSA( IPNT(17) ) = -TipDepth ! negative to have it look proper in a graph
-                PMSA( IPNT(18) ) = MBotSeg
+                PMSA( IPNT(16) ) = TotAreMAL
+                PMSA( IPNT(17) ) = LocAreMAL
+                PMSA( IPNT(18) ) = -TipDepth ! negative to have it look proper in a graph
+                PMSA( IPNT(19) ) = MBotSeg
             ELSE
                ! There is no biomass in the mbotseg
                 PMSA( IPNT(13) ) = 0.0
@@ -250,7 +253,8 @@
                 PMSA( IPNT(15) ) = 0.0
                 PMSA( IPNT(16) ) = 0.0
                 PMSA( IPNT(17) ) = 0.0
-                PMSA( IPNT(18) ) = MBotSeg
+                PMSA( IPNT(18) ) = 0.0
+                PMSA( IPNT(19) ) = MBotSeg
             ENDIF
         ENDIF
          
