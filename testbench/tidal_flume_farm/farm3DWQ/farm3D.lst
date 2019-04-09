@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/08 18:16:03 
+ Execution start: 2019/04/09 17:44:35 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -93,307 +93,379 @@
  Dump areas:
  option selected for input :    1
 
- Number of dump areas :   60
+ Number of dump areas :   63
 
  Dump area :    1 : Farm1(1)            
  Number of segments in area :              1
           number   segment
               1            393
 
- Dump area :    2 : Farm2(1)            
- Number of segments in area :              1
-          number   segment
-              1            402
-
- Dump area :    3 : Farm3(1)            
- Number of segments in area :              1
-          number   segment
-              1            423
-
- Dump area :    4 : Farm1(2)            
+ Dump area :    2 : Farm1(2)            
  Number of segments in area :              1
           number   segment
               1            890
 
- Dump area :    5 : Farm2(2)            
- Number of segments in area :              1
-          number   segment
-              1            899
-
- Dump area :    6 : Farm3(2)            
- Number of segments in area :              1
-          number   segment
-              1            920
-
- Dump area :    7 : Farm1(3)            
+ Dump area :    3 : Farm1(3)            
  Number of segments in area :              1
           number   segment
               1           1387
 
- Dump area :    8 : Farm2(3)            
- Number of segments in area :              1
-          number   segment
-              1           1396
-
- Dump area :    9 : Farm3(3)            
- Number of segments in area :              1
-          number   segment
-              1           1417
-
- Dump area :   10 : Farm1(4)            
+ Dump area :    4 : Farm1(4)            
  Number of segments in area :              1
           number   segment
               1           1884
 
- Dump area :   11 : Farm2(4)            
- Number of segments in area :              1
-          number   segment
-              1           1893
-
- Dump area :   12 : Farm3(4)            
- Number of segments in area :              1
-          number   segment
-              1           1914
-
- Dump area :   13 : Farm1(5)            
+ Dump area :    5 : Farm1(5)            
  Number of segments in area :              1
           number   segment
               1           2381
 
- Dump area :   14 : Farm2(5)            
- Number of segments in area :              1
-          number   segment
-              1           2390
-
- Dump area :   15 : Farm3(5)            
- Number of segments in area :              1
-          number   segment
-              1           2411
-
- Dump area :   16 : Farm1(6)            
+ Dump area :    6 : Farm1(6)            
  Number of segments in area :              1
           number   segment
               1           2878
 
- Dump area :   17 : Farm2(6)            
- Number of segments in area :              1
-          number   segment
-              1           2887
-
- Dump area :   18 : Farm3(6)            
- Number of segments in area :              1
-          number   segment
-              1           2908
-
- Dump area :   19 : Farm1(7)            
+ Dump area :    7 : Farm1(7)            
  Number of segments in area :              1
           number   segment
               1           3375
 
- Dump area :   20 : Farm2(7)            
- Number of segments in area :              1
-          number   segment
-              1           3384
-
- Dump area :   21 : Farm3(7)            
- Number of segments in area :              1
-          number   segment
-              1           3405
-
- Dump area :   22 : Farm1(8)            
+ Dump area :    8 : Farm1(8)            
  Number of segments in area :              1
           number   segment
               1           3872
 
- Dump area :   23 : Farm2(8)            
- Number of segments in area :              1
-          number   segment
-              1           3881
-
- Dump area :   24 : Farm3(8)            
- Number of segments in area :              1
-          number   segment
-              1           3902
-
- Dump area :   25 : Farm1(9)            
+ Dump area :    9 : Farm1(9)            
  Number of segments in area :              1
           number   segment
               1           4369
 
- Dump area :   26 : Farm2(9)            
- Number of segments in area :              1
-          number   segment
-              1           4378
-
- Dump area :   27 : Farm3(9)            
- Number of segments in area :              1
-          number   segment
-              1           4399
-
- Dump area :   28 : Farm1(10)           
+ Dump area :   10 : Farm1(10)           
  Number of segments in area :              1
           number   segment
               1           4866
 
- Dump area :   29 : Farm2(10)           
- Number of segments in area :              1
-          number   segment
-              1           4875
-
- Dump area :   30 : Farm3(10)           
- Number of segments in area :              1
-          number   segment
-              1           4896
-
- Dump area :   31 : Farm1(11)           
+ Dump area :   11 : Farm1(11)           
  Number of segments in area :              1
           number   segment
               1           5363
+
+ Dump area :   12 : Farm1(12)           
+ Number of segments in area :              1
+          number   segment
+              1           5860
+
+ Dump area :   13 : Farm1(13)           
+ Number of segments in area :              1
+          number   segment
+              1           6357
+
+ Dump area :   14 : Farm1(14)           
+ Number of segments in area :              1
+          number   segment
+              1           6854
+
+ Dump area :   15 : Farm1(15)           
+ Number of segments in area :              1
+          number   segment
+              1           7351
+
+ Dump area :   16 : Farm1(16)           
+ Number of segments in area :              1
+          number   segment
+              1           7848
+
+ Dump area :   17 : Farm1(17)           
+ Number of segments in area :              1
+          number   segment
+              1           8345
+
+ Dump area :   18 : Farm1(18)           
+ Number of segments in area :              1
+          number   segment
+              1           8842
+
+ Dump area :   19 : Farm1(19)           
+ Number of segments in area :              1
+          number   segment
+              1           9339
+
+ Dump area :   20 : Farm1(20)           
+ Number of segments in area :              1
+          number   segment
+              1           9836
+
+ Dump area :   21 : Farm1               
+ Number of segments in area :             20
+          number   segment
+              1            393
+              2            890
+              3           1387
+              4           1884
+              5           2381
+              6           2878
+              7           3375
+              8           3872
+              9           4369
+             10           4866
+             11           5363
+             12           5860
+             13           6357
+             14           6854
+             15           7351
+             16           7848
+             17           8345
+             18           8842
+             19           9339
+             20           9836
+
+ Dump area :   22 : Farm2(1)            
+ Number of segments in area :              1
+          number   segment
+              1            402
+
+ Dump area :   23 : Farm2(2)            
+ Number of segments in area :              1
+          number   segment
+              1            899
+
+ Dump area :   24 : Farm2(3)            
+ Number of segments in area :              1
+          number   segment
+              1           1396
+
+ Dump area :   25 : Farm2(4)            
+ Number of segments in area :              1
+          number   segment
+              1           1893
+
+ Dump area :   26 : Farm2(5)            
+ Number of segments in area :              1
+          number   segment
+              1           2390
+
+ Dump area :   27 : Farm2(6)            
+ Number of segments in area :              1
+          number   segment
+              1           2887
+
+ Dump area :   28 : Farm2(7)            
+ Number of segments in area :              1
+          number   segment
+              1           3384
+
+ Dump area :   29 : Farm2(8)            
+ Number of segments in area :              1
+          number   segment
+              1           3881
+
+ Dump area :   30 : Farm2(9)            
+ Number of segments in area :              1
+          number   segment
+              1           4378
+
+ Dump area :   31 : Farm2(10)           
+ Number of segments in area :              1
+          number   segment
+              1           4875
 
  Dump area :   32 : Farm2(11)           
  Number of segments in area :              1
           number   segment
               1           5372
 
- Dump area :   33 : Farm3(11)           
- Number of segments in area :              1
-          number   segment
-              1           5393
-
- Dump area :   34 : Farm1(12)           
- Number of segments in area :              1
-          number   segment
-              1           5860
-
- Dump area :   35 : Farm2(12)           
+ Dump area :   33 : Farm2(12)           
  Number of segments in area :              1
           number   segment
               1           5869
 
- Dump area :   36 : Farm3(12)           
- Number of segments in area :              1
-          number   segment
-              1           5890
-
- Dump area :   37 : Farm1(13)           
- Number of segments in area :              1
-          number   segment
-              1           6357
-
- Dump area :   38 : Farm2(13)           
+ Dump area :   34 : Farm2(13)           
  Number of segments in area :              1
           number   segment
               1           6366
 
- Dump area :   39 : Farm3(13)           
- Number of segments in area :              1
-          number   segment
-              1           6387
-
- Dump area :   40 : Farm1(14)           
- Number of segments in area :              1
-          number   segment
-              1           6854
-
- Dump area :   41 : Farm2(14)           
+ Dump area :   35 : Farm2(14)           
  Number of segments in area :              1
           number   segment
               1           6863
 
- Dump area :   42 : Farm3(14)           
- Number of segments in area :              1
-          number   segment
-              1           6884
-
- Dump area :   43 : Farm1(15)           
- Number of segments in area :              1
-          number   segment
-              1           7351
-
- Dump area :   44 : Farm2(15)           
+ Dump area :   36 : Farm2(15)           
  Number of segments in area :              1
           number   segment
               1           7360
 
- Dump area :   45 : Farm3(15)           
- Number of segments in area :              1
-          number   segment
-              1           7381
-
- Dump area :   46 : Farm1(16)           
- Number of segments in area :              1
-          number   segment
-              1           7848
-
- Dump area :   47 : Farm2(16)           
+ Dump area :   37 : Farm2(16)           
  Number of segments in area :              1
           number   segment
               1           7857
 
- Dump area :   48 : Farm3(16)           
- Number of segments in area :              1
-          number   segment
-              1           7878
-
- Dump area :   49 : Farm1(17)           
- Number of segments in area :              1
-          number   segment
-              1           8345
-
- Dump area :   50 : Farm2(17)           
+ Dump area :   38 : Farm2(17)           
  Number of segments in area :              1
           number   segment
               1           8354
 
- Dump area :   51 : Farm3(17)           
- Number of segments in area :              1
-          number   segment
-              1           8375
-
- Dump area :   52 : Farm1(18)           
- Number of segments in area :              1
-          number   segment
-              1           8842
-
- Dump area :   53 : Farm2(18)           
+ Dump area :   39 : Farm2(18)           
  Number of segments in area :              1
           number   segment
               1           8851
 
- Dump area :   54 : Farm3(18)           
- Number of segments in area :              1
-          number   segment
-              1           8872
-
- Dump area :   55 : Farm1(19)           
- Number of segments in area :              1
-          number   segment
-              1           9339
-
- Dump area :   56 : Farm2(19)           
+ Dump area :   40 : Farm2(19)           
  Number of segments in area :              1
           number   segment
               1           9348
 
- Dump area :   57 : Farm3(19)           
- Number of segments in area :              1
-          number   segment
-              1           9369
-
- Dump area :   58 : Farm1(20)           
- Number of segments in area :              1
-          number   segment
-              1           9836
-
- Dump area :   59 : Farm2(20)           
+ Dump area :   41 : Farm2(20)           
  Number of segments in area :              1
           number   segment
               1           9845
 
- Dump area :   60 : Farm3(20)           
+ Dump area :   42 : Farm2               
+ Number of segments in area :             20
+          number   segment
+              1            402
+              2            899
+              3           1396
+              4           1893
+              5           2390
+              6           2887
+              7           3384
+              8           3881
+              9           4378
+             10           4875
+             11           5372
+             12           5869
+             13           6366
+             14           6863
+             15           7360
+             16           7857
+             17           8354
+             18           8851
+             19           9348
+             20           9845
+
+ Dump area :   43 : Farm3(1)            
+ Number of segments in area :              1
+          number   segment
+              1            423
+
+ Dump area :   44 : Farm3(2)            
+ Number of segments in area :              1
+          number   segment
+              1            920
+
+ Dump area :   45 : Farm3(3)            
+ Number of segments in area :              1
+          number   segment
+              1           1417
+
+ Dump area :   46 : Farm3(4)            
+ Number of segments in area :              1
+          number   segment
+              1           1914
+
+ Dump area :   47 : Farm3(5)            
+ Number of segments in area :              1
+          number   segment
+              1           2411
+
+ Dump area :   48 : Farm3(6)            
+ Number of segments in area :              1
+          number   segment
+              1           2908
+
+ Dump area :   49 : Farm3(7)            
+ Number of segments in area :              1
+          number   segment
+              1           3405
+
+ Dump area :   50 : Farm3(8)            
+ Number of segments in area :              1
+          number   segment
+              1           3902
+
+ Dump area :   51 : Farm3(9)            
+ Number of segments in area :              1
+          number   segment
+              1           4399
+
+ Dump area :   52 : Farm3(10)           
+ Number of segments in area :              1
+          number   segment
+              1           4896
+
+ Dump area :   53 : Farm3(11)           
+ Number of segments in area :              1
+          number   segment
+              1           5393
+
+ Dump area :   54 : Farm3(12)           
+ Number of segments in area :              1
+          number   segment
+              1           5890
+
+ Dump area :   55 : Farm3(13)           
+ Number of segments in area :              1
+          number   segment
+              1           6387
+
+ Dump area :   56 : Farm3(14)           
+ Number of segments in area :              1
+          number   segment
+              1           6884
+
+ Dump area :   57 : Farm3(15)           
+ Number of segments in area :              1
+          number   segment
+              1           7381
+
+ Dump area :   58 : Farm3(16)           
+ Number of segments in area :              1
+          number   segment
+              1           7878
+
+ Dump area :   59 : Farm3(17)           
+ Number of segments in area :              1
+          number   segment
+              1           8375
+
+ Dump area :   60 : Farm3(18)           
+ Number of segments in area :              1
+          number   segment
+              1           8872
+
+ Dump area :   61 : Farm3(19)           
+ Number of segments in area :              1
+          number   segment
+              1           9369
+
+ Dump area :   62 : Farm3(20)           
  Number of segments in area :              1
           number   segment
               1           9866
+
+ Dump area :   63 : Farm3               
+ Number of segments in area :             20
+          number   segment
+              1            423
+              2            920
+              3           1417
+              4           1914
+              5           2411
+              6           2908
+              7           3405
+              8           3902
+              9           4399
+             10           4896
+             11           5393
+             12           5890
+             13           6387
+             14           6884
+             15           7381
+             16           7878
+             17           8375
+             18           8872
+             19           9369
+             20           9866
 
  Closing file: includes_deltashell/B2_outlocs.inc                                            
 
@@ -1467,24 +1539,54 @@
 
  DATA grouped in         1 blocks of        14 Substance 
 
- Number of breakpoints with full data:    2
- breakpoint       1 : 567993600
+ Number of breakpoints with full data:    5
+ breakpoint       1 : 586310400
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         1    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
+         1    1.0000E+00  7.7000E+00  3.0000E-02  2.0000E-02  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
-         1    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
+         1    2.5910E+01  1.4600E+02  1.0000E+00  1.0000E+00  2.0000E-01
  Substance     11          12          13          14
  boundary     PON2        POP1        POP2        DOC         
          1    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
- breakpoint       2 : 631152000
+ breakpoint       2 : 594259200
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         1    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
+         1    1.0000E+00  7.7000E+00  7.0000E-02  2.6000E-01  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
-         1    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
+         1    2.6400E+01  1.4400E+02  1.0000E+00  1.0000E+00  2.0000E-01
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         1    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
+ breakpoint       3 : 602208000
+ Substance      1           2           3           4           5
+ boundary     Continuity  OXY         NH4         NO3         PO4         
+         1    1.0000E+00  9.9000E+00  3.0000E-02  5.9000E-01  1.0000E-02
+ Substance      6           7           8           9          10
+ boundary     TIC         ALKA        POC1        POC2        PON1        
+         1    2.6860E+01  1.4400E+02  1.0000E+00  1.0000E+00  2.0000E-01
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         1    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
+ breakpoint       4 : 617932800
+ Substance      1           2           3           4           5
+ boundary     Continuity  OXY         NH4         NO3         PO4         
+         1    1.0000E+00  7.7000E+00  3.0000E-02  2.0000E-02  1.0000E-02
+ Substance      6           7           8           9          10
+ boundary     TIC         ALKA        POC1        POC2        PON1        
+         1    3.7520E+01  1.4800E+02  1.0000E+00  1.0000E+00  2.0000E-01
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         1    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
+ breakpoint       5 : 623203200
+ Substance      1           2           3           4           5
+ boundary     Continuity  OXY         NH4         NO3         PO4         
+         1    1.0000E+00  7.7000E+00  3.0000E-02  2.0000E-02  1.0000E-02
+ Substance      6           7           8           9          10
+ boundary     TIC         ALKA        POC1        POC2        PON1        
+         1    3.7520E+01  1.4800E+02  1.0000E+00  1.0000E+00  2.0000E-01
  Substance     11          12          13          14
  boundary     PON2        POP1        POP2        DOC         
          1    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
@@ -1535,24 +1637,54 @@
 
  DATA grouped in         1 blocks of        14 Substance 
 
- Number of breakpoints with full data:    2
- breakpoint       1 : 567993600
+ Number of breakpoints with full data:    5
+ breakpoint       1 : 586310400
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         2    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
+         2    1.0000E+00  7.7000E+00  3.0000E-02  2.0000E-02  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
-         2    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
+         2    2.5910E+01  1.4600E+02  1.0000E+00  1.0000E+00  2.0000E-01
  Substance     11          12          13          14
  boundary     PON2        POP1        POP2        DOC         
          2    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
- breakpoint       2 : 631152000
+ breakpoint       2 : 594259200
  Substance      1           2           3           4           5
  boundary     Continuity  OXY         NH4         NO3         PO4         
-         2    1.0000E+00  7.0000E+00  5.0000E-02  5.0000E-02  1.0000E-02
+         2    1.0000E+00  7.7000E+00  7.0000E-02  2.6000E-01  1.0000E-02
  Substance      6           7           8           9          10
  boundary     TIC         ALKA        POC1        POC2        PON1        
-         2    3.0000E+01  2.0000E+02  1.0000E+00  1.0000E+00  2.0000E-01
+         2    2.6400E+01  1.4400E+02  1.0000E+00  1.0000E+00  2.0000E-01
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         2    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
+ breakpoint       3 : 602208000
+ Substance      1           2           3           4           5
+ boundary     Continuity  OXY         NH4         NO3         PO4         
+         2    1.0000E+00  9.9000E+00  3.0000E-02  5.9000E-01  1.0000E-02
+ Substance      6           7           8           9          10
+ boundary     TIC         ALKA        POC1        POC2        PON1        
+         2    2.6860E+01  1.4400E+02  1.0000E+00  1.0000E+00  2.0000E-01
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         2    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
+ breakpoint       4 : 617932800
+ Substance      1           2           3           4           5
+ boundary     Continuity  OXY         NH4         NO3         PO4         
+         2    1.0000E+00  7.7000E+00  3.0000E-02  2.0000E-02  1.0000E-02
+ Substance      6           7           8           9          10
+ boundary     TIC         ALKA        POC1        POC2        PON1        
+         2    3.7520E+01  1.4800E+02  1.0000E+00  1.0000E+00  2.0000E-01
+ Substance     11          12          13          14
+ boundary     PON2        POP1        POP2        DOC         
+         2    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
+ breakpoint       5 : 623203200
+ Substance      1           2           3           4           5
+ boundary     Continuity  OXY         NH4         NO3         PO4         
+         2    1.0000E+00  7.7000E+00  3.0000E-02  2.0000E-02  1.0000E-02
+ Substance      6           7           8           9          10
+ boundary     TIC         ALKA        POC1        POC2        PON1        
+         2    3.7520E+01  1.4800E+02  1.0000E+00  1.0000E+00  2.0000E-01
  Substance     11          12          13          14
  boundary     PON2        POP1        POP2        DOC         
          2    2.0000E-01  1.0000E-02  1.0000E-02  1.0000E+00
@@ -1802,7 +1934,7 @@
  constant values in this block.
  values        35
  constants    ExtVl       
-         1    7.0000E-02
+         1    1.8000E-01
 
  ====> input item completed <==== 
 
@@ -1852,18 +1984,9 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   41 with ID  : nFrond              
+ Input constant   nr:    1 is constant   nr:   41 with ID  : nothreads           
  constant values in this block.
  values        41
- constants    nFrond      
-         1    1.0000E+00
-
- ====> input item completed <==== 
-
-
- Input constant   nr:    1 is constant   nr:   42 with ID  : nothreads           
- constant values in this block.
- values        42
  constants    nothreads   
          1    1.0000E+00
 
@@ -1873,9 +1996,9 @@
 
  NOTHREADS Keyword found
  Number of threads for parallel processing set to :     1
- Input constant   nr:    1 is constant   nr:   43 with ID  : Velocity            
+ Input constant   nr:    1 is constant   nr:   42 with ID  : Velocity            
  constant values in this block.
- values        43
+ values        42
  constants    Velocity    
          1    1.5000E-01
 
@@ -40443,18 +40566,18 @@
  Continuing on file: farm3D.inp                                                                    
 
  Including file: includes_deltashell/B7_numerical_options.inc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
- Input constant   nr:    1 is constant   nr:   44 with ID  : CLOSE_ERR           
+ Input constant   nr:    1 is constant   nr:   43 with ID  : CLOSE_ERR           
  constant values in this block.
- values        44
+ values        43
  constants    CLOSE_ERR   
          1    1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   42 with ID  : nothreads           
+ Input constant   nr:    1 is constant   nr:   41 with ID  : nothreads           
  constant values in this block.
- values        42
+ values        41
  constants    NOTHREADS   
          1    0.0000E+00
 
@@ -40464,36 +40587,36 @@
 
  NOTHREADS Keyword found
  Number of threads for parallel processing set to :     0
- Input constant   nr:    1 is constant   nr:   45 with ID  : DRY_THRESH          
+ Input constant   nr:    1 is constant   nr:   44 with ID  : DRY_THRESH          
  constant values in this block.
- values        45
+ values        44
  constants    DRY_THRESH  
          1    1.0000E-03
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   46 with ID  : maxiter             
+ Input constant   nr:    1 is constant   nr:   45 with ID  : maxiter             
  constant values in this block.
- values        46
+ values        45
  constants    maxiter     
          1    1.0000E+02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   47 with ID  : tolerance           
+ Input constant   nr:    1 is constant   nr:   46 with ID  : tolerance           
  constant values in this block.
- values        47
+ values        46
  constants    tolerance   
          1    1.0000E-07
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   48 with ID  : iteration report    
+ Input constant   nr:    1 is constant   nr:   47 with ID  : iteration report    
  constant values in this block.
- values        48
+ values        47
  constants    iteration   
          1    0.0000E+00
 
@@ -40505,7 +40628,7 @@
 
  Continuing on file: farm3D.inp                                                                    
 
- Total number of constants        :   48
+ Total number of constants        :   47
 
  Total number of parameters       :    1
 
@@ -40587,7 +40710,7 @@
 
  All substances plus extra output variables
 
- (     60) number of output variables specified
+ (     61) number of output variables specified
 
  Number           Identification        Weight variable
        1           SURF                                      
@@ -40606,50 +40729,51 @@
       14           DisHCO3                                   
       15           CO2                                       
       16           beta                                      
-      17           daylend                                   
-      18           daylenp                                   
-      19           daylenm                                   
-      20           MALNDMS                                   
-      21           MALPDMS                                   
-      22           MALCDMS                                   
-      23           MALSNC                                    
-      24           MALSPC                                    
-      25           MALSCDM                                   
-      26           MALSNDM                                   
-      27           MALSPDM                                   
-      28           LimDenS                                   
-      29           LimPhoS                                   
-      30           LimTemS                                   
-      31           LimN                                      
-      32           LimP                                      
-      33           LimNutS                                   
-      34           LimMALN                                   
-      35           LimMALP                                   
-      36           LimMALC                                   
-      37           muMALS                                    
-      38           LocGroPS                                  
-      39           LocNetPS                                  
-      40           LocDecS                                   
-      41           LocGroN                                   
-      42           LocGroP                                   
-      43           LocGroC                                   
-      44           GrosMALC                                  
-      45           RespMALC                                  
-      46           ExudMALC                                  
-      47           FrBmMALS                                  
-      48           BmLayMAL                                  
-      49           LengthMAL                                 
-      50           TotAreaMAL                                
-      51           LocAreaMAL                                
-      52           TipDepth                                  
-      53           LimVel                                    
-      54           LocUpN                                    
-      55           LocUpP                                    
-      56           LocUpC                                    
-      57           Wdry                                      
-      58           Wwet                                      
-      59           MBotSeg                                   
-      60           FootDepth                                 
+      17           FrondArea                                 
+      18           daylend                                   
+      19           daylenp                                   
+      20           daylenm                                   
+      21           MALNDMS                                   
+      22           MALPDMS                                   
+      23           MALCDMS                                   
+      24           MALSNC                                    
+      25           MALSPC                                    
+      26           MALSCDM                                   
+      27           MALSNDM                                   
+      28           MALSPDM                                   
+      29           LimDenS                                   
+      30           LimPhoS                                   
+      31           LimTemS                                   
+      32           LimN                                      
+      33           LimP                                      
+      34           LimNutS                                   
+      35           LimMALN                                   
+      36           LimMALP                                   
+      37           LimMALC                                   
+      38           muMALS                                    
+      39           LocGroPS                                  
+      40           LocNetPS                                  
+      41           LocDecS                                   
+      42           LocGroN                                   
+      43           LocGroP                                   
+      44           LocGroC                                   
+      45           GrosMALC                                  
+      46           RespMALC                                  
+      47           ExudMALC                                  
+      48           FrBmMALS                                  
+      49           BmLayMAL                                  
+      50           LengthMAL                                 
+      51           TotAreaMAL                                
+      52           LocAreaMAL                                
+      53           TipDepth                                  
+      54           LimVel                                    
+      55           LocUpN                                    
+      56           LocUpP                                    
+      57           LocUpC                                    
+      58           Wdry                                      
+      59           Wwet                                      
+      60           MBotSeg                                   
+      61           FootDepth                                 
 
  Specification of map output
 
@@ -40739,7 +40863,7 @@
   Determining the place of the output variables
  
         SURF                ; Using parameter nr           1
-        Velocity            ; Using constant nr          43
+        Velocity            ; Using constant nr          42
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
@@ -40754,6 +40878,7 @@
    INFO:DisHCO3             ; NOT FOUND, delwaq will detect variables from process library
    INFO:CO2                 ; NOT FOUND, delwaq will detect variables from process library
    INFO:beta                ; NOT FOUND, delwaq will detect variables from process library
+   INFO:FrondArea           ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylend             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenp             ; NOT FOUND, delwaq will detect variables from process library
    INFO:daylenm             ; NOT FOUND, delwaq will detect variables from process library
@@ -40799,7 +40924,7 @@
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
    INFO:FootDepth           ; NOT FOUND, delwaq will detect variables from process library
         SURF                ; Using parameter nr           1
-        Velocity            ; Using constant nr          43
+        Velocity            ; Using constant nr          42
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
@@ -40858,7 +40983,7 @@
    INFO:Wwet                ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
   Not all variables available.
-  Number off missing variables :         111
+  Number off missing variables :         112
 
  *********************************************************** B L O C K - 9 *****
 
@@ -40885,8 +41010,8 @@ Number of periods defined:     0
 
  Parallel processing with   1 processor(s)
 
- total real      array space:    4325633
- total integer   array space:     468550
- total character array space:      21265
- grand total in 4-byte words:    4815448 =   0-GB  19-MB 261-KB 792-Byte.
- Execution stop : 2019/04/08 18:16:04 
+ total real      array space:    4336204
+ total integer   array space:     468885
+ total character array space:      21393
+ grand total in 4-byte words:    4826482 =   0-GB  19-MB 305-KB 928-Byte.
+ Execution stop : 2019/04/09 17:44:36 

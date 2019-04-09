@@ -736,9 +736,9 @@ C
                 dPrMALOXY   = 2.67 * dMALTIC
                 ! need ALKA!
                 
-                GrosMALC            = TotAreMAL * P 
-                RespMALC            = TotAreMAL * R 
-                ExudMALC            = TotAreMAL * P * E 
+                GrosMALC            = TotAreMAL * P /Surf
+                RespMALC            = TotAreMAL * R /Surf
+                ExudMALC            = TotAreMAL * P * E /Surf
                 PMSA( IPNT( 31)   ) = LocUpC
                 PMSA( IPNT( 32)   ) = Itip
                 PMSA( IPNT( 33)   ) = Itipu

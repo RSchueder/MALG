@@ -146,7 +146,7 @@ The growth rate of the structural mass is dependent on a density limitation, a p
 
 The density limitation represents the ability of the frond to only grow so big, and the bigger it gets the lower its growth rate will become. The formulation is as follows:
 \begin{equation}
-f_{density} = m_1 exp\big\{-(\frac{AreaLoc}{MALS_0})^2 \big\}+m_2
+f_{density} = m_1 exp\big\{-(\frac{AreaLoc}{MALS_0\times N_{frond}})^2 \big\}+m_2
 \end{equation}
 
 Where:\\
@@ -202,12 +202,13 @@ $0$                & $T \textgreater 19$ \\
 
 The specific erosion (mortality) rate $\phi$ of the structural biomass is proportional to the area of the frond and the erosion parameter. The formulation is as follows:
 \begin{equation}
-\phi = \frac{10^{-6}exp(\epsilon\times LocArea)}{1+10^{-6}exp((\epsilon\times LocArea)-1)}
+\phi = \frac{10^{-6}exp(\epsilon\times \frac{LocArea}{N_{frond}})}{1+10^{-6}exp((\epsilon\times \frac{LocArea}{N_{frond}})-1)}
 \end{equation}
 
 Where:\\
 \begin{tabular}{ll}
 $\epsilon$ & erosion parameter (m$^{-2}$)\\
+$LocArea$ & Area of frond per m$^{2}$ of segment (m$^{-2}$)
 \end{tabular}
 
 The structural growth process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step, all segments with a non-zero biomass fraction receive 'ghost' structural and storage mass according to the biomass allocated to it in MALDIS. The local inorganic nutrient, gas, and particulate fluxes are calculated using this mass and the local ambient conditions. The fluxes are then locally applied to ambient state variables exogenous to MALG, but not the MALG parameters (MALS, MALN, MALP, MALC). Instead, the fluxes of MALG state variables are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in $MALS$, $MALN$, $MALP$, and $MALC$ resulting from the net growth in the column. Once the bottom segment is reached in the segment loop, the fluxes for each column of segments have been accumulated and the net change in mass of each administrative bottom segment is known. The culture will then become longer or shorter in the next time step to reflect this new state, which again is kept track of by the bottom segment in the column. The consequence of applying this technique is that the local per segment 'ghost reserve masses' adopt the reserve ratio of the whole column. Another way to say this is that all segments with a non-zero biomass fraction belonging to a given water column have a fixed structural mass to storage mass ratio, and consequently all reserves are equally distributed along the frond.
@@ -315,12 +316,12 @@ $T_{APH}$ & Arrhenius temp for photosynthesis high end ($^{0}$K)\\
 $T_{APL}$ & Arrhenius temp for photosynthesis low end ($^{0}$K)\\
 \end{tabular}
 
-Note the use of unconventional DELWAQ units dm$^{2}$, $\mu$mol (photons), and hours. These have been maintained to allow easy comparisons to Broch and to emphasize the fact that photosynthesis is proportional to frond \textit{surface area} and not segment surface area in MALG. There is an internal conversion in the code from $W$, the unit of DELWAQ radiation, to $\mu$mol s$^{-1}$, the unit of irradiance in the formulations, which is 4.57 $\frac{\mu mol s^{-1}}{W}$. After production, respiration and exudation have been calculated, all rates are converted to gC m$^{-2}$ d$^{-1}$ by multiplying by 2400.
+Note the use of unconventional DELWAQ units dm$^{2}$, $\mu$mol (photons), and hours. These have been maintained to allow easy comparisons to Broch and to emphasize the fact that photosynthesis is proportional to frond \textit{surface area} and not segment surface area in MALG. There is an internal conversion in the code from $W$, the unit of DELWAQ radiation, to $\mu$mol s$^{-1}$, the unit of irradiance in the formulations, which is 4.57 $\frac{\mu mol s^{-1}}{W}$. After production, respiration and exudation have been calculated, all rates are converted to gC m$^{-2}$ d$^{-1}$ by multiplying by 2400. Recall that this is still in m2 of frond per segment, and this is further multiplied by the total area of frond in the segment, which is later divided by the segment surface area to get the gross production flux.
 
-The irradiance is integrated over the current segment using the following equation:
+It would be possible for this routine to receive information about the light environment in the water column from the process $CALCRAD$. However, the first implementation of the MALG module was meant to be independent of other DELWAQ processes, hence the creation of $DAYLP$ instead of simply editing $DAYL$. For integration into DELWAQ, the previous day length and the light environment should be provided to MALG processes instead of being calculated by MALG processes. The irradiance in MALG is calculated using the same equations as is used in DYNAMO, using the surface irradiance, the extinction of visible light, and the water depth, while integrating the Lambert-Beer equation over the current segment using the following equation:
 
 \begin{equation}
-I = \frac{-I_{0}}{ExtVl \times Depth} e^{-ExtVl \times LocalDepth} - e^{-ExtVl \times ()LocalDepth - Depth)}
+I = \frac{-I_{0}e^{-ExtVl \times LocalDepth}}{ExtVl \times Depth}  - e^{-ExtVl \times (LocalDepth - Depth)}
 \end{equation}
 
 Where:\\
@@ -331,7 +332,7 @@ $Depth$ & Thickness of segment (m)\\
 $LocalDepth$ & Depth of bottom of segment below water surface (m)\\
 \end{tabular}
 
-Currently the algae do not attenuate light in the water column.
+Currently the macroalgae do not attenuate light in the water column.
 
 This set of equations describes a photo inhibitory effect for $I\textgreater I_{sat}$. The structural mass is strictly unable to grow above $T \textgreater 19^{0}$. Although the structural mass cannot grow, photosynthesis production can still occur in the range $\textgreater -1^{0}C Temp \textless 23^{0}C$. These two temperature controls are fixed for the species and the user cannot flexibly change this unless the code is edited. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, both the temperature function and the photosynthetic range parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
 

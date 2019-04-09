@@ -11466,6 +11466,7 @@ itemid,itemse,itemex,itemde,itemun,itemnm,itemag,itemda,itemwk,itemgr
 "BmLayMAL  ","x"," ",   -999.000    ,"(gDM/m3)            ","Biomass of MALS in segment                        ","volume    ","volume    "," ","                              "
 "LocAreaMAL","x"," ",   -999.000    ,"(m2/m2)             ","area of frond per m2 of column                    ","volume    ","volume    "," ","                              "
 "TipDepth  ","x"," ",   -999.000    ,"(m)                 ","depth of tip of frond in this column              ","volume    ","volume    "," ","                              "
+"FrondArea ","x"," ",   -999.000    ,"(m2)                ","area of an individual frond in segment            ","volume    ","volume    "," ","                              "
 "MALNmax   ","x"," ",   0.220000E-01,"(gN/gDM)            ","maximum N in MALN w.r.t. MALS                     ","volume    ","volume    "," ","                              "
 "MALPmax   ","x"," ",   0.220000E-02,"(gP/gDM)            ","maximum P in MALP w.r.t. MALS                     ","volume    ","volume    "," ","                              "
 "CDRatMALS ","x"," ",   0.200000    ,"(gC/gDM)            ","C to structural dry mass ratio in MALS            ","volume    ","volume    "," ","                              "

@@ -4003,6 +4003,7 @@ outppr,outpit,outpnm,outpdo,outpsx
 "MALDIS    ","LocAreaMAL",   5,"x",1
 "MALDIS    ","TipDepth  ",   6,"x",1
 "MALDIS    ","MBotSeg   ",   7,"x",1
+"MALDIS    ","FrondArea ",   8,"x",1
 "FlMALN    ","LimVel    ",   1,"x",1
 "FlMALN    ","LimN      ",   2,"x",1
 "FlMALN    ","LimP      ",   3,"x",1

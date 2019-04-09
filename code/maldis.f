@@ -35,8 +35,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(19)  ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(19)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(20)  ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(20)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -45,7 +45,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT(19)    !    Local work array for the pointering
+      INTEGER IPNT(20)    !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 !*******************************************************************************
 !
@@ -69,6 +69,7 @@
       REAL(4) LocAreMAL   ! O  Local  Area Macroalgae                         (m2/m2)
       REAL(4) TipDepth    ! O  Distance from frond water surface to frond tip (m)
       REAL(4) SwGroDir    ! Switch to grow up or down
+      REAL(4) AreFrond    ! Area of a single frond
       
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -176,7 +177,7 @@
                 LenMAL = max(LenMAL, 0.01)
                 TotAreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
                 LocAreMAL = max(TotAreMAL / Surf, 1.0d-7)
-               
+        
                 Z1 = LocalDepth - Depth
                 Z2 = LocalDepth
                 
@@ -203,7 +204,11 @@
                         endif    
                     ! Algae tip is partially in segment
                     Else
-                        BmlayMALS = B * (Zm-Z1)
+                        IF (FootDepth .ge. Z1) THEN
+                            BmlayMALS = B * (Zm-FootDepth)
+                        ELSE
+                            BmlayMALS = B * (Zm-Z1)
+                        ENDIF
                     Endif                    
                 else
                     TipDepth = MAX(0.0,FootDepth - LenMAL)
@@ -225,7 +230,13 @@
                       endif                      
                     ! Algae tip is partially in segment
                     Else
-                        BmlayMALS = B * (Z2 -Zm)
+                        ! what if tip and foot are in the same segment?
+                        ! Z2 is not necessarily the bottom of the frond if it begins in this segment
+                        IF (FootDepth .le. Z2) THEN
+                           BmlayMALS = B * (FootDepth -Zm)
+                        ELSE  
+                          BmlayMALS  = B * (Z2 -Zm)
+                        ENDIF
                     Endif
                 endif
               
@@ -239,6 +250,8 @@
                     FrBmMALS = 0.0
                 Endif
 
+                AreFrond  = LocAreMAL / nFrond
+
                 PMSA( IPNT(13) ) = FrBmMALS
                 PMSA( IPNT(14) ) = BmLayMALS / Depth
                 PMSA( IPNT(15) ) = LenMAL
@@ -246,6 +259,8 @@
                 PMSA( IPNT(17) ) = LocAreMAL
                 PMSA( IPNT(18) ) = -TipDepth ! negative to have it look proper in a graph
                 PMSA( IPNT(19) ) = MBotSeg
+                PMSA( IPNT(20) ) = AreFrond
+
             ELSE
                ! There is no biomass in the mbotseg
                 PMSA( IPNT(13) ) = 0.0
@@ -255,6 +270,8 @@
                 PMSA( IPNT(17) ) = 0.0
                 PMSA( IPNT(18) ) = 0.0
                 PMSA( IPNT(19) ) = MBotSeg
+                PMSA( IPNT(20) ) = 0.0
+
             ENDIF
         ENDIF
          

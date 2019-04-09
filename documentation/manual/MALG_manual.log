@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.28)  8 APR 2019 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.28)  9 APR 2019 16:11
 entering extended mode
 **MALG_manual.tex '-shell-escape'
 (MALG_manual.tex
@@ -1399,76 +1399,76 @@ LaTeX Warning: Command \textless invalid in math mode on input line 195.
 LaTeX Warning: Command \textgreater invalid in math mode on input line 198.
 
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
 [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
 [12]
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 336.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 337.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 336.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 337.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 336.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 337.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 336.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 338.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 338.
+LaTeX Warning: Command \textless invalid in math mode on input line 337.
 
 [13]
 
-LaTeX Warning: Command \textless invalid in math mode on input line 340.
+LaTeX Warning: Command \textless invalid in math mode on input line 339.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 339.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 341.
 
 <figures/light_equations_crop.png, id=125, 3842.355pt x 2294.5725pt>
 File: figures/light_equations_crop.png Graphic file (type png)
 <use figures/light_equations_crop.png>
 Package pdftex.def Info: figures/light_equations_crop.png  used on input line 3
-47.
+48.
 (pdftex.def)             Requested size: 412.56497pt x 246.34662pt.
 [14 <./figures/light_equations_crop.png>] [15]
 <figures/Temp_NO3.png, id=144, 1300.86pt x 717.6411pt>
 File: figures/Temp_NO3.png Graphic file (type png)
 <use figures/Temp_NO3.png>
-Package pdftex.def Info: figures/Temp_NO3.png  used on input line 371.
+Package pdftex.def Info: figures/Temp_NO3.png  used on input line 372.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
 <figures/irradiance.png, id=146, 1300.86pt x 717.6411pt>
 File: figures/irradiance.png Graphic file (type png)
 <use figures/irradiance.png>
-Package pdftex.def Info: figures/irradiance.png  used on input line 372.
+Package pdftex.def Info: figures/irradiance.png  used on input line 373.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
  [16] [17 <./figures/Temp_NO3.png> <./figures/irradiance.png>]
-Overfull \hbox (30.87872pt too wide) in alignment at lines 386--409
+Overfull \hbox (30.87872pt too wide) in alignment at lines 387--410
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 409
+Underfull \vbox (badness 10000) detected at line 410
  []
 
 
-Overfull \hbox (30.87872pt too wide) in alignment at lines 409--429
+Overfull \hbox (30.87872pt too wide) in alignment at lines 410--430
  [] [] [] [] 
  []
 
 
-Overfull \hbox (30.87872pt too wide) in alignment at lines 429--447
+Overfull \hbox (30.87872pt too wide) in alignment at lines 430--448
  [] [] [] [] 
  []
 
@@ -1476,44 +1476,44 @@ Overfull \hbox (30.87872pt too wide) in alignment at lines 429--447
 <figures/frond_area.png, id=185, 1300.86pt x 717.6411pt>
 File: figures/frond_area.png Graphic file (type png)
 <use figures/frond_area.png>
-Package pdftex.def Info: figures/frond_area.png  used on input line 453.
+Package pdftex.def Info: figures/frond_area.png  used on input line 454.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
 <figures/production.png, id=186, 1300.86pt x 717.6411pt>
 File: figures/production.png Graphic file (type png)
 <use figures/production.png>
-Package pdftex.def Info: figures/production.png  used on input line 454.
+Package pdftex.def Info: figures/production.png  used on input line 455.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 455.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 456.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.19998pt on input line 455.
+(Font)              scaled to size 9.19998pt on input line 456.
  [19]
 <figures/carbon_storage.png, id=198, 1300.86pt x 717.6411pt>
 File: figures/carbon_storage.png Graphic file (type png)
 <use figures/carbon_storage.png>
-Package pdftex.def Info: figures/carbon_storage.png  used on input line 461.
+Package pdftex.def Info: figures/carbon_storage.png  used on input line 462.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
 <figures/nitrogen_storage.png, id=199, 1300.86pt x 717.6411pt>
 File: figures/nitrogen_storage.png Graphic file (type png)
 <use figures/nitrogen_storage.png>
-Package pdftex.def Info: figures/nitrogen_storage.png  used on input line 462.
+Package pdftex.def Info: figures/nitrogen_storage.png  used on input line 463.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
  [20 <./figures/frond_area.png> <./figures/production.png>] [21 <./figures/carb
 on_storage.png> <./figures/nitrogen_storage.png>]
 <figures/tidal_flume_farm.png, id=226, 936.49875pt x 357.58594pt>
 File: figures/tidal_flume_farm.png Graphic file (type png)
 <use figures/tidal_flume_farm.png>
-Package pdftex.def Info: figures/tidal_flume_farm.png  used on input line 474.
+Package pdftex.def Info: figures/tidal_flume_farm.png  used on input line 475.
 (pdftex.def)             Requested size: 412.56497pt x 157.53471pt.
  (MALG_manual.bbl)
 
 AED: lastpage setting LastPage
 [22 <./figures/tidal_flume_farm.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
  (MALG_manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 483.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 484.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1551,7 +1551,7 @@ sers/schueder/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
 tic/uhvbo8a.pfb><C:/Users/schueder/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvr8a.pfb><C:/Users/schueder/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on MALG_manual.pdf (22 pages, 6360525 bytes).
+Output written on MALG_manual.pdf (22 pages, 6363159 bytes).
 PDF statistics:
  340 PDF objects out of 1000 (max. 8388607)
  65 named destinations out of 1000 (max. 500000)

@@ -43,10 +43,10 @@ MASS/M2
 0
 0
 0
-	  18.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
-	  0.18 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
-	  0.018 ;'MALP'
-	  10.8 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
+	  18;360.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
+	  0.18;3.6 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
+	  0.018;0.36 ;'MALP'
+	  10.8;216 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
 
 
 9845; first overriding
@@ -67,11 +67,11 @@ MASS/M2
 0
 0
 0
-	  18.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
-	  0.18 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
-	  0.018 ;'MALP'
-	  10.8 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
-	  
+	  18;360.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
+	  0.18;3.6 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
+	  0.018;0.36 ;'MALP'
+	  10.8;216 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
+
 9866; first overriding
 1
 7
@@ -90,7 +90,7 @@ MASS/M2
 0
 0
 0
-	  18.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
-	  0.18 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
-	  0.018 ;'MALP'
-	  10.8 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2
+	  18;360.0 ;'MALS' area = 0.3 m2, with 60 g/m2 = 18 g in a m2
+	  0.18;3.6 ;'MALN' gN/gDM = 0.01, so 18 * 0.01 = 0.18, equals minimal, but will add a tiny bit, because the frond begins by dying
+	  0.018;0.36 ;'MALP'
+	  10.8;216 ;'MALC' gC/gDM = 0.6, so 18 * 0.35 = 6.3 gC/m2

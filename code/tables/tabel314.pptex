@@ -2248,6 +2248,7 @@ WwetTot    colsep wet weight of culture in segment                   colsep (g) 
 BmLayMAL   colsep Biomass of MALS in segment                         colsep (gDM/m3)             colsep MALDIS     \\
 LocAreaMAL colsep area of frond per m2 of column                     colsep (m2/m2)              colsep MALDIS     \\
 TipDepth   colsep depth of tip of frond in this column               colsep (m)                  colsep MALDIS     \\
+FrondArea  colsep area of an individual frond in segment             colsep (m2)                 colsep MALDIS     \\
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\
 LimN       colsep ambient nitrogen limitation for storage            colsep (-)                  colsep FlMALN     \\
 LimP       colsep ambient phosphorous limitation for storage         colsep (-)                  colsep FlMALN     \\

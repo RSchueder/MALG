@@ -21,11 +21,13 @@ locs = {'Farm1':
 'Farm3' :
 423}
 with open(r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ\includes_deltashell\B2_outlocs.inc','w') as out:
-    out.write('60\n')
-    for ii in range(1,nolay+1):
-        for ind,kk in enumerate(locs.keys()):
+    out.write('63\n')
+    for ind,kk in enumerate(locs.keys()):
+        for ii in range(1,nolay+1):
             out.write(kk + '(' + str(ii) + ')   1   ' +  str(int(locs[kk] + (ii-1)*nosegs/nolay)) + '\n')
-            
+        out.write(kk + ' 20 ''\n')
+        for ii in range(1,nolay+1):
+            out.write(str(int(locs[kk] + (ii-1)*nosegs/nolay)) + '\n')
 
 
 def MakeTS(var):
@@ -59,9 +61,9 @@ no3 = his['NO3',seg,:]
 ax2.plot(his.dates,no3*1000.0/14.0,'k-',label = 'NO$_{3}^{-}$')
 ax1.set_xlabel('(A)')
 ax1.set_ylabel('Temperature [$^{0}$C]')
-ax1.set_ylim([2,16])
+#ax1.set_ylim([2,16])
 ax2.set_ylabel('mmol N-NO$_{3}')
-ax2.set_ylim([0,8])
+#ax2.set_ylim([0,8])
 ax2.xaxis.set_major_formatter(xfmt)
 ax2.legend()
 #pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\Temp_NO3.png') ,dpi = 700)
@@ -90,7 +92,7 @@ ax.set_xlabel('(A)')
 ax.set_ylabel('Frond area [dm$^{2}$]')
 plt.grid()
 plt.legend()
-ax.set_ylim([0,50])
+#ax.set_ylim([0,50])
 ax.xaxis.set_major_formatter(xfmt)
 #if ii != 0:
 #    pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\frond_area.png') ,dpi = 700)
@@ -143,9 +145,9 @@ ax.xaxis.set_major_formatter(xfmt)
 fig = plt.figure(8)
 ax = fig.add_axes([0.1,0.1,0.8,0.8])
 surf = his['SURF',seg,:]
-gross = his['GrosMALC',seg,:] / surf
-exud = his['ExudMALC',seg,:] / surf
-resp = his['RespMALC',seg,:] / surf
+gross = his['GrosMALC',seg,:]
+exud = his['ExudMALC',seg,:]
+resp = his['RespMALC',seg,:] 
 
 ax.plot(his.dates,gross, 'k-', label = 'gross production')
 ax.plot(his.dates,resp, 'k--', label = 'respiration')
@@ -163,7 +165,7 @@ ax.xaxis.set_major_formatter(xfmt)
 fig ,ax1 = plt.subplots(1,1)
 ax2 = ax1.twinx()
 # lims = ['LimDenS','LimMALC','LimMALN','LimN','LimP','LimTemS']
-lims = ['LimDenS','LimMALN','LimMALC','LimTemS','LimPhoS']
+lims = ['LimDenS','LimMALN','LimMALC','LimTemS','LimPhoS','FrBmMALS']
 dat = {}
 for ll in lims:
     val = his[ll,seg,:]

@@ -9,7 +9,10 @@ DONE - Day length can be sped up, maybe copying from previous pmsa location befo
 DONE - Make a lookup table for beta instead of the computationally expensive newton’s method.
 
 Mar 27 -
-make flexible mesh test case
+DONE - make flexible mesh test case
 check poc production and allow to settle
-check carbon storage behaviour
+DONE - check carbon storage behaviour
 implement effect of algae on extvl
+
+Apr 8 - 
+Need to document light implementation

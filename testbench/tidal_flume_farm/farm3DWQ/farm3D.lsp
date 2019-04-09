@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/08 18:16:04 
+ Execution start: 2019/04/09 17:44:36 
                                                                                 
  found -p command line switch                                                   
 
@@ -506,7 +506,7 @@ total number of substances with fractions :  0
        [RadSurf             ] irradiation at the water surface                                      
        Using function nr  2                                                                         
        [ExtVl               ] total extinction coefficient visible light                            
-       Using constant nr 35 with value: 0.700000E-01                                                
+       Using constant nr 35 with value: 0.180000                                                    
        [alpha0              ] photosynthetic efficiency MALC                                        
        using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
@@ -566,7 +566,7 @@ total number of substances with fractions :  0
        [JPmax               ] maximum MALP P uptake rate (per area frond)                           
        using default value: 0.336000                                                                
        [Velocity            ] horizontal flow velocity                                              
-       Using constant nr 43 with value: 0.150000                                                    
+       Using constant nr 42 with value: 0.150000                                                    
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -614,7 +614,7 @@ total number of substances with fractions :  0
        [TotAreaMAL          ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
        [nFrond              ] number of fronds per m2                                               
-       Using constant nr 41 with value:  1.00000                                                    
+       using default value:  1.00000                                                                
        [MALS0               ] growth rate parameter 3                                               
        Using constant nr 36 with value: 0.600000E-01                                                
        [a1                  ] photoperiod parameter 1                                               
@@ -666,7 +666,7 @@ total number of substances with fractions :  0
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
        using default value:  1.00000                                                                
        [nFrond              ] number of fronds per m2                                               
-       Using constant nr 41 with value:  1.00000                                                    
+       using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
        using default value:  100.000                                                                
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
@@ -804,7 +804,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       Using constant nr 43 with value: 0.150000                                                    
+       Using constant nr 42 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRear              ] switch for oxygen reaeration formulation (1-13)                       
@@ -866,7 +866,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       Using constant nr 43 with value: 0.150000                                                    
+       Using constant nr 42 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRearCO2           ] switch for CO2 reaeration formulation (11,13)                         
@@ -1012,7 +1012,7 @@ total number of substances with fractions :  0
                                                                                                     
  Input for [CalcRad             ] Radiation at segment upper and lower boundaries                   
        [ExtVl               ] total extinction coefficient visible light                            
-       Using constant nr 35 with value: 0.700000E-01                                                
+       Using constant nr 35 with value: 0.180000                                                    
        [Depth               ] depth of segment                                                      
        Using output from proces [DynDepth            ]                                              
        [RadSurf             ] irradiation at the water surface                                      
@@ -1205,6 +1205,7 @@ total number of substances with fractions :  0
  output [DisHCO3             ] from proces [SpecCarb  ]                                             
  output [CO2                 ] from proces [pH_simp   ]                                             
  output [beta                ] from proces [FlMALC    ]                                             
+ output [FrondArea           ] from proces [MALDIS    ]                                             
  output [daylend             ] from proces [DaylP     ]                                             
  output [daylenp             ] from proces [DaylP     ]                                             
  output [daylenm             ] from proces [DaylP     ]                                             

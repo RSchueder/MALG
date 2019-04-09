@@ -1,5 +1,5 @@
 2 ; perform default output and extra parameters listed below
-60 ; number of extra variables
+61 ; number of extra variables
   'SURF' ' '
   'Velocity' ' '
   'LocalDepth' ' '
@@ -16,6 +16,7 @@
   'DisHCO3' ' '
   'CO2' ' '
   'beta' ' '
+  'FrondArea' ' '
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   

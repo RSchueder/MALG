@@ -85,7 +85,7 @@ C
       REAL(4) dPrPON2MAL  ! F  PON2 production MALS                                (gN/m3/d)
       REAL(4) dPrPOP1MAL  ! F  POP1 production MALS                                (gP/m3/d)
       REAL(4) dPrPOP2MAL  ! F  POP2 production MALS                                (gP/m3/d)
-      REAL(4) dCnOXYMAL  ! F  oxygen production MALS                              (gO/m3/d)
+      REAL(4) dCnOXYMAL   ! F  oxygen production MALS                              (gO/m3/d)
       
       INTEGER IdPrPOC1MAL !    Pointer to the POC1 production macrophyt 1
       INTEGER IdPrPOC2MAL !    Pointer to the POC2 production macrophyt 1
@@ -213,7 +213,7 @@ C
    
                 MALS = MALS * FrBmMALS 
                 lengthLoc = HactMAL * FrBmMALS
-                LocAreMAL = TotAreMAL * FrBmMALS / Surf  
+                LocAreMAL = TotAreMAL / Surf
                 
                 ! density limitation
                 ! if the plant is too big overall then all segments suffer
@@ -240,11 +240,9 @@ C
                
                 ! decay
                 ! decay is calculated as a percent of the total frond decay
-                ! this superfluous because the next 2 lines will be the same for all
-                ! segments in this column
                 ! m2 to dm2
-
-                coeff = exp(mrtMAL*LocAreMAL*100/FrBmMALS)
+                ! mrtMAL is per plant per dm2, so convert accordingly
+                coeff = exp(mrtMAL*LocAreMAL*100/nFrond)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + (10e-6)*(coeff - 1 ))
@@ -386,8 +384,34 @@ C
                 PMSA( IPNT( 57)   ) =  Wdry  
                 PMSA( IPNT( 58)   ) =  Wwet    
                 PMSA( IPNT( 59)   ) =  Wdry*Surf  
-                PMSA( IPNT( 60)   ) =  Wwet*Surf                     
-
+                PMSA( IPNT( 60)   ) =  Wwet*Surf      
+            ELSE
+                PMSA( IPNT( 35)   ) =  0.0		
+                PMSA( IPNT( 36)   ) =  0.0		
+                PMSA( IPNT( 37)   ) =  0.0		
+                PMSA( IPNT( 38)   ) =  0.0		
+                PMSA( IPNT( 39)   ) =  0.0	
+                PMSA( IPNT( 40)   ) =  0.0
+                PMSA( IPNT( 41)   ) =  0.0
+                PMSA( IPNT( 42)   ) =  0.0
+                PMSA( IPNT( 43)   ) =  0.0
+                PMSA( IPNT( 44)   ) =  0.0  
+                PMSA( IPNT( 45)   ) =  0.0 
+                PMSA( IPNT( 46)   ) =  0.0  
+                PMSA( IPNT( 47)   ) =  0.0  
+                PMSA( IPNT( 48)   ) =  0.0   
+                PMSA( IPNT( 49)   ) =  0.0  
+                PMSA( IPNT( 50)   ) =  0.0   
+                PMSA( IPNT( 51)   ) =  0.0     
+                PMSA( IPNT( 52)   ) =  0.0
+                PMSA( IPNT( 53)   ) =  0.0
+                PMSA( IPNT( 54)   ) =  0.0    
+                PMSA( IPNT( 55)   ) =  0.0    
+                PMSA( IPNT( 56)   ) =  0.0 
+                PMSA( IPNT( 57)   ) =  0.0  
+                PMSA( IPNT( 58)   ) =  0.0    
+                PMSA( IPNT( 59)   ) =  0.0  
+                PMSA( IPNT( 60)   ) =  0.0      
             ENDIF
           ENDIF
             
