@@ -1,5 +1,5 @@
 \egin{longtable}{|l|l|l|l|}
-	extbf{parameter} & 	extbf{value} & 	extbf{unit} & 	extbf{description} & \\ 
+\	extbf{parameter} & \	extbf{value} & \	extbf{unit} & \	extbf{description} & \\ 
 K0HrvMALS & 0.00000 & (gDM/m2/d) & zero order harvesting rate Macroalgae\\ 
 K1HrvMALS & 0.00000 & (1/d) & first order harvesting rate Macroalgae\\ 
 MALCmin & 0.100000E-01 & (gC/gDM) & minimum C in storage\\ 
@@ -22,20 +22,21 @@ alpha0 & 0.375000E-04 & ((gC/dm2/h)/(umol/m2 & photosynthetic efficiency MALC\\
 Isat & 43.7630 & (W/m2) & light intensity where photosynthesis is max\\ 
 exuMALC & 0.500000 & (gC/gC) & exudation parameter\\ 
 MALNmin & 0.100000E-01 & (-) & minimum N in storage\\ 
-MALNmax & 0.220000E-01 & (gN/gDM) & maximum N in MALN\\ 
+MALNmax & 0.220000E-01 & (gN/gDM) & maximum N in MALN w.r.t. MALS\\ 
 MALPmin & 0.100000E-02 & (gP/gDM) & minimum P in storage\\ 
-MALPmax & 0.220000E-02 & (gP/gDM) & maximum P in MALP\\ 
+MALPmax & 0.220000E-02 & (gP/gDM) & maximum P in MALP w.r.t. MALS\\ 
 NCRatMALS & 0.500000E-01 & (gN/gC) & N:C ratio in MALS\\ 
 PCRatMALS & 0.500000E-02 & (gP/gC) & P:C ratio in MALS\\ 
 Ksn & 0.560000E-01 & (gN/m3) & half saturation MALN N uptake\\ 
 Ksp & 0.126000E-01 & (gP/m3) & half saturation MALN P uptake\\ 
 JNmax & 0.336000 & (gN/m2/d) & maximum MALN N uptake rate (per area frond)\\ 
 JPmax & 0.336000 & (gP/m2/d) & maximum MALP P uptake rate (per area frond)\\ 
-Vel & 0.150000 & (m/s) & velocity\\ 
+Velocity & 0.150000 & (m/s) & horizontal flow velocity\\ 
 Vel65 & 0.300000E-01 & (m/s) & current speed at which J = 0.65Jmax\\ 
 Latitude & 52.0000 & (degrees) & latitude of study area\\ 
 m1 & 0.108500 & (-) & growth rate parameter 1\\ 
 m2 & 0.300000E-01 & (1/d) & growth rate parameter 2\\ 
+nFrond & 1.00000 & (1/m2) & number of fronds per m2\\ 
 MALS0 & 0.600000E-01 & (m2) & growth rate parameter 3\\ 
 a1 & 1.02000 & (-) & photoperiod parameter 1\\ 
 a2 & 0.120000 & (-) & photoperiod parameter 2\\ 
@@ -55,7 +56,6 @@ SWGroDir & 1.00000 & (-) & grow direction MALG(1 = up -1 = down )\\
 LinDenMAL & 100.000 & (g/m3) & linear density of macroalgae\\ 
 RefDay & 0.00000 & (d) & daynumber of reference day simulation\\ 
 AuxSys & 86400.0 & (scu/d) & ratio between days and system clock\\ 
-Velocity & 0.500000 & (m/s) & horizontal flow velocity\\ 
 VWind & 3.00000 & (m/s) & wind speed\\ 
 SWRear & 10.0000 & (-) & switch for oxygen reaeration formulation (1-13)\\ 
 KLRear & 1.00000 & (m/d) & reaeration transfer coefficient\\ 

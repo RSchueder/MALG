@@ -35,151 +35,151 @@ Mass balances for Sum_of_balance_areas
 
 Substance Continuity           Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-Contin_Storage                    0.78125E-02    0.00000E+00
+Contin_Storage                    0.15625E-01    0.00000E+00
 Contin_All Bo+Lo                  0.00000E+00    0.00000E+00
-Contin_Internal transport         0.27026E+10   -0.27026E+10
-SUM OF ALL TERMS                  0.27026E+10   -0.27026E+10
+Contin_Internal transport         0.53667E+10   -0.53667E+10
+SUM OF ALL TERMS                  0.53667E+10   -0.53667E+10
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.31516E+04
+OXY   _Storage                    0.00000E+00   -0.10579E+06
 OXY   _All Bo+Lo                  0.00000E+00    0.00000E+00
-OXY   _Internal transport         0.19132E+11   -0.19135E+11
-OXY   _dREAROXY                   0.30534E+07    0.00000E+00
-OXY   _dCnOXYM                    0.00000E+00   -0.12382E+07
-OXY   _dUpNO3M                    0.12979E+06    0.00000E+00
-OXY   _dPrOXYM                    0.11611E+07    0.00000E+00
-SUM OF ALL TERMS                  0.19137E+11   -0.19137E+11
+OXY   _Internal transport         0.45561E+11   -0.45578E+11
+OXY   _dREAROXY                   0.22330E+07    0.00000E+00
+OXY   _dCnOXYM                    0.00000E+00   -0.17017E+08
+OXY   _dUpNO3M                    0.18234E+07    0.00000E+00
+OXY   _dPrOXYM                    0.30999E+08    0.00000E+00
+SUM OF ALL TERMS                  0.45596E+11   -0.45596E+11
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-NH4   _Storage                    0.00000E+00   -0.26998E+04
+NH4   _Storage                    0.00000E+00   -0.23996E+04
 NH4   _All Bo+Lo                  0.00000E+00    0.00000E+00
-NH4   _Internal transport         0.24327E+09   -0.24473E+09
-NH4   _dMinPON1                   0.12513E+07    0.00000E+00
-NH4   _dMinPON2                   0.20931E+06    0.00000E+00
+NH4   _Internal transport         0.42479E+09   -0.42770E+09
+NH4   _dMinPON1                   0.25027E+07    0.00000E+00
+NH4   _dMinPON2                   0.41861E+06    0.00000E+00
 NH4   _dUpNH4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.24473E+09   -0.24473E+09
+SUM OF ALL TERMS                  0.42771E+09   -0.42770E+09
 
 Substance NO3                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-NO3   _Storage                    0.37502E+04    0.00000E+00
+NO3   _Storage                    0.12007E+05    0.00000E+00
 NO3   _All Bo+Lo                  0.00000E+00    0.00000E+00
-NO3   _Internal transport         0.13540E+09   -0.13538E+09
-NO3   _dUpNO3M                    0.00000E+00   -0.28394E+05
-SUM OF ALL TERMS                  0.13541E+09   -0.13541E+09
+NO3   _Internal transport         0.14629E+10   -0.14625E+10
+NO3   _dUpNO3M                    0.00000E+00   -0.39891E+06
+SUM OF ALL TERMS                  0.14629E+10   -0.14629E+10
 
 Substance PO4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PO4   _Storage                    0.00000E+00   -0.76870E+02
+PO4   _Storage                    0.00000E+00   -0.15374E+03
 PO4   _All Bo+Lo                  0.00000E+00    0.00000E+00
-PO4   _Internal transport         0.30095E+08   -0.30138E+08
-PO4   _dMinPOP1                   0.37394E+05    0.00000E+00
-PO4   _dMinPOP2                   0.53868E+04    0.00000E+00
+PO4   _Internal transport         0.59731E+08   -0.59816E+08
+PO4   _dMinPOP1                   0.74788E+05    0.00000E+00
+PO4   _dMinPOP2                   0.10774E+05    0.00000E+00
 PO4   _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.30138E+08   -0.30138E+08
+SUM OF ALL TERMS                  0.59816E+08   -0.59816E+08
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.00000E+00   -0.28875E+03
+TIC   _Storage                    0.00000E+00   -0.10630E+07
 TIC   _All Bo+Lo                  0.00000E+00    0.00000E+00
-TIC   _Internal transport         0.81092E+11   -0.81091E+11
-TIC   _dREARCO2                   0.20436E+06    0.00000E+00
-TIC   _dMALTIC                    0.00000E+00   -0.43486E+06
-SUM OF ALL TERMS                  0.81092E+11   -0.81092E+11
+TIC   _Internal transport         0.15957E+12   -0.15954E+12
+TIC   _dREARCO2                   0.00000E+00   -0.12030E+08
+TIC   _dMALTIC                    0.00000E+00   -0.11610E+08
+SUM OF ALL TERMS                  0.15957E+12   -0.15957E+12
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.00000E+00   -0.11612E+05
+ALKA  _Storage                    0.77768E+07    0.00000E+00
 ALKA  _All Bo+Lo                  0.00000E+00    0.00000E+00
-ALKA  _Internal transport         0.54098E+12   -0.54099E+12
-ALKA  _dMinPON1                   0.54520E+07    0.00000E+00
-ALKA  _dMinPOP1                   0.00000E+00   -0.73591E+05
-ALKA  _dMinPON2                   0.91195E+06    0.00000E+00
-ALKA  _dMinPOP2                   0.00000E+00   -0.10601E+05
-ALKA  _dUpNO3M                    0.12371E+06    0.00000E+00
+ALKA  _Internal transport         0.78213E+12   -0.78215E+12
+ALKA  _dMinPON1                   0.10904E+08    0.00000E+00
+ALKA  _dMinPOP1                   0.00000E+00   -0.14718E+06
+ALKA  _dMinPON2                   0.18239E+07    0.00000E+00
+ALKA  _dMinPOP2                   0.00000E+00   -0.21202E+05
+ALKA  _dUpNO3M                    0.17380E+07    0.00000E+00
 ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
 ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.54099E+12   -0.54099E+12
+SUM OF ALL TERMS                  0.78215E+12   -0.78215E+12
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POC1  _Storage                    0.36726E+04    0.00000E+00
+POC1  _Storage                    0.73280E+04    0.00000E+00
 POC1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POC1  _Internal transport         0.25564E+10   -0.25544E+10
+POC1  _Internal transport         0.50776E+10   -0.50736E+10
 POC1  _dCnvPPOC1                  0.00000E+00    0.00000E+00
 POC1  _dCnvDPOC1                  0.00000E+00    0.00000E+00
-POC1  _dMinPOC1G                  0.00000E+00   -0.20763E+07
-POC1  _dPrPOC1M                   0.11057E+06    0.00000E+00
-SUM OF ALL TERMS                  0.25565E+10   -0.25564E+10
+POC1  _dMinPOC1G                  0.00000E+00   -0.41525E+07
+POC1  _dPrPOC1M                   0.16893E+06    0.00000E+00
+SUM OF ALL TERMS                  0.50778E+10   -0.50778E+10
 
 Substance POC2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POC2  _Storage                    0.47902E+03    0.00000E+00
+POC2  _Storage                    0.95223E+03    0.00000E+00
 POC2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POC2  _Internal transport         0.26835E+10   -0.26833E+10
+POC2  _Internal transport         0.53291E+10   -0.53285E+10
 POC2  _dCnvPPOC1                  0.00000E+00    0.00000E+00
 POC2  _dCnvPPOC2                  0.00000E+00    0.00000E+00
 POC2  _dCnvDPOC2                  0.00000E+00    0.00000E+00
-POC2  _dMinPOC2G                  0.00000E+00   -0.27339E+06
-POC2  _dPrPOC2M                   0.36857E+05    0.00000E+00
-SUM OF ALL TERMS                  0.26836E+10   -0.26836E+10
+POC2  _dMinPOC2G                  0.00000E+00   -0.54677E+06
+POC2  _dPrPOC2M                   0.56310E+05    0.00000E+00
+SUM OF ALL TERMS                  0.53291E+10   -0.53291E+10
 
 Substance PON1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PON1  _Storage                    0.23298E+04    0.00000E+00
+PON1  _Storage                    0.46588E+04    0.00000E+00
 PON1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-PON1  _Internal transport         0.44754E+09   -0.44630E+09
+PON1  _Internal transport         0.88929E+09   -0.88680E+09
 PON1  _dCnvPPON1                  0.00000E+00    0.00000E+00
 PON1  _dCnvDPON1                  0.00000E+00    0.00000E+00
-PON1  _dMinPON1                   0.00000E+00   -0.12513E+07
-PON1  _dPrPON1M                   0.55285E+04    0.00000E+00
-SUM OF ALL TERMS                  0.44755E+09   -0.44755E+09
+PON1  _dMinPON1                   0.00000E+00   -0.25027E+07
+PON1  _dPrPON1M                   0.84465E+04    0.00000E+00
+SUM OF ALL TERMS                  0.88930E+09   -0.88930E+09
 
 Substance PON2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PON2  _Storage                    0.36986E+03    0.00000E+00
+PON2  _Storage                    0.73943E+03    0.00000E+00
 PON2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-PON2  _Internal transport         0.52579E+09   -0.52558E+09
+PON2  _Internal transport         0.10442E+10   -0.10438E+10
 PON2  _dCnvPPON1                  0.00000E+00    0.00000E+00
 PON2  _dCnvPPON2                  0.00000E+00    0.00000E+00
 PON2  _dCnvDPON2                  0.00000E+00    0.00000E+00
-PON2  _dMinPON2                   0.00000E+00   -0.20931E+06
-PON2  _dPrPON2M                   0.18428E+04    0.00000E+00
-SUM OF ALL TERMS                  0.52580E+09   -0.52579E+09
+PON2  _dMinPON2                   0.00000E+00   -0.41861E+06
+PON2  _dPrPON2M                   0.28155E+04    0.00000E+00
+SUM OF ALL TERMS                  0.10442E+10   -0.10442E+10
 
 Substance POP1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POP1  _Storage                    0.67389E+02    0.00000E+00
+POP1  _Storage                    0.13469E+03    0.00000E+00
 POP1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POP1  _Internal transport         0.24339E+08   -0.24302E+08
+POP1  _Internal transport         0.48354E+08   -0.48280E+08
 POP1  _dCnvPPOP1                  0.00000E+00    0.00000E+00
 POP1  _dCnvDPOP1                  0.00000E+00    0.00000E+00
-POP1  _dMinPOP1                   0.00000E+00   -0.37394E+05
-POP1  _dPrPOP1M                   0.55285E+03    0.00000E+00
-SUM OF ALL TERMS                  0.24340E+08   -0.24340E+08
+POP1  _dMinPOP1                   0.00000E+00   -0.74788E+05
+POP1  _dPrPOP1M                   0.84466E+03    0.00000E+00
+SUM OF ALL TERMS                  0.48355E+08   -0.48354E+08
 
 Substance POP2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POP2  _Storage                    0.94704E+01    0.00000E+00
+POP2  _Storage                    0.18912E+02    0.00000E+00
 POP2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POP2  _Internal transport         0.26649E+08   -0.26644E+08
+POP2  _Internal transport         0.52923E+08   -0.52912E+08
 POP2  _dCnvPPOP1                  0.00000E+00    0.00000E+00
 POP2  _dCnvPPOP2                  0.00000E+00    0.00000E+00
 POP2  _dCnvDPOP2                  0.00000E+00    0.00000E+00
-POP2  _dMinPOP2                   0.00000E+00   -0.53868E+04
-POP2  _dPrPOP2M                   0.18428E+03    0.00000E+00
-SUM OF ALL TERMS                  0.26649E+08   -0.26649E+08
+POP2  _dMinPOP2                   0.00000E+00   -0.10774E+05
+POP2  _dPrPOP2M                   0.28155E+03    0.00000E+00
+SUM OF ALL TERMS                  0.52923E+08   -0.52923E+08
 
 Substance DOC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-DOC   _Storage                    0.00000E+00   -0.20781E+01
+DOC   _Storage                    0.00000E+00   -0.12925E+03
 DOC   _All Bo+Lo                  0.00000E+00    0.00000E+00
-DOC   _Internal transport         0.27027E+10   -0.27029E+10
+DOC   _Internal transport         0.53695E+10   -0.53743E+10
 DOC   _dCnvDPOC1                  0.00000E+00    0.00000E+00
 DOC   _dCnvDPOC2                  0.00000E+00    0.00000E+00
-DOC   _dMALDOC                    0.18762E+06    0.00000E+00
-SUM OF ALL TERMS                  0.27029E+10   -0.27029E+10
+DOC   _dMALDOC                    0.47871E+07    0.00000E+00
+SUM OF ALL TERMS                  0.53743E+10   -0.53743E+10
 
 Substance DectCS1              Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -204,70 +204,70 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALS                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALS  _Storage                    0.00000E+00   -0.31744E+05
+MALS  _Storage                    0.00000E+00   -0.59704E+07
 MALS  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALS  _Internal transport         0.00000E+00    0.00000E+00
-MALS  _dGrMALS                    0.31744E+05    0.00000E+00
-MALS  _dCanMALS                   0.00000E+00    0.00000E+00
 MALS  _dHrvMALS                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.31744E+05   -0.31744E+05
+MALS  _dGrMALS                    0.59704E+07    0.00000E+00
+MALS  _dCanMALS                   0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.59704E+07   -0.59704E+07
 
 Substance MALN                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALN  _Storage                    0.00000E+00   -0.22377E+04
+MALN  _Storage                    0.00000E+00   -0.13102E+06
 MALN  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALN  _Internal transport         0.00000E+00    0.00000E+00
-MALN  _dGrMALN                    0.00000E+00   -0.11959E+05
-MALN  _dStrMALN                   0.14197E+05    0.00000E+00
 MALN  _dHrvMALN                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.14197E+05   -0.14197E+05
+MALN  _dGrMALN                    0.00000E+00   -0.66825E+05
+MALN  _dStrMALN                   0.19784E+06    0.00000E+00
+SUM OF ALL TERMS                  0.19784E+06   -0.19784E+06
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.28741E+03
+MALP  _Storage                    0.00000E+00   -0.13453E+05
 MALP  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALP  _Internal transport         0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALP                   0.28741E+03    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.28741E+03   -0.28741E+03
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.13453E+05    0.00000E+00
+SUM OF ALL TERMS                  0.13453E+05   -0.13453E+05
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALC  _Storage                    0.00000E+00   -0.21427E+05
+MALC  _Storage                    0.00000E+00   -0.36705E+07
 MALC  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALC  _Internal transport         0.00000E+00    0.00000E+00
-MALC  _dGrMALC                    0.00000E+00   -0.23187E+06
-MALC  _dStrMALC                   0.25330E+06    0.00000E+00
 MALC  _dHrvMALC                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.25330E+06   -0.25330E+06
+MALC  _dGrMALC                    0.00000E+00   -0.31869E+07
+MALC  _dStrMALC                   0.68574E+07    0.00000E+00
+SUM OF ALL TERMS                  0.68574E+07   -0.68574E+07
 
 Substance TotN                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TotN  _Storage                    0.37500E+04    0.00000E+00
+TotN  _Storage                    0.15005E+05    0.00000E+00
 TotN  _All Bo+Lo                  0.00000E+00    0.00000E+00
-TotN  _Internal transport         0.13520E+10   -0.13520E+10
+TotN  _Internal transport         0.38212E+10   -0.38208E+10
 TotN  _dCnvDPON1                  0.00000E+00    0.00000E+00
 TotN  _dCnvPPON2                  0.00000E+00    0.00000E+00
 TotN  _dCnvDPON2                  0.00000E+00    0.00000E+00
-TotN  _dPrPON1M                   0.55285E+04    0.00000E+00
-TotN  _dPrPON2M                   0.18428E+04    0.00000E+00
-TotN  _dUpNO3M                    0.00000E+00   -0.28394E+05
+TotN  _dPrPON1M                   0.84465E+04    0.00000E+00
+TotN  _dPrPON2M                   0.28155E+04    0.00000E+00
+TotN  _dUpNO3M                    0.00000E+00   -0.39891E+06
 TotN  _dUpNH4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.13520E+10   -0.13520E+10
+SUM OF ALL TERMS                  0.38212E+10   -0.38212E+10
 
 Substance TotP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TotP  _Storage                    0.00000E+00   -0.11475E-01
+TotP  _Storage                    0.00000E+00   -0.13867E+00
 TotP  _All Bo+Lo                  0.00000E+00    0.00000E+00
-TotP  _Internal transport         0.81083E+08   -0.81084E+08
+TotP  _Internal transport         0.16101E+09   -0.16101E+09
 TotP  _dCnvDPOP1                  0.00000E+00    0.00000E+00
 TotP  _dCnvPPOP2                  0.00000E+00    0.00000E+00
 TotP  _dCnvDPOP2                  0.00000E+00    0.00000E+00
-TotP  _dPrPOP1M                   0.55285E+03    0.00000E+00
-TotP  _dPrPOP2M                   0.18428E+03    0.00000E+00
+TotP  _dPrPOP1M                   0.84466E+03    0.00000E+00
+TotP  _dPrPOP2M                   0.28155E+03    0.00000E+00
 TotP  _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.81084E+08   -0.81084E+08
+SUM OF ALL TERMS                  0.16101E+09   -0.16101E+09
 
 
 MASS BALANCE PER SURFACE
@@ -280,151 +280,151 @@ Mass balances for Sum_of_balance_areas
 
 Substance Continuity           Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-Contin_Storage                    0.52083E-07    0.00000E+00
+Contin_Storage                    0.99206E-07    0.00000E+00
 Contin_All Bo+Lo                  0.00000E+00    0.00000E+00
-Contin_Internal transport         0.18017E+05   -0.18017E+05
-SUM OF ALL TERMS                  0.18017E+05   -0.18017E+05
+Contin_Internal transport         0.34074E+05   -0.34074E+05
+SUM OF ALL TERMS                  0.34074E+05   -0.34074E+05
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.21011E-01
+OXY   _Storage                    0.00000E+00   -0.67166E+00
 OXY   _All Bo+Lo                  0.00000E+00    0.00000E+00
-OXY   _Internal transport         0.12755E+06   -0.12757E+06
-OXY   _dREAROXY                   0.20356E+02    0.00000E+00
-OXY   _dCnOXYM                    0.00000E+00   -0.82546E+01
-OXY   _dUpNO3M                    0.86526E+00    0.00000E+00
-OXY   _dPrOXYM                    0.77405E+01    0.00000E+00
-SUM OF ALL TERMS                  0.12758E+06   -0.12758E+06
+OXY   _Internal transport         0.28927E+06   -0.28939E+06
+OXY   _dREAROXY                   0.14178E+02    0.00000E+00
+OXY   _dCnOXYM                    0.00000E+00   -0.10805E+03
+OXY   _dUpNO3M                    0.11577E+02    0.00000E+00
+OXY   _dPrOXYM                    0.19682E+03    0.00000E+00
+SUM OF ALL TERMS                  0.28950E+06   -0.28950E+06
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-NH4   _Storage                    0.00000E+00   -0.17999E-01
+NH4   _Storage                    0.00000E+00   -0.15235E-01
 NH4   _All Bo+Lo                  0.00000E+00    0.00000E+00
-NH4   _Internal transport         0.16218E+04   -0.16315E+04
-NH4   _dMinPON1                   0.83422E+01    0.00000E+00
-NH4   _dMinPON2                   0.13954E+01    0.00000E+00
+NH4   _Internal transport         0.26971E+04   -0.27156E+04
+NH4   _dMinPON1                   0.15890E+02    0.00000E+00
+NH4   _dMinPON2                   0.26579E+01    0.00000E+00
 NH4   _dUpNH4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.16315E+04   -0.16315E+04
+SUM OF ALL TERMS                  0.27156E+04   -0.27156E+04
 
 Substance NO3                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-NO3   _Storage                    0.25001E-01    0.00000E+00
+NO3   _Storage                    0.76232E-01    0.00000E+00
 NO3   _All Bo+Lo                  0.00000E+00    0.00000E+00
-NO3   _Internal transport         0.90268E+03   -0.90252E+03
-NO3   _dUpNO3M                    0.00000E+00   -0.18929E+00
-SUM OF ALL TERMS                  0.90271E+03   -0.90271E+03
+NO3   _Internal transport         0.92882E+04   -0.92857E+04
+NO3   _dUpNO3M                    0.00000E+00   -0.25327E+01
+SUM OF ALL TERMS                  0.92883E+04   -0.92883E+04
 
 Substance PO4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PO4   _Storage                    0.00000E+00   -0.51247E-03
+PO4   _Storage                    0.00000E+00   -0.97613E-03
 PO4   _All Bo+Lo                  0.00000E+00    0.00000E+00
-PO4   _Internal transport         0.20063E+03   -0.20092E+03
-PO4   _dMinPOP1                   0.24929E+00    0.00000E+00
-PO4   _dMinPOP2                   0.35912E-01    0.00000E+00
+PO4   _Internal transport         0.37924E+03   -0.37978E+03
+PO4   _dMinPOP1                   0.47484E+00    0.00000E+00
+PO4   _dMinPOP2                   0.68404E-01    0.00000E+00
 PO4   _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.20092E+03   -0.20092E+03
+SUM OF ALL TERMS                  0.37979E+03   -0.37979E+03
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.00000E+00   -0.19250E-02
+TIC   _Storage                    0.00000E+00   -0.67490E+01
 TIC   _All Bo+Lo                  0.00000E+00    0.00000E+00
-TIC   _Internal transport         0.54061E+06   -0.54061E+06
-TIC   _dREARCO2                   0.13624E+01    0.00000E+00
-TIC   _dMALTIC                    0.00000E+00   -0.28991E+01
-SUM OF ALL TERMS                  0.54061E+06   -0.54061E+06
+TIC   _Internal transport         0.10131E+07   -0.10130E+07
+TIC   _dREARCO2                   0.00000E+00   -0.76381E+02
+TIC   _dMALTIC                    0.00000E+00   -0.73714E+02
+SUM OF ALL TERMS                  0.10131E+07   -0.10131E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.00000E+00   -0.77413E-01
+ALKA  _Storage                    0.49376E+02    0.00000E+00
 ALKA  _All Bo+Lo                  0.00000E+00    0.00000E+00
-ALKA  _Internal transport         0.36066E+07   -0.36066E+07
-ALKA  _dMinPON1                   0.36347E+02    0.00000E+00
-ALKA  _dMinPOP1                   0.00000E+00   -0.49061E+00
-ALKA  _dMinPON2                   0.60797E+01    0.00000E+00
-ALKA  _dMinPOP2                   0.00000E+00   -0.70675E-01
-ALKA  _dUpNO3M                    0.82475E+00    0.00000E+00
+ALKA  _Internal transport         0.49659E+07   -0.49660E+07
+ALKA  _dMinPON1                   0.69233E+02    0.00000E+00
+ALKA  _dMinPOP1                   0.00000E+00   -0.93449E+00
+ALKA  _dMinPON2                   0.11580E+02    0.00000E+00
+ALKA  _dMinPOP2                   0.00000E+00   -0.13462E+00
+ALKA  _dUpNO3M                    0.11035E+02    0.00000E+00
 ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
 ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.36066E+07   -0.36066E+07
+SUM OF ALL TERMS                  0.49660E+07   -0.49660E+07
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POC1  _Storage                    0.24484E-01    0.00000E+00
+POC1  _Storage                    0.46527E-01    0.00000E+00
 POC1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POC1  _Internal transport         0.17042E+05   -0.17029E+05
+POC1  _Internal transport         0.32239E+05   -0.32214E+05
 POC1  _dCnvPPOC1                  0.00000E+00    0.00000E+00
 POC1  _dCnvDPOC1                  0.00000E+00    0.00000E+00
-POC1  _dMinPOC1G                  0.00000E+00   -0.13842E+02
-POC1  _dPrPOC1M                   0.73714E+00    0.00000E+00
-SUM OF ALL TERMS                  0.17043E+05   -0.17043E+05
+POC1  _dMinPOC1G                  0.00000E+00   -0.26365E+02
+POC1  _dPrPOC1M                   0.10726E+01    0.00000E+00
+SUM OF ALL TERMS                  0.32240E+05   -0.32240E+05
 
 Substance POC2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POC2  _Storage                    0.31934E-02    0.00000E+00
+POC2  _Storage                    0.60459E-02    0.00000E+00
 POC2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POC2  _Internal transport         0.17890E+05   -0.17889E+05
+POC2  _Internal transport         0.33835E+05   -0.33832E+05
 POC2  _dCnvPPOC1                  0.00000E+00    0.00000E+00
 POC2  _dCnvPPOC2                  0.00000E+00    0.00000E+00
 POC2  _dCnvDPOC2                  0.00000E+00    0.00000E+00
-POC2  _dMinPOC2G                  0.00000E+00   -0.18226E+01
-POC2  _dPrPOC2M                   0.24571E+00    0.00000E+00
-SUM OF ALL TERMS                  0.17891E+05   -0.17890E+05
+POC2  _dMinPOC2G                  0.00000E+00   -0.34716E+01
+POC2  _dPrPOC2M                   0.35753E+00    0.00000E+00
+SUM OF ALL TERMS                  0.33836E+05   -0.33835E+05
 
 Substance PON1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PON1  _Storage                    0.15532E-01    0.00000E+00
+PON1  _Storage                    0.29579E-01    0.00000E+00
 PON1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-PON1  _Internal transport         0.29836E+04   -0.29753E+04
+PON1  _Internal transport         0.56463E+04   -0.56304E+04
 PON1  _dCnvPPON1                  0.00000E+00    0.00000E+00
 PON1  _dCnvDPON1                  0.00000E+00    0.00000E+00
-PON1  _dMinPON1                   0.00000E+00   -0.83422E+01
-PON1  _dPrPON1M                   0.36857E-01    0.00000E+00
-SUM OF ALL TERMS                  0.29837E+04   -0.29837E+04
+PON1  _dMinPON1                   0.00000E+00   -0.15890E+02
+PON1  _dPrPON1M                   0.53629E-01    0.00000E+00
+SUM OF ALL TERMS                  0.56464E+04   -0.56463E+04
 
 Substance PON2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PON2  _Storage                    0.24657E-02    0.00000E+00
+PON2  _Storage                    0.46948E-02    0.00000E+00
 PON2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-PON2  _Internal transport         0.35053E+04   -0.35039E+04
+PON2  _Internal transport         0.66301E+04   -0.66275E+04
 PON2  _dCnvPPON1                  0.00000E+00    0.00000E+00
 PON2  _dCnvPPON2                  0.00000E+00    0.00000E+00
 PON2  _dCnvDPON2                  0.00000E+00    0.00000E+00
-PON2  _dMinPON2                   0.00000E+00   -0.13954E+01
-PON2  _dPrPON2M                   0.12286E-01    0.00000E+00
-SUM OF ALL TERMS                  0.35053E+04   -0.35053E+04
+PON2  _dMinPON2                   0.00000E+00   -0.26579E+01
+PON2  _dPrPON2M                   0.17876E-01    0.00000E+00
+SUM OF ALL TERMS                  0.66302E+04   -0.66301E+04
 
 Substance POP1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POP1  _Storage                    0.44926E-03    0.00000E+00
+POP1  _Storage                    0.85518E-03    0.00000E+00
 POP1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POP1  _Internal transport         0.16226E+03   -0.16201E+03
+POP1  _Internal transport         0.30701E+03   -0.30654E+03
 POP1  _dCnvPPOP1                  0.00000E+00    0.00000E+00
 POP1  _dCnvDPOP1                  0.00000E+00    0.00000E+00
-POP1  _dMinPOP1                   0.00000E+00   -0.24929E+00
-POP1  _dPrPOP1M                   0.36857E-02    0.00000E+00
-SUM OF ALL TERMS                  0.16226E+03   -0.16226E+03
+POP1  _dMinPOP1                   0.00000E+00   -0.47484E+00
+POP1  _dPrPOP1M                   0.53629E-02    0.00000E+00
+SUM OF ALL TERMS                  0.30701E+03   -0.30701E+03
 
 Substance POP2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POP2  _Storage                    0.63136E-04    0.00000E+00
+POP2  _Storage                    0.12007E-03    0.00000E+00
 POP2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POP2  _Internal transport         0.17766E+03   -0.17763E+03
+POP2  _Internal transport         0.33602E+03   -0.33595E+03
 POP2  _dCnvPPOP1                  0.00000E+00    0.00000E+00
 POP2  _dCnvPPOP2                  0.00000E+00    0.00000E+00
 POP2  _dCnvDPOP2                  0.00000E+00    0.00000E+00
-POP2  _dMinPOP2                   0.00000E+00   -0.35912E-01
-POP2  _dPrPOP2M                   0.12286E-02    0.00000E+00
-SUM OF ALL TERMS                  0.17766E+03   -0.17766E+03
+POP2  _dMinPOP2                   0.00000E+00   -0.68404E-01
+POP2  _dPrPOP2M                   0.17876E-02    0.00000E+00
+SUM OF ALL TERMS                  0.33602E+03   -0.33602E+03
 
 Substance DOC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-DOC   _Storage                    0.00000E+00   -0.13854E-04
+DOC   _Storage                    0.00000E+00   -0.82063E-03
 DOC   _All Bo+Lo                  0.00000E+00    0.00000E+00
-DOC   _Internal transport         0.18018E+05   -0.18019E+05
+DOC   _Internal transport         0.34092E+05   -0.34122E+05
 DOC   _dCnvDPOC1                  0.00000E+00    0.00000E+00
 DOC   _dCnvDPOC2                  0.00000E+00    0.00000E+00
-DOC   _dMALDOC                    0.12508E+01    0.00000E+00
-SUM OF ALL TERMS                  0.18019E+05   -0.18019E+05
+DOC   _dMALDOC                    0.30394E+02    0.00000E+00
+SUM OF ALL TERMS                  0.34122E+05   -0.34122E+05
 
 Substance DectCS1              Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -449,70 +449,70 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALS                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALS  _Storage                    0.00000E+00   -0.21162E+00
+MALS  _Storage                    0.00000E+00   -0.37907E+02
 MALS  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALS  _Internal transport         0.00000E+00    0.00000E+00
-MALS  _dGrMALS                    0.21162E+00    0.00000E+00
-MALS  _dCanMALS                   0.00000E+00    0.00000E+00
 MALS  _dHrvMALS                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.21162E+00   -0.21162E+00
+MALS  _dGrMALS                    0.37907E+02    0.00000E+00
+MALS  _dCanMALS                   0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.37907E+02   -0.37907E+02
 
 Substance MALN                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALN  _Storage                    0.00000E+00   -0.14918E-01
+MALN  _Storage                    0.00000E+00   -0.83186E+00
 MALN  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALN  _Internal transport         0.00000E+00    0.00000E+00
-MALN  _dGrMALN                    0.00000E+00   -0.79727E-01
-MALN  _dStrMALN                   0.94644E-01    0.00000E+00
 MALN  _dHrvMALN                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.94644E-01   -0.94644E-01
+MALN  _dGrMALN                    0.00000E+00   -0.42428E+00
+MALN  _dStrMALN                   0.12561E+01    0.00000E+00
+SUM OF ALL TERMS                  0.12561E+01   -0.12561E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.19161E-02
+MALP  _Storage                    0.00000E+00   -0.85416E-01
 MALP  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALP  _Internal transport         0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALP                   0.19161E-02    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.19161E-02   -0.19161E-02
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.85416E-01    0.00000E+00
+SUM OF ALL TERMS                  0.85416E-01   -0.85416E-01
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALC  _Storage                    0.00000E+00   -0.14285E+00
+MALC  _Storage                    0.00000E+00   -0.23305E+02
 MALC  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALC  _Internal transport         0.00000E+00    0.00000E+00
-MALC  _dGrMALC                    0.00000E+00   -0.15458E+01
-MALC  _dStrMALC                   0.16887E+01    0.00000E+00
 MALC  _dHrvMALC                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.16887E+01   -0.16887E+01
+MALC  _dGrMALC                    0.00000E+00   -0.20234E+02
+MALC  _dStrMALC                   0.43539E+02    0.00000E+00
+SUM OF ALL TERMS                  0.43539E+02   -0.43539E+02
 
 Substance TotN                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TotN  _Storage                    0.25000E-01    0.00000E+00
+TotN  _Storage                    0.95271E-01    0.00000E+00
 TotN  _All Bo+Lo                  0.00000E+00    0.00000E+00
-TotN  _Internal transport         0.90134E+04   -0.90133E+04
+TotN  _Internal transport         0.24262E+05   -0.24259E+05
 TotN  _dCnvDPON1                  0.00000E+00    0.00000E+00
 TotN  _dCnvPPON2                  0.00000E+00    0.00000E+00
 TotN  _dCnvDPON2                  0.00000E+00    0.00000E+00
-TotN  _dPrPON1M                   0.36857E-01    0.00000E+00
-TotN  _dPrPON2M                   0.12286E-01    0.00000E+00
-TotN  _dUpNO3M                    0.00000E+00   -0.18929E+00
+TotN  _dPrPON1M                   0.53629E-01    0.00000E+00
+TotN  _dPrPON2M                   0.17876E-01    0.00000E+00
+TotN  _dUpNO3M                    0.00000E+00   -0.25327E+01
 TotN  _dUpNH4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.90135E+04   -0.90134E+04
+SUM OF ALL TERMS                  0.24262E+05   -0.24262E+05
 
 Substance TotP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TotP  _Storage                    0.00000E+00   -0.76497E-07
+TotP  _Storage                    0.00000E+00   -0.88046E-06
 TotP  _All Bo+Lo                  0.00000E+00    0.00000E+00
-TotP  _Internal transport         0.54056E+03   -0.54056E+03
+TotP  _Internal transport         0.10223E+04   -0.10223E+04
 TotP  _dCnvDPOP1                  0.00000E+00    0.00000E+00
 TotP  _dCnvPPOP2                  0.00000E+00    0.00000E+00
 TotP  _dCnvDPOP2                  0.00000E+00    0.00000E+00
-TotP  _dPrPOP1M                   0.36857E-02    0.00000E+00
-TotP  _dPrPOP2M                   0.12286E-02    0.00000E+00
+TotP  _dPrPOP1M                   0.53629E-02    0.00000E+00
+TotP  _dPrPOP2M                   0.17876E-02    0.00000E+00
 TotP  _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.54056E+03   -0.54056E+03
+SUM OF ALL TERMS                  0.10223E+04   -0.10223E+04
 
 
 MASS BALANCE PER VOLUME
@@ -527,149 +527,149 @@ Substance Continuity           Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
 Contin_Storage                    0.10417E-06    0.00000E+00
 Contin_All Bo+Lo                  0.00000E+00    0.00000E+00
-Contin_Internal transport         0.36035E+05   -0.36034E+05
-SUM OF ALL TERMS                  0.36035E+05   -0.36034E+05
+Contin_Internal transport         0.35778E+05   -0.35778E+05
+SUM OF ALL TERMS                  0.35778E+05   -0.35778E+05
 
 Substance OXY                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-OXY   _Storage                    0.00000E+00   -0.42022E-01
+OXY   _Storage                    0.00000E+00   -0.70524E+00
 OXY   _All Bo+Lo                  0.00000E+00    0.00000E+00
-OXY   _Internal transport         0.25510E+06   -0.25514E+06
-OXY   _dREAROXY                   0.40711E+02    0.00000E+00
-OXY   _dCnOXYM                    0.00000E+00   -0.16509E+02
-OXY   _dUpNO3M                    0.17305E+01    0.00000E+00
-OXY   _dPrOXYM                    0.15481E+02    0.00000E+00
-SUM OF ALL TERMS                  0.25516E+06   -0.25516E+06
+OXY   _Internal transport         0.30374E+06   -0.30386E+06
+OXY   _dREAROXY                   0.14887E+02    0.00000E+00
+OXY   _dCnOXYM                    0.00000E+00   -0.11345E+03
+OXY   _dUpNO3M                    0.12156E+02    0.00000E+00
+OXY   _dPrOXYM                    0.20666E+03    0.00000E+00
+SUM OF ALL TERMS                  0.30397E+06   -0.30397E+06
 
 Substance NH4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-NH4   _Storage                    0.00000E+00   -0.35998E-01
+NH4   _Storage                    0.00000E+00   -0.15997E-01
 NH4   _All Bo+Lo                  0.00000E+00    0.00000E+00
-NH4   _Internal transport         0.32436E+04   -0.32630E+04
-NH4   _dMinPON1                   0.16684E+02    0.00000E+00
+NH4   _Internal transport         0.28319E+04   -0.28513E+04
+NH4   _dMinPON1                   0.16685E+02    0.00000E+00
 NH4   _dMinPON2                   0.27908E+01    0.00000E+00
 NH4   _dUpNH4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.32631E+04   -0.32631E+04
+SUM OF ALL TERMS                  0.28514E+04   -0.28514E+04
 
 Substance NO3                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-NO3   _Storage                    0.50002E-01    0.00000E+00
+NO3   _Storage                    0.80044E-01    0.00000E+00
 NO3   _All Bo+Lo                  0.00000E+00    0.00000E+00
-NO3   _Internal transport         0.18054E+04   -0.18050E+04
-NO3   _dUpNO3M                    0.00000E+00   -0.37858E+00
-SUM OF ALL TERMS                  0.18054E+04   -0.18054E+04
+NO3   _Internal transport         0.97526E+04   -0.97500E+04
+NO3   _dUpNO3M                    0.00000E+00   -0.26594E+01
+SUM OF ALL TERMS                  0.97527E+04   -0.97527E+04
 
 Substance PO4                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
 PO4   _Storage                    0.00000E+00   -0.10249E-02
 PO4   _All Bo+Lo                  0.00000E+00    0.00000E+00
-PO4   _Internal transport         0.40127E+03   -0.40184E+03
-PO4   _dMinPOP1                   0.49859E+00    0.00000E+00
+PO4   _Internal transport         0.39821E+03   -0.39877E+03
+PO4   _dMinPOP1                   0.49858E+00    0.00000E+00
 PO4   _dMinPOP2                   0.71824E-01    0.00000E+00
 PO4   _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.40184E+03   -0.40184E+03
+SUM OF ALL TERMS                  0.39878E+03   -0.39877E+03
 
 Substance TIC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TIC   _Storage                    0.00000E+00   -0.38500E-02
+TIC   _Storage                    0.00000E+00   -0.70864E+01
 TIC   _All Bo+Lo                  0.00000E+00    0.00000E+00
-TIC   _Internal transport         0.10812E+07   -0.10812E+07
-TIC   _dREARCO2                   0.27248E+01    0.00000E+00
-TIC   _dMALTIC                    0.00000E+00   -0.57981E+01
-SUM OF ALL TERMS                  0.10812E+07   -0.10812E+07
+TIC   _Internal transport         0.10638E+07   -0.10636E+07
+TIC   _dREARCO2                   0.00000E+00   -0.80200E+02
+TIC   _dMALTIC                    0.00000E+00   -0.77400E+02
+SUM OF ALL TERMS                  0.10638E+07   -0.10638E+07
 
 Substance ALKA                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-ALKA  _Storage                    0.00000E+00   -0.15483E+00
+ALKA  _Storage                    0.51845E+02    0.00000E+00
 ALKA  _All Bo+Lo                  0.00000E+00    0.00000E+00
-ALKA  _Internal transport         0.72131E+07   -0.72132E+07
+ALKA  _Internal transport         0.52142E+07   -0.52143E+07
 ALKA  _dMinPON1                   0.72694E+02    0.00000E+00
 ALKA  _dMinPOP1                   0.00000E+00   -0.98122E+00
 ALKA  _dMinPON2                   0.12159E+02    0.00000E+00
 ALKA  _dMinPOP2                   0.00000E+00   -0.14135E+00
-ALKA  _dUpNO3M                    0.16495E+01    0.00000E+00
+ALKA  _dUpNO3M                    0.11587E+02    0.00000E+00
 ALKA  _dUpNH4M                    0.00000E+00    0.00000E+00
 ALKA  _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.72132E+07   -0.72132E+07
+SUM OF ALL TERMS                  0.52143E+07   -0.52143E+07
 
 Substance POC1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POC1  _Storage                    0.48967E-01    0.00000E+00
+POC1  _Storage                    0.48854E-01    0.00000E+00
 POC1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POC1  _Internal transport         0.34085E+05   -0.34058E+05
+POC1  _Internal transport         0.33851E+05   -0.33824E+05
 POC1  _dCnvPPOC1                  0.00000E+00    0.00000E+00
 POC1  _dCnvDPOC1                  0.00000E+00    0.00000E+00
 POC1  _dMinPOC1G                  0.00000E+00   -0.27684E+02
-POC1  _dPrPOC1M                   0.14743E+01    0.00000E+00
-SUM OF ALL TERMS                  0.34086E+05   -0.34086E+05
+POC1  _dPrPOC1M                   0.11262E+01    0.00000E+00
+SUM OF ALL TERMS                  0.33852E+05   -0.33852E+05
 
 Substance POC2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POC2  _Storage                    0.63869E-02    0.00000E+00
+POC2  _Storage                    0.63482E-02    0.00000E+00
 POC2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POC2  _Internal transport         0.35781E+05   -0.35777E+05
+POC2  _Internal transport         0.35527E+05   -0.35524E+05
 POC2  _dCnvPPOC1                  0.00000E+00    0.00000E+00
 POC2  _dCnvPPOC2                  0.00000E+00    0.00000E+00
 POC2  _dCnvDPOC2                  0.00000E+00    0.00000E+00
 POC2  _dMinPOC2G                  0.00000E+00   -0.36452E+01
-POC2  _dPrPOC2M                   0.49142E+00    0.00000E+00
-SUM OF ALL TERMS                  0.35781E+05   -0.35781E+05
+POC2  _dPrPOC2M                   0.37540E+00    0.00000E+00
+SUM OF ALL TERMS                  0.35527E+05   -0.35527E+05
 
 Substance PON1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PON1  _Storage                    0.31065E-01    0.00000E+00
+PON1  _Storage                    0.31058E-01    0.00000E+00
 PON1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-PON1  _Internal transport         0.59673E+04   -0.59507E+04
+PON1  _Internal transport         0.59286E+04   -0.59120E+04
 PON1  _dCnvPPON1                  0.00000E+00    0.00000E+00
 PON1  _dCnvDPON1                  0.00000E+00    0.00000E+00
-PON1  _dMinPON1                   0.00000E+00   -0.16684E+02
-PON1  _dPrPON1M                   0.73714E-01    0.00000E+00
-SUM OF ALL TERMS                  0.59674E+04   -0.59674E+04
+PON1  _dMinPON1                   0.00000E+00   -0.16685E+02
+PON1  _dPrPON1M                   0.56310E-01    0.00000E+00
+SUM OF ALL TERMS                  0.59287E+04   -0.59287E+04
 
 Substance PON2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-PON2  _Storage                    0.49315E-02    0.00000E+00
+PON2  _Storage                    0.49295E-02    0.00000E+00
 PON2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-PON2  _Internal transport         0.70106E+04   -0.70078E+04
+PON2  _Internal transport         0.69616E+04   -0.69588E+04
 PON2  _dCnvPPON1                  0.00000E+00    0.00000E+00
 PON2  _dCnvPPON2                  0.00000E+00    0.00000E+00
 PON2  _dCnvDPON2                  0.00000E+00    0.00000E+00
 PON2  _dMinPON2                   0.00000E+00   -0.27908E+01
-PON2  _dPrPON2M                   0.24571E-01    0.00000E+00
-SUM OF ALL TERMS                  0.70106E+04   -0.70106E+04
+PON2  _dPrPON2M                   0.18770E-01    0.00000E+00
+SUM OF ALL TERMS                  0.69617E+04   -0.69616E+04
 
 Substance POP1                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POP1  _Storage                    0.89851E-03    0.00000E+00
+POP1  _Storage                    0.89794E-03    0.00000E+00
 POP1  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POP1  _Internal transport         0.32452E+03   -0.32403E+03
+POP1  _Internal transport         0.32236E+03   -0.32186E+03
 POP1  _dCnvPPOP1                  0.00000E+00    0.00000E+00
 POP1  _dCnvDPOP1                  0.00000E+00    0.00000E+00
-POP1  _dMinPOP1                   0.00000E+00   -0.49859E+00
-POP1  _dPrPOP1M                   0.73714E-02    0.00000E+00
-SUM OF ALL TERMS                  0.32453E+03   -0.32453E+03
+POP1  _dMinPOP1                   0.00000E+00   -0.49858E+00
+POP1  _dPrPOP1M                   0.56310E-02    0.00000E+00
+SUM OF ALL TERMS                  0.32236E+03   -0.32236E+03
 
 Substance POP2                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-POP2  _Storage                    0.12627E-03    0.00000E+00
+POP2  _Storage                    0.12608E-03    0.00000E+00
 POP2  _All Bo+Lo                  0.00000E+00    0.00000E+00
-POP2  _Internal transport         0.35532E+03   -0.35525E+03
+POP2  _Internal transport         0.35282E+03   -0.35275E+03
 POP2  _dCnvPPOP1                  0.00000E+00    0.00000E+00
 POP2  _dCnvPPOP2                  0.00000E+00    0.00000E+00
 POP2  _dCnvDPOP2                  0.00000E+00    0.00000E+00
 POP2  _dMinPOP2                   0.00000E+00   -0.71824E-01
-POP2  _dPrPOP2M                   0.24571E-02    0.00000E+00
-SUM OF ALL TERMS                  0.35532E+03   -0.35532E+03
+POP2  _dPrPOP2M                   0.18770E-02    0.00000E+00
+SUM OF ALL TERMS                  0.35282E+03   -0.35282E+03
 
 Substance DOC                  Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-DOC   _Storage                    0.00000E+00   -0.27708E-04
+DOC   _Storage                    0.00000E+00   -0.86167E-03
 DOC   _All Bo+Lo                  0.00000E+00    0.00000E+00
-DOC   _Internal transport         0.36036E+05   -0.36038E+05
+DOC   _Internal transport         0.35797E+05   -0.35828E+05
 DOC   _dCnvDPOC1                  0.00000E+00    0.00000E+00
 DOC   _dCnvDPOC2                  0.00000E+00    0.00000E+00
-DOC   _dMALDOC                    0.25017E+01    0.00000E+00
-SUM OF ALL TERMS                  0.36038E+05   -0.36038E+05
+DOC   _dMALDOC                    0.31914E+02    0.00000E+00
+SUM OF ALL TERMS                  0.35829E+05   -0.35828E+05
 
 Substance DectCS1              Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
@@ -694,67 +694,67 @@ SUM OF ALL TERMS                  0.00000E+00    0.00000E+00
 
 Substance MALS                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALS  _Storage                    0.00000E+00   -0.42325E+00
+MALS  _Storage                    0.00000E+00   -0.39803E+02
 MALS  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALS  _Internal transport         0.00000E+00    0.00000E+00
-MALS  _dGrMALS                    0.42325E+00    0.00000E+00
-MALS  _dCanMALS                   0.00000E+00    0.00000E+00
 MALS  _dHrvMALS                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.42325E+00   -0.42325E+00
+MALS  _dGrMALS                    0.39803E+02    0.00000E+00
+MALS  _dCanMALS                   0.00000E+00    0.00000E+00
+SUM OF ALL TERMS                  0.39803E+02   -0.39803E+02
 
 Substance MALN                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALN  _Storage                    0.00000E+00   -0.29836E-01
+MALN  _Storage                    0.00000E+00   -0.87345E+00
 MALN  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALN  _Internal transport         0.00000E+00    0.00000E+00
-MALN  _dGrMALN                    0.00000E+00   -0.15945E+00
-MALN  _dStrMALN                   0.18929E+00    0.00000E+00
 MALN  _dHrvMALN                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.18929E+00   -0.18929E+00
+MALN  _dGrMALN                    0.00000E+00   -0.44550E+00
+MALN  _dStrMALN                   0.13189E+01    0.00000E+00
+SUM OF ALL TERMS                  0.13189E+01   -0.13189E+01
 
 Substance MALP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALP  _Storage                    0.00000E+00   -0.38321E-02
+MALP  _Storage                    0.00000E+00   -0.89687E-01
 MALP  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALP  _Internal transport         0.00000E+00    0.00000E+00
-MALP  _dGrMALP                    0.00000E+00    0.00000E+00
-MALP  _dStrMALP                   0.38321E-02    0.00000E+00
 MALP  _dHrvMALP                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.38321E-02   -0.38321E-02
+MALP  _dGrMALP                    0.00000E+00    0.00000E+00
+MALP  _dStrMALP                   0.89687E-01    0.00000E+00
+SUM OF ALL TERMS                  0.89687E-01   -0.89687E-01
 
 Substance MALC                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-MALC  _Storage                    0.00000E+00   -0.28569E+00
+MALC  _Storage                    0.00000E+00   -0.24470E+02
 MALC  _All Bo+Lo                  0.00000E+00    0.00000E+00
 MALC  _Internal transport         0.00000E+00    0.00000E+00
-MALC  _dGrMALC                    0.00000E+00   -0.30917E+01
-MALC  _dStrMALC                   0.33774E+01    0.00000E+00
 MALC  _dHrvMALC                   0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.33774E+01   -0.33774E+01
+MALC  _dGrMALC                    0.00000E+00   -0.21246E+02
+MALC  _dStrMALC                   0.45716E+02    0.00000E+00
+SUM OF ALL TERMS                  0.45716E+02   -0.45716E+02
 
 Substance TotN                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TotN  _Storage                    0.50000E-01    0.00000E+00
+TotN  _Storage                    0.10003E+00    0.00000E+00
 TotN  _All Bo+Lo                  0.00000E+00    0.00000E+00
-TotN  _Internal transport         0.18027E+05   -0.18027E+05
+TotN  _Internal transport         0.25475E+05   -0.25472E+05
 TotN  _dCnvDPON1                  0.00000E+00    0.00000E+00
 TotN  _dCnvPPON2                  0.00000E+00    0.00000E+00
 TotN  _dCnvDPON2                  0.00000E+00    0.00000E+00
-TotN  _dPrPON1M                   0.73714E-01    0.00000E+00
-TotN  _dPrPON2M                   0.24571E-01    0.00000E+00
-TotN  _dUpNO3M                    0.00000E+00   -0.37858E+00
+TotN  _dPrPON1M                   0.56310E-01    0.00000E+00
+TotN  _dPrPON2M                   0.18770E-01    0.00000E+00
+TotN  _dUpNO3M                    0.00000E+00   -0.26594E+01
 TotN  _dUpNH4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.18027E+05   -0.18027E+05
+SUM OF ALL TERMS                  0.25475E+05   -0.25475E+05
 
 Substance TotP                 Sources/Inflows Sinks/Outflows
 ------------------------------------------------------------
-TotP  _Storage                    0.00000E+00   -0.15299E-06
+TotP  _Storage                    0.00000E+00   -0.92448E-06
 TotP  _All Bo+Lo                  0.00000E+00    0.00000E+00
-TotP  _Internal transport         0.10811E+04   -0.10811E+04
+TotP  _Internal transport         0.10734E+04   -0.10734E+04
 TotP  _dCnvDPOP1                  0.00000E+00    0.00000E+00
 TotP  _dCnvPPOP2                  0.00000E+00    0.00000E+00
 TotP  _dCnvDPOP2                  0.00000E+00    0.00000E+00
-TotP  _dPrPOP1M                   0.73714E-02    0.00000E+00
-TotP  _dPrPOP2M                   0.24571E-02    0.00000E+00
+TotP  _dPrPOP1M                   0.56310E-02    0.00000E+00
+TotP  _dPrPOP2M                   0.18770E-02    0.00000E+00
 TotP  _dUpPO4M                    0.00000E+00    0.00000E+00
-SUM OF ALL TERMS                  0.10811E+04   -0.10811E+04
+SUM OF ALL TERMS                  0.10734E+04   -0.10734E+04

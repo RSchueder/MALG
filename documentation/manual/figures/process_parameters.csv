@@ -12,6 +12,7 @@ FlMALC,Flux calculation for Macroalgae carbon storage (C),MALS,Using substance n
  , ,FrBmMALS,Using output from proces [MALDIS              ],(DM/m2),Fraction of bottom layer MALS in this seg
  , ,MALCmin,0.100000E-01,(gC/gDM),minimum C in storage
  , ,CDRatMALS,0.200000,(gC/gDM),C to structural dry mass ratio in MALS
+ , ,TotAreaMAL,Using output from proces [MALDIS              ],(m2),area of frond in this column
  , ,ArDenMAL,60.0000,(gDM/m2),Area density frond (grams/m2 surface area)
  , ,Temp,Using function nr  1,(oC),ambient water temperature
  , ,R1,0.278500E-03,(gC/dm2/h),Reference respiration rate at T1
@@ -43,11 +44,12 @@ FlMALN,Flux for Macroalgae nutrient storage (N/P),MALS,Using substance nr  14,(g
  , ,NH4,Using substance nr   3,(gN/m3),external NH4 concentration
  , ,PO4,Using substance nr   4,(gP/m3),external P concentration
  , ,FrBmMALS,Using output from proces [MALDIS              ],(DM/m2),Fraction of bottom layer MALS in this seg
+ , ,TotAreaMAL,Using output from proces [MALDIS              ],(m2),area of frond in this column
  , ,ArDenMAL,60.0000,(gDM/m2),Area density frond (grams/m2 surface area)
  , ,MALNmin,0.100000E-01,(-),minimum N in storage
- , ,MALNmax,0.220000E-01,(gN/gDM),maximum N in MALN
+ , ,MALNmax,0.220000E-01,(gN/gDM),maximum N in MALN w.r.t. MALS
  , ,MALPmin,0.100000E-02,(gP/gDM),minimum P in storage
- , ,MALPmax,0.220000E-02,(gP/gDM),maximum P in MALP
+ , ,MALPmax,0.220000E-02,(gP/gDM),maximum P in MALP w.r.t. MALS
  , ,CDRatMALS,0.200000,(gC/gDM),C to structural dry mass ratio in MALS
  , ,NCRatMALS,0.500000E-01,(gN/gC),N:C ratio in MALS
  , ,PCRatMALS,0.500000E-02,(gP/gC),P:C ratio in MALS
@@ -55,7 +57,7 @@ FlMALN,Flux for Macroalgae nutrient storage (N/P),MALS,Using substance nr  14,(g
  , ,Ksp,0.126000E-01,(gP/m3),half saturation MALN P uptake
  , ,JNmax,0.336000,(gN/m2/d),maximum MALN N uptake rate (per area frond)
  , ,JPmax,0.336000,(gP/m2/d),maximum MALP P uptake rate (per area frond)
- , ,Vel,0.150000,(m/s),velocity
+ , ,Velocity,0.150000,(m/s),horizontal flow velocity
  , ,Vel65,0.300000E-01,(m/s),current speed at which J = 0.65Jmax
  , ,MBotSeg,Using output from proces [MALDIS              ],(-),bottom segment for this segment
  , ,Surf,Using parameter nr  1,(m2),horizontal surface area of a DELWAQ segment
@@ -77,7 +79,8 @@ FlMALS,Flux calculation for Macroalgae Structural Mass,MALS,Using substance nr  
  , ,m1,0.108500,(-),growth rate parameter 1
  , ,m2,0.300000E-01,(1/d),growth rate parameter 2
  , ,LengthMAL,Using output from proces [MALDIS              ],(m),length of frond in this column
- , ,AreaMAL,Using output from proces [MALDIS              ],(m2),area of frond in this column
+ , ,TotAreaMAL,Using output from proces [MALDIS              ],(m2),area of frond in this column
+ , ,nFrond,1.00000,(1/m2),number of fronds per m2
  , ,MALS0,0.600000E-01,(m2),growth rate parameter 3
  , ,a1,1.02000,(-),photoperiod parameter 1
  , ,a2,0.120000,(-),photoperiod parameter 2
@@ -102,17 +105,18 @@ MALDIS,Distribution of macroalgae mass in water column,Surf,Using parameter nr  
  , ,FootDepth,-999.999,(m),location of frond attachment in the water columns
  , ,LmaxMAL,10.0000,(m),Maximum length MALG
  , ,SWGroDir,1.00000,(-),grow direction MALG(1 = up -1 = down )
+ , ,nFrond,1.00000,(1/m2),number of fronds per m2
  , ,LinDenMAL,100.000,(g/m3),linear density of macroalgae
  , ,ArDenMAL,60.0000,(gDM/m2),Area density frond (grams/m2 surface area)
  , ,MBotSeg,Using output from proces [MALDIS              ],(-),bottom segment for this segment
-DaylP,ent previous and max daylength,ITIME,Using DELWAQ time,(scu),DELWAQ time
+DaylP,alculation of current previous and max daylength,ITIME,Using DELWAQ time,(scu),DELWAQ time
  , ,Latitude,52.0000,(degrees),latitude of study area
  , ,RefDay,0.00000,(d),daynumber of reference day simulation
  , ,AuxSys,86400.0,(scu/d),ratio between days and system clock
 RearOXY,Reaeration of oxygen,OXY,Using substance nr   2,,Dissolved Oxygen
  , ,Depth,Using parameter nr  2,(m),depth of segment
  , ,Temp,Using function nr  1,(oC),ambient water temperature
- , ,Velocity,0.500000,(m/s),horizontal flow velocity
+ , ,Velocity,0.150000,(m/s),horizontal flow velocity
  , ,VWind,3.00000,(m/s),wind speed
  , ,SWRear,10.0000,(-),switch for oxygen reaeration formulation (1-13)
  , ,KLRear,1.00000,(m/d),reaeration transfer coefficient
@@ -141,7 +145,7 @@ SaturOXY,Saturation concentration oxygen,Cl,20000.0,(g/m3),Chloride
 RearCO2,Reaeration of carbon dioxide,DisCO2,Using output from proces [pH_carb             ],(g/m3),concentration of dissolved carbon dioxide
  , ,Depth,Using parameter nr  2,(m),depth of segment
  , ,Temp,Using function nr  1,(oC),ambient water temperature
- , ,Velocity,0.500000,(m/s),horizontal flow velocity
+ , ,Velocity,0.150000,(m/s),horizontal flow velocity
  , ,VWind,3.00000,(m/s),wind speed
  , ,SWRearCO2,11.0000,(-),switch for CO2 reaeration formulation (1113)
  , ,KLRearCO2,1.00000,(m/d),CO2 reaeration transfer coefficient

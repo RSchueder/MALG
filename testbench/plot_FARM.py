@@ -20,6 +20,7 @@ locs = {'Farm1':
 402,
 'Farm3' :
 423}
+    
 with open(r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ\includes_deltashell\B2_outlocs.inc','w') as out:
     out.write('63\n')
     for ind,kk in enumerate(locs.keys()):
@@ -28,7 +29,6 @@ with open(r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ\includes
         out.write(kk + ' 20 ''\n')
         for ii in range(1,nolay+1):
             out.write(str(int(locs[kk] + (ii-1)*nosegs/nolay)) + '\n')
-
 
 def MakeTS(var):
     return pd.Timestamp(var)

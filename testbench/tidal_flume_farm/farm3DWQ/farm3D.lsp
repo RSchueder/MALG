@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/09 17:44:36 
+ Execution start: 2019/04/12 11:25:10 
                                                                                 
  found -p command line switch                                                   
 
@@ -566,7 +566,7 @@ total number of substances with fractions :  0
        [JPmax               ] maximum MALP P uptake rate (per area frond)                           
        using default value: 0.336000                                                                
        [Velocity            ] horizontal flow velocity                                              
-       Using constant nr 42 with value: 0.150000                                                    
+       Using constant nr 45 with value: 0.150000                                                    
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
@@ -614,7 +614,7 @@ total number of substances with fractions :  0
        [TotAreaMAL          ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
        [nFrond              ] number of fronds per m2                                               
-       using default value:  1.00000                                                                
+       Using constant nr 43 with value:  20.0000                                                    
        [MALS0               ] growth rate parameter 3                                               
        Using constant nr 36 with value: 0.600000E-01                                                
        [a1                  ] photoperiod parameter 1                                               
@@ -660,15 +660,15 @@ total number of substances with fractions :  0
        [MALS                ] MacroALgae Structural biomass                                         
        Using substance nr  18                                                                       
        [FootDepth           ] location of frond attachment in the water columns                     
-       using default value: -999.999                                                                
+       Using constant nr 42 with value:  5.00000                                                    
        [LmaxMAL             ] Maximum length MALG                                                   
        Using constant nr 40 with value:  10.0000                                                    
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
        using default value:  1.00000                                                                
        [nFrond              ] number of fronds per m2                                               
-       using default value:  1.00000                                                                
+       Using constant nr 43 with value:  20.0000                                                    
        [LinDenMAL           ] linear density of macroalgae                                          
-       using default value:  100.000                                                                
+       Using constant nr 41 with value:  50.0000                                                    
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -804,7 +804,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       Using constant nr 42 with value: 0.150000                                                    
+       Using constant nr 45 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRear              ] switch for oxygen reaeration formulation (1-13)                       
@@ -866,7 +866,7 @@ total number of substances with fractions :  0
        [Temp                ] ambient water temperature                                             
        Using function nr  1                                                                         
        [Velocity            ] horizontal flow velocity                                              
-       Using constant nr 42 with value: 0.150000                                                    
+       Using constant nr 45 with value: 0.150000                                                    
        [VWind               ] wind speed                                                            
        using default value:  3.00000                                                                
        [SWRearCO2           ] switch for CO2 reaeration formulation (11,13)                         
@@ -1249,5 +1249,4 @@ total number of substances with fractions :  0
  output [Wdry                ] from proces [FlMALS    ]                                             
  output [Wwet                ] from proces [FlMALS    ]                                             
  output [MBotSeg             ] from proces [MALDIS    ]                                             
- output [FootDepth           ] default from [MALDIS              ]                                  
                                                                                                     

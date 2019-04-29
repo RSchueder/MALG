@@ -101,6 +101,9 @@ $Z2$ & Distance from water surface to bottom of segment (positive down) (m)\\
 \end{tabular}
 
 The segment top depth $Z1$ and segment bottom depth $Z2$ are then checked against $Zm$ to see if the frond resides entirely within, entirely outside, or partially within the current segment in the segment loop. The fraction of the biomass allocated to the current segment is then the ratio of the segment depth to $LenMAL$ in the column for segments in which the frond completely resides, or the ratio of the difference between $Zm$ and either $Z1$ or $Z2$ to $LenMAL$ for segments in which the tip or foot of the frond is found.
+
+Experiments done by \cite{sjotun1993} show that the length of \textit{Saccharina} can vary between 0.8 m and 1.6 m, and the growth in length of the fronds varied between 0.1 and 1.2 cm d${^-1}$. The length to width ratios of the new frond material varied quite a bit, but during periods of high growth it was approximately 0.5. Thus, we assume for every cm gained in length there are 2 cm gained in width. Note that the overall shape of the plant is such that the L/W ratio is \textgreater 1, because it is only new material that grows at a ratio less than 1. Taking an average daily length increase of 0.5 cm d${^-1}$, we conclude that the area gained per day is about  0.5 cm${^2}$d${^-2}$. Taking the \cite{broch2012} value of 0.6 g sw dm${^-2}$ as the area density, it is found that the plant is expected to require 0.003 g sw cm${^-1}$ of growth in length. Thus, the default value for $LinDenMAL$ is set to 0.3 g sw m${^-1}$.
+
 \pagebreak
 
 \subsection{Flux of Macroalgae structural biomass}
