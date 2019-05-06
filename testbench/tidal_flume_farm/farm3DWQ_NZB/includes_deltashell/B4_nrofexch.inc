@@ -1,0 +1,1 @@
+18960 0 9443 ; number of exchanges in three directions

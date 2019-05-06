@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/12 14:15:15 
+ Execution start: 2019/05/01 14:00:00 
                                                                                 
  found -p command line switch                                                   
 
@@ -660,15 +660,15 @@ total number of substances with fractions :  0
        [MALS                ] MacroALgae Structural biomass                                         
        Using substance nr  18                                                                       
        [FootDepth           ] location of frond attachment in the water columns                     
-       Using constant nr 42 with value:  1.00000                                                    
+       using default value: -999.999                                                                
        [LmaxMAL             ] Maximum length MALG                                                   
-       Using constant nr 40 with value:  10.0000                                                    
+       Using constant nr 40 with value:  5.00000                                                    
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
-       using default value:  1.00000                                                                
+       Using constant nr 42 with value: -1.00000                                                    
        [nFrond              ] number of fronds per m2                                               
        Using constant nr 43 with value:  1.00000                                                    
        [LinDenMAL           ] linear density of macroalgae                                          
-       Using constant nr 41 with value:  100.000                                                    
+       Using constant nr 41 with value:  20.0000                                                    
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
@@ -1249,4 +1249,5 @@ total number of substances with fractions :  0
  output [Wdry                ] from proces [FlMALS    ]                                             
  output [Wwet                ] from proces [FlMALS    ]                                             
  output [MBotSeg             ] from proces [MALDIS    ]                                             
+ output [FootDepth           ] default from [MALDIS              ]                                  
                                                                                                     

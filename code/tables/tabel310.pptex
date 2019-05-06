@@ -5590,7 +5590,8 @@ FrPO1MAL   colsep fraction of MALS that goes to POC1 in decay        colsep (-) 
 FrPO2MAL   colsep fraction of MALS that goes to POC2 in decay        colsep (-)                  colsep           0.250 \\
 LmaxMAL    colsep Maximum length MALG                                colsep (m)                  colsep          10.000 \\
 SWGroDir   colsep grow direction MALG(1 = up, -1 = down )            colsep (-)                  colsep           1.000 \\
-LinDenMAL  colsep linear density of macroalgae                       colsep (g/m3)               colsep         100.000 \\
+LinDenMAL  colsep linear density of macroalgae                       colsep (g/m3)               colsep         120.000 \\
+LinDenCor  colsep correction factor for low biomass density          colsep (-)                  colsep           1.000 \\
 ArDenMAL   colsep Area density frond (grams/m2 surface area)         colsep (gDM/m2)             colsep          60.000 \\
 MALNmax    colsep maximum N in MALN w.r.t. MALS                      colsep (gN/gDM)             colsep           0.022 \\
 MALPmax    colsep maximum P in MALP w.r.t. MALS                      colsep (gP/gDM)             colsep           0.002 \\

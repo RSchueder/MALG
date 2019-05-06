@@ -10,4 +10,4 @@ FUNCTIONS
  'RadSurf'
  LINEAR
  DATA
-INCLUDE 'RadSurf_hourly.prn'
+INCLUDE 'RadSurf.prn'

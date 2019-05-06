@@ -542,4 +542,4 @@ MALS       colsep MacroALgae Structural biomass                      colsep (gDM
 MALN       colsep MacroALgae Nitrogen storage                        colsep (gN/m2)              \\
 MALP       colsep MacroALgae Phosphorous storage                     colsep (gP/m2)              \\
 MALC       colsep MacroALgae Carbon storage                          colsep (gC/m2)              \\
-FootDepth  colsep location of frond attachment in the water columns  colsep (m)                  \\
+FootDepth  colsep location of frond attachment in the water column < colsep (m)                  \\

@@ -97,35 +97,43 @@
               K1HrvMALS = PMSA(IPNT(6)  )     
               Depth     = PMSA(IPNT(7) )    
               DELT      = PMSA(IPNT(8) )
+              IF (MALS .gt. 0.0) THEN
+                  ! gDM/m2/d
+                  !! conditional for not extracting mass beyond available source
+                  dHrvMALS  = K0HrvMALS + MALS * K1HrvMALS
+                  IF ( MALS .GT. dHrvMALS*DELT ) THEN
+                  ELSE
+                      dHrvMALS = 0.0
+                  ENDIF
               
-              ! gDM/m2/d
-              !! conditional for not extracting mass beyond available source
-              ! MAR 18 DO HERE
-              dHrvMALS  = K0HrvMALS + MALS * K1HrvMALS
-              IF ( MALS .GT. dHrvMALS*DELT ) THEN
+                  ! gN/m2 / gDM m2 * gDM/m2 d
+                  ! = gN /m2 d
+                  dHrvMALN  = dHrvMALS * MALN/MALS
+                  dHrvMALP  = dHrvMALS * MALP/MALS
+                  dHrvMALC  = dHrvMALS * MALC/MALS
+              
+                  FL ( IdHrvMALS ) = dHrvMALS
+                  FL ( IdHrvMALN ) = dHrvMALN
+                  FL ( IdHrvMALP ) = dHrvMALP  
+                  FL ( IdHrvMALC ) = dHrvMALC
               ELSE
-                  dHrvMALS = 0.0
+                  FL ( IdHrvMALS ) = 0.0
+                  FL ( IdHrvMALN ) = 0.0
+                  FL ( IdHrvMALP ) = 0.0  
+                  FL ( IdHrvMALC ) = 0.0                      
+                
               ENDIF
-              
-              ! gN/m2 / gDM m2 * gDM/m2 d
-              ! = gN /m2 d
-              dHrvMALN  = dHrvMALS * MALN/MALS
-              dHrvMALP  = dHrvMALS * MALP/MALS
-              dHrvMALC  = dHrvMALS * MALC/MALS
-              
-              FL ( IdHrvMALS ) = dHrvMALS
-              FL ( IdHrvMALN ) = dHrvMALN
-              FL ( IdHrvMALP ) = dHrvMALP  
-              FL ( IdHrvMALC ) = dHrvMALC 
+                
+              IdHrvMALS = IdHrvMALS + NOFLUX
+              IdHrvMALN = IdHrvMALN + NOFLUX
+              IdHrvMALP = IdHrvMALP + NOFLUX
+              IdHrvMALC = IdHrvMALC + NOFLUX
+         
+              IPNT     = IPNT     + INCREM      
               
            END IF
            
-          IdHrvMALS = IdHrvMALS + NOFLUX
-          IdHrvMALN = IdHrvMALN + NOFLUX
-          IdHrvMALP = IdHrvMALP + NOFLUX
-          IdHrvMALC = IdHrvMALC + NOFLUX
-         
-          IPNT     = IPNT     + INCREM
+          
 
  9000 CONTINUE
 

@@ -103,7 +103,6 @@ C
       INTEGER IKMRK1
       INTEGER IKMRK2
       
-      REAL(4) lengthLoc
       REAL(4) LocAreMAL
       REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
       REAL(4) dDecayMALS  !    decay of MALS                                      (gDM/m3/d)
@@ -126,6 +125,7 @@ C
       REAL(4) TotC
       REAL(4) Wdry
       REAL(4) Wwet
+      REAL(4) chk
 
 C
 C*******************************************************************************
@@ -212,7 +212,6 @@ C
                 ! find amount of mass in this segment (gDM/m2)
    
                 MALS = MALS * FrBmMALS 
-                lengthLoc = HactMAL * FrBmMALS
                 LocAreMAL = TotAreMAL / Surf
                 
                 ! density limitation

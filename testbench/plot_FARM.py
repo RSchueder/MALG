@@ -40,10 +40,10 @@ plt.rcParams["figure.figsize"] = [18,9.93]
 xfmt = mdates.DateFormatter('%m-%d')
 
 
-file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ\farm3D.his'
+file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ_NZB\farm3D.his'
 
 his = d3d.DelwaqHisFile(file)
-seg = 'Farm2(20)'
+seg = 'Farm2'
 ###############################################################################
 
 #fig, ax = plt.subplots(1,2)
@@ -84,7 +84,7 @@ plt.legend()
 ###############################################################################
 
 
-fign = plt.figure(4)
+fign = plt.figure(3)
 ax = fign.add_axes([0.1,0.1,0.8,0.8])               
 area = his['LocAreaMAL',seg,:]
 ax.plot(his.dates,area*100.0, 'k', label = 'Model')
@@ -98,8 +98,10 @@ ax.xaxis.set_major_formatter(xfmt)
 #    pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\frond_area.png') ,dpi = 700)
 
 
-fign = plt.figure(5)
-ax = fign.add_axes([0.1,0.1,0.8,0.8])     
+fig, ax = plt.subplots(1,4)
+fign = plt.figure(4)
+ax = fign.add_axes([0.1,0.1,0.8,0.8])
+     
 gross = his['LocGroPS',seg,:]
 ax.plot(his.dates,gross, 'k', label = 'Model')
 ax.set_ylabel('Gross daily production [dm$^{2}$ d$^{-1}$]')

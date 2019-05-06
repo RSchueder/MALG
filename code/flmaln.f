@@ -175,15 +175,15 @@ C
                 ! we multimply this by MALS * area density (g/m2)
                                 
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
-                  LocUpN = (TotAreMAL) * JNmax * (NO3/(Ksn + NO3))
-     &              * LimN * LimVel 
+                  LocUpN = (TotAreMAL*FrBmMALS) * JNmax * 
+     &                (NO3/(Ksn + NO3))  * LimN * LimVel 
                 ELSE
                     LocUpN = 0.0
                 ENDIF
                 
                 IF (LimP .gt. 0.0 .AND. MALP .lt. MALPmax) THEN
-                  LocUpP = (TotAreMAL) * JPmax * (PO4/(Ksp + PO4))
-     &              * LimP * LimVel
+                  LocUpP = (TotAreMAL*FrBmMALS) * JPmax * 
+     &                (PO4/(Ksp + PO4))  * LimP * LimVel
                 ELSE
                     LocUpP = 0.0
                 ENDIF

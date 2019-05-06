@@ -5,8 +5,8 @@
   'LocalDepth' ' '
   'TotalDepth' ' '
   'Depth' ' '
-  'Temp' ' '
-  'RadSurf' ' '
+  'Temp' 'volume'
+  'RadSurf' 'volume'
   'Itip' ' '
   'Itipu' ' '
   'BrochP' ' '                      ;x gross production as per Broch                          (gC/dm2/h)
@@ -20,14 +20,14 @@
   'daylend' ' '                     ;x daylength default definition                           (-)                 
   'daylenp' ' '                     ;x daylength of previous day                              (-)                 
   'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   
-  'MALNDMS' ' '                      ;x macroalgae N storage in segment                        (gN/gDM)            
-  'MALPDMS' ' '                      ;x macroalgae P storage in segment                        (gP/gDM)            
-  'MALCDMS' ' '                      ;x macroalgae C storage in segment                        (gC/gDM)            
-  'MALSNC' ' '                      ;x ratio N:C in whole frond                               (gN/gC)             
-  'MALSPC' ' '                      ;x ratio P:C in whole frond                               (gP/gC)             
-  'MALSCDM' ' '                      ;x ratio C:DM in whole frond                              (gC/gDM)             
-  'MALSNDM' ' '                      ;x ratio N:DM in whole frond                              (gN/gDM)
-  'MALSPDM' ' '                      ;x ratio P:DM in whole frond                              (gP/gDM) 
+  'MALNDMS' 'volume'                      ;x macroalgae N storage in segment                        (gN/gDM)            
+  'MALPDMS' 'volume'                      ;x macroalgae P storage in segment                        (gP/gDM)            
+  'MALCDMS' 'volume'                      ;x macroalgae C storage in segment                        (gC/gDM)            
+  'MALSNC'  'volume'                      ;x ratio N:C in whole frond                               (gN/gC)             
+  'MALSPC'  'volume'                      ;x ratio P:C in whole frond                               (gP/gC)             
+  'MALSCDM' 'volume'                      ;x ratio C:DM in whole frond                              (gC/gDM)             
+  'MALSNDM' 'volume'                      ;x ratio N:DM in whole frond                              (gN/gDM)
+  'MALSPDM' 'volume'                      ;x ratio P:DM in whole frond                              (gP/gDM) 
   'LimDenS' ' '                     ;x biomass limitation MALS                                (-)                 
   'LimPhoS' ' '                     ;x photoperiod limitation MALS                            (-)                 
   'LimTemS' ' '                     ;x temperature limitation MALS                            (-)                 
@@ -49,15 +49,15 @@
   'ExudMALC' ' '                    ;x exudation MALC                                         (gC/m2/d) 
   'FrBmMALS' ' '                    ;x Fraction of bottom layer MALS in this seg              (DM/m2)             
   'BmLayMAL' ' '                    ;x   Biomass of MALS in segment                            (gDM/m2)           
-  'LengthMAL' ' '                    ;x length of frond in this column                         (m)                 
+  'LengthMAL' 'volume'                    ;x length of frond in this column                         (m)                 
   'TotAreaMAL' ' '                     ;x area of frond in this column                           (m2)                
   'LocAreaMAL' ' '                     ;x area of frond in this m2                           (m2/m2)                
-  'TipDepth' ' '                    ;x depth of tip of frond in this column                   (m)                 
-  'LimVel' ' '                      ;x velocity limitation                                    (-)                 
+  'TipDepth' 'volume'                    ;x depth of tip of frond in this column                   (m)                 
+  'LimVel' 'volume'                      ;x velocity limitation                                    (-)                 
   'LocUpN' ' '                      ;x Local N storage uptake flux                            (gN/m3/d)           
   'LocUpP' ' '                      ;x Local P storage uptake flux                            (gP/m3/d)   
   'LocUpC' ' '                      ;x Local C uptake flux                                    (gC/m3/d)   
   'Wdry' ' '  
   'Wwet' ' '
-  'MBotSeg' ' '                     ;x bottom segment for this segment                        (-) 
-  'FootDepth' ' '  
+  'MBotSeg' 'volume'                     ;x bottom segment for this segment                        (-) 
+  'FootDepth' 'volume'  

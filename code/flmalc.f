@@ -94,6 +94,7 @@ C
       REAL(4) Tph
       REAL(4) alpha0
       REAL(4) areaLoc
+      REAL(4) chk
 
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -720,15 +721,15 @@ C
                 ! effect on TIC is net of production and maintenance respiration
                 ! growth respiration is included in FLMALS
                 ! TIC gets converted (lost) to DOC in exudate
-
-                dMALTIC = TotAreMAL * (P - R) / (Surf*Depth) 
+                ! in PRIPRO.f it is      STOICH TIC = -1.0 * dPPGREEN = ( PPROD - RESP ) * ALG
+                dMALTIC = TotAreMAL * FrBmMALS * (P - R) / (Surf*Depth) 
                 
                 ! exudate is produced as DOC, E is a fraction of production              
                 ! exudation (leakage) gC/(m3 d)
-                dMALDOC = TotAreMAL * P * E / (Surf*Depth) 
+                dMALDOC = TotAreMAL * FrBmMALS * P * E / (Surf*Depth) 
                 
                 ! uptake into storage gC/(m2 d)
-                LocUpC  = TotAreMAL * ( P * (1.0-E) - R ) / Surf
+                LocUpC = TotAreMAL * FrBmMALS * (P * (1.0-E) - R) / Surf
                 ! oxygen 
                 ! photosynthesis produces oxygen, respiration consumes
                 ! look to TIC to see what the balance is
@@ -736,9 +737,9 @@ C
                 dPrMALOXY   = 2.67 * dMALTIC
                 ! need ALKA!
                 
-                GrosMALC            = TotAreMAL * P /Surf
-                RespMALC            = TotAreMAL * R /Surf
-                ExudMALC            = TotAreMAL * P * E /Surf
+                GrosMALC            = TotAreMAL * FrBmMALS * P /Surf
+                RespMALC            = TotAreMAL * FrBmMALS * R /Surf
+                ExudMALC            = TotAreMAL * FrBmMALS * P * E /Surf
                 PMSA( IPNT( 31)   ) = LocUpC
                 PMSA( IPNT( 32)   ) = Itip
                 PMSA( IPNT( 33)   ) = Itipu
@@ -758,19 +759,24 @@ C
                 ! if no storage, respiration is taken from structural mass.
                 ! fluxes were for whole segment, so convert to /m2
                 IF (LocUpC .ge. 0.0) THEN
-          FL(IdStrMALC+FLCREM)= FL(IdStrMALC + FLCREM) + LocUpC
+                  FL(IdStrMALC+FLCREM) = FL(IdStrMALC + FLCREM) + LocUpC
+                  FL(IdCanMALS+FLCREM) = 0.0
                 ELSE
                   !areaLoc * ArDenMALS * (MALCmin - MALC)/(MALS*CDRatMALS)
-          FL(IdCanMALS+FLCREM)= FL(IdCanMALS + FLCREM)+LocUpC/CDRatMALS
+                  FL(IdStrMALC+FLCREM) = 0.0                    
+                  FL(IdCanMALS+FLCREM) = FL(IdCanMALS + FLCREM) + 
+     &             LocUpC/CDRatMALS
+                  
                 ENDIF
 
             ENDIF
-            ENDIF
+       ENDIF
 
        IdUpMALTIC   = IdUpMALTIC + NOFLUX
        IdPrMALDOC   = IdPrMALDOC + NOFLUX
        IdPrMALOXY   = IdPrMALOXY + NOFLUX   
        IdStrMALC    = IdStrMALC  + NOFLUX
+       IdCanMALS    = IdCanMALS  + NOFLUX       
        IPNT         = IPNT       + INCREM
 
  9000 CONTINUE
