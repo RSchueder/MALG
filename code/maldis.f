@@ -35,8 +35,8 @@
 !
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(21)  ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(21)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(22)  ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(22)  ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -45,7 +45,7 @@
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT(21)    !    Local work array for the pointering
+      INTEGER IPNT(22)    !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 !*******************************************************************************
 !
@@ -60,7 +60,8 @@
       REAL(4) LmaxMAL     ! I  Maxmimum Length Macroalgae group               (m)
       REAL(4) nFrond      ! I  number of fronds per m2                        (1/m2)
       REAL(4) LinDenMAL   ! I  Linear density of macroalgae group             (g/m3)
-      REAL(4) LinDenCor   ! I  correction factor for low biomass density      (-)      
+      REAL(4) LinDenCor   ! I  correction factor for low biomass density      (-) 
+      REAL(4) FStretch    ! I  Stretch factor for frond length                (-)
       
       REAL(4) ArDenMAL    ! I  grams per m2 of plant                          (g/m2)
       INTEGER MBotSeg     ! I/O Bottom Segment for Macrophyte      
@@ -97,17 +98,17 @@
 !
 !*******************************************************************************
       IF (FIRST) THEN 
-          IPNT(21) = IPOINT(21)
+          IPNT(22) = IPOINT(22)
           ! for all segs
           DO 9001 ISEG = 1,NOSEG
              ! assign MbotSeg output for all segs = -1, therefore initially invalid
-             PMSA( IPNT(21) ) = -1
+             PMSA( IPNT(22) ) = -1
              CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
              ! if it is a bottom seg, its mbot seg is itself
              IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
-                PMSA( IPNT( 21) ) = ISEG
+                PMSA( IPNT( 22) ) = ISEG
              ENDIF
-             IPNT(21) = IPNT(21) + INCREM(21)
+             IPNT(22) = IPNT(22) + INCREM(22)
 9001      CONTINUE
               
           ! Now all bottom segs have identified themselves as the Mbotseg
@@ -117,9 +118,9 @@
              Ifrom  = IEXPNT(1,IQ)
              Ito    = IEXPNT(2,IQ)
              if (ifrom.gt.0.and.ito.gt.0) then
-                MBotSeg = nint(PMSA(IPOINT(21)+(ITO-1)*INCREM(21)))
+                MBotSeg = nint(PMSA(IPOINT(22)+(ITO-1)*INCREM(22)))
                 IF ( MBotSeg .GT.0 ) THEN
-                   PMSA(IPOINT(21)+(IFROM-1)*INCREM(21)) = real(MBotSeg)
+                   PMSA(IPOINT(22)+(IFROM-1)*INCREM(22)) = real(MBotSeg)
                 ENDIF
              ENDIF
 9005      CONTINUE  
@@ -149,9 +150,10 @@
             nFrond      = PMSA( IPNT(  9) )
             LinDenMAL   = PMSA( IPNT(  10) )
             LinDenCor   = PMSA( IPNT(  11) )
-            ArDenMAL    = PMSA( IPNT(  12) )
+            FStretch    = PMSA( IPNt(  12) )
+            ArDenMAL    = PMSA( IPNT(  13) )
 
-            MBotSeg     = NINT(PMSA( IPNT(  13) ))
+            MBotSeg     = NINT(PMSA( IPNT(  14) ))
        
             ! get biomass from bottom segment
             ! gDM/m2
@@ -180,7 +182,7 @@
                 ! linear density is dependent on seeding density
                 ! area is the amount of mass in this segment divided by area density
             
-                LenMAL = min(MALS*LinDenCor/(LinDenMAL*nFrond)
+                LenMAL = min(MALS*LinDenCor*FStretch/(LinDenMAL*nFrond)
      &           ,abs(LmaxMAL))
                 TotAreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
                 LocAreMAL = max(TotAreMAL / Surf, 1.0d-7)
@@ -259,25 +261,25 @@
 
                 AreFrond  = LocAreMAL / nFrond
 
-                PMSA( IPNT(14) ) = FrBmMALS
-                PMSA( IPNT(15) ) = BmLayMALS
-                PMSA( IPNT(16) ) = LenMAL
-                PMSA( IPNT(17) ) = TotAreMAL
-                PMSA( IPNT(18) ) = LocAreMAL
-                PMSA( IPNT(19) ) = -TipDepth ! negative to have it look proper in a graph
-                PMSA( IPNT(20) ) = AreFrond
-                PMSA( IPNT(21) ) = MBotSeg
+                PMSA( IPNT(15) ) = FrBmMALS
+                PMSA( IPNT(16) ) = BmLayMALS
+                PMSA( IPNT(17) ) = LenMAL
+                PMSA( IPNT(18) ) = TotAreMAL
+                PMSA( IPNT(19) ) = LocAreMAL
+                PMSA( IPNT(20) ) = -TipDepth ! negative to have it look proper in a graph
+                PMSA( IPNT(21) ) = AreFrond
+                PMSA( IPNT(22) ) = MBotSeg
 
             ELSE
                ! There is no biomass in the mbotseg
-                PMSA( IPNT(14) ) = 0.0
                 PMSA( IPNT(15) ) = 0.0
                 PMSA( IPNT(16) ) = 0.0
                 PMSA( IPNT(17) ) = 0.0
                 PMSA( IPNT(18) ) = 0.0
                 PMSA( IPNT(19) ) = 0.0
                 PMSA( IPNT(20) ) = 0.0
-                PMSA( IPNT(21) ) = MBotSeg
+                PMSA( IPNT(21) ) = 0.0
+                PMSA( IPNT(22) ) = MBotSeg
 
             ENDIF
         ENDIF

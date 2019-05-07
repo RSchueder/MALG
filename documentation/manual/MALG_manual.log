@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.10)  6 MAY 2019 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.10)  7 MAY 2019 10:42
 entering extended mode
 **./MALG_manual.tex
 (MALG_manual.tex
@@ -1138,33 +1138,33 @@ LaTeX Warning: Label `fig:was:used:in:doc' multiply defined.
 )
 \openout1 = `MALG_manual.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 6.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 7.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 6.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 7.
+(Font)              scaled to size 10.07397pt on input line 6.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1203,74 +1203,141 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 7.
-Package hyperref Info: Link coloring ON on input line 7.
-LaTeX Info: Redefining \ref on input line 7.
-LaTeX Info: Redefining \pageref on input line 7.
-LaTeX Info: Redefining \nameref on input line 7.
+(lastpage)             ! on input line 6.
+Package hyperref Info: Link coloring ON on input line 6.
+LaTeX Info: Redefining \ref on input line 6.
+LaTeX Info: Redefining \pageref on input line 6.
+LaTeX Info: Redefining \nameref on input line 6.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 7.
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+LaTeX Info: Redefining \selectfont on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 9.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.07397pt on input line 9.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 13.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.07397pt on input line 13.
-<figures/state_variables.png, id=10, 703.87968pt x 353.82187pt>
-File: figures/state_variables.png Graphic file (type png)
-<use figures/state_variables.png>
-Package pdftex.def Info: figures/state_variables.png  used on input line 27.
-(pdftex.def)             Requested size: 412.56497pt x 207.38177pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 28.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.19998pt on input line 28.
-LaTeX Font Info:    Font shape `T1/phv/bx/sl' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 28.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 9.19998pt on input line 28.
+(Font)              scaled to size 15.89755pt on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 15.89755pt on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 27.47115pt on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <29.86> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 27.47115pt on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 13.24796pt on input line 11.
  [1
 
-{C:/Users/schueder/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./figure
-s/state_variables.png>] [2]
+
+{C:/Users/schueder/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.07397pt on input line 11.
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 11--11
+[][] 
+ []
+
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 11--11
+[][] 
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 11.
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ts1phv.fd"
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 11.
+ [2
+
+] (MALG_manual.toc)
+\tf@toc=\write5
+\openout5 = `MALG_manual.toc'.
+
+ [3
+
+
+] [4
+
+] (MALG_manual.lof
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 10.07397pt on input line 7.
+)
+\tf@lof=\write6
+\openout6 = `MALG_manual.lof'.
+
+ [5] [6
+
+] (MALG_manual.lot)
+\tf@lot=\write7
+\openout7 = `MALG_manual.lot'.
+
+ (MALG_manual.nls)
+[7] [8
+
+]
+Chapter 1.
+<figures/state_variables.png, id=104, 466.11725pt x 234.27121pt>
+File: figures/state_variables.png Graphic file (type png)
+<use figures/state_variables.png>
+Package pdftex.def Info: figures/state_variables.png  used on input line 31.
+(pdftex.def)             Requested size: 412.56497pt x 207.36395pt.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 32.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.19998pt on input line 32.
+LaTeX Font Info:    Font shape `T1/phv/bx/sl' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 32.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.19998pt on input line 32.
+[1
+
+ <./figures/state_variables.png>] [2]
+Chapter 2.
 LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
-(Font)              scaled to size 10.07397pt on input line 42.
-<figures/ambiguous_situation.png, id=33, 689.57625pt x 191.9672pt>
+(Font)              scaled to size 10.07397pt on input line 47.
+<figures/ambiguous_situation.png, id=123, 645.1302pt x 210.0648pt>
 File: figures/ambiguous_situation.png Graphic file (type png)
 <use figures/ambiguous_situation.png>
-Package pdftex.def Info: figures/ambiguous_situation.png  used on input line 51
+Package pdftex.def Info: figures/ambiguous_situation.png  used on input line 56
 .
-(pdftex.def)             Requested size: 412.56497pt x 114.85313pt.
- [3 <./figures/ambiguous_situation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+(pdftex.def)             Requested size: 412.56497pt x 134.33844pt.
+[3
+
+ <./figures/ambiguous_situation.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Overfull \hbox (92.67828pt too wide) detected at line 193
+Overfull \hbox (92.67828pt too wide) detected at line 198
  $\OML/cmm/m/it/12 Wdry \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 MALS\OT1/cmr/m/n/12 
 (1 + \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN \OMS/cmsy/m/n/1
 2   \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN[]\OT1/cmr/m/n/12 )) + \OML/cmm/m/it/
@@ -1280,7 +1347,7 @@ m/it/12 MALC[]\OT1/cmr/m/n/12 )$
  []
 
 [7]
-Overfull \hbox (103.54822pt too wide) detected at line 196
+Overfull \hbox (103.54822pt too wide) detected at line 201
  $\OML/cmm/m/it/12 Wwet \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 MALS\OT1/cmr/m/n/12 
 ([] + \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN \OMS/cmsy/m/n/
 12   \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN[]\OT1/cmr/m/n/12 )) + \OML/cmm/m/it
@@ -1290,162 +1357,168 @@ Overfull \hbox (103.54822pt too wide) detected at line 196
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 247.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 252.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 247.
+LaTeX Warning: Command \textless invalid in math mode on input line 252.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 247.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 252.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 247.
+LaTeX Warning: Command \textless invalid in math mode on input line 252.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 254.
+LaTeX Warning: Command \textless invalid in math mode on input line 259.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 257.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 262.
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 [13]
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 394.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 399.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 394.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 399.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 394.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 399.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 394.
+LaTeX Warning: Command \textless invalid in math mode on input line 399.
 
 [14]
 
-LaTeX Warning: Command \textless invalid in math mode on input line 396.
+LaTeX Warning: Command \textless invalid in math mode on input line 401.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 396.
+LaTeX Warning: Command \textless invalid in math mode on input line 401.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 398.
+LaTeX Warning: Command \textless invalid in math mode on input line 403.
 
-<figures/light_equations_crop.png, id=136, 3842.355pt x 2294.5725pt>
+<figures/light_equations_crop.png, id=220, 3842.355pt x 2294.5725pt>
 File: figures/light_equations_crop.png Graphic file (type png)
 <use figures/light_equations_crop.png>
 Package pdftex.def Info: figures/light_equations_crop.png  used on input line 4
-05.
+10.
 (pdftex.def)             Requested size: 412.56497pt x 246.34662pt.
 [15 <./figures/light_equations_crop.png>] [16]
-<figures/Temp_NO3.png, id=155, 1300.86pt x 717.6411pt>
+Chapter 3.
+<figures/Temp_NO3.png, id=238, 1300.86pt x 717.6411pt>
 File: figures/Temp_NO3.png Graphic file (type png)
 <use figures/Temp_NO3.png>
-Package pdftex.def Info: figures/Temp_NO3.png  used on input line 429.
+Package pdftex.def Info: figures/Temp_NO3.png  used on input line 434.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-<figures/irradiance.png, id=157, 1300.86pt x 717.6411pt>
+<figures/irradiance.png, id=239, 1300.86pt x 717.6411pt>
 File: figures/irradiance.png Graphic file (type png)
 <use figures/irradiance.png>
-Package pdftex.def Info: figures/irradiance.png  used on input line 430.
+Package pdftex.def Info: figures/irradiance.png  used on input line 435.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
- [17] [18 <./figures/Temp_NO3.png> <./figures/irradiance.png>]
-Overfull \hbox (30.87872pt too wide) in alignment at lines 444--467
+[17
+
+] [18 <./figures/Temp_NO3.png> <./figures/irradiance.png>]
+Overfull \hbox (30.87872pt too wide) in alignment at lines 449--472
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 467
+Underfull \vbox (badness 10000) detected at line 472
  []
 
 
-Overfull \hbox (30.87872pt too wide) in alignment at lines 467--487
+Overfull \hbox (30.87872pt too wide) in alignment at lines 472--492
  [] [] [] [] 
  []
 
 
-Overfull \hbox (30.87872pt too wide) in alignment at lines 487--505
+Overfull \hbox (30.87872pt too wide) in alignment at lines 492--510
  [] [] [] [] 
  []
 
 [19]
-<figures/frond_area.png, id=197, 1300.86pt x 717.6411pt>
+<figures/frond_area.png, id=276, 1300.86pt x 717.6411pt>
 File: figures/frond_area.png Graphic file (type png)
 <use figures/frond_area.png>
-Package pdftex.def Info: figures/frond_area.png  used on input line 511.
+Package pdftex.def Info: figures/frond_area.png  used on input line 516.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-<figures/production.png, id=198, 1300.86pt x 717.6411pt>
+<figures/production.png, id=277, 1300.86pt x 717.6411pt>
 File: figures/production.png Graphic file (type png)
 <use figures/production.png>
-Package pdftex.def Info: figures/production.png  used on input line 512.
+Package pdftex.def Info: figures/production.png  used on input line 517.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 513.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 518.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.19998pt on input line 513.
+(Font)              scaled to size 9.19998pt on input line 518.
  [20]
-<figures/carbon_storage.png, id=209, 1300.86pt x 717.6411pt>
+<figures/carbon_storage.png, id=286, 1300.86pt x 717.6411pt>
 File: figures/carbon_storage.png Graphic file (type png)
 <use figures/carbon_storage.png>
-Package pdftex.def Info: figures/carbon_storage.png  used on input line 519.
+Package pdftex.def Info: figures/carbon_storage.png  used on input line 524.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-<figures/nitrogen_storage.png, id=210, 1300.86pt x 717.6411pt>
+<figures/nitrogen_storage.png, id=287, 1300.86pt x 717.6411pt>
 File: figures/nitrogen_storage.png Graphic file (type png)
 <use figures/nitrogen_storage.png>
-Package pdftex.def Info: figures/nitrogen_storage.png  used on input line 520.
+Package pdftex.def Info: figures/nitrogen_storage.png  used on input line 525.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
  [21 <./figures/frond_area.png> <./figures/production.png>] [22 <./figures/carb
 on_storage.png> <./figures/nitrogen_storage.png>]
-<figures/tidal_flume_farm.png, id=237, 936.49875pt x 357.58594pt>
+<figures/tidal_flume_farm.png, id=313, 936.49875pt x 357.58594pt>
 File: figures/tidal_flume_farm.png Graphic file (type png)
 <use figures/tidal_flume_farm.png>
-Package pdftex.def Info: figures/tidal_flume_farm.png  used on input line 532.
+Package pdftex.def Info: figures/tidal_flume_farm.png  used on input line 537.
 (pdftex.def)             Requested size: 412.56497pt x 157.53471pt.
- (MALG_manual.bbl)
+ [23 <./figures/tidal_flume_farm.png>] [24
 
+]
+Chapter 4.
+(MALG_manual.bbl) 
 AED: lastpage setting LastPage
-[23 <./figures/tidal_flume_farm.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 541.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 541.
+[25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 546.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 546.
  (MALG_manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 541.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 541.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 546.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 546.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25760 strings out of 492946
- 465529 string characters out of 3135619
- 587984 words of memory out of 3000000
- 29192 multiletter control sequences out of 15000+200000
- 566753 words of font info for 86 fonts, out of 3000000 for 9000
+ 25837 strings out of 492946
+ 466653 string characters out of 3135619
+ 588984 words of memory out of 3000000
+ 29237 multiletter control sequences out of 15000+200000
+ 579367 words of font info for 95 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 51i,12n,87p,1689b,857s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,14n,87p,1689b,857s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
@@ -1464,9 +1537,9 @@ s/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
 ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/urw/helvetic/uhvro8a.pfb>
-Output written on MALG_manual.pdf (23 pages, 6369355 bytes).
+Output written on MALG_manual.pdf (33 pages, 6460827 bytes).
 PDF statistics:
- 352 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 447 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

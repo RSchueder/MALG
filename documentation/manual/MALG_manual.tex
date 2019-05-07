@@ -3,10 +3,14 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 
-
 \begin{document}
 \title{MALG: The MacroALGae module of DELWAQ}
-\section{Framework of the macroalgae module}
+\subtitle{Developed for H2020 project IMPAQT: Intelligent Management Systems for Integrated Multi-Trophic Aquaculture}
+\manualtype{draft, May 2019}
+\version{0.1}
+\deltarestitle
+	
+\chapter{Framework of the macroalgae module}
 
 Macroalgae, kelp, or seaweed, are macroscopic multicellular marine algae that cover a large range of taxonomic groups. They are of interest from an ecological point of view as they provide habitat for marine animals. They are also interesting from an economic point of view as they can be cultivated and harvested while offering a bio-remediating service to marine waters. There specifically is interest in the use of macroalgae as a bioremediator in integrated multitrophic aquaculture (IMTA) systems, where they can convert excess farm nutrients into biomass and value added products such as alginate. 
 
@@ -37,7 +41,8 @@ The carbon storage is the part of the plant responsible for photosynthesizing, p
 It is assumed that there is constant relationship between volume and area of a macroalgae frond. This means that the density of the macroalgae does not change, even if the ratio of structural mass to stored material changes. Additionally, the C:N and C:P ratios of each component are fixed, but because the ratio of stored mass to structural mass changes, the C:N and C:P ratios of the entire frond, and thus the dry matter, will change due to changes in the environment.
 \pagebreak
 
-\subsection{Distribution of macroalgae biomass in the water column}
+\chapter{Overview of subroutines}
+\section{Distribution of macroalgae biomass in the water column}
 \begin{flushright}
 	\textsc{process: MALDIS}
 \end{flushright}
@@ -148,7 +153,7 @@ Type 3. Outputs that reflect what is happening in the column, and all segments i
 
 \pagebreak
 
-\subsection{Flux of Macroalgae structural biomass}
+\section{Flux of Macroalgae structural biomass}
 \begin{flushright}
 \textsc{process: FLMALS}
 \end{flushright}
@@ -273,7 +278,7 @@ $LocArea$ & Area of frond per m$^{2}$ of segment (m$^{-2}$)
 The structural growth process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step, all segments with a non-zero biomass fraction receive 'ghost' structural and storage mass according to the biomass allocated to it in MALDIS. The local inorganic nutrient, gas, and particulate fluxes are calculated using this mass and the local ambient conditions. The fluxes are then locally applied to ambient state variables exogenous to MALG, but not the MALG parameters (MALS, MALN, MALP, MALC). Instead, the fluxes of MALG state variables are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in $MALS$, $MALN$, $MALP$, and $MALC$ resulting from the net growth in the column. Once the bottom segment is reached in the segment loop, the fluxes for each column of segments have been accumulated and the net change in mass of each administrative bottom segment is known. The culture will then become longer or shorter in the next time step to reflect this new state, which again is kept track of by the bottom segment in the column. The consequence of applying this technique is that the local per segment 'ghost reserve masses' adopt the reserve ratio of the whole column. Another way to say this is that all segments with a non-zero biomass fraction belonging to a given water column have a fixed structural mass to storage mass ratio, and consequently all reserves are equally distributed along the frond.
 \pagebreak
 
-\subsection{Flux of Macroalgae nutrient storage}
+\section{Flux of Macroalgae nutrient storage}
 \begin{flushright}
 \textsc{process: FLMALN}
 \end{flushright}
@@ -320,7 +325,7 @@ $U_{0.65}$   & water velocity at which uptake rate is 65 of maximum (m s$^{-1}$)
 The first term in $J_{N}$ and $J_{P}$ pertains to the uptake of nutrients and the second term to the utilization of stores by the structural mass during growth. Note how the nutrient requirement (quota) is dependent on the combined quota for structural mass and storage mass. The uptake of nutrients is dependent on the ambient concentration according to Michaelis-Menten kinetics. It is dependent on velocity such that high velocities make it easier for the frond to uptake the nutrients. This is related to an improved mass transfer coefficient. At sufficiently high ambient concentrations and water velocities the uptake rate is $J_{max}$.
 \pagebreak
 
-\subsection{Flux of Macroalgae carbon storage}
+\section{Flux of Macroalgae carbon storage}
 \begin{flushright}
 \textsc{process: FLMALC}
 \end{flushright}
@@ -408,20 +413,20 @@ Consequently, temperatures above or below the photosynthetic temperature range w
 \end{figure}
 \pagebreak
 
-\subsection{Harvesting of macroalgae}
+\section{Harvesting of macroalgae}
 \begin{flushright}
 	\textsc{process: HRVMAL}
 \end{flushright}
 To be filled in.
 \pagebreak
 
-\section{Model validation}
+\chapter{Model validation}
 This section briefly outlines the test cases for the application of the MALG model. Two test cases have been outlined:
 \begin{itemize}
 	\item Broch 1DV model
 	\item A simple (large) 3D flume model with tidal currents
 \end{itemize}
-\subsection{Testcase: Broch 2012}
+\section{Testcase: Broch 2012}
 This testcase involves the reproduction of the model as it was demonstrated in \cite{broch2012}. The testcase involves a single frond growing off the coast of Nowrway in 250m deep water at approximately 5 m below the surface, although the depth of the frond in \cite{broch2012} is never explicitly stated. The kelp grows in a 0D model (a box) with temperature, nitrogen, and light climate forcing derived from measurements and local models. These forcing functions are shown in Figure ~\ref{fig:forcing}.
 
 \begin{figure}[H]
@@ -522,7 +527,7 @@ Figure \ref{fig:biomass} and Figure \ref{fig:storage} demonstrate the performanc
 	\label{fig:storage}
 \end{figure}
 
-\subsection{Testcase: Tidal flume farm}
+\section{Testcase: Tidal flume farm}
 The tidal flume farm test case is a synthetic case used to test the 3D performance of the model in Delft3D flexible mesh with sigma layers. It is designed to demonstrate that the biomass allocation works with variable sigma layer thickness in time due to tidal variation.
 
 The test case consists of a 10x30 cell grid with 100 m resolution containing a factor 2 refinement  in the center to obtain a 50m resolution. The model is thus 1km x 3km. It has a uniform depth of 10 m and 20 sigma layers, meaning each layer is 0.5 m deep. The tidal amplitude applied is 2 m and velocities vary between 0.0-0.1 m/s. The flow switches direction approximately every 6 hours. The oscillation of the layer thickness means each layer will be between 0.4 m (low water) and 0.6 m (high water). Thus as long as the plant is at least 0.4 m long and grows a minimum of 0.4 m, the segments within which it resides will vary within a single tidal period due to water level variations alone. Multiple farms are located within this higher resolution area. The layout is shown in Figure \ref{fig:tidalflumefarm}
@@ -535,7 +540,7 @@ The test case consists of a 10x30 cell grid with 100 m resolution containing a f
 \end{figure}
 
 
-\section{References}
+\chapter{References}
 \bibliography{MALG_manual}
 
 \end{document}

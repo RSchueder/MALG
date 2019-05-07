@@ -14906,8 +14906,9 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "MALDIS    ","nFrond    ",   9,"Y","x",1
 "MALDIS    ","LinDenMAL ",  10,"Y","x",1
 "MALDIS    ","LinDenCor ",  11,"Y","x",1
-"MALDIS    ","ArDenMAL  ",  12,"Y","x",1
-"MALDIS    ","MBotSeg   ",  13,"N","x",1
+"MALDIS    ","FStretch  ",  12,"Y","x",1
+"MALDIS    ","ArDenMAL  ",  13,"Y","x",1
+"MALDIS    ","MBotSeg   ",  14,"N","x",1
 "FlMALN    ","MALS      ",   1,"N","x",1
 "FlMALN    ","MALN      ",   2,"N","x",1
 "FlMALN    ","MALP      ",   3,"N","x",1

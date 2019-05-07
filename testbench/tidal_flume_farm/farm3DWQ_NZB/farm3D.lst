@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/06 17:59:57 
+ Execution start: 2019/05/07 10:51:21 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -2003,27 +2003,45 @@
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   42 with ID  : SWGroDir            
+ Input constant   nr:    1 is constant   nr:   42 with ID  : LinDenCor           
  constant values in this block.
  values        42
+ constants    LinDenCor   
+         1    1.1300E+02
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   43 with ID  : FStretch            
+ constant values in this block.
+ values        43
+ constants    FStretch    
+         1    1.2000E+00
+
+ ====> input item completed <==== 
+
+
+ Input constant   nr:    1 is constant   nr:   44 with ID  : SWGroDir            
+ constant values in this block.
+ values        44
  constants    SWGroDir    
          1   -1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   43 with ID  : nFrond              
+ Input constant   nr:    1 is constant   nr:   45 with ID  : nFrond              
  constant values in this block.
- values        43
+ values        45
  constants    nFrond      
          1    1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   44 with ID  : nothreads           
+ Input constant   nr:    1 is constant   nr:   46 with ID  : nothreads           
  constant values in this block.
- values        44
+ values        46
  constants    nothreads   
          1    4.0000E+00
 
@@ -2033,9 +2051,9 @@
 
  NOTHREADS Keyword found
  Number of threads for parallel processing set to :     4
- Input constant   nr:    1 is constant   nr:   45 with ID  : Velocity            
+ Input constant   nr:    1 is constant   nr:   47 with ID  : Velocity            
  constant values in this block.
- values        45
+ values        47
  constants    Velocity    
          1    1.5000E-01
 
@@ -40603,18 +40621,18 @@
  Continuing on file: farm3D.inp                                                                    
 
  Including file: includes_deltashell/B7_numerical_options.inc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
- Input constant   nr:    1 is constant   nr:   46 with ID  : CLOSE_ERR           
+ Input constant   nr:    1 is constant   nr:   48 with ID  : CLOSE_ERR           
  constant values in this block.
- values        46
+ values        48
  constants    CLOSE_ERR   
          1    1.0000E+00
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   44 with ID  : nothreads           
+ Input constant   nr:    1 is constant   nr:   46 with ID  : nothreads           
  constant values in this block.
- values        44
+ values        46
  constants    NOTHREADS   
          1    0.0000E+00
 
@@ -40624,36 +40642,36 @@
 
  NOTHREADS Keyword found
  Number of threads for parallel processing set to :     0
- Input constant   nr:    1 is constant   nr:   47 with ID  : DRY_THRESH          
+ Input constant   nr:    1 is constant   nr:   49 with ID  : DRY_THRESH          
  constant values in this block.
- values        47
+ values        49
  constants    DRY_THRESH  
          1    1.0000E-03
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   48 with ID  : maxiter             
+ Input constant   nr:    1 is constant   nr:   50 with ID  : maxiter             
  constant values in this block.
- values        48
+ values        50
  constants    maxiter     
          1    1.0000E+02
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   49 with ID  : tolerance           
+ Input constant   nr:    1 is constant   nr:   51 with ID  : tolerance           
  constant values in this block.
- values        49
+ values        51
  constants    tolerance   
          1    1.0000E-07
 
  ====> input item completed <==== 
 
 
- Input constant   nr:    1 is constant   nr:   50 with ID  : iteration report    
+ Input constant   nr:    1 is constant   nr:   52 with ID  : iteration report    
  constant values in this block.
- values        50
+ values        52
  constants    iteration   
          1    0.0000E+00
 
@@ -40665,7 +40683,7 @@
 
  Continuing on file: farm3D.inp                                                                    
 
- Total number of constants        :   50
+ Total number of constants        :   52
 
  Total number of parameters       :    1
 
@@ -40894,7 +40912,7 @@
   Determining the place of the output variables
  
         SURF                ; Using parameter nr           1
-        Velocity            ; Using constant nr          45
+        Velocity            ; Using constant nr          47
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
@@ -40962,7 +40980,7 @@
         volume              ; Using DELWAQ VOLUME
         volume              ; Using DELWAQ VOLUME
         SURF                ; Using parameter nr           1
-        Velocity            ; Using constant nr          45
+        Velocity            ; Using constant nr          47
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:TotalDepth          ; NOT FOUND, delwaq will detect variables from process library
    INFO:Depth               ; NOT FOUND, delwaq will detect variables from process library
@@ -41048,8 +41066,8 @@ Number of periods defined:     0
 
  Parallel processing with   4 processor(s)
 
- total real      array space:    8528840
- total integer   array space:     499925
- total character array space:      21420
- grand total in 4-byte words:    9050185 =   0-GB  36-MB 200-KB 740-Byte.
- Execution stop : 2019/05/06 17:59:57 
+ total real      array space:    8528841
+ total integer   array space:     499936
+ total character array space:      21430
+ grand total in 4-byte words:    9050207 =   0-GB  36-MB 200-KB 828-Byte.
+ Execution stop : 2019/05/07 10:51:22 

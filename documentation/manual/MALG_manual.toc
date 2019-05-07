@@ -1,0 +1,14 @@
+\babel@toc {english}{}
+\contentsline {chapter}{List of Figures}{v}{chapter*.2}% 
+\contentsline {chapter}{List of Tables}{vii}{chapter*.3}% 
+\contentsline {chapter}{\numberline {1}Framework of the macroalgae module}{1}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Overview of subroutines}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Distribution of macroalgae biomass in the water column}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Flux of Macroalgae structural biomass}{7}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Flux of Macroalgae nutrient storage}{11}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Flux of Macroalgae carbon storage}{13}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Harvesting of macroalgae}{16}{section.2.5}% 
+\contentsline {chapter}{\numberline {3}Model validation}{17}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Testcase: Broch 2012}{17}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Testcase: Tidal flume farm}{23}{section.3.2}% 
+\contentsline {chapter}{\numberline {4}References}{25}{chapter.4}% 
