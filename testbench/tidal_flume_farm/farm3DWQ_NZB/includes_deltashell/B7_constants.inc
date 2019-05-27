@@ -17,9 +17,9 @@ CONSTANTS 'ExtVlPOC2'  DATA 0.1
  CONSTANTS 'SWRearCO2' DATA 11.0
  CONSTANTS 'LmaxMAL'   DATA 8
  CONSTANTS 'LinDenMAL' DATA 120
- CONSTANTS 'LinDenCor' DATA 113
- CONSTANTS 'FStretch'  DATA 1.2
- ; will become = 0.0 if no footdepth
+ CONSTANTS 'LinDenCor' DATA 1
+ CONSTANTS 'FStretch'  DATA 1
+ ; FootDepth will become = 0.0 if no footdepth and SWGroDir < 0
  CONSTANTS 'SWGroDir'     DATA -1.0
  CONSTANTS 'nFrond'    DATA 1
  CONSTANTS 'nothreads' DATA 4

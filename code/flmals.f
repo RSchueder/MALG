@@ -307,6 +307,10 @@ C
                     TotC = MALS*(MALC + CDRatMALS)
                     dCtrMALS=mu*TotC      
                 ELSE
+                    TotN = MALS*(MALN + (CDRatMALS*NCRatMALS))
+                    TotP = MALS*(MALP + CDRatMALS*PCRatMALS)
+                    TotC = MALS*(MALC + CDRatMALS)
+
                     dNtrMALS=0.0
                     dPtrMALS=0.0
                     dCtrMALS=0.0

@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/07 10:51:21 
+ Execution start: 2019/05/15 18:51:44 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -80,7 +80,7 @@
 
  Including file: includes_deltashell/B2_simtimers.inc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
  Start of simulation :18Y-216D- 0H- 0M- 0S.
- End of simulation   :18Y-286D- 0H- 0M- 0S.
+ End of simulation   :19Y-248D- 0H- 0M- 0S.
  Selected option for time step size :  0
  Integration time stepsize is : 0Y-  0D- 1H- 0M- 0S.
 
@@ -2007,7 +2007,7 @@
  constant values in this block.
  values        42
  constants    LinDenCor   
-         1    1.1300E+02
+         1    1.0000E+00
 
  ====> input item completed <==== 
 
@@ -2016,7 +2016,7 @@
  constant values in this block.
  values        43
  constants    FStretch    
-         1    1.2000E+00
+         1    1.0000E+00
 
  ====> input item completed <==== 
 
@@ -41070,4 +41070,4 @@ Number of periods defined:     0
  total integer   array space:     499936
  total character array space:      21430
  grand total in 4-byte words:    9050207 =   0-GB  36-MB 200-KB 828-Byte.
- Execution stop : 2019/05/07 10:51:22 
+ Execution stop : 2019/05/15 18:51:44 

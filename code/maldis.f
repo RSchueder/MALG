@@ -73,6 +73,7 @@
       REAL(4) TipDepth    ! O  Distance from frond water surface to frond tip (m)
       REAL(4) SwGroDir    ! Switch to grow up or down
       REAL(4) AreFrond    ! Area of a single frond
+      REAL(4) LinDenFact  ! Linear density correction factor                  (m)
       
       INTEGER IKMRK1
       INTEGER IKMRK2
@@ -90,11 +91,16 @@
       INTEGER Ifrom           !        From Segment
       INTEGER Ito             !        From Segment
       LOGICAL First           !        is the first time
+      LOGICAL ALCOR
       REAL(4) chk
 
 !*******************************************************************************
       DATA    FIRST /.TRUE./
       SAVE    FIRST
+      DATA    ALCOR /.TRUE./
+      SAVE    ALCOR
+      DATA    LinDenFact /0.0/
+      SAVE    LinDenFact
 !
 !*******************************************************************************
       IF (FIRST) THEN 
@@ -124,6 +130,7 @@
                 ENDIF
              ENDIF
 9005      CONTINUE  
+          FIRST = .FALSE.
       ENDIF
 
 !*******************************************************************************    
@@ -181,8 +188,19 @@
                 ! actual height is horizontal density divided by length density
                 ! linear density is dependent on seeding density
                 ! area is the amount of mass in this segment divided by area density
-            
-                LenMAL = min(MALS*LinDenCor*FStretch/(LinDenMAL*nFrond)
+                
+                ! check if correction needs to be applied. LinDenFact*FStretch will apply
+                ! an interecpt (bias) to the length of the frond without changing the mass
+                IF (ALCOR) THEN
+                  IF (LinDenCor .gt. 0) THEN
+                      LinDenFact = max(0.15 * (1 - (MALS/18.0)),0.0)
+                  ELSE
+                      LinDenFact = 0.0                
+                  ENDIF
+                  ALCOR = .FALSE.
+                ENDIF
+                
+                LenMAL=min(LinDenFact*FStretch+(MALS/(LinDenMAL*nFrond))
      &           ,abs(LmaxMAL))
                 TotAreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
                 LocAreMAL = max(TotAreMAL / Surf, 1.0d-7)

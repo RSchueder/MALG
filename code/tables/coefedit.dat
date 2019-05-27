@@ -5158,7 +5158,7 @@ COEFFICIENTS
 "LmaxMAL   ",   1.600000    ,1,1,1
 "SWGroDir  ",   1.000000    ,1,1,1
 "LinDenMAL ",   120.0000    ,1,1,1
-"LinDenCor ",   1.000000    ,1,1,1
+"LinDenCor ",   0.000000    ,1,1,1
 "FStretch  ",   1.000000    ,1,1,1
 "ArDenMAL  ",   60.00000    ,1,1,1
 "MALNmax   ",  0.2200000E-01,1,1,1

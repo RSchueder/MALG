@@ -11462,7 +11462,7 @@ itemid,itemse,itemex,itemde,itemun,itemnm,itemag,itemda,itemwk,itemgr
 "LmaxMAL   ","x"," ",    1.60000    ,"(m)                 ","Maximum length MALG                               ","volume    ","volume    "," ","                              "
 "SWGroDir  ","x"," ",    1.00000    ,"(-)                 ","grow direction MALG(1 = up, -1 = down )           ","volume    ","volume    "," ","                              "
 "LinDenMAL ","x"," ",    120.000    ,"(g/m3)              ","linear density of macroalgae                      ","volume    ","volume    "," ","                              "
-"LinDenCor ","x"," ",    1.00000    ,"(-)                 ","correction factor for low biomass density         ","volume    ","volume    "," ","                              "
+"LinDenCor ","x"," ",    0.00000    ,"(-)                 ","apply lencorr. factor for low biomass density (0=n","volume    ","volume    "," ","                              "
 "FStretch  ","x"," ",    1.00000    ,"(-)                 ","stretch factor for frond length                   ","volume    ","volume    "," ","                              "
 "ArDenMAL  ","x"," ",    60.0000    ,"(gDM/m2)            ","Area density frond (grams/m2 surface area)        ","volume    ","volume    "," ","                              "
 "BmLayMAL  ","x"," ",   -999.000    ,"(gDM/m3)            ","Biomass of MALS in segment                        ","volume    ","volume    "," ","                              "

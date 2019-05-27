@@ -1,0 +1,1 @@
+1 0.0 1E-07 ; constant dispersion

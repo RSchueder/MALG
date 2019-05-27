@@ -69,7 +69,12 @@ The model does not explicitly model individual plants in a given segment, and so
 
 Using these parameters the culture's position can be completely described in 3 dimensions. To determine the position of the frond in the water column each time step, the process first calculates the length and the area of the culture in this column of segments:
 \begin{equation}
-	LenMAL = \frac{MALS \times LinDenCor}{LinDenMAL \times N_{frond}}
+	IF LinDenCor > 0
+		LinDenFact = 0.15 * (1 - (MALS/18.0))
+	ELSE
+		LinDenFact = 0.0
+	END
+	LenMAL = LinDenFact \times F_{stretch} \frac{MALS}{LinDenMAL \times N_{frond}}
 \end{equation}
 \begin{equation}
 	AreMAL = MALS \times \frac{Surf}{ArDenMAL}
@@ -83,15 +88,16 @@ $LenMAL$ & Length of culture in the column (m)\\
 $Surf$ & Surface area of the bottom segment (m$^{2}$)\\
 $MALS$ & structural mass (gDM m$^{-2}$)\\
 $LinDenMAL$ & The linear density of a single frond (g m$^{-3}$)\\
-$LinDenCor$ & Frond length correction factor for low biomass density $(-)$\\
+$LinDenCor$ & 0 = do not correct the frond length, 1 = correct the frond length $(-)$\\
+$LinDenFact$ & Frond length correction factor for low biomass density (in code only) $(-)$\\
+$F_{stretch}$ & Factor by which to artificially make the frond longer and skinnier $(-)$\\
 $N_{frond}$ & Number of fronds per m2 (must be $\ge$ 1)\\
 $ArDenMAL$ & The area density of the culture (g m$^{-2}$)\\
 \end{tabular}
 
-Note that $N_{frond}$ is said to be $\ge 1$ even though there are certainly situations where it is not the case. The reason that $N_{frond}$ must be specified is to act as a scaling factor on $LinDenMAL$ and $mrtMAL$ (see process FLMALS), since they are defined on the basis of a single frond growing 1m in a 1m$^{2}$ box. When there are more than 1 fronds in that box then the biomass required to increase the length of the culture increases. When biomass densities are extremely low due to perhaps large grid sizes, then it is not meaningful to think of anything other than an equal distribution of fronds across each m$^{2}$ of the grid cell, because any frond will always experience itself. Additionally this is a central assumption of the model (well mixed within a single segment). In these situations a very low biomass density multiplied by $LinDenMAL$ will yeild a very short plant. The exchange with the ambient water will be correct but the vertical discretization will not be. To correct for this the parameter $LinDenCor$ can be specified to make the frond much skinnier in order to have it posess the desired length.The correction factor  for situations where the number of fronds per m${2}$ is \textless 1 for segment $i$ should be set to:
-\begin{equation}
-	LinDenCor_i = \frac{18}{MALS_i}
-\end{equation}
+Note that $N_{frond}$ is said to be $\ge 1$ even though there are certainly situations where it is not the case. The reason that $N_{frond}$ must be specified is to act as a scaling factor on $LinDenMAL$ and $mrtMAL$ (see process FLMALS), since they are defined on the basis of a single frond growing 1m in a 1m$^{2}$ box. When there are more than 1 fronds in that box then the biomass required to increase the length of the culture increases. When biomass densities are extremely low due to perhaps large grid sizes, then it is not meaningful to think of anything other than an equal distribution of fronds across each m$^{2}$ of the grid cell, because any frond will always experience itself. Additionally this is a central assumption of the model (well mixed within a single segment). In these situations a very low biomass density multiplied by $LinDenMAL$ will yield a very short plant. The exchange with the ambient water will be correct but the vertical discretization will not be. 
+
+To correct for this, the parameter $LinDenCor$ can be specified as = 1 to make the frond skinnier in order to have its length deviate from what would otherwise be calculated based on the mass per m$^2$. Setting $LinDenCor$ = 1 will make the culture possess the length of a normal individual frond without changing the biomass. A value of $LinDenCor$ = 0 will assign a length in accordance with the biomass present in the cell (this is the default setting). $F_{stretch}$ can be used to further elongate the culture if desired and acts as a multiplied on $LinDenFact$. The correction factor is recommended for situations where the number of fronds per m${2}$ is \textless 1. This intercept is determined by the initial biomass condition and is only calculated at the beginning. If it were not, the length could change while the area was increasing.
 
 To further adjust this length beyond correcting for biomass density, i.e. to incorporate the effect of ropes,  you can adjust the factor $FrondStrech$. This will simply multiply the computed length by a constant to elongate the frond and spread the biomass and the fluxes over more segments.
 
@@ -225,7 +231,7 @@ Where:\\
 This formulation is designed to allow small fronds to grow faster than bigger fronds, and as such the value in broch describes the area above which a frond will stuggle to grow. This has large implications for the DELWAQ model in contrast to the Broch model which is 'individual based' and thus can integrate this formulation seamlessly. The frond area $LocArea$ in a DELWAQ segment does not represent a single frond, but the sum of all frond areas in a segment. This means that the default value for $MALS_{0}$ cannot be used in the case where the DELWAQ user expects more than one frond per segment. It could be possible to require that the user specify $LinDenMAL$ and $MALS_{0}$ based on their knowledge of how many fronds they expect there to be in a segment. However, it is thought that knowledge of the number of fronds per m$^{2}$ is a better confined value. Thus, the following formulations are used in the code.
  
 \begin{equation}
-LinDenMAL = 100 \times N_{frondm2}
+LinDenMAL = 120 \times N_{frondm2}
 \end{equation}
 and
 \begin{equation}
@@ -233,9 +239,6 @@ MALS_0 = 0.06 \times N_{frondm2}
 \end{equation}
 
 Where 100 g m$^{-3}$ is derived from the relationship between mass gain and length increase seen in \cite{sjotun1993}, and 0.06 m$^{-1}$ is taken from \cite{broch2012}. These formulations describe how as the number of fronds m$^{-2}$ increases, the area limit within the segment increases and the amount of carbon required to increase the length of the culture in the segment increases, and both are proportional to what is known about the behaviour of a single frond.
-
-Some examples are shown below:
-
 
 The photoperiod limitation is similar to the daylength limitation used in BLOOM and DYNAMO, but instead considers the \textit{normalized change} in daylength compared to the previous day instead of the actual current daylength. In this context, 'normalized' means that the change in daylength is relative to the maximum change in daylength (i.e. the daylength change at the equinoxes). This response to normalized daylength change is due to the fact that \textit{Saccharina latissima} is a seasonal anticipator and will grow and store nutrients in accordance with the change in the season as determined by how much longer or shorter the days become. This formulation is given by: 
 \begin{equation}
@@ -275,7 +278,9 @@ $\epsilon$ & erosion parameter (m$^{-2}$)\\
 $LocArea$ & Area of frond per m$^{2}$ of segment (m$^{-2}$)
 \end{tabular}
 
-The structural growth process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step, all segments with a non-zero biomass fraction receive 'ghost' structural and storage mass according to the biomass allocated to it in MALDIS. The local inorganic nutrient, gas, and particulate fluxes are calculated using this mass and the local ambient conditions. The fluxes are then locally applied to ambient state variables exogenous to MALG, but not the MALG parameters (MALS, MALN, MALP, MALC). Instead, the fluxes of MALG state variables are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in $MALS$, $MALN$, $MALP$, and $MALC$ resulting from the net growth in the column. Once the bottom segment is reached in the segment loop, the fluxes for each column of segments have been accumulated and the net change in mass of each administrative bottom segment is known. The culture will then become longer or shorter in the next time step to reflect this new state, which again is kept track of by the bottom segment in the column. The consequence of applying this technique is that the local per segment 'ghost reserve masses' adopt the reserve ratio of the whole column. Another way to say this is that all segments with a non-zero biomass fraction belonging to a given water column have a fixed structural mass to storage mass ratio, and consequently all reserves are equally distributed along the frond.
+The structural growth process occurs over all segments which have a biomass fraction \textgreater 0. This is in spite of the fact that the biomass administratively resides in the bottom segment. During each time step, all segments with a non-zero biomass fraction receive 'ghost' structural and storage mass according to the biomass allocated to it in MALDIS. The local inorganic nutrient, gas, and particulate fluxes are calculated using this mass and the local ambient conditions. The fluxes are then locally applied to ambient state variables exogenous to MALG, but not the MALG parameters ($MALS$, $MALN$, $MALP$, $MALC$). Instead, the fluxes of MALG state variables are communicated to the bottom segment in a cumulative way, whereby the local fluxes of all segments that share the same bottom segment are summed to compute the net total change in $MALS$, $MALN$, $MALP$, and $MALC$ resulting from the net growth in the column. 
+
+Once the bottom segment is reached in the segment loop, the fluxes for each column of segments have been accumulated and the net change in mass of each administrative bottom segment is known. The culture will then become longer or shorter in the next time step to reflect this new state, which again is kept track of by the bottom segment in the column. The consequence of applying this technique is that the local per segment 'ghost reserve masses' adopt the reserve ratio of the whole column. Another way to say this is that all segments with a non-zero biomass fraction belonging to a given water column have a fixed structural mass to storage mass ratio, and consequently all reserves are equally distributed along the frond.
 \pagebreak
 
 \section{Flux of Macroalgae nutrient storage}
@@ -396,7 +401,7 @@ $LocalDepth$ & Depth of bottom of segment below water surface (m)\\
 
 Currently the macroalgae do not attenuate light in the water column.
 
-This set of equations describes a photo inhibitory effect for $I\textgreater I_{sat}$. The structural mass is strictly unable to grow above $T \textgreater 19^{0}$. Although the structural mass cannot grow, photosynthesis production can still occur in the range $\textgreater -1^{0}C Temp \textless 23^{0}C$. These two temperature controls are fixed for the species and the user cannot flexibly change this unless the code is edited. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, both the temperature function and the photosynthetic range parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
+This set of equations describes a photo inhibitory effect for $I\textgreater I_{sat}$. The structural mass is strictly unable to grow above $T \textgreater 19^{0}$. Although the structural mass cannot grow, photosynthesis production can still occur in the range -1$^{0}$C $\textgreater T \textless$ 23$^{0}C$. These two temperature controls are fixed for the species and the user cannot flexibly change this unless the code is edited. To adapt the model to tropical species or species that have a different optimal temperature photosynthesis range, both the temperature function and the photosynthetic range parameters have to be edited in addition to the code for the piece-wise temperature growth function for $MALS$.
 
 The formulations also show that maximum production rate $P_{max}$ can be expressed in two ways. The first is only a function of temperature and describes photosynthesis at $I = I_{sat}$. The second production rate $P_{max}$ is the actual maximum production rate taking into account the effect of temperature on the response of growth to light. This means that growth is non-linear in temperature, as it effects both growth directly and also the way in which growth is affected by light. $\beta$ is solved for using Newton's method in Broch by differentiating $P_{max}(\beta)$. This involves solving for the value $\beta$ such that $P_{max}(T)$ equals the $P_{max}(\beta)$ obtained from the temperature relationship at the current temperature and at $I = I_{sat}$. Newton's method is not used in the DELWAQ code and instead $\beta$ is pre-calculated for all temperatures in the photosynthetic range -2$^{0}$C to 23$^{0}$C at an interval of 0.1$^{0}$C. This is hard coded into the FLMALC subroutine and constitutes a linear approximation of $\beta$. Due to this the model should only be used for temperature ranges $-2^{0}C \textless T \textless 23^{0}C$. Currently:
 \begin{itemize}
@@ -427,7 +432,7 @@ This section briefly outlines the test cases for the application of the MALG mod
 	\item A simple (large) 3D flume model with tidal currents
 \end{itemize}
 \section{Testcase: Broch 2012}
-This testcase involves the reproduction of the model as it was demonstrated in \cite{broch2012}. The testcase involves a single frond growing off the coast of Nowrway in 250m deep water at approximately 5 m below the surface, although the depth of the frond in \cite{broch2012} is never explicitly stated. The kelp grows in a 0D model (a box) with temperature, nitrogen, and light climate forcing derived from measurements and local models. These forcing functions are shown in Figure ~\ref{fig:forcing}.
+This testcase involves the reproduction of the model as it was demonstrated in \cite{broch2012}. The testcase in Broch involves a single frond growing off the coast of Nowrway in 250m deep water at approximately 5 m below the surface, although the depth of the frond in \cite{broch2012} is never explicitly stated. The kelp grows in a 0D model (a box) with temperature, nitrogen, and light climate forcing derived from measurements and local models. These forcing functions are shown in Figure ~\ref{fig:forcing}.
 
 \begin{figure}[H]
 	\centering
@@ -437,7 +442,7 @@ This testcase involves the reproduction of the model as it was demonstrated in \
 	\label{fig:forcing}
 \end{figure}
 
-Only MALG processes and processes relating to reaeration of CO$_{2}$ and O$_{2}$ and pH are activated in this model. All model constants are set to the default values described in \cite{broch2012}. There are however a few exceptions:
+The DELWAQ testcase involved a 10m deep !DV model containing 10 segments. Only MALG processes and processes relating to reaeration of CO$_{2}$ and O$_{2}$ and pH are activated in this model. All model constants are set to the default values described in \cite{broch2012}. There are however a few exceptions:
 \begin{itemize}
 	\item Broch states that the maximum growth rate of the structural mass is 0.18 d$^{-1}$. Broch also states that the contribution to the growth rate from $MALN = 1-  = 0.65$. As $MALN_{max}$ is stated as $= 0.022$, it must be the case that $1- \leq 0.565$. Thus, the $\mu$ in MALG is up to 13 percent lower than in \cite{broch2012}. The $\epsilon$ has been changed from the default 0.22 m$^{-1}$ to 0.18 m$^{-1}$ to counteract this effect.
 	\item Broch checks the gross production formulation at I = 10 $\mu$mol m$^{-2}$ s$^{-1}$ and T = 12$^{0}$ and arrives at a value of $2.95 \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$. This is lower than the value computed by MALG under the same conditions ($3.21  \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$). It is at least partially due to the different method of approximating $\beta$, but it was also found that $P_{max}(T_{pl}) \neq 3.394  \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$ in contrast to what was stated in the paper. This discrepancy may be due to discrepancies in $T_{apl}$ and $T_{aph}$, which were stated to be $27,774^{0}K$ and $25,924^{0}K$ respectively in the paper but could not be reproduced using the high and low end temperatures and production rates. Thus the gross production is higher in MALG than in \cite{broch2012}.
