@@ -202,8 +202,8 @@
                 
                 LenMAL=min(LinDenFact*FStretch+(MALS/(LinDenMAL*nFrond))
      &           ,abs(LmaxMAL))
-                TotAreMAL = max(MALS * Surf / ArDenMAL, 1.0d-7)
-                LocAreMAL = max(TotAreMAL / Surf, 1.0d-7)
+                TotAreMAL = MALS * Surf / ArDenMAL
+                LocAreMAL = TotAreMAL / Surf
                 ! top
                 Z1 = LocalDepth - Depth
                 ! bottom

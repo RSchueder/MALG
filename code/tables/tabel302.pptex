@@ -214,7 +214,7 @@ OXY        colsep respiration flux of DEB Grazer4                    colsep (gC/
 OXY        colsep respiration flux of DEB Grazer5                    colsep (gC/m3/d)            colsep DEBGRZ_G5  \\
 OXY        colsep Oxygen consumption MALS                            colsep (gO/m3/d)            colsep FlMALS     \\
 OXY        colsep NO3 uptake by Macroalgae nitrogen storage          colsep (gN/m3/d)            colsep FlMALN     \\
-OXY        colsep OXY production by MALS                             colsep (gC/m3/d)            colsep FlMALC     \\
+OXY        colsep OXY production by MALS                             colsep (gO2/m3/d)           colsep FlMALC     \\
 dTR1       colsep decay tracer from source 1                         colsep (g/m3/d)             colsep Age1       \\
 dTR1       colsep Decay tracer from source 1                         colsep (g/m3/d)             colsep Decay1     \\
 dTR2       colsep decay tracer from source 2                         colsep (g/m3/d)             colsep Age2       \\

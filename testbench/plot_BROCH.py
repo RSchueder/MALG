@@ -50,7 +50,7 @@ ax2.set_ylabel('mmol N-NO$_{3}')
 ax2.set_ylim([0,8])
 ax2.xaxis.set_major_formatter(xfmt)
 ax2.legend()
-pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\Temp_NO3.png') ,dpi = 700)
+pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\Temp_NO3.png') ,dpi = 300)
 
 
 fig = plt.figure(2)
@@ -63,7 +63,7 @@ ax1.grid()
 ax1.legend()
 ax1.xaxis.set_major_formatter(xfmt)
 plt.legend()
-pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\irradiance.png') ,dpi = 700)
+pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\irradiance.png') ,dpi = 300)
 
 ###############################################################################
 
@@ -84,7 +84,7 @@ for ii in range(0,2):
     ax.set_ylim([0,50])
     ax.xaxis.set_major_formatter(xfmt)
     if ii != 0:
-        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\frond_area.png') ,dpi = 700)
+        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\frond_area.png') ,dpi = 300)
     
     if ii == 0:
         ax = plt.subplot(222)
@@ -104,7 +104,7 @@ for ii in range(0,2):
     ax.xaxis.set_major_formatter(xfmt)
     plt.legend()
     if ii != 0:
-        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\production.png') ,dpi = 700)
+        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\production.png') ,dpi = 300)
         
     if ii == 0:
         ax = plt.subplot(223)
@@ -124,7 +124,7 @@ for ii in range(0,2):
     plt.grid()
     plt.ylim([0.18,0.40])
     if ii != 0:
-        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\carbon_storage.png') ,dpi = 700)
+        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\carbon_storage.png') ,dpi = 300)
     
     if ii == 0:
         ax = plt.subplot(224)
@@ -144,7 +144,7 @@ for ii in range(0,2):
     ax.set_ylim([0.005,0.03])
     ax.xaxis.set_major_formatter(xfmt)
     if ii != 0:
-        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\nitrogen_storage.png') ,dpi = 700)
+        pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\nitrogen_storage.png') ,dpi = 300)
 
 ###############################################################################
 
@@ -165,7 +165,7 @@ plt.legend()
 ax.set_ylabel('gC d$^{-1}$')
 ax.set_xlabel('time')
 ax.xaxis.set_major_formatter(xfmt)
-pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\carbon_budget.png') ,dpi = 700)
+pylab.savefig((r'd:\projects\IMPAQT\MALG\documentation\manual\figures\carbon_budget.png') ,dpi = 300)
 
 ################################################################################
 fig ,ax1 = plt.subplots(1,1)
@@ -192,4 +192,4 @@ ax2.plot(his.dates,mu,'k--',label = 'specific growth rate')
 ax1.set_xlabel('time')
 ax1.set_ylabel('growth rate contribution [1/d]')
 ax2.set_ylabel('growth rate [1/d]')
-ax2.legend()
+#ax2.legend()

@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/15 18:59:21 
+ Execution start: 2019/05/27 17:21:19 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -41066,8 +41066,8 @@ Number of periods defined:     0
 
  Parallel processing with   4 processor(s)
 
- total real      array space:    8528841
- total integer   array space:     499936
- total character array space:      21430
- grand total in 4-byte words:    9050207 =   0-GB  36-MB 200-KB 828-Byte.
- Execution stop : 2019/05/15 18:59:23 
+ total real      array space:    8538929
+ total integer   array space:     499948
+ total character array space:      21485
+ grand total in 4-byte words:    9060362 =   0-GB  36-MB 241-KB 448-Byte.
+ Execution stop : 2019/05/27 17:21:20 

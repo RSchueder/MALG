@@ -2851,7 +2851,7 @@ dStrMALP   colsep Storage of phosphorous by macroalgae               colsep (gP/
 dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/m3/d)            colsep    -1.00 colsep TIC        colsep FlMALC     \\
 dMALTIC    colsep TIC uptake by MALS                                 colsep (gC/m3/d)            colsep    -1.50 colsep H2O        colsep FlMALC     \\
 dMALDOC    colsep DOC production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep DOC        colsep FlMALC     \\
-dPrOXYM    colsep OXY production by MALS                             colsep (gC/m3/d)            colsep     1.00 colsep OXY        colsep FlMALC     \\
+dPrOXYM    colsep OXY production by MALS                             colsep (gO2/m3/d)           colsep     1.00 colsep OXY        colsep FlMALC     \\
 dStrMALC   colsep storage of carbon by macroalgae                    colsep (gC/m2/d)            colsep     1.00 colsep MALC       colsep FlMALC     \\
 dCanMALS   colsep cannibalization of structural mass in respiration  colsep (gC/m2/d)            colsep    -1.00 colsep MALS       colsep FlMALC     \\
 dHrvMALS   colsep harvesting flux MALS                               colsep (gDM/m2/d)           colsep    -1.00 colsep MALS       colsep HRVMAL     \\

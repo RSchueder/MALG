@@ -69,12 +69,12 @@ C
       
       REAL(4) dMALTIC     ! F  HCO3 uptake MALN                                       (gC/m3/d)
       REAL(4) dMALDOC     ! F  Exudate MALN                                           (gC/m3/d)
-      REAL(4) dPrMALOXY    ! F  OXY production                                        (gC/m3/d)
+      REAL(4) dPrMALOXY   ! F  OXY production                                        (gC/m3/d)
       REAL(4) dStrMALC
 
       INTEGER IdUpMALTIC !   
       INTEGER IdPrMALDOC !   
-      INTEGER IdPrMALOXY !   
+      INTEGER IdPrMALOXY ! 
       INTEGER IdStrMALC  !
       INTEGER IdCanMALS  ! Canibalization of MALS in respiration
       INTEGER FLCREM
@@ -730,12 +730,11 @@ C
                 
                 ! uptake into storage gC/(m2 d)
                 LocUpC = TotAreMAL * FrBmMALS * (P * (1.0-E) - R) / Surf
-                ! oxygen 
-                ! photosynthesis produces oxygen, respiration consumes
-                ! look to TIC to see what the balance is
                 
-                dPrMALOXY   = 2.67 * dMALTIC
-                ! need ALKA!
+                ! oxygen 
+                ! photosynthesis produces oxygen, respiration consumes                
+                dPrMALOXY = 2.67 * dMALTIC
+                ! ALKA included in stoich
                 
                 GrosMALC            = TotAreMAL * FrBmMALS * P /Surf
                 RespMALC            = TotAreMAL * FrBmMALS * R /Surf
@@ -756,17 +755,27 @@ C
                 ! allocate to bottom segment flux address
                 FLCREM = (MBotSeg-ISEG)*NOFLUX
                 ! storage goes to storage
-                ! if no storage, respiration is taken from structural mass.
+                ! if no storage, respiration is taken from carbon storage, then structural mass.
                 ! fluxes were for whole segment, so convert to /m2
                 IF (LocUpC .ge. 0.0) THEN
-                  FL(IdStrMALC+FLCREM) = FL(IdStrMALC + FLCREM) + LocUpC
+                  FL(IdStrMALC+FLCREM)= FL(IdStrMALC + FLCREM) + LocUpC
                   FL(IdCanMALS+FLCREM) = 0.0
                 ELSE
-                  !areaLoc * ArDenMALS * (MALCmin - MALC)/(MALS*CDRatMALS)
-                  FL(IdStrMALC+FLCREM) = 0.0                    
-                  FL(IdCanMALS+FLCREM) = FL(IdCanMALS + FLCREM) + 
-     &             LocUpC/CDRatMALS
-                  
+                    IF (MALC .gt. MALCmin) THEN
+                      ! take respiration from storage  
+                      FL(IdStrMALC+FLCREM)= FL(IdStrMALC + FLCREM) + 
+     &                  LocUpC
+                      FL(IdCanMALS+FLCREM) = 0.0  
+                    ELSE
+                      ! take from structural mass if needed
+                      FL(IdStrMALC+FLCREM) = 0.0
+                      ! flux is a negative number so this should be a positive number
+                      ! thus it is minusing a negative number
+                      ! tres confusing...
+                      FL(IdCanMALS+FLCREM)= FL(IdCanMALS + FLCREM) -
+     &                  LocUpC/CDRatMALS 
+                    ENDIF
+                      
                 ENDIF
 
             ENDIF

@@ -204,21 +204,22 @@ C
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
                 
+                ! state variables as per Broch
+                ! valid with assumption that storage content is homogeneous
                 MALNDMS = MALN
                 MALPDMS = MALP
                 MALCDMS = MALC
-                ! valid with assumption that storage content is homogeneous
                             
                 ! find amount of mass in this segment (gDM/m2)
-   
                 MALS = MALS * FrBmMALS 
                 LocAreMAL = TotAreMAL / Surf
                 
                 ! density limitation
                 ! if the plant is too big overall then all segments suffer
                 ! area is in m2 and MALS0 is in m2 as well
+                ! LocAreMAL is specific area in whole column
                 
-               LimDen=m_1*exp(-1*((LocAreMAL/(MALS0*nFrond))**2))+m_2
+                LimDen=m_1*exp(-1*((LocAreMAL/(MALS0*nFrond))**2))+m_2
                 
                 ! temperature limitation
 
@@ -241,6 +242,8 @@ C
                 ! decay is calculated as a percent of the total frond decay
                 ! m2 to dm2
                 ! mrtMAL is per plant per dm2, so convert accordingly
+                ! LocAreMAL is specific area in whole column
+
                 coeff = exp(mrtMAL*LocAreMAL*100/nFrond)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
@@ -249,7 +252,9 @@ C
                 ! since all segments are doing this, only send the fraction
                 ! as it will be compared to the local growth
                 ! gDM/(m2 d)
-                dDecayMALS = mrt * MALS * FrBmMALS
+                ! dDecayMALS = mrt * MALS * FrBmMALS
+                ! but the MALS reflects the local fraction of biomass
+                dDecayMALS = mrt * MALS
                
                 ! production organic material
                 ! g/(m3 d)
@@ -281,6 +286,7 @@ C
                 ! adding this in to get the actual max growth rate stipulated by broch
                 LimN = MAX(1-(MALNmin/(MALN)), 0.0)
                 LimP = MAX(1-(MALPmin/MALP), 0.0)
+                ! no P limitation
                 LimP = 1.0
                 LimC = MAX(1-(MALCmin/MALC), 0.0)
                 
@@ -298,16 +304,16 @@ C
                 ! uptake from storage
                 IF (dGrowMALS .gt. 0.0) THEN
                     ! TotN = gN/m2
-                    TotN = MALS*(MALN + (CDRatMALS*NCRatMALS))
+                    TotN = MALS*(MALN + CDRatMALS*NCRatMALS)
                     dNtrMALS=mu*TotN
                     ! TotP = gP/m2
                     TotP = MALS*(MALP + CDRatMALS*PCRatMALS)
                     dPtrMALS=mu*TotP
-                    ! TotC = 
+                    ! TotC = gC/m2
                     TotC = MALS*(MALC + CDRatMALS)
                     dCtrMALS=mu*TotC      
                 ELSE
-                    TotN = MALS*(MALN + (CDRatMALS*NCRatMALS))
+                    TotN = MALS*(MALN + CDRatMALS*NCRatMALS)
                     TotP = MALS*(MALP + CDRatMALS*PCRatMALS)
                     TotC = MALS*(MALC + CDRatMALS)
 
@@ -315,6 +321,7 @@ C
                     dPtrMALS=0.0
                     dCtrMALS=0.0
                 ENDIF
+                ! no P translocation 
                 dPtrMALS=0.0
 
                 ! gDM/(m2 d), sent to bottom

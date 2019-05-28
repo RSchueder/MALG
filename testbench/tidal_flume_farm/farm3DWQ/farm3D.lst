@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/01 10:27:08 
+ Execution start: 2019/05/27 17:13:19 
        ----------> Version number of the input file is:  4.910
        ----------> Output level of the listfile is: 4
 
@@ -40745,8 +40745,8 @@
        3           LocalDepth                                
        4           TotalDepth                                
        5           Depth                                     
-       6           Temp                                      
-       7           RadSurf                                   
+       6           Temp                  volume              
+       7           RadSurf               volume              
        8           Itip                                      
        9           Itipu                                     
       10           BrochP                                    
@@ -40789,18 +40789,18 @@
       47           ExudMALC                                  
       48           FrBmMALS                                  
       49           BmLayMAL                                  
-      50           LengthMAL                                 
+      50           LengthMAL             volume              
       51           TotAreaMAL                                
       52           LocAreaMAL                                
-      53           TipDepth                                  
-      54           LimVel                                    
+      53           TipDepth              volume              
+      54           LimVel                volume              
       55           LocUpN                                    
       56           LocUpP                                    
       57           LocUpC                                    
       58           Wdry                                      
       59           Wwet                                      
-      60           MBotSeg                                   
-      61           FootDepth                                 
+      60           MBotSeg               volume              
+      61           FootDepth             volume              
 
  Specification of map output
 
@@ -40950,6 +40950,13 @@
    INFO:Wwet                ; NOT FOUND, delwaq will detect variables from process library
    INFO:MBotSeg             ; NOT FOUND, delwaq will detect variables from process library
         FootDepth           ; Using constant nr          42
+        volume              ; Using DELWAQ VOLUME
+        volume              ; Using DELWAQ VOLUME
+        volume              ; Using DELWAQ VOLUME
+        volume              ; Using DELWAQ VOLUME
+        volume              ; Using DELWAQ VOLUME
+        volume              ; Using DELWAQ VOLUME
+        volume              ; Using DELWAQ VOLUME
         SURF                ; Using parameter nr           1
         Velocity            ; Using constant nr          45
    INFO:LocalDepth          ; NOT FOUND, delwaq will detect variables from process library
@@ -41037,8 +41044,8 @@ Number of periods defined:     0
 
  Parallel processing with   2 processor(s)
 
- total real      array space:    5733473
- total integer   array space:     479218
- total character array space:      21408
- grand total in 4-byte words:    6234099 =   0-GB  24-MB 936-KB 396-Byte.
- Execution stop : 2019/05/01 10:27:08 
+ total real      array space:    5743559
+ total integer   array space:     479252
+ total character array space:      21463
+ grand total in 4-byte words:    6244274 =   0-GB  24-MB 977-KB  96-Byte.
+ Execution stop : 2019/05/27 17:13:20 

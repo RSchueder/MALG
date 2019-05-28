@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/15 18:59:23 
+ Execution start: 2019/05/27 17:21:19 
                                                                                 
  found -p command line switch                                                   
 
@@ -116,6 +116,9 @@ total number of substances with fractions :  0
    from proces [FlMALN              ] Flux for Macroalgae nutrient storage (N/P)                    
    process is switched on.                                                                          
  found flux  [dPrOXYM             ] OXY production by MALS                                          
+   from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
+   process is switched on.                                                                          
+ found flux  [dReOXYM             ] OXY consumption by MALS                                         
    from proces [FlMALC              ] Flux calculation for Macroalgae carbon storage (C)            
    process is switched on.                                                                          
 -dispersion for [OXY                 ]                                                              

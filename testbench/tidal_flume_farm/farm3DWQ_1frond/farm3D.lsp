@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/01 14:00:00 
+ Execution start: 2019/05/27 17:41:33 
                                                                                 
  found -p command line switch                                                   
 
@@ -659,7 +659,7 @@ total number of substances with fractions :  0
        Using output from proces [TotDepth            ]                                              
        [MALS                ] MacroALgae Structural biomass                                         
        Using substance nr  18                                                                       
-       [FootDepth           ] location of frond attachment in the water columns                     
+       [FootDepth           ] location of frond attachment in the water column <                    
        using default value: -999.999                                                                
        [LmaxMAL             ] Maximum length MALG                                                   
        Using constant nr 40 with value:  5.00000                                                    
@@ -669,6 +669,10 @@ total number of substances with fractions :  0
        Using constant nr 43 with value:  1.00000                                                    
        [LinDenMAL           ] linear density of macroalgae                                          
        Using constant nr 41 with value:  20.0000                                                    
+       [LinDenCor           ] apply lencorr. factor for low biomass density (0=n                    
+       using default value:  0.00000                                                                
+       [FStretch            ] stretch factor for frond length                                       
+       using default value:  1.00000                                                                
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       

@@ -1,0 +1,52 @@
+PER SEGMENT IF SEGMENT HAS BIOMASS
+
+BmLayMAL     - per segment
+BrochP       - per segment 
+ExudMALC     - per segment
+FrBmMALS     - per segment
+FrondArea    - per column per m2 per plant
+LocalArea    - per column per m2
+GrosMALC     - per segment
+LimDenS      - per segment 
+LimMALC      - per segment 
+LimMALN      - per segment 
+LimMALP      - per segment 
+LimN         - per segment 
+LimNutS      - per segment 
+LimP         - per segment 
+LimPhoS      - per segment 
+LimTemS      - per segment 
+LimVel       - per segment 
+LocDecS      - per segment 
+LocGroC      - per segment 
+LocGroN      - per segment 
+LocGroP      - per segment 
+LocGroPS     - per segment 
+LocNetPS     - per segment 
+LocUpC       - per segment 
+LocUpN       - per segment 
+LocUpP       - per segment 
+MALSCDM      - per segment 
+MALSNDM      - per segment 
+MALSPDM      - per segment 
+MALSNC       - per segment 
+MALSPC       - per segment 
+muMALS       - per segment 
+RespMALC     - per segment 
+WDry         - per segment
+Wwet         - per segment
+
+PER COLUMN IF COLUMN HAS BIOMASS
+MALCDMS      - per segment 
+MALNDMS      - per segment 
+MALPDMS      - per segment 
+FootDepth    - per column
+TotalAreaMAL - per column
+LengthMAL    - per column
+TipDepth     - per column
+
+ONLY BOTTOM SEGMENT
+MALS         - only bottom segment
+MALN         - only bottom segment
+MALP         - only bottom segment
+MALC         - only bottom segment

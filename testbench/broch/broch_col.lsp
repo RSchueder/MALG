@@ -1,5 +1,5 @@
  Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/04/08 18:15:21 
+ Execution start: 2019/05/27 23:06:43 
                                                                                 
  found -p command line switch                                                   
 
@@ -364,7 +364,7 @@ total number of substances with fractions :  0
        [RadSurf             ] irradiation at the water surface                                      
        Using function nr  3                                                                         
        [ExtVl               ] total extinction coefficient visible light                            
-       Using constant nr 26 with value: 0.180000                                                    
+       Using constant nr 26 with value: 0.125000                                                    
        [alpha0              ] photosynthetic efficiency MALC                                        
        using default value: 0.375000E-04                                                            
        [Isat                ] light intensity where photosynthesis is max                           
@@ -517,7 +517,7 @@ total number of substances with fractions :  0
        Using parameter nr  4                                                                        
        [MALS                ] MacroALgae Structural biomass                                         
        Using substance nr  14                                                                       
-       [FootDepth           ] location of frond attachment in the water columns                     
+       [FootDepth           ] location of frond attachment in the water column <                    
        using default value: -999.999                                                                
        [LmaxMAL             ] Maximum length MALG                                                   
        Using constant nr 31 with value:  10.0000                                                    
@@ -526,7 +526,11 @@ total number of substances with fractions :  0
        [nFrond              ] number of fronds per m2                                               
        using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
-       Using constant nr 27 with value:  100.000                                                    
+       Using constant nr 27 with value:  120.000                                                    
+       [LinDenCor           ] apply lencorr. factor for low biomass density (0=n                    
+       using default value:  0.00000                                                                
+       [FStretch            ] stretch factor for frond length                                       
+       using default value:  1.00000                                                                
        [ArDenMAL            ] Area density frond (grams/m2 surface area)                            
        using default value:  60.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       

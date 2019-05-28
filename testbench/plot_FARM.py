@@ -36,14 +36,14 @@ plt.rcParams["figure.figsize"] = [18,9.93]
 xfmt = mdates.DateFormatter('%m-%d')
 
 
-file = r'p:\11202512-h2020_impaqt\03_waterquality\02_modelSetup\C01\NZB.his'
+file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ_1frond\farm3D.his'
 sep = FindLast(file,"\\")
 printDirectory = (file[:sep] + '\\post_processing')
 if not os.path.exists(printDirectory):
     os.makedirs(printDirectory)
 
 his = d3d.DelwaqHisFile(file)
-seg = 'module_3 3 (1)'
+seg = 'Farm2'
 ###############################################################################
 
 #fig, ax = plt.subplots(1,2)
