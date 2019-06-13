@@ -24,6 +24,8 @@ INCLUDE 'includes_deltashell/B2_outputtimers.inc'   ; From UI: Simulation timers
 #2;
 ;###############################################################################
 ; Third input block
+ UGRID 'flowfm_waqgeom.nc'
+ 
 INCLUDE 'includes_deltashell/B3_nrofseg.inc'        ; From UI: Nr of segments (multiply number-water-quality-segments-per-layer and number-water-quality-layers from HYD)
  2                                                  ; Structure matrix not used
 
@@ -61,7 +63,7 @@ INCLUDE 'includes_deltashell/B5_boundlist.inc'      ; From UI: Boundary segments
 0                                                   ; No Tatcher-Harleman time lags
 
 INCLUDE 'includes_deltashell/B5_boundaliases.inc'   ; From UI: Boundary location aliases
-INCLUDE 'includes_deltashell/B5_bounddata.inc'      ; From UI: Boundary data
+INCLUDE 'includes_deltashell/2D_nest.bnd'      ; From UI: Boundary data
 
 
 #5;
@@ -86,6 +88,13 @@ INCLUDE 'includes_deltashell/B7_vdiffusion.inc'     ; FROM UI: Vertical diffusio
 
 INCLUDE 'includes_deltashell/B7_segfunctions.inc'   ; FROM UI: SEG_FUNCTION blocks
 INCLUDE 'includes_deltashell/B7_numerical_options.inc'   ; FROM UI: numerical options
+; MALG parameters
+INCLUDE 'MALG.inc'
+; parameters taken from BLOOM
+; might not need to be included since these values should be in the substance file
+;INCLUDE 'NZBLOOM.inc'
+; parameters taken from Tineke
+INCLUDE 'parameters_DEBGRZ_blue_mussel.inc'
 
 #7
 ;###############################################################################

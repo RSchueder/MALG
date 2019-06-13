@@ -195,7 +195,12 @@ C
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
-                
+                !write(*,*) "Segment:" ,ISEG
+                !write(*,*) "MBotSeg:" ,MBotSeg
+                !write(*,*) "MALN:" , MALN
+                !write(*,*) "MALC:" , MALC 
+                !write(*,*) "MALS:" , MALS 
+
                 ! need to convert storage substance from gX/m2 to gX/gDM
                 ! to be consistent with constants from Broch
                 ! gX/m2 to gX/gDM
@@ -274,12 +279,16 @@ C
                 ! mortality products are produced regardless of net prod-mort
                 IF (MALN .lt. MALNmin) THEN
                     write(*,*) 'ERROR: MALN (gN/gDM) LESS THAN MALNmin'
+                !    write(*,*) "Values:" ,MALN, MALNmin
+                !write(*,*) "Values:" ,MALS/FrBmMALS,MALN*MALS/FrBmMALS 
                 ENDIF
                 !IF (MALP .lt. MALPmin) THEN
                 !    write(*,*) 'ERROR: MALP (gP/gDM) LESS THAN MALPmin'
                 !ENDIF
                 IF (MALC .lt. MALCmin) THEN
                     write(*,*) 'ERROR: MALC (gC/gDM) LESS THAN MALCmin'
+                !    write(*,*) "Values:" ,MALC, MALCmin
+                !write(*,*) "Values:" ,MALS/FrBmMALS,MALC*MALS/FrBmMALS 
                 ENDIF           
                 
                 ! storage limitations

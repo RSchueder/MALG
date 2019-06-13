@@ -1,0 +1,76 @@
+ All options have been (re)set to default values
+
+ All options have been (re)set to default values
+
+ 1985   ECOLUMN - BLOOM II model                                              
+ Based on coefficients of ECOLUMN - BLOOM, but modified                 
+ Diatom-E and Flag-E as in 2 species calculation! C/CHL E-types lowerd  
+ Temperature calculated as        1.00   * nominal Temp   +         0.00
+ Solar radiation calculated as    1.00   * nominal rad    +         0.00
+ Daylength calculated as          1.00   * nominal daylen +         0.00
+ Backgr. ext. calculated as       1.00   * nominal Kb     +         0.00
+ Depth calculated as              1.00   * nominal depth  +         0.00
+ Concentration of  NITROGEN   is    1.00   * nominal conc. +     0.00
+ Concentration of  PHOSPHOR   is    1.00   * nominal conc. +     0.00
+ Concentration of  SILICON    is    1.00   * nominal conc. +     0.00
+ Mineralization of  NITROGEN   =    0.0060   * Temparature
+ Mineralization of  PHOSPHOR   =    0.0060   * Temparature
+ Mineralization of  SILICON    =    0.0030   * Temparature
+ Blooms will be calculated for the following   1  periods:
+ First period:     1 Last period:    52 Increment:     1
+ Mortality rate calculated as exponential function of temperature.
+ Sedimentation rate = 0.000
+ Flushing rate = 0.000
+ Mineralization rate of detritus =   0.005  *  Temperature
+ Mineralization rate of chlorophyll is: EXP (   0.0296 * Temperature-    1.8971 )
+ Nutrient fraction becoming detritus: 
+ Species fDet
+ MDIATOMS_E 0.700
+ MDIATOMS_N 0.700
+ MDIATOMS_P 0.700
+ MFLAGELA_E 0.700
+ MFLAGELA_N 0.700
+ MFLAGELA_P 0.700
+ DINOFLAG_E 0.700
+ DINOFLAG_N 0.700
+ DINOFLAG_P 0.700
+ PHAEOCYS_E 0.700
+ PHAEOCYS_N 0.700
+ PHAEOCYS_P 0.700
+ Present species growth coefficients: 
+ Species Pmax 1  Pmax 2  P-func. Mort 1  Mort 2  Resp 1  Resp 2  Relmix  Zoopref
+ MDIATOMS_E 0.070  -4.500 LINEAR    0.070   1.072   0.060   1.066   1.000   1.000
+ MDIATOMS_N 0.054  -4.170 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ MDIATOMS_P 0.054  -4.170 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ MFLAGELA_E 0.090  -1.000 LINEAR    0.070   1.072   0.060   1.066   1.000   1.000
+ MFLAGELA_N 0.075  -1.000 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ MFLAGELA_P 0.075  -1.000 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ DINOFLAG_E 0.132   5.500 LINEAR    0.070   1.072   0.060   1.066   1.000   1.000
+ DINOFLAG_N 0.113   4.750 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ DINOFLAG_P 0.113   4.750 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ PHAEOCYS_E 0.060  -8.000 LINEAR    0.070   1.072   0.060   1.066   1.000   1.000
+ PHAEOCYS_N 0.055  -8.000 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ PHAEOCYS_P 0.055  -8.000 LINEAR    0.080   1.085   0.060   1.066   1.000   1.000
+ Present species stochiometry: 
+ Spec.name   Spec ext   NITROGEN  PHOSPHOR  SILICON   CHLTOCAR  CARTODRY
+ MDIATOMS_E   0.800D-04   0.08500   0.01050   0.14900   18.7617   3.00000
+ MDIATOMS_N   0.700D-04   0.04167   0.00583   0.09433   66.6667   3.00000
+ MDIATOMS_P   0.700D-04   0.05000   0.00375   0.09433   66.6667   3.00000
+ MFLAGELA_E   0.100D-03   0.08000   0.00800   0.00000   43.8596   2.50000
+ MFLAGELA_N   0.900D-04   0.05600   0.00600   0.00000  100.0000   2.50000
+ MFLAGELA_P   0.900D-04   0.08000   0.00450   0.00000  100.0000   2.50000
+ DINOFLAG_E   0.800D-04   0.06500   0.00670   0.00000   43.8596   2.50000
+ DINOFLAG_N   0.700D-04   0.05000   0.00600   0.00000  100.0000   2.50000
+ DINOFLAG_P   0.700D-04   0.05500   0.00520   0.00000  100.0000   2.50000
+ PHAEOCYS_E   0.180D-03   0.07500   0.00900   0.00000   43.8596   2.50000
+ PHAEOCYS_N   0.165D-03   0.05400   0.00850   0.00000   80.0000   2.50000
+ PHAEOCYS_P   0.165D-03   0.07500   0.00450   0.00000   80.0000   2.50000
+ Ojective function: maximize net growth rates.
+ Minimum Pmax and mortality rate of  0.010 for temperatures less or equal to  2.5
+ Computation with extra constraints on growth rates
+ using a CONSTANT base level of    50.00
+
+ Computation with extra mortality constraints
+ using a top level of      2.50
+
+ Option DOMINANC has been put on

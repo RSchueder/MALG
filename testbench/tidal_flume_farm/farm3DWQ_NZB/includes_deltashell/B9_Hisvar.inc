@@ -1,63 +1,81 @@
 2 ; perform default output and extra parameters listed below
-61 ; number of extra variables
-  'SURF' ' '
-  'Velocity' ' '
-  'LocalDepth' ' '
-  'TotalDepth' ' '
-  'Depth' ' '
-  'Temp' 'volume'
-  'RadSurf' 'volume'
-  'Itip' ' '
-  'Itipu' ' '
-  'BrochP' ' '                      ;x gross production as per Broch                          (gC/dm2/h)
-  'pH' ' '
-  'DisCO2' ' '
-  'pCO2water' ' '
-  'DisHCO3' ' '
-  'CO2' ' '
-  'beta' ' '
-  'FrondArea' ' '
-  'daylend' ' '                     ;x daylength default definition                           (-)                 
-  'daylenp' ' '                     ;x daylength of previous day                              (-)                 
-  'daylenm' ' '                     ;x maximum daylength at this latitude                     (-)   
-  'MALNDMS' ' '                      ;x macroalgae N storage in segment                        (gN/gDM)            
-  'MALPDMS' ' '                      ;x macroalgae P storage in segment                        (gP/gDM)            
-  'MALCDMS' ' '                      ;x macroalgae C storage in segment                        (gC/gDM)            
-  'MALSNC' ' '                      ;x ratio N:C in whole frond                               (gN/gC)             
-  'MALSPC' ' '                      ;x ratio P:C in whole frond                               (gP/gC)             
-  'MALSCDM' ' '                      ;x ratio C:DM in whole frond                              (gC/gDM)             
-  'MALSNDM' ' '                      ;x ratio N:DM in whole frond                              (gN/gDM)
-  'MALSPDM' ' '                      ;x ratio P:DM in whole frond                              (gP/gDM) 
-  'LimDenS' ' '                     ;x biomass limitation MALS                                (-)                 
-  'LimPhoS' ' '                     ;x photoperiod limitation MALS                            (-)                 
-  'LimTemS' ' '                     ;x temperature limitation MALS                            (-)                 
-  'LimN' ' '                        ;x ambient nitrogen limitation for storage                (-)
-  'LimP' ' '                        ;x ambient phosphorous limitation for storage             (-)
-  'LimNutS' ' '                     ;x nutrient storage limitation MALS                       (-)                 
-  'LimMALN' ' '                     ;x nitrogen storage limitation MALS                       (-)
-  'LimMALP' ' '                     ;x phosphorous storage limitation MALS                    (-)
-  'LimMALC' ' '                     ;x carbon storage limitation MALS                         (-)
-  'muMALS' ' '
-  'LocGroPS' ' '                    ;x local gross production of MALS                         (DM/m2/d)           
-  'LocNetPS' ' '                    ;x local net production of MALS                           (DM/m2/d)           
-  'LocDecS' ' '                     ;x local decay of MALS                                    (DM/m2/d)           
-  'LocGroN' ' '                     ;x local growth of MALN                                   (gN/m3/d)           
-  'LocGroP' ' '                     ;x local growth of MALP                                   (gP/m3/d)           
-  'LocGroC' ' '                     ;x local growth of MALC                                   (gC/m3/d)     
-  'GrosMALC' ' '                    ;x gross photosynthesis MALC                              (gC/m2/d) 
-  'RespMALC' ' '                    ;x respiration MALC                                       (gC/m2/d)             
-  'ExudMALC' ' '                    ;x exudation MALC                                         (gC/m2/d) 
-  'FrBmMALS' ' '                    ;x Fraction of bottom layer MALS in this seg              (DM/m2)             
-  'BmLayMAL' ' '                    ;x   Biomass of MALS in segment                            (gDM/m2)           
-  'LengthMAL' 'volume'                    ;x length of frond in this column                         (m)                 
-  'TotAreaMAL' ' '                     ;x area of frond in this column                           (m2)                
-  'LocAreaMAL' ' '                     ;x area of frond in this m2                           (m2/m2)                
-  'TipDepth' 'volume'                    ;x depth of tip of frond in this column                   (m)                 
-  'LimVel' 'volume'                      ;x velocity limitation                                    (-)                 
-  'LocUpN' ' '                      ;x Local N storage uptake flux                            (gN/m3/d)           
-  'LocUpP' ' '                      ;x Local P storage uptake flux                            (gP/m3/d)   
-  'LocUpC' ' '                      ;x Local C uptake flux                                    (gC/m3/d)   
-  'Wdry' ' '  
-  'Wwet' ' '
-  'MBotSeg' 'volume'                     ;x bottom segment for this segment                        (-) 
-  'FootDepth' 'volume'  
+120 ; number of parameters listed
+ 'IM1' 'volume'
+ 'ExtVl' 'volume'
+ 'ExtVlPhyt' 'volume'
+ 'Depth' 'volume'
+ 'DayL' 'volume'
+ 'Limit Chlo' 'volume'
+ 'Limit nit' 'volume'
+ 'Limit pho' 'volume'
+ 'Limit sil' 'volume'
+ 'Limit e' 'volume'
+ 'Limit gro' 'volume'
+ 'Limit mor' 'volume'
+ 'fPPtot' 'volume'
+ 'fResptot' 'volume'
+ 'Velocity' 'volume'
+ 'VWind' 'volume'
+ 'SaturOXY' 'volume'
+ 'TotalDepth' 'volume'
+ 'SatPercOXY' 'volume'
+ 'Phyt' 'volume'
+ 'AlgN' 'volume'
+ 'AlgP' 'volume'
+ 'AlgSi' 'volume'
+ 'AlgDM' 'volume'
+ 'SS' 'volume'
+ 'TIM' 'volume'
+ 'POM' 'volume'
+ 'TOC' 'volume'
+ 'POC' 'volume'
+ 'TotN' 'volume'
+ 'KjelN' 'volume'
+ 'DIN' 'volume'
+ 'TON' 'volume'
+ 'PON' 'volume'
+ 'TotP' 'volume'
+ 'TOP' 'volume'
+ 'POP' 'volume'
+ 'PIP' 'volume'
+ 'TotSi' 'volume'
+ 'Tau' 'volume'
+ 'VSedPOC1' 'volume'
+ 'fSedPOC1' 'volume'
+ 'SecchiDept' 'volume'
+ 'POCS1' 'volume'
+ 'fSedMDI_E' 'volume'
+ 'fSedMDI_N' 'volume'
+ 'fSedMDI_P' 'volume'
+ 'fSedMFL_E' 'volume'
+ 'fSedMFL_N' 'volume'
+ 'fSedMFL_P' 'volume'
+ 'fSedDIN_E' 'volume'
+ 'fSedDIN_N' 'volume'
+ 'fSedDIN_P' 'volume'
+ 'fSedPHA_E' 'volume'
+ 'fSedPHA_N' 'volume'
+ 'fSedPHA_P' 'volume'
+ 'fSedPHYT' 'volume'
+ 'Chlfa' 'volume'
+ 'BLOOMGRP' 'volume'
+ 'ExtVlBak' 'volume'
+ 'ExtVlISS' 'volume'
+ 'ExtVlOSS' 'volume'
+ 'ExtVlODS' 'volume'
+ 'ExtVlFresh' 'volume'
+ 'RadBot' 'volume'
+ 'FRACTIME01' 'volume'
+ 'FRACTIME03' 'volume'
+ 'FRACTIME05' 'volume'
+ 'LocalDepth' 'volume'
+ 'fSedPOC' 'volume'
+ 'DINOFLAG' 'volume'
+ 'MDIATOMS' 'volume'
+ 'MFLAGELA' 'volume'
+ 'PHAEOCYS' 'volume'
+ 'Temp' 'volume'
+ 'RadSurf' 'volume'
+    
+ INCLUDE 'includes_deltashell\output_hisvars.inc'
+  
