@@ -49,6 +49,25 @@ bottom = {'MALS': ' x MacroALgae Structural biomass                          (gD
 'MALP': ' x MacroALgae Phosphrous storage                            (gP/m2)' ,      
 'MALC': ' x MacroALgae Carbon storage                            (gC/m2)'  }     
 
+mussel = [ "'M_Vind'       'M_Nind'",
+    "'M_Eind'       'M_Nind'",
+    "'M_Rind'       'M_Nind'",
+    "'M_TotBiom'    ''",
+    "'M_Biomass'    'surf'",
+    "'M_TotWW'      ''",
+    "'M_WW'         'surf'",
+    "'M_TotAFDW'    ''",
+    "'M_AFDW'       'surf'",
+    "'M_GrossGr'    'surf'",
+    "'M_NetGr'      'surf'",
+    "'M_Nind'       'surf'",
+    "'M_Length'     'M_Nind'",
+    "'M_GSI'        'M_Nind'",
+    "'M_Escaled'    'M_Nind'",
+    "'M_Nbal'       ''",
+    "'M_Pbal'       ''",
+    "'M_Cbal'       ''"]
+
 file = r'p:\11202512-h2020_impaqt\03_waterquality\02_modelSetup\05_obs\output'
 
 with open(file + '_hisvars.inc', 'w') as inc:
@@ -56,6 +75,8 @@ with open(file + '_hisvars.inc', 'w') as inc:
         inc.write("'%s' ' ' ; %s\n" % (val, segment[val]))
     for val in column.keys():
         inc.write("'%s' ' ' ; %s\n" % (val, column[val]))
+    for val in mussel:
+        inc.write("%s\n" % val)
         
 with open(file + '_mapvars.inc', 'w') as inc:
     for val in segment.keys():

@@ -48,6 +48,8 @@ def return_malg_par(his, sub, colname, segment, column):
         for loc in collocs:     
             print('Checking: ' + loc)
             data = his[sub, loc, :]
+            if sub == 'TipDepth':
+                data = data * -1.0
             if np.max(data) > 0:
                 # if there was biomass in this segment at one time
                 print('adding to sum')
@@ -99,10 +101,10 @@ plt.close('all')
 plt.rc('text', usetex= True)
 plt.rc('font', family = 'serif', size = 30)
 plt.rcParams["figure.figsize"] = [18,9.93]
-xfmt = mdates.DateFormatter('%d-%m')
+xfmt = mdates.DateFormatter('%m-%y')
 
 
-file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\farm3DWQ_NZB\farm3D.his'
+file = r'd:\projects\IMPAQT\Farm3D\farm3D.his'
 sep = FindLast(file,"\\")
 printDirectory = (file[:sep] + '\\post_processing\\')
 if not os.path.exists(printDirectory):
@@ -119,7 +121,7 @@ ax1.plot(his.dates,temp,'k--',label = 'Temperature')
 ax1.grid()
 ax1.legend(loc = 'upper left')
 ax1.xaxis.set_major_formatter(xfmt)
-#pylab.savefig((printDirectory + 'Temp.png') ,dpi = 200)
+pylab.savefig((printDirectory + 'Temp.png') ,dpi = 200)
 
 fig = plt.figure(2)
 ax2 = fig.add_axes([0.1,0.1,0.8,0.8])  
@@ -128,7 +130,7 @@ ax2.plot(his.dates,no3/14.0,'k-',label = 'NO$_{3}^{-}$')
 ax2.set_ylabel('N-NO$_{3}$')
 ax2.xaxis.set_major_formatter(xfmt)
 ax2.legend()
-#pylab.savefig((printDirectory + 'NO3.png') ,dpi = 200)
+pylab.savefig((printDirectory + 'NO3.png') ,dpi = 200)
 
 
 ###############################################################################
@@ -142,7 +144,7 @@ ax.set_ylabel('Frond area [dm$^{2}$]')
 plt.grid()
 plt.legend()
 ax.xaxis.set_major_formatter(xfmt)
-#pylab.savefig(printDirectory + 'frond_area.png' ,dpi = 200)
+pylab.savefig(printDirectory + 'frond_area.png' ,dpi = 200)
 
 fign = plt.figure()
 ax = fign.add_axes([0.1,0.1,0.8,0.8])     
@@ -153,7 +155,7 @@ plt.grid()
 ax.set_xlabel('(B)')
 ax.xaxis.set_major_formatter(xfmt)
 plt.legend()
-#pylab.savefig(printDirectory + 'production.png' ,dpi = 200)
+pylab.savefig(printDirectory + 'production.png' ,dpi = 200)
     
 fign = plt.figure()
 ax = fign.add_axes([0.1,0.1,0.8,0.8])       
@@ -164,7 +166,7 @@ ax.set_ylabel('carbon content [gC gDW$^{-1}$]')
 ax.xaxis.set_major_formatter(xfmt)    
 plt.legend()
 plt.grid()
-#pylab.savefig(printDirectory + 'carbon_storage.png' ,dpi = 200)
+pylab.savefig(printDirectory + 'carbon_storage.png' ,dpi = 200)
 
 fign = plt.figure()
 ax = fign.add_axes([0.1,0.1,0.8,0.8])             
@@ -175,7 +177,7 @@ ax.set_ylabel('nitrogen content [gN gDW$^{-1}$]')
 plt.legend()
 plt.grid()
 ax.xaxis.set_major_formatter(xfmt)
-#pylab.savefig(printDirectory + 'nitrogen_storage.png', dpi = 200)
+pylab.savefig(printDirectory + 'nitrogen_storage.png', dpi = 200)
 
 ###############################################################################
 
@@ -195,7 +197,7 @@ plt.legend()
 ax.set_ylabel('gC d$^{-1}$')
 ax.set_xlabel('time')
 ax.xaxis.set_major_formatter(xfmt)
-#pylab.savefig(printDirectory + 'carbon_budget.png' ,dpi = 200)
+pylab.savefig(printDirectory + 'carbon_budget.png' ,dpi = 200)
 
 ################################################################################
 
@@ -213,7 +215,7 @@ plt.legend()
 ax.set_ylabel('m')
 ax.set_xlabel('time')
 ax.xaxis.set_major_formatter(xfmt)
-#pylab.savefig(printDirectory + 'length.png' ,dpi = 200)
+pylab.savefig(printDirectory + 'length.png' ,dpi = 200)
 
 fig = plt.figure(11)
 ax = fig.add_axes([0.1,0.1,0.8,0.8])
@@ -226,4 +228,4 @@ plt.legend()
 ax.set_ylabel('kg')
 ax.set_xlabel('time')
 ax.xaxis.set_major_formatter(xfmt)
-#pylab.savefig(printDirectory + 'dry weight.png' ,dpi = 200)
+pylab.savefig(printDirectory + 'dry weight.png' ,dpi = 200)

@@ -187,12 +187,15 @@ C
                 ELSE
                     LocUpP = 0.0
                 ENDIF
-                
+                LocUpP = 0.0
+                ! uptake from water column
                 dUpMALNO3 = LocUpN/(Depth*Surf) 
                 ! can not take up NH4 at the moment, Broch ignores NH4
                 dUpMALNH4 = 0.0
+                ! calculate, but set P to zero
                 dUpMALPO4 = LocUpP/(Depth*Surf)
                 dUpMALPO4 = 0.0
+                
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4
                 FL ( IdUpMALPO4 ) = dUpMALPO4 
