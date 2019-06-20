@@ -4009,6 +4009,7 @@ outppr,outpit,outpnm,outpdo,outpsx
 "FlMALN    ","LimP      ",   3,"x",1
 "FlMALN    ","LocUpN    ",   4,"x",1
 "FlMALN    ","LocUpP    ",   5,"x",1
+"FlMALN    ","FrNH4MALN ",   6,"x",1
 "FlMALC    ","LocUpC    ",   1,"x",1
 "FlMALC    ","Itip      ",   2,"x",1
 "FlMALC    ","Itipu     ",   3,"x",1

@@ -12,8 +12,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(31)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(31)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(33)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(33)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -22,7 +22,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 31)   !    Local work array for the pointering
+      INTEGER IPNT( 33)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -51,6 +51,7 @@ C
       REAL(4) JPmax	    ! I  maximum p uptake rate                               (gP/m2 d)
       REAL(4) Vel         ! I	 velocity                                            (m/s)
       REAL(4) Vel65	    ! I  current speed at which J = 0.65Jmax                 (m/s)
+      REAL(4) NH4Thresh   ! I threshold below which NH4 uptake by MALN is limited  (g/m3)
       
       ! REAL(4) MBotSeg     ! I 
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
@@ -81,6 +82,8 @@ C
       
       REAL(4) LimN
       REAL(4) LimP
+      REAL(4) FrNH4MALN   ! -  fraction MALN NH4 uptake                            (-)
+      REAL(4) EffNit
 C
 C*******************************************************************************
 C
@@ -124,11 +127,12 @@ C
                 JPmax	    =	PMSA( IPNT(20) )
                 Vel	    =	PMSA( IPNT(21) )
                 Vel65	    =	PMSA( IPNT(22) )
-                Surf	    =	PMSA( IPNT(24) )
-                DELT	    =	PMSA( IPNT(25) )
-                Depth	    =	PMSA( IPNT(26) )
+                NH4Thresh =   PMSA( IPNT(23) )
+                Surf	    =	PMSA( IPNT(25) )
+                DELT	    =	PMSA( IPNT(26) )
+                Depth	    =	PMSA( IPNT(27) )
 
-                MBotSeg    = nint(PMSA( IPNT( 23) ))
+                MBotSeg    = nint(PMSA( IPNT( 24) ))
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
@@ -173,10 +177,16 @@ C
                 ! we try to achieve gN/m2 water d
                 ! Broch achieves gN/gDM day
                 ! we multimply this by MALS * area density (g/m2)
-                                
+                IF (NH4 .le. NH4Thresh) THEN
+                    FrNH4MALN = NH4/(NH4 + NO3)
+                ELSE
+                    FrNH4MALN = 1.0
+                ENDIF
+
+                EffNit = (FrNH4MALN * NH4) + ((1-FrNH4MALN) * NO3)
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
                   LocUpN = (TotAreMAL*FrBmMALS) * JNmax * 
-     &                (NO3/(Ksn + NO3))  * LimN * LimVel 
+     &                (EffNit/(Ksn + EffNit))  * LimN * LimVel 
                 ELSE
                     LocUpN = 0.0
                 ENDIF
@@ -187,14 +197,14 @@ C
                 ELSE
                     LocUpP = 0.0
                 ENDIF
-                LocUpP = 0.0
+                
                 ! uptake from water column
-                dUpMALNO3 = LocUpN/(Depth*Surf) 
                 ! can not take up NH4 at the moment, Broch ignores NH4
-                dUpMALNH4 = 0.0
+                dUpMALNH4 = FrNH4MALN     * LocUpN/(Depth*Surf) 
+                dUpMALNO3 = (1-FrNH4MALN) * LocUpN/(Depth*Surf) 
                 ! calculate, but set P to zero
+                LocUpP = 0.0
                 dUpMALPO4 = LocUpP/(Depth*Surf)
-                dUpMALPO4 = 0.0
                 
                 FL ( IdUpMALNO3 ) = dUpMALNO3
                 FL ( IdUpMALNH4 ) = dUpMALNH4
@@ -206,12 +216,12 @@ C
                 FL(IdStrMALN + FLCREM) =FL(IdStrMALN+FLCREM)+LocUpN/Surf
                 FL(IdStrMALP + FLCREM) =FL(IdStrMALP+FLCREM)+LocUpP/Surf
                
-                PMSA( IPNT( 27)   ) =  LimVel		
-                PMSA( IPNT( 28)   ) =  LimN		
-                PMSA( IPNT( 29)   ) =  LimP		
-                PMSA( IPNT( 30)   ) =  LocUpN/Surf	
-                PMSA( IPNT( 31)   ) =  LocUpP/Surf	
-                
+                PMSA( IPNT( 28)   ) =  LimVel		
+                PMSA( IPNT( 29)   ) =  LimN		
+                PMSA( IPNT( 30)   ) =  LimP		
+                PMSA( IPNT( 31)   ) =  LocUpN/Surf	
+                PMSA( IPNT( 32)   ) =  LocUpP/Surf	
+                PMSA( IPNT( 33)   ) =  FrNH4MALN
             ENDIF
          ENDIF
          

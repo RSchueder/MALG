@@ -2254,6 +2254,7 @@ LimN       colsep ambient nitrogen limitation for storage            colsep (-) 
 LimP       colsep ambient phosphorous limitation for storage         colsep (-)                  colsep FlMALN     \\
 LocUpN     colsep Local N storage uptake flux in this segment        colsep (gN/m2/d)            colsep FlMALN     \\
 LocUpP     colsep Local P storage uptake flux in this segment        colsep (gP/m2/d)            colsep FlMALN     \\
+FrNH4MALN  colsep fraction ammonium uptake by MALN                   colsep (-)                  colsep FlMALN     \\
 LocUpC     colsep Local C uptake flux                                colsep (gC/m3/d)            colsep FlMALC     \\
 Itip       colsep Radiation experienced by frond in current layer    colsep (W/m2)               colsep FlMALC     \\
 Itipu      colsep photon radiation experienced by frond in current l colsep (umol/m2/s)          colsep FlMALC     \\

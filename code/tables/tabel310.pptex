@@ -5604,6 +5604,7 @@ Ksp        colsep half saturation MALN P uptake                      colsep (gP/
 JNmax      colsep maximum MALN N uptake rate (per area frond)        colsep (gN/m2/d)            colsep           0.336 \\
 JPmax      colsep maximum MALP P uptake rate (per area frond)        colsep (gP/m2/d)            colsep           0.336 \\
 Vel65      colsep current speed at which J = 0.65Jmax                colsep (m/s)                colsep           0.030 \\
+NH4Thresh  colsep threshold below which NH4 uptake by MALN is limite colsep (gN/m3)              colsep           0.010 \\
 R1         colsep Reference respiration rate at T1                   colsep (gC/dm2/h)           colsep           0.000 \\
 R2         colsep Reference respiration rate at T2                   colsep (gC/dm2/h)           colsep           0.001 \\
 Tr1        colsep reference temperature 1 for respiration            colsep (degK)               colsep         285.000 \\

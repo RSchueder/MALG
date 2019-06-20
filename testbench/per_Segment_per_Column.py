@@ -1,4 +1,5 @@
-segment = {'BmLayMAL': ' x Biomass of MALS in segment                             (gDM/m3)' ,
+segment = {
+'BmLayMAL': ' x Biomass of MALS in segment                             (gDM/m3)' ,
 'BrochP'  :  ' x gross production as per Broch                          (gC/dm2/h)' ,
 'ExudMALC' : ' x exudation MALC                                         (gC/m2/d)' , 
 'FrBmMALS' : ' x Fraction of bottom layer MALS in this seg              (-)' ,        
@@ -22,11 +23,6 @@ segment = {'BmLayMAL': ' x Biomass of MALS in segment                           
 'LocUpC'   : ' x Local C storage uptake flux in this segment            (gC/m2/d)' ,
 'LocUpN'   : ' x Local N storage uptake flux in this segment            (gN/m2/d)' ,
 'LocUpP'   : ' x Local P storage uptake flux in this segment            (gP/m2/d)' ,
-'MALSCDM'  : ' x ratio C:DM in whole frond                              (gC/gDM)' ,
-'MALSNDM'  : ' x ratio N:DM in whole frond                              (gN/gDM)' ,
-'MALSPDM'  : ' x ratio P:DM in whole frond                              (gP/gDM)' ,
-'MALSNC'   : ' x ratio N:C in whole frond                               (gN/gC)' ,
-'MALSPC'   : ' x ratio P:C in whole frond                               (gP/gC)' ,
 'muMALS'   : ' x unit growth rate MALS                                  (1/d)' ,
 'RespMALC' : ' x respiration MALC                                       (gC/m2/d)' ,        
 'WDry'     : ' x dry weight of culture in segment                       (g/m2)' ,
@@ -34,9 +30,15 @@ segment = {'BmLayMAL': ' x Biomass of MALS in segment                           
 'WdryTot':   ' x dry weight of culture in segment                       (g)' ,
 'WwetTot':  ' x wet weight of culture in segment                       (g)'  }  
 
-column =  {'MALCDMS'  : ' x macroalgae C storage in column w.r.t structural        (gC/gDM)' ,
+column =  {
+'MALCDMS'  : ' x macroalgae C storage in column w.r.t structural        (gC/gDM)' ,
 'MALNDMS'  : ' x macroalgae N storage in column w.r.t structural        (gN/gDM)' ,
 'MALPDMS'  : ' x macroalgae P storage in column w.r.t structural        (gP/gDM)' ,
+'MALSCDM'  : ' x ratio C:DM in whole frond                              (gC/gDM)' ,
+'MALSNDM'  : ' x ratio N:DM in whole frond                              (gN/gDM)' ,
+'MALSPDM'  : ' x ratio P:DM in whole frond                              (gP/gDM)' ,
+'MALSNC'   : ' x ratio N:C in whole frond                               (gN/gC)' ,
+'MALSPC'   : ' x ratio P:C in whole frond                               (gP/gC)' ,
 'FootDepth': ' x location of frond attachment in the water column < MSL (m)' ,  
 'FrondArea': ' x area of each individual frond in segment               (m2/m2/frond)' ,   
 'LocAreaMAL': ' x area of all fronds per m2 of column                    (m2/m2)' ,         

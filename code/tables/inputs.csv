@@ -14931,10 +14931,11 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALN    ","JPmax     ",  20,"Y","x",1
 "FlMALN    ","Velocity  ",  21,"N","x",1
 "FlMALN    ","Vel65     ",  22,"Y","x",1
-"FlMALN    ","MBotSeg   ",  23,"N","x",1
-"FlMALN    ","Surf      ",  24,"N","x",1
-"FlMALN    ","DELT      ",  25,"N","x",1
-"FlMALN    ","Depth     ",  26,"N","x",1
+"FlMALN    ","NH4Thresh ",  23,"Y","x",1
+"FlMALN    ","MBotSeg   ",  24,"N","x",1
+"FlMALN    ","Surf      ",  25,"N","x",1
+"FlMALN    ","DELT      ",  26,"N","x",1
+"FlMALN    ","Depth     ",  27,"N","x",1
 "FlMALC    ","MALS      ",   1,"N","x",1
 "FlMALC    ","MALC      ",   2,"N","x",1
 "FlMALC    ","FrBmMALS  ",   3,"N","x",1

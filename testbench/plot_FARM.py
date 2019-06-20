@@ -48,8 +48,7 @@ def return_malg_par(his, sub, colname, segment, column):
         for loc in collocs:     
             print('Checking: ' + loc)
             data = his[sub, loc, :]
-            if sub == 'TipDepth':
-                data = data * -1.0
+
             if np.max(data) > 0:
                 # if there was biomass in this segment at one time
                 print('adding to sum')
@@ -76,6 +75,8 @@ def return_malg_par(his, sub, colname, segment, column):
         for loc in collocs:
             print('Checking: ' + loc)
             data = his[sub, loc, :]
+            if sub == 'TipDepth':
+                data = data * -1.0
             if np.min(data) > 0:     
                 # if this segment always had biomass
                 series = data
@@ -208,7 +209,7 @@ foot = return_malg_par(his, 'FootDepth', seg, segment, column)
 foot = np.zeros([len(foot),1])
 
 ax.plot(his.dates,foot, 'k--', label = 'water surface')
-ax.plot(his.dates,tip, 'k-', label = 'tip of seaweed culture')
+ax.plot(his.dates,-tip, 'k-', label = 'tip of seaweed culture')
 
 plt.grid()
 plt.legend()
