@@ -113,6 +113,7 @@ if not os.path.exists(printDirectory):
 
 his = d3d.DelwaqHisFile(file)
 seg = 'Farm2'
+surf = his['SURF',seg + '(1)',:]
 ###############################################################################
 
 fig = plt.figure(1)
@@ -139,8 +140,8 @@ pylab.savefig((printDirectory + 'NO3.png') ,dpi = 200)
 fign = plt.figure()
 ax = fign.add_axes([0.1,0.1,0.8,0.8])     
     
-area = return_malg_par(his, 'LocAreaMAL', seg, segment, column)
-ax.plot(his.dates,area*100.0, 'k', label = 'Model')
+area = return_malg_par(his, 'SpecArea', seg, segment, column)
+ax.plot(his.dates,area, 'k', label = 'Model')
 ax.set_ylabel('Frond area [dm$^{2}$]')
 plt.grid()
 plt.legend()
@@ -150,7 +151,7 @@ pylab.savefig(printDirectory + 'frond_area.png' ,dpi = 200)
 fign = plt.figure()
 ax = fign.add_axes([0.1,0.1,0.8,0.8])     
 gross = return_malg_par(his, 'LocGroPS', seg, segment, column)
-ax.plot(his.dates,gross, 'k', label = 'Model')
+ax.plot(his.dates,gross * surf, 'k', label = 'Model')
 ax.set_ylabel('Gross daily production [dm$^{2}$ d$^{-1}$]')
 plt.grid()
 ax.set_xlabel('(B)')
@@ -188,9 +189,9 @@ gross = return_malg_par(his, 'GrosMALC', seg, segment, column)
 exud = return_malg_par(his, 'ExudMALC', seg, segment, column)
 resp = return_malg_par(his, 'RespMALC', seg, segment, column)
 
-ax.plot(his.dates,gross, 'k-', label = 'gross production')
-ax.plot(his.dates,resp, 'k--', label = 'respiration')
-ax.plot(his.dates,exud, 'k-.', label = 'exudation')
+ax.plot(his.dates,gross * surf, 'k-', label = 'gross production')
+ax.plot(his.dates,resp * surf, 'k--', label = 'respiration')
+ax.plot(his.dates,exud * surf, 'k-.', label = 'exudation')
 
 plt.grid()
 plt.legend()

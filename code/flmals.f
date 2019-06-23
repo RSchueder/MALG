@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(60)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(60)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(63)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(63)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 60)   !    Local work array for the pointering
+      INTEGER IPNT( 63)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -45,7 +45,6 @@ C
       REAL(4) m_2         ! I  MALS growth rate parameter 2                        (-)
       REAL(4) HactMAL     ! I  Length of frond in this column                      (m)
       REAL(4) TotAreMAL   ! I  area of frond in this column                        (m2)
-      REAL(4) nFrond      ! I  number of fronds per m2                             (1/m2)
       REAL(4) MALS0       ! I  MALS growth rate parameter 3                        (gDM/m2)
       REAL(4) a_1         ! I  MALS photoperiod parameter 1                        (-)
       REAL(4) a_2         ! I  MALS photoperiod parameter 2                        (-)
@@ -58,6 +57,7 @@ C
       REAL(4) Kdw         ! I  structural dry weight per unit frond area           (-)
       REAL(4) FrPOC1MALS  ! I  Fraction MALS that goes to POC1 in decay            (-)
       REAL(4) FrPOC2MALS  ! I  Fraction MALS that goes to POC2 in decay            (-)
+      REAL(4) SeedMass    ! I  Fraction MALS that goes to POC2 in decay            (-)
       REAL(4) MBotSeg     ! I  bottom segment for this segment                    
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
       REAL(4) DELT        ! I  timestep for processes                              (d)
@@ -78,6 +78,19 @@ C
       REAL(4) LocGroN     ! O  local growth of MALN                                (gN/m3/d)
       REAL(4) LocGroP     ! O  local growth of MALP                                (gP/m3/d)
       REAL(4) LocGroC     ! O  local growth of MALC                                (gC/m3/d)
+      REAL(4) LimDen      ! O
+      REAL(4) LimPho      ! O
+      REAL(4) LimTemp     ! O
+      REAL(4) mu          ! O
+      real(4) mrt         ! O
+      REAL(4) LimC        ! O
+      REAL(4) LimN        ! O
+      REAL(4) LimP        ! O
+      REAL(4) LimNut      ! O 
+      REAL(4) Wdry        ! O
+      REAL(4) Wwet        ! O
+      REAL(4) NFrond  ! calculated number of fronds in cell
+      REAL(4) SpecArea ! area of each frond     
       
       REAL(4) dPrPOC1MAL  ! F  POC1 production MALS                                (gC/m3/d)
       REAL(4) dPrPOC2MAL  ! F  POC2 production MALS                                (gC/m3/d)
@@ -93,7 +106,7 @@ C
       INTEGER IdPrPON2MAL !    Pointer to the PON2 production macrophyt 1
       INTEGER IdPrPOP1MAL !    Pointer to the POP1 production macrophyt 1
       INTEGER IdPrPOP2MAL !    Pointer to the POP2 production macrophyt 1
-      INTEGER IdCnOXYMAL !    Pointer to the oxygen production MALS
+      INTEGER IdCnOXYMAL  !    Pointer to the oxygen production MALS
       INTEGER IdGrMALS     
       INTEGER IdGrMALN     
       INTEGER IdGrMALP     
@@ -103,35 +116,25 @@ C
       INTEGER IKMRK1
       INTEGER IKMRK2
       
-      REAL(4) LocAreMAL
+      ! extra/internal
+      REAL(4) coeff
+      REAL(4) TotN
+      REAL(4) TotP
+      REAL(4) TotC
+      REAL(4) DL          !    delta day length
+
       REAL(4) dGrowMALS   !    growth of MALS                                     (gDM/m3/d)
       REAL(4) dDecayMALS  !    decay of MALS                                      (gDM/m3/d)
       REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
       REAL(4) dPTrMALS    !    translocation of P from MALP to MALS               (gP/m3/d)
       REAL(4) dCTrMALS    !    translocation of C from MALC to MALS               (gC/m3/d)
-      REAL(4) DL          !    delta day length
-      REAL(4) LimDen
-      REAL(4) LimTemp
-      REAL(4) LimPho
-      REAL(4) coeff
-      REAL(4) mu
-      real(4) mrt
-      REAL(4) LimC
-      REAL(4) LimN
-      REAL(4) LimP
-      REAL(4) LimNut
-      REAL(4) TotN
-      REAL(4) TotP
-      REAL(4) TotC
-      REAL(4) Wdry
-      REAL(4) Wwet
       REAL(4) chk
-
+      LOGICAL First           !        is the first time
+      DATA    FIRST /.TRUE./
+      SAVE    FIRST
 C
 C*******************************************************************************
-C
-      IPNT        = IPOINT
-     
+C     
       IdPrPOC1MAL = 1
       IdPrPOC2MAL = 2
       IdPrPON1MAL = 3
@@ -143,7 +146,69 @@ C
       IdGrMALN    = 9 
       IdGrMALP    = 10 
       IdGrMALC    = 11
-      
+  
+!*******************************************************************************
+      ! we actually want a loop here which goes through all segments at the beginning and
+      ! assigns Nfrond
+      IPNT = IPOINT
+      ! NFrond calculation loop
+      IF (FIRST) THEN 
+          ! for all segs
+          DO 9001 ISEG = 1,NOSEG
+              ! set all to zero, will never be read from local segment unless it is MBot
+             PMSA( IPNT(62) ) = 0.0
+             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
+             ! we will put NFrond in the bottom segment
+             IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
+                MALS       = PMSA( IPNT(1) )
+                ! if there is biomass in the column
+                IF (MALS .gt. 0.0) THEN    
+                    MALN       = PMSA( IPNT(2) )
+                    MALP       = PMSA( IPNT(3) )
+                    MALC       = PMSA( IPNT(4) )
+
+                    MALNmin    = PMSA( IPNT(6) )
+                    MALPmin    = PMSA( IPNT(7) )
+                    MALCmin    = PMSA( IPNT(8) )               
+              
+                    Kn         = PMSA( IPNT(25) )
+                    Kc         = PMSA( IPNT(26) )
+                    Kdw        = PMSA( IPNT(27) )
+              
+                    SeedMass   = PMSA( IPNT(30) )                 
+                 
+                    Surf       = PMSA( IPNT(32) )     
+  
+                    MALN = MALN / MALS ! gN/m2 to gN/gDM
+                    MALP = MALP / MALS ! gP/m2 to gP/gDM
+                    MALC = MALC / MALS ! gC/m2 to gC/gDM
+                            
+                    ! find amount of mass in this column
+                
+                    Wdry = MALS * (1 + Kn*(MALN - (MALNmin))
+     &              + MALNmin + Kc*(MALC - MALCmin)+ MALCmin)
+                
+                    Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
+     &              + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
+
+                    NFrond = Wdry * Surf / SeedMass
+                    IF (NFrond .lt. 1.0) THEN
+                        NFrond = 1.0
+                    ENDIF
+                
+                    PMSA( IPNT(62) ) = NFrond
+                ELSE
+                    PMSA( IPNT(62) ) = 0.0
+                ENDIF
+             ENDIF
+             IPNT = IPNT + INCREM
+9001      CONTINUE  
+          FIRST = .FALSE.
+      ENDIF
+
+!*******************************************************************************
+      IPNT        = IPOINT
+
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
 
@@ -153,10 +218,8 @@ C
          IF (IKMRK1.EQ.1) THEN
 
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
-            ! compute growth if maldis has allocated mass to this segment
-
             FrBmMALS   = PMSA( IPNT(5) )
-
+            
             IF (FrBmMALS > 0.0) THEN
 
                 ! take from this segment
@@ -172,19 +235,20 @@ C
                 m_2        = PMSA( IPNT(15) )
                 HactMAL    = PMSA( IPNT(16) )
                 TotAreMAL  = PMSA( IPNT(17) )
-                nFrond     = PMSA( IPNT(18) )
-                MALS0      = PMSA( IPNT(19) )
-                a_1        = PMSA( IPNT(20) )
-                a_2        = PMSA( IPNT(21) )
-                mrtMAL     = PMSA( IPNT(22) )
-                CDRatMALS  = PMSA( IPNT(23) )
-                NCRatMALS  = PMSA( IPNT(24) )
-                PCRatMALS  = PMSA( IPNT(25) )
-                Kn         = PMSA( IPNT(26) )
-                Kc         = PMSA( IPNT(27) )
-                Kdw        = PMSA( IPNT(28) )
-                FrPOC1MALS = PMSA( IPNT(29) )
-                FrPOC2MALS = PMSA( IPNT(30) )
+                MALS0      = PMSA( IPNT(18) )
+                a_1        = PMSA( IPNT(19) )
+                a_2        = PMSA( IPNT(20) )
+                mrtMAL     = PMSA( IPNT(21) )
+                CDRatMALS  = PMSA( IPNT(22) )
+                NCRatMALS  = PMSA( IPNT(23) )
+                PCRatMALS  = PMSA( IPNT(24) )
+                Kn         = PMSA( IPNT(25) )
+                Kc         = PMSA( IPNT(26) )
+                Kdw        = PMSA( IPNT(27) )
+                FrPOC1MALS = PMSA( IPNT(28) )
+                FrPOC2MALS = PMSA( IPNT(29) )
+                SeedMass   = PMSA( IPNT(30) ) 
+                
                 MBotSeg    = nint(PMSA( IPNT( 31) ))
                 Surf       = PMSA( IPNT(32) )     
                 DELT       = PMSA( IPNT(33) )      
@@ -195,16 +259,16 @@ C
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
-                !write(*,*) "Segment:" ,ISEG
-                !write(*,*) "MBotSeg:" ,MBotSeg
-                !write(*,*) "MALN:" , MALN
-                !write(*,*) "MALC:" , MALC 
-                !write(*,*) "MALS:" , MALS 
 
+                ! take the Nfrond value stored in the output of the bottom segment of this column
+                NFrond     = PMSA( IPNT(62)+(MBotSeg-ISEG)*INCREM( 62) )
+              
                 ! need to convert storage substance from gX/m2 to gX/gDM
                 ! to be consistent with constants from Broch
                 ! gX/m2 to gX/gDM
-                
+                               IF (ISEG .eq. 402) THEN
+                    chk = 1
+                ENDIF
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
@@ -217,17 +281,36 @@ C
                             
                 ! find amount of mass in this segment (gDM/m2)
                 MALS = MALS * FrBmMALS 
-                LocAreMAL = TotAreMAL / Surf
                 
-                ! density limitation
-                ! if the plant is too big overall then all segments suffer
-                ! area is in m2 and MALS0 is in m2 as well
-                ! LocAreMAL is specific area in whole column
+                ! Dry weight and wet weight
+                Wdry = MALS * (1 + Kn*(MALN - (MALNmin))
+     &           + MALNmin + Kc*(MALC - MALCmin)+ MALCmin)
                 
-                LimDen=m_1*exp(-1*((LocAreMAL/(MALS0*nFrond))**2))+m_2
-                
-                ! temperature limitation
+                Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
+     &           + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
 
+                ! the following is the area of each frond when we assume the fronds are equally distributed in the segment
+                ! this can cause the fronds to become very small
+                ! LocAreMAL = TotAreMAL / Surf
+                ! this should be scaled back based on the known number of fronds, but we do not know this at the moment
+                ! what we should do is assume the model is being run with seaweed where the weight per frond is known, as
+                ! is the case with the seeding of fronds. This way you know what the mass of a frond is, and thus the area of
+                ! a frond, and you can use the area of the frond in the density and mortality calculations
+                ! Spec area is the specific area of a frond, the whole frond across the column
+                ! this is because each part of the frond should experience the same erosion and density limitation
+                SpecArea = TotAreMAL / NFrond
+                
+                ! density limitation - "if the plant is too big it will grow slower"
+                ! area is in m2 and MALS0 is in m2 as well
+          
+                !LimDen=m_1*exp(-1*((LocAreMAL/(MALS0*NFrond))**2))+m_2
+                !
+                ! because the previous formulation will not necessarily reflect the size of a real frond, 
+                ! we take the seeding weight to calculate the number of fronds, 
+                ! and the total area divided by this number of fronds is the Specific Area per frond
+                LimDen = m_1*exp(-1*((SpecArea/MALS0)**2))+m_2
+
+                ! temperature limitation
                 IF ( Temp .ge. -1.8 .AND. Temp .lt. 10.0 ) THEN
                     LimTemp = 0.08 * Temp + 0.2
                 ELSE IF ( Temp .ge. 10.0 .AND. Temp .le. 15.0 ) THEN
@@ -240,25 +323,26 @@ C
                
                 ! photoperiod limitation
                 DL = (daylengthd - daylengthp) / daylengthm
-
                 LimPho = a_1 * (1 + sin(DL) *(ABS(DL))**0.5) + a_2
                
                 ! decay
-                ! decay is calculated as a percent of the total frond decay
-                ! m2 to dm2
-                ! mrtMAL is per plant per dm2, so convert accordingly
-                ! LocAreMAL is specific area in whole column
+                ! decay  is proportional to the entire frond size
+                ! requires m2 back to to dm2 as mrtMAL is per plant per dm2
+                ! If biomass is small relative to grid cell size then biomass will
+                ! be small in each 1m2, meaning the biomass density and mortality will be small
+                ! we need a way of knowing how many fronds there likely are so we know how big each one is
+                ! and thus how fast it will erode
+                ! the following is valid with the assumption there is 1 frond per m2 unless otherwise stated
+                ! coeff = exp(mrtMAL*LocAreMAL*100/NFrond)
+                ! However this can cause too little erosion in sparsely populated cells
+                ! thus we use the SeedMass to get the Specific area, or the expected area per frond, as per
+                ! density limitation calculation
+                coeff = min(exp(mrtMAL*SpecArea*100.0), 3.5e+09)
 
-                coeff = exp(mrtMAL*LocAreMAL*100/nFrond)
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
                 mrt = 10e-6*coeff/(1 + (10e-6)*(coeff - 1 ))
-                ! local decay
-                ! since all segments are doing this, only send the fraction
-                ! as it will be compared to the local growth
                 ! gDM/(m2 d)
-                ! dDecayMALS = mrt * MALS * FrBmMALS
-                ! but the MALS reflects the local fraction of biomass
                 dDecayMALS = mrt * MALS
                
                 ! production organic material
@@ -279,16 +363,9 @@ C
                 ! mortality products are produced regardless of net prod-mort
                 IF (MALN .lt. MALNmin) THEN
                     write(*,*) 'ERROR: MALN (gN/gDM) LESS THAN MALNmin'
-                !    write(*,*) "Values:" ,MALN, MALNmin
-                !write(*,*) "Values:" ,MALS/FrBmMALS,MALN*MALS/FrBmMALS 
                 ENDIF
-                !IF (MALP .lt. MALPmin) THEN
-                !    write(*,*) 'ERROR: MALP (gP/gDM) LESS THAN MALPmin'
-                !ENDIF
                 IF (MALC .lt. MALCmin) THEN
                     write(*,*) 'ERROR: MALC (gC/gDM) LESS THAN MALCmin'
-                !    write(*,*) "Values:" ,MALC, MALCmin
-                !write(*,*) "Values:" ,MALS/FrBmMALS,MALC*MALS/FrBmMALS 
                 ENDIF           
                 
                 ! storage limitations
@@ -339,11 +416,6 @@ C
                 LocGroP = dPtrMALS
                 LocGroC = dCtrMALS
                 
-                Wdry = MALS * (1 + Kn*(MALN - (MALNmin))
-     &           + MALNmin + Kc*(MALC - MALCmin)+ MALCmin)
-                
-                Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
-     &           + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
                 ! N:C ratio
                 MALSNC = TotN/TotC
                 ! P:C ratio
@@ -353,7 +425,7 @@ C
                 ! N:DM ratio
                 MALSNDM = TotN/Wdry		
                 ! P:DM ratio
-                MALSPDM = TotP/Wdry	
+                MALSPDM = TotP/Wdry
                 
                 ! oxygen 
                 ! mineralization of stored carbon consumes oxygen
@@ -393,44 +465,55 @@ C
                 PMSA( IPNT( 47)   ) =  LimP  
                 PMSA( IPNT( 48)   ) =  LimC   
                 PMSA( IPNT( 49)   ) =  LimNut  
-                PMSA( IPNT( 50)   ) =  mu    
-                PMSA( IPNT( 51)   ) =  dGrowMALS     
-                PMSA( IPNT( 52)   ) =  LocGroS
-                PMSA( IPNT( 53)   ) =  dDecayMALS
-                PMSA( IPNT( 54)   ) =  LocGroN    
-                PMSA( IPNT( 55)   ) =  LocGroP    
-                PMSA( IPNT( 56)   ) =  LocGroC 
-                PMSA( IPNT( 57)   ) =  Wdry  
-                PMSA( IPNT( 58)   ) =  Wwet    
-                PMSA( IPNT( 59)   ) =  Wdry*Surf  
-                PMSA( IPNT( 60)   ) =  Wwet*Surf      
+                PMSA( IPNT( 50)   ) =  mu
+                PMSA( IPNT( 51)   ) =  mrt    
+                PMSA( IPNT( 52)   ) =  dGrowMALS     
+                PMSA( IPNT( 53)   ) =  LocGroS
+                PMSA( IPNT( 54)   ) =  dDecayMALS
+                PMSA( IPNT( 55)   ) =  LocGroN    
+                PMSA( IPNT( 56)   ) =  LocGroP    
+                PMSA( IPNT( 57)   ) =  LocGroC 
+                PMSA( IPNT( 58)   ) =  Wdry  
+                PMSA( IPNT( 59)   ) =  Wwet    
+                PMSA( IPNT( 60)   ) =  Wdry*Surf  
+                PMSA( IPNT( 61)   ) =  Wwet*Surf
+                PMSA( IPNT( 62)   ) =  NFrond 
+                PMSA( IPNT( 63)   ) =  SpecArea * 100.0    
+                
             ELSE
-                PMSA( IPNT( 35)   ) =  0.0		
                 PMSA( IPNT( 36)   ) =  0.0		
                 PMSA( IPNT( 37)   ) =  0.0		
                 PMSA( IPNT( 38)   ) =  0.0		
-                PMSA( IPNT( 39)   ) =  0.0	
-                PMSA( IPNT( 40)   ) =  0.0
+                PMSA( IPNT( 39)   ) =  0.0		
+                PMSA( IPNT( 40)   ) =  0.0	
                 PMSA( IPNT( 41)   ) =  0.0
                 PMSA( IPNT( 42)   ) =  0.0
                 PMSA( IPNT( 43)   ) =  0.0
-                PMSA( IPNT( 44)   ) =  0.0  
-                PMSA( IPNT( 45)   ) =  0.0 
-                PMSA( IPNT( 46)   ) =  0.0  
+                PMSA( IPNT( 44)   ) =  0.0
+                PMSA( IPNT( 45)   ) =  0.0  
+                PMSA( IPNT( 46)   ) =  0.0 
                 PMSA( IPNT( 47)   ) =  0.0  
-                PMSA( IPNT( 48)   ) =  0.0   
-                PMSA( IPNT( 49)   ) =  0.0  
-                PMSA( IPNT( 50)   ) =  0.0   
-                PMSA( IPNT( 51)   ) =  0.0     
-                PMSA( IPNT( 52)   ) =  0.0
+                PMSA( IPNT( 48)   ) =  0.0  
+                PMSA( IPNT( 49)   ) =  0.0   
+                PMSA( IPNT( 50)   ) =  0.0  
+                PMSA( IPNT( 51)   ) =  0.0   
+                PMSA( IPNT( 52)   ) =  0.0     
                 PMSA( IPNT( 53)   ) =  0.0
-                PMSA( IPNT( 54)   ) =  0.0    
+                PMSA( IPNT( 54)   ) =  0.0
                 PMSA( IPNT( 55)   ) =  0.0    
-                PMSA( IPNT( 56)   ) =  0.0 
-                PMSA( IPNT( 57)   ) =  0.0  
-                PMSA( IPNT( 58)   ) =  0.0    
-                PMSA( IPNT( 59)   ) =  0.0  
-                PMSA( IPNT( 60)   ) =  0.0      
+                PMSA( IPNT( 56)   ) =  0.0    
+                PMSA( IPNT( 57)   ) =  0.0 
+                PMSA( IPNT( 58)   ) =  0.0  
+                PMSA( IPNT( 59)   ) =  0.0    
+                PMSA( IPNT( 60)   ) =  0.0  
+                PMSA( IPNT( 61)   ) =  0.0    
+                ! NFrond is never zero, except for first time step for segments
+                ! that are examined before first segment with biomass
+                ! this is specified so that NFrond is always > 0 even when biomass = 0
+                ! because Nfrond is for whole column, and not segment
+                PMSA(IPNT(62)) =PMSA(IPNT(62)+(MBotSeg-ISEG)*INCREM(62))
+                PMSA( IPNT( 63)   ) =  0.0      
+                
             ENDIF
           ENDIF
             

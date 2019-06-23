@@ -2235,6 +2235,7 @@ LimMALP    colsep phosphorous storage limitation MALS                colsep (-) 
 LimMALC    colsep carbon storage limitation MALS                     colsep (-)                  colsep FlMALS     \\
 LimNutS    colsep net nutrient storage limitation MALS               colsep (-)                  colsep FlMALS     \\
 muMALS     colsep unit growth rate MALS                              colsep (1/d)                colsep FlMALS     \\
+mrtMALS    colsep unit erosion rate MALS                             colsep (1/d)                colsep FlMALS     \\
 LocGroPS   colsep local gross production of MALS                     colsep (DM/m2/d)            colsep FlMALS     \\
 LocNetPS   colsep local net production of MALS                       colsep (DM/m2/d)            colsep FlMALS     \\
 LocDecS    colsep local decay of MALS                                colsep (DM/m2/d)            colsep FlMALS     \\
@@ -2245,10 +2246,12 @@ Wdry       colsep dry weight of culture in segment                   colsep (g/m
 Wwet       colsep wet weight of culture in segment                   colsep (g/m2)               colsep FlMALS     \\
 WdryTot    colsep dry weight of culture in segment                   colsep (g)                  colsep FlMALS     \\
 WwetTot    colsep wet weight of culture in segment                   colsep (g)                  colsep FlMALS     \\
+NFrond     colsep number of fronds in segment                        colsep (-)                  colsep FlMALS     \\
+SpecArea   colsep specific area of a single frond                    colsep (dm2)                colsep FlMALS     \\
 BmLayMAL   colsep Biomass of MALS in segment                         colsep (gDM/m3)             colsep MALDIS     \\
 LocAreaMAL colsep area of all fronds per m2 of column                colsep (m2/m2)              colsep MALDIS     \\
 TipDepth   colsep depth of tip of frond in this column               colsep (m)                  colsep MALDIS     \\
-FrondArea  colsep area of each individual frond in segment           colsep (m2/m2/frond)        colsep MALDIS     \\
+FrondArea  colsep area of each individual frond in segment (== SpecA colsep (m2/m2/frond)        colsep MALDIS     \\
 LimVel     colsep velocity limitation                                colsep (-)                  colsep FlMALN     \\
 LimN       colsep ambient nitrogen limitation for storage            colsep (-)                  colsep FlMALN     \\
 LimP       colsep ambient phosphorous limitation for storage         colsep (-)                  colsep FlMALN     \\

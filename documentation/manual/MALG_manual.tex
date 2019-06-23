@@ -589,6 +589,15 @@ The test case consists of a 10x30 cell grid with 100 m resolution containing a f
 	\label{fig:tidalflumefarm}
 \end{figure}
 
+This model was run with 4 different settings:
+\begin{itemize}
+	\item standard approach
+	\item make fronds 7m in length
+	\item increase number of fronds, maintain biomass
+	\item increase biomass density
+\end{itemize}
+
+The main difference comes from the fact that if you take the same biomass and spread it over a larger area, the size of each frond in a m2 (because there necessarily is a frond in a m2) is very small, and so its growth rate is quite high. What you don't know is really what the distribution of the biomass within the cell will be. You actually want to determine the growth based on the size of the frond. to know this you need to know more about the true contrained space the frond lies within
 
 \chapter{References}
 \bibliography{MALG_manual}

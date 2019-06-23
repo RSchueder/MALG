@@ -61,13 +61,18 @@ C
       REAL(4) LimVel      ! O  velocity limitation MALN                            (-)
       REAL(4) LocUpN      ! O  local uptake of N by MALN                           (gN/m3/d)
       REAL(4) LocUpP      ! O  local uptake of P by MALP                           (gP/m3/d)
-
+      REAL(4) LimN        ! O
+      REAL(4) LimP        ! O
+      REAL(4) FrNH4MALN   ! O  fraction MALN NH4 uptake                            (-)
+      
       REAL(4) dUpMALNO3   ! F  NO3 uptake MALN                                     (gN/m3/d)
       REAL(4) dUpMALNH4   ! F  NH4 uptake MALN                                     (gN/m3/d)
       REAL(4) dUpMALPO4   ! F  PO4 uptake MALP                                     (gP/m3/d)
       REAL(4) dStrMALN
       REAL(4) dStrMALP
-
+      
+      !extra/internal
+      REAL(4) EffNit      
       
       INTEGER IdUpMALNO3 !    Pointer to the NO3 uptake
       INTEGER IdUpMALNH4 !    Pointer to the NH4 uptake
@@ -79,11 +84,8 @@ C
       INTEGER IKMRK1
       INTEGER IKMRK2
       INTEGER MBotSeg
-      
-      REAL(4) LimN
-      REAL(4) LimP
-      REAL(4) FrNH4MALN   ! -  fraction MALN NH4 uptake                            (-)
-      REAL(4) EffNit
+      REAL(4) chk
+
 C
 C*******************************************************************************
 C
@@ -144,6 +146,9 @@ C
                 ! this line shows how we assume the entire plant will have the
                 ! same abundance of nitrogen and carbon stores
                 ! along the length
+                                          IF (ISEG .eq. 402) THEN
+                              chk = 1
+                          ENDIF
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 ! since the storage is relative the amount of DM,
@@ -154,7 +159,7 @@ C
                 LimVel = 1 - exp(-Vel/Vel65)
                 ! nitrogen hunger will be the same along length
                 ! nutrient abundance will not be
-                
+
                 IF (MALN .gt. MALNmax) THEN
                     write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
                 ENDIF
@@ -184,7 +189,13 @@ C
                 ENDIF
 
                 EffNit = (FrNH4MALN * NH4) + ((1-FrNH4MALN) * NO3)
-                IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax) THEN 
+                IF (ISNAN(EffNit) .OR. EffNit .lt. 1e-7 .OR. 
+     &               EffNit .gt. 1e7) THEN
+                  EFFnit = 0.0
+                  FrNH4MALN = 0.0
+                ENDIF
+                IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax .AND. 
+     &               EffNit .ge. 0.0) THEN 
                   LocUpN = (TotAreMAL*FrBmMALS) * JNmax * 
      &                (EffNit/(Ksn + EffNit))  * LimN * LimVel 
                 ELSE

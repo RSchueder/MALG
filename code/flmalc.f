@@ -58,14 +58,15 @@ C
       REAL(4) DELT        ! I  timestep for processes                               (d)
       REAL(4) Depth       ! I  depth of segment                                     (m)
       REAL(4) LocalDepth  ! I  depth of segment below surface                       (m)
-      
+
+      REAL(4) LocUpC      ! O
       REAL(4) Itip        ! O
       REAL(4) Itipu       ! O
       REAL(4) BrochP      ! O
-      REAL(4) LocUpC      ! O
       REAL(4) GrosMALC    ! O 
       REAL(4) RespMALC    ! O
       REAL(4) ExudMALC    ! O
+      REAL(4) beta        ! O
       
       REAL(4) dMALTIC     ! F  HCO3 uptake MALN                                       (gC/m3/d)
       REAL(4) dMALDOC     ! F  Exudate MALN                                           (gC/m3/d)
@@ -81,19 +82,18 @@ C
       
       INTEGER MBotSeg
       
+      ! extra/internal
       REAL(4) I       	
       REAL(4) P	
       REAL(4) Ps    
       REAL(4) Pmax
       REAL(4) PmaxT
       REAL(4) PmaxB
-      REAL(4) beta
       REAL(4) R
       REAL(4) E
       REAL(4) Tpl
       REAL(4) Tph
       REAL(4) alpha0
-      REAL(4) areaLoc
       REAL(4) chk
 
       INTEGER IKMRK1
@@ -157,12 +157,16 @@ C
                 ! this line shows how we assume the entire plant will have the
                 ! same abundance of carbon stores
                 ! along the length
+                                IF (ISEG .eq. 402) THEN
+                    chk = 1
+                ENDIF
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
                 ! since the storage is relative the amount of DM,
                 ! we calculate how much DM there is in this segment
                 MALS = MALS * FrBmMALS
                 
                 ! gross photosynthesis
+
                 
                 ! integrate the radiation decay function between z2 (local depth, botom)
                 ! and m1 (Localdepth - segment depth, top)

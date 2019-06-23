@@ -1,0 +1,53 @@
+ Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
+ Execution start: 2019/06/20 16:31:26 
+
+ Parallel processing with  12 processor(s)
+
+ total real      array space:   26574219
+ total integer   array space:     642319
+ total character array space:      54005
+ grand total in 4-byte words:   27270543 =   0-GB 109-MB  82-KB 172-Byte.
+                     Water quality calculation               
+                                                             
+
+                                                             
+                     T0: 2001.01.01 00:00:00  (scu=       1s)
+
+                     Initialisation from system file completed.
+
+ No process decomposition active
+ MESSAGE: Bloom fractional step switched on
+ partit: noseg,nolay=        9940          20 , nseghr=         497
+ partit: npart=  1, assigning all segments to part "npart", none to other parts
+ 
+ CONSTANT ON UNIT:        26, READING: ../../../../MALG_hydro/farm3D/DFM_DELWAQ_flowfm/flowfm.len                                                                                                                                                                                                     
+ SIMULATION TIME : 6786D  0H  0M  0S ! 
+ TIME IN FILE    :    0D  7H 53M 23S ! 
+  Closure error correction enabled
+ 
+ Initialising numerical options for method 15...18
+ 
+ Preconditioner switch not found, using default
+ switch = 3, corrections based on lower and upper 
+ 
+ Maximum number of iterations found in input
+ Maximum number of iterations set to :   100
+ Maximum number of vectors is:    50
+ 
+ Relative tolerance found in input
+ Relative tolerance set to : 0.100E-06
+ 
+ Scaling switch not found, using default
+ switch = 1, scaling is switched on
+ 
+ Iteration report switch found in input
+ switch = 0, iteration report is switched off
+ 
+ Extra functionality DLWQTR
+ Dispersion length in third dir. will be calculated
+ End extra functionality DLWQTR
+  -openpb command line argument found
+  using dll : ..\..\..\code\x64\Debug\D3Dwaq_OpenPL.dll
+ warning: conv_cm3_gC larger than costs for growth,
+ therefore adjusted to conv_J_gC*Eg_L3
+ this implies kappa_G=0 (no overhead costs for growth)

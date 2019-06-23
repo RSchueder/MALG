@@ -143,7 +143,7 @@ for rind, rr in enumerate(runs.keys()):
         
     area = return_malg_par(his, 'LocAreaMAL', seg, segment, column)
     ax.plot(his.dates,area*100.0, color = clr[rind], label = runs[rr])
-    ax.set_ylabel('Frond area [dm$^{2}$]')
+    ax.set_ylabel('Frond area [dm$^{2}$]') 
     plt.grid()
     plt.legend()
     ax.xaxis.set_major_formatter(xfmt)

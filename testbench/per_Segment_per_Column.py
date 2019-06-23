@@ -44,7 +44,10 @@ column =  {
 'LocAreaMAL': ' x area of all fronds per m2 of column                    (m2/m2)' ,         
 'TotAreaMAL': ' x area of frond in this column                           (m2)' ,
 'LengthMAL': ' x length of frond in this column                         (m)' , 
-'TipDepth':   ' x depth of tip of frond in this column                   (m)'  }
+'TipDepth':   ' x depth of tip of frond in this column                   (m)',
+'SpecArea' :   ' x area of a single frond                                 (dm2) ' ,
+'FrNH4MALN'  :   'x fraction ammonium uptake by MALN                       (-)   '              
+  }
 
 bottom = {'MALS': ' x MacroALgae Structural biomass                          (gDM/m2)' ,       
 'MALN': ' x MacroALgae Nitrogen storage                            (gN/m2)' ,       
