@@ -3,5 +3,5 @@
 	<Configurations>
 		<Configuration Name="Debug|Win32"/>
 		<Configuration Name="Release|Win32"/>
-		<Configuration Name="Debug|x64" Command="d:\projects\IMPAQT\MALG\exe\dwaq\bin\delwaq2.exe" CommandArguments="farm3D.inp -p ..\MALG\code\tables\proc_def farm3D.inp -openpb ..\MALG\code\x64\Debug\D3Dwaq_OpenPL.dll" WorkingDirectory="d:\projects\IMPAQT\Farm3D\"/>
+		<Configuration Name="Debug|x64" Command="d:\projects\IMPAQT\MALG\exe\dwaq\bin\delwaq2.exe" CommandArguments="NZB.inp -p d:\projects\IMPAQT\MALG\code\tables\proc_def.dat NZB.inp -openpb d:\projects\IMPAQT\MALG\code\x64\Debug\D3Dwaq_OpenPL.dll" WorkingDirectory="p:\11202512-h2020_impaqt\03_waterquality\02_modelSetup\C13\"/>
 		<Configuration Name="Release|x64"/></Configurations></VisualStudioUserFile>

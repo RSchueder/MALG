@@ -157,9 +157,7 @@ C
                 ! this line shows how we assume the entire plant will have the
                 ! same abundance of carbon stores
                 ! along the length
-                                IF (ISEG .eq. 402) THEN
-                    chk = 1
-                ENDIF
+
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
                 ! since the storage is relative the amount of DM,
                 ! we calculate how much DM there is in this segment
@@ -721,7 +719,7 @@ C
                 BrochP = P
                 P = P * 24 * 100
                 R = R * 24 * 100            
-                
+           
                 ! effect on TIC is net of production and maintenance respiration
                 ! growth respiration is included in FLMALS
                 ! TIC gets converted (lost) to DOC in exudate
@@ -781,7 +779,15 @@ C
                     ENDIF
                       
                 ENDIF
-
+            ELSE
+                PMSA( IPNT( 31)   ) = 0.0
+                PMSA( IPNT( 32)   ) = 0.0
+                PMSA( IPNT( 33)   ) = 0.0
+                PMSA( IPNT( 34)   ) = 0.0
+                PMSA( IPNT( 35)   ) = 0.0
+                PMSA( IPNT( 36)   ) = 0.0
+                PMSA( IPNT( 37)   ) = 0.0
+                PMSA( IPNT( 38)   ) = 0.0                  
             ENDIF
        ENDIF
 

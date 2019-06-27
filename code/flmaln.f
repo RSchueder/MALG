@@ -130,11 +130,13 @@ C
                 Vel	    =	PMSA( IPNT(21) )
                 Vel65	    =	PMSA( IPNT(22) )
                 NH4Thresh =   PMSA( IPNT(23) )
+                
+                MBotSeg    = nint(PMSA( IPNT( 24) ))
+
                 Surf	    =	PMSA( IPNT(25) )
                 DELT	    =	PMSA( IPNT(26) )
                 Depth	    =	PMSA( IPNT(27) )
 
-                MBotSeg    = nint(PMSA( IPNT( 24) ))
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
@@ -146,7 +148,7 @@ C
                 ! this line shows how we assume the entire plant will have the
                 ! same abundance of nitrogen and carbon stores
                 ! along the length
-                                          IF (ISEG .eq. 402) THEN
+                          IF (ISEG .eq. 9832) THEN
                               chk = 1
                           ENDIF
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
@@ -162,6 +164,8 @@ C
 
                 IF (MALN .gt. MALNmax) THEN
                     write(*,*) 'ERROR: MALN (gN/gDM) MORE THAN MALNmax'
+                    write(*,*) 'In segment' , ISEG
+                    write(*,*) 'MALN = ' , MALN , 'MALNmax = ', MALNmax
                 ENDIF
                 !IF (MALP .gt. MALPmax) THEN
                 !    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
@@ -182,20 +186,24 @@ C
                 ! we try to achieve gN/m2 water d
                 ! Broch achieves gN/gDM day
                 ! we multimply this by MALS * area density (g/m2)
+      
+                ! nitrogen preference
+                NH4Thresh = max(NH4Thresh, 1e-7)
+                NH4 = max(NH4, 1e-7)
+                NO3 = max(NO3, 1e-7)
                 IF (NH4 .le. NH4Thresh) THEN
                     FrNH4MALN = NH4/(NH4 + NO3)
                 ELSE
                     FrNH4MALN = 1.0
                 ENDIF
 
-                EffNit = (FrNH4MALN * NH4) + ((1-FrNH4MALN) * NO3)
-                IF (ISNAN(EffNit) .OR. EffNit .lt. 1e-7 .OR. 
-     &               EffNit .gt. 1e7) THEN
+                EffNit = max((FrNH4MALN*NH4) + ((1-FrNH4MALN)*NO3),2e-7)
+                IF (EffNit .le. 2e-7) THEN
                   EFFnit = 0.0
                   FrNH4MALN = 0.0
                 ENDIF
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax .AND. 
-     &               EffNit .ge. 0.0) THEN 
+     &               EffNit .gt. 0.0) THEN 
                   LocUpN = (TotAreMAL*FrBmMALS) * JNmax * 
      &                (EffNit/(Ksn + EffNit))  * LimN * LimVel 
                 ELSE
@@ -233,7 +241,15 @@ C
                 PMSA( IPNT( 31)   ) =  LocUpN/Surf	
                 PMSA( IPNT( 32)   ) =  LocUpP/Surf	
                 PMSA( IPNT( 33)   ) =  FrNH4MALN
+            ELSE
+                PMSA( IPNT( 28)   ) =  0.0	
+                PMSA( IPNT( 29)   ) =  0.0		
+                PMSA( IPNT( 30)   ) =  0.0		
+                PMSA( IPNT( 31)   ) =  0.0	
+                PMSA( IPNT( 32)   ) =  0.0	
+                PMSA( IPNT( 33)   ) =  0.0
             ENDIF
+
          ENDIF
          
         IdUpMALNO3  = IdUpMALNO3 + NOFLUX

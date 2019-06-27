@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(63)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(63)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(64)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(64)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 63)   !    Local work array for the pointering
+      INTEGER IPNT( 64)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -135,6 +135,76 @@ C
 C
 C*******************************************************************************
 C     
+      IPNT        = IPOINT
+  
+!*******************************************************************************
+      ! we actually want a loop here which goes through all segments at the beginning and
+      ! assigns Nfrond
+      ! NFrond calculation loop
+      IF (FIRST) THEN 
+          ! for all segs
+          DO 9001 ISEG = 1,NOSEG
+             CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
+             ! if active
+             IF (IKMRK1.EQ.1) THEN
+                 CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
+                 ! we will go to bottom segment, calculate NFrond,
+                 ! and put NFrond in the bottom segment
+                 IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
+                    MALS       = PMSA( IPNT(1) )
+                    ! if there is biomass in the column
+                    IF (MALS .gt. 0.0) THEN    
+                        MALN       = PMSA( IPNT(2) )
+                        MALP       = PMSA( IPNT(3) )
+                        MALC       = PMSA( IPNT(4) )
+
+                        MALNmin    = PMSA( IPNT(6) )
+                        MALPmin    = PMSA( IPNT(7) )
+                        MALCmin    = PMSA( IPNT(8) )               
+              
+                        Kn         = PMSA( IPNT(25) )
+                        Kc         = PMSA( IPNT(26) )
+                        Kdw        = PMSA( IPNT(27) )
+              
+                        SeedMass   = PMSA( IPNT(30) )                 
+                 
+                        Surf       = PMSA( IPNT(33) )     
+  
+                        MALN = MALN / MALS ! gN/m2 to gN/gDM
+                        MALP = MALP / MALS ! gP/m2 to gP/gDM
+                        MALC = MALC / MALS ! gC/m2 to gC/gDM
+                            
+                        ! find amount of mass in this column
+                
+                        Wdry = MALS * (1 + Kn*(MALN - (MALNmin))
+     &              + MALNmin + Kc*(MALC - MALCmin)+ MALCmin)
+                
+                        Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
+     &              + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
+
+                        NFrond = Wdry * Surf / SeedMass
+                        IF (NFrond .lt. 1.0) THEN
+                            NFrond = 1.0
+                        ENDIF
+                
+                        PMSA( IPNT(63) ) = NFrond
+                    ELSE
+                        ! number of fronds is = 0 if no MALS in bottom segment
+                        PMSA( IPNT(63) ) = 0.0
+                    ENDIF
+                 ENDIF
+             ENDIF
+             
+             IPNT = IPNT   +   INCREM
+             
+9001      CONTINUE  
+          
+          FIRST = .FALSE.
+
+      ENDIF
+
+!*******************************************************************************
+      IPNT        = IPOINT
       IdPrPOC1MAL = 1
       IdPrPOC2MAL = 2
       IdPrPON1MAL = 3
@@ -146,77 +216,13 @@ C
       IdGrMALN    = 9 
       IdGrMALP    = 10 
       IdGrMALC    = 11
-  
-!*******************************************************************************
-      ! we actually want a loop here which goes through all segments at the beginning and
-      ! assigns Nfrond
-      IPNT = IPOINT
-      ! NFrond calculation loop
-      IF (FIRST) THEN 
-          ! for all segs
-          DO 9001 ISEG = 1,NOSEG
-              ! set all to zero, will never be read from local segment unless it is MBot
-             PMSA( IPNT(62) ) = 0.0
-             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
-             ! we will put NFrond in the bottom segment
-             IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
-                MALS       = PMSA( IPNT(1) )
-                ! if there is biomass in the column
-                IF (MALS .gt. 0.0) THEN    
-                    MALN       = PMSA( IPNT(2) )
-                    MALP       = PMSA( IPNT(3) )
-                    MALC       = PMSA( IPNT(4) )
-
-                    MALNmin    = PMSA( IPNT(6) )
-                    MALPmin    = PMSA( IPNT(7) )
-                    MALCmin    = PMSA( IPNT(8) )               
-              
-                    Kn         = PMSA( IPNT(25) )
-                    Kc         = PMSA( IPNT(26) )
-                    Kdw        = PMSA( IPNT(27) )
-              
-                    SeedMass   = PMSA( IPNT(30) )                 
-                 
-                    Surf       = PMSA( IPNT(32) )     
-  
-                    MALN = MALN / MALS ! gN/m2 to gN/gDM
-                    MALP = MALP / MALS ! gP/m2 to gP/gDM
-                    MALC = MALC / MALS ! gC/m2 to gC/gDM
-                            
-                    ! find amount of mass in this column
-                
-                    Wdry = MALS * (1 + Kn*(MALN - (MALNmin))
-     &              + MALNmin + Kc*(MALC - MALCmin)+ MALCmin)
-                
-                    Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
-     &              + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
-
-                    NFrond = Wdry * Surf / SeedMass
-                    IF (NFrond .lt. 1.0) THEN
-                        NFrond = 1.0
-                    ENDIF
-                
-                    PMSA( IPNT(62) ) = NFrond
-                ELSE
-                    PMSA( IPNT(62) ) = 0.0
-                ENDIF
-             ENDIF
-             IPNT = IPNT + INCREM
-9001      CONTINUE  
-          FIRST = .FALSE.
-      ENDIF
-
-!*******************************************************************************
-      IPNT        = IPOINT
-
+ !*******************************************************************************
+     
       ! do all segments
       DO 9000 ISEG = 1 , NOSEG
-
          CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
-         
          ! if active
          IF (IKMRK1.EQ.1) THEN
-
             CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
             FrBmMALS   = PMSA( IPNT(5) )
             
@@ -248,27 +254,29 @@ C
                 FrPOC1MALS = PMSA( IPNT(28) )
                 FrPOC2MALS = PMSA( IPNT(29) )
                 SeedMass   = PMSA( IPNT(30) ) 
-                
                 MBotSeg    = nint(PMSA( IPNT( 31) ))
-                Surf       = PMSA( IPNT(32) )     
-                DELT       = PMSA( IPNT(33) )      
-                Depth      = PMSA( IPNT(34) )   
+                !NFrond
+                Surf       = PMSA( IPNT(33) )     
+                DELT       = PMSA( IPNT(34) )      
+                Depth      = PMSA( IPNT(35) )   
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
-
+                ! Comes from 63
+                NFrond     = PMSA( IPNT(32)+(MBotSeg-ISEG)*INCREM( 32) )
                 ! take the Nfrond value stored in the output of the bottom segment of this column
-                NFrond     = PMSA( IPNT(62)+(MBotSeg-ISEG)*INCREM( 62) )
-              
+                IF (NFrond .EQ. 0) THEN
+                write(*,*) 'ERROR: NFrond = 0 in seg with !=0 biomass'
+                ENDIF
+                
+
                 ! need to convert storage substance from gX/m2 to gX/gDM
                 ! to be consistent with constants from Broch
                 ! gX/m2 to gX/gDM
-                               IF (ISEG .eq. 402) THEN
-                    chk = 1
-                ENDIF
+
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 MALC = MALC / MALS ! gC/m2 to gC/gDM
@@ -450,39 +458,39 @@ C
                 FL(IdGrMALP + FLCREM) = FL(IdGrMALP + FLCREM)  + LocGroP
                 FL(IdGrMALC + FLCREM) = FL(IdGrMALC + FLCREM)  + LocGroC
                                   
-                PMSA( IPNT( 35)   ) =  MALNDMS		
-                PMSA( IPNT( 36)   ) =  MALPDMS		
-                PMSA( IPNT( 37)   ) =  MALCDMS		
-                PMSA( IPNT( 38)   ) =  MALSNC		
-                PMSA( IPNT( 39)   ) =  MALSPC	
-                PMSA( IPNT( 40)   ) =  MALSCDM
-                PMSA( IPNT( 41)   ) =  MALSNDM
-                PMSA( IPNT( 42)   ) =  MALSPDM
-                PMSA( IPNT( 43)   ) =  LimDen
-                PMSA( IPNT( 44)   ) =  LimPho  
-                PMSA( IPNT( 45)   ) =  LimTemp 
-                PMSA( IPNT( 46)   ) =  LimN  
-                PMSA( IPNT( 47)   ) =  LimP  
-                PMSA( IPNT( 48)   ) =  LimC   
-                PMSA( IPNT( 49)   ) =  LimNut  
-                PMSA( IPNT( 50)   ) =  mu
-                PMSA( IPNT( 51)   ) =  mrt    
-                PMSA( IPNT( 52)   ) =  dGrowMALS     
-                PMSA( IPNT( 53)   ) =  LocGroS
-                PMSA( IPNT( 54)   ) =  dDecayMALS
-                PMSA( IPNT( 55)   ) =  LocGroN    
-                PMSA( IPNT( 56)   ) =  LocGroP    
-                PMSA( IPNT( 57)   ) =  LocGroC 
-                PMSA( IPNT( 58)   ) =  Wdry  
-                PMSA( IPNT( 59)   ) =  Wwet    
-                PMSA( IPNT( 60)   ) =  Wdry*Surf  
-                PMSA( IPNT( 61)   ) =  Wwet*Surf
-                PMSA( IPNT( 62)   ) =  NFrond 
-                PMSA( IPNT( 63)   ) =  SpecArea * 100.0    
+                PMSA( IPNT( 36)   ) =  MALNDMS		
+                PMSA( IPNT( 37)   ) =  MALPDMS		
+                PMSA( IPNT( 38)   ) =  MALCDMS		
+                PMSA( IPNT( 39)   ) =  MALSNC		
+                PMSA( IPNT( 40)   ) =  MALSPC	
+                PMSA( IPNT( 41)   ) =  MALSCDM
+                PMSA( IPNT( 42)   ) =  MALSNDM
+                PMSA( IPNT( 43)   ) =  MALSPDM
+                PMSA( IPNT( 44)   ) =  LimDen
+                PMSA( IPNT( 45)   ) =  LimPho  
+                PMSA( IPNT( 46)   ) =  LimTemp 
+                PMSA( IPNT( 47)   ) =  LimN  
+                PMSA( IPNT( 48)   ) =  LimP  
+                PMSA( IPNT( 49)   ) =  LimC   
+                PMSA( IPNT( 50)   ) =  LimNut  
+                PMSA( IPNT( 51)   ) =  mu
+                PMSA( IPNT( 52)   ) =  mrt    
+                PMSA( IPNT( 53)   ) =  dGrowMALS     
+                PMSA( IPNT( 54)   ) =  LocGroS
+                PMSA( IPNT( 55)   ) =  dDecayMALS
+                PMSA( IPNT( 56)   ) =  LocGroN    
+                PMSA( IPNT( 57)   ) =  LocGroP    
+                PMSA( IPNT( 58)   ) =  LocGroC 
+                PMSA( IPNT( 59)   ) =  Wdry  
+                PMSA( IPNT( 60)   ) =  Wwet    
+                PMSA( IPNT( 61)   ) =  Wdry*Surf  
+                PMSA( IPNT( 62)   ) =  Wwet*Surf
+                !NFrond
+                PMSA( IPNT( 64)   ) =  SpecArea * 100.0    
                 
             ELSE
                 PMSA( IPNT( 36)   ) =  0.0		
-                PMSA( IPNT( 37)   ) =  0.0		
+                PMSA( IPNT( 37)   ) =  0.0	
                 PMSA( IPNT( 38)   ) =  0.0		
                 PMSA( IPNT( 39)   ) =  0.0		
                 PMSA( IPNT( 40)   ) =  0.0	
@@ -491,28 +499,25 @@ C
                 PMSA( IPNT( 43)   ) =  0.0
                 PMSA( IPNT( 44)   ) =  0.0
                 PMSA( IPNT( 45)   ) =  0.0  
-                PMSA( IPNT( 46)   ) =  0.0 
+                PMSA( IPNT( 46)   ) =  0.0
                 PMSA( IPNT( 47)   ) =  0.0  
                 PMSA( IPNT( 48)   ) =  0.0  
                 PMSA( IPNT( 49)   ) =  0.0   
-                PMSA( IPNT( 50)   ) =  0.0  
-                PMSA( IPNT( 51)   ) =  0.0   
-                PMSA( IPNT( 52)   ) =  0.0     
-                PMSA( IPNT( 53)   ) =  0.0
+                PMSA( IPNT( 50)   ) =  0.0
+                PMSA( IPNT( 51)   ) =  0.0
+                PMSA( IPNT( 52)   ) =  0.0    
+                PMSA( IPNT( 53)   ) =  0.0   
                 PMSA( IPNT( 54)   ) =  0.0
-                PMSA( IPNT( 55)   ) =  0.0    
+                PMSA( IPNT( 55)   ) =  0.0
                 PMSA( IPNT( 56)   ) =  0.0    
-                PMSA( IPNT( 57)   ) =  0.0 
-                PMSA( IPNT( 58)   ) =  0.0  
-                PMSA( IPNT( 59)   ) =  0.0    
-                PMSA( IPNT( 60)   ) =  0.0  
-                PMSA( IPNT( 61)   ) =  0.0    
-                ! NFrond is never zero, except for first time step for segments
-                ! that are examined before first segment with biomass
-                ! this is specified so that NFrond is always > 0 even when biomass = 0
-                ! because Nfrond is for whole column, and not segment
-                PMSA(IPNT(62)) =PMSA(IPNT(62)+(MBotSeg-ISEG)*INCREM(62))
-                PMSA( IPNT( 63)   ) =  0.0      
+                PMSA( IPNT( 57)   ) =  0.0    
+                PMSA( IPNT( 58)   ) =  0.0 
+                PMSA( IPNT( 59)   ) =  0.0  
+                PMSA( IPNT( 60)   ) =  0.0 
+                PMSA( IPNT( 61)   ) =  0.0  
+                PMSA( IPNT( 62)   ) =  0.0
+                !NFrond
+                PMSA( IPNT( 64)   ) =  0.0      
                 
             ENDIF
           ENDIF

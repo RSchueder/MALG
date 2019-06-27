@@ -14892,9 +14892,10 @@ inpupr,inpuit,inpunm,inpude,inpudo,inpusx
 "FlMALS    ","FrPO2MAL  ",  29,"Y","x",1
 "FlMALS    ","SeedMass  ",  30,"Y","x",1
 "FlMALS    ","MBotSeg   ",  31,"N","x",1
-"FlMALS    ","Surf      ",  32,"N","x",1
-"FlMALS    ","DELT      ",  33,"N","x",1
-"FlMALS    ","Depth     ",  34,"N","x",1
+"FlMALS    ","NFrond    ",  32,"Y","x",1
+"FlMALS    ","Surf      ",  33,"N","x",1
+"FlMALS    ","DELT      ",  34,"N","x",1
+"FlMALS    ","Depth     ",  35,"N","x",1
 "MALDIS    ","Surf      ",   1,"N","x",1
 "MALDIS    ","Depth     ",   2,"N","x",1
 "MALDIS    ","TotalDepth",   3,"N","x",1

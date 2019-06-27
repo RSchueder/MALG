@@ -1,4 +1,4 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Fri Jun 21 17:42:09 2019
+        !COMPILER-GENERATED INTERFACE MODULE: Wed Jun 26 17:19:22 2019
         ! This source file is for reference only and may not completely
         ! represent the generated interface used by the compiler.
         MODULE MALDIS__genmod

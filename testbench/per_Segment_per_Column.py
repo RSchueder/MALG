@@ -40,12 +40,14 @@ column =  {
 'MALSNC'   : ' x ratio N:C in whole frond                               (gN/gC)' ,
 'MALSPC'   : ' x ratio P:C in whole frond                               (gP/gC)' ,
 'FootDepth': ' x location of frond attachment in the water column < MSL (m)' ,  
-'FrondArea': ' x area of each individual frond in segment               (m2/m2/frond)' ,   
+'FrondArea': ' x area of each individual frond in segment               (m2/frond)' ,   
 'LocAreaMAL': ' x area of all fronds per m2 of column                    (m2/m2)' ,         
 'TotAreaMAL': ' x area of frond in this column                           (m2)' ,
 'LengthMAL': ' x length of frond in this column                         (m)' , 
 'TipDepth':   ' x depth of tip of frond in this column                   (m)',
-'SpecArea' :   ' x area of a single frond                                 (dm2) ' ,
+'SpecArea' :   ' x area of a single frond                                 (dm2/Frond) ' ,
+'NFrond' :   ' x Number of fronds in segment                               (-) ' ,
+
 'FrNH4MALN'  :   'x fraction ammonium uptake by MALN                       (-)   '              
   }
 

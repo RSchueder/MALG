@@ -2246,7 +2246,6 @@ Wdry       colsep dry weight of culture in segment                   colsep (g/m
 Wwet       colsep wet weight of culture in segment                   colsep (g/m2)               colsep FlMALS     \\
 WdryTot    colsep dry weight of culture in segment                   colsep (g)                  colsep FlMALS     \\
 WwetTot    colsep wet weight of culture in segment                   colsep (g)                  colsep FlMALS     \\
-NFrond     colsep number of fronds in segment                        colsep (-)                  colsep FlMALS     \\
 SpecArea   colsep specific area of a single frond                    colsep (dm2)                colsep FlMALS     \\
 BmLayMAL   colsep Biomass of MALS in segment                         colsep (gDM/m3)             colsep MALDIS     \\
 LocAreaMAL colsep area of all fronds per m2 of column                colsep (m2/m2)              colsep MALDIS     \\
