@@ -13,7 +13,7 @@ It is a program written in FORTRAN as a *.dll of the DELWAQ process library. Inf
 The compiled *.dll is only available for windows. The batch file for executing a model should look like this:
 
 "MALG\exe\dwaq\bin\delwaq1.exe" model.inp -p "MALG\code\tables\proc_def" 
-"MALG\exe\dwaq\bin\delwaq2.exe" model.inp -openpb "MALG\code\x64\Debug\D3Dwaq_OpenPL.dll" 
+"MALG\exe\dwaq\bin\delwaq2.exe" model.inp -openpb "MALG\code\x63\Debug\D3Dwaq_OpenPL.dll" 
 
 # Copyright
 This code is available under GPLv3 conditions: https://www.gnu.org/licenses/gpl-3.0.html

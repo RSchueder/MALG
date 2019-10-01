@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<VisualStudioUserFile ProjectType="typeDynamicLibrary" ProjectCreator="Intel Fortran" Keyword="Dll" Version="11.0" ProjectIdGuid="{CB19EFB9-3C0B-48DB-B1AD-7184610ECDFA}">
-	<Configurations>
-		<Configuration Name="Debug|Win32"/>
-		<Configuration Name="Release|Win32"/>
-		<Configuration Name="Debug|x64" Command="d:\projects\IMPAQT\MALG\exe\dwaq\bin\delwaq2.exe" CommandArguments="NZB.inp -p d:\projects\IMPAQT\MALG\code\tables\proc_def.dat NZB.inp -openpb d:\projects\IMPAQT\MALG\code\x64\Debug\D3Dwaq_OpenPL.dll" WorkingDirectory="p:\11202512-h2020_impaqt\03_waterquality\02_modelSetup\C13\"/>
-		<Configuration Name="Release|x64"/></Configurations></VisualStudioUserFile>

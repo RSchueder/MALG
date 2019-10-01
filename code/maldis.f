@@ -88,13 +88,13 @@
       REAL(4) chk
       INTEGER :: LUNREP
 
-      INTEGER IQ              !        Loop counter
-      INTEGER Ifrom           !        From Segment
-      INTEGER Ito             !        From Segment
-      LOGICAL First           !        is the first time
-      LOGICAL ALCOR
+      INTEGER IQ          !        Loop counter
+      INTEGER Ifrom       !        From Segment
+      INTEGER Ito         !        From Segment
 
 !*******************************************************************************
+      LOGICAL FIRST           !        is the first time
+      LOGICAL ALCOR           !        already corrected length (if true correction is applied)
       DATA    FIRST /.TRUE./
       SAVE    FIRST
       DATA    ALCOR /.TRUE./
@@ -163,9 +163,6 @@
        
             ! get biomass from bottom segment
             ! gDM/m2
-            IF (ISEG .eq. 402) THEN
-              chk = 1
-            ENDIF
             MALS = PMSA(IPNT(5)+(MBotSeg-ISEG)*INCREM(5))
             
             IF (MALS .gt. 0.0) THEN

@@ -89,8 +89,8 @@ C
       REAL(4) LimNut      ! O 
       REAL(4) Wdry        ! O
       REAL(4) Wwet        ! O
-      REAL(4) NFrond  ! calculated number of fronds in cell
-      REAL(4) SpecArea ! area of each frond     
+      REAL(4) NFrond      ! calculated number of fronds in cell
+      REAL(4) SpecArea    ! area of each frond     
       
       REAL(4) dPrPOC1MAL  ! F  POC1 production MALS                                (gC/m3/d)
       REAL(4) dPrPOC2MAL  ! F  POC2 production MALS                                (gC/m3/d)
@@ -128,32 +128,39 @@ C
       REAL(4) dNTrMALS    !    translocation of N from MALN to MALS               (gN/m3/d)
       REAL(4) dPTrMALS    !    translocation of P from MALP to MALS               (gP/m3/d)
       REAL(4) dCTrMALS    !    translocation of C from MALC to MALS               (gC/m3/d)
-      REAL(4) chk
-      LOGICAL First           !        is the first time
-      DATA    FIRST /.TRUE./
-      SAVE    FIRST
+      REAL(4) chk         !    debug variable
+      
+      LOGICAL DOFRND      !    is the first time
+      DATA    DOFRND /.TRUE./
+      SAVE    DOFRND
+      INTEGER ARR1
+      INTEGER ARR2
 C
 C*******************************************************************************
-C     
-      IPNT        = IPOINT
-  
-!*******************************************************************************
-      ! we actually want a loop here which goes through all segments at the beginning and
-      ! assigns Nfrond
-      ! NFrond calculation loop
-      IF (FIRST) THEN 
+C
+      ! NFrond calculation loop, assigns Nfrond to bottom segments with mass
+      IF (DOFRND) THEN 
+          IPNT       = IPOINT
+          
           ! for all segs
           DO 9001 ISEG = 1,NOSEG
+             PMSA( IPNT(63) ) = 0.0
              CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
+             
              ! if active
              IF (IKMRK1.EQ.1) THEN
                  CALL DHKMRK(2,IKNMRK(ISEG),IKMRK2)
-                 ! we will go to bottom segment, calculate NFrond,
+
+                 ! if bottom segment, calculate NFrond using MALS,
                  ! and put NFrond in the bottom segment
                  IF ((IKMRK2.EQ.0).OR.(IKMRK2.EQ.3)) THEN
-                    MALS       = PMSA( IPNT(1) )
+                        MALS       = PMSA( IPNT(1) )
+                        
                     ! if there is biomass in the column
+                    ! due to presence in bed
                     IF (MALS .gt. 0.0) THEN    
+                        write(*,*) 'initializing step'
+
                         MALN       = PMSA( IPNT(2) )
                         MALP       = PMSA( IPNT(3) )
                         MALC       = PMSA( IPNT(4) )
@@ -165,8 +172,8 @@ C
                         Kn         = PMSA( IPNT(25) )
                         Kc         = PMSA( IPNT(26) )
                         Kdw        = PMSA( IPNT(27) )
-              
                         SeedMass   = PMSA( IPNT(30) )                 
+                        MBotSeg    = nint(PMSA( IPNT( 31) ))
                  
                         Surf       = PMSA( IPNT(33) )     
   
@@ -181,25 +188,29 @@ C
                 
                         Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
      &              + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
-
+                        
+                        ! number of fronds is total mass divided by mass per sporophyte
                         NFrond = Wdry * Surf / SeedMass
                         IF (NFrond .lt. 1.0) THEN
                             NFrond = 1.0
                         ENDIF
-                
-                        PMSA( IPNT(63) ) = NFrond
-                    ELSE
-                        ! number of fronds is = 0 if no MALS in bottom segment
-                        PMSA( IPNT(63) ) = 0.0
+                        ARR1 = IPNT(63)
+                        
+                        ! put in output to be read in input
+                        PMSA(IPNT(63)+(MBotSeg-ISEG)*INCREM(63)) =NFrond
+
+                        write(*,*) 'putting' , NFrond
+                        write(*,*) 'fronds in segment ' , ISEG
+
                     ENDIF
                  ENDIF
              ENDIF
              
-             IPNT = IPNT   +   INCREM
-             
+          IPNT = IPNT   +   INCREM
+
 9001      CONTINUE  
           
-          FIRST = .FALSE.
+          DOFRND = .FALSE.
 
       ENDIF
 
@@ -265,14 +276,15 @@ C
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
-                ! Comes from 63
-                NFrond     = PMSA( IPNT(32)+(MBotSeg-ISEG)*INCREM( 32) )
+                ! comes from output 63 in initialization step
+                ARR2 =            IPNT(32)+(MBotSeg-ISEG)*INCREM(32)
+                NFrond     = PMSA(IPNT(32)+(MBotSeg-ISEG)*INCREM(32) )
                 ! take the Nfrond value stored in the output of the bottom segment of this column
-                IF (NFrond .EQ. 0) THEN
-                write(*,*) 'ERROR: NFrond = 0 in seg with !=0 biomass'
+                IF (NFrond .LT. 1.0) THEN
+                  write(*,*) 'ERROR: NFrond<1.0 in seg with !=0 biomass'
+                  write(*,*) 'Segment = ' , ISEG
                 ENDIF
                 
-
                 ! need to convert storage substance from gX/m2 to gX/gDM
                 ! to be consistent with constants from Broch
                 ! gX/m2 to gX/gDM
@@ -297,25 +309,11 @@ C
                 Wwet = MALS * (1/Kdw + Kn*(MALN - (MALNmin))
      &           + MALNmin + Kc*(MALC - MALCmin) + MALCmin)
 
-                ! the following is the area of each frond when we assume the fronds are equally distributed in the segment
-                ! this can cause the fronds to become very small
-                ! LocAreMAL = TotAreMAL / Surf
-                ! this should be scaled back based on the known number of fronds, but we do not know this at the moment
-                ! what we should do is assume the model is being run with seaweed where the weight per frond is known, as
-                ! is the case with the seeding of fronds. This way you know what the mass of a frond is, and thus the area of
-                ! a frond, and you can use the area of the frond in the density and mortality calculations
-                ! Spec area is the specific area of a frond, the whole frond across the column
-                ! this is because each part of the frond should experience the same erosion and density limitation
+                ! Specarea is the specific area of a frond, the whole frond across the column
                 SpecArea = TotAreMAL / NFrond
                 
                 ! density limitation - "if the plant is too big it will grow slower"
                 ! area is in m2 and MALS0 is in m2 as well
-          
-                !LimDen=m_1*exp(-1*((LocAreMAL/(MALS0*NFrond))**2))+m_2
-                !
-                ! because the previous formulation will not necessarily reflect the size of a real frond, 
-                ! we take the seeding weight to calculate the number of fronds, 
-                ! and the total area divided by this number of fronds is the Specific Area per frond
                 LimDen = m_1*exp(-1*((SpecArea/MALS0)**2))+m_2
 
                 ! temperature limitation
@@ -333,17 +331,10 @@ C
                 DL = (daylengthd - daylengthp) / daylengthm
                 LimPho = a_1 * (1 + sin(DL) *(ABS(DL))**0.5) + a_2
                
-                ! decay
-                ! decay  is proportional to the entire frond size
+                ! DECAY
+                ! decay is proportional to the entire frond size
                 ! requires m2 back to to dm2 as mrtMAL is per plant per dm2
-                ! If biomass is small relative to grid cell size then biomass will
-                ! be small in each 1m2, meaning the biomass density and mortality will be small
-                ! we need a way of knowing how many fronds there likely are so we know how big each one is
-                ! and thus how fast it will erode
-                ! the following is valid with the assumption there is 1 frond per m2 unless otherwise stated
-                ! coeff = exp(mrtMAL*LocAreMAL*100/NFrond)
-                ! However this can cause too little erosion in sparsely populated cells
-                ! thus we use the SeedMass to get the Specific area, or the expected area per frond, as per
+                ! we use the SeedMass to get the Specific area, or the expected area per frond, as per
                 ! density limitation calculation
                 coeff = min(exp(mrtMAL*SpecArea*100.0), 3.5e+09)
 
@@ -485,7 +476,7 @@ C
                 PMSA( IPNT( 60)   ) =  Wwet    
                 PMSA( IPNT( 61)   ) =  Wdry*Surf  
                 PMSA( IPNT( 62)   ) =  Wwet*Surf
-                !NFrond
+                !NFrond, already present and should not be overwritten
                 PMSA( IPNT( 64)   ) =  SpecArea * 100.0    
                 
             ELSE
@@ -516,7 +507,7 @@ C
                 PMSA( IPNT( 60)   ) =  0.0 
                 PMSA( IPNT( 61)   ) =  0.0  
                 PMSA( IPNT( 62)   ) =  0.0
-                !NFrond
+                !NFrond, already present and should not be overwritten
                 PMSA( IPNT( 64)   ) =  0.0      
                 
             ENDIF

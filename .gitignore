@@ -1,0 +1,12 @@
+/exe/*
+/code/*
+/code/x63/*
+/code/x63/Debug/*
+
+*.his
+*.map
+*.user
+*.pptex
+*.suo
+*.mod
+*.obj

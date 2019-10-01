@@ -148,9 +148,7 @@ C
                 ! this line shows how we assume the entire plant will have the
                 ! same abundance of nitrogen and carbon stores
                 ! along the length
-                          IF (ISEG .eq. 9832) THEN
-                              chk = 1
-                          ENDIF
+
                 MALN = MALN / MALS ! gN/m2 to gN/gDM
                 MALP = MALP / MALS ! gP/m2 to gP/gDM
                 ! since the storage is relative the amount of DM,
@@ -167,6 +165,7 @@ C
                     write(*,*) 'In segment' , ISEG
                     write(*,*) 'MALN = ' , MALN , 'MALNmax = ', MALNmax
                 ENDIF
+                
                 !IF (MALP .gt. MALPmax) THEN
                 !    write(*,*) 'ERROR: MALP (gP/gDM) MORE THAN MALPmax'
                 !ENDIF            
@@ -176,6 +175,7 @@ C
                 IF (LimN .lt. 0.0) THEN
                     LimN = 0.0
                 ENDIF
+                
                 LimP = (MALPmax - MALP)/(MALPmax - MALPmin)
                 IF (LimP .lt. 0.0) THEN
                     LimP = 0.0
@@ -191,6 +191,7 @@ C
                 NH4Thresh = max(NH4Thresh, 1e-7)
                 NH4 = max(NH4, 1e-7)
                 NO3 = max(NO3, 1e-7)
+                
                 IF (NH4 .le. NH4Thresh) THEN
                     FrNH4MALN = NH4/(NH4 + NO3)
                 ELSE
@@ -202,6 +203,7 @@ C
                   EFFnit = 0.0
                   FrNH4MALN = 0.0
                 ENDIF
+                
                 IF (LimN .gt. 0.0 .AND. MALN .lt. MALNmax .AND. 
      &               EffNit .gt. 0.0) THEN 
                   LocUpN = (TotAreMAL*FrBmMALS) * JNmax * 
