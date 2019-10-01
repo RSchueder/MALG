@@ -700,7 +700,7 @@ C
 
                 ! gC/(dm2 hr)
                 Ps = alpha0*Isat/LOG(1+alpha0/beta)  
-                P = Ps * (1-exp(-alpha0*I/Ps))*exp(-beta*I/Ps)
+                P = Ps * (1.0-exp(-alpha0*I/Ps))*exp(-beta*I/Ps)
                 ! converted to m2 d instead of dm hr because R1 is in the former
                 ! all rates will as per the paper yield rates
                 ! of gC/area plant/ hr
@@ -708,12 +708,12 @@ C
                 R = R1 * exp(Tar/Tr1 - Tar/Temp)
                
                 ! exudation (-)
-                E = 1-exp(exuMALC*(MALCmin - MALC))
+                E = 1.0-exp(exuMALC*(MALCmin - MALC))
                 
                 ! convert from gC/dm2 h to gC/m2 d for state variable
                 BrochP = P
-                P = P * 24 * 100
-                R = R * 24 * 100            
+                P = P * 24.0 * 100.0
+                R = R * 24.0 * 100.0           
            
                 ! effect on TIC is net of production and maintenance respiration
                 ! growth respiration is included in FLMALS

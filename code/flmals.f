@@ -58,7 +58,7 @@ C
       REAL(4) FrPOC1MALS  ! I  Fraction MALS that goes to POC1 in decay            (-)
       REAL(4) FrPOC2MALS  ! I  Fraction MALS that goes to POC2 in decay            (-)
       REAL(4) SeedMass    ! I  Fraction MALS that goes to POC2 in decay            (-)
-      REAL(4) MBotSeg     ! I  bottom segment for this segment                    
+      INTEGER MBotSeg     ! I  bottom segment for this segment                    
       REAL(4) Surf        ! I  horizontal surface area of a DELWAQ segment         (m2)
       REAL(4) DELT        ! I  timestep for processes                              (d)
       REAL(4) Depth       ! I  depth of segment                                    (m)
@@ -133,9 +133,8 @@ C
       LOGICAL DOFRND      !    is the first time
       DATA    DOFRND /.TRUE./
       SAVE    DOFRND
-      INTEGER ARR1
-      INTEGER ARR2
-C
+
+C     
 C*******************************************************************************
 C
       ! NFrond calculation loop, assigns Nfrond to bottom segments with mass
@@ -194,10 +193,9 @@ C
                         IF (NFrond .lt. 1.0) THEN
                             NFrond = 1.0
                         ENDIF
-                        ARR1 = IPNT(63)
-                        
+                      
                         ! put in output to be read in input
-                        PMSA(IPNT(63)+(MBotSeg-ISEG)*INCREM(63)) =NFrond
+                        PMSA(IPNT(63)) = NFrond
 
                         write(*,*) 'putting' , NFrond
                         write(*,*) 'fronds in segment ' , ISEG
@@ -277,7 +275,6 @@ C
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
                 ! comes from output 63 in initialization step
-                ARR2 =            IPNT(32)+(MBotSeg-ISEG)*INCREM(32)
                 NFrond     = PMSA(IPNT(32)+(MBotSeg-ISEG)*INCREM(32) )
                 ! take the Nfrond value stored in the output of the bottom segment of this column
                 IF (NFrond .LT. 1.0) THEN
@@ -340,7 +337,7 @@ C
 
                 ! not stated in paper but this has to be per day
                 ! it looks unitless in paper
-                mrt = 10e-6*coeff/(1 + (10e-6)*(coeff - 1 ))
+                mrt = 10e-6*coeff/(1 + (10e-6)*(coeff - 1.0 ))
                 ! gDM/(m2 d)
                 dDecayMALS = mrt * MALS
                

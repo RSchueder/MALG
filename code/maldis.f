@@ -191,7 +191,7 @@
                 ! an interecpt (bias) to the length of the frond without changing the mass
                 IF (ALCOR) THEN
                   IF (LinDenCor .gt. 0) THEN
-                      LinDenFact = max(0.15 * (1 - (MALS/18.0)),0.0)
+                      LinDenFact = max(0.15 * (1.0 - (MALS/18.0)),0.0)
                   ELSE
                       LinDenFact = 0.0                
                   ENDIF
@@ -223,7 +223,7 @@
                     B = MALS/LenMAL
                     If (Zm .LT. Z1) Then
                         ! Algae is not in segment, segment too deep, below tip
-                        BmLayMALS = 0
+                        BmLayMALS = 0.0
                     Elseif (Zm . GT. Z2 ) Then
                         ! could be in this segment and beyond, above rooting depth, or rooted in this segment
                         if (Z1 .GT. FootDepth) Then
@@ -248,7 +248,7 @@
                     B = MALS / LenMAL 
                     If (Zm .GT. Z2) Then
                         ! algae not in segment, segment too shallow, above tip
-                        BmLayMALS = 0
+                        BmLayMALS = 0.0
                     Elseif (Zm . LT. Z1 ) Then
                         ! could be in this segment and beyond, above rooting depth, or rooted in this segment
 						if (Z2 .lt. FootDepth) Then
@@ -270,7 +270,7 @@
                     Endif
                 endif
               
-                If (BmLayMALS .GT. 0) Then
+                If (BmLayMALS .GT. 0.0) Then
                     FrBmMALS = BmLayMALS / MALS
                 Else
                     ! beware, this used to have a safety net to ensure some segment had an FrBmMALS > 0.0

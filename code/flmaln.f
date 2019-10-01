@@ -156,7 +156,7 @@ C
                 MALS = MALS * FrBmMALS
                 
                 ! velocity limitation
-                LimVel = 1 - exp(-Vel/Vel65)
+                LimVel = 1.0 - exp(-Vel/Vel65)
                 ! nitrogen hunger will be the same along length
                 ! nutrient abundance will not be
 
@@ -222,7 +222,7 @@ C
                 ! uptake from water column
                 ! can not take up NH4 at the moment, Broch ignores NH4
                 dUpMALNH4 = FrNH4MALN     * LocUpN/(Depth*Surf) 
-                dUpMALNO3 = (1-FrNH4MALN) * LocUpN/(Depth*Surf) 
+                dUpMALNO3 = (1.0-FrNH4MALN) * LocUpN/(Depth*Surf) 
                 ! calculate, but set P to zero
                 LocUpP = 0.0
                 dUpMALPO4 = LocUpP/(Depth*Surf)
