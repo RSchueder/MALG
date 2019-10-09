@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.10)  26 JUN 2019 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.10)  9 OCT 2019 17:57
 entering extended mode
 **./MALG_manual.tex
 (MALG_manual.tex
@@ -1276,9 +1276,9 @@ LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 
 ] (MALG_manual.lof
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.07397pt on input line 7.
+(Font)              scaled to size 10.07397pt on input line 8.
 )
 \tf@lof=\write6
 \openout6 = `MALG_manual.lof'.
@@ -1294,7 +1294,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 
 ]
 Chapter 1.
-<figures/state_variables.png, id=104, 466.11725pt x 234.27121pt>
+<figures/state_variables.png, id=108, 466.11725pt x 234.27121pt>
 File: figures/state_variables.png Graphic file (type png)
 <use figures/state_variables.png>
 Package pdftex.def Info: figures/state_variables.png  used on input line 31.
@@ -1313,7 +1313,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
 (Font)              scaled to size 10.07397pt on input line 47.
-<figures/ambiguous_situation.png, id=124, 645.1302pt x 210.0648pt>
+<figures/ambiguous_situation.png, id=129, 645.1302pt x 210.0648pt>
 File: figures/ambiguous_situation.png Graphic file (type png)
 <use figures/ambiguous_situation.png>
 Package pdftex.def Info: figures/ambiguous_situation.png  used on input line 54
@@ -1322,260 +1322,246 @@ Package pdftex.def Info: figures/ambiguous_situation.png  used on input line 54
 [3
 
  <./figures/ambiguous_situation.png>]
-Overfull \hbox (479.62634pt too wide) detected at line 75
- $\OML/cmm/m/it/12 IFLinDenCor > \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 LinDenFact \
-OT1/cmr/m/n/12 = \OML/cmm/m/it/12 max\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 :\OT1/c
-mr/m/n/12 15 \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12   \OT1/cmr/
-m/n/12 (\OML/cmm/m/it/12 MALS=\OT1/cmr/m/n/12 18\OML/cmm/m/it/12 :\OT1/cmr/m/n/
-12 0))\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0)\
-OML/cmm/m/it/12 ELSELinDenFact \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/
-n/12 0\OML/cmm/m/it/12 ENDLenMAL \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 min\OT1/cmr
-/m/n/12 (\OML/cmm/m/it/12 LinDenFact \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 F[] \O
-T1/cmr/m/n/12 + []\OML/cmm/m/it/12 ; abs\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 LmaxM
-AL\OT1/cmr/m/n/12 ))$  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
 
-Overfull \hbox (4.8065pt too wide) in paragraph at lines 83--94
+Overfull \hbox (4.8065pt too wide) in paragraph at lines 85--96
 [][] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-[5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Overfull \hbox (37.73746pt too wide) in paragraph at lines 227--228
+Overfull \hbox (37.73746pt too wide) in paragraph at lines 166--167
 []\T1/phv/m/n/10.95 Note that in the code the stor-age terms are tem-porar-ily 
 con-verted from $\OML/cmm/m/it/12 gXm[]$ \T1/phv/m/n/10.95 to $\OML/cmm/m/it/12
  gX=gDM[]$
  []
 
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
 [8]
-Overfull \hbox (92.67828pt too wide) detected at line 232
- $\OML/cmm/m/it/12 Wdry \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 MALS\OT1/cmr/m/n/12 
-(1 + \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN \OMS/cmsy/m/n/1
-2   \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN[]\OT1/cmr/m/n/12 )) + \OML/cmm/m/it/
-12 MALN[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/
-12 MALC \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 MALC[]\OT1/cmr/m/n/12 ) + \OML/cmm/
-m/it/12 MALC[]\OT1/cmr/m/n/12 )$  
- []
-
-
-Overfull \hbox (103.54822pt too wide) detected at line 235
- $\OML/cmm/m/it/12 Wwet \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 MALS\OT1/cmr/m/n/12 
-([] + \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN \OMS/cmsy/m/n/
-12   \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 MALN[]\OT1/cmr/m/n/12 )) + \OML/cmm/m/it
-/12 MALN[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OML/cmm/m/it
-/12 MALC \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 MALC[]\OT1/cmr/m/n/12 ) + \OML/cmm
-/m/it/12 MALC[]\OT1/cmr/m/n/12 )$  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+LaTeX Warning: Command \textgreater invalid in math mode on input line 236.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 236.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 236.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 236.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 243.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 246.
+
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+[13]
 
- []
-
-
-LaTeX Warning: Command \textgreater invalid in math mode on input line 290.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 387.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 290.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 387.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 290.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 387.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 290.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 297.
-
-
-LaTeX Warning: Command \textgreater invalid in math mode on input line 300.
-
-[10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
-
- []
-
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
-
- []
+LaTeX Warning: Command \textless invalid in math mode on input line 387.
 
 [14]
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 441.
+LaTeX Warning: Command \textless invalid in math mode on input line 389.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 441.
+LaTeX Warning: Command \textless invalid in math mode on input line 389.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 441.
+LaTeX Warning: Command \textless invalid in math mode on input line 391.
 
-
-LaTeX Warning: Command \textless invalid in math mode on input line 441.
-
-[15]
-
-LaTeX Warning: Command \textless invalid in math mode on input line 443.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 443.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 445.
-
-<figures/light_equations_crop.png, id=220, 3842.355pt x 2294.5725pt>
+<figures/light_equations_crop.png, id=223, 3842.355pt x 2294.5725pt>
 File: figures/light_equations_crop.png Graphic file (type png)
 <use figures/light_equations_crop.png>
-Package pdftex.def Info: figures/light_equations_crop.png  used on input line 4
-52.
+Package pdftex.def Info: figures/light_equations_crop.png  used on input line 3
+98.
 (pdftex.def)             Requested size: 412.56497pt x 246.34662pt.
-[16 <./figures/light_equations_crop.png>] [17] [18
+[15 <./figures/light_equations_crop.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+[16]
+Chapter 3.
+[17
 
 ]
-Chapter 3.
-<figures/Temp_NO3.png, id=247, 1300.86pt x 717.6411pt>
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+[18]
+Chapter 4.
+<figures/Temp_NO3.png, id=254, 1300.86pt x 717.6411pt>
 File: figures/Temp_NO3.png Graphic file (type png)
 <use figures/Temp_NO3.png>
-Package pdftex.def Info: figures/Temp_NO3.png  used on input line 497.
+Package pdftex.def Info: figures/Temp_NO3.png  used on input line 521.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-<figures/irradiance.png, id=248, 1300.86pt x 717.6411pt>
+<figures/irradiance.png, id=255, 1300.86pt x 717.6411pt>
 File: figures/irradiance.png Graphic file (type png)
 <use figures/irradiance.png>
-Package pdftex.def Info: figures/irradiance.png  used on input line 498.
+Package pdftex.def Info: figures/irradiance.png  used on input line 522.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-[19] [20 <./figures/Temp_NO3.png> <./figures/irradiance.png>]
-Overfull \hbox (30.87872pt too wide) in alignment at lines 512--535
+[19
+
+] [20 <./figures/Temp_NO3.png> <./figures/irradiance.png>]
+Overfull \hbox (30.87872pt too wide) in alignment at lines 536--559
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 535
+Underfull \vbox (badness 10000) detected at line 559
  []
 
 
-Overfull \hbox (30.87872pt too wide) in alignment at lines 535--555
+Overfull \hbox (30.87872pt too wide) in alignment at lines 559--579
  [] [] [] [] 
  []
 
 
-Overfull \hbox (30.87872pt too wide) in alignment at lines 555--573
+Overfull \hbox (30.87872pt too wide) in alignment at lines 579--597
  [] [] [] [] 
  []
 
 [21]
-<figures/frond_area.png, id=283, 1300.86pt x 717.6411pt>
+<figures/frond_area.png, id=290, 1300.86pt x 717.6411pt>
 File: figures/frond_area.png Graphic file (type png)
 <use figures/frond_area.png>
-Package pdftex.def Info: figures/frond_area.png  used on input line 579.
+Package pdftex.def Info: figures/frond_area.png  used on input line 603.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-<figures/production.png, id=284, 1300.86pt x 717.6411pt>
+<figures/production.png, id=291, 1300.86pt x 717.6411pt>
 File: figures/production.png Graphic file (type png)
 <use figures/production.png>
-Package pdftex.def Info: figures/production.png  used on input line 580.
+Package pdftex.def Info: figures/production.png  used on input line 604.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 581.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 605.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.19998pt on input line 581.
+(Font)              scaled to size 9.19998pt on input line 605.
  [22]
-<figures/carbon_storage.png, id=293, 1300.86pt x 717.6411pt>
+<figures/carbon_storage.png, id=300, 1300.86pt x 717.6411pt>
 File: figures/carbon_storage.png Graphic file (type png)
 <use figures/carbon_storage.png>
-Package pdftex.def Info: figures/carbon_storage.png  used on input line 587.
+Package pdftex.def Info: figures/carbon_storage.png  used on input line 611.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
-<figures/nitrogen_storage.png, id=294, 1300.86pt x 717.6411pt>
+<figures/nitrogen_storage.png, id=301, 1300.86pt x 717.6411pt>
 File: figures/nitrogen_storage.png Graphic file (type png)
 <use figures/nitrogen_storage.png>
-Package pdftex.def Info: figures/nitrogen_storage.png  used on input line 588.
+Package pdftex.def Info: figures/nitrogen_storage.png  used on input line 612.
 (pdftex.def)             Requested size: 412.56497pt x 227.59119pt.
  [23 <./figures/frond_area.png> <./figures/production.png>] [24 <./figures/carb
 on_storage.png> <./figures/nitrogen_storage.png>]
-<figures/tidal_flume_farm.png, id=321, 936.49875pt x 357.58594pt>
+<figures/tidal_flume_farm.png, id=328, 936.49875pt x 357.58594pt>
 File: figures/tidal_flume_farm.png Graphic file (type png)
 <use figures/tidal_flume_farm.png>
-Package pdftex.def Info: figures/tidal_flume_farm.png  used on input line 600.
+Package pdftex.def Info: figures/tidal_flume_farm.png  used on input line 624.
 (pdftex.def)             Requested size: 412.56497pt x 157.53471pt.
  [25 <./figures/tidal_flume_farm.png>] [26
 
 ]
-Chapter 4.
+Chapter 5.
 (MALG_manual.bbl) 
 AED: lastpage setting LastPage
 [27]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 618.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 618.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 642.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 642.
  (MALG_manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 618.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 618.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 642.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 642.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25842 strings out of 492946
- 466712 string characters out of 3135619
+ 25850 strings out of 492946
+ 466793 string characters out of 3135619
  588984 words of memory out of 3000000
- 29237 multiletter control sequences out of 15000+200000
+ 29240 multiletter control sequences out of 15000+200000
  579367 words of font info for 95 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  51i,14n,87p,1508b,857s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/urw/helvetic/uhvro8a.pfb>
-Output written on MALG_manual.pdf (35 pages, 2535258 bytes).
+pdfTeX warning (dest): name{figure.caption.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/helvetic/uhvro8a.pfb>
+Output written on MALG_manual.pdf (35 pages, 2538962 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
