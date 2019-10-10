@@ -1,1 +1,0 @@
-INCLUDE '../../../../MALG_hydro/farm3D/DFM_DELWAQ_flowfm/flowfm.atr' ; attributes file

@@ -1,7 +1,7 @@
 /exe/*
 /code/*
-/code/x63/*
-/code/x63/Debug/*
+/code/x64/*
+/code/x64/Debug/*
 
 *.his
 *.map
@@ -10,3 +10,13 @@
 *.suo
 *.mod
 *.obj
+*.wrk
+*.hda
+*.hdf
+*.lst
+*.lsp
+*.rtn
+*.prn
+*.out
+*.nc
+*.mon

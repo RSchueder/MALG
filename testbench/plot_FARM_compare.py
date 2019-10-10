@@ -98,7 +98,6 @@ def return_malg_par(his, sub, colname, segment, column):
         
     return series
             
-plt.close('all')
 
 plt.rc('text', usetex= True)
 plt.rc('font', family = 'serif', size = 30)
@@ -106,39 +105,78 @@ plt.rcParams["figure.figsize"] = [18,9.93]
 xfmt = mdates.DateFormatter('%m-%Y')
 
 clr = ['k','b','r','y']
-runs = {'Farm3D' : 'default',
-        'Farm3D_FStretch' : 'Stretch factor',
-        'Farm3D_nFrond' : 'nFronds = 4',
-        'Farm3D_highBiomass' : 'high biomass'}
+runs = {'Farm3D'                      : 'baseline',
+        'Farm3D_high_density'         : 'higher density',
+        'Farm3D_stretch'              : 'longer fronds',
+        'Farm3D_stretch_high_density' : 'longer fronds higher density'}
 
 ls = [rr for rr in runs.keys()]
 ls = '_'.join(ls)
 
-printDirectory = 'd:\\projects\\IMPAQT\\_postProcessing\\%s\\' % ls
+printDirectory = 'd:\\projects\\IMPAQT\MALG\\testbench\\tidal_flume_farm\\_post_processing\\%s\\' % ls
 if not os.path.exists(printDirectory):
     os.makedirs(printDirectory)
+
+# ambient conditions
 seg = 'Farm2'
+plt.close('all')
 
 for rind, rr in enumerate(runs.keys()):
 
-    file = r'd:\projects\IMPAQT\%s\farm3D.his' % rr    
+    file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\%s\farm3D.his' % rr    
     his = d3d.DelwaqHisFile(file)
-    
+
     ###############################################################################
     
-    fig = plt.figure(2)
-    ax2 = fig.add_axes([0.1,0.1,0.8,0.8])  
+    fig1 = plt.figure(1)
+    ax1 = fig1.add_axes([0.1,0.1,0.8,0.8])  
     no3 = his['NO3',seg + '(1)',:]
-    ax2.plot(his.dates,no3/14.0,label = runs[rr])
+    ax1.plot(his.dates,no3/14.0, label = runs[rr], color = clr[rind])
+    ax1.set_ylabel('N-NO$_{3}$')
+    ax1.xaxis.set_major_formatter(xfmt)
+    ax1.legend()
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig((printDirectory + 'NO3_top.png') ,dpi = 200)
+
+    fig2 = plt.figure(2)
+    ax2 = fig2.add_axes([0.1,0.1,0.8,0.8])  
+    no3 = his['NO3',seg + '(8)',:]
+    ax2.plot(his.dates,no3/14.0,label = runs[rr], color = clr[rind])
     ax2.set_ylabel('N-NO$_{3}$')
     ax2.xaxis.set_major_formatter(xfmt)
     ax2.legend()
-    pylab.savefig((printDirectory + 'NO3.png') ,dpi = 200)
-    
-    
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig((printDirectory + 'NO3_bottom.png') ,dpi = 200)
+
+    fig3 = plt.figure(3)
+    ax3 = fig3.add_axes([0.1,0.1,0.8,0.8])  
+    oxy = his['OXY',seg + '(1)',:]
+    ax3.plot(his.dates,oxy,label = runs[rr], color = clr[rind])
+    ax3.set_ylabel('dissolved oxygen')
+    ax3.xaxis.set_major_formatter(xfmt)
+    ax3.legend()
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig((printDirectory + 'OXY_top.png') ,dpi = 200)
+
+    fig4 = plt.figure(4)
+    ax4 = fig4.add_axes([0.1,0.1,0.8,0.8])  
+    oxy = his['OXY',seg + '(8)',:]
+    ax4.plot(his.dates,oxy,label = runs[rr], color = clr[rind])
+    ax4.set_ylabel('dissolved oxygen')
+    ax4.xaxis.set_major_formatter(xfmt)
+    ax4.legend()
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig((printDirectory + 'OXY_bottom.png') ,dpi = 200)
+
+plt.close('all')
+for rind, rr in enumerate(runs.keys()):
+
+    file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\%s\farm3D.his' % rr    
+    his = d3d.DelwaqHisFile(file)
+        
     ###############################################################################
     
-    fign = plt.figure(3)
+    fign = plt.figure(1)
     ax = fign.add_axes([0.1,0.1,0.8,0.8])     
         
     area = return_malg_par(his, 'LocAreaMAL', seg, segment, column)
@@ -147,9 +185,10 @@ for rind, rr in enumerate(runs.keys()):
     plt.grid()
     plt.legend()
     ax.xaxis.set_major_formatter(xfmt)
-    pylab.savefig(printDirectory + 'frond_area.png' ,dpi = 200)
+    if rind == len(runs.keys()) - 1: 
+        pylab.savefig(printDirectory + 'frond_area.png' ,dpi = 200)
     
-    fign = plt.figure(4)
+    fign = plt.figure(2)
     ax = fign.add_axes([0.1,0.1,0.8,0.8])     
     gross = return_malg_par(his, 'LocGroPS', seg, segment, column)
     ax.plot(his.dates,gross, color = clr[rind], label = runs[rr])
@@ -158,9 +197,10 @@ for rind, rr in enumerate(runs.keys()):
     ax.set_xlabel('(B)')
     ax.xaxis.set_major_formatter(xfmt)
     plt.legend()
-    pylab.savefig(printDirectory + 'production.png' ,dpi = 200)
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig(printDirectory + 'production.png' ,dpi = 200)
         
-    fign = plt.figure(5)
+    fign = plt.figure(3)
     ax = fign.add_axes([0.1,0.1,0.8,0.8])       
     MALC = return_malg_par(his, 'MALSCDM', seg, segment, column)
     ax.plot(his.dates,MALC, color = clr[rind], label = runs[rr])
@@ -169,9 +209,10 @@ for rind, rr in enumerate(runs.keys()):
     ax.xaxis.set_major_formatter(xfmt)    
     plt.legend()
     plt.grid()
-    pylab.savefig(printDirectory + 'carbon_storage.png' ,dpi = 200)
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig(printDirectory + 'carbon_storage.png' ,dpi = 200)
     
-    fign = plt.figure(6)
+    fign = plt.figure(4)
     ax = fign.add_axes([0.1,0.1,0.8,0.8])             
     MALN = return_malg_par(his, 'MALSNDM', seg, segment, column)
     ax.plot(his.dates,MALN, color = clr[rind], label = runs[rr])
@@ -180,12 +221,13 @@ for rind, rr in enumerate(runs.keys()):
     plt.legend()
     plt.grid()
     ax.xaxis.set_major_formatter(xfmt)
-    pylab.savefig(printDirectory + 'nitrogen_storage.png', dpi = 200)
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig(printDirectory + 'nitrogen_storage.png', dpi = 200)
     
     
     ################################################################################
     
-    fig = plt.figure(10)
+    fig = plt.figure(5)
     ax = fig.add_axes([0.1,0.1,0.8,0.8])
     tip= return_malg_par(his, 'TipDepth', seg, segment, column)
     foot = return_malg_par(his, 'FootDepth', seg, segment, column)
@@ -199,9 +241,10 @@ for rind, rr in enumerate(runs.keys()):
     ax.set_ylabel('m')
     ax.set_xlabel('time')
     ax.xaxis.set_major_formatter(xfmt)
-    pylab.savefig(printDirectory + 'length.png' ,dpi = 200)
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig(printDirectory + 'length.png' ,dpi = 200)
     
-    fig = plt.figure(11)
+    fig = plt.figure(6)
     ax = fig.add_axes([0.1,0.1,0.8,0.8])
     dry = his['WdryTot',seg,:]/1000.0
     
@@ -212,4 +255,6 @@ for rind, rr in enumerate(runs.keys()):
     ax.set_ylabel('kg')
     ax.set_xlabel('time')
     ax.xaxis.set_major_formatter(xfmt)
-    pylab.savefig(printDirectory + 'dry weight.png' ,dpi = 200)
+    
+    if rind == len(runs.keys()) - 1:
+        pylab.savefig(printDirectory + 'dry weight.png' ,dpi = 200)

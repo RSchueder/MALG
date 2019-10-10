@@ -6,7 +6,7 @@
 \begin{document}
 \title{MALG: The MacroALGae module of DELWAQ}
 \subtitle{Developed for H2020 project IMPAQT: Intelligent Management Systems for Integrated Multi-Trophic Aquaculture}
-\manualtype{draft, June 2019}
+\manualtype{draft, October 2019}
 \version{0.1}
 \deltarestitle
 	
@@ -72,7 +72,7 @@ The model does not explicitly model individual plants in a given segment, and so
 	&ELSE\\
 	&	LinDenFact = 0.0\\
 	&END\\
-	&LenMAL = min(LinDenFact \times F_{stretch} + \frac{MALS}{LinDenMA}, abs(LmaxMAL))\\
+	&LenMAL = min(F_{stretch} \times(LinDenFact + \frac{MALS}{LinDenMAL}), abs(LmaxMAL))\\
 \end{aligned}
 \end{equation}
 \begin{equation}
@@ -432,7 +432,7 @@ $dHrvMALS$ is set to = 0 if $MALS < dHrvMALS\times \delta t$
 
 \chapter{Usage tips}
 \section{A note about model output in MALG}
-This module is somewhat different from other DELWAQ modules because of the notion of ghost mass. This means that although it follows DELWAQ convention that state variables are written to the bottom segment (where they administratively reside), outputs like gross production are written to segments that the ghost mass resides in. This means that the user must be aware of what is written to which segments. There are some values that are (1) only written to the bottom layer, (2) written to individual segments only if the segments have (ghost )biomass, and (3) written to all segments in a water column that has some biomass in the bottom layer. The clarification of which is which is now described using conventions from the proces.asc file:
+This module is somewhat different from other DELWAQ modules because of the notion of ghost mass. This means that although it follows DELWAQ convention that state variables are written to the bottom segment (where they administratively reside), outputs like gross production are written to segments that the ghost mass resides in. This means that the user must be aware of what is written to which segments. There are some values that are (1) only written to the bottom layer, (2) written to individual segments only if the segments have ghost biomass, and (3) written to all segments in a water column that have some biomass in the bottom layer. The clarification of which is which is now described using definitions congruent with the proces.asc file:
 
 \textbf{Type 1.} State variables strictly always exist only in bottom segments:
 \begin{itemize}
@@ -494,15 +494,20 @@ This module is somewhat different from other DELWAQ modules because of the notio
 	\item TipDepth  : depth of tip of frond in this column                   (m)  
 \end{itemize}
 
-\section{Schematizing macrolalgae in a DELWAQ model}
+The python script /MALG/testbench/plot\_FARM.py contains a function that can extract information from the his file based on the rules stated above. It relies on the dictionary contained in /MALG/testbench/per\_Segment\_per\_Column.py.
 
-The units in MALG are not the type that one expects to obtain from farm designs or measurements. Typically one might know how much mass there is at the beginning of the growing season, or how many sporophytes are seeded. Using the following steps and equation 2.6 you can obtain a good initial condition for your model\\
+\section{Initializing macrolalgae in a DELWAQ model}
+
+The units in MALG are not the type that one expects to obtain from farm designs or measurements. Typically one might know how much mass there is at the beginning of the growing season, or how many sporophytes are seeded. The model however used mass per square meter, and internally translates this to Broch units (gX gSW ${-1}$). Using the following steps and equation 2.6 you can obtain a good initial condition for your model.\\
 \begin{itemize}
 	\item Probably the initial mass (gDW) of the seaweed is known.
 	\item Divide this number by the surface area of the grid cell you are putting the seaweed in.
 	\item Equation 2.6 describes the relationship between dry weight and structural weight. Use it to solve for MALS (gC m$^{-2}$) by choosing an initial condition for the broch parameters MALN (gN gSW$^{-1}$) and MALC (gC gSM$^{-1}$) that describe the stores of the algae. Recommended values are 0.01 gN gSW$^{-1}$ and 0.6 gC gSW$^{-1}$.
-	\item Calculate MALN (gN m$^{-2}$) and MALC (gC m$^{-2}$) by multiplying the broch MALN and MALC by MALS.
-	\item Set $LinDenCor$, $FStretch$, $SWWGroDir$, $LmaxMAL$, and $SeedMass$ according to your needs. 
+	\item Calculate MALN (gN m$^{-2}$) and MALC (gC m$^{-2}$) by multiplying the Broch MALN and MALC by MALS.
+	\item Set $LinDenCor$, $F_{stretch}$, $SWGroDir$, $LmaxMAL$, and $SeedMass$ according to the situation.. 
+	\item If using FStretch, you can calculate an appropriate value by multiplying the desired length of the culture by $\frac{1}{0.15}$. Using $F_{stretch}$ is recommended for mass densities \textless 18 gSW m$^{-2}$. 
+	\item \textbf{Reminder}: Photoperiod parameters $a1$ and $a2$ must be chosen to satisfy $0.3 \textgreater f_{photoperiod} \textless 2$ at the desired latitude. This is not calculated automatically and must be provided by the user. One can use the python script /MALG/code/py/DAYLP.py to find optimal values for a1 and a2 given a latitude.
+	\item \textbf{Reminder}: Temperature limitations are hard-coded in for Atlantic species that experience optimal growth between 10-15$^0$C.
 \end{itemize}
 
 \pagebreak
@@ -526,8 +531,8 @@ This testcase involves the reproduction of the model as it was demonstrated in \
 
 The DELWAQ testcase involved a 10m deep 1DV model containing 10 segments. Only MALG processes and processes relating to reaeration of CO$_{2}$ and O$_{2}$ and pH are activated in this model. All model constants are set to the default values described in \cite{broch2012}. There are however a few exceptions:
 \begin{itemize}
-	\item Broch states that the maximum growth rate of the structural mass is 0.18 d$^{-1}$. Broch also states that the contribution to the growth rate from $MALN = 1-  = 0.65$. As $MALN_{max}$ is stated as $= 0.022$, it must be the case that $1- \leq 0.565$. Thus, the $\mu$ in MALG is up to 13 percent lower than in \cite{broch2012}. The $\epsilon$ has been changed from the default 0.22 m$^{-1}$ to 0.18 m$^{-1}$ to counteract this effect.
-	\item Broch checks the gross production formulation at I = 10 $\mu$mol m$^{-2}$ s$^{-1}$ and T = 12$^{0}$ and arrives at a value of $2.95 \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$. This is lower than the value computed by MALG under the same conditions ($3.21  \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$). It is at least partially due to the different method of approximating $\beta$, but it was also found that $P_{max}(T_{pl}) \neq 3.394  \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$ in contrast to what was stated in the paper. This discrepancy may be due to discrepancies in $T_{apl}$ and $T_{aph}$, which were stated to be $27,774^{0}K$ and $25,924^{0}K$ respectively in the paper but could not be reproduced using the high and low end temperatures and production rates. Thus the gross production is higher in MALG than in \cite{broch2012}.
+	\item Broch states that the maximum growth rate of the structural mass is 0.18 d$^{-1}$. Broch also states that the contribution to the growth rate from $MALN = 1-0.65$. As $MALN_{max}$ is stated as $= 0.022$, it must be the case that $1- \leq 0.565$. Thus, the $\mu$ in MALG is up to 13 percent lower than in \cite{broch2012}. The $\epsilon$ has been changed from the default 0.22 m$^{-1}$ to 0.18 m$^{-1}$ to counteract this effect.
+	\item Broch checks the gross production formulation at I = 10 $\mu$mol m$^{-2}$ s$^{-1}$ and T = 12$^{0}C$ and arrives at a value of $2.95 \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$. This is lower than the value computed by MALG under the same conditions ($3.21  \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$). It is at least partially due to the different method of approximating $\beta$, but it was also found that $P_{max}(T_{pl}) \neq 3.394  \times 10^{-4}$ gCdm$^{-2}$h$^{-1}$ in contrast to what was stated in the paper. This discrepancy may be due to discrepancies in $T_{apl}$ and $T_{aph}$, which were stated to be $27,774^{0}K$ and $25,924^{0}K$ respectively in the paper but could not be reproduced using the high and low end temperatures and production rates. Thus the gross production is higher in MALG than in \cite{broch2012}.
 	\item $ExtVL$ is set to 0.07 m$^{-1}$ in Broch, but the depth is not known. In the test case the model is 10 m deep and $ExtVl$ = 0.18 m$^{-1}$. this means the frond likely received less light than in Broch, counteracting the increased production rate.
 \end{itemize}
 
@@ -617,7 +622,7 @@ Figure \ref{fig:biomass} and Figure \ref{fig:storage} demonstrate the performanc
 \section{Testcase: Tidal flume farm}
 The tidal flume farm test case is a synthetic case used to test the 3D performance of the model in Delft3D flexible mesh with sigma layers. It is designed to demonstrate that the biomass allocation works with variable sigma layer thickness in time due to tidal variation.
 
-The test case consists of a 10x30 cell grid with 100 m resolution containing a factor 2 refinement  in the center to obtain a 50m resolution. The model is thus 1km x 3km. It has a uniform depth of 10 m and 20 sigma layers, meaning each layer is 0.5 m deep. The tidal amplitude applied is 2 m and velocities vary between 0.0-0.1 m/s. The flow switches direction approximately every 6 hours. The oscillation of the layer thickness means each layer will be between 0.4 m (low water) and 0.6 m (high water). Thus as long as the plant is at least 0.4 m long and grows a minimum of 0.4 m, the segments within which it resides will vary within a single tidal period due to water level variations alone. Multiple farms are located within this higher resolution area. The layout is shown in Figure \ref{fig:tidalflumefarm}
+The test case consists of a 10x30 cell grid with 100 m resolution containing a factor 2 refinement  in the center to obtain a 50m resolution. The model is thus 1km x 3km. It has a uniform depth of 10 m and 20 sigma layers, meaning each layer is 0.5 m deep. The tidal amplitude applied is 2 m and velocities vary between 0.0-0.1 m/s. The flow switches direction approximately every 6 hours. The oscillation of the layer thickness means each layer will be between 0.4 m (low water) and 0.6 m (high water) thick. Thus as long as the plant is at least 0.4 m long and grows a minimum of 0.4 m, the segments within which it resides will vary within a single tidal period due to water level variations alone. Multiple farms are located within this higher resolution area. The layout is shown in Figure \ref{fig:tidalflumefarm}
 
 \begin{figure}[H]
 	\centering
@@ -628,10 +633,10 @@ The test case consists of a 10x30 cell grid with 100 m resolution containing a f
 
 This model was run with 4 different settings:
 \begin{itemize}
-	\item standard approach
-	\item make fronds 7m in length
-	\item increase number of fronds, maintain biomass
-	\item increase biomass density
+	\item Put 903g in a 2500 m$^{2}$ cell, equivalent to 0.159 gC m$^{-2}$ biomass in single cell, no length correction
+	\item increase biomass 100x
+	\item stretch standard amount of biomass to 7m in length
+	\item stretch 100x biomass to 7m in length
 \end{itemize}
 
 These models were used to test the implementation of various features of the code.

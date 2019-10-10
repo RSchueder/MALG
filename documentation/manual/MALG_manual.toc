@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {2.5}Harvesting of macroalgae}{16}{section.2.5}% 
 \contentsline {chapter}{\numberline {3}Usage tips}{17}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}A note about model output in MALG}{17}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Schematizing macrolalgae in a DELWAQ model}{18}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Initializing macrolalgae in a DELWAQ model}{18}{section.3.2}% 
 \contentsline {chapter}{\numberline {4}Model validation}{19}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Testcase: Broch 2012}{19}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Testcase: Tidal flume farm}{25}{section.4.2}% 

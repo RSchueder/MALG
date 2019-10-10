@@ -5,20 +5,28 @@ Created on Fri Feb 22 15:33:05 2019
 @author: schueder
 """
 
-#     Only constant inputs, so only single calculation of daylength needed to be set to all segments
 
 import numpy as np
-
 import matplotlib.pyplot as plt
+
 plt.close('all')
+
+####INPUT####
+lat = 52
+a1 = 1.02
+a2 = 0.13
+
+####CALCULATION####
+
 sin50m = -1.454389765e-2 
 e  = 1.721420632e-2
 #     Conversion Latitude to rads
-latitu  = 52 / 360 * 2 * np.pi
+latitu  = lat / 360 * 2 * np.pi
 daylengthm = 0.0
 
 daylenda = []
 daylenpa = []
+
 #     Conversion time to daynumbers relative to tref
 for daynrd in range(1,366):
     #     Computes declination of sun on day DAYNR.
@@ -28,7 +36,7 @@ for daynrd in range(1,366):
         declin = 6.918e-3 - 3.99912e-1 * np.cos ( e * daynrd) -6.758e-3   * np.cos ( 2.0 * e * daynrd) -2.697e-3   * np.cos ( 3.0 * e * daynrd) +7.0257e-2  * np.sin ( e * daynrd) +9.07e-4    * np.sin ( 2.0 * e * daynrd) +1.480e-3   * np.sin ( 3.0 * e * daynrd)
     
     
-    #     Computes daylenth
+    #     Computes daylength
     
     temp = (( sin50m - np.sin ( declin) * np.sin ( latitu)) /( np.cos ( declin) * np.cos ( latitu)))
     
@@ -98,8 +106,7 @@ daylenda = np.array(daylenda)
 daylenpa = np.array(daylenpa)
 
 tau = (daylenda - daylenpa) / np.max(daylenda - daylenpa)
-a1 = 1.02
-a2 = 0.13
+
 photo = a1 * (1+np.sin(tau)*np.abs(tau)**0.5)+a2
 plt.plot(photo)
 plt.ylim([0.2,2.1])

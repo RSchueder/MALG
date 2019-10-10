@@ -198,12 +198,11 @@
                   ALCOR = .FALSE.
                 ENDIF
                 
-                ! LenMAL=min(LinDenFact*FStretch+(MALS/(LinDenMAL*NFrond))
-                ! cannot get NFrond from FLMALS as it depends on MALDIS/biomass
-                ! LenMAL is underestimated based on new method of frond area calculation.
-                ! correction advised
-                LenMAL=min(LinDenFact*FStretch+(MALS/(LinDenMAL))
-
+                ! Length of culture
+                ! only works for small densities
+                !LenMAL=min(LinDenFact*FStretch+(MALS/(LinDenMAL))
+                ! works for all densities
+                LenMAL=min(FStretch * (LinDenFact + (MALS/(LinDenMAL)))
      &           ,abs(LmaxMAL))
                 TotAreMAL = MALS * Surf / ArDenMAL
                 LocAreMAL = TotAreMAL / Surf
