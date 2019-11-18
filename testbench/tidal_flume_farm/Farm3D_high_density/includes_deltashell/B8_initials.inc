@@ -68,10 +68,13 @@ MASS/M2
 0 ;DetNS1
 0 ;DetPS1
 0 ;DetSiS1
-15.9    ;MALS
-0.159  ;MALN
-0.0159 ;MALP
-9.54   ;MALC
+
+1.24E+01; MALS
+1.24E-01; MALN
+1.24E-02; MALP
+7.45E+00; MALC
+
+
 0 ; Mussel_V
 0 ; Mussel_E
 0       ; Mussel_R

@@ -23,10 +23,11 @@
  CONSTANTS 'SWRearCO2' DATA 11.0
  CONSTANTS 'LmaxMAL'   DATA 8
  CONSTANTS 'LinDenMAL' DATA 120
- CONSTANTS 'LinDenCor' DATA 113
- CONSTANTS 'FStretch'  DATA 1.0
+ CONSTANTS 'LinDenCor' DATA 1.0
+ CONSTANTS 'FStretch'  DATA 49.0
+ CONSTANTS 'SeedMass'  DATA 0.5
  ; will become = 0.0 if no footdepth, grows at surface
  CONSTANTS 'SWGroDir'     DATA -1.0 ; grows downward
- CONSTANTS 'nFrond'    DATA 1
+
  CONSTANTS 'nothreads' DATA 4
  CONSTANTS 'Velocity'  DATA 0.15

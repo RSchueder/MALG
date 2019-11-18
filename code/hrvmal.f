@@ -98,16 +98,16 @@
               Depth     = PMSA(IPNT(7) )    
               DELT      = PMSA(IPNT(8) )
               IF (MALS .gt. 0.0) THEN
-                  ! gDM/m2/d
+                  ! gDM/m3/d
                   !! conditional for not extracting mass beyond available source
-                  dHrvMALS  = K0HrvMALS + MALS * K1HrvMALS
+                  dHrvMALS  = K0HrvMALS + MALS * K1HrvMALS / Depth
                   IF ( MALS .GT. dHrvMALS*DELT ) THEN
                   ELSE
                       dHrvMALS = 0.0
                   ENDIF
               
-                  ! gN/m2 / gDM m2 * gDM/m2 d
-                  ! = gN /m2 d
+                  ! gN/m2 / gDM m2 * gDM/m3 d
+                  ! = gN /m3 d
                   dHrvMALN  = dHrvMALS * MALN/MALS
                   dHrvMALP  = dHrvMALS * MALP/MALS
                   dHrvMALC  = dHrvMALS * MALC/MALS

@@ -2,6 +2,8 @@
 /code/*
 /code/x64/*
 /code/x64/Debug/*
+/testbench/tidal_flume_farm/_post_processing/*
+/testbench/tidal_flume_farm/*
 
 *.his
 *.map

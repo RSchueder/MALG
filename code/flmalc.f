@@ -719,30 +719,32 @@ C
                 ! growth respiration is included in FLMALS
                 ! TIC gets converted (lost) to DOC in exudate
                 ! in PRIPRO.f it is      STOICH TIC = -1.0 * dPPGREEN = ( PPROD - RESP ) * ALG
-                dMALTIC = TotAreMAL * FrBmMALS * (P - R) / (Surf*Depth) 
+                dMALTIC = TotAreMAL * FrBmMALS * (P - R) / (Depth*Surf) 
                 
                 ! exudate is produced as DOC, E is a fraction of production              
                 ! exudation (leakage) gC/(m3 d)
-                dMALDOC = TotAreMAL * FrBmMALS * P * E / (Surf*Depth) 
+                dMALDOC = TotAreMAL * FrBmMALS * P * E / (Depth*Surf) 
                 
-                ! uptake into storage gC/(m2 d)
-                LocUpC = TotAreMAL * FrBmMALS * (P * (1.0-E) - R) / Surf
+                ! uptake into storage gC/(m3 d)
+                LocUpC = TotAreMAL * FrBmMALS * (P * (1.0-E) - R) 
+     &           / (Depth*Surf)
                 
                 ! oxygen 
                 ! photosynthesis produces oxygen, respiration consumes                
                 dPrMALOXY = 2.67 * dMALTIC
                 ! ALKA included in stoich
                 
-                GrosMALC            = TotAreMAL * FrBmMALS * P /Surf
-                RespMALC            = TotAreMAL * FrBmMALS * R /Surf
-                ExudMALC            = TotAreMAL * FrBmMALS * P * E /Surf
-                PMSA( IPNT( 31)   ) = LocUpC
+                GrosMALC  = TotAreMAL * FrBmMALS * P / (Depth*Surf)
+                RespMALC  = TotAreMAL * FrBmMALS * R / (Depth*Surf)
+                ExudMALC  = TotAreMAL * FrBmMALS * P * E / (Depth*Surf)
+                
+                PMSA( IPNT( 31)   ) = LocUpC * Depth
                 PMSA( IPNT( 32)   ) = Itip
                 PMSA( IPNT( 33)   ) = Itipu
                 PMSA( IPNT( 34)   ) = BrochP
-                PMSA( IPNT( 35)   ) = GrosMALC
-                PMSA( IPNT( 36)   ) = RespMALC
-                PMSA( IPNT( 37)   ) = ExudMALC
+                PMSA( IPNT( 35)   ) = GrosMALC * Depth
+                PMSA( IPNT( 36)   ) = RespMALC * Depth
+                PMSA( IPNT( 37)   ) = ExudMALC * Depth
                 PMSA( IPNT( 38)   ) = beta
 
                 FL ( IdUpMALTIC   ) = dMALTIC

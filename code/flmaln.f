@@ -220,8 +220,7 @@ C
                 ENDIF
                 
                 ! uptake from water column
-                ! can not take up NH4 at the moment, Broch ignores NH4
-                dUpMALNH4 = FrNH4MALN     * LocUpN/(Depth*Surf) 
+                dUpMALNH4 = FrNH4MALN       * LocUpN/(Depth*Surf) 
                 dUpMALNO3 = (1.0-FrNH4MALN) * LocUpN/(Depth*Surf) 
                 ! calculate, but set P to zero
                 LocUpP = 0.0
@@ -234,14 +233,16 @@ C
                  ! allocate to bottom segment flux address
                 FLCREM = (MBotSeg-ISEG)*NOFLUX
                  ! fluxes were for whole segment, so convert to /m2
-                FL(IdStrMALN + FLCREM) =FL(IdStrMALN+FLCREM)+LocUpN/Surf
-                FL(IdStrMALP + FLCREM) =FL(IdStrMALP+FLCREM)+LocUpP/Surf
+                FL(IdStrMALN + FLCREM) = FL(IdStrMALN+FLCREM) +
+     &           (LocUpN/(Depth*Surf))
+                FL(IdStrMALP + FLCREM) = FL(IdStrMALP+FLCREM) + 
+     &           (LocUpP/(Depth*Surf))
                
                 PMSA( IPNT( 28)   ) =  LimVel		
                 PMSA( IPNT( 29)   ) =  LimN		
                 PMSA( IPNT( 30)   ) =  LimP		
                 PMSA( IPNT( 31)   ) =  LocUpN/Surf	
-                PMSA( IPNT( 32)   ) =  LocUpP/Surf	
+                PMSA( IPNT( 32)   ) =  LocUpP/Surf
                 PMSA( IPNT( 33)   ) =  FrNH4MALN
             ELSE
                 PMSA( IPNT( 28)   ) =  0.0	

@@ -406,11 +406,11 @@ C
                 ! no P translocation 
                 dPtrMALS=0.0
 
-                ! gDM/(m2 d), sent to bottom
-                LocGroS = dGrowMALS - dDecayMALS
-                LocGroN = MIN(dNtrMALS,MALN)
-                LocGroP = dPtrMALS
-                LocGroC = dCtrMALS
+                ! gDM/(m3 d), sent to bottom
+                LocGroS = (dGrowMALS - dDecayMALS) / Depth
+                LocGroN = MIN(dNtrMALS,MALN)/Depth
+                LocGroP = dPtrMALS/Depth
+                LocGroC = dCtrMALS/Depth
                 
                 ! N:C ratio
                 MALSNC = TotN/TotC
@@ -464,11 +464,11 @@ C
                 PMSA( IPNT( 51)   ) =  mu
                 PMSA( IPNT( 52)   ) =  mrt    
                 PMSA( IPNT( 53)   ) =  dGrowMALS     
-                PMSA( IPNT( 54)   ) =  LocGroS
+                PMSA( IPNT( 54)   ) =  LocGroS * Depth
                 PMSA( IPNT( 55)   ) =  dDecayMALS
-                PMSA( IPNT( 56)   ) =  LocGroN    
-                PMSA( IPNT( 57)   ) =  LocGroP    
-                PMSA( IPNT( 58)   ) =  LocGroC 
+                PMSA( IPNT( 56)   ) =  LocGroN * Depth   
+                PMSA( IPNT( 57)   ) =  LocGroP * Depth   
+                PMSA( IPNT( 58)   ) =  LocGroC * Depth
                 PMSA( IPNT( 59)   ) =  Wdry  
                 PMSA( IPNT( 60)   ) =  Wwet    
                 PMSA( IPNT( 61)   ) =  Wdry*Surf  

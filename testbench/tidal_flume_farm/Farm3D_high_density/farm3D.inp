@@ -109,9 +109,9 @@ INCLUDE 'includes_deltashell/B8_initials.inc'       ; From UI: Initials
  INCLUDE 'includes_deltashell/B9_Mapvar.inc'        ; From UI: Map-file
                                                     ; Binary/Nefis and History/Map
  1                                                  ; Switch on binary History file
- 1                                                  ; Switch on binary Map file
+ 0                                                  ; Switch on binary Map file
  0                                                  ; Switch off Nefis History file
- 0                                                  ; Switch off Nefis Map file
+ 1                                                  ; Switch off Nefis Map file
 #9
 ;###############################################################################
 ; Tenth input block
