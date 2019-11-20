@@ -11,8 +11,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(64)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(64)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(65)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(65)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -21,7 +21,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 64)   !    Local work array for the pointering
+      INTEGER IPNT( 65)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -52,6 +52,7 @@ C
       REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                  (gC/gDM)
       REAL(4) NCRatMALS   ! I  Nitrogen to carbon ratio in MALS                    (gN/gC)
       REAL(4) PCRatMALS   ! I  Phosphorous to carbon ratio in MALS                 (gP/gC)
+      REAL(4) DoLocUpP    ! I  include phosphorous uptake in P balance for MALS       (-)
       REAL(4) Kn          ! I  mass of nitrogen reserves per gram nitrogen         (gN/gN)
       REAL(4) Kc          ! I  mass of carbon reserves per gram carbon             (gC/gC)
       REAL(4) Kdw         ! I  structural dry weight per unit frond area           (-)
@@ -143,7 +144,7 @@ C
           
           ! for all segs
           DO 9001 ISEG = 1,NOSEG
-             PMSA( IPNT(63) ) = 0.0
+             PMSA( IPNT(64) ) = 0.0
              CALL DHKMRK(1,IKNMRK(ISEG),IKMRK1)
              
              ! if active
@@ -168,13 +169,13 @@ C
                         MALPmin    = PMSA( IPNT(7) )
                         MALCmin    = PMSA( IPNT(8) )               
               
-                        Kn         = PMSA( IPNT(25) )
-                        Kc         = PMSA( IPNT(26) )
-                        Kdw        = PMSA( IPNT(27) )
-                        SeedMass   = PMSA( IPNT(30) )                 
-                        MBotSeg    = nint(PMSA( IPNT( 31) ))
+                        Kn         = PMSA( IPNT(26) )
+                        Kc         = PMSA( IPNT(27) )
+                        Kdw        = PMSA( IPNT(28) )
+                        SeedMass   = PMSA( IPNT(31) )                 
+                        MBotSeg    = nint(PMSA( IPNT( 32) ))
                  
-                        Surf       = PMSA( IPNT(33) )     
+                        Surf       = PMSA( IPNT(34) )     
   
                         MALN = MALN / MALS ! gN/m2 to gN/gDM
                         MALP = MALP / MALS ! gP/m2 to gP/gDM
@@ -195,7 +196,7 @@ C
                         ENDIF
                       
                         ! put in output to be read in input
-                        PMSA(IPNT(63)) = NFrond
+                        PMSA(IPNT(64)) = NFrond
 
                         write(*,*) 'putting' , NFrond
                         write(*,*) 'fronds in segment ' , ISEG
@@ -257,25 +258,26 @@ C
                 CDRatMALS  = PMSA( IPNT(22) )
                 NCRatMALS  = PMSA( IPNT(23) )
                 PCRatMALS  = PMSA( IPNT(24) )
-                Kn         = PMSA( IPNT(25) )
-                Kc         = PMSA( IPNT(26) )
-                Kdw        = PMSA( IPNT(27) )
-                FrPOC1MALS = PMSA( IPNT(28) )
-                FrPOC2MALS = PMSA( IPNT(29) )
-                SeedMass   = PMSA( IPNT(30) ) 
-                MBotSeg    = nint(PMSA( IPNT( 31) ))
+                DoLocUpP   = PMSA( IPNT(25) )
+                Kn         = PMSA( IPNT(26) )
+                Kc         = PMSA( IPNT(27) )
+                Kdw        = PMSA( IPNT(28) )
+                FrPOC1MALS = PMSA( IPNT(29) )
+                FrPOC2MALS = PMSA( IPNT(30) )
+                SeedMass   = PMSA( IPNT(31) ) 
+                MBotSeg    = nint(PMSA( IPNT( 32) ))
                 !NFrond
-                Surf       = PMSA( IPNT(33) )     
-                DELT       = PMSA( IPNT(34) )      
-                Depth      = PMSA( IPNT(35) )   
+                Surf       = PMSA( IPNT(34) )     
+                DELT       = PMSA( IPNT(35) )      
+                Depth      = PMSA( IPNT(36) )   
 
                 ! need to take from bottom segment
                 MALS       = PMSA( IPNT(1)+(MBotSeg-ISEG)*INCREM( 1) )
                 MALN       = PMSA( IPNT(2)+(MBotSeg-ISEG)*INCREM( 2) )
                 MALP       = PMSA( IPNT(3)+(MBotSeg-ISEG)*INCREM( 3) )
                 MALC       = PMSA( IPNT(4)+(MBotSeg-ISEG)*INCREM( 4) )
-                ! comes from output 63 in initialization step
-                NFrond     = PMSA(IPNT(32)+(MBotSeg-ISEG)*INCREM(32) )
+                ! comes from output 64 in initialization step
+                NFrond     = PMSA(IPNT(33)+(MBotSeg-ISEG)*INCREM(33) )
                 ! take the Nfrond value stored in the output of the bottom segment of this column
                 IF (NFrond .LT. 1.0) THEN
                   write(*,*) 'ERROR: NFrond<1.0 in seg with !=0 biomass'
@@ -403,8 +405,11 @@ C
                     dPtrMALS=0.0
                     dCtrMALS=0.0
                 ENDIF
-                ! no P translocation 
-                dPtrMALS=0.0
+                
+                IF (DoLocUpP .lt. 1.0) THEN
+                  ! no P translocation 
+                  dPtrMALS=0.0
+                ENDIF
 
                 ! gDM/(m3 d), sent to bottom
                 LocGroS = (dGrowMALS - dDecayMALS) / Depth
@@ -446,66 +451,66 @@ C
                 FL(IdGrMALP + FLCREM) = FL(IdGrMALP + FLCREM)  + LocGroP
                 FL(IdGrMALC + FLCREM) = FL(IdGrMALC + FLCREM)  + LocGroC
                                   
-                PMSA( IPNT( 36)   ) =  MALNDMS		
-                PMSA( IPNT( 37)   ) =  MALPDMS		
-                PMSA( IPNT( 38)   ) =  MALCDMS		
-                PMSA( IPNT( 39)   ) =  MALSNC		
-                PMSA( IPNT( 40)   ) =  MALSPC	
-                PMSA( IPNT( 41)   ) =  MALSCDM
-                PMSA( IPNT( 42)   ) =  MALSNDM
-                PMSA( IPNT( 43)   ) =  MALSPDM
-                PMSA( IPNT( 44)   ) =  LimDen
-                PMSA( IPNT( 45)   ) =  LimPho  
-                PMSA( IPNT( 46)   ) =  LimTemp 
-                PMSA( IPNT( 47)   ) =  LimN  
-                PMSA( IPNT( 48)   ) =  LimP  
-                PMSA( IPNT( 49)   ) =  LimC   
-                PMSA( IPNT( 50)   ) =  LimNut  
-                PMSA( IPNT( 51)   ) =  mu
-                PMSA( IPNT( 52)   ) =  mrt    
-                PMSA( IPNT( 53)   ) =  dGrowMALS     
-                PMSA( IPNT( 54)   ) =  LocGroS * Depth
-                PMSA( IPNT( 55)   ) =  dDecayMALS
-                PMSA( IPNT( 56)   ) =  LocGroN * Depth   
-                PMSA( IPNT( 57)   ) =  LocGroP * Depth   
-                PMSA( IPNT( 58)   ) =  LocGroC * Depth
-                PMSA( IPNT( 59)   ) =  Wdry  
-                PMSA( IPNT( 60)   ) =  Wwet    
-                PMSA( IPNT( 61)   ) =  Wdry*Surf  
-                PMSA( IPNT( 62)   ) =  Wwet*Surf
+                PMSA( IPNT( 37)   ) =  MALNDMS		
+                PMSA( IPNT( 38)   ) =  MALPDMS		
+                PMSA( IPNT( 39)   ) =  MALCDMS		
+                PMSA( IPNT( 40)   ) =  MALSNC		
+                PMSA( IPNT( 41)   ) =  MALSPC	
+                PMSA( IPNT( 42)   ) =  MALSCDM
+                PMSA( IPNT( 43)   ) =  MALSNDM
+                PMSA( IPNT( 44)   ) =  MALSPDM
+                PMSA( IPNT( 45)   ) =  LimDen
+                PMSA( IPNT( 46)   ) =  LimPho  
+                PMSA( IPNT( 47)   ) =  LimTemp 
+                PMSA( IPNT( 48)   ) =  LimN  
+                PMSA( IPNT( 49)   ) =  LimP  
+                PMSA( IPNT( 50)   ) =  LimC   
+                PMSA( IPNT( 51)   ) =  LimNut  
+                PMSA( IPNT( 52)   ) =  mu
+                PMSA( IPNT( 53)   ) =  mrt    
+                PMSA( IPNT( 54)   ) =  dGrowMALS     
+                PMSA( IPNT( 55)   ) =  LocGroS * Depth
+                PMSA( IPNT( 56)   ) =  dDecayMALS
+                PMSA( IPNT( 57)   ) =  LocGroN * Depth   
+                PMSA( IPNT( 58)   ) =  LocGroP * Depth   
+                PMSA( IPNT( 59)   ) =  LocGroC * Depth
+                PMSA( IPNT( 60)   ) =  Wdry  
+                PMSA( IPNT( 61)   ) =  Wwet    
+                PMSA( IPNT( 62)   ) =  Wdry*Surf  
+                PMSA( IPNT( 63)   ) =  Wwet*Surf
                 !NFrond, already present and should not be overwritten
-                PMSA( IPNT( 64)   ) =  SpecArea * 100.0    
+                PMSA( IPNT( 65)   ) =  SpecArea * 100.0    
                 
             ELSE
-                PMSA( IPNT( 36)   ) =  0.0		
-                PMSA( IPNT( 37)   ) =  0.0	
-                PMSA( IPNT( 38)   ) =  0.0		
+                PMSA( IPNT( 37)   ) =  0.0		
+                PMSA( IPNT( 38)   ) =  0.0	
                 PMSA( IPNT( 39)   ) =  0.0		
-                PMSA( IPNT( 40)   ) =  0.0	
-                PMSA( IPNT( 41)   ) =  0.0
+                PMSA( IPNT( 40)   ) =  0.0		
+                PMSA( IPNT( 41)   ) =  0.0	
                 PMSA( IPNT( 42)   ) =  0.0
                 PMSA( IPNT( 43)   ) =  0.0
                 PMSA( IPNT( 44)   ) =  0.0
-                PMSA( IPNT( 45)   ) =  0.0  
-                PMSA( IPNT( 46)   ) =  0.0
-                PMSA( IPNT( 47)   ) =  0.0  
+                PMSA( IPNT( 45)   ) =  0.0
+                PMSA( IPNT( 46)   ) =  0.0  
+                PMSA( IPNT( 47)   ) =  0.0
                 PMSA( IPNT( 48)   ) =  0.0  
-                PMSA( IPNT( 49)   ) =  0.0   
-                PMSA( IPNT( 50)   ) =  0.0
+                PMSA( IPNT( 49)   ) =  0.0  
+                PMSA( IPNT( 50)   ) =  0.0   
                 PMSA( IPNT( 51)   ) =  0.0
-                PMSA( IPNT( 52)   ) =  0.0    
-                PMSA( IPNT( 53)   ) =  0.0   
-                PMSA( IPNT( 54)   ) =  0.0
+                PMSA( IPNT( 52)   ) =  0.0
+                PMSA( IPNT( 53)   ) =  0.0    
+                PMSA( IPNT( 54)   ) =  0.0   
                 PMSA( IPNT( 55)   ) =  0.0
-                PMSA( IPNT( 56)   ) =  0.0    
+                PMSA( IPNT( 56)   ) =  0.0
                 PMSA( IPNT( 57)   ) =  0.0    
-                PMSA( IPNT( 58)   ) =  0.0 
-                PMSA( IPNT( 59)   ) =  0.0  
-                PMSA( IPNT( 60)   ) =  0.0 
-                PMSA( IPNT( 61)   ) =  0.0  
-                PMSA( IPNT( 62)   ) =  0.0
+                PMSA( IPNT( 58)   ) =  0.0    
+                PMSA( IPNT( 59)   ) =  0.0 
+                PMSA( IPNT( 60)   ) =  0.0  
+                PMSA( IPNT( 61)   ) =  0.0 
+                PMSA( IPNT( 62)   ) =  0.0  
+                PMSA( IPNT( 63)   ) =  0.0
                 !NFrond, already present and should not be overwritten
-                PMSA( IPNT( 64)   ) =  0.0      
+                PMSA( IPNT( 65)   ) =  0.0      
                 
             ENDIF
           ENDIF

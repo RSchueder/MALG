@@ -105,7 +105,7 @@ plt.rcParams["figure.figsize"] = [18,9.93]
 xfmt = mdates.DateFormatter('%m-%y')
 
 
-file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\Farm3D_stretch_high_density\farm3D.his'
+file = r'd:\projects\IMPAQT\MALG\testbench\tidal_flume_farm\Farm3D\farm3D.his'
 sep = FindLast(file,"\\")
 printDirectory = (file[:sep] + '\\post_processing\\')
 if not os.path.exists(printDirectory):

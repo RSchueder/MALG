@@ -34,8 +34,8 @@
   30                                0
   31                                0
   32 ASMASS                      1122
-  33 LOCAL                        570
-  34 DEFAUL                       146
+  33 LOCAL                        580
+  34 DEFAUL                       148
   35 FLUX                         300
   36 STOCHI                       510
   37 FLXDMP                       300
@@ -94,7 +94,7 @@
   90 flowtot                       18
   91 disptot                       18
 
-     Total (4 byte words)        6571
+     Total (4 byte words)        6583
 
   ==> INTEGER arrays 4-byte words <==
   nr array name            array size
@@ -123,8 +123,8 @@
   22 LGRID                          0
   23 NSVAR                         15
   24 IFLUX                         15
-  25 IPMSA                        306
-  26 IPSSA                        306
+  25 IPMSA                        313
+  26 IPSSA                        313
   27 IMODU                         15
   28 IOUTPS                        63
   29 IOPOIN                       154
@@ -152,15 +152,15 @@
   51                                0
   52 PROGRD                        15
   53 PRONDT                        15
-  54 PRVVAR                       306
-  55 PRVTYP                       306
-  56 VARARR                       328
-  57 VARIDX                       328
-  58 VARTDA                       328
-  59 VARDAG                       328
-  60 VARTAG                       328
-  61 VARAGG                       328
-  62 VGRSET                       328
+  54 PRVVAR                       313
+  55 PRVTYP                       313
+  56 VARARR                       331
+  57 VARIDX                       331
+  58 VARTDA                       331
+  59 VARDAG                       331
+  60 VARTAG                       331
+  61 VARAGG                       331
+  62 VGRSET                       331
   63 GRDNOS                         1
   64 GRDREF                         1
   65 GRDSEG                        10
@@ -178,7 +178,7 @@
   77 iexseg                        10
   78 isegcol                       10
 
-     Total (4 byte words)        5902
+     Total (4 byte words)        5951
 
   => CHARACTER arrays 4-byte words <=
   nr array name            array size

@@ -11414,6 +11414,7 @@ itemid,itemse,itemex,itemde,itemun,itemnm,itemag,itemda,itemwk,itemgr
 "CDRatMAL  ","x"," ",   0.200000    ,"(-)                 ","C:DM ratio in MALS                                ","volume    ","volume    "," ","                              "
 "NCRatMAL  ","x"," ",   0.500000E-01,"(-)                 ","N:C ratio in MALS                                 ","volume    ","volume    "," ","                              "
 "PCRatMAL  ","x"," ",   0.500000E-02,"(-)                 ","P:C ratio in MALS                                 ","volume    ","volume    "," ","                              "
+"DoLocUpP  ","x"," ",    0.00000    ,"(-)                 ","include phosphorous uptake in P balance for MALS  ","volume    ","volume    "," ","                              "
 "Kn        ","x"," ",    2.72000    ,"(gN/gN)             ","mass of nitrogen reserves per gram nitrogen       ","volume    ","volume    "," ","                              "
 "Kc        ","x"," ",    2.12130    ,"(gC/gC)             ","mass of carbon reserves per gram carbon           ","volume    ","volume    "," ","                              "
 "Kdw       ","x"," ",   0.785000E-01,"(-)                 ","structural dry weight per unit frond area         ","volume    ","volume    "," ","                              "

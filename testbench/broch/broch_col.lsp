@@ -1,5 +1,5 @@
- Deltares, DELWAQ Version 5.08.00.63110M, Feb 07 2019, 08:35:20
- Execution start: 2019/05/27 23:06:43 
+ Deltares, DELWAQ Version 5.08.00.64083M, Jun 07 2019, 20:34:46
+ Execution start: 2019/11/20 14:37:06 
                                                                                 
  found -p command line switch                                                   
 
@@ -37,7 +37,7 @@ total number of substances with fractions :  0
    Process is activated                                                                             
                                                                                                     
  Input for [VertDisp            ] Vertical dispersion (segment -> exchange)                         
-   WARNING : activated process can NOT be switched on                                               
+   WARNING : VertDisp can NOT be switched on, is this a 2D model?                                   
    Not found:[VertDisper          ] vertical dispersion                                             
                                                                                                     
  Input for [pH_simp             ] Simple calculation of pH                                          
@@ -423,10 +423,14 @@ total number of substances with fractions :  0
        using default value: 0.336000                                                                
        [JPmax               ] maximum MALP P uptake rate (per area frond)                           
        using default value: 0.336000                                                                
+       [DoLocUpP            ] include phosphorous uptake in P balance for MALS                      
+       using default value:  0.00000                                                                
        [Velocity            ] horizontal flow velocity                                              
        Using constant nr 25 with value: 0.150000                                                    
        [Vel65               ] current speed at which J = 0.65Jmax                                   
        using default value: 0.300000E-01                                                            
+       [NH4Thresh           ] threshold below which NH4 uptake by MALN is limite                    
+       using default value: 0.100000E-01                                                            
        [MBotSeg             ] bottom segment for this segment                                       
        Using output from proces [MALDIS              ]                                              
        [Surf                ] horizontal surface area of a DELWAQ segment                           
@@ -471,8 +475,6 @@ total number of substances with fractions :  0
        Using output from proces [MALDIS              ]                                              
        [TotAreaMAL          ] area of frond in this column                                          
        Using output from proces [MALDIS              ]                                              
-       [nFrond              ] number of fronds per m2                                               
-       using default value:  1.00000                                                                
        [MALS0               ] growth rate parameter 3                                               
        using default value: 0.600000E-01                                                            
        [a1                  ] photoperiod parameter 1                                               
@@ -487,6 +489,8 @@ total number of substances with fractions :  0
        using default value: 0.500000E-01                                                            
        [PCRatMAL            ] P:C ratio in MALS                                                     
        using default value: 0.500000E-02                                                            
+       [DoLocUpP            ] include phosphorous uptake in P balance for MALS                      
+       using default value:  0.00000                                                                
        [Kn                  ] mass of nitrogen reserves per gram nitrogen                           
        using default value:  2.72000                                                                
        [Kc                  ] mass of carbon reserves per gram carbon                               
@@ -497,8 +501,12 @@ total number of substances with fractions :  0
        using default value: 0.750000                                                                
        [FrPO2MAL            ] fraction of MALS that goes to POC2 in decay                           
        using default value: 0.250000                                                                
+       [SeedMass            ] mass of a seed at begining of simulation                              
+       using default value:  40.0000                                                                
        [MBotSeg             ] bottom segment for this segment                                       
        Using output from proces [MALDIS              ]                                              
+       [NFrond              ] number of fronds in segment                                           
+       Using output from proces [FlMALS              ]                                              
        [Surf                ] horizontal surface area of a DELWAQ segment                           
        Using parameter nr  1                                                                        
        [DELT                ] timestep for processes                                                
@@ -522,8 +530,6 @@ total number of substances with fractions :  0
        [LmaxMAL             ] Maximum length MALG                                                   
        Using constant nr 31 with value:  10.0000                                                    
        [SWGroDir            ] grow direction MALG(1 = up, -1 = down )                               
-       using default value:  1.00000                                                                
-       [nFrond              ] number of fronds per m2                                               
        using default value:  1.00000                                                                
        [LinDenMAL           ] linear density of macroalgae                                          
        Using constant nr 27 with value:  120.000                                                    
@@ -731,11 +737,7 @@ total number of substances with fractions :  0
 # determining the use of the delwaq input                                       
                                                                                 
  info: constant [Nothreads ] is not used by the proces system                   
- info: constant [CLOSE_ERR ] is not used by the proces system                   
  info: constant [ScaleVDisp] is not used by the proces system                   
- info: constant [MaxIter   ] is not used by the proces system                   
- info: constant [Tolerance ] is not used by the proces system                   
- info: constant [Iteration ] is not used by the proces system                   
  info: parameter [bottomdept] is not used by the proces system                  
                                                                                 
 # locating requested output from active processes                                                   

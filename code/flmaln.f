@@ -12,8 +12,8 @@ C     Type    Name         I/O Description
 C
       REAL(4) PMSA(*)     !I/O Process Manager System Array, window of routine to process library
       REAL(4) FL(*)       ! O  Array of fluxes made by this process in mass/volume/time
-      INTEGER IPOINT(33)   ! I  Array of pointers in PMSA to get and store the data
-      INTEGER INCREM(33)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
+      INTEGER IPOINT(34)   ! I  Array of pointers in PMSA to get and store the data
+      INTEGER INCREM(34)   ! I  Increments in IPOINT for segment loop, 0=constant, 1=spatially varying
       INTEGER NOSEG       ! I  Number of computational elements in the whole model schematisation
       INTEGER NOFLUX      ! I  Number of fluxes, increment in the FL array
       INTEGER IEXPNT(4,*) ! I  From, To, From-1 and To+1 segment numbers of the exchange surfaces
@@ -22,7 +22,7 @@ C
       INTEGER NOQ2        ! I  Nr of exchanges in 2nd direction, NOQ1+NOQ2 gives hor. dir. reg. grid
       INTEGER NOQ3        ! I  Nr of exchanges in 3rd direction, vertical direction, pos. downward
       INTEGER NOQ4        ! I  Nr of exchanges in the bottom (bottom layers, specialist use only)
-      INTEGER IPNT( 33)   !    Local work array for the pointering
+      INTEGER IPNT( 34)   !    Local work array for the pointering
       INTEGER ISEG        !    Local loop counter for computational element loop
 C
 C*******************************************************************************
@@ -45,6 +45,7 @@ C
       REAL(4) CDRatMALS   ! I  Carbon to dry matter ratio in MALS                  (gC/gDM)
       REAL(4) NCRatMALS   ! I  Nitrogen to carbon ratio in MALS                    (gN/gC)
       REAL(4) PCRatMALS	! I	 P:C ratio in structural mass	                     (gP/gDM)
+      REAL(4) DoLocUpP    ! I  include phosphorous uptake in P balance for MALS       (-)
       REAL(4) KsN		    ! I  half saturation N uptake                            (gN/m3)
       REAL(4) Ksp	        ! I	 half saturation P uptake	                         (gP/m3)
       REAL(4) JNmax	    ! I  maximum N uptake rate                               (gN/m2 d)
@@ -127,15 +128,16 @@ C
                 Ksp	    =	PMSA( IPNT(18) )
                 JNmax	    =	PMSA( IPNT(19) )
                 JPmax	    =	PMSA( IPNT(20) )
-                Vel	    =	PMSA( IPNT(21) )
-                Vel65	    =	PMSA( IPNT(22) )
-                NH4Thresh =   PMSA( IPNT(23) )
+                DoLocUpP  =	PMSA( IPNT(21) )
+                Vel	    =	PMSA( IPNT(22) )
+                Vel65	    =	PMSA( IPNT(23) )
+                NH4Thresh =   PMSA( IPNT(24) )
                 
-                MBotSeg    = nint(PMSA( IPNT( 24) ))
+                MBotSeg    = nint(PMSA( IPNT( 25) ))
 
-                Surf	    =	PMSA( IPNT(25) )
-                DELT	    =	PMSA( IPNT(26) )
-                Depth	    =	PMSA( IPNT(27) )
+                Surf	    =	PMSA( IPNT(26) )
+                DELT	    =	PMSA( IPNT(27) )
+                Depth	    =	PMSA( IPNT(28) )
 
 
                 ! need to take from bottom segment
@@ -222,8 +224,11 @@ C
                 ! uptake from water column
                 dUpMALNH4 = FrNH4MALN       * LocUpN/(Depth*Surf) 
                 dUpMALNO3 = (1.0-FrNH4MALN) * LocUpN/(Depth*Surf) 
-                ! calculate, but set P to zero
-                LocUpP = 0.0
+                IF (DoLocUpP .lt. 1.0) THEN
+                  ! calculate, but set P to zero
+                  LocUpP = 0.0
+                ENDIF
+                
                 dUpMALPO4 = LocUpP/(Depth*Surf)
                 
                 FL ( IdUpMALNO3 ) = dUpMALNO3
@@ -238,19 +243,19 @@ C
                 FL(IdStrMALP + FLCREM) = FL(IdStrMALP+FLCREM) + 
      &           (LocUpP/(Depth*Surf))
                
-                PMSA( IPNT( 28)   ) =  LimVel		
-                PMSA( IPNT( 29)   ) =  LimN		
-                PMSA( IPNT( 30)   ) =  LimP		
-                PMSA( IPNT( 31)   ) =  LocUpN/Surf	
-                PMSA( IPNT( 32)   ) =  LocUpP/Surf
-                PMSA( IPNT( 33)   ) =  FrNH4MALN
+                PMSA( IPNT( 29)   ) =  LimVel		
+                PMSA( IPNT( 30)   ) =  LimN		
+                PMSA( IPNT( 31)   ) =  LimP		
+                PMSA( IPNT( 32)   ) =  LocUpN/Surf	
+                PMSA( IPNT( 33)   ) =  LocUpP/Surf
+                PMSA( IPNT( 34)   ) =  FrNH4MALN
             ELSE
-                PMSA( IPNT( 28)   ) =  0.0	
-                PMSA( IPNT( 29)   ) =  0.0		
+                PMSA( IPNT( 29)   ) =  0.0	
                 PMSA( IPNT( 30)   ) =  0.0		
-                PMSA( IPNT( 31)   ) =  0.0	
+                PMSA( IPNT( 31)   ) =  0.0		
                 PMSA( IPNT( 32)   ) =  0.0	
-                PMSA( IPNT( 33)   ) =  0.0
+                PMSA( IPNT( 33)   ) =  0.0	
+                PMSA( IPNT( 34)   ) =  0.0
             ENDIF
 
          ENDIF

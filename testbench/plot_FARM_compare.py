@@ -105,10 +105,16 @@ plt.rcParams["figure.figsize"] = [18,9.93]
 xfmt = mdates.DateFormatter('%m-%Y')
 
 clr = ['k','b','r','y']
+'''
 runs = {'Farm3D'                      : 'baseline',
         'Farm3D_high_density'         : 'higher density',
         'Farm3D_stretch'              : 'longer fronds',
         'Farm3D_stretch_high_density' : 'longer fronds higher density'}
+'''
+
+runs = {'Farm3D'     : 'after fix',
+        'Farm3D_old' : 'before fix',
+         'Farm3D_stretch'              : 'longer fronds pre fix',}
 
 ls = [rr for rr in runs.keys()]
 ls = '_'.join(ls)
