@@ -271,8 +271,8 @@ Once the bottom segment is reached in the segment loop, the fluxes for each colu
 \textsc{process: FLMALN}
 \end{flushright}
 
-The nutrient storage component(s) of the macroalgae (also referred to as reserves) are those that supply nutrients for growth of the structural mass. The storage is also responsible for taking up dissolved inorganic nutrients from the ambient water. The reserves consist of a nitrogen ($MALN$) and a phosphorous ($MALP$) storage component, which are both dealt with in the same nutrient storage subroutine. Note that \cite{broch2012} does not include a phosphorous component to the nutrient storage, but it is included in this model for flexibility should new information about phosphorous storage become available. Currently the model is written such that the culture cannot be P limited and no P flux will occur.
-
+The nutrient storage component(s) of the macroalgae (also referred to as reserves) are those that supply nutrients for growth of the structural mass. The storage is also responsible for taking up dissolved inorganic nutrients from the ambient water. The reserves consist of a nitrogen ($MALN$) and a phosphorous ($MALP$) storage component, which are both dealt with in the same nutrient storage subroutine. Note that \cite{broch2012} does not include a phosphorous component to the nutrient storage, but it is included in this model for flexibility should new information about phosphorous storage become available. Currently the model is written such that the culture cannot be P limited and no P flux will occur unless the parameter $DoLocUpP$ $\ge$ 1.0.
+ 
 The change in a nutrient storage mass is given by the following equations:
 \begin{equation}
 dUptMALN = J_N - \mu(k_C \times k_N \times MALS + MALN)
