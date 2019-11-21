@@ -34,6 +34,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 author: Rudy Schueder
+
 contact: rudy.schueder@outlook.com
 
 # Cited work
