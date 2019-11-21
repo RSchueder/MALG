@@ -3,14 +3,13 @@ MacroALGae module of DELWAQ
 
 Macroalgae, kelp, or seaweed, are macroscopic multicellular marine algae that cover a large range of taxonomic groups. 
 They are of interest from an ecological point of view as they provide habitat for marine animals. They are also interesting from an economic point of view as they can be cultivated and harvested while offering a bio-remediating service to marine waters. There specifically is interest in the use of macroalgae as a bioremediator in integrated multitrophic aquaculture (IMTA) systems, where they can convert excess farm nutrients into biomass and value added products such as alginate. 
-The macroalgae module (MALG) in DELWAQ models the the dynamics of the kelp Saccharina latissima and is based almost entirely on the model described in broch2012. 
+The macroalgae module (MALG) in DELWAQ models the the dynamics of the kelp Saccharina latissima and is based almost entirely on the model described in Broch (2012). 
 Its applicability to seaweed in general is not known at this time and up to the user to determine. Note that numerous changes have been made to the equations in \cite{broch2012} to allow for compatibility with DELWAQ's mass based systems, and also to allow for the inclusion of MALG in 3D models, whereby the size of the seaweed needs to be modelled in addition to the biomass. 
 The primary motivation for this development is for application in the assessment of IMTA systems. 
 
 It is a program written in FORTRAN as a *.dll of the DELWAQ process library. Information on DELWAQ and the Delft3D Flexible Mesh Suite can be found here https://www.deltares.nl/en/software/delft3d-flexible-mesh-suite/#modules.
 
 ![Seaweed variables](/documentation/manual/figures/state_variables.png)
-Format: ![Alt Text](url)
 
 # Usage
 The compiled *.dll is only available for windows. The batch file for executing a model should look like this:
@@ -36,5 +35,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 author: Rudy Schueder
 contact: rudy.schueder@outlook.com
+
+# Cited work
+Ole Jacob Broch, D. S., 2012. *Modelling seasonal growth and composition of the kelp Saccharina latissima*. Journal of Applied Phycology 24: 259-776.
 
 
